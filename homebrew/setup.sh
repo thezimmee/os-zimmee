@@ -2,14 +2,14 @@
 #
 # set up homebrew
 
-local title=Homebrew
-local first_run=false
-local brew_taps=(
+title=Homebrew
+first_run=false
+brew_taps=(
     homebrew/bundle
     caskroom/cask
     caskroom/fonts
 )
-local brew_apps=(
+brew_apps=(
     bash
     imagemagick
     git
@@ -18,7 +18,7 @@ local brew_apps=(
     wget
     zsh
 )
-local cask_apps=(
+cask_apps=(
     appcleaner
     hammerspoon
     iterm2
@@ -106,11 +106,10 @@ function update_homebrew () {
 # if log is not defined, ask to clone the git repo
 if ! type log; then
     function log () {
-        echo -e "[ .. ] ${1}"
+        echo "[ .. ] ${1}"
     }
-    log "Would you like to clone the OSZ git repo?"
+    log "Would you like to clone the OSZ git repo? [y|n] "
     read -n 1 -r response < /dev/tty
-    [[ ! ${!response} =~ ^(y|n)$ ]] && log 'Not a valid response' && exit
 
     if [[ $response != y ]]; then
         log 'You will need to clone the OSZ repo to move forward. If you have cloned it, something is wrong.'
