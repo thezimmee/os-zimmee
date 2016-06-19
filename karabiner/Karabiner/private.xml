@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<root>
+    <!-- DEVICE DEFINITIONS -->
+    <!-- apple vendor -->
+    <devicevendordef>
+        <vendorname>APPLE</vendorname>
+        <vendorid>0x05ac</vendorid>
+    </devicevendordef>
+    <!-- apple macbook internal keyboard -->
+    <deviceproductdef>
+        <productname>MACBOOK_KEYBOARD</productname>
+        <productid>0x0262</productid>
+    </deviceproductdef>
+    <!-- apple mini keyboard -->
+    <deviceproductdef>
+        <productname>MINI_KEYBOARD</productname>
+        <productid>0x0255</productid>
+    </deviceproductdef>
+
+
+    <!-- REPLACEMENT DEFINITIONS -->
+    <replacementdef>
+        <replacementname>CAPSLOCK</replacementname>
+        <replacementvalue>F19</replacementvalue>
+    </replacementdef>
+    <replacementdef>
+        <replacementname>MOD_HYPER</replacementname>
+        <replacementvalue>KeyCode::CONTROL_L | ModifierFlag::OPTION_L</replacementvalue>
+    </replacementdef>
+
+
+    <!-- customizations for mini keyboards -->
+    <item>
+        <name>Mini keyboards</name>
+        <item>
+            <name>Swap control_l and fn</name>
+            <identifier>private.swapleftctrlfn</identifier>
+            <device_only>
+                DeviceVendor::APPLE, DeviceProduct::MACBOOK_KEYBOARD,
+                DeviceVendor::APPLE, DeviceProduct::MINI_KEYBOARD
+            </device_only>
+            <autogen>
+                __KeyToKey__
+                KeyCode::CONTROL_L,
+                KeyCode::FN
+            </autogen>
+            <autogen>
+                __KeyToKey__
+                KeyCode::FN,
+                KeyCode::CONTROL_L
+            </autogen>
+        </item>
+    </item>
+
+    <!-- hyper to capslock and shift_r -->
+    <item>
+        <name>Hyper key</name>
+        <item>
+            <name>CAPSLOCK TO HYPER</name>
+            <identifier>private.capslock_hyper</identifier>
+            <!-- capslock to hyper; capslock when double clicked -->
+            <autogen>
+                __DoublePressModifier__
+                KeyCode::{{CAPSLOCK}},
+                {{MOD_HYPER}},
+                KeyCode::CAPSLOCK
+            </autogen>
+        </item>
+        <item>
+            <name>SHIFT_R TO HYPER</name>
+            <identifier>private.shift_r_hyper</identifier>
+            <!-- shift_r to hyper -->
+            <autogen>
+                __KeyToKey__
+                KeyCode::SHIFT_R,
+                {{MOD_HYPER}}
+            </autogen>
+        </item>
+    </item>
+
+    <!-- keyboard mouse -->
+    <item>
+        <name>Keyboard mouse</name>
+        <item>
+            <name>f1 to click, f2 to right click</name>
+            <appendix>f1 = click</appendix>
+            <appendix>f2 = right click OR shift if pressed with another key</appendix>
+            <appendix>escape = option if pressed with another key</appendix>
+            <appendix>backquote = shift+option if pressed with another key</appendix>
+            <identifier>private.keyboardmouse.f1_click</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::F1,
+                PointingButton::LEFT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F2,
+                KeyCode::SHIFT_L,
+                PointingButton::RIGHT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::ESCAPE,
+                KeyCode::OPTION_L,
+                KeyCode::ESCAPE
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::BACKQUOTE,
+                KeyCode::OPTION_L, ModifierFlag::SHIFT_L,
+                KeyCode::BACKQUOTE
+            </autogen>
+        </item>
+        <item>
+            <name>f2 to click, f1 to right click</name>
+            <appendix>f2 = click</appendix>
+            <appendix>f1 = right click OR shift if pressed with another key</appendix>
+            <appendix>escape = option if pressed with another key</appendix>
+            <appendix>backquote = shift+option if pressed with another key</appendix>
+            <identifier>private.keyboardmouse.f2_click</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::F2,
+                PointingButton::LEFT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F1,
+                KeyCode::SHIFT_L,
+                PointingButton::RIGHT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::ESCAPE,
+                KeyCode::OPTION_L,
+                KeyCode::ESCAPE
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::BACKQUOTE,
+                KeyCode::OPTION_L, ModifierFlag::SHIFT_L,
+                KeyCode::BACKQUOTE
+            </autogen>
+        </item>
+        <item>
+            <name>backquote to left click</name>
+            <identifier>private.keyboardmouse.tilde_leftclick</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::BACKQUOTE,
+                PointingButton::LEFT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F2,
+                PointingButton::RIGHT
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F1,
+                KeyCode::BACKQUOTE
+            </autogen>
+        </item>
+    </item>
+
+    <!-- function keys -->
+    <item>
+        <name>Function keys</name>
+        <item>
+            <name>brightness to f5 and f6</name>
+            <identifier>private.functionkeys.brightness</identifier>
+            <!-- move brightness_down to f5 -->
+            <autogen>
+                __KeyToKey__
+                KeyCode::F5,
+                ConsumerKeyCode::BRIGHTNESS_DOWN
+            </autogen>
+            <!-- move brightness_up to f6 -->
+            <autogen>
+                __KeyToKey__
+                KeyCode::F6,
+                ConsumerKeyCode::BRIGHTNESS_UP
+            </autogen>
+        </item>
+        <item>
+            <name>Volume keys</name>
+            <identifier>private.functionkeys.volume</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F10,
+                ConsumerKeyCode::VOLUME_MUTE
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F11,
+                ConsumerKeyCode::VOLUME_DOWN
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::F12,
+                ConsumerKeyCode::VOLUME_UP
+            </autogen>
+        </item>
+    </item>
+</root>

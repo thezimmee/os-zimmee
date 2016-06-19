@@ -1,0 +1,32 @@
+[
+	/**
+	 * QUICK TOGGLE SHORTCUTS
+	 */
+	// toggle centered
+	{ "keys": ["super+alt+i"], "command": "toggle_setting", "args": {"setting": "draw_centered"} },
+	// toggle sidebar
+	{ "keys": ["super+\\"], "command": "toggle_side_bar" },
+	// toggle word wrap
+	{ "keys": ["super+."], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+	// toggle code folding buttons
+	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": {"setting": "fade_fold_buttons"} },
+	// toggle DistractionFreeWindow package
+	{ "keys": ["super+shift+i"], "command": "distraction_free_window" },
+	// toggle pane visibility
+	{ "keys": ["super+shift+enter"], "command": "max_pane" },
+	// navigate to right/left pane
+	{ "keys": ["super+ctrl+right"], "command": "shift_pane" },
+	{ "keys": ["super+ctrl+left"], "command": "unshift_pane" },
+	// toggle synchronized scrolling
+	{ "keys": ["super+ctrl+y"], "command": "toggle_sync_scroll" },
+
+
+	/**
+	 * UI NAVIGATION / MANIPULATION
+	 */
+	// move tabs up/down/left/right
+	{"keys": ["super+alt+control+down"], "command": "move_tab", "args": { "position": "999" } },
+	{"keys": ["super+alt+control+up"], "command": "move_tab", "args": { "position": "0" } },
+	{"keys": ["super+alt+control+left"], "command": "move_tab", "args": { "position": "-1" } },
+	{"keys": ["super+alt+control+right"], "command": "move_tab", "args": { "position": "+1" } }
+]

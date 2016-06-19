@@ -1,0 +1,53 @@
+# shortcut to configuration files root
+export OSZ_ROOT=$HOME/Projects/osz
+
+# github token for homebrew
+export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463
+
+# your project folder that we can `c [tab]` to
+export PROJECTS=~/Projects
+
+# source prezto
+setopt EXTENDED_GLOB
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Stash environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+	then
+	source ~/.localrc
+fi
+
+# all of our zsh files
+# typeset -U config_files
+# config_files=($OSZ_ROOT/**/*.zsh)
+
+# load path files
+# for file in ${(M)config_files:#*/path.zsh}
+for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name 'path.zsh')
+do
+	source $file
+done
+
+# load everything but path and completion files, and *.ignore
+for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name '*.zsh' -not -path '*path.zsh' -not -path '*completion.zsh' -not -path '*.ignore*')
+do
+	source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+# for file in ${(M)config_files:#*/completion.zsh}
+for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name 'completion.zsh')
+do
+	source $file
+done
+
+# unset config_files

@@ -1,10 +1,6 @@
 # OS Zimmee
 
-This is my attempt to create a simple way to:
-
-1. Manage dotfiles
-2. Manage OS configuration & preferences
-3. Easily install all configuration to a new user
+This is my attempt at automating all of macOS and app configuration.
 
 ## Inspiration
 
@@ -20,36 +16,25 @@ This project is heavily inspired by:
 
 ## Installation
 
-1. Clone
+1. Clone:
 ```sh
 git clone https://github.com/thezimmee/os-zimmee.git ~/YOUR_DIRECTORY
 cd ~/YOUR_DIRECTORY
 ```
-2. Customize as desired
-3. Run `bootstrap` script
-4. Run `update-system` script regularly
+2. or install using curl:
+```sh
+sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
+```
+3. Customize as desired
+4. Run `install` script
 
 ## Usage
 
 ### Organization
 
-The project is structured by topic, which makes it simple to add/remove apps or sets of config files. It also makes it easy to clone other helpful repos and consume them.
+The project is structured by topic, which makes it simple to add/remove apps or sets of config files. It should also easy to clone other helpful repos and consume them.
 
-### Scripts
-
-#### **`script/bootstrap`:**
-
-Sets up OS Zimmee on a fresh system or user. Specifically:
-
-1. Sets defaults for OSX with `osx/set-defaults.sh`
-2. Installs homebrew with `homebrew/install.sh`
-3. Installs all other apps and configurations with `PATH/install.sh`
-
-#### **`script/update-system`:
-
-Updates 
-
-### Special file types
+<!-- ### Special file types
 
 Files with the following conventions have special meaning:
 
@@ -62,9 +47,62 @@ Files with the following conventions have special meaning:
   expected to setup `$PATH` or something similar.
 - `**/completion.zsh`: Any file named `completion.zsh` is loaded
   last and is expected to setup autocomplete.
-- `**/\*.link`: Files ending in `*.link` get symlinked into your `$HOME` directory. This allows you to keep all of those versioned in your dotfiles but still keep those autoloaded files in your home directory. These get symlinked in when you run `script/bootstrap`.
-- `***.ignore`: Files or folders ending in `*.ignore` are ignored by zsh.
+- `**/\*.link`: Any file or folder ending in `*.link` will get symlinked into your `$HOME` directory. This keeps them versioned but also sets them to your home directory.
+- `***.ignore`: Files or folders ending in `*.ignore` are ignored by zsh. -->
 
 ## Issues
 
-If you run into any issues, please [open an issue](https://github.com/thezimmee/os-zimmee/issues) and I'll see what I can do.
+This project is very young. If you run into any issues, please [open an issue](https://github.com/thezimmee/os-zimmee/issues) and I'll see what I can do.
+
+<!--
+## TODO
+
+- Update my macOS preferences
+	- [Toggle function keys to on](https://github.com/nelsonjchen/fntoggle)
+	- macOS keyboard shortcuts
+	- Change default xcode files to sublime
+- Install node & packages
+	- npm
+	- gulp
+	- npm diff-so-fancy
+	- http-server
+	- nodemon?
+	- release-it?
+	- spot?
+	- svgo?
+	- tldr?
+	- underscore-cli?
+	- vtop?
+	- shelljs & shx
+- Add fuzzy-history to zsh
+- Add ability to run install with no questions?
+- kwm / hammerspoon:
+	- Add ability to save layouts
+	- Add notification for mode of current window (which is displayed when mode is toggled)
+- update git repos
+- Convert OSZ to javascript for use with shelljs?
+- apps to install:
+	- photoshop
+	- illustrator
+	- xcode
+	- postman
+- other apps to consider:
+	- amethyst
+	- moom
+	- audacity
+	- filezilla
+	- hooner
+	- musescore 2
+	- noejectdelay utility
+	- palua
+	- prepros
+	- shortcat
+	- skitch
+	- snippy
+	- browserstack
+	- snippy
+	- vivaldi
+	- blisk
+	- watchguard mobile vpn
+	- airdroid
+ -->

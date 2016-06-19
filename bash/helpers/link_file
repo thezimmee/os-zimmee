@@ -1,0 +1,88 @@
+# add symlink to a file
+link_file () {
+    local src=$1 dst=${2:-$HOME}
+
+    local overwrite= backup= skip=
+    local action= reason
+
+    [[ $RUN_MODE = preserve ]] && skip=true backup=false overwrite=false reason=' (preserve mode)'
+    [[ $RUN_MODE = reset ]] && skip=false backup=false overwrite=true reason=' (reset mode)'
+
+    if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+    then
+        if [ $RUN_MODE == ask ] && [ "$overwrite_all" != "true" ] && [ "$backup_all" != "true" ] && [ "$skip_all" != "true" ]
+        then
+            local currentSrc="$(readlink $dst)"
+
+            if [ "$currentSrc" == "$src" ]
+            then
+                reason=' (already exists)'
+                skip=true;
+
+            else
+                log "${MAGENTA}${dst} ${YELLOW}already exists... What should we do?${END_COLOR}\n${LOG_INDENT}${CYAN}[s]${END_COLOR}kip, ${CYAN}[S]${END_COLOR}kip all, ${CYAN}[o]${END_COLOR}verwrite, ${CYAN}[O]${END_COLOR}verwrite all, ${CYAN}[b]${END_COLOR}ackup, ${CYAN}[B]${END_COLOR}ackup all?\n${QUESTION_PREFIX}${YELLOW} =>" question $title ' '
+                read -r -e -n 1 action < /dev/tty
+
+                case "$action" in
+                    o )
+                        overwrite=true
+                        reason=' (by user)';;
+                    O )
+                        overwrite_all=true
+                        reason=' (by user)';;
+                    b )
+                        backup=true
+                        reason=' (by user)';;
+                    B )
+                        backup_all=true
+                        reason=' (by user)';;
+                    s )
+                        skip=true
+                        reason=' (by user)';;
+                    S )
+                        skip_all=true
+                        reason=' (by user)';;
+                    * )
+                        ;;
+                esac
+
+            fi
+
+        fi
+
+        overwrite=${overwrite:-$overwrite_all}
+        backup=${backup:-$backup_all}
+        skip=${skip:-$skip_all}
+
+        if [ "$overwrite" == "true" ]
+        then
+            rm -rf "$dst"
+            reason=" (and removed the original)"
+        fi
+
+        if [ "$backup" == "true" ]
+        then
+            mv "$dst" "${dst}.backup"
+            reason=" (and backed up the original)"
+        fi
+
+        if [ "$skip" == "true" ]
+        then
+            if [ "$reason" == " (already exists)" ]
+            then
+                return 0
+            else
+                return 1
+            fi
+        fi
+    fi
+
+    if [ "$skip" != "true" ]
+    then
+        mkdir -p "$(dirname "$dst")"
+        ln -s "$src" "$dst"
+        return 0
+    fi
+}
+
+export -f link_file

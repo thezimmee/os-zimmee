@@ -1,0 +1,64 @@
+/**
+ * FOR HELP:
+ * https://github.com/koekeishiya/kwm
+ * https://github.com/koekeishiya/kwm/wiki/Sample-Configurations
+ */
+
+// spacing
+kwmc config padding 24 6 7 7
+kwmc config gap 6 6
+
+// ratios
+kwmc config split-ratio 0.5
+kwmc config optimal-ratio 1.382
+
+// behavior
+kwmc config tiling bsp // bsp | monocle | float | off
+kwmc config spawn right // left | right
+kwmc config lock-to-container on
+kwmc config hotkeys on
+// kwmc config spaces-key ctrl
+kwmc config float-non-resizable on
+kwmc config focus-follows-mouse off // toggle | autofocus | autoraise | off
+kwmc config mouse-follows-focus on
+kwmc config standby-on-float on
+kwmc config cycle-focus screen // screen | off
+
+kwmc config border focused on
+kwmc config border focused size 3
+kwmc config border focused color 0xFF7FDBFF
+kwmc config border marked on
+kwmc config border marked size 3
+kwmc config border marked color 0xFFFF851B
+
+
+// set active split-mode of display (optimal | vertical | horizontal)
+kwmc display -c vertical
+
+// config for specific space
+// kwm config space display_id space_id name <opt> // name
+// kwm config space display_id space_id mode <opt> // bsp | monocle | float
+// kwm config space display_id space_id padding <opt> // top bottom left right
+// kwm config space display_id space_id gap <opt> // vertical horizontal
+
+// config for specific display
+// kwm config display display_id mode <opt> // bsp | monocle | float
+// kwm config display display_id padding <opt> // top bottom left right
+// kwm config display display_id gap <opt> // vertical horizontal
+
+// Set prefix for Kwms hotkeys
+// kwmc config prefix-key ctrl-s
+
+// Prefix is not applied globally
+// kwmc config prefix-global off
+
+// Time in seconds, before prefix must be re-activated
+// kwmc config prefix-timeout 0.75
+
+// Some apps do not have the AXWindowRole and AXStandardWindowSubRole and do not get tiled by default. These custom tiling rules fix that.
+kwmc config add-role AXDialog iTerm2
+
+
+// include
+include rules
+include binds

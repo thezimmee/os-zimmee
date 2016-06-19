@@ -1,0 +1,176 @@
+#!/usr/bin/env bash
+#
+# bootstrap runs a fresh setup of OS Zimmee.
+
+## exports
+export OSZ_ROOT WARNING_LOG=() SUCCESS_LOG=() SETUP_TYPE=all SETUP_FILE=${CONFIG__filenames_setup:-'setup.sh'}
+## set root of script
+OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd $OSZ_ROOT
+
+# load log utility for cli logging
+. ./config
+. ./bash/helpers/logger
+. ./bash/helpers/link_file
+. ./bash/helpers/setup_dotfiles
+
+# config settings
+[[ $RUN_MODE = preserve ]] && SKIP_PREFIX="(preserve mode)" || SKIP_PREFIX="(user choice)"
+
+# helpers to see we can continue based on RUN_MODE
+can_continue () {
+    local prompt=$1 would_overwrite=$3 msg="${2:-Skipped ${title}.}"
+    # keep old files in preserve mode
+    if [[ $RUN_MODE = preserve ]]; then
+        [[ $would_overwrite = true ]] && log "$msg (preserve mode)." important && return 1 || return 0
+    elif [[ $RUN_MODE = ask ]]; then
+        yes_no "${yes_no_msg:-$prompt}" user_input
+    fi
+    # ask user in ask mode
+    [[ $user_input = n ]] && log "$msg (user choice)." && return 1
+    # overwrite all files in reset mode
+    return 0
+}
+can_overwrite () {
+    can_continue "$1" "$2" true
+}
+
+# trap exit
+trap bashtrap INT
+bashtrap() {
+    echo ''
+    fail "${CYAN}[ctrl+c]${YELLOW} pressed... exiting setup." true
+}
+
+# set up all apps
+setup_apps () {
+    # first set up homebrew
+    . $OSZ_ROOT/homebrew/$SETUP_FILE
+
+    while read installer ; do
+        . "$installer"
+    done < <(find $OSZ_ROOT -name $SETUP_FILE -not -path "*homebrew/$SETUP_FILE")
+}
+
+# what to set up?
+setup_init () {
+    # ask user
+    ask "What would you like to do?${END_COLOR} 
+       ${CYAN}[1]${END_COLOR}: set up everything (${BLUE}ask${END_COLOR} lots of questions); or
+       ${CYAN}[2]${END_COLOR}: set up everything (${BLUE}preserve${END_COLOR} during conflicts); or
+       ${CYAN}[3]${END_COLOR}: reset everything (${BLUE}overwrite${END_COLOR} during conflicts); or
+       ${CYAN}<appname>${END_COLOR}: set up a specific app.\n${QUESTION_PREFIX}${YELLOW} =>${END_COLOR}" response
+
+    # setup scenarios
+    if [[ $response = "" ]]; then
+        echo ''
+        setup_apps
+    elif [[ "$response" =~ ^(1|2|3)$ ]]; then
+        echo ''
+        if [[ $response -eq 1 ]]; then
+            RUN_MODE=ask
+        elif [[ $response -eq 2 ]]; then
+            RUN_MODE=preserve
+        elif [[ $response -eq 3 ]]; then
+            RUN_MODE=reset
+        fi
+        setup_apps
+    elif [[ $response = "dotfiles" ]]; then
+        echo ''
+        APP_MODE='dotfiles'
+        setup_dotfiles
+    else
+        if [[ -d $OSZ_ROOT/$response ]]; then
+            echo ''
+            APP_MODE=$response
+            . $OSZ_ROOT/$response/$SETUP_FILE
+            setup_dotfiles "$OSZ_ROOT/$response"
+        elif [[ -d $OSZ_ROOT/${response}.link ]]; then
+            echo ''
+            APP_MODE=$response
+            . $OSZ_ROOT/${response}.link/$SETUP_FILE
+            link_file $OSZ_ROOT/${response}.link
+        elif [[ -d $OSZ_ROOT/${response}.ignore ]]; then
+            echo ''
+            APP_MODE=$response
+            . $OSZ_ROOT/${response}.ignore
+        else
+            log "${BOLD}Couldn't find ${BLUE}${OSZ_ROOT}/${response}${END_COLOR}...\n${LOG_INDENT}(running in APP_MODE; hit ${CYAN}[enter]${END_COLOR} to set up everything)." fail ''
+            setup_init
+        fi
+    fi
+}
+
+# log apps that need to be set up manually
+# prepare_summary () {
+#     local title=${APP_MODE[*]^:-OSZ} num_warnings=${#WARNING_LOG[@]} num_successes=${#SUCCESS_LOG[@]}
+#     local success_msg="${GREEN}Houston, we have NO problem! :) OS Zimmee is ready to go.${END_COLOR}"
+#     local log_prefix=false
+
+#     echo ''
+
+#     # success message
+#     if [[ num_warnings -eq 0 ]]; then
+#         [[ $APP_MODE ]] && success_msg="${GREEN}Woot! Woot! :) ${title} ran successfully!${END_COLOR}"
+#         echo '===================================================='
+#         echo -e "${GREEN}${BOLD}[SETUP SUMMARY]${END_COLOR}"
+#         log "$success_msg" success ''
+#     else
+#         echo '===================================================='
+#         echo -e "${YELLOW}${BOLD}[SETUP SUMMARY]${END_COLOR}"
+#         log "Setup completed with ${BOLD}${YELLOW}${num_warnings} warnings${END_COLOR}." important
+#     fi
+
+#     # print success log
+#     if [[ num_successes -gt 0 ]]; then
+#         echo ''
+#         echo -e "${GREEN}[SUCCESS LOG]${END_COLOR}"
+#         echo '------------------------------'
+#         printf '%s\n' "${SUCCESS_LOG[@]}"
+#     fi
+
+#     # print warning log
+#     if [[ num_warnings -gt 0 ]]; then
+#         echo ''
+#         echo -e "${YELLOW}${BOLD}[WARNING LOG] (${BOLD}${num_warnings} warnings found)${END_COLOR}"
+#         echo '------------------------------'
+#         printf '%s\n' "${WARNING_LOG[@]}"
+#     fi
+
+#     # print last steps
+#     if [[ -z $APP_MODE ]]; then
+#         echo ''
+#         echo -e "${YELLOW}${BOLD}[IMPORTANT]: To finish setup, do the following:${END_COLOR}"
+#         log_prefix='  - '
+#         log "Manually load preferences from ${MAGENTA}${OSZ_ROOT}/iterm${END_COLOR}." info iTerm
+#         log "Disable [capslock] in macOS preferences (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#usage${END_COLOR})." info Karabiner
+#         log "Make sure [capslock] key is set to ${CYAN}[80]${END_COLOR}, which is the f19 key (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface${END_COLOR})." info Seils
+#         echo ''
+#         echo -e "${BOLD}${YELLOW}You may also want to set up:${END_COLOR}"
+#         log_prefix='  - '
+#         log "${MAGENTA}http://osx.iusethis.com/app/palua" info Palua
+#         log "[${BLUE}Photoshop${END_COLOR}], [${BLUE}Illustrator${END_COLOR}], [${BLUE}Snippy${END_COLOR}], [${BLUE}Blisk${END_COLOR}], [${BLUE}Parallels${END_COLOR}]"
+#     fi
+
+#     # take us home
+#     echo ''
+#     echo -e '===================================================='
+#     echo -e "${GREEN}Peace out.${END_COLOR}\n"
+# }
+
+# add a starting blank line
+echo ''
+
+## run init
+setup_init
+
+# setup all dotfiles only if running full setup
+[[ -z $APP_MODE ]] && setup_dotfiles
+
+# success message
+echo ''
+[[ $APP_MODE ]] && log "${GREEN}Woot! Woot! :) ${title} ran successfully!${END_COLOR}" success || log "${GREEN}Houston, we have NO problem! :) OS Zimmee is ready to go.${END_COLOR}" success
+echo ''
+
+# prepare summary report
+# prepare_summary

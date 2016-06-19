@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# config to install everything with no questions asked
+
+## GLOBAL CONFIGURATION
+CONFIG__first-run=true # mimic first run
+
+# GLOBAL | paths and file names
+# CONFIG__filenames_setup='setup.sh'
+# CONFIG__filenames_symlink='*.link'
+
+# homebrew
+CONFIG__brewfile_dir="$OSZ_ROOT/homebrew"
+
+# git & ssh
+CONFIG__git_username='The Zimmee'
+CONFIG__git_useremail='thezimmee@gmail.com'
+CONFIG__sshkey="$HOME/.ssh/id_rsa.pub"
+
+# kwm
+CONFIG__kwm_app_dir=$HOME/Applications/kwm
+CONFIG__launch_dir=$HOME/Library/LaunchAgents
+CONFIG__kwm_plist_file=$launch_dir/com.koekeishiya.kwm.plist

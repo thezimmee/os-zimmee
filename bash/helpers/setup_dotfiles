@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+#
+# iterate over all apps and set them up
+
+function setup_dotfiles () {
+    local src_dir=${1:-$OSZ_ROOT}
+    local src_files="${CONFIG__filenames_symlink:-*.link}"
+    local dotfiles_print="${MAGENTA}${src_dir}/${src_files}${END_COLOR}"
+    local dotfiles_completed=0
+    local dotfiles_total=0
+    local run_dotfiles=y
+    local user_msg="Set up dotfiles from ${dotfiles_print}?"
+
+	# confirm with user
+    [[ "$src_dir" = "$OSZ_ROOT" ]] && user_msg="Set up ALL dotfiles?" && local title='dotfiles'
+    can_continue "$user_msg" "Skipped symlinking files from ${dotfiles_print}" &&
+	# [[ $RUN_MODE = ask ]] && yes_no "$user_msg" run_dotfiles
+	# [[ $run_dotfiles = n ]] && log "Skipped symlinking files from ${dotfiles_print} (user choice)." && return 0
+
+	# iterate over src files
+	for dotfile in $(find -H "$src_dir" -maxdepth 2 -name "${src_files}" -not -path '*.git*'); do
+        dest="$HOME/.$(basename "${dotfile%.*}")"
+        link_file "$dotfile" "$dest" && ((dotfiles_completed++)) && log "Processed ${MAGENTA}${dest}${END_COLOR} successfully" success || log "Skipped ${MAGENTA}${dest}${END_COLOR}." important
+        ((dotfiles_total++))
+    done
+
+    log "Completed ${BLUE}${dotfiles_completed} of ${dotfiles_total//[[:blank:]]/} dotfile(s)${GREEN} from ${dotfiles_print}." success
+
+    # # ask user
+    # [ $SETUP_TYPE = ask ] && yes_no '' "Set up dotfiles?" continue
+    # # don't continue if user skips
+    # if [[ $continue = n ]]; then
+    #     SUMMARY_REPORT+=($(log dotfiles "setup was skipped by user." info))
+    #     return 0
+    # fi
+    # # setup all dotfiles
+    # log dotfiles 'Setting up dotfiles...' info
+
+    # local overwrite_all=false backup_all=false skip_all=false
+
+    # for src in $(find -H "$OSZ_ROOT" -maxdepth 2 -name '*.link' -not -path '*.git*')
+    # do
+    #     dst="$HOME/.$(basename "${src%.*}")"
+    #     link_file "$src" "$dst"
+    # done
+}
+
+export -f setup_dotfiles
