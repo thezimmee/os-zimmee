@@ -27,9 +27,11 @@ This project is heavily inspired by:
 	sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
 	```
 
-3. Customize as desired.
+	This will automatically install git with Homebrew and clone the repo.
 
-4. Run `install` script from the root directory.
+3. Customize the settings found in `$OSZ_ROOT/config`.
+
+4. Run `$OSZ_ROOT/install`.
 
 ## Usage
 

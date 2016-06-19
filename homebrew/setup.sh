@@ -64,10 +64,17 @@ function install_homebrew () {
 
 function install_apps () {
     local count_installed=0 count_skipped=0
+
+    # only install git if doing a remote install
+    if [[ $do_clone_repo ]]; then
+        local brew_apps=(git)
+        local cask_apps=()
+    fi
+
     # install brew apps
     for app in "${brew_apps[@]}"; do
         if test $(brew ls --versions "${app}"); then
-            log "Installing Homebrew app: ${app}..."
+            log "Installing ${app} (with Homebrew)..."
             brew install "${app}"
             (($count_installed++))
         else
@@ -78,7 +85,7 @@ function install_apps () {
     # install cask apps
     for app in "${cask_apps[@]}"; do
         if test $(brew cask ls --versions "${app}"); then
-            log "Installing Homebrew (cask) app: ${app}..."
+            log "Installing ${app} (with Homebrew cask)..."
             brew cask install "${app}"
             (($count_installed++))
         else
