@@ -17,15 +17,15 @@ This project is heavily inspired by:
 ## Installation
 
 1. If you already have git, clone:
-```sh
-git clone https://github.com/thezimmee/os-zimmee.git ~/YOUR_DIRECTORY
-cd ~/YOUR_DIRECTORY
-```
+	```sh
+	git clone https://github.com/thezimmee/os-zimmee.git ~/YOUR_DIRECTORY
+	cd ~/YOUR_DIRECTORY
+	```
 
 2. Otherwise, install using curl:
-```sh
-sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
-```
+	```sh
+	sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
+	```
 
 3. Customize as desired.
 
