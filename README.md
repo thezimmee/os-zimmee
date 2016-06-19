@@ -16,17 +16,20 @@ This project is heavily inspired by:
 
 ## Installation
 
-1. Clone:
+1. If you already have git, clone:
 ```sh
 git clone https://github.com/thezimmee/os-zimmee.git ~/YOUR_DIRECTORY
 cd ~/YOUR_DIRECTORY
 ```
-2. or install using curl:
+
+2. Otherwise, install using curl:
 ```sh
 sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
 ```
-3. Customize as desired
-4. Run `install` script
+
+3. Customize as desired.
+
+4. Run `install` script from the root directory.
 
 ## Usage
 

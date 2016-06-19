@@ -9,10 +9,10 @@ OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd $OSZ_ROOT
 
 # load log utility for cli logging
-. ./config
-. ./bash/helpers/logger
-. ./bash/helpers/link_file
-. ./bash/helpers/setup_dotfiles
+. $OSZ_ROOT/config
+. $OSZ_ROOT/bash/helpers/logger
+. $OSZ_ROOT/bash/helpers/link_file
+. $OSZ_ROOT/bash/helpers/setup_dotfiles
 
 # config settings
 [[ $RUN_MODE = preserve ]] && SKIP_PREFIX="(preserve mode)" || SKIP_PREFIX="(user choice)"

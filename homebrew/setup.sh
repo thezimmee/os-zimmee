@@ -92,15 +92,19 @@ function install_apps () {
 
 function clone_repo () {
     log "Where would you like to clone your OSZ files (relative to your HOME directory)?"
-    read -r response < /dev/tty
-    git clone https://github.com/thezimmee/os-zimmee.git "~/${response}"
-    log "Clone complete."
+    read -r input_dir
+    log "Clone to ${HOME}/${input_dir}? [y|n]"
+    read -n 1 -r input_confirm < /dev/tty
+    [[ $input_confirm != y ]] && return 1 && exit
+    git clone https://github.com/thezimmee/os-zimmee.git "${HOME}/${input_dir}"
+    log "Clone complete. This process will now exit."
+    log "Now run the main install script from the OSZ_ROOT directory."
+    exit
 }
 
 function update_homebrew () {
     log "Updating Homebrew apps..."
     brew update && brew upgrade && brew doctor
-    log "Update complete."
 }
 
 # if log is not defined, ask to clone the git repo
@@ -109,29 +113,28 @@ if ! type log; then
         echo "[ .. ] ${1}"
     }
     log "Would you like to clone the OSZ git repo? [y|n] "
-    read -n 1 -r response < /dev/tty
+    read -n 1 -r input_clone < /dev/tty
 
-    if [[ $response != y ]]; then
+    if [[ $input_clone != y ]]; then
         log 'You will need to clone the OSZ repo to move forward. If you have cloned it, something is wrong.'
+        return 1
         exit
     fi
-    local do_clone_repo=true
+    do_clone_repo=true
 fi
 
 # install if not already installed
 if test ! $(which brew); then
     install_homebrew
     install_apps
-    [[ $do_clone_repo = true ]] && clone_repo
 fi
 
 # update apps
 update_homebrew
-if [[ $do_clone_repo = true ]]; then
-    log "An attempt will be made to automatically set up the remaining apps; however, if something goes wrong, run the install.sh script located in the OSZ root directory."
-    . "~/${response}/install.sh"
-fi
 log "Homebrew complete." success
+if [[ $do_clone_repo = true ]]; then
+    clone_repo
+fi
 
 # function setup_homebrew () {
 #     local first_run=${CONFIG__first_run}
