@@ -58,6 +58,9 @@ function install_homebrew () {
         brew tap "${tap}"
     done
 
+    # fix permissions (see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/)
+    sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
+
     # setup homebrew packages with bundle
     log "Install complete!" success
 }
@@ -73,24 +76,24 @@ function install_apps () {
 
     # install brew apps
     for app in "${brew_apps[@]}"; do
-        if test $(brew ls --versions "${app}"); then
+        if brew list -1 | grep -q "${app}"; then
+            log "${app} already installed." success
+            ((count_skipped++))
+        else
             log "Installing ${app} (with Homebrew)..."
             brew install "${app}"
             (($count_installed++))
-        else
-            log "${app} already installed." success
-            ((count_skipped++))
         fi
     done
     # install cask apps
     for app in "${cask_apps[@]}"; do
-        if test $(brew cask ls --versions "${app}"); then
+        if brew cask list -1 | grep -q "${app}"; then
+            log "${app} already installed." success
+            ((count_skipped++))
+        else
             log "Installing ${app} (with Homebrew cask)..."
             brew cask install "${app}"
             (($count_installed++))
-        else
-            log "${app} already installed." success
-            ((count_skipped++))
         fi
     done
 
@@ -131,7 +134,7 @@ if ! type log; then
 fi
 
 # install if not already installed
-if test ! $(which brew); then
+if [ $do_clone_repo = true ] || [ test ! $(which brew) ]; then
     install_homebrew
     install_apps
 fi
