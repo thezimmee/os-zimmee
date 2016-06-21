@@ -4,9 +4,9 @@
 
 ## colors
 BOLD="\033[1m"
-END_BOLD="\033[21m"
+NOBOLD="\033[21m"
 DIM="\033[2m"
-END_DIM="\033[22m"
+NODIM="\033[22m"
 BLACK="\033[30m"
 RED="\033[31m"
 GREEN="\033[32m"
@@ -14,73 +14,65 @@ YELLOW="\033[33m"
 BLUE="\033[34m"
 MAGENTA="\033[35m"
 CYAN="\033[36m"
-END_COLOR="\033[0m"
+END="\033[0m"
 
-INFO_PREFIX="[ ${BLUE}..${END_COLOR} ]"
-IMPORTANT_PREFIX="[ ${BOLD}${YELLOW}!!${END_COLOR} ]${BOLD}"
-QUESTION_PREFIX="[ ${YELLOW}??${END_COLOR} ]"
-SUCCESS_PREFIX="[ ${GREEN}OK${END_COLOR} ]${GREEN}"
-FAIL_PREFIX="[${BOLD}${RED}FAIL${END_COLOR}]${RED}"
+INFO="[ ${BLUE}..${END} ] "
+IMPORTANT="[ ${BOLD}${YELLOW}!!${END} ]${YELLOW} "
+QUESTION="[ ${BOLD}${YELLOW}??${END} ]${BOLD} "
+SUCCESS="[ ${GREEN}OK${END} ]${GREEN} "
+FAIL="[${BOLD}${RED}FAIL${END}]${RED} "
 
-LOG_INDENT="       "
+INDENT="       "
 
-## helper functions
 # log info to the cli
 log () {
     # set defaults
-    local msg='' log=$1 type=${2:-info} title=${3:-$title} suffix=${4:-'\n'} log_prefix=$log_prefix
+    local msg='' log=$1 type=${2:-info} suffix=${3:-'\n'} prefix=$4
+    [[ $type = question ]] && suffix=""
     # add log prompt prefix
-    if [[ ! -z "$log_prefix" ]] && [[ "$log_prefix" != "false" ]]; then
-        msg+="${log_prefix} "
+    if [[ ! -z "$prefix" ]] && [[ "$prefix" != "false" ]]; then
+        msg+="${prefix}"
     else
         case "$type" in
             question)
-                msg+="${QUESTION_PREFIX} ";;
+                msg+="${QUESTION} ";;
             important)
-                msg+="${IMPORTANT_PREFIX} ";;
+                msg+="${IMPORTANT} ";;
             success)
-                msg+="${SUCCESS_PREFIX} ";;
+                msg+="${SUCCESS} ";;
             fail)
-                msg+="${FAIL_PREFIX} ";;
+                msg+="${FAIL} ";;
             info)
-                msg+="${INFO_PREFIX} ";;
+                msg+="${INFO} ";;
             *)
-                msg+="${INFO_PREFIX} ";;
+                msg+="${INFO} ";;
         esac
     fi
     # text styles for the line
     [[ $type = important ]] && msg+="${BOLD}"
     # add msg title
     if [[ ! -z $title ]]; then
-        msg+="${END_COLOR}[${BLUE}${title}${END_COLOR}] "
-    fi
-    # add default msg color
-    if [[ $type = question ]]; then
-        msg+="${YELLOW}"
-    elif [[ $type = fail ]]; then
-        msg+="${RED}"
+        msg+="[${title}] "
     fi
     # build log msg
-    msg+="${log}${END_COLOR}${suffix}"
+    msg+="${log}${END}${suffix}"
     echo -en "$msg"
 }
-# ask for user input
 ask () {
-    log "$1" question "$title" " "
-    read -r $2 < /dev/tty
+    read -r -p "$(log "$1 " question)" < /dev/tty
 }
 # ask for a y|n response
 yes_no () {
-    log "${1} ${CYAN}[y|n]" question "$title" " "
-    read -n 1 -r "$2" < /dev/tty
+    local msg="$1 ${CYAN}[y|n] "
+    read -n 1 -r -p "$(log "$msg" question)" < /dev/tty
     echo ''
-    [[ ! ${!2} =~ ^(y|n)$ ]] && log 'Not a valid response' important && yes_no "$@"
+    [[ ! $REPLY =~ ^(y|n)$ ]] && log 'Not a valid response' important && yes_no "$@"
 }
 # continue when ready
 continue_when_ready () {
-    local msg="${1:-Hit ${CYAN}[enter]${END_COLOR} to continue.}"
+    local msg="${1:-Hit ${CYAN}[enter]${END} to continue.}"
     local value=${2:-''}
-    ask "$msg" user_input
+    read -r -p "$(log "$msg " question)" user_input
     [[ $user_input = "$value" ]] && return 0 || log 'Not a valid response.' important && continue_when_ready "$@"
 }
 # throw an error and quit
@@ -92,7 +84,6 @@ fail () {
 }
 
 # export -f log
-# export -f ask
 # export -f yes_no
 # export -f fail
 # export -f continue_when_ready

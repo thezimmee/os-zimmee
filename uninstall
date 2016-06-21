@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#
+# uninstall homebrew and other apps (see http://digitizor.com/install-homebrew-osx-el-capitan/)
+
+# grab command line arguments (see http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
+for arg in "$@"; do
+    case $arg in
+        -a=*|--apps=*)
+			CONFIG__apps_dir="${arg#*=}"
+			shift
+			;;
+		-d=*|--dest=*)
+		    OSZ_ROOT="${arg#*=}"
+		    shift
+		    ;;
+		-p=*|--path=*)
+		    CONFIG__install_type=remote
+		    CONFIG__remote_path="${arg#*=}"
+		    shift
+		    ;;
+    esac
+done
+
+# change to $OSZ_ROOT
+[[ -z $OSZ_ROOT ]] && OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd $OSZ_ROOT
+
+# source files
+load_script () {
+    if [[ CONFIG__install_type = remote ]]; then
+        sh -c "`curl -fsSL ${CONFIG__remote_path}/${file}`"
+    else
+        . "${OSZ_ROOT}/${file}"
+    fi
+}
+
+# load config
+[[ $CONFIG__install_type = remote ]] || . "${OSZ_ROOT}/config"
+
+## uninstall node (http://stackoverflow.com/questions/9283472/command-to-remove-all-npm-modules-globally)
+echo -e "[ .. ] Removing NPM packages..."
+npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
+
+## uninstall homebrew
+echo -e "[ .. ] Removing Homebrew..."
+# remove homebrew directories
+rm -rf /usr/local/Cellar
+rm -rf /usr/local/.git
+# run homebrew uninstall sript
+brew cleanup
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+
+## uninstall other apps
+# kwm
+[[ -d "${CONFIG__apps_dir}/kwm" ]] && echo -e "[ .. ] Removing kwm..." ; rm -rf "${CONFIG__apps_dir}/kwm"
+
+## wrap up
+echo -e "[ OK ] Done! Uninstall complete."
+# echo -e "[ .. ] Note: To fix permission issues with Homebrew, see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/"
+echo ''

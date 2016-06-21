@@ -66,6 +66,8 @@ This project is very young. If you run into any issues, please [open an issue](h
 	- [Toggle function keys to on](https://github.com/nelsonjchen/fntoggle)
 	- macOS keyboard shortcuts
 	- Change default xcode files to sublime
+- Functions to add:
+	- check if program exists (http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script)
 - Install node & packages
 	- npm
 	- gulp

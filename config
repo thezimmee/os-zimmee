@@ -3,7 +3,54 @@
 # config to install everything with no questions asked
 
 ## GLOBAL CONFIGURATION
-CONFIG__first-run=true # mimic first run
+CONFIG__force_install=false # forces reinstallation of all apps
+CONFIG__remote_path="https://raw.github.com/thezimmee/os-zimmee/master"
+CONFIG__apps_dir=$HOME/Applications
+
+CONFIG__brew_taps=(
+    caskroom/cask
+    caskroom/versions
+    caskroom/fonts
+)
+CONFIG__brew_apps=(
+    bash
+    imagemagick
+    git
+    mas
+    node
+    wget
+    zsh
+)
+CONFIG__cask_apps=(
+    appcleaner
+    hammerspoon
+    iterm2
+    karabiner
+    seil
+    firefox
+    firefoxdeveloperedition
+    slack
+    sublime-text3
+    filezilla
+    colorpicker
+    google-chrome
+    google-chrome-canary
+    # osx quicklook plugins
+    betterzipql
+    qlcolorcode
+    qlimagesize
+    qlmarkdown
+    qlprettypatch
+    qlstephen
+    quicklook-csv
+    quicklook-json
+    webpquicklook
+    # fonts
+    font-inconsolata
+    font-inconsolata-for-powerline
+    font-open-sans
+    font-bebas-neue
+)
 
 # GLOBAL | paths and file names
 # CONFIG__filenames_setup='setup.sh'
