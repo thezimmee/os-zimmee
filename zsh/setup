@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# change zsh to default shell
+chsh -s /bin/zsh
+log "ZSH was setup as the default shell."
+link_files "zsh"

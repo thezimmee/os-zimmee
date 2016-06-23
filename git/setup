@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# set up git and ssh
+
+setup_ssh () {
+    local response
+    # create new key
+    log "Creating new SSH key... "
+
+    ssh-keygen -t rsa -b 4096 -C "${CONFIG__git_useremail}" -f $CONFIG__sshkey
+    eval "$(ssh-agent -s)"
+    ssh-add "$CONFIG__sshkey"
+    cat $CONFIG__sshkey | pbcopy
+
+    log "A new SSH key was created and copied to your clipboard.\n${INDENT}Paste it into your GitHub account (${MAGENTA}https://github.com/account/ssh${END})."
+    open 'https://github.com/account/ssh'
+    continue_when_ready && log "Completed SSH key setup." success
+}
+
+setup_gitconfig () {
+    local git_credential='cache'
+
+    # set up gitconfig
+    log "Setting up gitconfig..."
+
+    [[ "$(uname -s)" == 'Darwin' ]] && git_credential='osxkeychain'
+
+    if [[ -z $CONFIG__git_username ]] || [[ -z $CONFIG__git_useremail ]]; then
+        log "(user choice) gitconfig was skipped. No user name or email." fail
+        return 1
+    else
+        cat "$OSZ_ROOT/git/gitconfig.local" | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" > "$HOME/.gitconfig.local"
+    fi
+}
+
+# ask user for info if not already in config
+[[ -z $CONFIG__git_username ]] && ask "What do you want your git ${BLUE}user name${END} to be?" && CONFIG__git_username=$REPLY
+[[ -z $CONFIG__git_useremail ]] && ask "What do you want your git ${BLUE}user email${END} to be?" && CONFIG__git_useremail=$REPLY
+
+# should we run ssh?
+if [[ -e "$CONFIG__sshkey" ]]; then
+    file_exists_prompt "$CONFIG__sshkey" "${MAGENTA}${CONFIG__sshkey}${END} already exists. Overwrite it?" "Skipped SSH" && setup_ssh
+else
+    setup_ssh
+fi
+
+# should we run gitconfig?
+if [[ -f "$HOME/.gitconfig.local" ]]; then
+    file_exists_prompt "$HOME/.gitconfig.local" "${MAGENTA}~/.gitconfig.local${END}${BOLD} already exists. Overwrite it?" "Skipped gitconfig" && setup_gitconfig
+else
+    setup_gitconfig
+fi
+
+# process git dotfiles
+link_files "git"

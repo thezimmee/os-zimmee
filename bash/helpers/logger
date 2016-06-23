@@ -16,11 +16,11 @@ MAGENTA="\033[35m"
 CYAN="\033[36m"
 END="\033[0m"
 
-INFO="[ ${BLUE}..${END} ] "
-IMPORTANT="[ ${BOLD}${YELLOW}!!${END} ]${YELLOW} "
-QUESTION="[ ${BOLD}${YELLOW}??${END} ]${BOLD} "
-SUCCESS="[ ${GREEN}OK${END} ]${GREEN} "
-FAIL="[${BOLD}${RED}FAIL${END}]${RED} "
+INFO="[ ${BLUE}..${END} ]"
+WARNING="[ ${BOLD}${YELLOW}!!${END} ]${YELLOW}"
+QUESTION="[ ${BOLD}${CYAN}??${END} ]${BOLD}"
+SUCCESS="[ ${GREEN}OK${END} ]${GREEN}"
+FAIL="[${BOLD}${RED}FAIL${END}]${RED}"
 
 INDENT="       "
 
@@ -30,19 +30,21 @@ log () {
     local msg='' log=$1 type=${2:-info} suffix=${3:-'\n'} prefix=$4
     [[ $type = question ]] && suffix=""
     # add log prompt prefix
-    if [[ ! -z "$prefix" ]] && [[ "$prefix" != "false" ]]; then
+    if [[ $prefix = false ]]; then
+        msg+=""
+    elif [[ ! -z $prefix ]]; then
         msg+="${prefix}"
     else
         case "$type" in
             question)
                 msg+="${QUESTION} ";;
-            important)
-                msg+="${IMPORTANT} ";;
+            warning)
+                msg+="${WARNING} ";;
             success)
                 msg+="${SUCCESS} ";;
             fail)
                 msg+="${FAIL} ";;
-            info)
+            info|important)
                 msg+="${INFO} ";;
             *)
                 msg+="${INFO} ";;
@@ -50,6 +52,8 @@ log () {
     fi
     # text styles for the line
     [[ $type = important ]] && msg+="${BOLD}"
+    [[ $type = warning ]] && msg+="${BOLD}"
+    [[ $type = fail ]] && msg+="${BOLD}"
     # add msg title
     if [[ ! -z $title ]]; then
         msg+="[${title}] "
@@ -66,21 +70,44 @@ yes_no () {
     local msg="$1 ${CYAN}[y|n] "
     read -n 1 -r -p "$(log "$msg" question)" < /dev/tty
     echo ''
+    [[ $REPLY = y ]] && return 0 || return 1
     [[ ! $REPLY =~ ^(y|n)$ ]] && log 'Not a valid response' important && yes_no "$@"
 }
 # continue when ready
 continue_when_ready () {
     local msg="${1:-Hit ${CYAN}[enter]${END} to continue.}"
     local value=${2:-''}
-    read -r -p "$(log "$msg " question)" user_input
-    [[ $user_input = "$value" ]] && return 0 || log 'Not a valid response.' important && continue_when_ready "$@"
+    if [[ -z "$2" ]]; then
+        read -r -n1 -p "$(log "$msg " question)" user_input
+    else
+        read -r -p "$(log "$msg " question)" user_input
+    fi
+    [[ $user_input = "$value" ]] && return 0 || log "Not a valid response." warning && continue_when_ready "$@"
+}
+# overwrite / backup / skip?
+file_exists_prompt () {
+    local file="$1" yes_no_msg="$2" skip_msg="$3"
+
+    if [[ "$CONFIG__setup_mode" = overwrite ]]; then
+        [[ -e "$file" ]] && rm -r "$file"
+        return 0
+    elif [[ "$CONFIG__setup_mode" = backup ]]; then
+        [[ -e "$file" ]] && mv "$file" "${file}.backup"
+        return 0
+    elif [[ "$CONFIG__setup_mode" = skip ]]; then
+        log "${skip_msg} (skip mode)."
+        return 1
+    else
+        yes_no "$yes_no_msg" && rm -r "$file" && return 0
+        return 1
+    fi
 }
 # throw an error and quit
 fail () {
     local msg="$1" should_exit="$2"
     log "$msg" fail
     echo ''
-    [[ $should_exit ]] && exit
+    [[ $should_exit ]] && exit 1
 }
 
 # export -f log

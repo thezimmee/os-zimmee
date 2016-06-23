@@ -2,79 +2,16 @@
 #
 # installs and configures OS Zimmee
 
-# scripts to source
-scripts=(
-    "config"
-    "bash/helpers/logger"
-)
-
-# grab command line arguments (see http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
-for arg in "$@"; do
-    case $arg in
-        -p=*|--path=*)
-            CONFIG__install_type=remote
-            CONFIG__remote_path="${arg#*=}"
-            shift
-            ;;
-        -d=*|--dest=*)
-            OSZ_ROOT="${arg#*=}"
-            shift
-            ;;
-        -a=*|--apps=*)
-            CONFIG__apps_dir="${arg#*=}"
-            shift
-            ;;
-        -f|--force)
-            CONFIG__force_install=true
-            shift
-            ;;
-    esac
-done
-
-## set OSZ root & source other files
-if [[ $CONFIG__install-type = remote ]]; then
-    # remote installation (git only)
-    CONFIG__brew_apps=(git)
-    CONFIG__brew_taps=()
-    CONFIG__cask_apps=()
-fi
-
-# change to $OSZ_ROOT
-[[ -z $OSZ_ROOT ]] && OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
-cd $OSZ_ROOT
-
-# trap exit
-trap bashtrap INT
-bashtrap() {
-    echo ''
-    log "[ctrl+c] was pressed... exiting setup." important
-    echo ''
-    exit
-}
-
-# source files
-load_script () {
-    if [[ CONFIG__install_type = remote ]]; then
-        sh -c "`curl -fsSL ${CONFIG__remote_path}/${file}`"
-    else
-        . "${OSZ_ROOT}/${file}"
-    fi
-}
-
-# install any apps with install.sh
-install_other_apps () {
-    while read installer ; do
-        log "Installing ${installer}..."
-        . "$installer"
-    done < <(find $OSZ_ROOT -name "install.sh" -not -path "*homebrew/$SETUP_FILE" -not -path "*.git")
-}
-
 install_homebrew () {
-    log "Installing Homebrew..."
+    # exit if already installed
+    if $(command -v brew); then
+        log "Homebrew already installed."
+        return 1
+    fi
+
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     for tap in "${CONFIG__brew_taps[@]}"; do
-        log "Installing Homebrew tap: ${tap}..."
         brew tap "${tap}"
     done
 
@@ -88,87 +25,52 @@ install_homebrew_apps () {
 
     # install brew apps
     for app in "${CONFIG__brew_apps[@]}"; do
-        if brew list -1 | grep -q "${app}"; then
+        ((count_total++))
+        if brew list -1 | grep -q "${app##*/}"; then
             log "${app} already installed."
             ((count_skipped++))
         else
-            log "Installing ${app} (with Homebrew)..."
-            brew install "${app}"
+            log "Installing ${app} (with Homebrew)..." important
+            brew install "$app"
             ((count_installed++))
         fi
-        ((count_total++))
     done
     # install cask apps
     for app in "${CONFIG__cask_apps[@]}"; do
-        if brew cask list -1 | grep -q "${app}"; then
+        ((count_total++))
+        if brew cask list -1 | grep -q "${app##*/}"; then
             log "${app} already installed."
             ((count_skipped++))
         else
-            log "Installing ${app} (with Homebrew cask)..."
-            brew cask install "${app}"
+            log "Installing ${app} (with Homebrew cask)..." important
+            brew cask install "$app"
             ((count_installed++))
         fi
-        ((count_total++))
     done
 
-    log "${BLUE}${count_installed}${END_COLOR} Homebrew apps installed; ${BLUE}${count_skipped}${END_COLOR} were already installed (${BLUE}${count_total}${END_COLOR} total)."
+    log "${BLUE}${count_installed}${END_COLOR} app(s) installed; ${BLUE}${count_skipped}${END_COLOR} were skipped (${BLUE}${count_total}${END_COLOR} total)." important
 
-    log "Updating Homebrew apps..."
     brew update && brew upgrade && brew doctor
-    log "Done!"
 }
 
-reset_env () {
-    unset scripts
-    unset CONFIG__force_install
-    unset CONFIG__remote_path
-    unset CONFIG__brew_taps
-    unset CONFIG__brew_apps
-    unset CONFIG__cask_apps
-    unset CONFIG__filenames_setup
-    unset CONFIG__filenames_symlink
-    unset CONFIG__brewfile_dir
-    unset CONFIG__git_username
-    unset CONFIG__git_useremail
-    unset CONFIG__sshkey
-    unset CONFIG__kwm_app_dir
-    unset CONFIG__launch_dir
-    unset CONFIG__kwm_plist_file
+install_node_packages () {
+    # Update npm and install global modules.
+    local count_installed=0 count_skipped=0
+    for package in "${CONFIG__npm_globals[@]}"; do
+        if test $(npm list "${package}"); then
+            log "Installing npm package: ${package}..."
+            npm install -g "${package}"
+            (($count_installed++))
+        else
+            log "${package} already installed."
+            ((count_skipped++))
+        fi
+    done
+
+    log "${BLUE}${count_installed}${END_COLOR} npm packages installed; ${BLUE}${count_skipped}${END_COLOR} already installed."
 }
 
-# uninstall if set to force reinstall
-if [[ $CONFIG__force_install = true ]]; then
-    yes_no "${red}Are you sure you want to reinstall everything?${END}" question
-    [[ $REPLY = y ]] && load_script "uninstall"
-fi
-
-# source configuration / helper files
-for script in scripts; do
-    load_script "$script"
-done
-
-# install homebrew
-if test $(type brew); then
-    log "Homebrew already installed."
-else
-    install_homebrew
-fi
-
-# install homebrew apps
-install_homebrew_apps
-
-# install all other apps (install.sh)
-install_other_apps
-
-# unset variables
-reset_env
-
-# wrap up
-if [[ $CONFIG__force_install = true ]]; then
-    log "Homebrew and git installations were completed!" success
-    log "You should now do the following:\n       1) Set up your config file;\n       2) Run the install script from your local \$OSZ_ROOT directory." important
-else
-    log "Woot woot! OSZ installation is complete!" success
-fi
-log "Enjoy OSZ!"
-echo ''
+# install homebrew & apps
+install_homebrew || fail "Something went wrong with installing Homebrew..." true
+install_homebrew_apps || fail "Something went wrong with installing Homebrew apps..." true
+install_node_packages || fail "Something went wrong with installing node packages..." true

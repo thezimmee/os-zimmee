@@ -1,0 +1,101 @@
+# add symlink to a file
+
+# export -f setup_dotfiles
+
+link_file () {
+    # set local defaults
+    local src=$1 dest=${2:-$HOME} add_dot_prefix=$3 msg_suffix
+    local overwrite= backup= skip=
+
+    [[ "$CONFIG__setup_mode" = overwrite ]] && overwrite=true backup=false skip=false
+    [[ "$CONFIG__setup_mode" = backup ]] && overwrite=false backup=true skip=false
+    [[ "$CONFIG__setup_mode" = skip ]] && overwrite=false backup=false skip=true
+
+    # add dot prefix for dotfiles
+    if [[ $add_dot_prefix = true ]]; then
+        dest="$(dirname $dest)/.$(basename "${dest%.*}")"
+    fi
+
+    # if file already exists as any type of file
+    if [[ -e "$dest" ]]; then
+        if [[ ! "$CONFIG__setup_mode" =~ ^(overwrite|backup|skip)$ ]]; then
+            # skip if $dest symlink already points to $src
+            if [ "$(readlink "$dest")" == "$src" ]; then
+                log "Already symlinked ${MAGENTA}${dest}${END}\n${INDENT}  ${DIM}to: ${MAGENTA}${src}${END}" success
+                return 0
+            fi
+
+            # otherwise ask what to do
+            log "${MAGENTA}${dest}${END} already exists. What do you want to do?${END}\n${INDENT}  ${CYAN}[s]${END}kip it;\n${INDENT}  ${CYAN}[S]${END}kip all;\n${INDENT}  ${CYAN}[o]${END}verwrite it;\n${INDENT}  ${CYAN}[O]${END}verwrite all;\n${INDENT}  ${CYAN}[b]${END}ackup;\n${INDENT}  ${CYAN}[B]${END}ackup all.\n${QUESTION} => " question " "
+            read -r -e -n 1 REPLY < /dev/tty
+
+            case "$REPLY" in
+                o )
+                    overwrite=true
+                    ;;
+                O )
+                    overwrite=true
+                    $CONFIG__setup_mode=overwrite
+                    ;;
+                b )
+                    backup=true
+                    ;;
+                B )
+                    backup=true
+                    $CONFIG__setup_mode=backup
+                    ;;
+                s )
+                    skip=true
+                    ;;
+                S )
+                    $CONFIG__setup_mode=skip
+                    skip_all=true
+                    ;;
+                * )
+                    ;;
+            esac
+        fi
+
+        if [[ "$overwrite" = true ]]; then
+            rm -rf "$dest"
+            msg_suffix="\n${INDENT}  ${DIM}original was removed${END}"
+        elif [[ "$backup" = true ]]; then
+            mv "$dest" "${dest}.backup"
+            msg_suffix="\n${INDENT}  ${DIM}original backed up to: ${MAGENTA}${dest}.backup${END}"
+        elif [[ "$skip" = true ]]; then
+            return 1
+        fi
+    fi
+
+    if [[ "$skip" != "true" ]]; then
+        mkdir -p "$(dirname "$dest")"
+        ln -s "$src" "$dest"
+        log "Success! Symlinked ${MAGENTA}${dest}${END}\n${INDENT}  ${DIM}to: ${MAGENTA}${src}${END}${msg_suffix}" success ""
+        return 0
+    fi
+}
+
+# process glob of files
+link_dotfiles () {
+    local app_name="$1"
+    local app_dir="${OSZ_ROOT}/${app_name}"
+    local app_files="${CONFIG__filenames_symlink:-*.link}"
+    local dest
+    local dotfiles_completed=0
+    local dotfiles_total=0
+
+    log "Linking dotfiles for ${BLUE}${app_name}${END}..."
+
+    # check if link has .link
+    [[ -d "${app_dir}.link" ]] && app_dir="${app_dir}.link"
+
+    # iterate over src files
+    for dotfile in $(find -H "$app_dir" -maxdepth 2 -name "$app_files" -not -path '*.git*'); do
+        dest="$HOME/.$(basename "${dotfile%.*}")"
+        link_file "$dotfile" "$dest" && ((dotfiles_completed++))
+        ((dotfiles_total++))
+    done
+
+    log "Completed ${BLUE}${dotfiles_completed} of ${dotfiles_total//[[:blank:]]/} dotfile(s)${GREEN} from ${MAGENTA}${app_dir}/${app_files}${END}." success
+    echo ""
+}

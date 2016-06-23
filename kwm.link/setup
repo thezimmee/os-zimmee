@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# setup kwm tiling window manager
+
+function setup_kwm () {
+	# start kwm
+	brew services start homebrew/binary/kwm
+}
+
+setup_kwm
+link_files "kwm"

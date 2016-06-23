@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# update apps from the app store
+sudo softwareupdate -i -a

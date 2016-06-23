@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#
+# installs and configures OS Zimmee
+
+# grab command line arguments & set defaults
+REPO="$1"
+OSZ_ROOT="$2"
+ERROR_MSG=""
+
+[[ ! -z "$OSZ_ROOT" ]] && [[ -z "$REPO" ]] && do_clone=true
+
+# trap exit
+trap bashtrap INT
+bashtrap() {
+    echo ''
+    echo "[ .. ] [ctrl+c] was pressed... exiting setup."
+    echo ''
+    exit
+}
+
+install_homebrew () {
+    # install homebrew
+    if $(command -v brew); then
+        echo "[ .. ] Homebrew already installed."
+    else
+        log "[ .. ] Installing Homebrew..."
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    # fix homebrew permissions (see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/)
+    sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
+}
+
+install_git () {
+    # install apps
+    echo "[ .. ] Installing git..."
+    brew install git
+}
+
+update_homebrew () {
+    echo "[ .. ] Updating homebrew..."
+    brew update && brew upgrade && brew doctor
+}
+
+clone_repo () {
+    git clone --recursive "$REPO" "$OSZ_ROOT"   
+}
+
+# install & update
+install_homebrew || ERROR_MSG+="[FAIL] Homebrew installation failed. :(\n"
+install_git || ERROR_MSG+="[FAIL] git installation failed. :(\n"
+update_homebrew && ERROR_MSG+="[ .. ] Done! Run 'brew clean' to clean up old stuff." || echo "[ .. ]  Homebrew update failed. :("
+
+# clone git, if OSZ_ROOT is passed
+if [[ $do_clone = true ]]; then
+    clone_repo || ERROR_MSG="[FAIL] Something went wrong with cloning ${REPO}. You may want to do this manually."
+fi
+
+# wrap up
+if [[ "$ERROR_MSG" != "" ]]; then
+    echo "[FAIL] There was a problem with the installation..."
+    echo -e "${ERROR_MSG}"
+    echo "---"
+    echo "[ .. ] Either try again or manually install git and clone the repo."
+    echo "Sorry 'bout that."
+else
+    echo -e "[ OK ] Woot woot! OSZ installation is complete!"
+    echo -e "[ OK ] Homebrew and git were installed."
+    echo -e "[ OK ] The repo was cloned to: ${OSZ_ROOT}."
+    echo -e "[ OK ] You are now ready to set up OSZ to your liking."
+    echo -e "[ !! ] Next steps:\n       1) Edit \$OSZ_ROOT/config to your liking;\n       2) Run \$OSZ_ROOT/bootstrap.\n       3) Enjoy! :)"
+fi
+echo ''

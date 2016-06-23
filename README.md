@@ -22,12 +22,12 @@ This project is heavily inspired by:
 	cd ~/YOUR_DIRECTORY
 	```
 
-2. Otherwise, install using curl:
+<!-- 2. Otherwise, install using curl:
 	```sh
-	sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/setup.sh`"
+	sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/install-remote`"
 	```
 
-	This will automatically install git with Homebrew and clone the repo.
+	This will automatically install git with Homebrew and clone the repo. -->
 
 3. Customize the settings found in `$OSZ_ROOT/config`.
 
@@ -61,7 +61,7 @@ This project is very young. If you run into any issues, please [open an issue](h
 
 <!--
 ## TODO
-
+- Opt out of brew anonymous stats (https://git.io/brew-analytics)
 - Update my macOS preferences
 	- [Toggle function keys to on](https://github.com/nelsonjchen/fntoggle)
 	- macOS keyboard shortcuts

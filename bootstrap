@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+#
+# installs and configures OS Zimmee
+
+# set OSZ_ROOT
+OSZ_ROOT="$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)"
+
+echo "ROOT: $OSZ_ROOT"
+
+# source config & helper scripts
+. $OSZ_ROOT/config
+. $OSZ_ROOT/bash/helpers/logger
+. $OSZ_ROOT/bash/helpers/link_files
+
+# set other defaults
+ERROR_COUNT=0
+
+# grab command line arguments (see http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
+for arg in "$@"; do
+    case $arg in
+        -U)
+            CONFIG__run_type=update
+            ;;
+        -I)
+            CONFIG__run_type=install
+            ;;
+        -S)
+            CONFIG__run_type=setup
+            ;;
+        --app=*)
+            APP_MODE="${arg#*=}"
+            ;;
+        -K)
+            CONFIG__run_mode=skip
+            ;;
+        -O)
+            CONFIG__run_mode=overwrite
+            ;;
+        -B)
+            CONFIG__run_mode=backup
+            ;;
+        *)
+            ;;
+    esac
+done
+
+run_app () {
+    local app_dir="$1"
+    local app_name=$(basename "${app_dir}")
+    local ran=0
+
+    [[ ! -d "$app_dir" ]] && app_dir="${app_dir}.link"
+
+    if [[ "$CONFIG__run_type" = install ]]; then
+        if [[ -f "${app_dir}/install" ]]; then
+            log "Installing ${app_name}..." important
+            . "${app_dir}/install" || { log "Something went wrong with ${app_name} install..." fail; ((ERROR_COUNT+=1)); return 1; }
+            ((ran+=1))
+        fi
+    fi
+    if [[ "$CONFIG__run_type" = update ]] || [[ "$CONFIG__run_type" = install ]]; then
+        if [[ -f "${app_dir}/update" ]]; then
+            log "Updating ${app_name}..." important
+            . "${app_dir}/update" || { log "Something went wrong with ${app_name} update..." fail; ((ERROR_COUNT+=1)); return 1; }
+            ((ran+=1))
+        fi
+    fi
+    if [[ "$CONFIG__run_type" = setup ]] || [[ "$CONFIG__run_type" = install ]]; then
+        if [[ -f "${app_dir}/setup" ]]; then
+            log "Setting up ${app_name}..." important
+            . "${app_dir}/setup" || { log "Something went wrong with ${app_name} setup..." fail; ((ERROR_COUNT+=1)); return 1; }
+            ((ran+=1))
+        fi
+    fi
+
+    [[ $ran -gt 0 ]] && log "Finished ${app_name}!" success
+}
+
+# iterate over app directories to install/setup/update
+run_all_apps () {
+    [[ "$APP_MODE" ]] && { run_app "$APP_MODE"; return 0; }
+
+    for dir in $(find -H "$OSZ_ROOT" -type d -mindepth 1 -maxdepth 1 -not -path '*.git*'); do
+        run_app "$dir"
+    done
+}
+
+# ask user what to do
+run_type_prompt () {
+    ask "What would you like to do?${END}\n${INDENT}  ${CYAN}[1]${END}: Fresh install\n${INDENT}  ${CYAN}[2]${END}: Update OSZ\n${INDENT}  ${CYAN}[3]${END}: Run setup\n${QUESTION}${CYAN} =>${END}"
+
+    case "$REPLY" in
+        1)
+            CONFIG__run_type=install
+            ;;
+        2)
+            CONFIG__run_type=update
+            ;;
+        3)
+            CONFIG__run_type=setup
+            ;;
+        *)
+            CONFIG__run_type=setup
+            APP_MODE="$REPLY"
+            ;;
+    esac
+}
+
+# ask user how to do it
+run_mode_prompt () {
+    ask "How would you like to handle existing file conflicts?${END}\n${INDENT}  ${CYAN}[k]${END}: Keep old files\n${INDENT}  ${CYAN}[o]${END}: Overwrite old files\n${INDENT}  ${CYAN}[b]${END}: Backup old files\n${INDENT}  ${CYAN}[a]${END}: Ask with each conflict\n${QUESTION}${CYAN} =>${END}"
+
+    case "$REPLY" in
+        k|K)
+            CONFIG__run_mode=skip
+            ;;
+        o|O)
+            CONFIG__run_mode=overwrite
+            ;;
+        b|B)
+            CONFIG__run_mode=backup
+            ;;
+        a|A)
+            CONFIG__run_mode=ask
+            ;;
+    esac
+}
+
+reset_config () {
+    unset CONFIG__run_type
+    unset CONFIG__run_mode
+}
+
+# get run type
+[[ -z $CONFIG__run_type ]] && run_type_prompt
+# get run mode
+[[ -z $CONFIG__run_mode ]] && run_mode_prompt
+
+# confirm if mode=overwrite
+if [[ $CONFIG__run_mode = overwrite ]]; then
+    continue_when_ready "Your settings will ${RED}overwrite${END}${BOLD} app files if they already exist.\n${INDENT}Are you sure? Type '${CYAN}yes${END}${BOLD}' to continue:${END} ${CYAN}=>${END}${BOLD}" "yes"
+fi
+
+# run it
+[[ ! -z $APP_MODE ]] && app_msg="${MAGENTA}${APP_MODE} ${BLUE}"
+log "${BOLD}Running ${BLUE}${app_msg}${CONFIG__run_type}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}." important
+
+if [[ "$CONFIG__run_type" = install ]]; then
+    # install homebrew apps
+    . "${OSZ_ROOT}/install" || { log "Something went wrong with OSZ install..." fail; exit 1; }
+    log "Install complete! ${BLUE}Run 'brew clean' to clean up old stuff." important
+elif [[ "$CONFIG__run_type" = update ]]; then
+    # update homebrew apps
+    log "Updating Homebrew and brew apps..."
+    brew update && brew upgrade && brew doctor
+fi
+# setup app(s)
+[[ -z "$APP_MODE" ]] && run_all_apps || run_app "${OSZ_ROOT}/${APP_MODE}"
+
+# wrap up
+if [[ "$ERROR_COUNT" -gt 0 ]]; then
+    log "Uh oh... we gots problems... something went wrong..." fail
+else
+    log "Woot woot! OSZ installation is complete!" success
+    # print last steps
+    if [[ -z $APP_MODE ]]; then
+        echo ''
+        log "${YELLOW}${BOLD}[IMPORTANT]: To finish setup, do the following:${END}" important "\n" false
+        log "  - Manually load preferences from ${MAGENTA}${OSZ_ROOT}/iterm${END}." info "\n" false
+        log "  - Disable [capslock] in macOS preferences (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#usage${END})." info "\n" false
+        log "  - Make sure [capslock] key is set to ${CYAN}[80]${END}, which is the f19 key (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface${END})." info "\n" false
+        echo ''
+        log "${BOLD}${YELLOW}You may also want to set up:${END}" important "\n" false
+        log "  - ${MAGENTA}http://osx.iusethis.com/app/palua" info "\n" false
+        log "  - [${BLUE}Photoshop${END}], [${BLUE}Illustrator${END}], [${BLUE}Snippy${END}], [${BLUE}Blisk${END}], [${BLUE}Parallels${END}]" info "\n\n" false
+    fi
+    log "${GREEN}Enjoy OSZ!" info "\n" "[ ${YELLOW}:)${END} ] "
+fi
+echo ""
+
+reset_config

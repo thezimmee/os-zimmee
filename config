@@ -2,39 +2,44 @@
 #
 # config to install everything with no questions asked
 
-## GLOBAL CONFIGURATION
-CONFIG__force_install=false # forces reinstallation of all apps
-CONFIG__remote_path="https://raw.github.com/thezimmee/os-zimmee/master"
-CONFIG__apps_dir=$HOME/Applications
+## setup options
+# CONFIG__run_type=install # install | setup | update
+# CONFIG__run_mode=ask # ask | overwrite | backup | skip
+CONFIG__remote_path="https://raw.github.com/thezimmee/os-zimmee/master" # where to run remote install from
+CONFIG__apps_dir=$HOME/Applications # where to install user apps to
 
+# homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
     caskroom/cask
     caskroom/versions
     caskroom/fonts
 )
+# homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
     bash
-    imagemagick
     git
+    homebrew/binary/kwm
+    imagemagick
     mas
     node
     wget
     zsh
 )
+# homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
     appcleaner
+    colorpicker
+    filezilla
+    firefox
+    firefoxdeveloperedition
+    google-chrome
+    google-chrome-canary
     hammerspoon
     iterm2
     karabiner
     seil
-    firefox
-    firefoxdeveloperedition
     slack
-    sublime-text3
-    filezilla
-    colorpicker
-    google-chrome
-    google-chrome-canary
+    sublime-text
     # osx quicklook plugins
     betterzipql
     qlcolorcode
@@ -46,25 +51,17 @@ CONFIG__cask_apps=(
     quicklook-json
     webpquicklook
     # fonts
+    font-bebas-neue
     font-inconsolata
     font-inconsolata-for-powerline
     font-open-sans
-    font-bebas-neue
+)
+# node packages to install GLOBALLY with `npm install -g <package>`
+CONFIG__npm_globals=(
+    "gulpjs/gulp-cli#4.0"
 )
 
-# GLOBAL | paths and file names
-# CONFIG__filenames_setup='setup.sh'
-# CONFIG__filenames_symlink='*.link'
-
-# homebrew
-CONFIG__brewfile_dir="$OSZ_ROOT/homebrew"
-
 # git & ssh
-CONFIG__git_username='The Zimmee'
-CONFIG__git_useremail='thezimmee@gmail.com'
+CONFIG__git_username="The Zimmee"
+CONFIG__git_useremail="thezimmee@gmail.com"
 CONFIG__sshkey="$HOME/.ssh/id_rsa.pub"
-
-# kwm
-CONFIG__kwm_app_dir=$HOME/Applications/kwm
-CONFIG__launch_dir=$HOME/Library/LaunchAgents
-CONFIG__kwm_plist_file=$launch_dir/com.koekeishiya.kwm.plist

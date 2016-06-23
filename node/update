@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# node and npm packages
+
+# Update npm and install global modules.
+npm update -g npm
