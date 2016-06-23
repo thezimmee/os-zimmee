@@ -89,16 +89,20 @@ file_exists_prompt () {
     local file="$1" yes_no_msg="$2" skip_msg="$3"
 
     if [[ "$CONFIG__setup_mode" = overwrite ]]; then
-        [[ -e "$file" ]] && rm -r "$file"
+        [[ "$file" != "" ]] && [[ -e "$file" ]] && rm -r "$file"
         return 0
     elif [[ "$CONFIG__setup_mode" = backup ]]; then
-        [[ -e "$file" ]] && mv "$file" "${file}.backup"
+        [[ "$file" != "" ]] && [[ -e "$file" ]] && mv "$file" "${file}.backup"
         return 0
     elif [[ "$CONFIG__setup_mode" = skip ]]; then
         log "${skip_msg} (skip mode)."
         return 1
     else
-        yes_no "$yes_no_msg" && rm -r "$file" && return 0
+        yes_no "$yes_no_msg"
+        if [[ "$REPLY" = y ]]; then
+             [[ "$file" != "" ]] && [[ -e "$file" ]] && rm -r "$file"
+             return 0
+        fi
         return 1
     fi
 }

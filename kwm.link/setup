@@ -8,4 +8,4 @@ function setup_kwm () {
 }
 
 setup_kwm
-link_files "kwm"
+link_dotfiles "kwm"

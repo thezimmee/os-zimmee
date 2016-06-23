@@ -39,7 +39,7 @@ setup_gitconfig () {
 
 # should we run ssh?
 if [[ -e "$CONFIG__sshkey" ]]; then
-    file_exists_prompt "$CONFIG__sshkey" "${MAGENTA}${CONFIG__sshkey}${END} already exists. Overwrite it?" "Skipped SSH" && setup_ssh
+    file_exists_prompt "$CONFIG__sshkey" "${MAGENTA}${CONFIG__sshkey}${END}${BOLD} already exists. Overwrite it?" "Skipped SSH" && setup_ssh
 else
     setup_ssh
 fi
@@ -52,4 +52,4 @@ else
 fi
 
 # process git dotfiles
-link_files "git"
+link_dotfiles "git"

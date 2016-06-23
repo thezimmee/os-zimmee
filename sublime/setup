@@ -22,7 +22,7 @@ function setup_sublime () {
 
 	# set as default text editor
 	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-	log "Set up Sublime as default macOS text editor."
+	log "Set Sublime as default macOS text editor."
 }
 
 setup_sublime
