@@ -3,9 +3,12 @@
 # installs and configures OS Zimmee
 
 # set OSZ_ROOT
-OSZ_ROOT="$(cd "$(dirname "$BASH_SOURCE[0]")" && pwd)"
+# OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
-echo "ROOT: $OSZ_ROOT"
+if [[ -z "$OSZ_ROOT" ]]; then
+    read -r -p "No \$OSZ_ROOT detected. Where is your OSZ_ROOT directory (must be an absolute path)? " < /dev/tty
+    OSZ_ROOT="$REPLY"
+fi
 
 # source config & helper scripts
 . $OSZ_ROOT/config

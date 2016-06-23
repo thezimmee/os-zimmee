@@ -30,6 +30,7 @@ install_homebrew_apps () {
             log "${app} already installed."
             ((count_skipped++))
         else
+            echo ''
             log "Installing ${app} (with Homebrew)..." important
             brew install "$app"
             ((count_installed++))
@@ -42,6 +43,7 @@ install_homebrew_apps () {
             log "${app} already installed."
             ((count_skipped++))
         else
+            echo ''
             log "Installing ${app} (with Homebrew cask)..." important
             brew cask install "$app"
             ((count_installed++))
@@ -58,6 +60,7 @@ install_node_packages () {
     local count_installed=0 count_skipped=0
     for package in "${CONFIG__npm_globals[@]}"; do
         if test $(npm list "${package}"); then
+            echo ''
             log "Installing npm package: ${package}..."
             npm install -g "${package}"
             (($count_installed++))

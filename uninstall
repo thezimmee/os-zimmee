@@ -10,8 +10,8 @@ npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs
 echo -e "[ .. ] Removing Homebrew..."
 brew cleanup
 # remove homebrew directories
-rm -rf /usr/local/Cellar
-rm -rf /usr/local/.git
+# rm -rf /usr/local/Cellar
+# rm -rf /usr/local/.git
 # run homebrew uninstall sript
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 
