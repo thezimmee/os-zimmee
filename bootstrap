@@ -3,9 +3,9 @@
 # installs and configures OS Zimmee
 
 # set OSZ_ROOT
-# OSZ_ROOT="$(cd "$(dirname "$0")" && pwd)"
+OSZ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-if [[ -z "$OSZ_ROOT" ]]; then
+if [[ -z "$OSZ_ROOT" ]] || [[ ! -f "${OSZ_ROOT}/bootstrap" ]]; then
     read -r -p "No \$OSZ_ROOT detected. Where is your OSZ_ROOT directory (must be an absolute path)? " < /dev/tty
     OSZ_ROOT="$REPLY"
 fi
@@ -76,6 +76,8 @@ run_app () {
         fi
     fi
 
+    link_dotfiles "$app_name"
+
     [[ $ran -gt 0 ]] && log "Finished ${app_name}!" success
 }
 
@@ -144,21 +146,27 @@ if [[ $CONFIG__run_mode = overwrite ]]; then
     continue_when_ready "Your settings will ${RED}overwrite${END}${BOLD} app files if they already exist.\n${INDENT}Are you sure? Type '${CYAN}yes${END}${BOLD}' to continue:${END} ${CYAN}=>${END}${BOLD}" "yes"
 fi
 
-# run it
-[[ ! -z $APP_MODE ]] && app_msg="${MAGENTA}${APP_MODE} ${BLUE}"
-log "${BOLD}Running ${BLUE}${app_msg}${CONFIG__run_type}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}." important
+# confirm settings
+[[ $APP_MODE ]] && app_msg="${MAGENTA}${APP_MODE} ${BLUE}"
+continue_when_ready "${BOLD}Running ${BLUE}${app_msg}${CONFIG__run_type}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}. Hit [${CYAN}enter${END}${BOLD}] to continue..."
 
-if [[ "$CONFIG__run_type" = install ]]; then
-    # install homebrew apps
-    . "${OSZ_ROOT}/install" || { log "Something went wrong with OSZ install..." fail; exit 1; }
-    log "Install complete! ${BLUE}Run 'brew clean' to clean up old stuff." important
-elif [[ "$CONFIG__run_type" = update ]]; then
-    # update homebrew apps
-    log "Updating Homebrew and brew apps..."
-    brew update && brew upgrade && brew doctor
+# run it
+if [[ $APP_MODE ]]; then
+    # install mode
+    if [[ $CONFIG__run_type = install ]]; then
+        . "${OSZ_ROOT}/install" || { log "Something went wrong with OSZ install..." fail; exit 1; }
+        log "Install complete! ${BLUE}Run 'brew clean' to clean up old stuff." important
+    fi
+    # update mode
+    if [[ "$CONFIG__run_type" = update ]] || [[ $CONFIG__run_type = install ]]; then
+        # update homebrew apps
+        log "Updating Homebrew and brew apps..."
+        brew update && brew upgrade && brew doctor
+    fi
+    run_app "${OSZ_ROOT}/${APP_MODE}"
+else
+    run_all_apps
 fi
-# setup app(s)
-[[ -z "$APP_MODE" ]] && run_all_apps || run_app "${OSZ_ROOT}/${APP_MODE}"
 
 # wrap up
 if [[ "$ERROR_COUNT" -gt 0 ]]; then

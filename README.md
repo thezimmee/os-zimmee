@@ -61,10 +61,15 @@ This project is very young. If you run into any issues, please [open an issue](h
 
 <!--
 ## TODO
+- Add uninstall option to bootstrap for all and for app
+- Sublime:
+	- Add files to gitignore that shouldn't be tracked
+	- Remove package control apps so apps aren't installed automatically; instead create comma-separated list of apps to install with advanced install in package control
+	- Add preferences for installed apps to /sublime/Packages
 - Opt out of brew anonymous stats (https://git.io/brew-analytics)
-- Update my macOS preferences
+- Sort through desired macOS preferences
 	- [Toggle function keys to on](https://github.com/nelsonjchen/fntoggle)
-	- macOS keyboard shortcuts
+	- add desired macOS keyboard shortcuts
 	- Change default xcode files to sublime
 - Functions to add:
 	- check if program exists (http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script)

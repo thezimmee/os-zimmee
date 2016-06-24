@@ -2,12 +2,6 @@
 #
 # config to install everything with no questions asked
 
-## setup options
-# CONFIG__run_type=install # install | setup | update
-# CONFIG__run_mode=ask # ask | overwrite | backup | skip
-CONFIG__remote_path="https://raw.github.com/thezimmee/os-zimmee/master" # where to run remote install from
-CONFIG__apps_dir=$HOME/Applications # where to install user apps to
-
 # homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
     caskroom/cask
@@ -65,3 +59,7 @@ CONFIG__npm_globals=(
 CONFIG__git_username="The Zimmee"
 CONFIG__git_useremail="thezimmee@gmail.com"
 CONFIG__sshkey="$HOME/.ssh/id_rsa.pub"
+
+## setup options (bootstrap will ask you for these values unless you add them here)
+# CONFIG__run_type=install # install | setup | update
+# CONFIG__run_mode=ask # ask | overwrite | backup | skip
