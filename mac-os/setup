@@ -871,6 +871,6 @@ setup_macos () {
 	log $title "macOS configuration complete. Some changes may require a logout/restart to take effect." success
 }
 
-file_exists_handler "" "Resetting macOS configuration may erase some current settings. Continue anyway?" "Skipping macOS configuration" && setup_macos
+overwrite_handler "Resetting macOS configuration may erase some current settings" true && setup_macos
 
 return 0

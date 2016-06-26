@@ -3,6 +3,8 @@ export OSZ_ROOT=$HOME/Projects/os-new
 
 # github token for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463
+# opt out of homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Projects

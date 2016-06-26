@@ -350,14 +350,7 @@ fi
 echo ''
 # print last steps
 if [[ -z $APP_MODE ]] && [[ $CONFIG__run_type = install ]]; then
-    log "${YELLOW}${BOLD}[IMPORTANT]: Remember to do the following to complete setup:${END}" important "\n" false
-    log "  - Manually load preferences from ${MAGENTA}${OSZ_ROOT}/iterm${END}." info "\n" false
-    log "  - Disable [capslock] in macOS preferences (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#usage${END})." info "\n" false
-    log "  - Make sure [capslock] key is set to ${CYAN}[80]${END}, which is the f19 key (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface${END})." info "\n" false
-    echo ''
-    log "${BOLD}${YELLOW}You may also want to set up:${END}" important "\n" false
-    log "  - ${MAGENTA}http://osx.iusethis.com/app/palua" info "\n" false
-    log "  - [${BLUE}Photoshop${END}], [${BLUE}Illustrator${END}], [${BLUE}Snippy${END}], [${BLUE}Blisk${END}], [${BLUE}Parallels${END}]" info "\n\n" false
+    log "${YELLOW}${BOLD}[IMPORTANT]: Remember to complete any post-installation steps listed in ${MAGENTA}$OSZ_ROOT/README.md${END}${BOLD}.${END}" important "\n" false
 fi
 log "${GREEN}Enjoy OSZ!" info "\n" "[ ${YELLOW}:)${END} ] "
 echo ""

@@ -14,8 +14,7 @@ function setup_sublime () {
 
 	# install package control
 	if [ -f "$package_controle_file" ]; then
-		file_exists_handler "$package_controle_file" "Sublime package controle already installed. Reinstall it?" "Skipped install of Sublime package control." && install_package_control
-		log "Installed package control."
+		overwrite_handler "$package_controle_file" && install_package_control && log "Installed package control."
 	else
 		install_package_control
 	fi

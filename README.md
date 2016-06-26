@@ -39,6 +39,36 @@ This project is heavily inspired by:
 
 The project is structured by topic, which makes it simple to add/remove apps or sets of config files. It should also easy to clone other helpful repos and consume them.
 
+## Post Installation Steps
+
+There are some steps that either couldn't or haven't yet been automated. After installing OSZ, make sure to take these post-installation steps for each app.
+
+### The "hyper" key (capslock)
+
+Make sure to do the following to ensure the "hyper" key works:
+
+- [Disable `capslock` in macOS preferences](https://pqrs.org/osx/karabiner/seil.html.en#usage)
+- [Make sure `capslock` is set to `80` (which is the `f19` key)](https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface)
+
+### Installing Sublime Packages
+
+To install all Sublime packages, initiate the `Package Control: Advanced Install Package` command and paste this list of packages to install them all at once:
+
+`AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, MarkdownPreview, MarkdownTOC, Material Theme, MaxPane, MoveTab, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal`
+
+### iTerm preferences
+
+All preferences are stored in `$OSZ_ROOT/iTerm`, but need to be manually loaded in iTerm preferences.
+
+### Other apps to consider installing:
+
+- [palua](http://osx.iusethis.com/app/palua)
+- Photoshop
+- Illustrator
+- Snippy
+- Blisk
+- Parallels
+
 <!-- ### Special file types
 
 Files with the following conventions have special meaning:
@@ -61,17 +91,17 @@ This project is very young. If you run into any issues, please [open an issue](h
 
 <!--
 ## TODO
-- Add uninstall option to bootstrap for all and for app
-- Add a "repo list" to be able to update all my repos
-- Sublime:
-	- Add files to gitignore that shouldn't be tracked
-	- Remove package control apps so apps aren't installed automatically; instead create comma-separated list of apps to install with advanced install in package control
-	- Add preferences for installed apps to /sublime/Packages
-- Opt out of brew anonymous stats (https://git.io/brew-analytics)
+- add command to toggle between amethyst and kwm
+- find keyboard shortcut to move window to next/prev space
+- configure kwm:
+	- Add ability to save layouts
+	- Add notification for mode of current window (which is displayed when mode is toggled)
 - Sort through desired macOS preferences
 	- [Toggle function keys to on](https://github.com/nelsonjchen/fntoggle)
 	- add desired macOS keyboard shortcuts
 	- Change default xcode files to sublime
+- Add a "repo list" to be able to update all my repos
+- Configure hammerspoon
 - Functions to add:
 	- check if program exists (http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script)
 - Install node & packages
@@ -88,10 +118,6 @@ This project is very young. If you run into any issues, please [open an issue](h
 	- vtop?
 	- shelljs & shx
 - Add fuzzy-history to zsh
-- Add ability to run install with no questions?
-- kwm / hammerspoon:
-	- Add ability to save layouts
-	- Add notification for mode of current window (which is displayed when mode is toggled)
 - update git repos
 - Convert OSZ to javascript for use with shelljs?
 - apps to install:
@@ -99,6 +125,7 @@ This project is very young. If you run into any issues, please [open an issue](h
 	- illustrator
 	- xcode
 	- postman
+	- forklift?
 - other apps to consider:
 	- amethyst
 	- moom

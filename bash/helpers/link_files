@@ -14,7 +14,7 @@ link_file () {
 
     # if file already exists as any type of file
     if [[ -e "$dest" ]]; then
-        file_exists_handler "$dest" && skip=false || skip=true
+        overwrite_handler "$dest" && skip=false || skip=true
     fi
 
     if [[ "$skip" != "true" ]]; then
