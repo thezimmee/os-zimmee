@@ -4,26 +4,17 @@
 
 # grab command line arguments & set defaults
 REPO="$1"
-OSZ_ROOT="$2"
+OSZ_ROOT="${OSZ_ROOT:-2}"
 ERROR_MSG=""
 
 [[ ! -z "$OSZ_ROOT" ]] && [[ -z "$REPO" ]] && do_clone=true
 
-# trap exit
-trap bashtrap INT
-bashtrap() {
-    echo ''
-    echo "[ .. ] [ctrl+c] was pressed... exiting setup."
-    echo ''
-    exit
-}
-
 install_homebrew () {
     # install homebrew
-    if $(command -v brew); then
+    if $(type -t brew); then
         echo "[ .. ] Homebrew already installed."
     else
-        log "[ .. ] Installing Homebrew..."
+        echo "[ .. ] Installing Homebrew..."
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 

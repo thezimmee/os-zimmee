@@ -50,3 +50,6 @@ if [[ -f "$HOME/.gitconfig.local" ]]; then
 else
     setup_gitconfig
 fi
+
+# return successfully
+return 0

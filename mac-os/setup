@@ -872,3 +872,5 @@ setup_macos () {
 }
 
 file_exists_prompt "" "Resetting macOS configuration may erase some current settings. Continue anyway?" "Skipping macOS configuration" && setup_macos
+
+return 0

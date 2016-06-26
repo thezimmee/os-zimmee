@@ -62,6 +62,7 @@ This project is very young. If you run into any issues, please [open an issue](h
 <!--
 ## TODO
 - Add uninstall option to bootstrap for all and for app
+- Add a "repo list" to be able to update all my repos
 - Sublime:
 	- Add files to gitignore that shouldn't be tracked
 	- Remove package control apps so apps aren't installed automatically; instead create comma-separated list of apps to install with advanced install in package control

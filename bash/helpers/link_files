@@ -7,9 +7,9 @@ link_file () {
     local src=$1 dest=${2:-$HOME} add_dot_prefix=$3 msg_suffix
     local overwrite= backup= skip=
 
-    [[ "$CONFIG__setup_mode" = overwrite ]] && overwrite=true backup=false skip=false
-    [[ "$CONFIG__setup_mode" = backup ]] && overwrite=false backup=true skip=false
-    [[ "$CONFIG__setup_mode" = skip ]] && overwrite=false backup=false skip=true
+    [[ "$CONFIG__run_mode" = overwrite ]] && overwrite=true backup=false skip=false
+    [[ "$CONFIG__run_mode" = backup ]] && overwrite=false backup=true skip=false
+    [[ "$CONFIG__run_mode" = preserve ]] && overwrite=false backup=false skip=true
 
     # add dot prefix for dotfiles
     if [[ $add_dot_prefix = true ]]; then
@@ -18,7 +18,7 @@ link_file () {
 
     # if file already exists as any type of file
     if [[ -e "$dest" ]]; then
-        if [[ ! "$CONFIG__setup_mode" =~ ^(overwrite|backup|skip)$ ]]; then
+        if [[ ! "$CONFIG__run_mode" =~ ^(overwrite|backup|preserve)$ ]]; then
             # skip if $dest symlink already points to $src
             if [ "$(readlink "$dest")" == "$src" ]; then
                 log "Already symlinked ${MAGENTA}${dest}${END}\n${INDENT}  ${DIM}to: ${MAGENTA}${src}${END}" success
@@ -35,20 +35,20 @@ link_file () {
                     ;;
                 O )
                     overwrite=true
-                    $CONFIG__setup_mode=overwrite
+                    $CONFIG__run_mode=overwrite
                     ;;
                 b )
                     backup=true
                     ;;
                 B )
                     backup=true
-                    $CONFIG__setup_mode=backup
+                    $CONFIG__run_mode=backup
                     ;;
                 s )
                     skip=true
                     ;;
                 S )
-                    $CONFIG__setup_mode=skip
+                    $CONFIG__run_mode=preserve
                     skip_all=true
                     ;;
                 * )
@@ -84,7 +84,7 @@ link_dotfiles () {
     local dotfiles_completed=0
     local dotfiles_total=0
 
-    log "Linking dotfiles for ${BLUE}${app_name}${END}..."
+    log "Linking dotfiles from ${BLUE}${app_dir}${END}..." debug
 
     # check if link has .link
     [[ -d "${app_dir}.link" ]] && app_dir="${app_dir}.link"
@@ -96,5 +96,9 @@ link_dotfiles () {
         ((dotfiles_total++))
     done
 
-    log "Completed ${BLUE}${dotfiles_completed} of ${dotfiles_total//[[:blank:]]/} dotfile(s)${GREEN} from ${MAGENTA}${app_dir}/${app_files}${END}." success
+    if [[ $dotfiles_total -eq 0 ]]; then
+        log "No dotfiles to link for ${BLUE}${app_name}${END}."
+    else
+        log "Linked ${BLUE}${dotfiles_completed} of ${dotfiles_total//[[:blank:]]/} dotfile(s)${GREEN} from ${MAGENTA}${app_dir}/${app_files}${END}."
+    fi
 }

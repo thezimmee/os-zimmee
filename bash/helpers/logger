@@ -20,6 +20,8 @@ INFO="[ ${BLUE}..${END} ]"
 WARNING="[ ${BOLD}${YELLOW}!!${END} ]${YELLOW}"
 QUESTION="[ ${BOLD}${CYAN}??${END} ]${BOLD}"
 SUCCESS="[ ${GREEN}OK${END} ]${GREEN}"
+DEBUG="[ ${RED}%%${END} ]${BOLD}"
+COMMAND="${CYAN}=>  "
 FAIL="[${BOLD}${RED}FAIL${END}]${RED}"
 
 INDENT="       "
@@ -29,6 +31,8 @@ log () {
     # set defaults
     local msg='' log=$1 type=${2:-info} suffix=${3:-'\n'} prefix=$4
     [[ $type = question ]] && suffix=""
+    # if type=debug and debug isn't enabled, skip it
+    [[ $type = debug ]] && [[ -z $DEBUG_MODE ]] && return 0
     # add log prompt prefix
     if [[ $prefix = false ]]; then
         msg+=""
@@ -36,16 +40,20 @@ log () {
         msg+="${prefix}"
     else
         case "$type" in
+            info|important)
+                msg+="${INFO} ";;
             question)
                 msg+="${QUESTION} ";;
+            command)
+                msg+="${COMMAND} ";;
             warning)
                 msg+="${WARNING} ";;
             success)
                 msg+="${SUCCESS} ";;
             fail)
                 msg+="${FAIL} ";;
-            info|important)
-                msg+="${INFO} ";;
+            debug)
+                msg+="${DEBUG} ";;
             *)
                 msg+="${INFO} ";;
         esac
@@ -88,14 +96,14 @@ continue_when_ready () {
 file_exists_prompt () {
     local file="$1" yes_no_msg="$2" skip_msg="$3"
 
-    if [[ "$CONFIG__setup_mode" = overwrite ]]; then
+    if [[ "$CONFIG__run_mode" = overwrite ]]; then
         [[ "$file" != "" ]] && [[ -e "$file" ]] && rm -r "$file"
         return 0
-    elif [[ "$CONFIG__setup_mode" = backup ]]; then
+    elif [[ "$CONFIG__run_mode" = backup ]]; then
         [[ "$file" != "" ]] && [[ -e "$file" ]] && mv "$file" "${file}.backup"
         return 0
-    elif [[ "$CONFIG__setup_mode" = skip ]]; then
-        log "${skip_msg} (skip mode)."
+    elif [[ "$CONFIG__run_mode" = preserve ]]; then
+        log "${skip_msg} (preserve mode)."
         return 1
     else
         yes_no "$yes_no_msg"

@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 #
 # installs and configures OS Zimmee
+# NOT self contained; must be called from ./bootstrap script
 
 install_homebrew () {
     # exit if already installed
-    if $(command -v brew); then
+    if [[ $(type -t brew) ]]; then
         log "Homebrew already installed."
-        return 1
+        return 0
     fi
+
+    log "Installing homebrew..."
+    exit
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -19,9 +23,23 @@ install_homebrew () {
     sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
 }
 
+install_brew () {
+    local app="$1"
+    echo ''
+    log "Installing ${app} (with brew)..." important
+    brew install "$app"
+}
+
+install_cask () {
+    local app="$1"
+    echo ''
+    log "Installing ${app} (with brew cask)..." important
+    brew cask install "$app"
+}
+
 install_homebrew_apps () {
     # install apps
-    local count_installed=0 count_skipped=0 count_total=0
+    local count_installed=0 count_skipped=0 count_errors=0 count_total=0
 
     # install brew apps
     for app in "${CONFIG__brew_apps[@]}"; do
@@ -30,10 +48,7 @@ install_homebrew_apps () {
             log "${app} already installed."
             ((count_skipped++))
         else
-            echo ''
-            log "Installing ${app} (with Homebrew)..." important
-            brew install "$app"
-            ((count_installed++))
+            install_brew "$app" && ((count_installed++)) || ((count_errors++))
         fi
     done
     # install cask apps
@@ -43,37 +58,13 @@ install_homebrew_apps () {
             log "${app} already installed."
             ((count_skipped++))
         else
-            echo ''
-            log "Installing ${app} (with Homebrew cask)..." important
-            brew cask install "$app"
-            ((count_installed++))
+            install_cask "$app" && ((count_installed++)) || ((count_errors++))
         fi
     done
 
-    log "${BLUE}${count_installed}${END_COLOR} app(s) installed; ${BLUE}${count_skipped}${END_COLOR} were skipped (${BLUE}${count_total}${END_COLOR} total)." important
-
-    brew update && brew upgrade && brew doctor
-}
-
-install_node_packages () {
-    # Update npm and install global modules.
-    local count_installed=0 count_skipped=0
-    for package in "${CONFIG__npm_globals[@]}"; do
-        if test $(npm list "${package}"); then
-            echo ''
-            log "Installing npm package: ${package}..."
-            npm install -g "${package}"
-            (($count_installed++))
-        else
-            log "${package} already installed."
-            ((count_skipped++))
-        fi
-    done
-
-    log "${BLUE}${count_installed}${END_COLOR} npm packages installed; ${BLUE}${count_skipped}${END_COLOR} already installed."
+    log "${BLUE}${count_total}${END}${BOLD} app(s) checked.\n${INDENT}${GREEN}${count_installed}${END}${BOLD} app(s) installed.\n${INDENT}${GREEN}${count_skipped}${END}${BOLD} app(s) already installed.\n${INDENT}${RED}${count_installed}${END}${BOLD} app(s) NOT installed." important
 }
 
 # install homebrew & apps
 install_homebrew || fail "Something went wrong with installing Homebrew..." true
 install_homebrew_apps || fail "Something went wrong with installing Homebrew apps..." true
-install_node_packages || fail "Something went wrong with installing node packages..." true

@@ -4,7 +4,7 @@
 
 function setup_kwm () {
 	# start kwm
-	brew services start homebrew/binary/kwm
+	brew services start homebrew/binary/kwm || brew services restart kwm
 }
 
 setup_kwm

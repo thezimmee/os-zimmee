@@ -21,6 +21,7 @@ CONFIG__brew_apps=(
 )
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
+    amethyst
     appcleaner
     colorpicker
     filezilla
@@ -62,4 +63,4 @@ CONFIG__sshkey="$HOME/.ssh/id_rsa.pub"
 
 ## setup options (bootstrap will ask you for these values unless you add them here)
 # CONFIG__run_type=install # install | setup | update
-# CONFIG__run_mode=ask # ask | overwrite | backup | skip
+# CONFIG__run_mode=ask # ask | overwrite | backup | preserve

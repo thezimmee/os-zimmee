@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
 # change zsh to default shell
-chsh -s /bin/zsh
-log "ZSH was setup as the default shell."
+change_shell () {
+	log "chsh -s /bin/zsh" command
+	chsh -s /bin/zsh
+	log "ZSH was setup as the default shell."
+}
+
+if [[ $CONFIG__run_mode = ask ]]; then
+	yes_no "Update current shell to zsh?" && change_shell || return 0
+else
+	change_shell
+fi

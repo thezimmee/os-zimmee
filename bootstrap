@@ -16,7 +16,7 @@ fi
 . $OSZ_ROOT/bash/helpers/link_files
 
 # set other defaults
-ERROR_COUNT=0
+WRAPUP_REPORT=""
 
 # grab command line arguments (see http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
 for arg in "$@"; do
@@ -31,10 +31,17 @@ for arg in "$@"; do
             CONFIG__run_type=setup
             ;;
         --app=*)
-            APP_MODE="${arg#*=}"
+            APP_MODE=true
+            APP_NAME="${arg#*=}"
             ;;
-        -K)
-            CONFIG__run_mode=skip
+        --brew=*)
+            APP_BREW="${arg#*=}"
+            ;;
+        --cask=*)
+            APP_CASK="${arg#*=}"
+            ;;
+        -P)
+            CONFIG__run_mode=preserve
             ;;
         -O)
             CONFIG__run_mode=overwrite
@@ -42,10 +49,56 @@ for arg in "$@"; do
         -B)
             CONFIG__run_mode=backup
             ;;
+        -A)
+            CONFIG__run_mode=ask
+            ;;
+        -W)
+            CONFIG__show_wrapup_report=true
+            ;;
+        -D)
+            DEBUG_MODE=true
+            ;;
+        --uninstall)
+            CONFIG__run_type=uninstall
+            CONFIG__run_mode=overwrite
+            ;;
+        -)
+            # other non-valid arguments
+            ;;
         *)
+            # any argument that doesn't contain a hyphen is assumed to be the app name
+            APP_MODE=true            
+            APP_NAME="${arg}"
             ;;
     esac
 done
+
+save_log () {
+    local msg="$1"
+    local is_heading="$2"
+    local prefix
+    [[ -z $is_heading ]] && prefix="  - " || prefix="\n"
+    WRAPUP_REPORT+="${prefix}${msg}\n"
+}
+
+run_script () {
+    local dir="$1"
+    local script="$2"
+    local app_name=$(basename "${dir}")
+
+    if [[ ! -d "$dir" ]] && [[ -z $APP_BREW ]] && [[ -z $APP_CASK ]]; then
+        save_log "${FAIL}${END}: ${dir} does not exist and was not completed."
+        return 1
+    fi
+    
+    if [[ -f "${dir}/${script}" ]]; then
+        # log path of any scripts that runs
+        log "Loading ${app_name}/${script}..."
+
+        # source script and log the result
+        . "${dir}/${script}" && save_log "${SUCCESS}${END}: ${script} in ${app_name}/${script}" || save_log "${FAIL}${END}: ${script} in ${app_name}/${script}"
+    fi
+}
 
 run_app () {
     local app_dir="$1"
@@ -54,36 +107,34 @@ run_app () {
 
     [[ ! -d "$app_dir" ]] && app_dir="${app_dir}.link"
 
+    save_log "${BOLD}${app_name}${END}: " true
+
     if [[ "$CONFIG__run_type" = install ]]; then
-        if [[ -f "${app_dir}/install" ]]; then
-            log "Installing ${app_name}..." important
-            . "${app_dir}/install" || { log "Something went wrong with ${app_name} install..." fail; ((ERROR_COUNT+=1)); return 1; }
-            ((ran+=1))
+        run_script "${app_dir}" install && ((ran++))
+        run_script "${app_dir}" update && ((ran++))
+        run_script "${app_dir}" setup && ((ran++))
+        link_dotfiles "$app_name" && save_log "${SUCCESS}${END}: ${app_name} dotfiles linked successfully." || save_log "${FAIL}${END}: ${app_name} dotfiles failed."
+    elif [[ "$CONFIG__run_type" = update ]]; then
+        run_script "${app_dir}" update && ((ran++))
+    elif [[ "$CONFIG__run_type" = setup ]]; then
+        run_script "${app_dir}" setup && ((ran++))
+        link_dotfiles "$app_name" && save_log "${SUCCESS}${END}: ${app_name} dotfiles linked successfully." || save_log "${FAIL}${END}: ${app_name} dotfiles failed."
+    elif [[ "$CONFIG__run_type" = uninstall ]]; then
+        run_script "${app_dir}" uninstall && ((ran++))
+        if [[ "$APP_BREW" ]]; then
+            brew uninstall "$APP_BREW" && save_log "${SUCCESS}${END}: brew uninstalled ${app_name}." || save_log "${GREEN}FAIL${END}: brew uninstall ${app_name} failed."
         fi
-    fi
-    if [[ "$CONFIG__run_type" = update ]] || [[ "$CONFIG__run_type" = install ]]; then
-        if [[ -f "${app_dir}/update" ]]; then
-            log "Updating ${app_name}..." important
-            . "${app_dir}/update" || { log "Something went wrong with ${app_name} update..." fail; ((ERROR_COUNT+=1)); return 1; }
-            ((ran+=1))
-        fi
-    fi
-    if [[ "$CONFIG__run_type" = setup ]] || [[ "$CONFIG__run_type" = install ]]; then
-        if [[ -f "${app_dir}/setup" ]]; then
-            log "Setting up ${app_name}..." important
-            . "${app_dir}/setup" || { log "Something went wrong with ${app_name} setup..." fail; ((ERROR_COUNT+=1)); return 1; }
-            ((ran+=1))
+        if [[ "$APP_CASK" ]]; then
+            brew cask uninstall "$APP_CASK" && save_log "${SUCCESS}${END}: cask uninstalled ${app_name}." || save_log "${GREEN}FAIL${END}: cask uninstall ${app_name} failed."
         fi
     fi
 
-    link_dotfiles "$app_name"
-
-    [[ $ran -gt 0 ]] && log "Finished ${app_name}!" success
+    [[ $ran -gt 0 ]] && log "Finished ${BLUE}${app_name}${GREEN}!" success
 }
 
 # iterate over app directories to install/setup/update
 run_all_apps () {
-    [[ "$APP_MODE" ]] && { run_app "$APP_MODE"; return 0; }
+    [[ "$APP_MODE" ]] && { run_app "$APP_NAME"; return 0; }
 
     for dir in $(find -H "$OSZ_ROOT" -type d -mindepth 1 -maxdepth 1 -not -path '*.git*'); do
         run_app "$dir"
@@ -92,7 +143,7 @@ run_all_apps () {
 
 # ask user what to do
 run_type_prompt () {
-    ask "What would you like to do?${END}\n${INDENT}  ${CYAN}[1]${END}: Fresh install\n${INDENT}  ${CYAN}[2]${END}: Update OSZ\n${INDENT}  ${CYAN}[3]${END}: Run setup\n${QUESTION}${CYAN} =>${END}"
+    ask "What would you like to do?${END}\n${INDENT}  ${CYAN}[1]${END}: Install ${APP_NAME}\n${INDENT}  ${CYAN}[2]${END}: Update ${APP_NAME}\n${INDENT}  ${CYAN}[3]${END}: Set up ${APP_NAME}\n${INDENT}  ${CYAN}[4]${END}: Uninstall ${APP_NAME}\n${QUESTION}${CYAN} =>${END}"
 
     case "$REPLY" in
         1)
@@ -104,20 +155,24 @@ run_type_prompt () {
         3)
             CONFIG__run_type=setup
             ;;
+        4)
+            CONFIG__run_type=uninstall
+            ;;
         *)
             CONFIG__run_type=setup
-            APP_MODE="$REPLY"
+            APP_MODE=true
+            APP_NAME="$REPLY"
             ;;
     esac
 }
 
 # ask user how to do it
 run_mode_prompt () {
-    ask "How would you like to handle existing file conflicts?${END}\n${INDENT}  ${CYAN}[k]${END}: Keep old files\n${INDENT}  ${CYAN}[o]${END}: Overwrite old files\n${INDENT}  ${CYAN}[b]${END}: Backup old files\n${INDENT}  ${CYAN}[a]${END}: Ask with each conflict\n${QUESTION}${CYAN} =>${END}"
+    ask "How would you like to handle file conflicts?${END}\n${INDENT}  ${CYAN}[p]${END}: Preserve / keep existing files\n${INDENT}  ${CYAN}[o]${END}: Overwrite existing files\n${INDENT}  ${CYAN}[b]${END}: Backup and replace existing files\n${INDENT}  ${CYAN}[a]${END}: Ask with each conflict\n${QUESTION}${CYAN} =>${END}"
 
     case "$REPLY" in
-        k|K)
-            CONFIG__run_mode=skip
+        p|P)
+            CONFIG__run_mode=preserve
             ;;
         o|O)
             CONFIG__run_mode=overwrite
@@ -131,62 +186,180 @@ run_mode_prompt () {
     esac
 }
 
+setBrewApp () {
+    local app
+    local app_name
+    local app_type
+    local verb="install"
+
+    [[ "$CONFIG__run_type" = uninstall ]] && verb="uninstall"
+
+    # check for brew/cask in config settings
+    if [[ -z "$1" ]]; then
+        for app in "${CONFIG__brew_apps[@]}"; do
+            if [[ "$app" == "$APP_NAME" ]]; then
+                APP_BREW="$app"
+                CONFIG__cask_apps=()
+                CONFIG__brew_apps=("$app")
+                return 0
+            fi
+        done
+        for app in "${CONFIG__cask_apps[@]}"; do
+            if [[ "$app" == "$APP_NAME" ]]; then
+                APP_CASK="$app"
+                CONFIG__brew_apps=()
+                CONFIG__cask_apps=("$app")
+                return 0
+            fi
+        done
+    fi
+
+    # skip if either APP_BREW or APP_CASK already exist
+    if [[ $APP_BREW ]] || [[ $APP_CASK ]]; then
+        return 0
+    fi
+
+    ask "${1:-No brew or cask was found for ${APP_NAME}. What is the name of the brew or cask app you would like to ${verb}?}"
+    app_name="$REPLY"
+
+    ask "Should this be installed with [${CYAN}b${END}${BOLD}]rew? Or [${CYAN}c${END}${BOLD}]ask?"
+    if [[ "$REPLY" =~ ^(c|C|cask|Cask)$ ]]; then
+        app_type=cask
+        APP_CASK="$app_name"
+        CONFIG__cask_apps=("$app_name")
+        CONFIG__brew_apps=()
+    elif [[ "$REPLY" =~ ^(b|B|brew|Brew)$ ]]; then
+        app_type=brew
+        APP_BREW="$app_name"
+        CONFIG__brew_apps=("$app_name")
+        CONFIG__cask_apps=()
+    else
+        log "Invalid response."
+        setBrewType "What is the name of your brew or cask you would like to install?"
+    fi
+}
+
 reset_config () {
     unset CONFIG__run_type
     unset CONFIG__run_mode
+    unset CONFIG__brew_apps
+    unset CONFIG__cask_apps
+    unset APP_MODE
+    unset APP_NAME
+    unset APP_BREW
+    unset APP_CASK
+    unset SETUP_VERB
+    unset DEBUG_MODE
 }
 
-# get run type
-[[ -z $CONFIG__run_type ]] && run_type_prompt
-# get run mode
-[[ -z $CONFIG__run_mode ]] && run_mode_prompt
+setup_config () {
+    local scripts_to_run
+    # default APP_NAME to OSZ if no app is specified (which runs everything)
+    [[ -z $APP_MODE ]] && APP_NAME="OSZ"
+    # get run type
+    [[ -z $CONFIG__run_type ]] && run_type_prompt
+    # get run mode
+    [[ -z $CONFIG__run_mode ]] && run_mode_prompt
 
-# confirm if mode=overwrite
-if [[ $CONFIG__run_mode = overwrite ]]; then
-    continue_when_ready "Your settings will ${RED}overwrite${END}${BOLD} app files if they already exist.\n${INDENT}Are you sure? Type '${CYAN}yes${END}${BOLD}' to continue:${END} ${CYAN}=>${END}${BOLD}" "yes"
+    # if in APP_MODE, check for a corresponding brew app
+    if [[ $APP_MODE ]]; then
+        if [[ $CONFIG__run_type = install ]]; then
+            setBrewApp
+            app_details=" ${END}${BOLD}(${MAGENTA}"
+            [[ $APP_BREW ]] && app_details+="${APP_BREW} brew"
+            [[ $APP_CASK ]] && app_details+="${APP_CASK} cask"
+            app_details+="${END}${BOLD})"
+        elif [[ $CONFIG__run_type = uninstall ]]; then
+            setBrewApp
+        fi
+    fi
+
+    # SETUP_VERB for log messages
+    [[ $CONFIG__run_type = install ]] && SETUP_VERB="installing" && scripts_to_run="install, update, and setup"
+    [[ $CONFIG__run_type = update ]] && SETUP_VERB="updating" && scripts_to_run="update"
+    [[ $CONFIG__run_type = setup ]] && SETUP_VERB="setting up" && scripts_to_run="setup"
+    [[ $CONFIG__run_type = uninstall ]] && SETUP_VERB="uninstalling" && scripts_to_run="uninstall"
+
+    # build info message to confirm with user what is going to happen
+    confirm_msg="${BOLD}${SETUP_VERB^} ${BLUE}${APP_NAME}${app_details}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}"
+    [[ $DEBUG_MODE ]] && confirm_msg+=" ${YELLOW}in DEBUG MODE${END}${BOLD}." || confirm_msg+="."
+    confirm_msg+=" This will do the following:"
+    if [[ $CONFIG__run_type = install ]] && [[ -z $APP_MODE ]]; then
+        confirm_msg+="\n${INDENT}  - Install Homebrew."
+        confirm_msg+="\n${INDENT}  - Install any apps you have configured to install."
+    fi
+    if [[ $CONFIG__run_type = update ]]; then
+        confirm_msg+="\n${INDENT}  - Update Homebrew."
+        [[ -z $APP_MODE ]] && confirm_msg+="\n${INDENT} - Update apps from the app store."
+    fi
+    confirm_msg+="\n${INDENT}  - Run any ${scripts_to_run} script(s) in ${APP_NAME}."
+    if [[ $CONFIG__run_type = uninstall ]]; then
+        [[ $APP_BREW ]] && confirm_msg+="\n${INDENT}  - Uninstall ${APP_NAME} with 'brew uninstall ${APP_NAME}'."
+        [[ $APP_CASK ]] && confirm_msg+="\n${INDENT}  - Uninstall ${APP_NAME} with 'brew cask uninstall ${APP_NAME}'."
+        [[ -z $APP_MODE ]] && confirm_msg+="\n${INDENT}  - Uninstall Homebrew."
+    fi
+    [[ $CONFIG__run_type != uninstall ]] && confirm_msg+="\n${INDENT}  - Symlink any files ending in *.link to your \$HOME directory."
+    # confirm settings
+    if [[ $CONFIG__run_mode = overwrite ]] && [[ $CONFIG__run_type != uninstall ]]; then
+        continue_when_ready "${confirm_msg}\n${INDENT}${RED}This will automatically overwrite any ${APP_NAME} configuration you have set up${END}${BOLD}.\n${INDENT}Type '${CYAN}yes${END}${BOLD}' to continue:${END} ${CYAN}=>${END}${BOLD}" "yes"
+    else
+        continue_when_ready "${confirm_msg}\n${CYAN}=> ${END}${BOLD}Hit [${CYAN}enter${END}${BOLD}] to continue..."
+    fi
+}
+
+# set up config / user environment
+echo ''
+setup_config
+
+## run it
+# install
+if [[ $CONFIG__run_type = install ]]; then
+    save_log "Homebrew:" true
+    . "${OSZ_ROOT}/install" && save_log "${SUCCESS}${END}: Homebrew install completed for ${APP_NAME}." || { save_log "OSZ installation failed."; log "Something went wrong installing OSZ..." fail; exit 1; }
+    log "Homebrew install complete! ${BLUE}Run 'brew clean' to clean up old stuff." important
 fi
-
-# confirm settings
-[[ $APP_MODE ]] && app_msg="${MAGENTA}${APP_MODE} ${BLUE}"
-continue_when_ready "${BOLD}Running ${BLUE}${app_msg}${CONFIG__run_type}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}. Hit [${CYAN}enter${END}${BOLD}] to continue..."
-
-# run it
+# full update
+if [[ "$CONFIG__run_type" = update ]] || [[ $CONFIG__run_type = install ]]; then
+    # update homebrew apps
+    log "Updating Homebrew and brew apps..."
+    brew update && brew upgrade && brew doctor && save_log "${SUCCESS}${END}: Homebrew update complete." || save_log "${FAIL}${END}: Homebrew update failed."
+    [[ -z $APP_MODE ]] && { log "Updating apps from the app store"; sudo softwareupdate -i -a; }
+fi
+# setup (all modes run this; it runs scripts from app folders)
 if [[ $APP_MODE ]]; then
-    # install mode
-    if [[ $CONFIG__run_type = install ]]; then
-        . "${OSZ_ROOT}/install" || { log "Something went wrong with OSZ install..." fail; exit 1; }
-        log "Install complete! ${BLUE}Run 'brew clean' to clean up old stuff." important
-    fi
-    # update mode
-    if [[ "$CONFIG__run_type" = update ]] || [[ $CONFIG__run_type = install ]]; then
-        # update homebrew apps
-        log "Updating Homebrew and brew apps..."
-        brew update && brew upgrade && brew doctor
-    fi
-    run_app "${OSZ_ROOT}/${APP_MODE}"
+    run_app "${OSZ_ROOT}/${APP_NAME}" && save_log "${SUCCESS}${END}: ${APP_NAME} completed successfully." || save_log "${FAIL}${END}: ${APP_NAME} failed."
 else
-    run_all_apps
+    run_all_apps && save_log "${SUCCESS}${END}: All apps completed successfully."  true|| save_log "${FAIL}${END}: One or more apps failed." true
+    if [[ $CONFIG__run_type = uninstall ]]; then
+        log "Uninstalling ${APP_NAME}..."
+        . "${OSZ_ROOT}/uninstall" && save_log "${SUCCESS}${END}: ${APP_NAME} uninstalled completed." || save_log "${RED}FAILED${END}: ${APP_NAME} failed."
+    fi
 fi
 
 # wrap up
-if [[ "$ERROR_COUNT" -gt 0 ]]; then
-    log "Uh oh... we gots problems... something went wrong..." fail
-else
-    log "Woot woot! OSZ installation is complete!" success
-    # print last steps
-    if [[ -z $APP_MODE ]]; then
-        echo ''
-        log "${YELLOW}${BOLD}[IMPORTANT]: To finish setup, do the following:${END}" important "\n" false
-        log "  - Manually load preferences from ${MAGENTA}${OSZ_ROOT}/iterm${END}." info "\n" false
-        log "  - Disable [capslock] in macOS preferences (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#usage${END})." info "\n" false
-        log "  - Make sure [capslock] key is set to ${CYAN}[80]${END}, which is the f19 key (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface${END})." info "\n" false
-        echo ''
-        log "${BOLD}${YELLOW}You may also want to set up:${END}" important "\n" false
-        log "  - ${MAGENTA}http://osx.iusethis.com/app/palua" info "\n" false
-        log "  - [${BLUE}Photoshop${END}], [${BLUE}Illustrator${END}], [${BLUE}Snippy${END}], [${BLUE}Blisk${END}], [${BLUE}Parallels${END}]" info "\n\n" false
-    fi
-    log "${GREEN}Enjoy OSZ!" info "\n" "[ ${YELLOW}:)${END} ] "
+log "${APP_NAME} ${CONFIG__run_type} is complete." success
+echo ''
+if [[ $CONFIG__show_wrapup_report = true ]]; then
+    echo "--------------------"
+    echo "  WRAP UP REPORT:"
+    echo "--------------------"
+    echo -e "$WRAPUP_REPORT"
+    echo ''
+    echo "--------------------"
 fi
+echo ''
+# print last steps
+if [[ -z $APP_MODE ]] && [[ $CONFIG__run_type = install ]]; then
+    log "${YELLOW}${BOLD}[IMPORTANT]: Remember to do the following to complete setup:${END}" important "\n" false
+    log "  - Manually load preferences from ${MAGENTA}${OSZ_ROOT}/iterm${END}." info "\n" false
+    log "  - Disable [capslock] in macOS preferences (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#usage${END})." info "\n" false
+    log "  - Make sure [capslock] key is set to ${CYAN}[80]${END}, which is the f19 key (see ${MAGENTA}https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface${END})." info "\n" false
+    echo ''
+    log "${BOLD}${YELLOW}You may also want to set up:${END}" important "\n" false
+    log "  - ${MAGENTA}http://osx.iusethis.com/app/palua" info "\n" false
+    log "  - [${BLUE}Photoshop${END}], [${BLUE}Illustrator${END}], [${BLUE}Snippy${END}], [${BLUE}Blisk${END}], [${BLUE}Parallels${END}]" info "\n\n" false
+fi
+log "${GREEN}Enjoy OSZ!" info "\n" "[ ${YELLOW}:)${END} ] "
 echo ""
 
 reset_config
