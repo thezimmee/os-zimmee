@@ -30,28 +30,28 @@ link_file () {
             read -r -e -n 1 REPLY < /dev/tty
 
             case "$REPLY" in
-                o )
+                o)
                     overwrite=true
                     ;;
-                O )
+                O)
                     overwrite=true
-                    $CONFIG__run_mode=overwrite
+                    CONFIG__run_mode=overwrite
                     ;;
-                b )
+                b)
                     backup=true
                     ;;
-                B )
+                B)
                     backup=true
-                    $CONFIG__run_mode=backup
+                    CONFIG__run_mode=backup
                     ;;
-                s )
+                s)
                     skip=true
                     ;;
-                S )
-                    $CONFIG__run_mode=preserve
-                    skip_all=true
+                S)
+                    CONFIG__run_mode=preserve
+                    skip=true
                     ;;
-                * )
+                *)
                     ;;
             esac
         fi

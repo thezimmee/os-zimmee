@@ -256,10 +256,10 @@ setup_config () {
     local scripts_to_run
     # default APP_NAME to OSZ if no app is specified (which runs everything)
     [[ -z $APP_MODE ]] && APP_NAME="OSZ"
-    # get run type
+    # set run type
     [[ -z $CONFIG__run_type ]] && run_type_prompt
-    # get run mode
-    [[ -z $CONFIG__run_mode ]] && run_mode_prompt
+    # set run mode
+    [[ -z $CONFIG__run_mode ]] && CONFIG__run_mode=ask
 
     # if in APP_MODE, check for a corresponding brew app
     if [[ $APP_MODE ]]; then
