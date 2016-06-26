@@ -92,71 +92,57 @@ continue_when_ready () {
     fi
     [[ $user_input = "$value" ]] && return 0 || log "Not a valid response." warning && continue_when_ready "$@"
 }
-# ask about file conflict
-ask_file_conflict () {
-    local file="$1" msg="$2"
-    local overwrite backup skip
-
-    [[ -z "$msg" ]] && msg="${MAGENTA}${file}${END} already exists. What do you want to do?"
-    msg+="${END}\n${INDENT}  ${CYAN}[s]${END}kip;\n${INDENT}  ${CYAN}[S]${END}kip all;\n${INDENT}  ${CYAN}[o]${END}verwrite;\n${INDENT}  ${CYAN}[O]${END}verwrite all;\n${INDENT}  ${CYAN}[b]${END}ackup;\n${INDENT}  ${CYAN}[B]${END}ackup all.\n${QUESTION} => "
-
-    log "$msg" question " "
-    read -r -e -n 1 REPLY < /dev/tty
-
-    case "$REPLY" in
-        o)
-            overwrite=true
-            ;;
-        O)
-            overwrite=true
-            CONFIG__run_mode=overwrite
-            ;;
-        b)
-            backup=true
-            ;;
-        B)
-            backup=true
-            CONFIG__run_mode=backup
-            ;;
-        s)
-            skip=true
-            ;;
-        S)
-            CONFIG__run_mode=preserve
-            skip=true
-            ;;
-        *)
-            ;;
-    esac
-
-    if [[ "$overwrite" = true ]]; then
-        [[ "$file" ]] && [[ -e "$file" ]] rm -rf "$file"
-    elif [[ "$backup" = true ]]; then
-        [[ "$file" ]] && [[ -e "$file" ]] mv "$file" "${file}.backup"
-    elif [[ "$skip" = true ]]; then
-        return 1
-    fi
-}
 # file exists prompt
 file_exists_handler () {
     local file="$1" msg="$2" # skip_msg="$3"
+    local overwrite backup skip
 
     if [[ "$CONFIG__run_mode" = overwrite ]]; then
-        [[ "$file" != "" ]] && [[ -e "$file" ]] && rm -r "$file"
-        return 0
+        overwrite=true backup=false skip=false
     elif [[ "$CONFIG__run_mode" = backup ]]; then
-        [[ "$file" != "" ]] && [[ -e "$file" ]] && mv "$file" "${file}.backup"
-        return 0
+        overwrite=false backup=true skip=false
     elif [[ "$CONFIG__run_mode" = preserve ]]; then
-        return 1
+        overwrite=false backup=false skip=true
     else
-        ask_file_conflict "$file" "$msg" && return 0 || return 1
-        # yes_no "$yes_no_msg"
-        # if [[ "$REPLY" = y ]]; then
-        #      [[ "$file" != "" ]] && [[ -e "$file" ]] && rm -r "$file"
-        #      return 0
-        # fi
-        # return 1
+        [[ -z "$msg" ]] && msg="${MAGENTA}${file}${END} already exists. What do you want to do?"
+        msg+="${END}\n${INDENT}  ${CYAN}[s]${END}kip;\n${INDENT}  ${CYAN}[S]${END}kip all;\n${INDENT}  ${CYAN}[o]${END}verwrite;\n${INDENT}  ${CYAN}[O]${END}verwrite all;\n${INDENT}  ${CYAN}[b]${END}ackup;\n${INDENT}  ${CYAN}[B]${END}ackup all.\n${QUESTION} => "
+
+        log "$msg" question " "
+        read -r -e -n 1 REPLY < /dev/tty
+
+        case "$REPLY" in
+            o)
+                overwrite=true
+                ;;
+            O)
+                overwrite=true
+                CONFIG__run_mode=overwrite
+                ;;
+            b)
+                backup=true
+                ;;
+            B)
+                backup=true
+                CONFIG__run_mode=backup
+                ;;
+            s)
+                skip=true
+                ;;
+            S)
+                CONFIG__run_mode=preserve
+                skip=true
+                ;;
+            *)
+                ;;
+        esac
+    fi
+
+    if [[ "$overwrite" = true ]]; then
+        [[ "$file" ]] && [[ -e "$file" ]] && rm -rf "$file"
+    elif [[ "$backup" = true ]]; then
+        [[ "$file" ]] && [[ -e "$file" ]] && mv "$file" "${file}.backup"
+    elif [[ "$skip" = true ]]; then
+        return 1
     fi
 }
 # throw an error and quit
