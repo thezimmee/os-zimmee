@@ -1,8 +1,1 @@
 .DS_Store
-
-# sublime
-sublime/Packages/**/*.sublime-license
-sublime/Packages/**/*.cache
-sublime/Packages/**/*.last-run
-sublime/Packages/**/dependency-metadata.json
-sublime/Packages/User/Package Control.sublime-settings

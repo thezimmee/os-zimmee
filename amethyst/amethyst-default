@@ -1,10 +1,14 @@
 {
     "LAYOUTS": "----------------------",
     "layouts": [
-        "column",
-        "fullscreen",
-        "floating",
         "widescreen-tall"
+        "tall",
+        "tall-right",
+        "wide",
+        "middle-wide",
+        "column",
+        "floating",
+        "fullscreen",
     ],
 
     "MODIFIERS": "----------------------",

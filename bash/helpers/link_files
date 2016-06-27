@@ -14,7 +14,7 @@ link_file () {
 
     # if file already exists as any type of file
     if [[ -e "$dest" ]]; then
-        overwrite_handler "$dest" && skip=false || skip=true
+        overwrite_handler "$dest" "$src" "${BLUE}${APP_NAME}${END}${BOLD} wants to overwrite ${MAGENTA}${dest}${END}${BOLD} and symlink to ${MAGENTA}${src}${END}${BOLD}." && skip=false || skip=true
     fi
 
     if [[ "$skip" != "true" ]]; then

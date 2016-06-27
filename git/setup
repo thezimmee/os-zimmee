@@ -39,14 +39,14 @@ setup_gitconfig () {
 
 # should we run ssh?
 if [[ -e "$CONFIG__sshkey" ]]; then
-    overwrite_handler "$CONFIG__sshkey" && setup_ssh
+    overwrite_handler "$CONFIG__sshkey" false && setup_ssh
 else
     setup_ssh
 fi
 
 # should we run gitconfig?
 if [[ -f "$HOME/.gitconfig.local" ]]; then
-    overwrite_handler "$HOME/.gitconfig.local" && setup_gitconfig
+    overwrite_handler "$HOME/.gitconfig.local" false && setup_gitconfig
 else
     setup_gitconfig
 fi

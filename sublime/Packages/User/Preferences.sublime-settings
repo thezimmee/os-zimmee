@@ -46,8 +46,6 @@
 	"ignored_packages":
 	[
 		"Git",
-		"GitSavvy",
-		"LESS",
 		"MarkdownPreview",
 		"Vintage"
 	],

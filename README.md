@@ -54,11 +54,15 @@ Make sure to do the following to ensure the "hyper" key works:
 
 To install all Sublime packages, initiate the `Package Control: Advanced Install Package` command and paste this list of packages to install them all at once:
 
-`AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, MarkdownPreview, MarkdownTOC, Material Theme, MaxPane, MoveTab, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal`
+`AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, Markdown Preview, MarkdownTOC, Material Theme, MaxPane, MoveTab, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal`
 
 ### iTerm preferences
 
 All preferences are stored in `$OSZ_ROOT/iTerm`, but need to be manually loaded in iTerm preferences.
+
+### Amethyst spaces support
+
+To enable spaces support in Amethyst, activate Mission Control's keyboard shortcuts for switching to specific Desktops, which is in the keyboard shortcuts tab of the keyboard preferences pane.
 
 ### Other apps to consider installing:
 

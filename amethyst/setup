@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# set up amethyst
+
+setup_amethyst () {
+	# copy amethyst plist prefs
+	\cp -rf "$OSZ_ROOT/amethyst/com.amethyst.Amethyst.plist" "$HOME/Library/Preferences/com.amethyst.Amethyst.plist"
+}
+
+overwrite_handler "$HOME/Library/Preferences/com.amethyst.Amethyst.plist" "$OSZ_ROOT/amethyst/com.amethyst.Amethyst.plist" && setup_amethyst

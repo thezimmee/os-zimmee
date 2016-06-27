@@ -129,7 +129,7 @@ run_app () {
         fi
     fi
 
-    [[ $ran -gt 0 ]] && log "Finished ${BLUE}${app_name}${GREEN}!" success
+    [[ $ran -gt 0 ]] && [[ -z $APP_MODE ]] && log "Finished ${BLUE}${app_name}${GREEN}!" success
 }
 
 # iterate over app directories to install/setup/update
@@ -283,7 +283,7 @@ setup_config () {
     # build info message to confirm with user what is going to happen
     confirm_msg="${BOLD}${SETUP_VERB^} ${BLUE}${APP_NAME}${app_details}${END}${BOLD} in ${BLUE}${CONFIG__run_mode} mode${END}${BOLD}"
     [[ $DEBUG_MODE ]] && confirm_msg+=" ${YELLOW}in DEBUG MODE${END}${BOLD}." || confirm_msg+="."
-    confirm_msg+=" This will do the following:"
+    confirm_msg+=" This will do the following:${END}"
     if [[ $CONFIG__run_type = install ]] && [[ -z $APP_MODE ]]; then
         confirm_msg+="\n${INDENT}  - Install Homebrew."
         confirm_msg+="\n${INDENT}  - Install any apps you have configured to install."
@@ -337,7 +337,7 @@ else
 fi
 
 # wrap up
-log "${APP_NAME} ${CONFIG__run_type} is complete." success
+log "${BLUE}${APP_NAME} ${CONFIG__run_type}${GREEN} is complete." success
 echo ''
 if [[ $CONFIG__show_wrapup_report = true ]]; then
     echo "--------------------"

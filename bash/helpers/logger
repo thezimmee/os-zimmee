@@ -94,9 +94,15 @@ continue_when_ready () {
 }
 # overwrite prompt for when a file exists or action may overwrite other settings
 overwrite_handler () {
-    local is_task="$2"
-    local msg # skip_msg="$3"
+    # set defaults
     local overwrite backup skip
+    if [[ "$#" -eq 1 ]]; then
+        local msg="$1"
+    else
+        local file="$1"
+        local src="$2"
+        local msg="$3"
+    fi
 
     # if run_mode is already set, do what is configured
     if [[ "$CONFIG__run_mode" = overwrite ]]; then
@@ -106,15 +112,19 @@ overwrite_handler () {
     elif [[ "$CONFIG__run_mode" = preserve ]]; then
         overwrite=false backup=false skip=true
     else
-        # if is_task, "$1" is the task name, not the file
-        if [[ $is_task ]]; then
-            task_name="$1"
-            msg="${BLUE}${task_name}${END}${BOLD}. What do you want to do?"
-        else
-            file="$1"
-            msg="${MAGENTA}${file}${END} already exists. What do you want to do?"
+        # build msg depending on parameters passed
+        if [[ $file ]] && [[ -z "$msg" ]]; then
+            local msg_prefix="${MAGENTA}${file}${END}${BOLD} is about to be overwritten"
+            local msg_suffix="."
+            if [[ $APP_NAME ]]; then
+                msg_prefix="${BLUE}${APP_NAME}${END}${BOLD} wants to overwrite "
+            fi
+            if [[ $src != false ]]; then
+                local msg_suffix=" with ${MAGENTA}${src}${END}${BOLD}."
+            fi
+            msg="${msg_prefix}${msg_suffix}"
         fi
-        msg+="${END}\n${INDENT}  ${CYAN}[s]${END}kip;\n${INDENT}  ${CYAN}[S]${END}kip all;\n${INDENT}  ${CYAN}[o]${END}verwrite;\n${INDENT}  ${CYAN}[O]${END}verwrite all;\n${INDENT}  ${CYAN}[b]${END}ackup;\n${INDENT}  ${CYAN}[B]${END}ackup all.\n${QUESTION} => "
+        msg+=" What do you want to do?${END}\n${INDENT}  ${CYAN}[s]${END}kip;\n${INDENT}  ${CYAN}[S]${END}kip all;\n${INDENT}  ${CYAN}[o]${END}verwrite;\n${INDENT}  ${CYAN}[O]${END}verwrite all;\n${INDENT}  ${CYAN}[b]${END}ackup;\n${INDENT}  ${CYAN}[B]${END}ackup all.\n${QUESTION} => "
 
         log "$msg" question " "
         read -r -e -n 1 REPLY < /dev/tty
