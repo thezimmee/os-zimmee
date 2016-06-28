@@ -96,6 +96,7 @@ This project is very young. If you run into any issues, please [open an issue](h
 <!--
 ## TODO
 - add command to toggle between amethyst and kwm
+- add feature to disable an app from CONFIG__disabled_apps
 - find keyboard shortcut to move window to next/prev space
 - configure kwm:
 	- Add ability to save layouts
