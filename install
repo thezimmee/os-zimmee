@@ -41,28 +41,32 @@ install_homebrew_apps () {
     # install apps
     local count_installed=0 count_skipped=0 count_errors=0 count_total=0
 
-    # install brew apps
-    for app in "${CONFIG__brew_apps[@]}"; do
-        ((count_total++))
-        if brew list -1 | grep -q "${app##*/}"; then
-            log "${app} already installed."
-            ((count_skipped++))
-        else
-            install_brew "$app" && ((count_installed++)) || ((count_errors++))
-        fi
-    done
-    # install cask apps
-    for app in "${CONFIG__cask_apps[@]}"; do
-        ((count_total++))
-        if brew cask list -1 | grep -q "${app##*/}"; then
-            log "${app} already installed."
-            ((count_skipped++))
-        else
-            install_cask "$app" && ((count_installed++)) || ((count_errors++))
-        fi
-    done
+    log "Installing homebrew apps..."
 
-    log "${BLUE}${count_total}${END}${BOLD} app(s) checked.\n${INDENT}${GREEN}${count_installed}${END}${BOLD} app(s) installed.\n${INDENT}${GREEN}${count_skipped}${END}${BOLD} app(s) already installed.\n${INDENT}${RED}${count_installed}${END}${BOLD} app(s) NOT installed." important
+    brew install "${CONFIG__brew_apps[@]}" && brew cask install "${CONFIG__cask_apps[@]}" && log "Finished app installs." success
+
+    # # install brew apps
+    # for app in "${CONFIG__brew_apps[@]}"; do
+    #     ((count_total++))
+    #     if brew list -1 | grep -q "${app##*/}"; then
+    #         log "${app} already installed."
+    #         ((count_skipped++))
+    #     else
+    #         install_brew "$app" && ((count_installed++)) || ((count_errors++))
+    #     fi
+    # done
+    # # install cask apps
+    # for app in "${CONFIG__cask_apps[@]}"; do
+    #     ((count_total++))
+    #     if brew cask list -1 | grep -q "${app##*/}"; then
+    #         log "${app} already installed."
+    #         ((count_skipped++))
+    #     else
+    #         install_cask "$app" && ((count_installed++)) || ((count_errors++))
+    #     fi
+    # done
+
+    # log "${BLUE}${count_total}${END}${BOLD} app(s) checked.\n${INDENT}${GREEN}${count_installed}${END}${BOLD} app(s) installed.\n${INDENT}${GREEN}${count_skipped}${END}${BOLD} app(s) already installed.\n${INDENT}${RED}${count_installed}${END}${BOLD} app(s) NOT installed." important
 }
 
 # install homebrew & apps
