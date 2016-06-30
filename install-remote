@@ -4,7 +4,7 @@
 
 # grab command line arguments & set defaults
 REPO="$1"
-OSZ_ROOT="${OSZ_ROOT:-2}"
+OSZ_ROOT="${OSZ_ROOT:-$2}"
 ERROR_MSG=""
 
 if [[ "$OSZ_ROOT" ]] && [[ "$REPO" ]]; then
