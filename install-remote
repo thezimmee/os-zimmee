@@ -7,7 +7,13 @@ REPO="$1"
 OSZ_ROOT="${OSZ_ROOT:-2}"
 ERROR_MSG=""
 
-[[ "$OSZ_ROOT" ]] && [[ "$REPO" ]] && do_clone=true
+if [[ "$OSZ_ROOT" ]] && [[ "$REPO" ]]; then
+    echo "[ ?? ] Would you like to clone your OSZ repo from ${REPO} to ${OSZ_ROOT}? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        do_clone=true
+    fi
+fi
 
 install_homebrew () {
     # install homebrew
@@ -34,6 +40,7 @@ update_homebrew () {
 }
 
 clone_repo () {
+    echo "[ .. ] Cloning ${REPO} to ${OSZ_ROOT}..."
     git clone --recursive "$REPO" "$OSZ_ROOT"   
 }
 
