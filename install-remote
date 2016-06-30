@@ -6,6 +6,11 @@
 ERROR_MSG=""
 
 if [[ "$OSZ_ROOT" ]] && [[ "$OSZ_REPO" ]]; then
+    echo "You are set to install homebrew, git, and clone ${OSZ_REPO} to ${OSZ_ROOT}. Continue? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        do_clone=true
+    fi
     do_clone=true
 fi
 
