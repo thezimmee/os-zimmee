@@ -3,16 +3,10 @@
 # installs and configures OS Zimmee
 
 # grab command line arguments & set defaults
-REPO="$1"
-OSZ_ROOT="${OSZ_ROOT:-$2}"
 ERROR_MSG=""
 
-if [[ "$OSZ_ROOT" ]] && [[ "$REPO" ]]; then
-    echo "[ ?? ] Would you like to clone your OSZ repo from ${REPO} to ${OSZ_ROOT}? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        do_clone=true
-    fi
+if [[ "$OSZ_ROOT" ]] && [[ -z "$OSZ_REPO" ]]; then
+    do_clone=true
 fi
 
 install_homebrew () {
@@ -40,8 +34,8 @@ update_homebrew () {
 }
 
 clone_repo () {
-    echo "[ .. ] Cloning ${REPO} to ${OSZ_ROOT}..."
-    git clone --recursive "$REPO" "$OSZ_ROOT"   
+    echo "[ .. ] Cloning ${OSZ_REPO} to ${OSZ_ROOT}..."
+    git clone --recursive "$OSZ_REPO" "$OSZ_ROOT"   
 }
 
 # install & update
@@ -51,7 +45,7 @@ update_homebrew && echo -e "[ OK ] Homebrew done! Run 'brew clean' to clean up o
 
 # clone git, if OSZ_ROOT is passed
 if [[ $do_clone = true ]]; then
-    clone_repo || ERROR_MSG="[FAIL] Something went wrong with cloning ${REPO}. You may want to do this manually."
+    clone_repo || ERROR_MSG="[FAIL] Something went wrong with cloning ${OSZ_REPO}. You may want to do this manually."
 fi
 
 # wrap up
