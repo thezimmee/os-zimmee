@@ -16,20 +16,23 @@ This project is heavily inspired by:
 
 ## Installation
 
-1. If you already have git, clone:
-	```sh
-	git clone https://github.com/thezimmee/os-zimmee.git ~/YOUR_DIRECTORY
-	cd ~/YOUR_DIRECTORY
-	```
-<!-- 2. Otherwise, install using curl:
-	```sh
-	sh -c "`curl -fsSL https://raw.github.com/thezimmee/os-zimmee/master/homebrew/install-remote`"
-	```
-	This will automatically install git with Homebrew and clone the repo. -->
+1. You should really fork this to make it your own.
 
-2. Customize the settings found in `$OSZ_ROOT/config`.
+2. Then install with the following command:
+	```sh
+	export OSZ_ROOT=PATH/TO/OSZ/ROOT && export OSZ_REPO=YOUR_FORKED_REPO_URL && sh -c "`curl -fsSL https://raw.githubusercontent.com/thezimmee/os-zimmee/master/install-remote`"
+	```
+	This command does the following:
+	
+		- Sets `$OSZ_ROOT` to the directory you wish to install OSZ to.
+		- Sets `$OSZ_REPO` to the URL of your forked repo.
+		- Runs the `install-remote` script.
+	
+	If you do not set `$OSZ_ROOT` or `$OSZ_REPO`, the `install-remote` script will install Homebrew and git without cloning your repo, which you can do manually at a later time.
 
-3. Run `$OSZ_ROOT/install`.
+3. Once you have cloned your OSZ repo, customize the settings found in `$OSZ_ROOT/config` to your liking. _NOTE: You will also want to review all `bootstrap`, `install`, `setup`, and `uninstall` scripts in the repo to know exactly what they are doing, and to customize them to your liking._
+
+4. Finally, run the `$OSZ_ROOT/bootstrap` sciprt with `./PATH_TO_YOUR_OSZROOT/bootstrap` and follow the prompts to install OSZ.
 
 ## Usage
 
