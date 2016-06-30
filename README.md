@@ -24,9 +24,9 @@ This project is heavily inspired by:
 	```
 	This command does the following:
 	
-		- Sets `$OSZ_ROOT` to the directory you wish to install OSZ to.
-		- Sets `$OSZ_REPO` to the URL of your forked repo.
-		- Runs the `install-remote` script.
+	- Sets `$OSZ_ROOT` to the directory you wish to install OSZ to.
+	- Sets `$OSZ_REPO` to the URL of your forked repo.
+	- Runs the `install-remote` script.
 	
 	If you do not set `$OSZ_ROOT` or `$OSZ_REPO`, the `install-remote` script will install Homebrew and git without cloning your repo, which you can do manually at a later time.
 
