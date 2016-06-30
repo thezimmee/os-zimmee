@@ -7,20 +7,17 @@ install_homebrew () {
     # exit if already installed
     if [[ $(type -t brew) ]]; then
         log "Homebrew already installed."
-        return 0
+    else
+        log "Installing homebrew..."
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-
-    log "Installing homebrew..."
-    exit
-
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     for tap in "${CONFIG__brew_taps[@]}"; do
         brew tap "${tap}"
     done
 
     # fix permissions (see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/)
-    sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
+    # sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
 }
 
 install_brew () {
