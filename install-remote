@@ -5,7 +5,7 @@
 # grab command line arguments & set defaults
 ERROR_MSG=""
 
-if [[ "$OSZ_ROOT" ]] && [[ -z "$OSZ_REPO" ]]; then
+if [[ "$OSZ_ROOT" ]] && [[ "$OSZ_REPO" ]]; then
     do_clone=true
 fi
 
