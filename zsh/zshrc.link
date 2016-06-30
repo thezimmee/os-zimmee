@@ -1,5 +1,5 @@
 # shortcut to configuration files root
-export OSZ_ROOT=$HOME/Projects/os-new
+export OSZ_ROOT=$HOME/Projects/osz
 
 # github token for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463
