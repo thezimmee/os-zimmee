@@ -56,7 +56,7 @@ Make sure to do the following to ensure the "hyper" key works:
 To install all Sublime packages, initiate the `Package Control: Advanced Install Package` command and paste this list of packages to install them all at once:
 
 ```
-AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, Markdown Preview, MarkdownTOC, Material Theme, MaxPane, MoveTab, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal
+AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, MarkdownTOC, Material Theme, MaxPane, MoveTab, OmniMarkdownPreview, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal
 ```
 
 ### iTerm preferences
