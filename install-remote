@@ -7,7 +7,7 @@ REPO="$1"
 OSZ_ROOT="${OSZ_ROOT:-2}"
 ERROR_MSG=""
 
-[[ ! -z "$OSZ_ROOT" ]] && [[ -z "$REPO" ]] && do_clone=true
+[[ "$OSZ_ROOT" ]] && [[ "$REPO" ]] && do_clone=true
 
 install_homebrew () {
     # install homebrew
@@ -40,7 +40,7 @@ clone_repo () {
 # install & update
 install_homebrew || ERROR_MSG+="[FAIL] Homebrew installation failed. :(\n"
 install_git || ERROR_MSG+="[FAIL] git installation failed. :(\n"
-update_homebrew && ERROR_MSG+="[ .. ] Done! Run 'brew clean' to clean up old stuff." || echo "[ .. ]  Homebrew update failed. :("
+update_homebrew && echo -e "[ OK ] Homebrew done! Run 'brew clean' to clean up old stuff." || echo "[ .. ]  Homebrew update failed. :("
 
 # clone git, if OSZ_ROOT is passed
 if [[ $do_clone = true ]]; then
