@@ -53,7 +53,7 @@ CONFIG__cask_apps=(
 )
 # node packages to install GLOBALLY with `npm install -g <package>`
 CONFIG__npm_globals=(
-    "gulpjs/gulp-cli#4.0"
+    "gulp-cli"
 )
 
 # git & ssh
