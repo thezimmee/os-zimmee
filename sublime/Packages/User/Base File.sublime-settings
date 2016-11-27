@@ -1,0 +1,7 @@
+{
+	"jsdocs_deep_indent": false,
+	"jsdocs_extend_double_slash": false,
+	"jsdocs_min_spaces_between_columns": 2,
+	"jsdocs_align_tags": "no",
+	"jsdocs_spacer_between_sections": true,
+}

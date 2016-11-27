@@ -1,0 +1,15 @@
+# swap or detach and reinsert window depending on relationship
+# eg. "move north"
+
+kwmc=/usr/local/Cellar/kwm/3.0.1/bin/kwmc
+
+direction=$1
+current_window=$($kwmc query window focused id)
+neighboring_window=$($kwmc query window focused "$direction")
+has_same_parent=$($kwmc query window parent "$current_window" "$neighboring_window")
+if [ "$has_same_parent" = "true" ]
+then
+    $kwmc window -s "$direction"
+else
+    $kwmc window -m "$direction"
+fi

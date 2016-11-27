@@ -1,0 +1,5 @@
+// toggle kwm borders
+
+kwmc=/usr/local/Cellar/kwm/3.0.1/bin/kwmc
+
+[[ $($kwmc query mouse-follows-focus) = on ]] && $kwmc config mouse-follows-focus off || $kwmc config mouse-follows-focus on

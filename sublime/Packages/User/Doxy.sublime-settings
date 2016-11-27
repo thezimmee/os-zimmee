@@ -1,0 +1,16 @@
+// Settings in here override those in "${packages}/DoxyDoxygen/Doxy.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"profiles_default": [
+		//{
+		//    "languages":  [ "css" ],
+		//    "parsers":    [ "LanguageGeneric" ],
+		//    "doc_styles": [ "DoxyDoc" ] # Maybe "Kss" in future
+		//},
+		{
+			"languages":  [ "sass", "scss", "styl", "stylus" ],
+			"parsers":    [ "LanguageGeneric" ],
+			"doc_styles": [ "SassDoc" ] // or "DoxyDoc"
+		},
+	],
+}

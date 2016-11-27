@@ -135,6 +135,7 @@ This project is very young. If you run into any issues, please [open an issue](h
 	- postman
 	- forklift?
 - other apps to consider:
+	- amphetamine (like caffeine)
 	- amethyst
 	- moom
 	- audacity

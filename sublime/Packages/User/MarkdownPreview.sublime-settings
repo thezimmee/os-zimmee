@@ -1,0 +1,15 @@
+{
+	"enable_highlight": true,
+	"enabled_parsers": ["markdown"],
+	"enable_pygments": false,
+	"enabled_extensions": [
+		"default",
+		"extra",
+		"toc",
+		"codehilite(guess_lang=True,pygments_style=github,noclasses=True)"
+	],
+	"github_oauth_token": "fafb7ef378e0bd9c4b82d1cab7215824d66ea6b9",
+	"guess_language": true,
+	"parser": "markdown",
+	"css": ["default"],
+}

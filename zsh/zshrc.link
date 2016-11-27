@@ -1,13 +1,31 @@
 # shortcut to configuration files root
 export OSZ_ROOT=$HOME/Projects/osz
 
+# osz bootstrap
+run_osz () {
+	local current_dir=$(pwd)
+	cd $OSZ_ROOT
+	./bootstrap "$@"
+	cd $current_dir
+}
+alias osz=run_osz
+
 # github token for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463
 # opt out of homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
 
+# go lang
+export GOPATH=$HOME/go-projects
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Projects
+
+# reload zsh
+alias reload='. $HOME/.zshrc'
 
 # source prezto
 setopt EXTENDED_GLOB
@@ -24,12 +42,8 @@ if [[ -a ~/.localrc ]]
 	source ~/.localrc
 fi
 
-# all of our zsh files
-# typeset -U config_files
-# config_files=($OSZ_ROOT/**/*.zsh)
 
-# load path files
-# for file in ${(M)config_files:#*/path.zsh}
+## load path files
 for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name 'path.zsh')
 do
 	source $file
@@ -46,10 +60,7 @@ autoload -U compinit
 compinit
 
 # load every completion after autocomplete loads
-# for file in ${(M)config_files:#*/completion.zsh}
 for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name 'completion.zsh')
 do
 	source $file
 done
-
-# unset config_files

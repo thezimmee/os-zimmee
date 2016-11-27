@@ -9,6 +9,7 @@
         # wtf     = !$ZSH/bin/git-wtf
         # rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+	lastchange = log -p --follow -n 1
 [color]
         diff = auto
         status = auto
@@ -22,15 +23,14 @@
         whitespace = nowarn
 [merge]
         tool = sublimerge
-[mergetool]
+[mergetool "sublimerge"]
         cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
         trustExitCode = false
-        keepBackup = false
 [diff]
         tool = sublimerge
-[difftool]
+[difftool "sublimerge"]
         cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
-        prompt = false
+
 [help]
         autocorrect = 1
 [push]

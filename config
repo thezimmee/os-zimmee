@@ -27,8 +27,10 @@ CONFIG__cask_apps=(
     filezilla
     firefox
     firefoxdeveloperedition
+    forklift
     google-chrome
     google-chrome-canary
+    google-drive
     hammerspoon
     iterm2
     karabiner

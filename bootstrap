@@ -3,7 +3,7 @@
 # installs and configures OS Zimmee
 
 # set OSZ_ROOT
-OSZ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+[[ -z $OSZ_ROOT ]] && OSZ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [[ -z "$OSZ_ROOT" ]] || [[ ! -f "${OSZ_ROOT}/bootstrap" ]]; then
     read -r -p "No \$OSZ_ROOT detected. Where is your OSZ_ROOT directory (must be an absolute path)? " < /dev/tty
@@ -290,7 +290,7 @@ setup_config () {
     fi
     if [[ $CONFIG__run_type = update ]]; then
         confirm_msg+="\n${INDENT}  - Update Homebrew."
-        [[ -z $APP_MODE ]] && confirm_msg+="\n${INDENT} - Update apps from the app store."
+        [[ -z $APP_MODE ]] && confirm_msg+="\n${INDENT}  - Update apps from the app store."
     fi
     confirm_msg+="\n${INDENT}  - Run any ${scripts_to_run} script(s) in ${APP_NAME}."
     if [[ $CONFIG__run_type = uninstall ]]; then
