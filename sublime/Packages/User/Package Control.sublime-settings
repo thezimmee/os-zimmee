@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Boxy Theme",
+		"Codecs33",
+		"Color Highlighter",
+		"Emmet",
+		"GitGutter",
+		"GitSavvy",
+		"JsFormat",
+		"LESS",
+		"Markdown Extended",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Package Control",
+		"PackageResourceViewer",
+		"Pug",
+		"Schemr",
+		"SideBarEnhancements",
+		"Stylus",
+		"Sublimerge 3",
+		"Sublimerge Pro"
+	]
+}

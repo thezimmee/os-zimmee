@@ -2,39 +2,45 @@
 #
 # config to install everything with no questions asked
 
+# shows config is loaded
+CONFIG__loaded=true
+
+# OS ROOT
+OSZ_ROOT=~/Projects/os-zimmee
+
 # homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
     caskroom/cask
-    caskroom/versions
+    homebrew/versions
     caskroom/fonts
 )
 # homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
     bash
     git
-    homebrew/binary/kwm
+    # homebrew/binary/kwm
     imagemagick
-    mas
+    # mas
     node
     wget
     zsh
 )
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
-    amethyst
+    # amethyst
     appcleaner
     colorpicker
     filezilla
     firefox
     firefoxdeveloperedition
-    forklift
+    # forklift
     google-chrome
     google-chrome-canary
-    google-drive
+    # google-drive
     hammerspoon
     iterm2
-    karabiner
-    seil
+    # karabiner
+    # seil
     slack
     sublime-text
     # osx quicklook plugins
@@ -62,7 +68,9 @@ CONFIG__npm_globals=(
 CONFIG__git_username="The Zimmee"
 CONFIG__git_useremail="thezimmee@gmail.com"
 CONFIG__sshkey="$HOME/.ssh/id_rsa.pub"
+CONFIG__git_credential='osxkeychain'
 
-## setup options (bootstrap will ask you for these values unless you add them here)
-# CONFIG__run_type=install # install | setup | update
-# CONFIG__run_mode=ask # ask | overwrite | backup | preserve
+# sublime
+CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
+CONFIG__package_control_file="$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"

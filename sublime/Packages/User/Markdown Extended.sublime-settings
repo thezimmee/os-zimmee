@@ -2,7 +2,7 @@
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
-	"color_scheme": "Packages/User/markdown--solarized-light.tmTheme",
+	// "color_scheme": "Packages/User/markdown--solarized-light.tmTheme",
 	"draw_centered": true,
 	"font_face": "Menlo",
 	"font_size": 14,

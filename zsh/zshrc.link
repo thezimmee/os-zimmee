@@ -1,5 +1,6 @@
 # shortcut to configuration files root
-export OSZ_ROOT=$HOME/Projects/osz
+export OSZ_ROOT=$HOME/Projects/os-zimmee
+DEFAULT_USER=zimmee
 
 # osz bootstrap
 run_osz () {

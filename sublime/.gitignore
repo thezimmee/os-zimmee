@@ -6,6 +6,7 @@ Packages/*
 
 # ignore package control files
 Package Control.*
+!Package Control.sublime-settings
 
 # individual files / folders
 Packages/User/GitSavvy

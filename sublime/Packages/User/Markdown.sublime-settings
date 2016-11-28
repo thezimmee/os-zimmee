@@ -3,7 +3,7 @@
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
-	"color_scheme": "Packages/User/markdown--solarized-light.tmTheme",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"draw_centered": true,
 	"extensions":
 	[
@@ -12,7 +12,6 @@
 		"mdown",
 		"txt"
 	],
-	// "font_face": "Open Sans",
 	"font_options":
 	[
 	],

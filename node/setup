@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# installs node packages
+#
+# bash node/setup
+
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
+fi
+
+# install_node_packages
+npm install -g ${CONFIG__npm_globals[@]}

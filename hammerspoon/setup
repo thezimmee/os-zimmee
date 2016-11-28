@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# installs and configures OS Zimmee
+#
+# . homebrew/setup
+
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+    CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
+fi
+
+# symlink hammerspoon
+ln -s "${OSZ_ROOT}/hammerspoon/hammerspoon.link" ~/.hammerspoon

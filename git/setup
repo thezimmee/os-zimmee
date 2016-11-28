@@ -1,55 +1,33 @@
 #!/usr/bin/env bash
-#
 # set up git and ssh
+#
+# TO RUN:
+# . git/setup
 
-setup_ssh () {
-    local response
-    # create new key
-    log "Creating new SSH key... "
-
-    ssh-keygen -t rsa -b 4096 -C "${CONFIG__git_useremail}" -f $CONFIG__sshkey
-    eval "$(ssh-agent -s)"
-    ssh-add "$CONFIG__sshkey"
-    cat $CONFIG__sshkey | pbcopy
-
-    log "A new SSH key was created and copied to your clipboard.\n${INDENT}Paste it into your GitHub account (${MAGENTA}https://github.com/account/ssh${END})."
-    open 'https://github.com/account/ssh'
-    continue_when_ready && log "Completed SSH key setup." success
-}
-
-setup_gitconfig () {
-    local git_credential='cache'
-
-    # set up gitconfig
-    log "Setting up gitconfig..."
-
-    [[ "$(uname -s)" == 'Darwin' ]] && git_credential='osxkeychain'
-
-    if [[ -z $CONFIG__git_username ]] || [[ -z $CONFIG__git_useremail ]]; then
-        log "(user choice) gitconfig was skipped. No user name or email." fail
-        return 1
-    else
-        cat "$OSZ_ROOT/git/gitconfig.local" | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" > "$HOME/.gitconfig.local"
-    fi
-}
-
-# ask user for info if not already in config
-[[ -z $CONFIG__git_username ]] && ask "What do you want your git ${BLUE}user name${END} to be?" && CONFIG__git_username=$REPLY
-[[ -z $CONFIG__git_useremail ]] && ask "What do you want your git ${BLUE}user email${END} to be?" && CONFIG__git_useremail=$REPLY
-
-# should we run ssh?
-if [[ -e "$CONFIG__sshkey" ]]; then
-    overwrite_handler "$CONFIG__sshkey" false && setup_ssh
-else
-    setup_ssh
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
 fi
 
-# should we run gitconfig?
-if [[ -f "$HOME/.gitconfig.local" ]]; then
-    overwrite_handler "$HOME/.gitconfig.local" false && setup_gitconfig
+# create new key
+echo "Creating new SSH key... "
+
+ssh-keygen -t rsa -b 4096 -C "${CONFIG__git_useremail}"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+
+# set up gitconfig
+echo "Setting up ~/.gitconfig and ~/.gitignore-global..."
+
+ln -s ${OSZ_ROOT}/git/gitignore.link ~/.gitignore-global
+ln -s ${OSZ_ROOT}/git/gitconfig.link ~/.gitconfig
+
+if [[ -z $CONFIG__git_username ]] || [[ -z $CONFIG__git_useremail ]]; then
+    echo "(user choice) gitconfig was skipped. No user name or email."
+    return 1
 else
-    setup_gitconfig
+    cat ${OSZ_ROOT}/git/gitconfig.local | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$CONFIG__git_credential/g" > "$HOME/.gitconfig.local"
 fi
 
-# return successfully
-return 0
+echo "A new SSH key was created, as well as .gitconfig and .gitignore-global files. The SSH key was copied to your clipboard; make sure to paste it into your GitHub account (https://github.com/account/ssh)."

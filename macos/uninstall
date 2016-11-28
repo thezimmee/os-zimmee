@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# resets macOS preferences
+
+echo "Trying to reset preferences to their defaults..."
+defaults delete /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName
+defaults delete com.apple.systemuiserver
+defaults delete /.Spotlight-V100/VolumeConfiguration
+defaults delete com.apple.spotlight
+defaults delete NSGlobalDomain
+defaults delete com.apple.print.PrintingPrefs
+defaults delete /Library/Preferences/com.apple.loginwindow
+defaults delete com.apple.SoftwareUpdate
+defaults delete /Library/Preferences/.GlobalPreferences.plist
+defaults -currentHost delete com.apple.ImageCapture
+defaults delete com.apple.systempreferences
+defaults delete com.apple.universalaccess
+defaults delete com.apple.BluetoothAudioAgent
+defaults delete -g com.apple.trackpad.scaling
+defaults delete -g com.apple.mouse.scaling
+defaults delete com.apple.BezelServices
+defaults delete /Library/Preferences/com.apple.iokit.AmbientLightSensor
+defaults delete com.apple.screensaver
+defaults delete com.apple.screencapture
+defaults delete /Library/Preferences/com.apple.windowserver
+defaults delete com.apple.finder
+defaults delete com.apple.Finder
+defaults delete com.apple.desktopservices
+defaults delete com.apple.frameworks.diskimages
+defaults delete com.apple.dock
+defaults delete "Apple Global Domain"
+defaults delete com.apple.Safari
+defaults delete com.google.Chrome
+defaults delete com.google.Chrome.canary
+defaults delete com.apple.mail
+defaults delete com.apple.terminal
+defaults delete com.apple.Terminal
+defaults delete com.apple.TimeMachine
+defaults delete com.apple.messageshelper.MessageController
+defaults delete -g com.apple.keyboard.fnState
+defaults delete com.apple.driver.AppleBluetoothMultitouch.trackpad
+defaults -currentHost delete NSGlobalDomain
+echo "DONE."

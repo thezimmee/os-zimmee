@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# installs and configures OS Zimmee
+#
+# . homebrew/setup
+
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+    CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
+fi
+
+install_homebrew () {
+    # exit if already installed
+    if [[ $(type -t brew) ]]; then
+        echo "Homebrew already installed."
+    else
+        echo "Installing homebrew..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    echo "Updating homebrew..."
+    brew update && brew upgrade && brew doctor
+
+    echo "Installing brew taps..."
+    brew tap "${CONFIG__brew_taps[@]}"
+    # for tap in "${CONFIG__brew_taps[@]}"; do
+    #     brew tap "${tap}"
+    # done
+}
+
+install_homebrew_apps () {
+    # install apps
+    echo "Installing homebrew apps..."
+    brew install "${CONFIG__brew_apps[@]}" && brew cask install "${CONFIG__cask_apps[@]}" && echo "Finished app installs."
+}
+
+# install homebrew & apps
+install_homebrew || echo "Something went wrong with installing Homebrew... exiting."
+install_homebrew_apps || echo "Something went wrong with installing Homebrew apps... exiting."

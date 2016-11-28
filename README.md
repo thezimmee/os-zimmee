@@ -1,10 +1,10 @@
 # OS Zimmee
 
-This is my attempt at automating all of macOS and app configuration.
+Easy installation of a new MacOS machine.
 
 ## Inspiration
 
-This project is heavily inspired by:
+This project is inspired by:
 
 - [GitHub guide to dotfiles](http://dotfiles.github.io/)
 - [holman dotfiles](https://github.com/holman/dotfiles)
@@ -16,65 +16,58 @@ This project is heavily inspired by:
 
 ## Installation
 
-1. You should really fork this to make it your own.
+1. Install homebrew &amp; homebrew packages by running `bash homebrew/setup`.
 
-2. Then install with the following command:
-	```sh
-	export OSZ_ROOT=PATH/TO/OSZ/ROOT && export OSZ_REPO=YOUR_FORKED_REPO_URL && sh -c "`curl -fsSL https://raw.githubusercontent.com/thezimmee/os-zimmee/master/install-remote`"
+2. Clone `os-zimmee` repo:
+
+	```bash
+	# The recursive flag pulls in submodules
+	git clone --recursive https://github.com/thezimmee/os-zimmee.git
 	```
-	This command does the following:
-	
-	- Sets `$OSZ_ROOT` to the directory you wish to install OSZ to.
-	- Sets `$OSZ_REPO` to the URL of your forked repo.
-	- Runs the `install-remote` script.
-	
-	If you do not set `$OSZ_ROOT` or `$OSZ_REPO`, the `install-remote` script will install Homebrew and git without cloning your repo, which you can do manually at a later time.
 
-3. Once you have cloned your OSZ repo, customize the settings found in `$OSZ_ROOT/config` to your liking. _NOTE: You will also want to review all `bootstrap`, `install`, `setup`, and `uninstall` scripts in the repo to know exactly what they are doing, and to customize them to your liking._
+3. Set up ZSH & iTerm:
 
-4. Finally, run the `$OSZ_ROOT/bootstrap` sciprt with `./PATH_TO_YOUR_OSZROOT/bootstrap` and follow the prompts to install OSZ.
+	- Run `bash zsh/setup` script.
+	- Import Solarized theme from `/iterm`.
+	- Set up keyboard shortcuts in iTerm:
+		- [Deletions](https://coderwall.com/p/ds2dha/word-line-deletion-and-navigation-shortcuts-in-iterm2)
+		- [Selections](http://apple.stackexchange.com/questions/154292/iterm-going-one-word-backwards-and-forwards)
 
-## Usage
+4. Set up MacOS preferences by running `macos/setup` script. _Make sure to [disable `capslock` on all keyboards](https://www.maketecheasier.com/disable-caps-lock-mac/)_.
 
-### Organization
+5. Set up other apps by running `bash [app]/setup`. Make sure to set up:
 
-The project is structured by topic, which makes it simple to add/remove apps or sets of config files. It should also easy to clone other helpful repos and consume them.
+	- git
+	- Sublime
+		- To install all Sublime packages, initiate the `Package Control: Advanced Install Package` command and paste this list of packages to install them all at once:
 
-## Post Installation Steps
+			```
+			AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, MarkdownTOC, Material Theme, MaxPane, MoveTab, OmniMarkdownPreview, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal
+			```
 
-There are some steps that either couldn't or haven't yet been automated. After installing OSZ, make sure to take these post-installation steps for each app.
+		- Make sure to update desired settings for Boxy theme.
 
-### The "hyper" key (capslock)
+	- Hammerspoon
+		- Start Hammerspoon and make sure it launches at startup.
+	- Karabiner-Elements
+		- Start Karabiner-Elements and make sure it launches at startup.
 
-Make sure to do the following to ensure the "hyper" key works:
+6. Consider other apps to install:
 
-- [Disable `capslock` in macOS preferences](https://pqrs.org/osx/karabiner/seil.html.en#usage)
-- [Make sure `capslock` is set to `80` (which is the `f19` key)](https://pqrs.org/osx/karabiner/seil.html.en#commandlineinterface)
+	- [palua](http://osx.iusethis.com/app/palua)
+	- Photoshop
+	- Illustrator
+	- Snippy
+	- Blisk
+	- Parallels
 
-### Installing Sublime Packages
+## Keeping things fresh
 
-To install all Sublime packages, initiate the `Package Control: Advanced Install Package` command and paste this list of packages to install them all at once:
+- Update home brew with `bash ~/Projects/os-zimmee/homebrew/update`.
+- Update prezto with `git pull && git submodule update --init --recursive`.
+- Update apps from the App Store with `sudo softwareupdate -i -a`.
+- Update global node packages with `npm update -g npm`.
 
-```
-AutoFileName, BetterFindBuffer, BracketHighlighter, DistractionFreeWindow, DocBlockr, GitGutter, GitSavvy, Jade, LESS, MarkdownEditing, MarkdownTOC, Material Theme, MaxPane, MoveTab, OmniMarkdownPreview, Package Control, PackageResourceViewer, Sass, SideBarEnhancements, Solarized Color Scheme, Sublimerge Pro, Sync View Scroll, Terminal
-```
-
-### iTerm preferences
-
-All preferences are stored in `$OSZ_ROOT/iTerm`, but need to be manually loaded in iTerm preferences.
-
-### Amethyst spaces support
-
-To enable spaces support in Amethyst, activate Mission Control's keyboard shortcuts for switching to specific Desktops, which is in the keyboard shortcuts tab of the keyboard preferences pane.
-
-### Other apps to consider installing:
-
-- [palua](http://osx.iusethis.com/app/palua)
-- Photoshop
-- Illustrator
-- Snippy
-- Blisk
-- Parallels
 
 <!-- ### Special file types
 

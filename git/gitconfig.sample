@@ -1,23 +1,27 @@
 [user]
-	name = The Zimmee
-	email = thezimmee@gmail.com
+	name = AUTHORNAME
+	email = AUTHOREMAIL
+
+[credential]
+    helper = GIT_CREDENTIAL_HELPER
 
 [core]
 	editor = subl -n -w
 	excludesfile = /Users/thezimmee/.gitignore-global
 	# editor = atom --wait
+
 [push]
 	default = simple
 
 [merge]
-tool = sublimerge
+	tool = sublimerge
 
 [mergetool "sublimerge"]
-cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-trustExitCode = false
+	cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+	trustExitCode = false
 
 [diff]
-tool = sublimerge
+	tool = sublimerge
 
 [difftool "sublimerge"]
-cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+	cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"

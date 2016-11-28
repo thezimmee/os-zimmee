@@ -16,36 +16,33 @@ fi
 install_homebrew () {
     # install homebrew
     if $(type -t brew); then
-        echo "[ .. ] Homebrew already installed."
+        echo "Homebrew already installed."
     else
-        echo "[ .. ] Installing Homebrew..."
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        echo "Installing Homebrew..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-
-    # fix homebrew permissions (see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/)
-    sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
 }
 
 install_git () {
     # install apps
-    echo "[ .. ] Installing git..."
+    echo "Installing git..."
     brew install git
 }
 
 update_homebrew () {
-    echo "[ .. ] Updating homebrew..."
+    echo "Updating homebrew..."
     brew update && brew upgrade && brew doctor
 }
 
 clone_repo () {
-    echo "[ .. ] Cloning ${OSZ_REPO} to ${OSZ_ROOT}..."
+    echo "Cloning ${OSZ_REPO} to ${OSZ_ROOT}..."
     git clone --recursive "$OSZ_REPO" "$OSZ_ROOT"   
 }
 
 # install & update
 install_homebrew || ERROR_MSG+="[FAIL] Homebrew installation failed. :(\n"
 install_git || ERROR_MSG+="[FAIL] git installation failed. :(\n"
-update_homebrew && echo -e "[ OK ] Homebrew done! Run 'brew clean' to clean up old stuff." || echo "[ .. ]  Homebrew update failed. :("
+update_homebrew && echo -e "[ OK ] Homebrew done! Run 'brew clean' to clean up old stuff." || echo " Homebrew update failed. :("
 
 # clone git, if OSZ_ROOT is passed
 if [[ $do_clone = true ]]; then
@@ -57,7 +54,7 @@ if [[ "$ERROR_MSG" != "" ]]; then
     echo "[FAIL] There was a problem with the installation..."
     echo -e "${ERROR_MSG}"
     echo "---"
-    echo "[ .. ] Either try again or manually install git and clone the repo."
+    echo "Either try again or manually install git and clone the repo."
     echo "Sorry 'bout that."
 else
     echo -e "[ OK ] Woot woot! OSZ installation is complete!"

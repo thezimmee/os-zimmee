@@ -3,5 +3,5 @@
 # node and npm packages
 
 # Update npm and install global modules.
-log "npm update -g npm" command
+echo "Updating global node packages..."
 npm update -g npm

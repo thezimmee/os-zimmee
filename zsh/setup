@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
+# set up ZSH
+#
+# . zsh/setup
+
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
+fi
 
 # change zsh to default shell
-change_shell () {
-	log "chsh -s /bin/zsh" command
-	chsh -s /bin/zsh
-	log "ZSH was setup as the default shell."
-}
+echo "Changing default shell to ZSH..."
+chsh -s /bin/zsh
 
-if [[ $CONFIG__run_mode = ask ]]; then
-	yes_no "Update current shell to zsh?" && change_shell || return 0
-else
-	change_shell
-fi
+# set up ZSH dotfiles
+echo "Setting up ZSH dotfiles..."
+ln -s ${OSZ_ROOT}/zprezto.link ~/.zprezto
+for dotfile in $(find -H ${OSZ_ROOT}/zsh/*.link); do
+    dest="$HOME/.$(basename "${dotfile%.*}")"
+    ln -s "$dotfile" "$dest"
+done
