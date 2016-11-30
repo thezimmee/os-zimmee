@@ -25,7 +25,7 @@ local utils = dofile('helpers/utils.lua')
 local grid = dofile('grid.lua')
 
 -- locals
-local WINDOW_MODES = {'hs', 'amethyst', 'kwm'}
+local WINDOW_MODES = {'hs', 'amethyst'}
 local WINDOW_MODE = 'hs'
 
 -- Ensure IPC command line client is available

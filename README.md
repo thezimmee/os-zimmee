@@ -52,14 +52,15 @@ This project is inspired by:
 	- Karabiner-Elements
 		- Start Karabiner-Elements and make sure it launches at startup.
 
-6. Consider other apps to install:
+6. Install the following apps from the App Store:
 
-	- [palua](http://osx.iusethis.com/app/palua)
+	- XCode
+	- Snippy
+
+7. Consider other apps to install:
+
 	- Photoshop
 	- Illustrator
-	- Snippy
-	- Blisk
-	- Parallels
 
 ## Keeping things fresh
 

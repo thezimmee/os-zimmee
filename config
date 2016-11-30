@@ -28,21 +28,32 @@ CONFIG__brew_apps=(
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
     # amethyst
+    1password
     appcleaner
+    blisk
+    brave
     colorpicker
+    cyberduck
     filezilla
     firefox
     firefoxdeveloperedition
+    flux
     # forklift
     google-chrome
     google-chrome-canary
     # google-drive
     hammerspoon
     iterm2
+    karabiner-elements
     # karabiner
+    # little-snitch
+    parallels-desktop
+    private-internet-access
     # seil
     slack
     sublime-text
+    torbrowser
+    unifi-controller
     # osx quicklook plugins
     betterzipql
     qlcolorcode
@@ -52,6 +63,7 @@ CONFIG__cask_apps=(
     qlstephen
     quicklook-csv
     quicklook-json
+    unarchiver
     webpquicklook
     # fonts
     font-bebas-neue
