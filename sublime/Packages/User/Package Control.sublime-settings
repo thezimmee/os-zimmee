@@ -5,7 +5,9 @@
 	],
 	"installed_packages":
 	[
+		"BetterFindBuffer",
 		"Boxy Theme",
+		"Boxy Theme Addon - Widget Font Size",
 		"Codecs33",
 		"Color Highlighter",
 		"Emmet",
