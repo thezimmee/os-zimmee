@@ -59,6 +59,7 @@ This project is inspired by:
 
 7. Consider other apps to install:
 
+	- Affinity Designer
 	- Photoshop
 	- Illustrator
 
