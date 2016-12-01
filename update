@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# updates OS Zimmee
+#
+# bash update
+
+# load config
+if [[ -z $CONFIG__loaded ]]; then
+    CURRENT=${PWD} && cd -P "$( dirname "$0" )" && bash config && cd $CURRENT
+fi
+
+# update homebrew
+echo "Would you like to update homebrew and all its packages? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	bash "${OSZ_ROOT}/homebrew/update"
+fi
+
+# update npm packages
+echo "Would you like to update npm global packages? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	bash "${OSZ_ROOT}/node/update"
+fi
+
+# update macOS software
+echo "Would you like to update macOS Apps? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	sudo softwareupdate --install --all
+fi

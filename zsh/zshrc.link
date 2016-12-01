@@ -2,14 +2,11 @@
 export OSZ_ROOT=$HOME/Projects/os-zimmee
 DEFAULT_USER=zimmee
 
-# osz bootstrap
-run_osz () {
-	local current_dir=$(pwd)
-	cd $OSZ_ROOT
-	./bootstrap "$@"
-	cd $current_dir
+# update OSZ
+update () {
+	bash "${OSZ_ROOT}/update"
 }
-alias osz=run_osz
+alias update=update
 
 # github token for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463

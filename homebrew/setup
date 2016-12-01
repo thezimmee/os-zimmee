@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # installs and configures OS Zimmee
 #
-# . homebrew/setup
+# bash homebrew/setup
 
 # load config
 if [[ -z $CONFIG__loaded ]]; then
