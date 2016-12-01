@@ -43,6 +43,7 @@ CONFIG__cask_apps=(
     google-chrome-canary
     # google-drive
     hammerspoon
+    # hyper
     iterm2
     karabiner-elements
     # karabiner
