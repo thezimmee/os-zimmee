@@ -1,1 +1,5 @@
+# macOS generated files
 .DS_Store
+
+# ide / editor files
+*.sublime-*

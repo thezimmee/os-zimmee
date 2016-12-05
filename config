@@ -20,7 +20,7 @@ CONFIG__brew_apps=(
     git
     # homebrew/binary/kwm
     imagemagick
-    # mas
+    mas
     node
     wget
     zsh

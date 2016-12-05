@@ -52,10 +52,28 @@ This project is inspired by:
 	- Karabiner-Elements
 		- Start Karabiner-Elements and make sure it launches at startup.
 
-6. Install the following apps from the App Store:
+6. Use `mas` to install other App Store apps.
+
+	```bash
+	# lists installed apps and their app ID
+	mas list
+	# find app and app ID
+	mas search <app>
+	# install app
+	mas install <app-id>
+	# list outdated apps
+	mas outdated
+	# upgrade all apps
+	mas upgrade
+	# sign in to App Store
+	mas signin <email>
+	```
+
+	Consider installing:
 
 	- XCode
 	- Snippy
+	- CloudApp
 
 7. Consider other apps to install:
 
