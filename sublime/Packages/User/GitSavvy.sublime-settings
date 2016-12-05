@@ -1,6 +1,7 @@
 {
 	"show_commit_diff": true,
 	"inline_diff_auto_scroll": true,
+	"inline_diff_ignore_eol_whitespaces": true,
 	"show_remotes_in_tags_dashboard": true,
 	"show_remotes_in_branch_dashboard": true,
 	"load_additional_codecs": true,
