@@ -19,6 +19,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# run ssh-agent
+plugins=(git ssh-agent)
+
 # your project folder that we can `c [tab]` to
 alias prj="cd ~/Projects"
 
