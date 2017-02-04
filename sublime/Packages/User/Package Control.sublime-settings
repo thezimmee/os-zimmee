@@ -10,9 +10,12 @@
 		"Boxy Theme Addon - Widget Font Size",
 		"Codecs33",
 		"Color Highlighter",
+		"CSS Format",
+		"DocBlockr",
 		"Emmet",
 		"GitGutter",
 		"GitSavvy",
+		"HTML-CSS-JS Prettify",
 		"JsFormat",
 		"LESS",
 		"Markdown Extended",
@@ -21,10 +24,13 @@
 		"Package Control",
 		"PackageResourceViewer",
 		"Pug",
+		"Sass",
 		"Schemr",
 		"SideBarEnhancements",
+		"Solarized Color Scheme",
 		"Stylus",
 		"Sublimerge 3",
-		"Sublimerge Pro"
+		"Sublimerge Pro",
+		"Table Editor"
 	]
 }

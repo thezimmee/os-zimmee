@@ -5,6 +5,7 @@
 	"caret_extra_width": 2,
 	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"draw_centered": true,
+	"enable_table_editor": true,
 	"extensions":
 	[
 		"md",
@@ -59,5 +60,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
 	"word_wrap": true,
-	"wrap_width": 80
+	"wrap_width": 72
 }

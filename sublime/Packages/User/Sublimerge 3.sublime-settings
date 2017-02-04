@@ -4,4 +4,25 @@
 		"end"
 	],
 	"three_way_merged_height": 150,
+	"beyond_viewport_rendering": 0,
+	"algorithm": "patience",
+	"ignore_whitespace": ["begin", "end"],
+	"intraline_changes_threshold": 40,
+	"intraline_combine_threshold": 3,
+	"view": {
+        //set to true if you want to display line numbers (they may not be corresponding
+        //with original file lines due to expanded diff regions)
+        "line_numbers": false,
+
+        //set to true if you want lines to wrap on words (this is not recommended due to
+        //readability reasons)
+        "word_wrap": false,
+
+        //set to false if you don't want to highlight corresponding lines
+        "highlight_line": true,
+
+        //set to 'all' to display white space characters always, 'selection' to display
+        //only when selection is applied
+        "draw_white_space": "all"
+    },
 }

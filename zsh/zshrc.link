@@ -25,6 +25,12 @@ alias prj="cd ~/Projects"
 # reload zsh
 alias reload='. $HOME/.zshrc'
 
+# compare directories
+compare () {
+	subl --command 'sublimerge_compare_paths {"paths": ["$1", "$2"]}'
+}
+alias compare=compare
+
 # source prezto
 setopt EXTENDED_GLOB
 # Source Prezto.
