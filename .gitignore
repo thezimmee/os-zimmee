@@ -1,5 +1,13 @@
-# macOS generated files
+## macOS generated files
 .DS_Store
 
-# ide / editor files
-*.sublime-*
+## ide / editor files
+*.sublime*
+
+## unnecessary files
+*.crt
+
+## unnecessary sublimerge files
+Sublimerge Macros.sublime-commands
+Sublimerge.tmTheme
+SublimergeSummaryPanel.tmTheme
