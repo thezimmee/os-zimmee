@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Advanced CSV",
 		"BetterFindBuffer",
 		"Boxy Theme",
 		"Boxy Theme Addon - Widget Font Size",
@@ -12,10 +13,15 @@
 		"Color Highlighter",
 		"CSS Format",
 		"DocBlockr",
+		"DoxyDoxygen",
+		"EJS 2",
 		"Emmet",
+		"FileBrowser",
+		"FindKeyConflicts",
 		"GitGutter",
 		"GitSavvy",
 		"HTML-CSS-JS Prettify",
+		"IndentX",
 		"JsFormat",
 		"LESS",
 		"Markdown Extended",
@@ -29,8 +35,10 @@
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
 		"Stylus",
+		"SublimeCodeIntel",
 		"Sublimerge 3",
 		"Sublimerge Pro",
-		"Table Editor"
+		"Table Editor",
+		"Vue Syntax Highlight"
 	]
 }

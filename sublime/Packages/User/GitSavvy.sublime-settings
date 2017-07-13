@@ -2,8 +2,16 @@
 	"show_commit_diff": true,
 	"inline_diff_auto_scroll": true,
 	"inline_diff_ignore_eol_whitespaces": true,
-	"show_remotes_in_tags_dashboard": true,
-	"show_remotes_in_branch_dashboard": true,
+	"show_remotes_in_tags_dashboard": false,
+	"show_remotes_in_branch_dashboard": false,
 	"load_additional_codecs": true,
-	"silent_fallback": true
+	"show_panel_for": [],
+	"silent_fallback": true,
+	"tab_order": [
+        "branch",
+        "status",
+        "graph",
+        "rebase",
+        "tags",
+    ]
 }

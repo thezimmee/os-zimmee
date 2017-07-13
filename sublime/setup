@@ -23,6 +23,9 @@ setup_sublime () {
 	fi
 	ln -s "$OSZ_ROOT/sublime/Packages" "$CONFIG__packages_path"
 
+	# symlink emmet prefs
+	ln -s "$OSZ_ROOT/emmet.link" "$HOME/.emmet"
+
 	# install package control
 	if [ ! -f "$CONFIG__package_controle_file" ]; then
 		echo "Installing package control..."

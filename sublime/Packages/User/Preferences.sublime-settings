@@ -1,14 +1,15 @@
 {
-	"afn_use_keybinding": true,
+	"afn_use_keybinding": false,
 	"always_show_minimap_viewport": true,
-	"auto_complete": false,
+	"auto_complete": true,
+	"auto_complete_delay": 50,
 	"caret_extra_width": 1,
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
 	"draw_centered": false,
 	"draw_minimap_border": true,
 	"draw_white_space": "all",
-	"ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": false,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
@@ -49,6 +50,7 @@
 	[
 		"Color Highlighter",
 		"DistractionFreeWindow",
+		"DocBlockr",
 		"Git",
 		"LiveReload",
 		"Markdown Extended",
@@ -88,7 +90,7 @@
 	"overlay_scroll_bars": "system",
 	"shift_tab_unindent": true,
 	"show_full_path": true,
-	"tab_completion": false,
+	"tab_completion": true,
 	"tab_size": 4,
 	"theme": "Boxy Solarized Dark.sublime-theme",
 	"theme_accent_green": true,

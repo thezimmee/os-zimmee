@@ -1,6 +1,229 @@
 // Settings in here override those in "${packages}/DoxyDoxygen/Doxy.sublime-settings",
 // and are overridden in turn by syntax-specific settings.
 {
+	"block_layout_default": {
+		"ApiDoc": [
+			"",
+			"@api",
+			"@apiName",
+			"@apiGroup",
+			"",
+			"@apiDescription",
+			"",
+			"@apiParam",
+			"",
+			"@apiSuccess",
+			""
+		],
+
+		"AsDoc": [
+			"",
+			"@_brief",
+			"",
+			"@param",
+			// "",
+			"@return",
+			//"",
+			//"@throws",
+			""
+		],
+
+		"DoxyDoc": [
+			"",
+			"@_brief",
+			"",
+			"@var",
+			//"@method",
+			//"",
+			"@param",
+			//"",
+			"@return",
+			""
+		],
+
+		"Doxygen": [
+			{
+				"tags": [
+					"@_brief"
+				],
+				"context": [
+					{ "key": "kind",                                             "operator": "regex_match",  "operand": "^(?:var|constant)$" },
+					{ "key": "language",                                         "operator": "regex_match",  "operand": "^(?:json)$" }
+				]
+			},
+			{
+				"tags": [
+					"",
+					// QT Doc Style ("\\") may replace "@" but it's NOT necessary
+
+					// "@addtogroup",                           // GROUP_NAME may be auto-filled (search GROUP_NAME in this file)
+					// "@memberof {file_base_name}",
+					// "@copyright 2014-{now:%Y} {user_name}",  // fixed date from "current"
+					// "@author {user_name}",                   // fixed author name
+					// "@author",                               // author name have to be entered manually
+					// "@author {user_name:doxy_capitalize();.1}. {user_name:doxy_chars(1,);doxy_capitalize();}",
+					// "@date {now:%Y-%m-%dT%H:%M:%S%z}",       // iso format (see https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)
+					// "@date {now:%d-%b-%Y}",                  // dd-mon-YYYY format
+					"@brief",  // or "@_brief" if you prefer have no explicit @brief (auto-brief approach)
+					"",
+					// "@details",
+					// "",
+					"@param",
+					// "",
+					"@tparam",
+					// "",
+					"@return",
+					//"",
+					//"@throws",
+					//"",
+					//"@\remark Complexity",
+					""
+				],
+				"context": [
+					{ "key": "kind",                                             "operator": "not_equal",  "operand": "" }
+				]
+			}
+		],
+
+		"GoogleClosure": [
+			"",
+			"@_brief",
+			"",
+			"@type",
+			"",
+			"@param",
+			"",
+			"@return",
+			""
+		],
+
+		"Drupal": [
+			"",
+			"@_brief",
+			"",
+			"@var",
+			"@param",
+			"",
+			"@return",
+			""
+		],
+
+		// HeaderDoc require to install a DoxyDoxygen_contrib_HeaderDoc
+		"HeaderDoc": [
+			"",
+			"@_brief",
+			"",
+			"@var",
+			"@const",
+			"",
+			"@param",
+			"",
+			"@return",
+			""
+		],
+
+		// NaturalDocs users may use this format (http://www.naturaldocs.org/languages.html)
+		"JavaDoc": [
+			"",
+			// JavaDoc require the following order
+			"@_brief",
+			//"@author",
+			//"",
+			//"@version",
+			"",
+			"@param",
+			"",
+			"@return",
+			"",
+			"@throws",
+			""
+			//"@see",
+			//"@since",
+			//"@serial",
+			//"@deprecated",
+		],
+
+		"JsDoc": [
+			"",
+			"@_brief",
+			"",
+			"@type",
+			"@class",
+			"@param",
+			"@return",
+			""
+		],
+
+		"PhpDoc": [
+			"",
+			"@_brief",
+			"",
+			"@var",
+			"",
+			"@param",
+			"",
+			"@throws",
+			"",
+			"@return",
+			""
+		],
+
+		"SassDoc": [
+			"",
+			"@_brief",
+			"",
+			"@type",
+			"",
+			"@param",
+			"",
+			"@return",
+			// "",
+			// "@throws",
+			""
+		],
+
+		"Sphinx": [
+			"",
+			"@_brief",
+			"",
+			":param",
+			":type",
+			"",
+			":returns:",
+			":rtype:",
+			"",
+			":exception",
+			""
+		],
+
+		"XmlDoc": [
+			"<summary>",
+			"",
+			"<paramref",
+			"<param",
+			"",
+			"<returns>",
+			"",
+			"<exception"
+		],
+
+		"YuiDoc": [
+			"",
+			"@_brief",
+			"",
+			"@type",
+			"@class",
+			"@method",
+			"@param",
+			"@return",
+			""
+		]
+	},
+	"doxygen_paragraph_prefix": " ",
+	"jsdoc_paragraph_prefix": " ",
+	"phpdoc_paragraph_prefix": " ",
+	"preferred_tabs_sizes": [ 4, 0, 0, 0, 0, 0 ],
+	"max_line_reducing": 12,
 	"profiles_default": [
 		//{
 		//    "languages":  [ "css" ],

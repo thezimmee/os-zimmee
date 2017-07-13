@@ -1,6 +1,6 @@
 {
 	"enable_highlight": true,
-	"enabled_parsers": ["markdown"],
+	"enabled_parsers": ["markdown", "github"],
 	"enable_pygments": false,
 	"enabled_extensions": [
 		"default",

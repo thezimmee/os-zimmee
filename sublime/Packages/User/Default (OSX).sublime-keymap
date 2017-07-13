@@ -1,5 +1,13 @@
 [
 	/**
+	 * GIT COMMANDS
+	 */
+	{ "keys": ["super+alt+t"], "command": "gs_show_status" },
+	{ "keys": ["super+alt+b"], "command": "gs_show_branch" },
+	{ "keys": ["super+alt+g"], "command": "gs_log_graph" },
+
+
+	/**
 	 * QUICK TOGGLE SHORTCUTS
 	 */
 	// toggle centered
@@ -13,15 +21,31 @@
 	// toggle synchronized scrolling
 	{ "keys": ["super+ctrl+y"], "command": "toggle_sync_scroll" },
 
+
+	/**
+	 * FILE BROWSER
+	 */
+	{ "keys": ["super+shift+;"], "command": "dired_jump" },
+	{"keys": [" "], "command": "dired_quick_look", "args": { "preview": false}, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }]},
+	{"keys": ["super+shift+'"], "command": "dired", "args": {
+		"immediate": true,
+		"single_pane": true,
+		"other_group": "left",
+		"project": true
+	}},
+
+
 	/**
 	 * COMPLETION
 	 */
 	{"keys": ["super+shift+;"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
 
+
 	/**
 	 * INDENTATION
 	 */
 	{ "keys": ["super+alt+]"], "command": "reindent", "args": {"single_line": false} },
+
 
 	/**
 	 * SELECTION
