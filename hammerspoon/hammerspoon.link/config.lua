@@ -8,8 +8,8 @@ local config = {
 	grid = {
 		height = 2,
 		width = 10,
-		marginx = 5,
-		marginy = 5
+		marginx = 1,
+		marginy = 1
 	}
 }
 
