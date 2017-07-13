@@ -1,7 +1,7 @@
 # ignore all directories but User
 .*
 Packages/*
-!.gitignore
+# !.gitignore
 !Packages/User
 
 # ignore package control files
@@ -10,3 +10,4 @@ Package Control.*
 
 # individual files / folders
 Packages/User/GitSavvy
+Packages/User/Color Highlighter

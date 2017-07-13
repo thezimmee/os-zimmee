@@ -6,12 +6,3 @@
 
 ## unnecessary files
 *.crt
-
-## unnecessary sublimerge files
-Sublimerge Macros.sublime-commands
-Sublimerge.tmTheme
-SublimergeSummaryPanel.tmTheme
-/sublime/Packages/User/Sublimerge Macros.sublime-commands
-/sublime/Packages/User/Sublimerge Macros.sublime-commands
-/sublime/Packages/User/Sublimerge.tmTheme
-/sublime/Packages/User/SublimergeSummaryPanel.tmTheme
