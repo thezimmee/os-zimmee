@@ -1,17 +1,19 @@
 {
-	"show_commit_diff": true,
-	"inline_diff_auto_scroll": true,
+	"arrow_keys_navigation": false,
+	"load_additional_codecs": true,
+	"git_graph_args": ["log", "--pretty=format:%h%d %s (%ar) <%an>", "--graph"],
+	"global_flags": {
+		"merge": ["--no-ff", "--no-commit"],
+		"pull": ["--rebase"]
+	},
 	"inline_diff_ignore_eol_whitespaces": true,
+	"inline_diff_auto_scroll": true,
+	"show_commit_diff": true,
+	"show_full_commit_info": true,
 	"show_remotes_in_tags_dashboard": false,
 	"show_remotes_in_branch_dashboard": false,
 	"load_additional_codecs": true,
 	"show_panel_for": [],
 	"silent_fallback": true,
-	"tab_order": [
-        "branch",
-        "status",
-        "graph",
-        "rebase",
-        "tags",
-    ]
+	"tab_order": ["branch", "status", "graph", "rebase", "tags", ]
 }

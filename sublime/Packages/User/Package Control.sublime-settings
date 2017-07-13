@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Advanced CSV",
 		"BetterFindBuffer",
 		"Boxy Theme",
@@ -27,6 +28,7 @@
 		"Markdown Extended",
 		"Markdown Preview",
 		"MarkdownEditing",
+		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
 		"Pug",

@@ -1,16 +1,14 @@
 {
-    "three_way_layout": 0,
-    "three_way_merged_height": 400,
+    "dont_remind_about_sublimerge_3": true,
+    "go_to_next_after_merge": false,
     "ignore_whitespace": true,
-    "ignore_crlf": false,
-    "view": {
-        "line_numbers": true,
-        "word_wrap": true
-    },
     "separate_missing_blocks": true,
     "snapshots_on_save": false,
-    "start_swapped": false,
-    "toggle_side_bar": false,
     "toggle_minimap": true,
-    "go_to_next_after_merge": false
+    "toggle_side_bar": false,
+    "view":
+    {
+        "line_numbers": true,
+        "word_wrap": true
+    }
 }

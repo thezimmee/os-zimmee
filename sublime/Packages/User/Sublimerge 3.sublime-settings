@@ -1,18 +1,19 @@
 {
-	"ignore_whitespace": [
-		"begin",
-		"end"
-	],
-	"three_way_merged_height": 150,
-	"beyond_viewport_rendering": 0,
-	"algorithm": "patience",
-	"ignore_whitespace": ["begin", "end"],
-	"intraline_changes_threshold": 40,
-	"intraline_combine_threshold": 3,
-	"view": {
+    "three_way_layout": 0,
+    "three_way_navigate_all": false,
+    "three_way_merged_height": 50,
+    "intraline_changes_threshold": 0, // 60 is default; change this if things get wacky.
+    "ignore_whitespace": ["begin", "end"],
+    "auto_select_first": true,
+    "full_screen": true,
+    "toggle_menu": false,
+    "toggle_side_bar": false,
+    "toggle_minimap": true,
+    "snapshots_on_save": false,
+    "view": {
         //set to true if you want to display line numbers (they may not be corresponding
         //with original file lines due to expanded diff regions)
-        "line_numbers": false,
+        "line_numbers": true,
 
         //set to true if you want lines to wrap on words (this is not recommended due to
         //readability reasons)
