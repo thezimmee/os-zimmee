@@ -8,19 +8,24 @@ update () {
 }
 alias update=update
 
+## git
 # github token for homebrew
 export HOMEBREW_GITHUB_API_TOKEN=e660996ecb7cc6287c921dafe9d11e2a3afe2463
 # opt out of homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
+# # run ssh-agent
+ssh-add -K ~/.ssh/id_rsa
+# plugins=(git ssh-agent)
+# if [ -z "$SSH_AUTH_SOCK" ] ; then
+# 	eval `ssh-agent -s`
+# 	ssh-add -K ~/.ssh/id_rsa
+# fi
 
-# go lang
+## go lang
 export GOPATH=$HOME/go-projects
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-
-# run ssh-agent
-plugins=(git ssh-agent)
 
 # your project folder that we can `c [tab]` to
 alias prj="cd ~/Projects"
