@@ -1,5 +1,5 @@
 {
-	"auto_match_enabled": true,
+	// "auto_match_enabled": true,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
@@ -13,52 +13,52 @@
 		"mdown",
 		"txt"
 	],
-	"font_options":
-	[
-	],
-	"font_size": 15,
-	"highlight_line": false,
+	// "font_options":
+	// [
+	// ],
+	// "font_size": 15,
+	// "highlight_line": false,
 	"line_numbers": false,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
-	"mde.auto_increment_ordered_list_number": true,
-	"mde.distraction_free_mode":
-	{
-		"mde.keep_centered": true
-	},
-	"mde.keep_centered": false,
-	"mde.lint":
-	{
-		"disable":
-		[
-			"md013"
-		],
-		"md003": "any",
-		"md004": "cyclic",
-		"md007": 0,
-		"md013": 0,
-		"md026": ".,;:!",
-		"md029": "any",
-		"md030":
-		{
-			"ol_multi": 1,
-			"ol_single": 1,
-			"ul_multi": 1,
-			"ul_single": 1
-		}
-	},
-	"mde.list_indent_auto_switch_bullet": false,
-	"mde.list_indent_bullets":
-	[
-		"-"
-	],
-	"mde.match_header_hashes": false,
-	"rulers":
-	[
-	],
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": false,
+	// "mde.auto_increment_ordered_list_number": true,
+	// "mde.distraction_free_mode":
+	// {
+	// 	"mde.keep_centered": true
+	// },
+	// "mde.keep_centered": false,
+	// "mde.lint":
+	// {
+	// 	"disable":
+	// 	[
+	// 		"md013"
+	// 	],
+	// 	"md003": "any",
+	// 	"md004": "cyclic",
+	// 	"md007": 0,
+	// 	"md013": 0,
+	// 	"md026": ".,;:!",
+	// 	"md029": "any",
+	// 	"md030":
+	// 	{
+	// 		"ol_multi": 1,
+	// 		"ol_single": 1,
+	// 		"ul_multi": 1,
+	// 		"ul_single": 1
+	// 	}
+	// },
+	// "mde.list_indent_auto_switch_bullet": false,
+	// "mde.list_indent_bullets":
+	// [
+	// 	"-"
+	// ],
+	// "mde.match_header_hashes": false,
+	// "rulers":
+	// [
+	// ],
+	// "tab_size": 4,
+	// "translate_tabs_to_spaces": true,
+	// "trim_trailing_white_space_on_save": false,
 	"word_wrap": true,
 	"wrap_width": 72
 }
