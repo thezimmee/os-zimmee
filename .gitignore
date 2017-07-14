@@ -34,10 +34,14 @@ sublime/Packages/watchdog/
 sublime/Packages/zzz A File Icon zzz/
 
 # User files and folders.
-sublime/Packages/User/Color Highlighter/
-sublime/Packages/User/GitSavvy/
+sublime/Packages/User/Color Highlighter/themes/
+sublime/Packages/User/GitSavvy/*.hidden-tmTheme
 sublime/Packages/User/Package Control.*
+!sublime/Packages/User/Package Control.sublime-settings
 sublime/Packages/User/oscrypto-ca-bundle.crt
-sublime/Packages/User/Color Highlighter/themes/Solarized (dark).tmTheme
+sublime/Packages/User/Sublimerge Macros.sublime-commands
+sublime/Packages/User/Sublimerge.tmTheme
+sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 
 ## --- END: SUBLIME
+##
