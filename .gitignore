@@ -2,7 +2,42 @@
 .DS_Store
 
 ## ide / editor files
-*.sublime*
+*.sublime-project
+*.sublime-workspace
 
 ## unnecessary files
 *.crt
+
+##
+## --- START: SUBLIME
+
+# Installed packages not in user folder.
+sublime/Packages/BetterFindBuffer/
+sublime/Packages/Boxy Theme Addon - Widget Font Size/
+sublime/Packages/Codecs33/
+sublime/Packages/Default/
+sublime/Packages/HTML-CSS-JS Prettify/
+sublime/Packages/JavaScript/
+sublime/Packages/PyV8/
+sublime/Packages/SublimeCodeIntel/
+sublime/Packages/Sublimerge 3/
+sublime/Packages/markupsafe/
+sublime/Packages/mdpopups/
+sublime/Packages/numpy/
+sublime/Packages/package_events/
+sublime/Packages/pathtools/
+sublime/Packages/pygments/
+sublime/Packages/python-jinja2/
+sublime/Packages/python-markdown/
+sublime/Packages/pyyaml/
+sublime/Packages/watchdog/
+sublime/Packages/zzz A File Icon zzz/
+
+# User files and folders.
+sublime/Packages/User/Color Highlighter/
+sublime/Packages/User/GitSavvy/
+sublime/Packages/User/Package Control.*
+sublime/Packages/User/oscrypto-ca-bundle.crt
+sublime/Packages/User/Color Highlighter/themes/Solarized (dark).tmTheme
+
+## --- END: SUBLIME
