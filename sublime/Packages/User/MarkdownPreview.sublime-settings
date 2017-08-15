@@ -1,6 +1,7 @@
 {
+	"enable_autoreload": true,
 	"enable_highlight": true,
-	"enabled_parsers": ["markdown", "github"],
+	"enabled_parsers": ["markdown"],
 	"enable_pygments": false,
 	"enabled_extensions": [
 		"default",
