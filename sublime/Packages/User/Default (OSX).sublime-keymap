@@ -1,175 +1,150 @@
 [
-	/**
-	 * GIT COMMANDS
-	 */
-	{ "keys": ["super+alt+t"], "command": "gs_show_status" },
-	{ "keys": ["super+alt+b"], "command": "gs_show_branch" },
-	{ "keys": ["super+alt+g"], "command": "gs_log_graph" },
+    /**
+     * [[START]]
+     * Tab and panes navigation and manipulation.
+     */
+    // Navigate between tabs.
+    { "keys": ["alt+k"], "command": "next_view" },
+    { "keys": ["alt+j"], "command": "prev_view" },
+    // Navigate between panes.
+    { "keys": ["alt+i"], "command": "focus_neighboring_group" },
+    { "keys": ["alt+u"], "command": "focus_neighboring_group", "args": { "forward": false }},
+    { "keys": ["alt+o"], "command": "travel_to_pane", "args": { "direction": "down" }},
+    { "keys": ["alt+p"], "command": "travel_to_pane", "args": { "direction": "up" }},
+    // Tab / pane manipulation.
+    // { "keys": ["ctrl+shift+i"], "command": "move_to_neighboring_group" },
+    // { "keys": ["ctrl+shift+u"], "command": "move_to_neighboring_group", "args": { "forward": false }},
+    { "keys": ["ctrl+shift+u"], "command": "carry_file_to_pane", "args": { "direction": "left" }},
+    { "keys": ["ctrl+shift+i"], "command": "carry_file_to_pane", "args": { "direction": "right" }},
+    { "keys": ["ctrl+shift+p"], "command": "carry_file_to_pane", "args": { "direction": "up" }},
+    { "keys": ["ctrl+shift+o"], "command": "carry_file_to_pane", "args": { "direction": "down" }},
+    { "keys": ["super+k", "super+alt+p"], "command": "create_pane_with_file", "args": { "direction": "up" }},
+    { "keys": ["super+k", "super+alt+i"], "command": "create_pane_with_file", "args": { "direction": "right" }},
+    { "keys": ["super+k", "super+alt+o"], "command": "create_pane_with_file", "args": { "direction": "down" }},
+    { "keys": ["super+k", "super+alt+u"], "command": "create_pane_with_file", "args": { "direction": "left" }},
+    // Move tab inside of pane.
+    { "keys": ["control+alt+k"], "command": "move_tab", "args": { "position": "999" }},
+    { "keys": ["control+alt+j"], "command": "move_tab", "args": { "position": "0" }},
+    { "keys": ["control+j"], "command": "move_tab", "args": { "position": "-1" }},
+    { "keys": ["control+k"], "command": "move_tab", "args": { "position": "+1" }},
+    // Destroy panes.
+    { "keys": ["super+k", "super+ctrl+u"], "command": "destroy_pane", "args": { "direction": "left" }},
+    { "keys": ["super+k", "super+ctrl+i"], "command": "destroy_pane", "args": { "direction": "right" }},
+    { "keys": ["super+k", "super+ctrl+p"], "command": "destroy_pane", "args": { "direction": "up" }},
+    { "keys": ["super+k", "super+ctrl+o"], "command": "destroy_pane", "args": { "direction": "down" }},
+    { "keys": ["super+ctrl+-"], "command": "close_pane" },
+    // Resize panes.
+    { "keys": ["super+shift+i"], "command": "resize_pane", "args": { "orientation": "cols" }},
+    { "keys": ["super+shift+u"], "command": "resize_pane", "args": { "orientation": "rows" }},
+    { "keys": ["super+alt+shift+u"], "command": "resize_active_group", "args" : { "direction" : "left" }},
+    { "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args" : { "direction" : "right" }},
+    { "keys": ["super+alt+shift+p"], "command": "resize_active_group", "args" : { "direction" : "up" }},
+    { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "down" }},
+    /**
+     * [[END]]
+     */
 
 
-	/**
-	 * QUICK TOGGLE SHORTCUTS
-	 */
-	// toggle centered
-	{ "keys": ["super+alt+i"], "command": "toggle_setting", "args": {"setting": "draw_centered"} },
-	// toggle sidebar
-	{ "keys": ["super+\\"], "command": "toggle_side_bar" },
-	// toggle word wrap
-	{ "keys": ["super+."], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
-	// toggle code folding buttons
-	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": {"setting": "fade_fold_buttons"} },
-	// toggle synchronized scrolling
-	{ "keys": ["super+ctrl+y"], "command": "toggle_sync_scroll" },
+    /**
+     * [[START]]
+     * Code navigation and selection.
+     */
+    // { "keys": ["alt+left"], "command": "move", "args": { "by": "words", "forward": false }},
+    // { "keys": ["alt+right"], "command": "move", "args": { "by": "word_ends", "forward": true }},
+    { "keys": ["ctrl+left"], "command": "move", "args": { "by": "subwords", "forward": false }},
+    { "keys": ["ctrl+right"], "command": "move", "args": { "by": "subword_ends", "forward": true }},
+    /**
+     * [[END]]
+     */
 
 
-	/**
-	 * FILE BROWSER
-	 */
-	{ "keys": ["super+shift+;"], "command": "dired_jump" },
-	{"keys": [" "], "command": "dired_quick_look", "args": { "preview": false}, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }]},
-	{"keys": ["super+shift+'"], "command": "dired", "args": {
-		"immediate": true,
-		"single_pane": true,
-		"other_group": "left",
-		"project": true
-	}},
+    /**
+     * [[START]]
+     * File operations (open, new, save, etc.).
+     */
+    // New file.
+    { "keys": ["super+n"], "command": "side_bar_new_file" },
+    { "keys": ["super+alt+n"], "command": "new_file" },
+    // File browser.
+    { "keys": ["super+shift+;"], "command": "dired", "args": { "immediate": true, "single_pane": true, "other_group": "left", "project": true }},
+    // File browser jump list.
+    { "keys": ["super+shift+'"], "command": "dired_jump" },
+    // Quick look in file browser.
+    { "keys": [" "], "command": "dired_quick_look", "args": { "preview": false }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }]},
+    // Navigate in file browser.
+    { "keys": ["."], "command": "dired_next_line", "args": { "forward": true }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }, { "key": "setting.command_mode", "operand": false }]},
+    { "keys": [","], "command": "dired_next_line", "args": { "forward": false }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }, { "key": "setting.command_mode", "operand": false }]},
+    /**
+     * [[END]]
+     */
 
 
-	/**
-	 * COMPLETION
-	 */
-	{"keys": ["super+shift+;"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
+    /**
+     * [[START]]
+     * Code formatting and interaction.
+     */
+    // Code indent.
+    { "keys": ["super+shift+h"], "command": "reindent", "args": { "single_line": false }},
+    // Toggle code folding buttons.
+    { "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" }},
+    // Toggle centered.
+    { "keys": ["super+alt+i"], "command": "toggle_setting", "args": { "setting": "draw_centered" }},
+    // Toggle sidebar.
+    { "keys": ["super+\\"], "command": "toggle_side_bar" },
+    // Toggle word wrap.
+    { "keys": ["super+."], "command": "toggle_setting", "args": { "setting": "word_wrap" }},
+    /**
+     * [[END]]
+     */
 
 
-	/**
-	 * INDENTATION
-	 */
-	{ "keys": ["super+alt+]"], "command": "reindent", "args": {"single_line": false} },
+    /**
+     * [[START]]
+     * Auto completion.
+     */
+    { "keys": ["super+shift+;"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
+    /**
+     * [[END]]
+     */
 
 
-	/**
-	 * SELECTION
-	 */
-	{ "keys": ["super+shift+space"], "command": "expand_selection", "args": {"to": "tag"} },
-
-	/**
-	 * COMMANDS
-	 */
-	{ "keys": ["super+alt+shift+\\"], "command": "permute_lines", "args": {"operation": "unique"} },
-	{
-		"keys": ["ctrl+c"],
-		"command": "shell_exec_run",
-		"args": { "command": "exit" }
-	},
-
-	/**
-	 * ZOOM IN (SOMETHING WEIRD IS OVERRIDING THESE BINDINGS)
-	 */
-	{ "keys": ["super+alt+equals"], "command": "increase_font_size" },
-	{ "keys": ["super+plus"], "command": "increase_font_size" },
-	{ "keys": ["super+minus"], "command": "decrease_font_size" },
-
-	/**
-	 * UI NAVIGATION / MANIPULATION
-	 */
-	// move to "subword" (capital letters in camelCase or PascalCase words)
-	// { "keys": ["alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
-	// { "keys": ["alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
-	{ "keys": ["ctrl+left"], "command": "move", "args": {"by": "words", "forward": false} },
-	{ "keys": ["ctrl+right"], "command": "move", "args": {"by": "word_ends", "forward": true} },
-	// move tabs up/down/left/right
-	{"keys": ["control+k"], "command": "move_tab", "args": { "position": "999" } },
-	{"keys": ["control+i"], "command": "move_tab", "args": { "position": "0" } },
-	{"keys": ["control+j"], "command": "move_tab", "args": { "position": "-1" } },
-	{"keys": ["control+l"], "command": "move_tab", "args": { "position": "+1" } },
-
-	/**
-	 * SCHEMR / COLOR SCHEME SWITCHER
-	 */
-	{ "keys": ["alt+shift+c"], "command": "schemr_list_schemes" },
-	{ "keys": ["alt+c"], "command": "schemr_cycle_favorite_schemes", "args": {"direction": "prev"}},
-
-	/**
-	 * REOPEN LAST TAB
-	 */
-	{ "keys": ["super+shift+t"], "command": "reopen_last_file" },
-
-	/**
-	 * PANES & LAYOUT
-	 */
-	// toggle distraction free
-	{ "keys": ["super+shift+i"], "command": "distraction_free_window" },
-	// toggle max pane
-	{ "keys": ["super+shift+enter"], "command": "max_pane" },
-	// create pane
-	// { "keys": ["super+k", "super+="], "command": "new_pane" },
-	// { "keys": ["super+k", "super+shift+="], "command": "new_pane", "args": {"move": false} },
-	// destroy pane
-	// { "keys": ["super+k", "super+-"], "command": "close_pane" },
-	// navigate panes
-	// { "keys": ["alt+j"], "command": "focus_neighboring_group", "args": {"forward": false} },
-	// { "keys": ["alt+l"], "command": "focus_neighboring_group" },
-	// move panes
-	// { "keys": ["ctrl+shift+j"], "command": "move_to_neighboring_group", "args": {"forward": false} },
-	// { "keys": ["ctrl+shift+l"], "command": "move_to_neighboring_group" },
-	// clone
-	{ "keys": ["super+k", "super+shift+n"], "command": "clone_file" },
-
-	/** origami shortcuts */
-	// navigate to pane
-	{ "keys": ["alt+i"], "command": "travel_to_pane", "args": {"direction": "up"} },
-	{ "keys": ["alt+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
-	{ "keys": ["alt+k"], "command": "travel_to_pane", "args": {"direction": "down"} },
-	{ "keys": ["alt+j"], "command": "travel_to_pane", "args": {"direction": "left"} },
-
-	// create pane
-	{ "keys": ["super+k", "super+i"], "command": "create_pane", "args": {"direction": "up", "give_focus": true} },
-	{ "keys": ["super+k", "super+l"], "command": "create_pane", "args": {"direction": "right", "give_focus": true} },
-	{ "keys": ["super+k", "super+k"], "command": "create_pane", "args": {"direction": "down", "give_focus": true} },
-	{ "keys": ["super+k", "super+j"], "command": "create_pane", "args": {"direction": "left", "give_focus": true} },
-	// You can also add  "give_focus": true to automatically focus on the new pane as follows:
-	// { "keys": [], "command": "create_pane", "args": {"direction": "", "give_focus": true} }
-
-	// { "keys": ["super+k", "super+i"], "command": "create_pane_with_file", "args": {"direction": "up"} },
-	// { "keys": ["super+k", "super+l"], "command": "create_pane_with_file", "args": {"direction": "right"} },
-	// { "keys": ["super+k", "super+k"], "command": "create_pane_with_file", "args": {"direction": "down"} },
-	// { "keys": ["super+k", "super+j"], "command": "create_pane_with_file", "args": {"direction": "left"} },
-
-	// move file to pane
-	{ "keys": ["super+k", "ctrl+shift+i"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
-	{ "keys": ["ctrl+shift+l"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
-	{ "keys": ["super+k", "ctrl+shift+k"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
-	{ "keys": ["ctrl+shift+j"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
-
-	// clone file to pane
-	// { "keys": ["super+k", "super+alt+i"], "command": "clone_file_to_pane", "args": {"direction": "up"} },
-	// { "keys": ["super+k", "super+alt+l"], "command": "clone_file_to_pane", "args": {"direction": "right"} },
-	// { "keys": ["super+k", "super+alt+k"], "command": "clone_file_to_pane", "args": {"direction": "down"} },
-	// { "keys": ["super+k", "super+alt+j"], "command": "clone_file_to_pane", "args": {"direction": "left"} },
-	// You can also create the pane automatically with the following command (insert empty parameters):
-	// { "keys": [], "command": "create_pane_with_cloned_file", "args": {"direction": ""} }
-
-	// destroy pane
-	{ "keys": ["super+k", "alt+i"], "command": "destroy_pane", "args": {"direction": "up"} },
-	{ "keys": ["super+k", "alt+l"], "command": "destroy_pane", "args": {"direction": "right"} },
-	{ "keys": ["super+k", "alt+k"], "command": "destroy_pane", "args": {"direction": "down"} },
-	{ "keys": ["super+k", "alt+j"], "command": "destroy_pane", "args": {"direction": "left"} },
-	// // You can also destroy the current pane by binding the following command:
-	{ "keys": ["super+k", "super+;"], "command": "destroy_pane", "args": {"direction": "self"} },
-
-	// You can pull a file from another pane by binding the following command:
-	// { "keys": [], "command": "pull_file_from_pane", "args": { "direction": ""} }
-
-	// resize panes
-	{ "keys": ["super+k", "super+z"], "command": "toggle_zoom_pane", "args": {"fraction": 0.9} },
-	{ "keys": ["super+k", "super+."], "command": "resize_pane", "args": {"orientation": "cols"} },
-	{ "keys": ["super+k", "super+,"], "command": "resize_pane", "args": {"orientation": "rows"} },
-
-	/**
-	 * resize panes (Resize Group with Keyboard package)
-	 */
-	{ "keys": ["super+alt+left"], "command": "resize_active_group", "args" : { "direction" : "left" } },
-	{ "keys": ["super+alt+right"], "command": "resize_active_group", "args" : { "direction" : "right" } },
-	{ "keys": ["super+alt+up"], "command": "resize_active_group", "args" : { "direction" : "up" } },
-	{ "keys": ["super+alt+down"], "command": "resize_active_group", "args" : { "direction" : "down" } }
+    /**
+     * [[START]]
+     * Git commands.
+     */
+    {
+        "keys": ["super+alt+m"],
+        "command": "send_code",
+        "args": {
+            "cmd": "git mergetool"
+        }
+    },
+    {
+        "keys": ["super+alt+t"],
+        "command": "gs_show_status"
+    },
+    {
+        "keys": ["super+alt+b"],
+        "command": "gs_show_branch"
+    },
+    {
+        "keys": ["super+alt+g"],
+        "command": "gs_log_graph"
+    },
+    [
+    {
+        "keys": ["L"],
+        "command": "gs_pull",
+        "context": [
+        {
+            "key": "setting.git_savvy.status_view",
+            "operator": "equal",
+            "operand": true
+        },
+        {
+            "key": "selector",
+            "operator": "equal",
+            "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file"
+        }]
+    }],
 ]
