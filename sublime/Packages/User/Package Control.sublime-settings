@@ -14,6 +14,7 @@
 		"EditorConfig",
 		"EJS 2",
 		"Emmet",
+		"ExpandRegion",
 		"FileBrowser",
 		"FindKeyConflicts",
 		"GitGutter",
@@ -47,6 +48,7 @@
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
 		"SublimeCodeIntel",
-		"Sublimerge 3"
+		"Sublimerge 3",
+		"SyntaxFold"
 	]
 }

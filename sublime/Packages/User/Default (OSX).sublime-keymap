@@ -1,7 +1,6 @@
 [
     /**
-     * [[START]]
-     * Tab and panes navigation and manipulation.
+     * [[START]] Tab and panes navigation and manipulation.
      */
     // Navigate between tabs.
     { "keys": ["alt+k"], "command": "next_view" },
@@ -40,27 +39,33 @@
     { "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args" : { "direction" : "right" }},
     { "keys": ["super+alt+shift+p"], "command": "resize_active_group", "args" : { "direction" : "up" }},
     { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "down" }},
-    /**
+        /**
      * [[END]]
      */
 
 
     /**
-     * [[START]]
-     * Code navigation and selection.
+     * [[START]] Code navigation and selection.
      */
+    // Word navigation / selection.
     // { "keys": ["alt+left"], "command": "move", "args": { "by": "words", "forward": false }},
     // { "keys": ["alt+right"], "command": "move", "args": { "by": "word_ends", "forward": true }},
     { "keys": ["ctrl+left"], "command": "move", "args": { "by": "subwords", "forward": false }},
     { "keys": ["ctrl+right"], "command": "move", "args": { "by": "subword_ends", "forward": true }},
+    // Expand selection.
+    { "keys": ["super+shift+space"], "command": "expand_region" },
+    { "keys": [ "super+ctrl+space" ], "command": "expand_region", "args": { "undo": true }, "context": [{ "key": "expand_region_soft_undo" }]},
+    // Code folding.
+    { "keys": ["alt+[", "alt+["], "command": "fold_all" },
+    { "keys": ["alt+]", "alt+]"], "command": "unfold_all" },
+    { "keys": ["alt+]"], "command": "toggle_fold_current" },
     /**
      * [[END]]
      */
 
 
     /**
-     * [[START]]
-     * File operations (open, new, save, etc.).
+     * [[START]] File operations (open, new, save, etc.).
      */
     // New file.
     { "keys": ["super+n"], "command": "side_bar_new_file" },
@@ -80,8 +85,7 @@
 
 
     /**
-     * [[START]]
-     * Code formatting and interaction.
+     * [[START]] Code formatting and interaction.
      */
     // Code indent.
     { "keys": ["super+shift+h"], "command": "reindent", "args": { "single_line": false }},
@@ -99,8 +103,7 @@
 
 
     /**
-     * [[START]]
-     * Auto completion.
+     * [[START]] Auto completion.
      */
     { "keys": ["super+shift+;"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
     /**
@@ -109,8 +112,7 @@
 
 
     /**
-     * [[START]]
-     * Git commands.
+     * [[START]] Git commands.
      */
     {
         "keys": ["super+alt+m"],
@@ -147,4 +149,7 @@
             "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file"
         }]
     }],
+    /**
+     * [[END]]
+     */
 ]

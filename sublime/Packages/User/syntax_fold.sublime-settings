@@ -1,0 +1,29 @@
+{
+    "config":[
+        {
+            "scope": "source.java, source.js, embedding.php",
+            "startMarker": "//region",
+            "endMarker":"//endregion"
+        },
+        {
+            "scope": "source.css, source.sass, source.scss, source.less, source.json.sublime",
+            "startMarker":"* [[START]]",
+            "endMarker":"* [[END]]"
+        },
+        {
+            "scope": "source.c++, source.c",
+            "startMarker":"#pragma region",
+            "endMarker":"#pragma endregion"
+        },
+        {
+            "scope": "text.html.basic",
+            "startMarker":"<!-- [[START]]",
+            "endMarker":"<!-- [[END]] -->"
+        },
+        {
+            "scope": "text.plain",
+            "startMarker":"---region---",
+            "endMarker":"---endregion---"
+        }
+    ]
+}
