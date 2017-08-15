@@ -31,7 +31,23 @@
 				<key>invisibles</key>
 				<string>#586e75</string>
 				<key>lineHighlight</key>
-				<string>#ffffff10</string>
+				<string>#268bd223</string>
+				<key>selection</key>
+				<string>#b5890055</string> <!-- <string>#2c4c55</string> -->
+				<!-- <key>selectionForeground</key>
+				<string>#ffffffcc</string> -->
+				<key>selectionBorder</key>
+				<string>#b58900cc</string> <!-- <string>#586e75</string> -->
+				<key>inactiveSelection</key>
+				<string>#b58900aa</string>
+				<!-- <key>inactiveSelectionForeground</key>
+				<string>#ffffff99</string> -->
+				<key>highlight</key>
+				<string>#b58900</string>
+				<key>findHighlight</key>
+				<string>#b58900</string>
+				<key>findHighlightForeground</key>
+				<string>#ffffffcc</string>
 				<key>popupCss</key>
 				<string>
 html {
@@ -72,10 +88,6 @@ a {
   text-decoration: underline;
 }
 </string>
-				<key>selection</key>
-				<string>#ffffff16</string>
-				<key>selectionBorder</key>
-				<string>#ffffff16</string>
 				<key>stackGuide</key>
 				<string>#ffffff40</string>
 			</dict>

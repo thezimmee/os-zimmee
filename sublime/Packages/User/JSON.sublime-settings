@@ -4,6 +4,7 @@
 	[
 		".jsbeautifyrc",
 		".htmlhintrc",
-		".htmllintrc"
+		".htmllintrc",
+		"sublime-settings"
 	]
 }
