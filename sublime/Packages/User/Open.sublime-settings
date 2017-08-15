@@ -1,0 +1,13 @@
+{
+    // Files or directories to be shown at the begining
+    "bookmarks": ["~/Projects", "~", "/"],
+
+    // Bookmark identifier in the first panel. Can be "%d" to enumerate them
+    "bookmark_prefix": "»",
+
+    // List the directory of the currently file (tab)
+    "list_current_dir": true,
+
+    // Ignore regex patters
+    "filter_regex": ["\\.DS_Store", "\\.git"]
+}

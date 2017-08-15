@@ -1,0 +1,9 @@
+{
+	"color_scheme": "Packages/User/Boxy Solarized Dark (Zimmee).tmTheme",
+	"extensions":
+	[
+		".jsbeautifyrc",
+		".htmlhintrc",
+		".htmllintrc"
+	]
+}
