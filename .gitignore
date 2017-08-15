@@ -1,11 +1,11 @@
-## macOS generated files
+## macOS.
 .DS_Store
 
-## ide / editor files
+## IDE.
 *.sublime-project
 *.sublime-workspace
 
-## unnecessary files
+## Unnecessary.
 *.crt
 
 ##
@@ -18,11 +18,9 @@ sublime/Packages/Codecs33/
 sublime/Packages/Default/
 sublime/Packages/HTML-CSS-JS Prettify/
 sublime/Packages/JavaScript/
-sublime/Packages/PyV8/
-sublime/Packages/SublimeCodeIntel/
-sublime/Packages/Sublimerge 3/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
+/sublime/Packages/Minify/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
 sublime/Packages/pathtools/
@@ -30,18 +28,27 @@ sublime/Packages/pygments/
 sublime/Packages/python-jinja2/
 sublime/Packages/python-markdown/
 sublime/Packages/pyyaml/
+sublime/Packages/PyV8/
+sublime/Packages/SublimeCodeIntel/
+sublime/Packages/Sublimerge 3/
 sublime/Packages/watchdog/
 sublime/Packages/zzz A File Icon zzz/
+sublime/Packages/LiveReload/
+sublime/Packages/SendCode/
+sublime/Packages/Sublimerge Pro/
+sublime/Packages/Theme - Default/
+sublime/.idf255ba1d3fbe3f803d4980d6d26359eda3d27ac3
 
 # User files and folders.
 sublime/Packages/User/Color Highlighter/themes/
 sublime/Packages/User/GitSavvy/*.hidden-tmTheme
+sublime/Packages/User/oscrypto-ca-bundle.crt
 sublime/Packages/User/Package Control.*
 !sublime/Packages/User/Package Control.sublime-settings
-sublime/Packages/User/oscrypto-ca-bundle.crt
 sublime/Packages/User/Sublimerge Macros.sublime-commands
 sublime/Packages/User/Sublimerge.tmTheme
 sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 
 ## --- END: SUBLIME
 ##
+
