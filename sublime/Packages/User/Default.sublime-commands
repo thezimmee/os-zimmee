@@ -2,12 +2,13 @@
 	/**
 	 * Git.
 	 */
-	{ "caption": "git: mergetool", "command": "send_code", "args": { "cmd": "git mergetool" }},
+	{ "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" }},
 
 
 	/**
 	 * Grunt.
 	 */
-	{ "caption": "grunt: serve back office", "command": "shell_command", "args": { "command": "grunt watch --client=${client::Client to run}", "syntax": "Ruby" }},
-	{ "caption": "grunt: kill all processes", "command": "shell_command", "args": { "command": "killall grunt", "syntax": "Ruby" }}
+	{ "caption": "grunt: serve back office", "command": "shell_command", "args": { "command": "grunt watch --client=${client::Client to run}" }},
+	{ "caption": "grunt: kill all processes", "command": "shell_command", "args": { "command": "killall grunt" }},
+	{ "caption": "grunt: restart back office", "command": "shell_command", "args": { "command": "killall grunt && grunt watch --client=${client::Client to run}" }},
 ]

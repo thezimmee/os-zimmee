@@ -39,7 +39,7 @@
     { "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args" : { "direction" : "right" }},
     { "keys": ["super+alt+shift+p"], "command": "resize_active_group", "args" : { "direction" : "up" }},
     { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "down" }},
-        /**
+    /**
      * [[END]]
      */
 
@@ -56,8 +56,8 @@
     { "keys": ["super+shift+space"], "command": "expand_region" },
     { "keys": [ "super+ctrl+space" ], "command": "expand_region", "args": { "undo": true }, "context": [{ "key": "expand_region_soft_undo" }]},
     // Code folding.
-    { "keys": ["alt+[", "alt+["], "command": "fold_all" },
-    { "keys": ["alt+]", "alt+]"], "command": "unfold_all" },
+    { "keys": ["alt+-", "alt+-"], "command": "fold_all" },
+    { "keys": ["alt+=", "alt+="], "command": "unfold_all" },
     { "keys": ["alt+]"], "command": "toggle_fold_current" },
     /**
      * [[END]]
@@ -79,6 +79,8 @@
     // Navigate in file browser.
     { "keys": ["."], "command": "dired_next_line", "args": { "forward": true }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }, { "key": "setting.command_mode", "operand": false }]},
     { "keys": [","], "command": "dired_next_line", "args": { "forward": false }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }, { "key": "setting.command_mode", "operand": false }]},
+    // Open recent files.
+    { "keys": ["super+shift+t"], "command": "reopen_last_file" },
     /**
      * [[END]]
      */
@@ -88,7 +90,7 @@
      * [[START]] Code formatting and interaction.
      */
     // Code indent.
-    { "keys": ["super+shift+h"], "command": "reindent", "args": { "single_line": false }},
+    { "keys": ["super+alt+]"], "command": "reindent", "args": { "single_line": false }},
     // Toggle code folding buttons.
     { "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" }},
     // Toggle centered.
@@ -114,41 +116,12 @@
     /**
      * [[START]] Git commands.
      */
-    {
-        "keys": ["super+alt+m"],
-        "command": "send_code",
-        "args": {
-            "cmd": "git mergetool"
-        }
-    },
-    {
-        "keys": ["super+alt+t"],
-        "command": "gs_show_status"
-    },
-    {
-        "keys": ["super+alt+b"],
-        "command": "gs_show_branch"
-    },
-    {
-        "keys": ["super+alt+g"],
-        "command": "gs_log_graph"
-    },
-    [
-    {
-        "keys": ["L"],
-        "command": "gs_pull",
-        "context": [
-        {
-            "key": "setting.git_savvy.status_view",
-            "operator": "equal",
-            "operand": true
-        },
-        {
-            "key": "selector",
-            "operator": "equal",
-            "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file"
-        }]
-    }],
+    { "keys": ["super+alt+m"], "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" }},
+    { "keys": ["super+alt+t"], "command": "gs_show_status" },
+    { "keys": ["super+alt+b"], "command": "gs_show_branch" },
+    { "keys": ["super+alt+g"], "command": "gs_log_graph" },
+    // { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }, { "key": "selector", "operator": "equal", "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file" }]},
+    { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
     /**
      * [[END]]
      */
