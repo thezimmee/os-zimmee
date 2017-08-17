@@ -7,8 +7,8 @@
         },
         {
             "scope": "source.css, source.sass, source.scss, source.less, source.json.sublime",
-            "startMarker":"* [[START]]",
-            "endMarker":"* [[END]]"
+            "startMarker":"[[START]]",
+            "endMarker":"[[END]]"
         },
         {
             "scope": "source.c++, source.c",
