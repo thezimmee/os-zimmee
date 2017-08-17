@@ -14,8 +14,12 @@ chsh -s /bin/zsh
 
 # set up ZSH dotfiles
 echo "Setting up ZSH dotfiles..."
-ln -s ${OSZ_ROOT}/zprezto.link ~/.zprezto
-for dotfile in $(find -H ${OSZ_ROOT}/zsh/*.link); do
-    dest="$HOME/.$(basename "${dotfile%.*}")"
-    ln -s "$dotfile" "$dest"
+for dotfile in $(find ${OSZ_ROOT}/zsh -name '*.link'); do
+	dest="$HOME/.$(basename "${dotfile%.*}")"
+	if [[ $(readlink "$dest") != "$dotfile" ]]; then
+		ln -sf "$dotfile" "$dest"
+		echo "Symlinked $dotfile to $dest."
+	else
+		echo "Skipped $dotfile."
+	fi
 done

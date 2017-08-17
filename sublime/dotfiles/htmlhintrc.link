@@ -1,0 +1,18 @@
+{
+	"alt-require": true,
+	"attr-lowercase": ["viewbox"],
+	"attr-no-duplication": true,
+	"attr-value-double-quotes": true,
+	"doctype-first": false,
+	"id-class-ad-disabled": true,
+	"id-unique": true,
+	"inline-script-disabled": true,
+	"inline-style-disabled": true,
+	"spec-char-escape": true,
+	"src-not-empty": true,
+	"style-disabled": true,
+	"tag-pair": true,
+	"tag-self-close": true,
+	"tagname-lowercase": true,
+	"title-require": false
+}

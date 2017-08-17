@@ -18,16 +18,16 @@ ssh-add ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 
 # set up gitconfig
-echo "Setting up ~/.gitconfig and ~/.gitignore-global..."
+echo "Setting up .gitconfig..."
 
 ln -s ${OSZ_ROOT}/git/gitignore.link ~/.gitignore-global
 ln -s ${OSZ_ROOT}/git/gitconfig.link ~/.gitconfig
 
 if [[ -z $CONFIG__git_username ]] || [[ -z $CONFIG__git_useremail ]]; then
-    echo "(user choice) gitconfig was skipped. No user name or email."
-    return 1
+	echo "(user choice) .gitconfig was skipped. No user name or email."
+	return 1
 else
-    cat ${OSZ_ROOT}/git/gitconfig.local | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$CONFIG__git_credential/g" > "$HOME/.gitconfig.local"
+	cat ${OSZ_ROOT}/git/gitconfig.local | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$CONFIG__git_credential/g" > "$HOME/.gitconfig.local"
 fi
 
-echo "A new SSH key was created, as well as .gitconfig and .gitignore-global files. The SSH key was copied to your clipboard; make sure to paste it into your GitHub account (https://github.com/account/ssh)."
+echo "A new SSH key was created, as well as .gitconfig. The SSH key was copied to your clipboard; make sure to paste it into your GitHub account (https://github.com/account/ssh)."

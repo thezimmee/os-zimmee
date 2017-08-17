@@ -1,9 +1,9 @@
 #!/bin/bash
 # install sublime
 #
-# . sublime/setup
+# `bash sublime/setup`
 
-# load config
+# Load config.
 if [[ -z $CONFIG__loaded ]]; then
 	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
 fi
@@ -14,7 +14,7 @@ install_package_control () {
 
 setup_sublime () {
 	echo "Setting up Sublime..."
-	# symlink sublime user preferences
+	# Symlink sublime user preferences.
 	if [ -e "${CONFIG__packages_path}/Packages" ]; then
 		read -p "Sublime /Packages directory already exists... overrwrite with symlink? [y(es)/n(o)] "
 		if [[ $REPLY =~ ^(yes|y)$ ]]; then
@@ -23,25 +23,49 @@ setup_sublime () {
 	fi
 	ln -s "$OSZ_ROOT/sublime/Packages" "$CONFIG__packages_path"
 
-	# symlink emmet prefs
-	ln -s "$OSZ_ROOT/emmet.link" "$HOME/.emmet"
-
-	# install package control
-	if [ ! -f "$CONFIG__package_controle_file" ]; then
-		echo "Installing package control..."
-		install_package_control
+	# Symlink all .link files to the home directory.
+	read -p "Symlink all sublime/*.link files and folders to the home directory? [y(es)/n(o)] "
+	if [[ $REPLY =~ ^(yes|y)$ ]]; then
+		setup_dotfiles
 	fi
 
-	# add sublime command
+	# Install package control.
+	if [ ! -f "$CONFIG__package_control_file" ]; then
+		read -p "Install package control? [y(es)/n(o)] "
+		if [[ $REPLY =~ ^(yes|y)$ ]]; then
+			install_package_control
+		fi
+	fi
+
+	# Add sublime command.
 	if [ ! -f /usr/local/bin/sublime ]; then
 		echo "Adding sublime command to command line..."
 		ln -s "$CONFIG__sublime_path" /usr/local/bin/sublime
 	fi
 
-	# set as default text editor
-	echo "Setting Sublime as default editor..."
-	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-	echo "DONE."
+	# Set as default text editor.
+	read -p "Set Sublime as default text editor? [y(es)/n(o)] "
+	if [[ $REPLY =~ ^(yes|y)$ ]]; then
+		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+	fi
+
+	# Done.
+	echo "Sublime setup complete!"
 }
 
-setup_sublime
+setup_dotfiles () {
+	for dotfile in $(find ${OSZ_ROOT}/sublime -name '*.link'); do
+		dest="$HOME/.$(basename "${dotfile%.*}")"
+		if [[ $(readlink "$dest") != "$dotfile" ]]; then
+			ln -sf "$dotfile" "$dest"
+		fi
+	done
+	echo "Sublime dotfiles setup complete."
+}
+
+read -p "What do you want to set up for Sublime? (1) Dotfiles; (2) Everything; "
+if [[ $REPLY = 1 ]]; then
+	setup_dotfiles
+else
+	setup_sublime
+fi
