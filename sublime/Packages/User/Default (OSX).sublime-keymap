@@ -22,10 +22,10 @@
     { "keys": ["super+k", "super+alt+o"], "command": "create_pane_with_file", "args": { "direction": "down" }},
     { "keys": ["super+k", "super+alt+u"], "command": "create_pane_with_file", "args": { "direction": "left" }},
     // Move tab inside of pane.
-    { "keys": ["control+alt+k"], "command": "move_tab", "args": { "position": "999" }},
-    { "keys": ["control+alt+j"], "command": "move_tab", "args": { "position": "0" }},
-    { "keys": ["control+j"], "command": "move_tab", "args": { "position": "-1" }},
-    { "keys": ["control+k"], "command": "move_tab", "args": { "position": "+1" }},
+    { "keys": ["ctrl+alt+k"], "command": "move_tab", "args": { "position": "999" }},
+    { "keys": ["ctrl+alt+j"], "command": "move_tab", "args": { "position": "0" }},
+    { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" }},
+    { "keys": ["ctrl+k"], "command": "move_tab", "args": { "position": "+1" }},
     // Destroy panes.
     { "keys": ["super+k", "super+ctrl+u"], "command": "destroy_pane", "args": { "direction": "left" }},
     { "keys": ["super+k", "super+ctrl+i"], "command": "destroy_pane", "args": { "direction": "right" }},
@@ -59,6 +59,11 @@
     { "keys": ["alt+-", "alt+-"], "command": "fold_all" },
     { "keys": ["alt+=", "alt+="], "command": "unfold_all" },
     { "keys": ["alt+]"], "command": "toggle_fold_current" },
+    // Code scrolling.
+    { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0 }},
+    { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0 }},
+    // Find and replace.
+    { "keys": ["super+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false }},
     /**
      * [[END]]
      */
@@ -67,9 +72,12 @@
     /**
      * [[START]] File operations (open, new, save, etc.).
      */
-    // New file.
+    // Create new file.
     { "keys": ["super+n"], "command": "side_bar_new_file" },
     { "keys": ["super+alt+n"], "command": "new_file" },
+    // Open fuzzy file navigation.
+    { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
+    { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
     // File browser.
     { "keys": ["super+shift+;"], "command": "dired", "args": { "immediate": true, "single_pane": true, "other_group": "left", "project": true }},
     // File browser jump list.
@@ -94,7 +102,7 @@
     // Toggle code folding buttons.
     { "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" }},
     // Toggle centered.
-    { "keys": ["super+alt+i"], "command": "toggle_setting", "args": { "setting": "draw_centered" }},
+    { "keys": ["super+alt+y"], "command": "toggle_setting", "args": { "setting": "draw_centered" }},
     // Toggle sidebar.
     { "keys": ["super+\\"], "command": "toggle_side_bar" },
     // Toggle word wrap.

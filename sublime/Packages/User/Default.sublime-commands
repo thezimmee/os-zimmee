@@ -1,14 +1,33 @@
 [
 	/**
-	 * Git.
+	 * [[START]] Git.
 	 */
 	{ "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" }},
+	/**
+	 * [[END]]
+	 */
 
 
 	/**
-	 * Grunt.
+	 * [[START]] Grunt.
 	 */
 	{ "caption": "grunt: serve back office", "command": "shell_command", "args": { "command": "grunt watch --client=${client::Client to run}" }},
 	{ "caption": "grunt: kill all processes", "command": "shell_command", "args": { "command": "killall grunt" }},
 	{ "caption": "grunt: restart back office", "command": "shell_command", "args": { "command": "killall grunt && grunt watch --client=${client::Client to run}" }},
+	/**
+	 * [[END]]
+	 */
+
+
+	 /**
+	  * [[START]] Change default browser.
+	  */
+	{ "caption": "Change default browser: Chrome Canary", "command": "shell_command", "args": { "command": "open -a 'Google Chrome Canary' --args --make-default-browser" }},
+	{ "caption": "Change default browser: Chrome", "command": "shell_command", "args": { "command": "open -a 'Google Chrome' --args --make-default-browser" }},
+	{ "caption": "Change default browser: Safari", "command": "shell_command", "args": { "command": "open -a 'Safari' --args --make-default-browser" }},
+	{ "caption": "Change default browser: Firefox", "command": "shell_command", "args": { "command": "open -a 'Firefox' --args --setDefaultBrowser" }},
+	{ "caption": "Change default browser: FirefoxDeveloperEdition", "command": "shell_command", "args": { "command": "open -a 'FirefoxDeveloperEdition' --args --setDefaultBrowser" }},
+	 /**
+	  * [[END]]
+	  */
 ]

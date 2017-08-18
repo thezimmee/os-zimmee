@@ -37,12 +37,14 @@ sublime/Packages/LiveReload/
 sublime/Packages/SendCode/
 sublime/Packages/Sublimerge Pro/
 sublime/Packages/Theme - Default/
-sublime/.idf255ba1d3fbe3f803d4980d6d26359eda3d27ac3
 sublime/Packages/SyntaxFold/
 sublime/Packages/Terminal/
 sublime/Packages/SublimeLinter-contrib-eslint/
 sublime/Packages/SublimeLinter-contrib-stylelint/
 sublime/Packages/SublimeLinter/
+sublime/Packages/backrefs/
+sublime/Packages/bs4/
+sublime/Packages/Pretty JSON/
 
 # User files and folders.
 sublime/Packages/User/Color Highlighter/themes/

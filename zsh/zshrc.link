@@ -41,6 +41,13 @@ compare () {
 }
 alias compare=compare
 
+# Change default browser.
+alias chrome='open -a "/Applications/Google Chrome.app" --args --make-default-browser'
+alias canary='open -a "/Applications/Google Chrome Canary.app" --args --make-default-browser'
+alias firefox='open -a "Firefox" --args --setDefaultBrowser'
+alias firefoxdev='open -a "FirefoxDeveloperEdition" --args --setDefaultBrowser'
+alias safari='open -a "Safari" --args --make-default-browser'
+
 # source prezto
 setopt EXTENDED_GLOB
 # Source Prezto.

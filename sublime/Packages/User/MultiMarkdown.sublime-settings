@@ -4,7 +4,7 @@
     "caret_extra_top": 2,
     "caret_extra_width": 2,
     "caret_style": "smooth",
-    "color_scheme": "Packages/User/Solarized Dark (Zimmee).tmTheme",
+    "color_scheme": "Packages/User/Solarized Dark -- Zimmee.tmTheme",
     "draw_centered": true,
     "enable_table_editor": true,
     "extensions": [
@@ -66,5 +66,5 @@
     // "translate_tabs_to_spaces": true,
     // "trim_trailing_white_space_on_save": false,
     "word_wrap": true,
-    "wrap_width": 72
+    "wrap_width": 80
 }
