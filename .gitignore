@@ -53,6 +53,7 @@ sublime/Packages/User/i_opener_history.sublime-settings
 sublime/Packages/User/oscrypto-ca-bundle.crt
 sublime/Packages/User/Package Control.*
 !sublime/Packages/User/Package Control.sublime-settings
+sublime/Packages/User/Projects/library.json
 sublime/Packages/User/Projects/recent.json
 sublime/Packages/User/Sublimerge Macros.sublime-commands
 sublime/Packages/User/Sublimerge.tmTheme
