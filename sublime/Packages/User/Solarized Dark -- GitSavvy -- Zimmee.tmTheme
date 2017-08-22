@@ -55,6 +55,17 @@
 					<string>italic</string>
 				</dict>
 			</dict>
+			<dict>
+				<key>name</key>
+				<string>Info text important</string>
+				<key>scope</key>
+				<string>git-savvy.branch meta.git-savvy.status.section.branch.local meta.git-savvy.branches.branch string.other.git-savvy.branches.active-branch.name gitsavvy.gotosymbol</string>
+				<key>settings</key>
+				<dict>
+					<key>fontStyle</key>
+					<string>bold</string>
+				</dict>
+			</dict>
 			<!-- Note / less important text. -->
 			<dict>
 				<key>scope</key>
