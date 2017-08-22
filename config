@@ -52,7 +52,7 @@ CONFIG__cask_apps=(
     private-internet-access
     # seil
     slack
-    sublime-text
+    sublime-text-dev
     torbrowser
     unifi-controller
     # osx quicklook plugins
