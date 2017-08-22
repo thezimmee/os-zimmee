@@ -60,8 +60,8 @@
     { "keys": ["alt+=", "alt+="], "command": "unfold_all" },
     { "keys": ["alt+]"], "command": "toggle_fold_current" },
     // Code scrolling.
-    { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0 }},
-    { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0 }},
+    // { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0 }},
+    // { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0 }},
     // Find and replace.
     { "keys": ["super+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false }},
     /**

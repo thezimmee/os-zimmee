@@ -1,4 +1,7 @@
 // These settings override both User and Default settings for the diff syntax
 {
 	"color_scheme": "Packages/User/Solarized Dark -- GitSavvy -- Zimmee.tmTheme",
+	"line_numbers": false,
+	"gutter": false,
+	"detect_indentation": false,
 }

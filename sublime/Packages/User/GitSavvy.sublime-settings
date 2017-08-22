@@ -1,5 +1,17 @@
 {
 	"arrow_keys_navigation": false,
+	"colors": {
+		"inline_diff": {
+			"add_foreground": "#e5e3dc",
+			"add_background": "#009942",
+			"add_foreground_bold": "#e5e3dc",
+			"add_background_bold": "#009942",
+			"remove_foreground": "#e5e3dc",
+			"remove_background": "#dc322f",
+			"remove_foreground_bold": "#e5e3dc",
+			"remove_background_bold": "#dc322f"
+		}
+	},
 	"load_additional_codecs": true,
 	"git_graph_args": ["log", "--pretty=format:%h%d %s (%ar) <%an>", "--graph"],
 	"global_flags": {
