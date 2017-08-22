@@ -32,12 +32,27 @@
 			<!-- [[START]] Text colors. -->
 			<!-- Informational text (e.g., keyboard shortcut). -->
 			<dict>
+				<key>name</key>
+				<string>Info text</string>
 				<key>scope</key>
-				<string>constant.character.git-savvy-key-binding-key</string>
+				<string>constant.character.git-savvy-key-binding-key, git-savvy.branch meta.git-savvy.status.section.branch.local meta.git-savvy.branches.branch string.other.git-savvy.branches.active-branch</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
 					<string>#268bd2</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Info text emphasized</string>
+				<key>scope</key>
+				<string>git-savvy.branch meta.git-savvy.status.section.branch.local meta.git-savvy.branches.branch comment.git-savvy.branches.active-branch.extra-info</string>
+				<key>settings</key>
+				<dict>
+					<key>foreground</key>
+					<string>#268bd2</string>
+					<key>fontStyle</key>
+					<string>italic</string>
 				</dict>
 			</dict>
 			<!-- Note / less important text. -->
@@ -53,7 +68,7 @@
 			<!-- Secondary text (e.g., key binding brackets). -->
 			<dict>
 				<key>scope</key>
-				<string>meta.git-savvy.key-bindings-key-stroke</string>
+				<string>meta.git-savvy.key-bindings-key-stroke, git-savvy.branch meta.git-savvy.status.section.branch.local meta.git-savvy.branches.branch comment.git-savvy.branches.branch.extra-info</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
