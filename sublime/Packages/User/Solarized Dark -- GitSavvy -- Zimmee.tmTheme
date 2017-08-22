@@ -2,35 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 	@NOTES: This was created from the GitSavvy color scheme here: https://github.com/divmain/GitSavvy/pull/437. Thanks to aziz.
-
-	Color palette:
-	================================================================
-	SOLARIZED HEX     RGB           HSB         TERMCOL  XTERM/HEX
-	========= ======= ============= =========== =======  ===========
-	base03    #002b36 0, 43, 54     193 100  21 brblack  234 #1c1c1c
-	base02    #073642 7, 54, 66     192  90  26 black    235 #262626
-	base01    #586e75 88, 110, 117  194  25  46 brgreen  240 #585858
-	base00    #657b83 101, 123, 131 195  23  51 bryellow 241 #626262
-	base0     #839496 131, 148, 150 186  13  59 brblue   244 #808080
-	base1     #93a1a1 147, 161, 161 180   9  63 brcyan   245 #8a8a8a
-	base2     #eee8d5 238, 232, 213  44  11  93 white    254 #e4e4e4
-	base3     #fdf6e3 253, 246, 227  44  10  99 brwhite  230 #ffffd7
-	yellow    #b58900 181, 137, 0    45 100  71 yellow   136 #af8700
-	orange    #b58900 203, 75, 22    18  89  80 brred    166 #d75f00
-	red       #dc322f 220, 50, 47     1  79  86 red      160 #d70000
-	magenta   #d33682 211, 54, 130  331  74  83 magenta  125 #af005f
-	violet    #6c71c4 108, 113, 196 237  45  77 brmagenta 61 #5f5faf
-	blue      #268bd2 38, 139, 210  205  82  82 blue      33 #0087ff
-	cyan      #2aa198 42, 161, 152  175  74  63 cyan      37 #00afaf
-	green     #859900 133, 153, 0    68 100  60 green     64 #5f8700
-	================================================================
-	CUSTOM    HEX     RGB           NOTES
-	========= ======= ============= ================================
-	base01.1  #4d6066 77, 96, 102   Darker base01.
-	base2.1   #e5e3dc 229, 227, 220 Neutral base2.
-	base2.2   #d6d3c7 214, 211, 199 Darker base2.1.
-	green     #009942 0, 153, 66    Brighter green hue.
-	================================================================
 -->
 <plist version="1.0">
 	<dict>
@@ -42,7 +13,7 @@
 				<key>settings</key>
 				<dict>
 					<key>background</key>
-					<string>#e5e3dc</string>
+					<string>#dedcd3</string>
 					<key>caret</key>
 					<string>#268bd2</string>
 					<key>foreground</key>
@@ -59,6 +30,16 @@
 			</dict>
 
 			<!-- [[START]] Text colors. -->
+			<!-- Informational text (e.g., keyboard shortcut). -->
+			<dict>
+				<key>scope</key>
+				<string>constant.character.git-savvy-key-binding-key</string>
+				<key>settings</key>
+				<dict>
+					<key>foreground</key>
+					<string>#268bd2</string>
+				</dict>
+			</dict>
 			<!-- Note / less important text. -->
 			<dict>
 				<key>scope</key>
@@ -67,6 +48,18 @@
 				<dict>
 					<key>foreground</key>
 					<string>#4d606688</string>
+				</dict>
+			</dict>
+			<!-- Secondary text (e.g., key binding brackets). -->
+			<dict>
+				<key>scope</key>
+				<string>meta.git-savvy.key-bindings-key-stroke</string>
+				<key>settings</key>
+				<dict>
+					<key>foreground</key>
+					<string>#4d606655</string>
+					<key>fontStyle</key>
+					<string>bold</string>
 				</dict>
 			</dict>
 			<!-- [[END]] -->
@@ -134,7 +127,7 @@
 				<key>settings</key>
 				<dict>
 					<key>background</key>
-					<string>#d6d3c7</string>
+					<string>#cbcac2</string>
 				</dict>
 			</dict>
 			<dict>
@@ -143,33 +136,7 @@
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict>
-			<!-- [[END]] -->
-
-			<!-- [[START]] Secondary text (e.g., key binding brackets). -->
-			<dict>
-				<key>scope</key>
-				<string>meta.git-savvy.key-bindings-key-stroke</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606655</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<!-- [[END]] -->
-
-			<!-- [[START]] Informational text (e.g., keyboard shortcut). -->
-			<dict>
-				<key>scope</key>
-				<string>constant.character.git-savvy-key-binding-key</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
+					<string>#cbcac2</string>
 				</dict>
 			</dict>
 			<!-- [[END]] -->
@@ -192,29 +159,18 @@
 					<key>background</key>
 					<string>#4d6066</string>
 					<key>foreground</key>
-					<string>#e5e3dc</string>
+					<string>#dedcd3</string>
 				</dict>
 			</dict>
 			<dict>
 				<key>scope</key>
-				<string>constant.other.git-savvy.summary-header.branch-name</string>
+				<string>constant.other.git-savvy.summary-header.branch-name, meta.git-savvy.summary-header constant.other.git-savvy.sha1</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
 					<string>#6c71c4dd</string>
 					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>meta.git-savvy.summary-header constant.other.git-savvy.sha1</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#6c71c4dd</string>
-					<key>fontStyle</key>
-					<string>bold</string>
+					<string>bold italic</string>
 				</dict>
 			</dict>
 			<!-- [[END]] -->
@@ -405,7 +361,7 @@
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
-					<string>#e5e3dc</string>
+					<string>#dedcd3</string>
 					<key>fontStyle</key>
 					<string>bold</string>
 				</dict>
@@ -499,500 +455,45 @@
 			</dict>
 			<!-- [[END]] -->
 
-
-
-			<!-- <dict>
-				<key>scope</key>
-				<string>meta.git-savvy.status.file.removed</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#990033</string>
-				</dict>
-			</dict>
+			<!-- [[START]] Commit details panel. -->
 			<dict>
+				<key>name</key>
+				<string>Commit details panel - object keys</string>
 				<key>scope</key>
-				<string>meta.git-savvy.status.file.removed.punctuation</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value string.other.commit-info.header.key.git-savvy</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
-					<string>#99003388</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>keyword.other.git-savvy.section-header.merge-conflicts</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#990033</string>
-					<key>background</key>
-					<string>#9900332A</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>keyword.other.git-savvy.stashes-header</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-					<key>background</key>
-					<string>#268bd22A</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.other.git-savvy.sha1</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2dd</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>punctuation.definition.git-savvy.branch</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606666</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>meta.git-savvy.status.file</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d6066</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>punctuation.definition.git-savvy.section-header.remote</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd288</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.git-savvy.key-bindings-menu.key-binding-description</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d6066</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>punctuation.definition.git-savvy.note</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606644</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.git-savvy.branches.branch.extra-info, comment.git-savvy.branches.active-branch.extra-info</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.git-savvy.branches.active-branch.symbol, string.other.git-savvy.rebase.caret</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.git-savvy.branches.active-branch.name</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.git-savvy.branches.active-branch.sha1</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f88</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.git-savvy.rebase-graph.separator, comment.git-savvy.rebase-graph.end, comment.git-savvy.rebase-graph.base, support.type.git-savvy.rebase.commit_hash</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606688</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.git-savvy.rebase-graph.commit-node</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>entity.name.function.git-savvy.success</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#009942</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.git-savvy.conflict</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#990033</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>keyword.other.name.git-savvy.rebase-conflict</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#990033</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.other.git.branch.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#dc322f</string>
-					<key>foreground</key>
-					<string>#4d606609</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>meta.graph.branch.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#e5e3dc</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>punctuation.separator.key-value.branch.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>meta.graph.tag.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#268bd2</string>
-					<key>foreground</key>
-					<string>#e5e3dc</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.issue.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>git-savvy.graph.merge</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.merge.remote</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.merge.remote</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2</string>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>git-savvy.grph.merge</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.other.git-savvy.rebase.interactive</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#FF1818</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.other.git-savvy.rebase.interactive.pick</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#009942</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.other.git-savvy.rebase.interactive.drop</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#990033</string>
+					<string>#839496</string>
 				</dict>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>Markup Inserted Punctuation</string>
+				<string>Commit details panel - details</string>
 				<key>scope</key>
-				<string>markup.inserted.diff punctuation.definition.inserted.diff</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#00994299</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>Markup Inserted Punctuation</string>
-				<key>scope</key>
-				<string>markup.inserted.git-savvy.add-block punctuation.definition.inserted.diff</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#00994299</string>
-					<key>foreground</key>
-					<string>#00994255</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>Markup Deleted Punctuation</string>
-				<key>scope</key>
-				<string>markup.deleted.diff punctuation.definition.inserted.diff, markup.deleted.diff punctuation.definition.deleted.diff</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#dc322f99</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>Meta Diff</string>
-				<key>scope</key>
-				<string>meta.diff</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#4d606622</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>Gitsavvy Commit Meta</string>
-				<key>scope</key>
-				<string>git-savvy.commit meta.git-savvy.commit-diff</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#181818</string>
-					<key>background</key>
-					<string>#e5e3dc</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>Gitsavvy Commit</string>
-				<key>scope</key>
-				<string>git-savvy.commit</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#1483ce</string>
-					<key>background</key>
-					<string>#afd9eb</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.commit-info.header.key.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>fontStyle</key>
-					<string>bold</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.block.git-savvy.splitter.vertical</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#d6d3c7</string>
-					<key>background</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.block.git-savvy.splitter.horizontal.commit-info</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606654</string>
-					<key>background</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.block.git-savvy.splitter.horizontal.source</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606654</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>comment.block.git-savvy.commit-info</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.numeric.line-number.blame.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#4d606666</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>constant.numeric.commit-hash.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#FF443C</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>meta.blame-line.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>background</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict>
-			<dict>
-				<key>scope</key>
-				<string>entity.name.tag.git-savvy</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
 					<string>#268bd2</string>
-					<key>background</key>
-					<string>#d6d3c7</string>
+					<key>fontStyle</key>
+					<string>italic</string>
 				</dict>
 			</dict>
 			<dict>
+				<key>name</key>
+				<string>Commit details panel - hash</string>
 				<key>scope</key>
-				<string>punctuation.definition.other.begin.git-savvy, punctuation.definition.other.end.git-savvy</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy meta.commit-info.header.sha.git-savvy</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
-					<string>#268bd266</string>
-					<key>background</key>
-					<string>#d6d3c7</string>
+					<string>#6c71c4</string>
+					<key>fontStyle</key>
+					<string>bold</string>
 				</dict>
 			</dict>
-			<dict>
-				<key>scope</key>
-				<string>string.other.mail.git-savvy</string>
-				<key>settings</key>
-				<dict>
-					<key>foreground</key>
-					<string>#268bd2AA</string>
-					<key>background</key>
-					<string>#d6d3c7</string>
-				</dict>
-			</dict> -->
+			<!-- [[END]] -->
 		</array>
 	</dict>
 </plist>

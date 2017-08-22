@@ -3,13 +3,13 @@
 	"colors": {
 		"inline_diff": {
 			"add_foreground": "#e5e3dc",
-			"add_background": "#009942",
+			"add_background": "#009942aa",
 			"add_foreground_bold": "#e5e3dc",
-			"add_background_bold": "#009942",
+			"add_background_bold": "#009942aa",
 			"remove_foreground": "#e5e3dc",
-			"remove_background": "#dc322f",
+			"remove_background": "#dc322faa",
 			"remove_foreground_bold": "#e5e3dc",
-			"remove_background_bold": "#dc322f"
+			"remove_background_bold": "#dc322faa"
 		}
 	},
 	"load_additional_codecs": true,
