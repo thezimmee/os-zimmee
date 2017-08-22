@@ -1,5 +1,8 @@
 // These settings override both User and Default settings for the tags syntax
 {
+	"caret_extra_top": 2,
+	"caret_extra_bottom": 0,
+	"caret_extra_width": 2,
 	"color_scheme": "Packages/User/Solarized Dark -- GitSavvy -- Zimmee.tmTheme",
 	"draw_white_space": "none",
 	"draw_indent_guides": false,
