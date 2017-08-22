@@ -16,31 +16,18 @@ setup_sublime () {
 	echo "Setting up Sublime..."
 	# Symlink sublime user preferences.
 	if [ -e "${CONFIG__packages_path}/Packages" ]; then
-		read -p "Sublime /Packages directory already exists... overrwrite with symlink? [y(es)/n(o)] "
+		read -p "Sublime /Packages directory already exists... overwrite with symlink? [y(es)/n(o)] "
 		if [[ $REPLY =~ ^(yes|y)$ ]]; then
 			rm -r "${CONFIG__packages_path}/Packages"
 		fi
 	fi
-	ln -s "$OSZ_ROOT/sublime/Packages" "$CONFIG__packages_path"
+	mkdir -p "${CONFIG__packages_path}"
+	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
 
 	# Symlink all .link files to the home directory.
 	read -p "Symlink all sublime/*.link files and folders to the home directory? [y(es)/n(o)] "
 	if [[ $REPLY =~ ^(yes|y)$ ]]; then
 		setup_dotfiles
-	fi
-
-	# Install package control.
-	if [ ! -f "$CONFIG__package_control_file" ]; then
-		read -p "Install package control? [y(es)/n(o)] "
-		if [[ $REPLY =~ ^(yes|y)$ ]]; then
-			install_package_control
-		fi
-	fi
-
-	# Add sublime command.
-	if [ ! -f /usr/local/bin/sublime ]; then
-		echo "Adding sublime command to command line..."
-		ln -s "$CONFIG__sublime_path" /usr/local/bin/sublime
 	fi
 
 	# Set as default text editor.
@@ -51,6 +38,10 @@ setup_sublime () {
 
 	# Done.
 	echo "Sublime setup complete!"
+	echo "Sublime should automatically install packages after you install package control from the command palette. If the packages do not automatically install, do the following:"
+	echo "  1) After package control is installed, open ~/Projects/os-zimmee/sublime/Packages/User/Package\ Control.sublime-settings."
+	echo "  2) Create a comma-delimited list from the `installed_packages` property."
+	echo "  3) Type `advanced install` in the command prompt and paste the comma-delimited list of packages."
 }
 
 setup_dotfiles () {
