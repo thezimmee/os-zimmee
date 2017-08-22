@@ -49,13 +49,14 @@ sublime/Packages/Pretty JSON/
 # User files and folders.
 sublime/Packages/User/Color Highlighter/themes/
 sublime/Packages/User/GitSavvy/*.hidden-tmTheme
+sublime/Packages/User/i_opener_history.sublime-settings
 sublime/Packages/User/oscrypto-ca-bundle.crt
 sublime/Packages/User/Package Control.*
 !sublime/Packages/User/Package Control.sublime-settings
+sublime/Packages/User/Projects/recent.json
 sublime/Packages/User/Sublimerge Macros.sublime-commands
 sublime/Packages/User/Sublimerge.tmTheme
 sublime/Packages/User/SublimergeSummaryPanel.tmTheme
-sublime/Packages/User/i_opener_history.sublime-settings
 
 ## --- END: SUBLIME
 ##
