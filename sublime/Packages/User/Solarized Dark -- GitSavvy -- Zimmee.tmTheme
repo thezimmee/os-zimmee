@@ -83,7 +83,7 @@
 			<!-- Important/warning heading (e.g., unstaged files heading). -->
 			<dict>
 				<key>scope</key>
-				<string>keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.branch.local, keyword.other.git-savvy.section-header.tags.local</string>
+				<string>keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.branch.local, keyword.other.git-savvy.section-header.tags.local, git-savvy.status meta.git-savvy.status.section.merge-conflicts keyword.other.git-savvy.section-header.merge-conflicts</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
