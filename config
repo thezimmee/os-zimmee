@@ -10,71 +10,96 @@ OSZ_ROOT=~/Projects/os-zimmee
 
 # homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
-    caskroom/cask
-    homebrew/versions
-    caskroom/fonts
+	caskroom/cask
+	homebrew/versions
+	caskroom/fonts
 )
 # homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
-    bash
-    git
-    # homebrew/binary/kwm
-    imagemagick
-    mas
-    node
-    wget
-    zsh
+	bash
+	git
+	# homebrew/binary/kwm
+	imagemagick
+	lua
+	mas
+	node
+	tidy-html5
+	wget
+	zsh
 )
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
-    # amethyst
-    1password
-    appcleaner
-    blisk
-    brave
-    colorpicker
-    cyberduck
-    filezilla
-    firefox
-    firefoxdeveloperedition
-    flux
-    # forklift
-    google-chrome
-    google-chrome-canary
-    # google-drive
-    hammerspoon
-    # hyper
-    iterm2
-    karabiner-elements
-    # karabiner
-    # little-snitch
-    parallels-desktop
-    private-internet-access
-    # seil
-    slack
-    sublime-text-dev
-    torbrowser
-    unifi-controller
-    # osx quicklook plugins
-    betterzipql
-    qlcolorcode
-    qlimagesize
-    qlmarkdown
-    qlprettypatch
-    qlstephen
-    quicklook-csv
-    quicklook-json
-    unarchiver
-    webpquicklook
-    # fonts
-    font-bebas-neue
-    font-inconsolata
-    font-inconsolata-for-powerline
-    font-open-sans
+	## [[APPS]]
+	# amethyst
+	# 1password
+	alfred
+	appcleaner
+	blisk
+	brave
+	# colorpicker
+	# cyberduck
+	# filezilla
+	firefox
+	firefoxdeveloperedition
+	# flux
+	forklift
+	goodsync
+	google-chrome
+	google-chrome-canary
+	# google-drive
+	hammerspoon
+	# hyper
+	iterm2
+	karabiner-elements
+	# karabiner
+	# kindle
+	lastpass
+	# little-snitch
+	musescore
+	opera
+	parallels-desktop
+	plex-media-server
+	# private-internet-access
+	# seil
+	slack
+	sublime-text-dev
+	# teamviewer
+	# torbrowser
+	time-out
+	unifi-controller
+	vivaldi
+	witch
+	## [[QUICKLOOK PLUGINS]]
+	betterzipql
+	qlcolorcode
+	qlimagesize
+	qlmarkdown
+	qlprettypatch
+	qlstephen
+	quicklook-csv
+	quicklook-json
+	unarchiver
+	webpquicklook
+	## [[FONTS]]
+	font-bebas-neue
+	font-consolas-for-powerline
+	font-dejavu-sans-mono-for-powerline
+	font-droid-sans
+	font-droid-sans-mono-for-powerline
+	font-fira-mono-for-powerline
+	font-inconsolata
+	font-inconsolata-for-powerline
+	font-menlo-for-powerline
+	font-meslo-for-powerline
+	font-menofur-for-powerline
+	font-open-sans
+	font-roboto-mono-for-powerline
+	font-source-code-pro-for-powerline
+	font-ubuntu-mono-derivative-powerline
 )
 # node packages to install GLOBALLY with `npm install -g <package>`
 CONFIG__npm_globals=(
-    "gulp-cli"
+	"gulp-cli"
 )
 
 # git & ssh
