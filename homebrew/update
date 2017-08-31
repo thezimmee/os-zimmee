@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 # installs and configures OS Zimmee
-# 
+#
 # . homebrew/setup
 
 # update homebrew
 echo "Updating homebrew..."
-brew update && brew upgrade && brew doctor
+brew update && brew upgrade
+
+# cleanup homebrew
+echo "Would you like to clean up all old homebrew packages? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	brew cleanup
+fi
+
+brew doctor
