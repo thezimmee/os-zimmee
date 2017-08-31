@@ -1,8 +1,22 @@
 {
+	"added_words":
+	[
+		"Grampa"
+	],
+	"afn_use_keybinding": true,
+	"afn_valid_scopes":
+	[
+		"string",
+		"css",
+		"sass",
+		"less",
+		"scss",
+		"markup.underline.link.image.markdown"
+	],
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
-	"auto_complete_cycle": true,
 	"caret_extra_width": 1,
+	"close_windows_when_empty": true,
 	"color_scheme": "Packages/User/Solarized Dark -- Zimmee.tmTheme",
 	"detect_indentation": true,
 	"disable_formatted_linebreak": true,
@@ -27,9 +41,14 @@
 		"Markdown Table Formatter",
 		"Open",
 		"QuoteHTML",
-		"Shell Exec",
 		"StringEncode",
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"Facebook",
+		"Grayce",
+		"Lillee"
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,

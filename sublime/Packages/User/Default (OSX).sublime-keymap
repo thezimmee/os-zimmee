@@ -89,6 +89,8 @@
     { "keys": [","], "command": "dired_next_line", "args": { "forward": false }, "context": [{ "key": "selector", "operator": "equal", "operand": "text.dired" }, { "key": "setting.dired_rename_mode", "operand": false }, { "key": "setting.command_mode", "operand": false }]},
     // Open recent files.
     { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+    // Locate file path.
+    { "keys": ["super+ctrl+l"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
     /**
      * [[END]]
      */
