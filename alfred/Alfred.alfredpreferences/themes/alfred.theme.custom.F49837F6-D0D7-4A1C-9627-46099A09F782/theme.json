@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#EEE8D5FF",
+        "font" : "System",
+        "color" : "#657B83FF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#083542FF",
+        "font" : "System",
+        "color" : "#93A0A1FF"
+      },
+      "backgroundSelected" : "#268BD2FF",
+      "text" : {
+        "size" : 20,
+        "colorSelected" : "#EEE8D5FF",
+        "font" : "Roboto Mono Light for Powerline",
+        "color" : "#93A0A1FF"
+      },
+      "iconPaddingHorizontal" : 5,
+      "paddingVertical" : 4,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#062B36FF",
+      "spacing" : 10,
+      "text" : {
+        "size" : 36,
+        "colorSelected" : "#576266FF",
+        "font" : "System",
+        "color" : "#268BD2FF"
+      },
+      "backgroundSelected" : "#CACACAFF"
+    },
+    "window" : {
+      "color" : "#062B36FF",
+      "paddingHorizontal" : 10,
+      "width" : 620,
+      "borderPadding" : 10,
+      "borderColor" : "#FEFFFF00",
+      "blur" : 0,
+      "roundness" : 0,
+      "paddingVertical" : 10
+    },
+    "credit" : "Oscar Morillon",
+    "separator" : {
+      "color" : "#FEFFFF00",
+      "thickness" : 1
+    },
+    "scrollbar" : {
+      "color" : "#93A0A1FF",
+      "thickness" : 2
+    },
+    "name" : "Solarized Dark Blue (v2)"
+  }
+}

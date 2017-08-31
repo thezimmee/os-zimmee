@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.vero.gettingstarted.snippettrigger</string>
+	<key>connections</key>
+	<dict>
+		<key>227A616A-D908-4AFB-8EFB-4202701B52D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD3BF041-3A57-445D-85C7-796BFD3F27B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>25052730-B804-467E-A3A8-38DE51D2E3C2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>204E90FD-ED42-45AB-B8B4-271430E0109D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>413C6C1B-BBF4-44E3-AA24-541AC369575F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>227A616A-D908-4AFB-8EFB-4202701B52D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4B803AF3-84FD-47F5-8C7D-D9410F47D3B2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0B027D6-3488-48A3-89F8-9AC523765E97</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>993AC03B-FCA7-41F5-AC3A-CC0BB3546DF5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E040AA08-9CB1-43D7-97D0-A5A94BCB4956</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B0B027D6-3488-48A3-89F8-9AC523765E97</key>
+		<array/>
+		<key>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>25052730-B804-467E-A3A8-38DE51D2E3C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BE368788-3C23-47B3-9EE1-8AFAD8B75888</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2B581D8-4FAD-4429-B5DD-DD5A9BE2C1CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>993AC03B-FCA7-41F5-AC3A-CC0BB3546DF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vero Pepperrell</string>
+	<key>description</key>
+	<string>Four Snippet Triggers which perform actions, run scripts, allow free text input and selection from a list</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Snippet Triggers - Getting Started</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>2</integer>
+				<key>confirm</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemcommand</string>
+			<key>uid</key>
+			<string>B0B027D6-3488-48A3-89F8-9AC523765E97</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>showtrash</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>4B803AF3-84FD-47F5-8C7D-D9410F47D3B2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>greetmsg</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>413C6C1B-BBF4-44E3-AA24-541AC369575F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>100</integer>
+				<key>script</key>
+				<string>&lt;?php
+  // set timezone to london
+  date_default_timezone_set(substr(readlink('/etc/localtime'), strlen('/usr/share/zoneinfo/')));
+
+  // read the time
+  $time = date("H");
+  if ($time &lt; "12") {
+    echo "Good morning";
+  } else if ($time &gt;= "12" &amp;&amp; $time &lt; "17") {
+    echo "Good afternoon";
+  } else if ($time &gt;= "17" &amp;&amp; $time &lt; "19") {
+    echo "Good evening";
+  } else {
+    echo "Good night";
+  }
+?&gt;</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>227A616A-D908-4AFB-8EFB-4202701B52D9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>BD3BF041-3A57-445D-85C7-796BFD3F27B2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>Hello {query},
+
+Welcome to the club! You've earned your membership. :)
+
+Cheers,
+Vero</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>204E90FD-ED42-45AB-B8B4-271430E0109D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>hellomsg</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>BE368788-3C23-47B3-9EE1-8AFAD8B75888</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Paste the welcome message to the frontmost app</string>
+				<key>text</key>
+				<string>Start welcome message with "Hello {query}"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>25052730-B804-467E-A3A8-38DE51D2E3C2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.1</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"Andrew","arg":"Andrew"},{"title":"Vero","arg":"Vero"},{"title":"Jack","arg":"Sir Jack Harkness"},{"title":"Rose","arg":"Miss Rose Bananapants"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Paste my thank you message signed by one of us</string>
+				<key>title</key>
+				<string>Name of sender is "{query}"</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>993AC03B-FCA7-41F5-AC3A-CC0BB3546DF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>That's fantastic!
+
+Thanks,
+{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E040AA08-9CB1-43D7-97D0-A5A94BCB4956</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>thanksmsg</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>F2B581D8-4FAD-4429-B5DD-DD5A9BE2C1CE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This Snippet Trigger example workflow contains 4 types of actions:
+
+1. Triggering a system command
+2. Running a script and pasting the output text
+3. Requiring you enter free text and pasting the output
+4. Choosing from a list and pasting the output
+
+You'll find out more about this feature in the Snippet Trigger object documentation on our website.
+
+Need help with workflows? Pop by the forum (alfredforum.com) if you have any further questions :)</string>
+	<key>uidata</key>
+	<dict>
+		<key>204E90FD-ED42-45AB-B8B4-271430E0109D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>3. The snippet content and dynamically added recipient's name are pasted to the frontmost app.</string>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+		<key>227A616A-D908-4AFB-8EFB-4202701B52D9</key>
+		<dict>
+			<key>note</key>
+			<string>2. The script chooses the greeting based on time of day.</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>25052730-B804-467E-A3A8-38DE51D2E3C2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>2. Type the name of your recipient. 
+
+(Argument required, so it's not accidentally left blank)</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+		<key>413C6C1B-BBF4-44E3-AA24-541AC369575F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>1. Trigger the workflow with the snippet trigger you've set to \\greetmsg</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>4B803AF3-84FD-47F5-8C7D-D9410F47D3B2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>1. Trigger the workflow with the snippet trigger set to \\showtrash</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>993AC03B-FCA7-41F5-AC3A-CC0BB3546DF5</key>
+		<dict>
+			<key>note</key>
+			<string>2. The list contains 4 possible names to choose from, instead of a free text field.</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
+		<key>B0B027D6-3488-48A3-89F8-9AC523765E97</key>
+		<dict>
+			<key>note</key>
+			<string>2. The snippet disappears and the "Show Trash" system command is performed.</string>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>430</integer>
+		</dict>
+		<key>BD3BF041-3A57-445D-85C7-796BFD3F27B2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>3. The script's content (which sets the time of day) is pasted to the frontmost app.</string>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>BE368788-3C23-47B3-9EE1-8AFAD8B75888</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>1. Trigger the workflow with the snippet trigger you've set to \\hellomsg
+
+(Set the keyword at the top, and the shared prefix further down)</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
+		<key>E040AA08-9CB1-43D7-97D0-A5A94BCB4956</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>3. The snippet content and sender's name you selected are pasted to the frontmost app.</string>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
+		<key>F2B581D8-4FAD-4429-B5DD-DD5A9BE2C1CE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>1. Trigger the workflow with the trigger you've set to \\thanksmsg
+
+(Set the keyword at the top, and the shared prefix is the same as above)</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://www.alfredapp.com/help/workflows/triggers/snippet/</string>
+</dict>
+</plist>
