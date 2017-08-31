@@ -23,6 +23,7 @@ local utils = dofile('helpers/utils.lua')
 
 -- components
 local grid = dofile('grid.lua')
+local mouse = dofile('click-drag.lua')
 
 -- locals
 local WINDOW_MODES = {'hs', 'amethyst'}
@@ -73,8 +74,13 @@ grid.init()
 --[[
 KEYBOARD TO MOUSE EVENTS
 ]]--
+
 leftClickDown = function (  )
 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, hs.mouse.getAbsolutePosition()):post()
+end
+
+leftClickDrag = function (  )
+	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDragged, hs.mouse.getAbsolutePosition()):post()
 end
 
 leftClickUp = function (  )
@@ -130,8 +136,9 @@ brightnessDownUp = function (  )
 end
 
 
-f1 = hs.hotkey.bind({}, 'F1', leftClickDown, leftClickUp)
+f1 = mouse.bind({}, 'F1', 1)
 f2 = hs.hotkey.bind({}, 'F2', rightClickDown, rightClickUp)
+-- f3 = hs.hotkey.bind({}, 'F3', leftClickDragged, leftClickUp)
 f5 = hs.hotkey.bind({}, 'F5', brightnessDownDown, brightnessDownUp)
 f6 = hs.hotkey.bind({}, 'F6', brightnessUpDown, brightnessUpUp)
 f10 = hs.hotkey.bind({}, 'F10', volumeMuteDown, volumeMuteUp)
@@ -162,43 +169,43 @@ function reloadConfig(files)
 end
 
 -- reload shortcut
--- hyper:bind({'cmd', 'shift'}, '\\', function()
--- 	hs.reload()
--- end)
+hyper:bind({'cmd', 'shift'}, '\\', function()
+	hs.reload()
+end)
 
 
 --[[ KEYBOARD ONLY EXPOSE ]]
 -- keyboard-only expose
-hs.expose.ui.textColor = {1,1,1}
-hs.expose.ui.fontName = 'Helvetica'
-hs.expose.ui.textSize = 40 -- in screen points
-hs.expose.ui.highlightColor = {0,0,0,.8} -- highlight color for candidate windows
-hs.expose.ui.backgroundColor = {0,0,0,.8}
-hs.expose.ui.closeModeModifier = 'shift' -- "close mode" engaged while pressed (or 'cmd','ctrl','alt')
-hs.expose.ui.closeModeBackgroundColor = {0.7,0.1,0.1,.8} -- background color while "close mode" is engaged
-hs.expose.ui.minimizeModeModifier = 'alt' -- "minimize mode" engaged while pressed
-hs.expose.ui.minimizeModeBackgroundColor = {0.1,0.2,0.3,.8} -- background color while "minimize mode" is engaged
-hs.expose.ui.onlyActiveApplication = false -- only show windows of the active application
-hs.expose.ui.includeNonVisible = true -- include minimized and hidden windows
-hs.expose.ui.nonVisibleStripBackgroundColor = {0,0,0,.8} -- contains hints for non-visible windows
--- hs.expose.ui.nonVisibleStripPosition = 'bottom' -- set it to your Dock position ('bottom', 'left' or 'right')
-hs.expose.ui.nonVisibleStripWidth = 0.15 -- 0..0.5, width of the strip relative to the screen
-hs.expose.ui.includeOtherSpaces = true -- include windows in other Mission Control Spaces
-hs.expose.ui.otherSpacesStripBackgroundColor = {0,0,0,.8}
-hs.expose.ui.otherSpacesStripPosition = 'top'
-hs.expose.ui.otherSpacesStripWidth = 0.15
-hs.expose.ui.showTitles = true -- show window titles
-hs.expose.ui.showThumbnails = true -- show window thumbnails
-hs.expose.ui.thumbnailAlpha = 1 -- 0..1, opacity for thumbnails
-hs.expose.ui.highlightThumbnailAlpha = 1 -- 0..1, opacity for thumbnails of candidate windows
-hs.expose.ui.highlightThumbnailStrokeWidth = 8 -- thumbnail frame thickness for candidate windows
-hs.expose.ui.maxHintLetters = 2 -- if necessary, hints longer than this will be disambiguated with digits
-hs.expose.ui.fitWindowsMaxIterations = 30 -- lower is faster, but higher chance of overlapping thumbnails
-hs.expose.ui.fitWindowsInBackground = false -- improves responsivenss, but can affect the rest of the config
-local expose = hs.expose.new()
-hs.hotkey.bind({'alt'},'tab', function()
-	expose:toggleShow()
-end)
+-- hs.expose.ui.textColor = {1,1,1}
+-- hs.expose.ui.fontName = 'Helvetica'
+-- hs.expose.ui.textSize = 40 -- in screen points
+-- hs.expose.ui.highlightColor = {0,0,0,.8} -- highlight color for candidate windows
+-- hs.expose.ui.backgroundColor = {0,0,0,.8}
+-- hs.expose.ui.closeModeModifier = 'shift' -- "close mode" engaged while pressed (or 'cmd','ctrl','alt')
+-- hs.expose.ui.closeModeBackgroundColor = {0.7,0.1,0.1,.8} -- background color while "close mode" is engaged
+-- hs.expose.ui.minimizeModeModifier = 'alt' -- "minimize mode" engaged while pressed
+-- hs.expose.ui.minimizeModeBackgroundColor = {0.1,0.2,0.3,.8} -- background color while "minimize mode" is engaged
+-- hs.expose.ui.onlyActiveApplication = false -- only show windows of the active application
+-- hs.expose.ui.includeNonVisible = true -- include minimized and hidden windows
+-- hs.expose.ui.nonVisibleStripBackgroundColor = {0,0,0,.8} -- contains hints for non-visible windows
+-- -- hs.expose.ui.nonVisibleStripPosition = 'bottom' -- set it to your Dock position ('bottom', 'left' or 'right')
+-- hs.expose.ui.nonVisibleStripWidth = 0.15 -- 0..0.5, width of the strip relative to the screen
+-- hs.expose.ui.includeOtherSpaces = true -- include windows in other Mission Control Spaces
+-- hs.expose.ui.otherSpacesStripBackgroundColor = {0,0,0,.8}
+-- hs.expose.ui.otherSpacesStripPosition = 'top'
+-- hs.expose.ui.otherSpacesStripWidth = 0.15
+-- hs.expose.ui.showTitles = true -- show window titles
+-- hs.expose.ui.showThumbnails = true -- show window thumbnails
+-- hs.expose.ui.thumbnailAlpha = 1 -- 0..1, opacity for thumbnails
+-- hs.expose.ui.highlightThumbnailAlpha = 1 -- 0..1, opacity for thumbnails of candidate windows
+-- hs.expose.ui.highlightThumbnailStrokeWidth = 8 -- thumbnail frame thickness for candidate windows
+-- hs.expose.ui.maxHintLetters = 2 -- if necessary, hints longer than this will be disambiguated with digits
+-- hs.expose.ui.fitWindowsMaxIterations = 30 -- lower is faster, but higher chance of overlapping thumbnails
+-- hs.expose.ui.fitWindowsInBackground = false -- improves responsivenss, but can affect the rest of the config
+-- local expose = hs.expose.new()
+-- hs.hotkey.bind({'alt'},'tab', function()
+-- 	expose:toggleShow()
+-- end)
 
 
 -- [[ CONFIG WATCHER ]]
