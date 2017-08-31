@@ -38,7 +38,7 @@
 		{ "name": "Desktop", "path": "~/Desktop/" },
 		{ "name": "Downloads", "path": "~/Downloads/" },
 		{ "name": "Root", "path": { "#multiconf#": [{ "os:linux": "/" }, { "os:osx": "/" }]}},
-		{ "name": "Cheatsheets", "path": "~/Projects/os-zimmee/sublime/Packages/User/Cheatsheets/solarized.cheatsheet.md" },
+		{ "name": "Sublime", "path": "~/Projects/os-zimmee/sublime/Packages/User/" },
 	],
 
 	// Add your folders relative to the project file (if project file exists on disk)
