@@ -55,6 +55,7 @@ sublime/Packages/User/Package Control.*
 !sublime/Packages/User/Package Control.sublime-settings
 sublime/Packages/User/Projects/library.json
 sublime/Packages/User/Projects/recent.json
+!sublime/Packages/User/Projects/*.sublime-project
 sublime/Packages/User/Sublimerge Macros.sublime-commands
 sublime/Packages/User/Sublimerge.tmTheme
 sublime/Packages/User/SublimergeSummaryPanel.tmTheme
