@@ -15,6 +15,13 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	bash "${OSZ_ROOT}/homebrew/update"
 fi
 
+# cleanup homebrew
+echo "Would you like to clean up all old homebrew packages? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	brew cleanup
+fi
+
 # update npm packages
 echo "Would you like to update npm global packages? (y/n) "
 read -r response
