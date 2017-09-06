@@ -17,6 +17,7 @@ CONFIG__brew_taps=(
 # homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
 	bash
+	fasd
 	git
 	# homebrew/binary/kwm
 	imagemagick
@@ -26,6 +27,7 @@ CONFIG__brew_apps=(
 	tidy-html5
 	wget
 	zsh
+	zsh-completions
 )
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
