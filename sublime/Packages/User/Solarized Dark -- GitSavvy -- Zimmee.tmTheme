@@ -296,7 +296,7 @@
 			</dict>
 			<!-- [[END]] -->
 
-			<!-- [[START]] Commit and diff screens. -->
+			<!-- [[START]] Commit, diff, and blame screens. -->
 			<!-- Info summary block. -->
 			<dict>
 				<key>name</key>
@@ -486,7 +486,7 @@
 				<key>name</key>
 				<string>Commit details panel - object keys</string>
 				<key>scope</key>
-				<string>git-savvy.commit meta.commit-info.header.key-value string.other.commit-info.header.key.git-savvy</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value string.other.commit-info.header.key.git-savvy, git-savvy.blame constant.numeric.line-number.blame.git-savvy, git-savvy.blame comment.block.git-savvy.splitter</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
@@ -497,7 +497,7 @@
 				<key>name</key>
 				<string>Commit details panel - details</string>
 				<key>scope</key>
-				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy, git-savvy.blame comment.block.git-savvy.commit-info, git-savvy.blame meta.blame-line.git-savvy</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
@@ -510,7 +510,7 @@
 				<key>name</key>
 				<string>Commit details panel - hash</string>
 				<key>scope</key>
-				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy meta.commit-info.header.sha.git-savvy</string>
+				<string>git-savvy.commit meta.commit-info.header.key-value meta.commit-info.header.value.git-savvy meta.commit-info.header.sha.git-savvy, git-savvy.blame meta.blame-line.git-savvy constant.numeric.commit-hash.git-savvy</string>
 				<key>settings</key>
 				<dict>
 					<key>foreground</key>
