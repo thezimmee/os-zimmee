@@ -8,6 +8,9 @@
 ## Unnecessary.
 *.crt
 
+## Ignore prezto since it will be maintained from https://github.com/sorin-ionescu/prezto.
+zsh/prezto.link/*
+
 ##
 ## --- START: SUBLIME
 

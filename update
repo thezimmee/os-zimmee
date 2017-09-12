@@ -28,3 +28,10 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	sudo softwareupdate --install --all
 fi
+
+# update macOS software
+echo "Would you like to try and update any git repos you have cloned (prezto)? (y/n) "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	cd ${OSZ_ROOT}/zsh/prezto.link && git pull && git submodule update --init --recursive
+fi
