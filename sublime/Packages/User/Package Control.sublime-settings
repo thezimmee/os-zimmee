@@ -23,8 +23,10 @@
 		"ExpandRegion",
 		"Expression",
 		"FileBrowser",
+		"FileSystem Autocompletion",
 		"FindKeyConflicts",
 		"FuzzyFileNav",
+		"FuzzyFilePath",
 		"GitGutter",
 		"GitSavvy",
 		"Gutter Themes for SL",
@@ -74,6 +76,7 @@
 		"SyntaxFold",
 		"Table Editor",
 		"Terminal",
+		"TypeScript",
 		"Vue Syntax Highlight"
 	]
 }

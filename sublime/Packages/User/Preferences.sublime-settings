@@ -40,11 +40,14 @@
 		"ColorHelper",
 		"DataConverter",
 		"FileBrowser",
+		"FileSystem Autocompletion",
+		"FuzzyFilePath",
 		"IndentX",
 		"Markdown Table Formatter",
 		"Open",
 		"QuoteHTML",
 		"StringEncode",
+		"TypeScript",
 		"Vintage"
 	],
 	"ignored_words":
