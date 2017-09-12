@@ -39,6 +39,7 @@
 		{ "name": "Downloads", "path": "~/Downloads/" },
 		{ "name": "Root", "path": { "#multiconf#": [{ "os:linux": "/" }, { "os:osx": "/" }]}},
 		{ "name": "Sublime", "path": "~/Projects/os-zimmee/sublime/Packages/User/" },
+		{ "name": "Snippets", "path": "~/Projects/os-zimmee/sublime/Packages/User/snips" },
 	],
 
 	// Add your folders relative to the project file (if project file exists on disk)
