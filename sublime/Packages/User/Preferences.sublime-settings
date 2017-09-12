@@ -4,6 +4,7 @@
 		"Grampa"
 	],
 	"afn_use_keybinding": true,
+	"afn_use_project_root": true,
 	"afn_valid_scopes":
 	[
 		"string",
@@ -11,7 +12,8 @@
 		"sass",
 		"less",
 		"scss",
-		"markup.underline.link.image.markdown"
+		"markup.underline.link.image.markdown",
+		"text.html.vue"
 	],
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
