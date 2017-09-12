@@ -16,6 +16,7 @@
 	"git_graph_args": ["log", "--pretty=format:%h%d %s (%ar) <%an>", "--graph"],
 	"global_flags": {
 		"merge": ["--no-ff", "--no-commit"],
+		// "merge": ["--squash", "--allow-unrelated-histories"],
 		"pull": ["--rebase"]
 	},
 	"inline_diff_ignore_eol_whitespaces": true,
