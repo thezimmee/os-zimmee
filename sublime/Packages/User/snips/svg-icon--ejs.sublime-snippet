@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<%- include('${1:components/svg/svg-icon}', { name: '${2:[name, attrs]}' }) %>
+]]></content>
+	<description>svg icon with ejs</description>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>svg-icon-ejs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>scope.js,text.html,text.ejs</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+/** ====================================================================
+ * $TM_FILENAME
+ * ${TM_FILENAME/./-/g}
+ * @description ${1:[description]}
+ * @layer ${2:[vendor|abstracts|base|components|views]}
+===================================================================== */
+
+
+${0}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>file-title-/**/</tabTrigger>
+	<description>File/title comment.</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js,source.css,source.sass,source.less</scope>
+</snippet>
