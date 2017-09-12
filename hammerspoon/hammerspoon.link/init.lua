@@ -1,22 +1,15 @@
 --[[
 @TODOs:
-	- add bindings for mouse clicks
 	- refactor:
-		- refactor hyper to be able to dynamically add bindings
 		- refactor grid to functions (bindings are customizable)
 		- add all key bindings in init (or key bindings module)
 	- create bindings for precise window resizing and movement
-	- create layouts
-		- "type" of windows get placed on certain spots or screens (i.e., important apps get placed in specific spots while others get piled away)
-		- ability to save layouts?
-	- create app "tabs" for multiple instances of an app?
 --]]
 
+
+-- [[ START ]] Setup.
 -- load config
 local config = dofile('config.lua')
-
--- hyper key
-local hyper = dofile('helpers/hyper.lua')
 
 -- helpers
 local utils = dofile('helpers/utils.lua')
@@ -28,13 +21,10 @@ local mouse = dofile('click-drag.lua')
 -- locals
 local WINDOW_MODES = {'hs', 'amethyst'}
 local WINDOW_MODE = 'hs'
-
--- Ensure IPC command line client is available
--- hs.ipc.cliInstall()
+-- [[ END ]]
 
 
--- [[ WINDOW MANAGER ]]
---  toggle amethyst
+-- [[ START ]] Window manager.
 local AMETHYST_OPEN = false
 local function toggleAmethyst()
 	if AMETHYST_OPEN then
@@ -45,36 +35,17 @@ local function toggleAmethyst()
 		AMETHYST_OPEN = true
 	end
 end
-hyper:bind({'shift', 'cmd'}, ';', toggleAmethyst)
+hs.hotkey.bind(config.hyper_cmd_shift, ';', toggleAmethyst)
+-- [[ END ]]
 
--- init grid
+
+-- [[ START ]] Window grid.
 grid.destroy()
 grid.init()
-
--- -- Toggle full screen
--- hs.hotkey.bind(HYPER, 'u', function()
--- 	hs.window.focusedWindow():toggleFullScreen()
--- end)
-
--- -- toggle full size
--- local frameCache = {}
--- function toggleWindowMaximized()
--- 	local win = hs.window.focusedWindow()
--- 	if frameCache[win:id()] then
--- 		win:setFrame(frameCache[win:id()])
--- 		frameCache[win:id()] = nil
--- 	else
--- 		frameCache[win:id()] = win:frame()
--- 		win:maximize()
--- 	end
--- end
--- hyper:bind({}, 'u', toggleWindowMaximized)
+-- [[ END ]]
 
 
---[[
-KEYBOARD TO MOUSE EVENTS
-]]--
-
+-- [[ START ]] Keyboard mouse clicks.
 leftClickDown = function (  )
 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, hs.mouse.getAbsolutePosition()):post()
 end
@@ -95,86 +66,25 @@ rightClickUp = function (  )
 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.rightMouseUp, hs.mouse.getAbsolutePosition()):post()
 end
 
-volumeMuteDown = function (  )
-	hs.eventtap.event.newSystemKeyEvent('MUTE', true):post()
-end
 
-volumeMuteUp = function (  )
-	hs.eventtap.event.newSystemKeyEvent('MUTE', false):post()
-end
-
-volumeDownDown = function (  )
-	hs.eventtap.event.newSystemKeyEvent('SOUND_DOWN', true):post()
-end
-
-volumeDownUp = function (  )
-	hs.eventtap.event.newSystemKeyEvent('SOUND_DOWN', false):post()
-end
-
-volumeUpDown = function (  )
-	hs.eventtap.event.newSystemKeyEvent('SOUND_UP', true):post()
-end
-
-volumeUpUp = function (  )
-	hs.eventtap.event.newSystemKeyEvent('SOUND_UP', false):post()
-end
-
-brightnessUpDown = function (  )
-	hs.eventtap.event.newSystemKeyEvent('BRIGHTNESS_UP', true):post()
-end
-
-brightnessUpUp = function (  )
-	hs.eventtap.event.newSystemKeyEvent('BRIGHTNESS_UP', false):post()
-end
-
-brightnessDownDown = function (  )
-	hs.eventtap.event.newSystemKeyEvent('BRIGHTNESS_DOWN', true):post()
-end
-
-brightnessDownUp = function (  )
-	hs.eventtap.event.newSystemKeyEvent('BRIGHTNESS_DOWN', false):post()
-end
-
-
-f1 = mouse.bind({}, 'F1', 1)
-f2 = hs.hotkey.bind({}, 'F2', rightClickDown, rightClickUp)
--- f3 = hs.hotkey.bind({}, 'F3', leftClickDragged, leftClickUp)
-f5 = hs.hotkey.bind({}, 'F5', brightnessDownDown, brightnessDownUp)
-f6 = hs.hotkey.bind({}, 'F6', brightnessUpDown, brightnessUpUp)
-f10 = hs.hotkey.bind({}, 'F10', volumeMuteDown, volumeMuteUp)
-f11 = hs.hotkey.bind({}, 'F11', volumeDownDown, volumeDownUp)
-f12 = hs.hotkey.bind({}, 'F12', volumeUpDown, volumeUpUp)
-f13 = hs.hotkey.bind({}, 'F13', volumeMuteDown, volumeMuteUp)
-f14 = hs.hotkey.bind({}, 'F14', volumeDownDown, volumeDownUp)
-f15 = hs.hotkey.bind({}, 'F15', volumeUpDown, volumeUpUp)
+f1 = mouse.bind({}, 'f1', 1)
+f2 = hs.hotkey.bind({}, 'f2', rightClickDown, rightClickUp)
 
 tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
 	print(hs.inspect(event:getRawEventData()))
 end)
 tap:start()
+-- [[ END ]]
 
 
--- [[ AUTO RELOAD CONFIG ]]
--- auto-reload when ~/.hammerspoon/*.lua is saved
-function reloadConfig(files)
-	doReload = false
-	for _,file in pairs(files) do
-		if file:sub(-4) == '.lua' then
-			doReload = true
-		end
-	end
-	if doReload then
-		hs.reload()
-	end
-end
-
--- reload shortcut
-hyper:bind({'cmd', 'shift'}, '\\', function()
+-- [[ START ]] Reload config.
+hs.hotkey.bind(config.hyper_cmd_shift, '\\', function()
 	hs.reload()
 end)
+-- [[ END ]]
 
 
---[[ KEYBOARD ONLY EXPOSE ]]
+-- [[ START ]] Keyboard only window switcher.
 -- keyboard-only expose
 -- hs.expose.ui.textColor = {1,1,1}
 -- hs.expose.ui.fontName = 'Helvetica'
@@ -206,10 +116,9 @@ end)
 -- hs.hotkey.bind({'alt'},'tab', function()
 -- 	expose:toggleShow()
 -- end)
+-- [[ END ]]
 
 
--- [[ CONFIG WATCHER ]]
--- hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-
--- show reload config message
+-- [[ START ]] Show reload config message.
 hs.alert.show('Config reloaded!')
+-- [[ END ]]
