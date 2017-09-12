@@ -36,6 +36,7 @@
 	"ignored_packages":
 	[
 		"ColorHelper",
+		"DataConverter",
 		"FileBrowser",
 		"IndentX",
 		"Markdown Table Formatter",
