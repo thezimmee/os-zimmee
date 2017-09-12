@@ -20,7 +20,7 @@ OS Zimmee stores all my custom configurations and settings to get running on my 
 <a name="app-installation"></a>
 ### App installation
 
-`bash {{app folder}}/setup`
+`bash {{os-zimmee root}}/{{app folder}}/setup`
 
 That's it!
 

@@ -9,3 +9,6 @@
 - [ ] Add "cursor mode" to karabiner.
 
 ## Considering
+
+- [ ] Add cvim / browser keyboard shortcuts.
+- [ ] Add shortcat app with global keyboard shortcuts.
