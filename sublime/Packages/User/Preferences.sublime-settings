@@ -37,7 +37,6 @@
 	],
 	"ignored_packages":
 	[
-		"ColorHelper",
 		"DataConverter",
 		"FileBrowser",
 		"FileSystem Autocompletion",

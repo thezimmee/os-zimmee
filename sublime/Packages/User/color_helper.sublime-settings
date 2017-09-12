@@ -23,7 +23,7 @@
 
     // Enables inline color previews found beside the identified color.
     // Requires ST 3116+ and mdpopups 1.7.4
-    "inline_previews": true,
+    "inline_previews": false,
 
     // Adjust the size of inline image previews by the offset given.
     // Please use either a positive or negative number.
