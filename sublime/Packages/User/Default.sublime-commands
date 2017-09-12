@@ -19,6 +19,27 @@
 	 */
 
 
+	/**
+	 * [[START]] Node / NPM.
+	 */
+	{ "caption": "NPM install", "command": "shell_command", "args": { "command": "npm install ${args::Packages to install}", "panel": true }},
+	/**
+	 * [[END]]
+	 */
+
+
+	/**
+	 * [[START]] Spell check.
+	 */
+	{ "caption": "Go to next misspelling", "command": "next_misspelling" },
+	{ "caption": "Go to previous misspelling", "command": "prev_misspelling" },
+	// { "caption": "Add word to dictionary", "command": "add_word", "args": { "word": "$selection" }},
+	// { "caption": "Add word to the ignore list", "command": "ignore_word", "args": { "word": "$selection" }},
+	/**
+	 * [[END]]
+	 */
+
+
 	 /**
 	  * [[START]] Change default browser.
 	  */
