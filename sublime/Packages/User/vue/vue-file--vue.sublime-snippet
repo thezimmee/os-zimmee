@@ -7,14 +7,14 @@
 <script>
 	export default {
 		name: '${1:name}',
+
 		data () {
 			return {};
 		}
 	};
 </script>
 
-<styles>
-</styles>
+<style></style>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>vue</tabTrigger>
