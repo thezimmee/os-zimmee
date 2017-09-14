@@ -34,4 +34,7 @@ echo "Would you like to try and update any git repos you have cloned (prezto)? (
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	cd ${OSZ_ROOT}/zsh/prezto.link && git pull && git submodule update --init --recursive
+	# for rcfile in "${OSZ_ROOT}"/zsh/prezto.link/runcoms/^README.md(.N); do
+	# 	ln -sf "$rcfile" "${HOME}/.${rcfile:t}"
+	# done
 fi

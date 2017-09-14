@@ -51,8 +51,8 @@ alias safari='open -a "Safari" --args --make-default-browser'
 # source prezto
 setopt EXTENDED_GLOB
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-	source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+if [[ -s "${OSZ_ROOT}/zsh/prezto.link/init.zsh" ]]; then
+	source "${OSZ_ROOT}/zsh/prezto.link/init.zsh"
 fi
 
 # Stash environment variables in ~/.localrc. This means they'll stay out
