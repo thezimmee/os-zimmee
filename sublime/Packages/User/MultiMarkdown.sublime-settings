@@ -14,6 +14,7 @@
 		"mdown",
 		"txt"
 	],
+	"mde.list_indent_bullets": ["-"],
 	// "font_face": "Sauce Code Powerline",
 	// "font_options": [
 	//     "no_bold",
