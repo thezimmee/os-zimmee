@@ -25,10 +25,12 @@
 	//     "no_round"
 	// ],
 	// "font_size": 15,
+	"gutter": false,
 	"highlight_line": true,
 	"line_padding_bottom": 0,
 	"line_padding_top": 5,
 	"line_numbers": false,
+	"margin": 0,
 	// "mde.auto_increment_ordered_list_number": true,
 	// "mde.distraction_free_mode":
 	// {
