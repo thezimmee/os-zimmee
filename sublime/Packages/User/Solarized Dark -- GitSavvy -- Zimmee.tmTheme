@@ -18,6 +18,10 @@
 					<string>#d33682</string>
 					<key>foreground</key>
 					<string>#4d6066</string>
+					<key>gutter</key>
+					<string>#00000011</string>
+					<key>gutterForeground</key>
+					<string>#586e75</string>
 					<key>invisibles</key>
 					<string>#b589001A</string>
 					<key>lineHighlight</key>

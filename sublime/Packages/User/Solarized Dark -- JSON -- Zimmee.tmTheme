@@ -17,7 +17,7 @@
 					<key>activeGuide</key>
 					<string>#ffffff55</string>
 					<key>background</key>
-					<string>#002b36</string>
+					<string>#002833</string>
 					<key>caret</key>
 					<string>#839496</string>
 					<key>foreground</key>
@@ -25,7 +25,9 @@
 					<key>guide</key>
 					<string>#ffffff25</string>
 					<key>gutter</key>
-					<string>#002b36</string>
+					<string>#00000011</string>
+					<key>gutterForeground</key>
+					<string>#586e75</string>
 					<key>invisibles</key>
 					<string>#586e75</string>
 					<key>lineHighlight</key>
