@@ -7,6 +7,7 @@
 ## On the radar
 
 - [ ] Add "cursor mode" to karabiner.
+- [ ] Find a way to store iTerm settings to obviate any manual setup.
 
 ## Considering
 
