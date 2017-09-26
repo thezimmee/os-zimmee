@@ -17,7 +17,7 @@
 	"global_flags": {
 		"merge": ["--no-ff", "--no-commit"],
 		// "merge": ["--squash", "--allow-unrelated-histories"],
-		"pull": ["--rebase"]
+		// "pull": ["--rebase"]
 	},
 	"inline_diff_ignore_eol_whitespaces": true,
 	"inline_diff_auto_scroll": true,
