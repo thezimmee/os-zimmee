@@ -131,7 +131,8 @@
     { "keys": ["super+alt+b"], "command": "gs_show_branch" },
     { "keys": ["super+alt+g"], "command": "gs_log_graph" },
     // { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }, { "key": "selector", "operator": "equal", "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file" }]},
-    { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
+    { "keys": ["L"], "command": "gs_pull", "args": { "rebase": true }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
+    { "keys": ["alt+l"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
     /**
      * [[END]]
      */
