@@ -14,6 +14,11 @@
     // Use webcolor names when value color matches a webcolor name.
     "use_webcolor_names": true,
 
+    // For Windows 10 HiDpi setups.  This is a temporary workaround
+    // to help reduce abnormally large color previews and other images.
+    // This will be removed once the issue is fixed in Sublime Text 3.
+    "line_height_workaround": false,
+
     // Color picker and palette picker by default
     // are accessed by clicking an icon on the color info panel.
     // Click access for one of thesecan be moved to the color box
@@ -29,6 +34,10 @@
     // Please use either a positive or negative number.
     "inline_preview_offset": 0,
 
+    // Adjust the position of inline image previews.
+    // (left|right)
+    "inline_preview_position": "left",
+
     // Enable color picker option.  Will use native color picker
     // unless "use_color_picker_package" is enabled and external
     // package is installed.
@@ -42,7 +51,7 @@
     "graphic_size": "small",
 
     // Use https://github.com/weslly/ColorPicker for the color picker if installed.
-    "use_color_picker_package": false,
+    "use_color_picker_package": true,
 
     // This can be turned off to get a rectangular color picker
     // That displays possible options by hue and brightness/luminance.
@@ -71,16 +80,33 @@
             ],
             "scan_scopes": [
                 // https://packagecontrol.io/packages/CSS3
-                "meta.property-list.css -support.type.property-name.css -comment -string",
+                "meta.declaration-list.css -support.type.property-name.css -comment -string",
                 // CSS, CSS in HTML etc. (based on: Sublime Default)
                 "meta.property-value.css -comment -string",
                 // CSS3, CSS3 in HTML etc. (based on: https://packagecontrol.io/packages/CSS3)
                 "meta.value.css -comment -string",
                 // HTML attributes (based on: Sublime Default)
-                "meta.tag.inline.any.html string.quoted",
+                "meta.tag.inline.any.html string.quoted -constant.character.entity.html",
                 "meta.tag.any.html meta.attribute-with-value.style.html"
             ],
             "scan_completion_scopes": [],
+            "extensions": [],
+            "allowed_colors": ["css3"],
+            "use_hex_argb": false,
+            "compress_hex_output": true
+        },
+        {
+            //Sass (based on: https://packagecontrol.io/packages/Sass)
+            "syntax_files": ["Sass/Syntaxes/Sass"],
+            "syntax_filter": "whitelist",
+            "base_scopes": [
+                "source.sass"
+            ],
+            "scan_scopes": [
+                "source.sass -comment -string -variable.parameter"
+            ],
+            "scan_completion_scopes": [
+            ],
             "extensions": [],
             "allowed_colors": ["css3"],
             "use_hex_argb": false,
@@ -125,9 +151,9 @@
             "syntax_files": [],
             "syntax_filter": "whitelist",
             "base_scopes": ["text.xml"],
-            "scan_scopes": ["text.xml -meta.tag.xml -comment -string"],
-            "allowed_colors": ["hex", "hexa"],
-            "extensions": [".tmTheme"],
+            "scan_scopes": ["text.xml -meta.tag.xml -comment -string, string.unquoted.cdata.xml"],
+            "allowed_colors": ["hex", "hexa", "hex_compressed"],
+            "extensions": [".tmTheme", ".stTheme"],
             "use_hex_argb": false,
             "compress_hex_output": false
         },
@@ -140,6 +166,20 @@
                 "constant.other.color.rgb-value.stylus",
                 "constant.color.w3c-standard-color-name.stylus",
                 "meta.property-value.stylus"
+            ],
+            "allowed_colors": ["css3"],
+            "extensions": [],
+            "use_hex_argb": false,
+            "compress_hex_output": true
+        },
+        {
+            "syntax_files": [],
+            "syntax_filter": "whitelist",
+            "base_scopes": ["source.less"],
+            "scan_scopes": [
+                "constant.other.color.rgb-value.css",
+                "constant.color.w3c-standard-color-name.css",
+                "meta.property-value.css"
             ],
             "allowed_colors": ["css3"],
             "extensions": [],
