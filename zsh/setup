@@ -14,6 +14,12 @@ if [[ $SHELL != /bin/zsh ]]; then
 	chsh -s /bin/zsh
 fi
 
+## Add prezto submodule.
+read -p "Add prezto as a git submodule? "
+if [[ $REPLY =~ ^(yes|y)$ ]]; then
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link"
+fi
+
 ## Set up ZSH config / dot files.
 OVERWRITE=false
 echo "Setting up ZSH & prezto config files..."

@@ -8,33 +8,30 @@ if [[ -z $CONFIG__loaded ]]; then
     CURRENT=${PWD} && cd -P "$( dirname "$0" )" && bash config && cd $CURRENT
 fi
 
-# update homebrew
+# Update homebrew.
 echo "Would you like to update homebrew and all its packages? (y/n) "
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ $response =~ ^(yes|y)$ ]]; then
 	bash "${OSZ_ROOT}/homebrew/update"
 fi
 
-# update npm packages
+# Update npm packages.
 echo "Would you like to update npm global packages? (y/n) "
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ $response =~ ^(yes|y)$ ]]; then
 	bash "${OSZ_ROOT}/node/update"
 fi
 
-# update macOS software
+# Update macOS software.
 echo "Would you like to update macOS Apps? (y/n) "
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ $response =~ ^(yes|y)$ ]]; then
 	sudo softwareupdate --install --all
 fi
 
-# update macOS software
-echo "Would you like to try and update any git repos you have cloned (prezto)? (y/n) "
+# Update prezto / zsh.
+echo "Would you like to update prezto (zsh)? (y/n) "
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	cd ${OSZ_ROOT}/zsh/prezto.link && git pull && git submodule update --init --recursive
-	# for rcfile in "${OSZ_ROOT}"/zsh/prezto.link/runcoms/^README.md(.N); do
-	# 	ln -sf "$rcfile" "${HOME}/.${rcfile:t}"
-	# done
+if [[ $response =~ ^(yes|y)$ ]]; then
+	zprezto-update
 fi
