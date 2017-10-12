@@ -17,7 +17,7 @@ fi
 ## Add prezto submodule.
 read -p "Add prezto as a git submodule? "
 if [[ $REPLY =~ ^(yes|y)$ ]]; then
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link"
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link" && cd ${OSZ_ROOT}/zsh/zprezto.link && git pull && git submodule update --init --recursive
 fi
 
 ## Set up ZSH config / dot files.
