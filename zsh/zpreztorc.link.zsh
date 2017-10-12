@@ -9,23 +9,23 @@
 # The order matters.
 zstyle ':prezto:load' pmodule \
 	'environment' \
-	'terminal' \
-	'editor' \
-	'history' \
-	'directory' \
-	'spectrum' \
-	'utility' \
 	'autosuggestions' \
 	'fasd' \
 	'git' \
 	'homebrew' \
 	'node' \
 	'osx' \
+	'syntax-highlighting' \
 	'rsync' \
 	'ssh' \
-	'completion' \
-	'syntax-highlighting' \
+	'terminal' \
+	'editor' \
+	'history' \
 	'history-substring-search' \
+	'directory' \
+	'spectrum' \
+	'utility' \
+	'completion' \
 	'prompt'
 
 # Allow the zsh prompt context to be shown.
