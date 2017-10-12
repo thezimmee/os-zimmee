@@ -9,7 +9,7 @@
 *.crt
 
 ## Ignore prezto since it will be maintained from https://github.com/sorin-ionescu/prezto.
-zsh/prezto.link/*
+zsh/zprezto.link/*
 
 ##
 ## --- START: SUBLIME
@@ -31,6 +31,7 @@ sublime/Packages/package_events/
 sublime/Packages/pathtools/
 sublime/Packages/Pretty JSON/
 sublime/Packages/pygments/
+sublime/Packages/pymdownx/
 sublime/Packages/python-jinja2/
 sublime/Packages/python-markdown/
 sublime/Packages/pyyaml/
@@ -66,4 +67,3 @@ sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 
 ## --- END: SUBLIME
 ##
-

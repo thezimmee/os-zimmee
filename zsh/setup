@@ -3,23 +3,41 @@
 #
 # . zsh/setup
 
-# load config
+## Load config.
 if [[ -z $CONFIG__loaded ]]; then
 	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
 fi
 
-# change zsh to default shell
-echo "Changing default shell to ZSH..."
-chsh -s /bin/zsh
+## Set up zsh as default shell.
+if [[ $SHELL != /bin/zsh ]]; then
+	echo "Changing default shell to ZSH..."
+	chsh -s /bin/zsh
+fi
 
-# set up ZSH dotfiles
-echo "Setting up ZSH dotfiles..."
-for dotfile in $(find ${OSZ_ROOT}/zsh -name '*.link'); do
-	dest="$HOME/.$(basename "${dotfile%.*}")"
-	if [[ $(readlink "$dest") != "$dotfile" ]]; then
-		ln -sf "$dotfile" "$dest"
-		echo "Symlinked $dotfile to $dest."
+## Set up ZSH config / dot files.
+OVERWRITE=false
+echo "Setting up ZSH & prezto config files..."
+read -p "Force overwrite any existing zsh files? "
+if [[ $REPLY =~ ^(yes|y)$ ]]; then
+	OVERWRITE=true
+fi
+
+# Set up prezto config files.
+for rcfile in $(find ${OSZ_ROOT}/zsh/zprezto.link/runcoms/* -name '*' -not -name 'README.md' -not -name 'zshrc' -not -name 'zpreztorc'); do
+	dest="$HOME/.$(basename "${rcfile}")"
+	if [[ $OVERWRITE = true ]]; then
+		ln -sf "$rcfile" "$dest"
 	else
-		echo "Skipped $dotfile."
+		ln -s "$rcfile" "$dest" || echo "Skipped $rcfile."
+	fi
+done
+
+# Symlink other *.link files.
+for dotfile in $(find ${OSZ_ROOT}/zsh/ -name '*.link*'); do
+	dest="$HOME/.$(basename "${dotfile%.link*}")"
+	if [[ $OVERWRITE = true ]]; then
+		ln -sf "$dotfile" "$dest"
+	else
+		ln -s "$dotfile" "$dest" || echo "Skipped $dotfile."
 	fi
 done
