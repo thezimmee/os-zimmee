@@ -13,7 +13,7 @@
 
 # Run ssh-agent.
 # eval "$(ssh-agent -s)"
-ssh-add -K ~/.ssh/id_rsa
+# ssh-add -K ~/.ssh/id_rsa
 # plugins=(git ssh-agent)
 # if [ -z "$SSH_AUTH_SOCK" ] ; then
 # 	eval `ssh-agent -s`

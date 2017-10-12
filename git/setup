@@ -4,20 +4,34 @@
 # TO RUN:
 # . git/setup
 
-# load config
+# Load config.
 if [[ -z $CONFIG__loaded ]]; then
 	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
 fi
 
-# create new key
-echo "Creating new SSH key... "
+## Set up SSH key.
+setup_ssh () {
+	ssh-keygen -t rsa -b 4096 -C "${CONFIG__git_useremail}"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
+	pbcopy < ~/.ssh/id_rsa.pub
+}
 
-ssh-keygen -t rsa -b 4096 -C "${CONFIG__git_useremail}"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub
 
-# set up gitconfig
+# Create new SSH key.
+echo "Creating SSH key... "
+if [[ -e $HOME/.ssh/id_rsa ]]; then
+	read -p "An SSH key already exists. Overwrite it with a new one? "
+	if [[ $REPLY =~ ^(yes|y)$ ]]; then
+		rm -rf ~/.ssh
+		setup_ssh
+	fi
+else
+	setup_ssh
+fi
+
+
+# Set up gitconfig.
 echo "Setting up .gitconfig..."
 
 ln -s ${OSZ_ROOT}/git/gitignore.link ~/.gitignore-global
@@ -30,4 +44,7 @@ else
 	cat ${OSZ_ROOT}/git/gitconfig.local | sed -e "s/AUTHORNAME/$CONFIG__git_username/g" -e "s/AUTHOREMAIL/$CONFIG__git_useremail/g" -e "s/GIT_CREDENTIAL_HELPER/$CONFIG__git_credential/g" > "$HOME/.gitconfig.local"
 fi
 
-echo "A new SSH key was created, as well as .gitconfig. The SSH key was copied to your clipboard; make sure to paste it into your GitHub account (https://github.com/account/ssh)."
+
+## WRAP IT UP.
+echo "[ok] git setup DONE."
+echo "[!!] Make sure to add your SSH key to github by copying \`~/.ssh/id_rsa.pub\` into your GitHub account (https://github.com/account/ssh)."
