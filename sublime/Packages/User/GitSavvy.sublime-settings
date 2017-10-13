@@ -28,5 +28,5 @@
 	"load_additional_codecs": true,
 	"show_panel_for": [],
 	"silent_fallback": true,
-	"tab_order": ["branch", "status", "graph", "rebase", "tags", ]
+	"tab_order": ["branch", "status", "rebase", "tags", "graph", ]
 }
