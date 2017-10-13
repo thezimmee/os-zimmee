@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # set up ZSH
 #
-# . zsh/setup
+# bash zsh/setup
 
 ## Load config.
 if [[ -z $CONFIG__loaded ]]; then
@@ -14,34 +14,33 @@ if [[ $SHELL != /bin/zsh ]]; then
 	chsh -s /bin/zsh
 fi
 
+## Ask to start fresh.
+REFRESH=false
+read -p "Remove all current zsh and prezto configuration and start fresh ('no' will link any missing zsh/prezto config files)? "
+if [[ $REPLY =~ ^(yes|y)$ ]]; then
+	REFRESH=true
+	rm -rf ${OSZ_ROOT}/zsh/zprezto.link || echo "Couldn't remove ${OSZ_ROOT}/zsh/zprezto.link."
+fi
+
 ## Add prezto submodule.
-read -p "Add prezto as a git submodule? "
-if [[ $REPLY =~ ^(yes|y)$ ]]; then
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link" && cd ${OSZ_ROOT}/zsh/zprezto.link && git pull && git submodule update --init --recursive
+if [[ $REFRESH = true ]]; then
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link" && cd ${OSZ_ROOT}/zsh/zprezto.link && git pull && git submodule update --init --recursive || echo "Error cloning prezto."
 fi
 
-## Set up ZSH config / dot files.
-OVERWRITE=false
-echo "Setting up ZSH & prezto config files..."
-read -p "Force overwrite any existing zsh files? "
-if [[ $REPLY =~ ^(yes|y)$ ]]; then
-	OVERWRITE=true
-fi
-
-# Set up prezto config files.
+## Set up prezto config files.
 for rcfile in $(find ${OSZ_ROOT}/zsh/zprezto.link/runcoms/* -name '*' -not -name 'README.md' -not -name 'zshrc' -not -name 'zpreztorc'); do
 	dest="$HOME/.$(basename "${rcfile}")"
-	if [[ $OVERWRITE = true ]]; then
+	if [[ $REFRESH = true ]]; then
 		ln -sf "$rcfile" "$dest"
 	else
 		ln -s "$rcfile" "$dest" || echo "Skipped $rcfile."
 	fi
 done
 
-# Symlink other *.link files.
+## Symlink other *.link files.
 for dotfile in $(find ${OSZ_ROOT}/zsh/ -name '*.link*'); do
 	dest="$HOME/.$(basename "${dotfile%.link*}")"
-	if [[ $OVERWRITE = true ]]; then
+	if [[ $REFRESH = true ]]; then
 		ln -sf "$dotfile" "$dest"
 	else
 		ln -s "$dotfile" "$dest" || echo "Skipped $dotfile."
