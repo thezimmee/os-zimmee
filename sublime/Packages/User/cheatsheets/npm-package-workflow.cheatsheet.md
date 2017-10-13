@@ -11,8 +11,8 @@
 	1. [Build a package](#build-a-package)
 	1. [Test packages locally](#test-packages-locally)
 1. [Prep your NPM package to publish](#prep-your-npm-package-to-publish)
-	1. [Set up NPM locally](#set-up-npm-locally)
 	1. [Check if your NPM credentials are stored locally](#check-if-your-npm-credentials-are-stored-locally)
+	1. [Set up NPM locally](#set-up-npm-locally)
 	1. [Create an NPM user](#create-an-npm-user)
 	1. [Log in as a current NPM user](#log-in-as-a-current-npm-user)
 	1. [Exclude / ignore files](#exclude--ignore-files)
@@ -95,6 +95,13 @@ npm link
 <a name="prep-your-npm-package-to-publish"></a>
 ## Prep your NPM package to publish
 
+<a name="check-if-your-npm-credentials-are-stored-locally"></a>
+### Check if your NPM credentials are stored locally
+
+```shell
+npm whoami
+```
+
 <a name="set-up-npm-locally"></a>
 ### Set up NPM locally
 
@@ -104,13 +111,6 @@ Set up your NPM author info:
 npm set init.author.name "<name>"
 npm set init.author.email "<email>"
 npm set init.author.url "<url>"
-```
-
-<a name="check-if-your-npm-credentials-are-stored-locally"></a>
-### Check if your NPM credentials are stored locally
-
-```shell
-npm whoami
 ```
 
 <a name="create-an-npm-user"></a>
@@ -217,5 +217,5 @@ _See [other options](https://docs.npmjs.com/cli/version) in the full documentati
 ## Remove / unpublish a package
 
 ```shell
-npm unpublish
+npm unpublish ./
 ```

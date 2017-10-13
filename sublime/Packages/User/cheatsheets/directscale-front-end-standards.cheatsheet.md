@@ -5,7 +5,9 @@
 <!-- MarkdownTOC depth=2 -->
 
 1. [CSS](#css)
+	1. [CSS Linting](#css-linting)
 1. [JavaScript](#javascript)
+	1. [JS Linting](#js-linting)
 1. [FAQ](#faq)
 	1. [Why is it okay to call a function before it is defined?](#why-is-it-okay-to-call-a-function-before-it-is-defined)
 	1. [How do you pass data to a page or route?](#how-do-you-pass-data-to-a-page-or-route)
@@ -21,11 +23,63 @@
 - Do not duplicate styles. If you are copying and pasting styles, you can probably do it a better way by creating a component.
 - Do not add vendor prefixes. All you need is the non-prefixed property. Prefixes are automatically added during the build process.
 
+<a name="css-linting"></a>
+### CSS Linting
+
+- **Errors**:
+	- _Use tabbed indentation_. This allows user to customize indentation size with their editor.
+	- _Add `@charset 'utf-8' to top of each stylesheet_. This avoids potential issues with character encoding.
+	- _Explain magic numbers_. Add a comment to explain any "[magic number](https://css-tricks.com/magic-numbers-in-css/)".
+	- _Prefer HSL or RGB colors to Hex notation_.
+	- _One selector per line_.
+	- _One rule per line_.
+	- _For utility classes (single responsibility / one rule per selector), it is acceptable to write selector and single rule on a single line._
+- **Warnings** (warn in development, error in production):
+	- _Single quotes for strings._ For example, `url('/my/image.png')`.
+	- _Leading zero for decimal values_. For example, `0.5rem`.
+	- _Unitless zeros_. For example, `border: 0;`; not `border: 0px;`.
+	- _Sort properties according to CSSComb [type ordering](https://github.com/csscomb/csscomb.js/blob/master/config/csscomb.json)_.
+
+#### Preprocessor linting
+
+- **Errors**:
+	- _Store all colors, numbers as a variable when used more than once_.
+	- _Wrap SASS lists in parenthesis and comma separate items in the list_.
+	- _Write SASS maps as you would write JSON_. For example:
+		```sass
+		$breakpoints: (
+			small: 480px,
+			medium: 768px,
+			large: 990px,
+			xlarge: 1200px
+		);
+		```
+	- _Include mixins first in any ruleset_.
+		```sass
+		.foo {
+			@include my-mixin();
+			display: block;
+		}
+		```
+	- _Declare variables at top of ruleset (or stylesheet), separated by a line._
+		```sass
+		.foo {
+			$length: 42rem;
+
+			display: block;
+		}
+		```
+	- _Avoid nesting selectors more than 3 levels deep_.
+- **Warnings** (warn in development, error in production):
+
 <a name="javascript"></a>
 ## JavaScript
 
 - Do not attach data to `$rootScope`. Also, do not share data globally. If you need to share data between controllers and directives, create an Angular service.
 - Do not duplicate markup for mobile and desktop screens.
+
+<a name="js-linting"></a>
+### JS Linting
 
 <a name="faq"></a>
 ## FAQ
