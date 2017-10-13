@@ -6,7 +6,8 @@
 			[
 				"_gsdata_",
 				"node_modules",
-				"build"
+				"build",
+				"src2",
 			],
 			"path": "~/Projects/cs-office/"
 		}
