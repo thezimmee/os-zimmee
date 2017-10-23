@@ -64,6 +64,11 @@
     // { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0 }},
     // Find and replace.
     { "keys": ["super+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false }},
+    // Move cursor.
+    // { "keys": ["ctrl+alt+space"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    // { "keys": ["alt+shift+space"], "command": "move", "args": {"by": "subwords", "forward": false} },
+    // { "keys": ["alt+]"], "command": "move_to", "args": {"to": "brackets"} },
+    // { "keys": ["alt+>"], "args": {"action": "matching_pair"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.matching_pair"}] }, // ! requires Emmet !
     /**
      * [[END]]
      */
