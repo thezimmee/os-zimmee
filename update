@@ -15,6 +15,13 @@ if [[ $response =~ ^(yes|y)$ ]]; then
 	bash "${OSZ_ROOT}/homebrew/update"
 fi
 
+# Update homebrew.
+echo "Would you like to run \`brew prune\`? (y/n) "
+read -r response
+if [[ $response =~ ^(yes|y)$ ]]; then
+	brew prune
+fi
+
 # Update npm packages.
 echo "Would you like to update npm global packages? (y/n) "
 read -r response
