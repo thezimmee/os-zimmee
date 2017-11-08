@@ -9,6 +9,7 @@
     "toggle_menu": false,
     "toggle_side_bar": false,
     "toggle_minimap": true,
+    "same_syntax_only": false,
     "snapshots_on_save": false,
     "view": {
         //set to true if you want to display line numbers (they may not be corresponding
