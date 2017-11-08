@@ -69,6 +69,13 @@
     // { "keys": ["alt+shift+space"], "command": "move", "args": {"by": "subwords", "forward": false} },
     // { "keys": ["alt+]"], "command": "move_to", "args": {"to": "brackets"} },
     // { "keys": ["alt+>"], "args": {"action": "matching_pair"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.matching_pair"}] }, // ! requires Emmet !
+    // Replace default `super+enter` keys so it is not overridden by SendCode.
+    { "keys": ["super+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+    { "keys": ["super+enter"], "command": "gs_commit_view_do_commit", "context": [{ "key": "setting.command_mode", "operator": "equal", "operand": false }, { "key": "setting.git_savvy.get_long_text_view", "operator": "equal", "operand": true }, { "key": "setting.git_savvy.commit_on_close", "operator": "equal", "operand": false }]},
+    { "keys": ["super+enter"], "command": "gs_diff_stage_or_reset_hunk", "context": [{ "key": "setting.command_mode", "operator": "equal", "operand": false }, { "key": "setting.git_savvy.diff_view", "operator": "equal", "operand": true }, { "key": "setting.git_savvy.diff_view.disable_stage", "operator": "equal", "operand": false }]},
+    { "keys": ["super+enter"], "command": "gs_add_edit_commit", "context": [{ "key": "setting.command_mode", "operator": "equal", "operand": false }, { "key": "setting.git_savvy.git_add_view", "operator": "equal", "operand": true }]},
+    { "keys": ["super+enter"], "command": "gs_help_goto_link", "context": [{ "key": "setting.command_mode", "operator": "equal", "operand": false }, { "key": "setting.git_savvy.help_view", "operator": "equal", "operand": true }, { "key": "selector", "operator": "equal", "operand": "meta.link.inline.markdown" }]},
+    { "keys": ["super+enter"], "command": "gs_edit_view_complete", "context": [{ "key": "setting.command_mode", "operator": "equal", "operand": false }, { "key": "setting.git_savvy.edit_view", "operator": "equal", "operand": true }]},
     /**
      * [[END]]
      */
@@ -138,6 +145,11 @@
     // { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }, { "key": "selector", "operator": "equal", "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file" }]},
     { "keys": ["L"], "command": "gs_pull", "args": { "rebase": true }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
     { "keys": ["alt+l"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
+    // Git commands to run in the terminal.
+    // { "keys": ["c"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\"" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy" }]},
+    { "keys": ["p"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git push" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.status" }]},
+    { "keys": ["P"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git add . && git push" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.status" }]},
+    { "keys": ["P"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git add . && git push" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch" }]},
     /**
      * [[END]]
      */

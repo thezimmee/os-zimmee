@@ -29,7 +29,7 @@
 
 , "success_but_no_output_message": "Shell command succeeded."
 
-, "show_success_but_no_output_message": true
+, "show_success_but_no_output_message": false
 
   /**
    * How frequently should the progress bars change during long-running

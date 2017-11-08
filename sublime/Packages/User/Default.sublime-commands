@@ -3,6 +3,10 @@
 	 * [[START]] Git.
 	 */
 	{ "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" }},
+	// git commands to run in the terminal.
+	{ "caption": "git: npm commit", "command": "send_code", "args": { "command": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && npm run commit" }},
+	{ "caption": "git: npm stage all and commit", "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git add . && npm run commit" }},
+	{ "caption": "git: push (in terminal)", "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && git push" }},
 	/**
 	 * [[END]]
 	 */

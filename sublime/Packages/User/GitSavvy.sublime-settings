@@ -14,6 +14,7 @@
 	},
 	"load_additional_codecs": true,
 	"git_graph_args": ["log", "--pretty=format:%h%d %s (%ar) <%an>", "--graph"],
+	// "git_graph_args": ["log", "--graph"],
 	"global_flags": {
 		"merge": ["--no-ff", "--no-commit"],
 		// "merge": ["--squash", "--allow-unrelated-histories"],
