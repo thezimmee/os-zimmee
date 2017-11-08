@@ -1,1 +1,5 @@
 loglevel=silent
+init-author-name=Zimmee
+init-author-email=thezimmee@gmail.com
+init-license=MIT
+save-exact=true
