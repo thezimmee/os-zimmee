@@ -53,6 +53,7 @@ sublime/Packages/watchdog/
 sublime/Packages/zzz A File Icon zzz/
 
 # User files and folders.
+sublime/Packages/User/Color Highlighter/icons/
 sublime/Packages/User/Color Highlighter/themes/
 sublime/Packages/User/GitSavvy/*.hidden-tmTheme
 sublime/Packages/User/i_opener_history.sublime-settings
