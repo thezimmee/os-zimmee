@@ -5,7 +5,7 @@
 
 # load config
 if [[ -z $CONFIG__loaded ]]; then
-	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && bash config && cd $CURRENT
+	CURRENT=${PWD} && cd -P "$(dirname ${BASH_SOURCE[0]})" && . ../config && cd $CURRENT
 fi
 
 # Update homebrew.

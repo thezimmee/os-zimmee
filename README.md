@@ -1,85 +1,65 @@
 # OS Zimmee
 
-OS Zimmee stores all my custom configurations and settings to get running on my mac machine. It started as a collection of all my dotfiles, and quickly expanded to included settings for all apps I use regularly.
+OS Zimmee is my reusable setup for my MacOS machine. It is everything I need to get up and running fast on a new machine, and keeps my machine fresh and up to date.
 
 <!-- MarkdownTOC -->
 
-1. [Installing and updating](#installing-and-updating)
-	1. [App installation](#app-installation)
-	1. [Full / fresh installation](#full--fresh-installation)
+1. [Install](#install)
+	1. [Post install steps](#post-install-steps)
+	1. [Individual app installation](#individual-app-installation)
 1. [Updating / keeping things fresh](#updating--keeping-things-fresh)
-	1. [The update everything command](#the-update-everything-command)
-	1. [Adding new apps](#adding-new-apps)
+1. [Working with App Store apps from the command line](#working-with-app-store-apps-from-the-command-line)
+1. [Apps you may wish to install manually](#apps-you-may-wish-to-install-manually)
 1. [Issues](#issues)
 
 <!-- /MarkdownTOC -->
 
-<a name="installing-and-updating"></a>
-## Installing and updating
+<a name="install"></a>
+## Install
 
-<a name="app-installation"></a>
-### App installation
+```bash
+curl -s https://raw.githubusercontent.com/thezimmee/os-zimmee/master/install | bash
+```
 
-`bash {{os-zimmee root}}/{{app folder}}/setup`
+Then run the [post install steps](#post-install-steps). The above script does the following:
 
-That's it!
+1. Sets up Homebrew.
+2. Sets up git.
+3. Clones the OS Zimmee repo to your desired local directory.
+4. Installs Homebrew apps.
+5. Optionally sets up each app.
 
-<a name="full--fresh-installation"></a>
-### Full / fresh installation
+<a name="post-install-steps"></a>
+### Post install steps
 
-1. Install homebrew &amp; homebrew packages by running `bash homebrew/setup`.
+There are some manual steps you may need to do after the install script is complete:
 
-2. Clone `os-zimmee` repo:
+- Review all keyboard shortcuts in the `keyboard` preferences and update as follows:
+	- Disable capslock modifier key in keyboard preferences.
+	- Change spotlight shortcut to ctrl+alt+space.
+	- Go through other keyboard shortcuts and modify as desired.
+- Start Alfred, Hammerspoon, and Karabiner-Elements and make sure they start on login.
+- Set up iTerm sync folder in iTerm's general preferences.
+- Set up Alfred sync folder in Alfred's advanced preferences.
 
-	```bash
-	# The recursive flag pulls in submodules
-	git clone --recursive https://github.com/thezimmee/os-zimmee.git
-	```
+<a name="individual-app-installation"></a>
+### Individual app installation
 
-3. Each directory in `os-zimmee` represents an app. Set up each app by running the setup script for that app:
-
-	```bash
-	{{os-zimmee path}}/{{app folder}}/setup
-	```
-
-4. Finish manual setup for each of the following apps:
-
-	- macOS: Run `macos/setup` to set up macOS preferences and [disable `capslock` on all keyboards](https://www.maketecheasier.com/disable-caps-lock-mac/)_.
-	- iTerm:
-		+ Import Solarized theme from `/iterm`.
-		+ Set up the following keyboard shortcuts in iTerm:
-			* [Deletions](https://coderwall.com/p/ds2dha/word-line-deletion-and-navigation-shortcuts-in-iterm2)
-			* [Selections](http://apple.stackexchange.com/questions/154292/iterm-going-one-word-backwards-and-forwards)
-	- Sublime Text:
-		+ Open `${OS_ZIMMEE}/sublime/Packages/User/Package Control.sublime-settings`.
-		+ Copy to your clipboard a comma-delimited list of all packages in the `installed_packages` property.
-		+ In Sublime Text, run the `Package Control: Advanced Install Package` command and paste the list of packages to install them all at once.
-	- Hammerspoon: Start it and make sure it launches at startup.
-	- Karabiner-elements: Start it and make sure it launches at startup.
+`bash <os-zimmee root>/<app folder>/setup`
 
 <a name="updating--keeping-things-fresh"></a>
 ## Updating / keeping things fresh
-
-<a name="the-update-everything-command"></a>
-### The update everything command
 
 ```bash
 update
 ```
 
-This command is simply an alias that runs the update script located at: `bash {{os-zimmee path}}/update`. The update script will ask you if you want to do each of the following:
+This updates Homebrew, Homebrew apps, NPM packages, MacOS apps, and other apps/packages consumed by OS Zimmee. Easy enough?
 
-- Update homebrew.
-- Update npm packages.
-- Try to update apps from the app store.
-- Update apps, such as prezto, that were installed by cloning a repo.
+<a name="working-with-app-store-apps-from-the-command-line"></a>
+## Working with App Store apps from the command line
 
-Easy enough?
-
-<a name="adding-new-apps"></a>
-### Adding new apps
-
-Use `mas` to install other App Store apps.
+Use `mas` to install App Store apps.
 
 ```bash
 # lists installed apps and their app ID
@@ -96,7 +76,8 @@ mas upgrade
 mas signin <email>
 ```
 
-#### Other apps you may want to install:
+<a name="apps-you-may-wish-to-install-manually"></a>
+## Apps you may wish to install manually
 
 - Photoshop
 - Illustrator

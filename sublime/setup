@@ -5,7 +5,7 @@
 
 # Load config.
 if [[ -z $CONFIG__loaded ]]; then
-	CURRENT=${PWD} && cd -P "$( dirname "$0" )" && cd .. && . ./config && cd $CURRENT
+	CURRENT=${PWD} && cd -P "$(dirname ${BASH_SOURCE[0]})" && . ../config && cd $CURRENT
 fi
 
 install_package_control () {
@@ -40,8 +40,8 @@ setup_sublime () {
 	echo "Sublime setup complete!"
 	echo "Sublime should automatically install packages after you install package control from the command palette. If the packages do not automatically install, do the following:"
 	echo "  1) After package control is installed, open ~/Projects/os-zimmee/sublime/Packages/User/Package\ Control.sublime-settings."
-	echo "  2) Create a comma-delimited list from the `installed_packages` property."
-	echo "  3) Type `advanced install` in the command prompt and paste the comma-delimited list of packages."
+	echo "  2) Create a comma-delimited list from the \`installed_packages\` property."
+	echo "  3) Type \`advanced install\` in the command prompt and paste the comma-delimited list of packages."
 }
 
 setup_dotfiles () {

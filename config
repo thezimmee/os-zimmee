@@ -11,7 +11,6 @@ OSZ_ROOT=~/Projects/os-zimmee
 # homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
 	caskroom/cask
-	homebrew/versions
 	caskroom/fonts
 )
 # homebrew apps to install with `brew install <app>`
@@ -23,7 +22,7 @@ CONFIG__brew_apps=(
 	imagemagick
 	lua
 	mas
-	node
+	nvm
 	tidy-html5
 	wget
 	zsh
@@ -36,7 +35,7 @@ CONFIG__cask_apps=(
 	# 1password
 	alfred
 	appcleaner
-	blisk
+	# blisk
 	brave
 	# colorpicker
 	# cyberduck
@@ -47,7 +46,7 @@ CONFIG__cask_apps=(
 	forklift
 	goodsync
 	google-chrome
-	google-chrome-canary
+	caskroom/versions/google-chrome-canary
 	# google-drive
 	hammerspoon
 	# hyper
@@ -59,16 +58,16 @@ CONFIG__cask_apps=(
 	# little-snitch
 	musescore
 	opera
-	parallels-desktop
-	plex-media-server
+	parallels
+	# plex-media-server
 	# private-internet-access
 	# seil
 	slack
-	sublime-text-dev
+	caskroom/versions/sublime-text-dev
 	# teamviewer
 	# torbrowser
 	time-out
-	unifi-controller
+	caskroom/drivers/ubiquiti-unifi-controller
 	vivaldi
 	witch
 	## [[QUICKLOOK PLUGINS]]
@@ -80,20 +79,18 @@ CONFIG__cask_apps=(
 	qlstephen
 	quicklook-csv
 	quicklook-json
-	unarchiver
+	the-unarchiver
 	webpquicklook
 	## [[FONTS]]
 	font-bebas-neue
 	font-consolas-for-powerline
 	font-dejavu-sans-mono-for-powerline
-	font-droid-sans
 	font-droid-sans-mono-for-powerline
 	font-fira-mono-for-powerline
 	font-inconsolata
 	font-inconsolata-for-powerline
 	font-menlo-for-powerline
 	font-meslo-for-powerline
-	font-menofur-for-powerline
 	font-open-sans
 	font-roboto-mono-for-powerline
 	font-source-code-pro-for-powerline

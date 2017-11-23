@@ -1,3 +1,112 @@
 #!/usr/bin/env bash
-# installs and configures OS Zimmee
+# Installs and configure OS Zimmee.
 
+
+OSZ_REPO=https://github.com/thezimmee/os-zimmee
+OSZ_PATH=~/Projects/os-zimmee
+ERROR_MSG=""
+
+
+setup () {
+	INSTALL_APPS=y
+	CONFIRM_MSG=""
+
+	# Intro.
+	echo ''
+	echo "[i] This wizard will help you set up OS Zimmee apps. If you wish to install a single app, run \`<path to os-zimmee app>/setup\`."
+
+	# OS Zimmee path.
+	read -p "[?] Where would you like OS Zimmee files installed/cloned to (defaults to ~/Projects/os-zimmee)? " OSZ_PATH
+	OSZ_PATH=${OSZ_PATH:-~/Projects/os-zimmee}
+	read -p "[?] Installing to ${OSZ_PATH}. Is this correct ('no' will restart wizard)? (Y/n) " CONTINUE
+	CONTINUE=${CONTINUE:-y}
+	if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
+		setup
+	fi
+
+	# Homebrew.
+	if $(type -t brew); then
+		echo "Homebrew already installed."
+	else
+		install_homebrew || ERROR_MSG+="[!!] Homebrew installation failed. :(\n"
+	fi
+
+	# Git.
+	install_git || ERROR_MSG+="[!!] git installation failed. :(\n"
+
+	# Clone OS Zimmee repo.
+	clone_repo || ERROR_MSG="[!!] Something went wrong with cloning OS Zimmee."
+
+	# Install other apps.
+	setup_apps
+
+	# Run post install report.
+	install_report
+}
+
+install_homebrew () {
+	# install homebrew
+	if [[ $(type -t brew) ]]; then
+		echo "[i] Homebrew already installed."
+	else
+		echo "Installing Homebrew..."
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		brew update && brew upgrade && brew doctor
+	fi
+}
+
+install_git () {
+	# install apps
+	echo "Installing git..."
+	brew install git
+}
+
+clone_repo () {
+	CONTINUE=y
+	if [ -d ${OSZ_PATH} ]; then
+		read -p "[?] Path to ${OSZ_PATH} already exists, and cloning OS Zimmee will overwrite all files in this directory. Continue? Or skip (skipping may cause issues)? (Y/n) " CONTINUE
+		if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
+			CONTINUE=n
+		fi
+	fi
+	if [[ $CONTINUE == y ]]; then
+		echo "Cloning ${OSZ_REPO} to ${OSZ_PATH}..."
+		git clone --recursive "$OSZ_REPO" "$OSZ_PATH"
+	fi
+}
+
+setup_apps () {
+	# Install homebrew apps first.
+	echo "Installing homebrew apps..."
+	cd ${OSZ_PATH} && . ${OSZ_PATH}/homebrew/setup || ERROR_MSG="[!!] Installing Homebrew apps failed."
+	# Set up other apps.
+	echo "Setting up other apps..."
+	for dir in ${OSZ_PATH}/*; do
+		if [[ -d "$dir" && ${dir} != homebrew && -f "$dir/setup" ]]; then
+			read -p "[?] Do you want to set up ${dir}? (Y/n) " CONTINUE
+			CONTINUE=${CONTINUE:-y}
+			if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+				. ${dir}/setup || ERROR_MSG+="[!!] ${dir} setup failed. :(\n"
+			fi
+		fi
+	done
+}
+
+install_report () {
+	# wrap up
+	if [[ "$ERROR_MSG" != "" ]]; then
+	    echo "[!!] There was a problem with the install..."
+	    echo -e "${ERROR_MSG}"
+	    echo "---"
+	    echo "Sorry. Either try again or manually set up the missing pieces listed above (Homebrew, git, clone OS Zimmee)."
+	else
+	    echo -e "[ok] Woot woot! OS Zimmee setup is complete!"
+	    echo -e "[ok] To set up individuall apps, simply run \`<os-zimmee path>/<app directory>/setup\`."
+	    echo -e "[ok] The repo was set up at: \`${OSZ_PATH}\`."
+	    echo -e "[ok] Enjoy!!! :)"
+	fi
+	echo ''
+}
+
+# install & update
+setup
