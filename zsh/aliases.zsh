@@ -12,7 +12,8 @@ alias update=update
 
 # Project folder alias so we can `c [tab]` to it.
 setopt AUTO_CD # auto cd by typing the path.
-projects="${HOME}/Projects" 
+projects="${HOME}/Projects"
+alias p=cd ${HOME}/Projects
 
 # reload zsh
 alias reload='. $HOME/.zshrc'

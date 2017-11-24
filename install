@@ -12,24 +12,21 @@ setup () {
 	CONFIRM_MSG=""
 
 	# Intro.
-	echo ''
-	echo "[i] This wizard will help you set up OS Zimmee apps. If you wish to install a single app, run \`<path to os-zimmee app>/setup\`."
+	echo '--- OS ZIMMEE INSTALL WIZARD ---'
+	echo "[i] This wizard will help you set up OS Zimmee apps."
 
 	# OS Zimmee path.
-	read -p "[?] Where would you like OS Zimmee files installed/cloned to (defaults to ~/Projects/os-zimmee)? " OSZ_PATH
+	read -p "[?] Where should OS Zimmee be installed/cloned to (defaults to ~/Projects/os-zimmee)? " OSZ_PATH
 	OSZ_PATH=${OSZ_PATH:-~/Projects/os-zimmee}
-	read -p "[?] Installing to ${OSZ_PATH}. Is this correct ('no' will restart wizard)? (Y/n) " CONTINUE
+	read -p "[?] Installing to ${OSZ_PATH}. Is this correct? (Y/n) " CONTINUE
 	CONTINUE=${CONTINUE:-y}
 	if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
-		setup
+		echo '[!!] User quit. Run installer again to start from the beginning.'
+		exit 1
 	fi
 
 	# Homebrew.
-	if $(type -t brew); then
-		echo "Homebrew already installed."
-	else
-		install_homebrew || ERROR_MSG+="[!!] Homebrew installation failed. :(\n"
-	fi
+	install_homebrew || ERROR_MSG+="[!!] Homebrew installation failed. :(\n"
 
 	# Git.
 	install_git || ERROR_MSG+="[!!] git installation failed. :(\n"
@@ -46,7 +43,7 @@ setup () {
 
 install_homebrew () {
 	# install homebrew
-	if [[ $(type -t brew) ]]; then
+	if [[ $(command -v brew) ]]; then
 		echo "[i] Homebrew already installed."
 	else
 		echo "Installing Homebrew..."
@@ -64,7 +61,7 @@ install_git () {
 clone_repo () {
 	CONTINUE=y
 	if [ -d ${OSZ_PATH} ]; then
-		read -p "[?] Path to ${OSZ_PATH} already exists, and cloning OS Zimmee will overwrite all files in this directory. Continue? Or skip (skipping may cause issues)? (Y/n) " CONTINUE
+		read -p "[?] Path to ${OSZ_PATH} already exists. Not cloning may cause issues, cloning will overwrite. Clone and overwrite? (Y/n) " CONTINUE
 		if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
 			CONTINUE=n
 		fi
@@ -95,15 +92,15 @@ setup_apps () {
 install_report () {
 	# wrap up
 	if [[ "$ERROR_MSG" != "" ]]; then
-	    echo "[!!] There was a problem with the install..."
-	    echo -e "${ERROR_MSG}"
-	    echo "---"
-	    echo "Sorry. Either try again or manually set up the missing pieces listed above (Homebrew, git, clone OS Zimmee)."
+		echo "[!!] There was a problem with the install..."
+		echo -e "${ERROR_MSG}"
+		echo "---"
+		echo "Sorry. Either try again or manually set up the missing pieces listed above (Homebrew, git, clone OS Zimmee)."
 	else
-	    echo -e "[ok] Woot woot! OS Zimmee setup is complete!"
-	    echo -e "[ok] To set up individuall apps, simply run \`<os-zimmee path>/<app directory>/setup\`."
-	    echo -e "[ok] The repo was set up at: \`${OSZ_PATH}\`."
-	    echo -e "[ok] Enjoy!!! :)"
+		echo -e "[ok] Woot woot! OS Zimmee setup is complete!"
+		echo -e "[ok] To set up individuall apps, simply run \`<os-zimmee path>/<app directory>/setup\`."
+		echo -e "[ok] The repo was set up at: \`${OSZ_PATH}\`."
+		echo -e "[ok] Enjoy!!! :)"
 	fi
 	echo ''
 }

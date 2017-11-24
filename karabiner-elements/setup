@@ -5,7 +5,8 @@
 
 # Load config.
 if [[ -z $CONFIG__loaded ]]; then
-	CURRENT=${PWD} && cd -P "$(dirname ${BASH_SOURCE[0]})" && . ../config && cd $CURRENT
+	local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
+	CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ../config && cd $CURRENT
 fi
 
 # Symlink karabiner-elements.
