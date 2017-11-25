@@ -70,3 +70,13 @@ sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 
 ## --- END: SUBLIME
 ##
+
+
+##
+## --- START: FIREFOX
+
+firefox/profiles/*/*
+!firefox/profiles/*/chrome
+
+## --- END: FIREFOX
+##
