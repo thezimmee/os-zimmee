@@ -19,7 +19,7 @@
 	will-change: height;
 	transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#navigator-toolbox:hover,
+/* #navigator-toolbox:hover, */
 #navigator-toolbox:focus-within {
 	height: 74px;
 }
