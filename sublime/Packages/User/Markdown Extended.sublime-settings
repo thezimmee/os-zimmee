@@ -31,7 +31,7 @@
 	"line_padding_top": 5,
 	"line_numbers": false,
 	"margin": 0,
-	// "mde.auto_increment_ordered_list_number": true,
+	"mde.auto_increment_ordered_list_number": false,
 	// "mde.distraction_free_mode":
 	// {
 	// 	"mde.keep_centered": true
