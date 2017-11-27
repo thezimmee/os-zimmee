@@ -75,5 +75,6 @@
 	"theme": "Adaptive UI -- Zimmee.sublime-theme",
 	"theme_sidebar_indent_top_level_disabled": true,
 	"translate_tabs_to_spaces": false,
-	"word_separators": "./\\()\"'-_:,.;<>~!@#$%^&*|+=[]{}`~?"
+	"word_separators": "./\\()\"'-_:,.;<>~!@#$%^&*|+=[]{}`~?",
+	"word_wrap": "true"
 }
