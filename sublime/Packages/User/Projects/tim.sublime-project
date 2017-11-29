@@ -4,9 +4,9 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"node_modules"
+				"node_modules",
 			],
-			"path": "~/Projects/brikcss/flipper/"
+			"path": "~/Projects/brikcss/tim"
 		}
 	]
 }
