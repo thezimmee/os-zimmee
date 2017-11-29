@@ -826,8 +826,8 @@
         "scrollUp": [
           [
             {
-              "code": "KeyJ",
-              "key": "j",
+              "code": "KeyI",
+              "key": "i",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -838,8 +838,8 @@
         "scrollLeft": [
           [
             {
-              "code": "KeyH",
-              "key": "h",
+              "code": "KeyJ",
+              "key": "j",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -876,8 +876,8 @@
         "scrollHalfPageUp": [
           [
             {
-              "code": "KeyJ",
-              "key": "J",
+              "code": "KeyI",
+              "key": "I",
               "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
@@ -888,8 +888,8 @@
         "scrollToBottom": [
           [
             {
-              "code": "KeyI",
-              "key": "I",
+              "code": "KeyL",
+              "key": "L",
               "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
@@ -900,8 +900,8 @@
         "scrollToTop": [
           [
             {
-              "code": "KeyU",
-              "key": "U",
+              "code": "KeyJ",
+              "key": "J",
               "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
@@ -926,8 +926,8 @@
         "goForward": [
           [
             {
-              "code": "KeyI",
-              "key": "i",
+              "code": "KeyH",
+              "key": "h",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1104,23 +1104,6 @@
         "moveTabLeft": [
           [
             {
-              "code": "BracketLeft",
-              "key": "{",
-              "shiftKey": true
-            }
-          ],
-          [
-            {
-              "code": "Comma",
-              "key": "<",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ],
-          [
-            {
               "code": "KeyJ",
               "key": "j",
               "shiftKey": false,
@@ -1133,21 +1116,16 @@
         "moveTabRight": [
           [
             {
-              "code": "BracketRight",
-              "key": "}",
-              "shiftKey": true
-            }
-          ],
-          [
-            {
-              "code": "Period",
-              "key": ">",
-              "shiftKey": true,
-              "ctrlKey": false,
+              "code": "KeyL",
+              "key": "l",
+              "shiftKey": false,
+              "ctrlKey": true,
               "altKey": false,
               "metaKey": false
             }
-          ],
+          ]
+        ],
+        "moveTabFirst": [
           [
             {
               "code": "KeyK",
@@ -1159,54 +1137,12 @@
             }
           ]
         ],
-        "moveTabFirst": [
-          [
-            {
-              "code": "Digit0",
-              "key": ")",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ],
-          [
-            {
-              "code": "Digit1",
-              "key": "!",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ],
-          [
-            {
-              "code": "KeyU",
-              "key": "U",
-              "shiftKey": true,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
         "moveTabLast": [
           [
             {
-              "code": "Digit9",
-              "key": "(",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ],
-          [
-            {
               "code": "KeyI",
-              "key": "I",
-              "shiftKey": true,
+              "key": "i",
+              "shiftKey": false,
               "ctrlKey": true,
               "altKey": false,
               "metaKey": false
