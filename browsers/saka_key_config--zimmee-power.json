@@ -713,48 +713,26 @@
         "physicalKeys": true,
         "ignoreModifierKeys": false,
         "toggleHelpMenu": [],
-        "toggleSaka": [
-          [
-            {
-              "code": "Quote",
-              "key": "'",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "Quote",
-              "key": "'",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
+        "toggleSaka": [],
         "openLink": [
           [
             {
-              "code": "KeyF",
-              "key": "f"
+              "code": "KeyG",
+              "key": "g",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
             }
           ]
         ],
-        "openLinkInBackgroundTab": [
-          [
-            {
-              "code": "KeyA",
-              "key": "a"
-            }
-          ]
-        ],
+        "openLinkInBackgroundTab": [],
         "openLinkInForegroundTab": [
           [
             {
-              "code": "KeyD",
-              "key": "d",
-              "shiftKey": false,
+              "code": "KeyG",
+              "key": "G",
+              "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
@@ -764,9 +742,9 @@
         "openLinkInNewWindow": [
           [
             {
-              "code": "KeyF",
-              "key": "F",
-              "shiftKey": true,
+              "code": "KeyA",
+              "key": "a",
+              "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
@@ -810,12 +788,22 @@
             }
           ]
         ],
-        "hintChars": "ajskdlghewioruvncm",
+        "hintChars": "asdfgwerxcv",
         "scrollDown": [
           [
             {
               "code": "KeyK",
               "key": "k",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyD",
+              "key": "d",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -833,16 +821,26 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
           ]
         ],
         "scrollLeft": [
           [
             {
               "code": "KeyJ",
-              "key": "j",
+              "key": "∆",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ]
@@ -851,10 +849,10 @@
           [
             {
               "code": "KeyL",
-              "key": "l",
+              "key": "¬",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ]
@@ -871,6 +869,16 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyD",
+              "key": "D",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
           ]
         ],
         "scrollHalfPageUp": [
@@ -878,6 +886,16 @@
             {
               "code": "KeyI",
               "key": "I",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyE",
+              "key": "E",
               "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
@@ -914,8 +932,18 @@
         "goBack": [
           [
             {
-              "code": "KeyU",
-              "key": "u",
+              "code": "Comma",
+              "key": ",",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyX",
+              "key": "x",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -926,8 +954,18 @@
         "goForward": [
           [
             {
-              "code": "KeyH",
-              "key": "h",
+              "code": "Period",
+              "key": ".",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyC",
+              "key": "c",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -939,14 +977,6 @@
         "previousPage": [],
         "goUp": [
           [
-            {
-              "code": "KeyG",
-              "key": "g",
-              "shiftKey": false,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            },
             {
               "code": "KeyU",
               "key": "u",
@@ -960,35 +990,9 @@
         "goToRoot": [
           [
             {
-              "code": "KeyG",
-              "key": "g",
-              "shiftKey": false,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "Period",
-              "key": ".",
-              "shiftKey": false,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ],
-          [
-            {
-              "code": "KeyG",
-              "key": "g",
-              "shiftKey": false,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "KeyI",
-              "key": "i",
-              "shiftKey": false,
+              "code": "KeyU",
+              "key": "U",
+              "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
@@ -998,14 +1002,8 @@
         "nextTab": [
           [
             {
-              "code": "BracketRight",
-              "key": "]"
-            }
-          ],
-          [
-            {
-              "code": "Period",
-              "key": ".",
+              "code": "KeyL",
+              "key": "l",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1014,11 +1012,11 @@
           ],
           [
             {
-              "code": "KeyK",
-              "key": "˚",
+              "code": "KeyF",
+              "key": "f",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": true,
+              "altKey": false,
               "metaKey": false
             }
           ]
@@ -1026,14 +1024,8 @@
         "previousTab": [
           [
             {
-              "code": "BracketLeft",
-              "key": "["
-            }
-          ],
-          [
-            {
-              "code": "Comma",
-              "key": ",",
+              "code": "KeyS",
+              "key": "s",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1043,10 +1035,10 @@
           [
             {
               "code": "KeyJ",
-              "key": "∆",
+              "key": "j",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": true,
+              "altKey": false,
               "metaKey": false
             }
           ]
@@ -1070,7 +1062,7 @@
           ],
           [
             {
-              "code": "KeyU",
+              "code": "KeyI",
               "key": "Dead",
               "shiftKey": false,
               "ctrlKey": false,
@@ -1092,8 +1084,8 @@
           ],
           [
             {
-              "code": "KeyI",
-              "key": "Dead",
+              "code": "KeyK",
+              "key": "˚",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": true,
@@ -1128,8 +1120,8 @@
         "moveTabFirst": [
           [
             {
-              "code": "KeyK",
-              "key": "k",
+              "code": "KeyI",
+              "key": "i",
               "shiftKey": false,
               "ctrlKey": true,
               "altKey": false,
@@ -1140,8 +1132,8 @@
         "moveTabLast": [
           [
             {
-              "code": "KeyI",
-              "key": "i",
+              "code": "KeyK",
+              "key": "k",
               "shiftKey": false,
               "ctrlKey": true,
               "altKey": false,
@@ -1152,16 +1144,16 @@
         "closeTab": [
           [
             {
-              "code": "KeyX",
-              "key": "x",
+              "code": "KeyW",
+              "key": "w",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
             },
             {
-              "code": "KeyX",
-              "key": "x",
+              "code": "KeyW",
+              "key": "w",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1172,8 +1164,8 @@
         "closeOtherTabs": [
           [
             {
-              "code": "KeyX",
-              "key": "x",
+              "code": "KeyW",
+              "key": "w",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1192,16 +1184,16 @@
         "closeRightTabs": [
           [
             {
-              "code": "KeyX",
-              "key": "x",
+              "code": "KeyW",
+              "key": "w",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
             },
             {
-              "code": "Period",
-              "key": ".",
+              "code": "KeyR",
+              "key": "r",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1212,16 +1204,16 @@
         "closeLeftTabs": [
           [
             {
-              "code": "KeyX",
-              "key": "x",
+              "code": "KeyW",
+              "key": "w",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
               "metaKey": false
             },
             {
-              "code": "Comma",
-              "key": ",",
+              "code": "KeyL",
+              "key": "l",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -1242,18 +1234,7 @@
             }
           ]
         ],
-        "duplicateTab": [
-          [
-            {
-              "code": "KeyD",
-              "key": "D",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
+        "duplicateTab": [],
         "newWindow": [
           [
             {
