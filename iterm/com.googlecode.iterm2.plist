@@ -176,7 +176,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>902 495 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 -1 766 1177 0 0 1920 1177 </string>
+	<string>960 21 766 1155 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2138,6 +2138,8 @@
 	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
