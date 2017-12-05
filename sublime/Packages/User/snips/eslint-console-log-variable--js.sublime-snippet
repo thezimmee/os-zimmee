@@ -1,10 +1,11 @@
 <snippet>
 	<content><![CDATA[
-console.log('${1:variableName}:', ${1}); // eslint-disable-line
+// eslint-disable-next-line no-console
+console.log('${1:variableName}:', ${1});
 ]]></content>
 	<description>log variable</description>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>eslint-log-variable</tabTrigger>
+	<tabTrigger>log-var--eslint</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.js</scope>
 </snippet>

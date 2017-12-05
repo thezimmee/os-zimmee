@@ -1,17 +1,17 @@
 <snippet>
 	<content><![CDATA[
-/** [[START]] ${1:[title]} --------------------------------------------------------------------------------------${3}
- *  ${2:[more]}
+/** [[START]] --------------------------------------------------------------------------------------
+ *  ${1:[title]}
  */
 
 ${0}
 
-/** [[END]] ${1:[title]} ------------------------------------------------------------------------------------- */
+/** [[END]] ------------------------------------------------------------------------------------- */
 
 ]]></content>
 	<description>Section comment.</description>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>///</tabTrigger>
+	<tabTrigger>/***</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.js,source.css,source.sass,source.less</scope>
 </snippet>

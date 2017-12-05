@@ -1,9 +1,13 @@
 <snippet>
 	<content><![CDATA[
-console.${1:log}(${0});
+test('${1:[test description]}', t => {
+	t.plan(${2:1});
+	${0}
+});
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>log</tabTrigger>
+	<tabTrigger>test--tape</tabTrigger>
+	<description>New test for tape.</description>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.js</scope>
 </snippet>

@@ -1,9 +1,12 @@
 <snippet>
 	<content><![CDATA[
-console.${1:log}(${0});
+// ${1/./-/g}
+// ${1:[title]}
+// ${0}
 ]]></content>
+	<description>Subsection comment.</description>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>log</tabTrigger>
+	<tabTrigger>///</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js</scope>
+	<scope>source.js,source.sass,source.less</scope>
 </snippet>
