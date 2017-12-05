@@ -1,5 +1,4 @@
 {
-	"browser": "/Applications/Google Chrome.app",
 	"enable_autoreload": true,
 	"enable_highlight": true,
 	"enabled_parsers": ["markdown"],

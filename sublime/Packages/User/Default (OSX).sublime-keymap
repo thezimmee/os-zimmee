@@ -3,42 +3,42 @@
      * [[START]] Tab and panes navigation and manipulation.
      */
     // Navigate between tabs.
-    { "keys": ["alt+k"], "command": "next_view" },
+    { "keys": ["alt+l"], "command": "next_view" },
     { "keys": ["alt+j"], "command": "prev_view" },
     // Navigate between panes.
-    { "keys": ["alt+i"], "command": "focus_neighboring_group" },
+    { "keys": ["alt+o"], "command": "focus_neighboring_group" },
     { "keys": ["alt+u"], "command": "focus_neighboring_group", "args": { "forward": false }},
-    { "keys": ["alt+o"], "command": "travel_to_pane", "args": { "direction": "down" }},
-    { "keys": ["alt+p"], "command": "travel_to_pane", "args": { "direction": "up" }},
+    // { "keys": ["alt+o"], "command": "travel_to_pane", "args": { "direction": "down" }},
+    // { "keys": ["alt+p"], "command": "travel_to_pane", "args": { "direction": "up" }},
     // Tab / pane manipulation.
     // { "keys": ["ctrl+shift+i"], "command": "move_to_neighboring_group" },
     // { "keys": ["ctrl+shift+u"], "command": "move_to_neighboring_group", "args": { "forward": false }},
     { "keys": ["ctrl+shift+u"], "command": "carry_file_to_pane", "args": { "direction": "left" }},
-    { "keys": ["ctrl+shift+i"], "command": "carry_file_to_pane", "args": { "direction": "right" }},
-    { "keys": ["ctrl+shift+p"], "command": "carry_file_to_pane", "args": { "direction": "up" }},
-    { "keys": ["ctrl+shift+o"], "command": "carry_file_to_pane", "args": { "direction": "down" }},
-    { "keys": ["super+k", "super+alt+p"], "command": "create_pane_with_file", "args": { "direction": "up" }},
-    { "keys": ["super+k", "super+alt+i"], "command": "create_pane_with_file", "args": { "direction": "right" }},
-    { "keys": ["super+k", "super+alt+o"], "command": "create_pane_with_file", "args": { "direction": "down" }},
-    { "keys": ["super+k", "super+alt+u"], "command": "create_pane_with_file", "args": { "direction": "left" }},
+    { "keys": ["ctrl+shift+o"], "command": "carry_file_to_pane", "args": { "direction": "right" }},
+    // { "keys": ["ctrl+shift+p"], "command": "carry_file_to_pane", "args": { "direction": "up" }},
+    // { "keys": ["ctrl+shift+o"], "command": "carry_file_to_pane", "args": { "direction": "down" }},
+    // { "keys": ["super+k", "super+alt+p"], "command": "create_pane_with_file", "args": { "direction": "up" }},
+    // { "keys": ["super+k", "super+alt+i"], "command": "create_pane_with_file", "args": { "direction": "right" }},
+    // { "keys": ["super+k", "super+alt+o"], "command": "create_pane_with_file", "args": { "direction": "down" }},
+    // { "keys": ["super+k", "super+alt+u"], "command": "create_pane_with_file", "args": { "direction": "left" }},
     // Move tab inside of pane.
-    { "keys": ["ctrl+alt+k"], "command": "move_tab", "args": { "position": "999" }},
+    { "keys": ["ctrl+alt+l"], "command": "move_tab", "args": { "position": "999" }},
     { "keys": ["ctrl+alt+j"], "command": "move_tab", "args": { "position": "0" }},
     { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" }},
-    { "keys": ["ctrl+k"], "command": "move_tab", "args": { "position": "+1" }},
+    { "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" }},
     // Destroy panes.
-    { "keys": ["super+k", "super+ctrl+u"], "command": "destroy_pane", "args": { "direction": "left" }},
-    { "keys": ["super+k", "super+ctrl+i"], "command": "destroy_pane", "args": { "direction": "right" }},
-    { "keys": ["super+k", "super+ctrl+p"], "command": "destroy_pane", "args": { "direction": "up" }},
-    { "keys": ["super+k", "super+ctrl+o"], "command": "destroy_pane", "args": { "direction": "down" }},
+    // { "keys": ["super+k", "super+ctrl+u"], "command": "destroy_pane", "args": { "direction": "left" }},
+    // { "keys": ["super+k", "super+ctrl+i"], "command": "destroy_pane", "args": { "direction": "right" }},
+    // { "keys": ["super+k", "super+ctrl+p"], "command": "destroy_pane", "args": { "direction": "up" }},
+    // { "keys": ["super+k", "super+ctrl+o"], "command": "destroy_pane", "args": { "direction": "down" }},
     { "keys": ["super+ctrl+-"], "command": "close_pane" },
     // Resize panes.
-    { "keys": ["super+shift+i"], "command": "resize_pane", "args": { "orientation": "cols" }},
+    { "keys": ["super+shift+o"], "command": "resize_pane", "args": { "orientation": "cols" }},
     { "keys": ["super+shift+u"], "command": "resize_pane", "args": { "orientation": "rows" }},
     { "keys": ["super+alt+shift+u"], "command": "resize_active_group", "args" : { "direction" : "left" }},
-    { "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args" : { "direction" : "right" }},
-    { "keys": ["super+alt+shift+p"], "command": "resize_active_group", "args" : { "direction" : "up" }},
-    { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "down" }},
+    { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "right" }},
+    // { "keys": ["super+alt+shift+p"], "command": "resize_active_group", "args" : { "direction" : "up" }},
+    // { "keys": ["super+alt+shift+o"], "command": "resize_active_group", "args" : { "direction" : "down" }},
     /**
      * [[END]]
      */
@@ -144,7 +144,7 @@
     { "keys": ["super+alt+g"], "command": "gs_log_graph" },
     // { "keys": ["L"], "command": "gs_pull", "context": [{ "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }, { "key": "selector", "operator": "equal", "operand": "git-savvy.status meta.git-savvy.status.section meta.git-savvy.status.file" }]},
     { "keys": ["L"], "command": "gs_pull", "args": { "rebase": true }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
-    { "keys": ["alt+l"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
+    // { "keys": ["alt+l"], "command": "gs_pull", "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.branch meta.git-savvy.branches.branch" }]},
     // Git commands to run in the terminal.
     // { "keys": ["c"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\"" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy" }]},
     { "keys": ["p"], "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git push" }, "context": [{ "key": "selector", "operator": "equal", "operand": "git-savvy.status" }]},
