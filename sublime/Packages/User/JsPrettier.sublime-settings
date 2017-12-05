@@ -1,0 +1,9 @@
+{
+	"auto_format_on_save": true,
+	"auto_format_on_save_excludes": ["*/node_modules/*", "*/package.json", "/*.md", "/.*rc"],
+	"allow_inline_formatting": false,
+	"additional_cli_args": {
+		// "--config": "/Users/zimmee/.prettierrc.js",
+		"--config-precedence": "prefer-file",
+	}
+}
