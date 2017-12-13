@@ -16,7 +16,7 @@ local utils = dofile('helpers/utils.lua')
 
 -- components
 local grid = dofile('grid.lua')
-local mouse = dofile('click-drag.lua')
+-- local mouse = dofile('click-drag.lua')
 
 -- locals
 local WINDOW_MODES = {'hs', 'amethyst'}
@@ -45,36 +45,36 @@ grid.init()
 -- [[ END ]]
 
 
--- [[ START ]] Keyboard mouse clicks.
-leftClickDown = function (  )
-	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, hs.mouse.getAbsolutePosition()):post()
-end
+-- -- [[ START ]] Keyboard mouse clicks.
+-- leftClickDown = function (  )
+-- 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDown, hs.mouse.getAbsolutePosition()):post()
+-- end
 
-leftClickDrag = function (  )
-	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDragged, hs.mouse.getAbsolutePosition()):post()
-end
+-- leftClickDrag = function (  )
+-- 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseDragged, hs.mouse.getAbsolutePosition()):post()
+-- end
 
-leftClickUp = function (  )
-	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseUp, hs.mouse.getAbsolutePosition()):post()
-end
+-- leftClickUp = function (  )
+-- 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.leftMouseUp, hs.mouse.getAbsolutePosition()):post()
+-- end
 
-rightClickDown = function (  )
-	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.rightMouseDown, hs.mouse.getAbsolutePosition()):post()
-end
+-- rightClickDown = function (  )
+-- 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.rightMouseDown, hs.mouse.getAbsolutePosition()):post()
+-- end
 
-rightClickUp = function (  )
-	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.rightMouseUp, hs.mouse.getAbsolutePosition()):post()
-end
+-- rightClickUp = function (  )
+-- 	hs.eventtap.event.newMouseEvent(hs.eventtap.event.types.rightMouseUp, hs.mouse.getAbsolutePosition()):post()
+-- end
 
 
-f1 = mouse.bind({}, 'f1', 1)
-f2 = hs.hotkey.bind({}, 'f2', rightClickDown, rightClickUp)
+-- f1 = mouse.bind({}, 'f1', 1)
+-- f2 = hs.hotkey.bind({}, 'f2', rightClickDown, rightClickUp)
 
-tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
-	print(hs.inspect(event:getRawEventData()))
-end)
-tap:start()
--- [[ END ]]
+-- tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
+-- 	print(hs.inspect(event:getRawEventData()))
+-- end)
+-- tap:start()
+-- -- [[ END ]]
 
 
 -- [[ START ]] Reload config.

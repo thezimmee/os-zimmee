@@ -64,6 +64,33 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Mouse keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f1"
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button1"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f2"
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button2"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -90,7 +117,7 @@
                         "key_code": "f3"
                     },
                     "to": {
-                        "key_code": "mission_control"
+                        "consumer_key_code": "display_brightness_decrement"
                     }
                 },
                 {
@@ -98,7 +125,7 @@
                         "key_code": "f4"
                     },
                     "to": {
-                        "key_code": "launchpad"
+                        "consumer_key_code": "display_brightness_increment"
                     }
                 },
                 {
@@ -231,20 +258,26 @@
                         ]
                     },
                     {
-                        "description": "shift+delete to forward_delete",
+                        "description": "Mouse keys",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ]
-                                    }
+                                    "key_code": "f1"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_forward"
+                                        "pointing_button": "button1"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f2"
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button2"
                                     }
                                 ],
                                 "type": "basic"
@@ -276,7 +309,7 @@
                         "key_code": "f3"
                     },
                     "to": {
-                        "key_code": "mission_control"
+                        "consumer_key_code": "display_brightness_decrement"
                     }
                 },
                 {
@@ -284,7 +317,7 @@
                         "key_code": "f4"
                     },
                     "to": {
-                        "key_code": "launchpad"
+                        "consumer_key_code": "display_brightness_increment"
                     }
                 },
                 {
