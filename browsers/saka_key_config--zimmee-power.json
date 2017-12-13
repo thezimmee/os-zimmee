@@ -913,6 +913,16 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyF",
+              "key": "F",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
           ]
         ],
         "scrollToTop": [
@@ -920,6 +930,16 @@
             {
               "code": "KeyJ",
               "key": "J",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyS",
+              "key": "S",
               "shiftKey": true,
               "ctrlKey": false,
               "altKey": false,
