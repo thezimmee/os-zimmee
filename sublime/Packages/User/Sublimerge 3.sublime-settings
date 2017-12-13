@@ -1,6 +1,6 @@
 {
     "three_way_layout": 0,
-    "three_way_navigate_all": false,
+    "three_way_navigate_all": true,
     "three_way_merged_height": 50,
     "intraline_changes_threshold": 0, // 60 is default; change this if things get wacky.
     "ignore_whitespace": ["begin", "end"],
