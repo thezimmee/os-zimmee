@@ -523,6 +523,19 @@
 					<string>bold</string>
 				</dict>
 			</dict>
+			<dict>
+				<key>name</key>
+				<string>Commit details panel - filenames</string>
+				<key>scope</key>
+				<string>git-savvy.commit meta.commit-info.diffstat.line meta.filename.diff</string>
+				<key>settings</key>
+				<dict>
+					<key>foreground</key>
+					<string>#268bd2</string>
+					<key>fontStyle</key>
+					<string>bold</string>
+				</dict>
+			</dict>
 			<!-- [[END]] -->
 		</array>
 	</dict>
