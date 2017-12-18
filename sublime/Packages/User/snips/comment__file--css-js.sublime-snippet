@@ -3,9 +3,8 @@
 /** ------------------------------------------------------------------------------------------------
  *  $TM_FILENAME
  *  ${TM_FILENAME/./-/g}
- *  ${1:[description]}
- *  @author  ${2:Zimmee  <thezimmee@gmail.com>}
- *  @version  ${3:version}
+ *  @author  ${1:Zimmee  <thezimmee@gmail.com>}${2:brikcss  <https://github.com/brikcss>}
+ *  @description  ${3:[description]}
  ** --------------------------------------------------------------------------------------------- */
 
 

@@ -5,6 +5,7 @@
 		".jsbeautifyrc",
 		".htmlhintrc",
 		".htmllintrc",
-		"sublime-settings"
+		"sublime-settings",
+		".brikcssrc"
 	]
 }

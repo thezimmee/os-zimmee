@@ -10,4 +10,5 @@
 	"gutter": false,
 	"detect_indentation": false,
 	"highlight_line": true,
+	"margin": 0,
 }
