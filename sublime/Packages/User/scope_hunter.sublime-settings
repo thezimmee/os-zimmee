@@ -1,84 +1,92 @@
 {
-    ///////////////////////////
-    // Dev Options
-    ///////////////////////////
-    "debug": false,
+	// ---------------
+	// Common settings
+	//
 
-    ///////////////////////////
-    // View Options
-    ///////////////////////////
+	// Show popup tooltip with info about scope
+	"show_popup": true,
 
-    // Show popup tooltip with info about scope
-    "show_popup": true,
+	// Show scope in status bar
+	"show_statusbar": true,
 
-    // Show scope in status bar
-    "show_statusbar": true,
+	// Show scope in auto-popup panel
+	"show_panel": false,
 
-    // Show scope in auto-popup panel
-    "show_panel": false,
+	// Show color and style at the given point
+	"styling": true,
 
-    // Show scopes in console
-    "console_log": false,
+	// Show the selector names and scopes
+	// responsible for the color and styles
+	"selectors": true,
 
-    ///////////////////////////
-    // Tooltip Configurations
-    ///////////////////////////
+	// -------------
+	// More settings
+	//
 
-    // Override theme.  Use forward slashes.
-    "tooltip_theme": "ScopeHunter/tt_theme",
+	///////////////////////////
+	// Dev Options
+	///////////////////////////
+	"debug": false,
 
-    ///////////////////////////
-    // Additional Scope Info
-    ///////////////////////////
+	///////////////////////////
+	// View Options
+	///////////////////////////
 
-    // Show scope extent in point format
-    "extent_points": false,
+	// Show scopes in console
+	"console_log": false,
 
-    // Show scope extent in line/char format
-    "extent_line_char": false,
+	///////////////////////////
+	// Tooltip Configurations
+	///////////////////////////
 
-    // Show color and style at the given point
-    "styling": true,
+	// Override theme.  Use forward slashes.
+	"tooltip_theme": "ScopeHunter/tt_theme",
 
-    // When showing a color with alpha transparency,
-    // Simulate what the color would look like in sublime
-    // by mixing the relevant background color,
-    "show_simulated_alpha_colors": false,
+	///////////////////////////
+	// Additional Scope Info
+	///////////////////////////
 
-    // Show the selector names and scopes
-    // responsible for the color and styles
-    "selectors": true,
+	// Show scope extent in point format
+	"extent_points": false,
 
-    // Show current syntax and color scheme paths
-    // (click to open if using tooltips)
-    "file_paths": false,
+	// Show scope extent in line/char format
+	"extent_line_char": false,
 
-    // Highlight scope extent in view
-    "highlight_extent": true,
+	// When showing a color with alpha transparency,
+	// Simulate what the color would look like in sublime
+	// by mixing the relevant background color,
+	"show_simulated_alpha_colors": false,
 
-    ///////////////////////////
-    // Highlight Configuration
-    ///////////////////////////
+	// Show current syntax and color scheme paths
+	// (click to open if using tooltips)
+	"file_paths": true,
 
-    // Scope to use for the color
-    "highlight_scope": "invalid",
+	// Highlight scope extent in view
+	"highlight_extent": true,
 
-    // Highlight style (underline|solid|outline|thin_underline|squiggly|stippled)
-    "highlight_style": "outline",
+	///////////////////////////
+	// Highlight Configuration
+	///////////////////////////
 
-    ///////////////////////////
-    // Additional Options
-    ///////////////////////////
+	// Scope to use for the color
+	"highlight_scope": "invalid",
 
-    // Automatically copy scopes to clipboard
-    "clipboard": false,
+	// Highlight style (underline|solid|outline|thin_underline|squiggly|stippled)
+	"highlight_style": "outline",
 
-    // Allow multi-select scope hunting
-    "multiselect": true,
+	///////////////////////////
+	// Additional Options
+	///////////////////////////
 
-    // Max region size to highlight
-    "highlight_max_size": 100,
+	// Automatically copy scopes to clipboard
+	"clipboard": false,
 
-    // Use SubNotify plugin messages if installed
-    "use_sub_notify": true
+	// Allow multi-select scope hunting
+	"multiselect": true,
+
+	// Max region size to highlight
+	"highlight_max_size": 100,
+
+	// Use SubNotify plugin messages if installed
+	"use_sub_notify": false
 }

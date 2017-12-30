@@ -1,58 +1,52 @@
 [
 	/**
-	 * [[START]] Git.
-	 */
+	 *  [[START]] FILE BROWSING & MANIPULATION
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	// Move file with AFN.
+	{ "caption": "AFN: Move File", "command": "advanced_new_file_move" },
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
+
+	/**
+	 *  [[START]] GIT
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	// Open mergetool.
 	{ "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" }},
-	// git commands to run in the terminal.
-	{ "caption": "git: npm commit", "command": "send_code", "args": { "command": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && npm run commit" }},
-	{ "caption": "git: npm stage all and commit", "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && cd \"$folder\" && git add . && npm run commit" }},
-	{ "caption": "git: push (in terminal)", "command": "send_code", "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && git push" }},
-	/**
-	 * [[END]]
-	 */
 
+	/* [[END]] -------------------------------------------------------------------------------------- */
 
 	/**
-	 * [[START]] Grunt.
-	 */
+	 *  [[START]] GRUNT
+	----------------------------------------------------------------------------------------------------
+	**/
+
 	{ "caption": "grunt: serve back office", "command": "shell_command", "args": { "command": "grunt watch --client=${client::Client to run}" }},
 	{ "caption": "grunt: kill all processes", "command": "shell_command", "args": { "command": "killall grunt" }},
 	{ "caption": "grunt: restart back office", "command": "shell_command", "args": { "command": "killall grunt && grunt watch --client=${client::Client to run}" }},
-	/**
-	 * [[END]]
-	 */
 
+	/* [[END]] -------------------------------------------------------------------------------------- */
 
 	/**
-	 * [[START]] Node / NPM.
-	 */
+	 *  [[START]] NODE / NPM
+	----------------------------------------------------------------------------------------------------
+	**/
+
 	{ "caption": "NPM install", "command": "shell_command", "args": { "command": "npm install ${args::Packages to install}", "panel": true }},
-	/**
-	 * [[END]]
-	 */
 
+	/* [[END]] -------------------------------------------------------------------------------------- */
 
 	/**
-	 * [[START]] Spell check.
-	 */
+	 *  [[START]] SPELL CHECK
+	----------------------------------------------------------------------------------------------------
+	**/
+
 	{ "caption": "Go to next misspelling", "command": "next_misspelling" },
 	{ "caption": "Go to previous misspelling", "command": "prev_misspelling" },
-	// { "caption": "Add word to dictionary", "command": "add_word", "args": { "word": "$selection" }},
-	// { "caption": "Add word to the ignore list", "command": "ignore_word", "args": { "word": "$selection" }},
-	/**
-	 * [[END]]
-	 */
 
+	/* [[END]] -------------------------------------------------------------------------------------- */
 
-	 /**
-	  * [[START]] Change default browser.
-	  */
-	{ "caption": "Change default browser: Chrome Canary", "command": "shell_command", "args": { "command": "open -a 'Google Chrome Canary' --args --make-default-browser" }},
-	{ "caption": "Change default browser: Chrome", "command": "shell_command", "args": { "command": "open -a 'Google Chrome' --args --make-default-browser" }},
-	{ "caption": "Change default browser: Safari", "command": "shell_command", "args": { "command": "open -a 'Safari' --args --make-default-browser" }},
-	{ "caption": "Change default browser: Firefox", "command": "shell_command", "args": { "command": "open -a 'Firefox' --args --setDefaultBrowser" }},
-	{ "caption": "Change default browser: FirefoxDeveloperEdition", "command": "shell_command", "args": { "command": "open -a 'FirefoxDeveloperEdition' --args --setDefaultBrowser" }},
-	 /**
-	  * [[END]]
-	  */
 ]

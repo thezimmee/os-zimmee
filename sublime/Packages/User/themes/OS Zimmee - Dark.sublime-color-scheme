@@ -1,0 +1,691 @@
+{
+	"name": "OS Zimmee - Dark",
+	"author": "The Zimmee (thezimmee@gmail.com)",
+	"variables": {
+		"fg-magenta": "hsl(331, 74%, 52%)",
+		"bg-magenta": "hsl(331, 64%, 52%)",
+		"fg-pink": "hsl(331, 46%, 68%)",
+		"bg-pink": "hsl(331, 46%, 56%)",
+		"fg-purple--light": "hsl(280, 70%, 75%)",
+		"bg-purple--light": "hsl(280, 50%, 55%)",
+		"fg-purple": "hsl(237, 70%, 75%)",
+		"bg-purple": "hsl(237, 50%, 55%)",
+		"fg-blue": "hsl(205, 69%, 62%)",
+		"bg-blue": "hsl(205, 79%, 36%)",
+		"fg-cyan": "hsl(190, 44%, 56%)",
+		"bg-cyan": "hsl(190, 74%, 38%)",
+		"fg-cyan--dark": "hsl(190, 36%, 46%)",
+		"bg-cyan--dark": "hsl(190, 56%, 36%)",
+		"fg-blue-green": "hsl(160, 42%, 46%)",
+		"bg-blue-green": "hsl(160, 62%, 30%)",
+		"fg-green": "hsl(146, 42%, 50%)",
+		"bg-green": "hsl(146, 62%, 30%)",
+		"fg-yellow-green": "hsl(100, 38%, 50%)",
+		"bg-yellow-green": "hsl(100, 58%, 30%)",
+		"fg-yellow": "hsl(40, 64%, 64%)",
+		"bg-yellow": "hsl(40, 74%, 34%)",
+		"fg-orange": "hsl(32, 72%, 60%)",
+		"bg-orange": "hsl(32, 72%, 40%)",
+		"fg-brown": "hsl(26, 29%, 54%)",
+		"bg-brown": "hsl(26, 29%, 34%)",
+		"fg-red-orange": "hsl(16, 79%, 61%)",
+		"bg-red-orange": "hsl(16, 79%, 41%)",
+		"fg-red": "hsl(0, 68%, 62%)",
+		"bg-red": "hsl(0, 48%, 42%)",
+		"fg-red--dark": "hsl(0, 42%, 62%)",
+		"bg-red--dark": "hsl(0, 32%, 52%)",
+		"fg-indent-guides": "hsl(202, 10%, 28%)",
+		"fg-gutter": "hsl(202, 10%, 35%)",
+		"fg-faded": "hsl(202, 10%, 55%)",
+		"fg-text": "hsl(202, 10%, 75%)",
+		"fg-bright": "hsl(202, 10%, 85%)",
+		"bg-editor": "hsl(202, 32%, 15%)",
+		"bg-gutter": "hsl(202, 32%, 13%)",
+		"bg-alt": "hsl(202, 26%, 21%)",
+		"bg-keyboard": "hsl(202, 26%, 19%)"
+	},
+	"globals": {
+		// Backdrop.
+		"background": "var(bg-editor)",
+		"foreground": "var(fg-text)",
+		// Cursor.
+		"caret": "var(fg-magenta)",
+		// Line.
+		"line_highlight": "color(var(fg-cyan--dark) alpha(0.2))",
+		// Selected text.
+		"selection": "color(var(fg-cyan--dark) alpha(0.3))",
+		"selection_border": "color(var(fg-cyan--dark) alpha(0.4))",
+		// Find results.
+		"find_highlight": "var(bg-pink)",
+		"find_highlight_foreground": "var(bg-editor)",
+		// Other find results.
+		"highlight": "var(bg-pink)",
+		// Misspelled words.
+		"misspelling": "var(fg-red)",
+		// Minimap.
+		"minimap_border": "color(var(fg-yellow) alpha(0.4))",
+		// Theme accent color.
+		"accent": "var(fg-orange)",
+		// Gutter.
+		"gutter": "var(bg-gutter)",
+		"gutter_foreground": "var(fg-gutter)",
+		// Indent guides.
+		"guide": "var(fg-indent-guides)",
+		"active_guide": "var(fg-indent-guides)",
+		"stack_guide": "var(fg-indent-guides)",
+		// Brackets.
+		"brackets_options": "underline",
+		"brackets_foreground": "var(fg-faded)",
+		"brackets_contents_options": "underline",
+		"brackets_contents_foreground": "var(fg-faded)",
+		// Tags.
+		"tags_options": "underline",
+		"tags_foreground": "var(fg-faded)",
+		// Drop shadows.
+		"shadow": "var(bg-gutter)",
+		"shadow_width": "1"
+	},
+	"rules": [
+		// -----------------------------------
+		// COMMENTS, WHITE SPACE & PUNCTUATION
+		//
+
+		// Punctuation:
+		{
+			"name": "Annotation punctuation",
+			"scope": "punctuation.definition",
+			"foreground": "color(var(fg-text) alpha(0.6))"
+		},
+		{
+			"name": "Section punctuation",
+			"scope": "punctuation.section",
+			"foreground": "color(var(fg-text) alpha(0.8))"
+		},
+
+		// Comments:
+		{
+			"name": "Comments",
+			"scope": "comment",
+			"foreground": "var(fg-faded)"
+		},
+
+		// --------------------
+		// KEYWORDS & VARIABLES
+		//
+
+		// Variables:
+		{
+			"name": "Variable",
+			"scope": "variable",
+			"foreground": "var(fg-yellow)",
+			"font_style": "normal"
+		},
+
+		// Library:
+		// {
+		// 	"name": "Library function",
+		// 	"scope": "support.function, support.macro"
+		// },
+		// {
+		// 	"name": "Library constant",
+		// 	"scope": "support.constant"
+		// },
+		// {
+		// 	"name": "Library class/type",
+		// 	"scope": "support.type.object, support.class",
+		// 	"foreground": "var(fg-red-orange)"
+		// },
+		// {
+		// 	"name": "Library variable",
+		// 	"scope": "support.other.variable"
+		// },
+
+		// Keywords:
+		{
+			"name": "Keywords",
+			"scope":
+				"keyword - (source.c keyword.operator | source.c++ keyword.operator | source.objc keyword.operator | source.objc++ keyword.operator)",
+			"foreground": "var(fg-red)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Keyword > object",
+			"scope": "support.type.object",
+			"foreground": "var(fg-red-orange)"
+		},
+		// {
+		// 	"name": "Storage",
+		// 	"scope": "storage",
+		// 	"foreground": "var(fg-red)"
+		// },
+		{
+			"name": "Storage type",
+			"scope": "storage.type",
+			"foreground": "var(fg-brown)"
+		},
+		{
+			"name": "Entity name",
+			"scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
+			"foreground": "var(fg-brown)"
+		},
+		{
+			"name": "Inherited class",
+			"scope": "entity.other.inherited-class",
+			"foreground": "var(fg-red-orange)"
+		},
+
+		// Operators:
+		{
+			"name": "Operators",
+			"scope": "keyword.operator",
+			"foreground": "var(fg-cyan)"
+		},
+
+		// ----------
+		// DATA TYPES
+		//
+
+		// Strings:
+		{
+			"name": "String",
+			"scope": "string",
+			"foreground": "var(fg-blue-green)"
+		},
+
+		// Constants:
+		{
+			"name": "Numbers",
+			"scope": "constant.numeric",
+			"foreground": "var(fg-cyan)"
+		},
+		{
+			"name": "Built-in constant",
+			"scope": "constant.language",
+			"foreground": "var(fg-cyan)",
+			"font_style": "italic"
+		},
+		{
+			"name": "User-defined constant",
+			"scope": "constant.character, constant.other",
+			"foreground": "var(fg-purple)"
+			// "font_style": "italic"
+		},
+		{
+			"name": "Color constant",
+			"scope": "constant.other.color",
+			"foreground": "var(fg-cyan)"
+			// "font_style": "italic"
+		},
+
+		// Object keys:
+		{
+			"name": "Object key - level 1",
+			"scope":
+				"meta meta.object-literal.key, meta meta.object-literal.key string, meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-pink)"
+		},
+		{
+			"name": "Object key - level 2",
+			"scope":
+				"meta meta meta.object-literal.key, meta meta meta.object-literal.key string, meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-yellow)"
+		},
+		{
+			"name": "Object key - level 3",
+			"scope":
+				"meta meta meta meta.object-literal.key, meta meta meta meta.object-literal.key string, meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-brown)"
+		},
+		{
+			"name": "Object key - level 4",
+			"scope":
+				"meta meta meta meta meta.object-literal.key, meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-pink)"
+		},
+		{
+			"name": "Object key - level 5",
+			"scope":
+				"meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-yellow)"
+		},
+		{
+			"name": "Object key - level 6",
+			"scope":
+				"meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-brown)"
+		},
+		{
+			"name": "Object key - level 7",
+			"scope":
+				"meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-pink)"
+		},
+		{
+			"name": "Object key - level 8",
+			"scope":
+				"meta meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-yellow)"
+		},
+		{
+			"name": "Object key - default",
+			"scope":
+				"meta meta meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string",
+			"foreground": "var(fg-brown)"
+		},
+
+		// Object properties:
+		{
+			"name": "Property names",
+			"scope": "support.type.property-name",
+			"foreground": "var(fg-yellow-green)"
+		},
+		{
+			"name": "Property values > constant",
+			"scope": "support.constant.property-value",
+			"foreground": "var(fg-orange)",
+			"font_style": "italic"
+		},
+
+		// Functions:
+		{
+			"name": "Function declaration",
+			"scope": "meta.function.declaration storage.type",
+			"foreground": "var(fg-blue)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Function name",
+			"scope": "entity.name.function",
+			"foreground": "var(fg-purple)",
+			"font_style": "bold"
+		},
+		{
+			"name": "Function parameter",
+			"scope": "variable.parameter - (source.c | source.c++ | source.objc | source.objc++)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Function call",
+			"scope": "variable.function",
+			"foreground": "var(fg-orange)",
+			"font_style": "italic"
+		},
+
+		// Units:
+		{
+			"name": "Units",
+			"scope": "keyword.other.unit",
+			"foreground": "var(fg-pink)",
+			"font_style": "italic"
+		},
+
+		// ----
+		// TEXT
+		//
+
+		// Text scope:
+		{
+			"name": "Text",
+			"scope": "text",
+			"foreground": "color(var(fg-text) alpha(0.9))"
+		},
+
+		// Punctuation:
+		{
+			"name": "Text > faded punctuation",
+			"scope":
+				"text & (punctuation.definition.raw | punctuation.definition.link | punctuation.definition.metadata | punctuation.definition.image | punctuation.separator.table-cell | punctuation.section.table-header | punctuation.definition.constant | punctuation.definition.heading)",
+			"foreground": "color(var(fg-faded) alpha(0.6))"
+		},
+
+		// Headings:
+		{
+			"name": "Text > headings",
+			"scope": "markup.heading",
+			"foreground": "var(fg-red)",
+			"font_style": "bold"
+		},
+
+		// Bold / italic:
+		{
+			"name": "Text > bold",
+			"scope": "markup.bold",
+			"foreground": "var(fg-text)",
+			"font_style": "bold"
+		},
+		{
+			"name": "Text > italic",
+			"scope": "markup.italic",
+			"foreground": "var(fg-text)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Text > bold + italic",
+			"scope": "markup.italic markup.bold | markup.bold markup.italic",
+			"foreground": "var(fg-text)",
+			"font_style": "bold italic"
+		},
+
+		// Links:
+		{
+			"name": "Text > links",
+			"scope": "markup.underline.link, string.other.link",
+			"foreground": "var(fg-purple)"
+		},
+		{
+			"name": "Text > link title",
+			"scope": "string.other.link.title",
+			"foreground": "var(fg-cyan)"
+		},
+		{
+			"name": "Text > link title",
+			"scope": "meta.link.reference.def constant.other.reference",
+			"foreground": "var(fg-cyan)"
+		},
+
+		// Images:
+		{
+			"name": "Text > image",
+			"scope": "meta.image.reference string",
+			"foreground": "var(fg-purple)"
+		},
+		{
+			"name": "Text > image description",
+			"scope": "meta.image.reference constant.other",
+			"foreground": "var(fg-brown)"
+		},
+
+		// Separators:
+		{
+			"name": "Text > hr",
+			"scope": "punctuation.definition.thematic-break",
+			"foreground": "var(fg-faded)"
+		},
+
+		// Blockquotes:
+		{
+			"name": "Text > blockquote",
+			"scope": "markup.quote",
+			"foreground": "var(fg-blue)"
+		},
+		{
+			"name": "Text > blockquote symbol",
+			"scope": "markup.quote punctuation.definition.blockquote",
+			"foreground": "color(var(fg-faded) alpha(0.5))",
+			"background": "color(var(fg-faded) alpha(0.5))"
+		},
+
+		// Lists:
+		{
+			"name": "Text > bullets",
+			"scope": "markup.list.unnumbered.bullet, punctuation.definition.list_item",
+			"foreground": "var(fg-blue)"
+		},
+		{
+			"name": "Text > numbered bullets",
+			"scope": "markup.list.numbered.bullet",
+			"foreground": "var(fg-blue)"
+		},
+
+		// Code:
+		{
+			"name": "Text > code",
+			"scope": "markup.raw",
+			"background": "color(var(fg-text) alpha(0.096))"
+		},
+
+		// -------------
+		// TAGS & MARKUP
+		//
+
+		// Tags:
+		{
+			"name": "Tag > name",
+			"scope": "entity.name.tag",
+			"foreground": "var(fg-red)"
+		},
+		{
+			"name": "Tag brackets",
+			"scope": "punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html",
+			"foreground": "var(fg-cyan--dark)"
+		},
+
+		// Attributes:
+		{
+			"name": "Tag > attribute name",
+			"scope": "entity.other.attribute-name",
+			"foreground": "var(fg-orange)"
+		},
+
+		// Classes:
+		{
+			"name": "Tag > class names",
+			"scope":
+				"meta.class-name, meta.selector entity.other.attribute-name.class, entity.other.attribute-name.class punctuation.definition.entity.css",
+			"foreground": "var(fg-blue)"
+		},
+
+		// IDs:
+		{
+			"name": "IDs",
+			"scope":
+				"meta.attribute-with-value.id string, meta.selector entity.other.attribute-name.id, entity.other.attribute-name.id punctuation.definition.entity.css",
+			"foreground": "var(fg-red-orange)"
+		},
+
+		// --------
+		// METADATA
+		//
+
+		// Filenames:
+		{
+			"scope": "entity.name.filename",
+			"foreground": "var(fg-purple)"
+		},
+
+		// -----------
+		// TEXT STYLES
+		//
+
+		// Invalid text:
+		{
+			"name": "Invalid",
+			"scope": "invalid",
+			"foreground": "var(fg-bright)",
+			"background": "var(bg-red)"
+		},
+		{
+			"name": "Invalid deprecated",
+			"scope": "invalid.deprecated",
+			"foreground": "var(fg-bright)",
+			"background": "var(bg-purple)"
+		},
+
+		// Text diffs:
+		{
+			"name": "Diff header",
+			"scope": "meta.diff, meta.diff.header"
+		},
+		{
+			"name": "Diff > deleted",
+			"scope": "markup.deleted",
+			"foreground": "var(fg-red)"
+		},
+		{
+			"name": "Diff > added",
+			"scope": "markup.inserted",
+			"foreground": "var(fg-green)"
+		},
+		{
+			"name": "Diff > changed",
+			"scope": "markup.changed",
+			"foreground": "var(fg-orange)"
+		},
+		{
+			"name": "Message > error",
+			"scope": "message.error",
+			"foreground": "var(fg-red)"
+		},
+
+		// Lint styles:
+		{
+			"name": "Linter > error",
+			"scope": "region.redish",
+			"background": "var(bg-red)",
+			"foreground": "var(fg-bright)"
+		},
+		{
+			"name": "Linter > warning",
+			"scope": "region.yellowish",
+			"background": "color(var(bg-yellow) alpha(1))",
+			"foreground": "var(fg-bright)"
+		},
+
+		// --------
+		// GITSAVVY
+		//
+
+		// Page header:
+		{
+			"name": "Summary header",
+			"scope": "meta.git-savvy.summary-header",
+			"background": "var(bg-editor)"
+		},
+
+		// Sections:
+		{
+			"name": "Status > file section",
+			"scope": "meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes",
+			"background": "var(bg-alt)"
+		},
+		{
+			"name": "Status > help section punctuation",
+			"scope": "comment.git-savvy.key-bindings-menu punctuation.definition.git-savvy.section",
+			"foreground": "var(bg-editor)"
+		},
+
+		// Section headers:
+		{
+			"name": "Section headers - default",
+			"scope":
+				"keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation",
+			"background": "var(bg-blue)",
+			"foreground": "var(fg-bright)",
+			"font_style": "bold"
+		},
+		{
+			"name": "Section headers - warning",
+			"scope":
+				"keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation",
+			"background": "var(bg-red)"
+		},
+		{
+			"name": "Section headers - success",
+			"scope": "keyword.other.git-savvy.section-header.staged",
+			"background": "var(bg-green)"
+		},
+		{
+			"name": "Section headers - key bindings",
+			"scope": "meta.git-savvy.key-bindings-header",
+			"background": "var(fg-cyan--dark)",
+			"foreground": "var(bg-editor)"
+		},
+		{
+			"name": "Section headers - key bindings",
+			"scope": "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section",
+			"foreground": "var(fg-cyan--dark)"
+		},
+
+		// Metadata:
+		{
+			"name": "Git metadata",
+			"scope":
+				"constant.other.git-savvy.summary-header.branch-name, constant.other.git-savvy.sha1, meta.commit-info.header.sha.git-savvy, support.type.git-savvy.rebase.commit_hash",
+			"foreground": "var(fg-purple)"
+		},
+		{
+			"name": "Git metadata > graph branch head",
+			"scope": "meta.graph.branch.git-savvy constant.other.git.branch.git-savvy",
+			"foreground": "var(fg-red)"
+		},
+		{
+			"name": "Git metadata > branches details",
+			"scope": "comment.git-savvy.branches.active-branch.extra-info",
+			"foreground": "var(fg-cyan)"
+		},
+		{
+			"name": "File metadata - dim",
+			"scope": "comment.git-savvy.summary-header.root.info, string.other.commit-info.header.key.git-savvy",
+			"foreground": "var(fg-cyan--dark)"
+		},
+
+		// File statuses:
+		{
+			"name": "Status > removed files",
+			"scope": "meta.git-savvy.status.file.removed",
+			"foreground": "var(fg-red--dark)"
+		},
+		{
+			"name": "Status > untracked files",
+			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.status.file",
+			"foreground": "var(fg-faded)"
+		},
+		{
+			"name": "Status > unstaged files",
+			"scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.status.file",
+			"foreground": "var(fg-orange)"
+		},
+		{
+			"name": "Status > staged files",
+			"scope": "meta.git-savvy.status.section.staged meta.git-savvy.status.file",
+			"foreground": "var(fg-green)"
+		},
+		{
+			"name": "Status > stashed files",
+			"scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+			"foreground": "var(fg-brown)"
+		},
+
+		// Keyboard shortcuts:
+		{
+			"name": "Status > keyboard shortcuts",
+			"scope":
+				"constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke",
+			"background": "var(bg-keyboard)",
+			"foreground": "var(fg-cyan)"
+		},
+		{
+			"name": "Status > keyboard shortcut punctuation",
+			"scope": "punctuation.definition.git-savvy.key-bindings-key-stroke",
+			"foreground": "var(bg-keyboard)"
+		},
+
+		// Git graph:
+		{
+			"name": "Graph > commit dot",
+			"scope": "git-savvy.graph keyword.graph.commit.git-savvy",
+			"foreground": "var(fg-green)"
+		},
+		{
+			"name": "Graph > commit hash",
+			"scope": "constant.numeric.graph.commit-hash.git-savvy",
+			"foreground": "var(fg-purple)"
+		},
+		{
+			"name": "Graph > keywords",
+			"scope": "meta.graph.message.git-savvy keyword.by-name.git-savvy",
+			"foreground": "var(fg-orange)"
+		},
+		{
+			"name": "Graph > metadata",
+			"scope": "meta.git-savvy.grph.info, meta.git-savvy.grph.info storage.type",
+			"foreground": "var(fg-blue)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Graph > author",
+			"scope": "entity.name.tag.author.git-savvy",
+			"foreground": "var(fg-cyan)"
+		}
+	]
+}

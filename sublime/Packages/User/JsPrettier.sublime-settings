@@ -1,10 +1,17 @@
 {
 	"debug": false,
 	"auto_format_on_save": true,
-	"custom_file_extensions": ["xjson", "xjs"],
-	"auto_format_on_save_excludes": ["*/node_modules/*", "/*.md", "/.*rc"],
-	"allow_inline_formatting": false,
+	"custom_file_extensions": [
+		"xjson",
+		"xjs",
+		"sublime-keymap",
+		"sublime-settings",
+		"sublime-commands",
+		"sublime-color-scheme"
+	],
+	"auto_format_on_save_excludes": ["*/node_modules/*", "/*.md"],
+	"max_file_size_limit": 25000,
 	"additional_cli_args": {
-		"--config-precedence": "prefer-file",
+		"--config-precedence": "file-override"
 	}
 }

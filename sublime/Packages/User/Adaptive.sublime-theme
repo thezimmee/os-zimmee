@@ -1,0 +1,17 @@
+[
+	{
+		"class": "quick_panel_label",
+		// "fg": ["background", 255, 255, 255, 0.6],
+		"match_fg": ["background", 224, 148, 62, 1.0]
+		// "selected_fg": ["background", 255, 255, 255, 0.8],
+		// "selected_match_fg": [255, 255, 255]
+	},
+	{
+		"class": "quick_panel_label",
+		"parents": [{ "class": "window", "attributes": ["file_light"] }],
+		// "fg": ["background", 0, 0, 0, 0.6],
+		"match_fg": ["background", 224, 148, 62, 1.0]
+		// "selected_fg": ["background", 0, 0, 0, 0.8],
+		// "selected_match_fg": [0, 0, 0]
+	}
+]

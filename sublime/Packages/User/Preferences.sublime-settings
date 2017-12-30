@@ -1,27 +1,12 @@
 {
-	"added_words":
-	[
-		"Grampa"
-	],
-	"afn_use_keybinding": true,
-	"afn_use_project_root": true,
-	"afn_valid_scopes":
-	[
-		"string",
-		"css",
-		"sass",
-		"less",
-		"scss",
-		"markup.underline.link.image.markdown",
-		"text.html.vue"
-	],
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
-	"auto_complete_delay": 150,
-	"caret_extra_width": 1,
-	"close_windows_when_empty": true,
-	"color_scheme": "Packages/User/Solarized Dark -- Zimmee.tmTheme",
-	"detect_indentation": true,
+	"caret_extra_bottom": 0,
+	"caret_extra_top": 0,
+	"caret_extra_width": 2,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/themes/OS Zimmee - Dark.sublime-color-scheme",
+	"detect_indentation": false,
 	"disable_formatted_linebreak": true,
 	"disable_tab_abbreviations": true,
 	"drag_text": false,
@@ -29,54 +14,47 @@
 	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules"
+	],
 	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored-packages":
-	[
-		"Vintage"
-	],
 	"ignored_packages":
 	[
-		"DataConverter",
-		"FileBrowser",
-		"FileSystem Autocompletion",
-		"FuzzyFilePath",
-		"HTML-CSS-JS Prettify",
-		"IndentX",
-		"Markdown Table Formatter",
-		"Open",
-		"QuoteHTML",
-		"StringEncode",
-		"TypeScript",
+		"Gutter Themes for SL",
+		"InactivePanes",
+		"Markdown",
 		"Vintage"
 	],
-	"ignored_words":
-	[
-		"Facebook",
-		"Grayce",
-		"Lillee"
-	],
-	"line_padding_bottom": 1,
-	"line_padding_top": 1,
-	"margin": 0,
-	"match_brackets": false,
-	"match_brackets_angle": false,
-	"match_brackets_braces": false,
-	"match_brackets_content": false,
-	"match_brackets_square": false,
-	"match_tags": false,
-	"move_to_limit_on_up_down": true,
+	"inactive_panes_dim_color": "#000000",
+	"inactive_panes_dim_strength": 0.2,
+	"match_brackets": true,
+	"match_brackets_angle": true,
+	"match_brackets_braces": true,
+	"match_brackets_content": true,
+	"match_brackets_square": true,
+	"match_tags": true,
+	"open_files_in_new_window": false,
 	"rulers":
 	[
-		100
+		80,
+		100,
+		120
 	],
 	"shift_tab_unindent": true,
 	"show_full_path": true,
-	"tab_size": 4,
-	"theme": "Adaptive UI -- Zimmee.sublime-theme",
-	"theme_sidebar_indent_top_level_disabled": true,
-	"translate_tabs_to_spaces": false,
+	"theme": "Adaptive.sublime-theme",
+	"theme_agila_active_tab_entry_gray": true,
+	"theme_agila_auto_complete_lightblue": true,
+	"theme_agila_compact_tab": true,
+	"theme_agila_modified_tab_marker_yellow": true,
+	"theme_agila_sidebar_mini": true,
 	"word_separators": "./\\()\"'-_:,.;<>~!@#$%^&*|+=[]{}`~?",
-	"word_wrap": "true"
+	"word_wrap": "auto"
 }

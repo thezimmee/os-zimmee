@@ -1,8 +1,3 @@
-// Resize Group With Keyboard default settings.
-//
-// In order to tweak the settings, you should NOT edit this file, but instead edit
-// the user-specific, empty-by-default version under
-// "Preferences / Package Settings / Resize Group With Keyboard / Settings - User".
 {
     // The delta value used when resizing the active group. It is set to 0.01 (1 %) by default.
     // It does not make much sense for it to have a higher value than 0.5 (50 %).

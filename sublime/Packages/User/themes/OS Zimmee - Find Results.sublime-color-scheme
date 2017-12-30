@@ -1,0 +1,92 @@
+{
+	"name": "OS Zimmee - Default",
+	"author": "The Zimmee (thezimmee@gmail.com)",
+	"variables": {
+		// OS Zimmee colors:
+		"cyan": "hsl(190, 64%, 67%)",
+		"cyan--dark": "hsl(190, 36%, 54%)",
+		"blue": "hsl(204, 76%, 59%)",
+		"green": "hsl(114, 40%, 68%)",
+		"red": "hsl(0, 85%, 65%)",
+		"red-orange": "hsl(15, 90%, 62%)",
+		"orange": "hsl(32, 92%, 60%)",
+		"yellow-orange": "hsl(40, 64%, 68%)",
+		"yellow": "hsl(54, 70%, 68%)",
+		"yellow--soft": "hsl(54, 40%, 68%)",
+		"purple": "hsl(261, 80%, 75%)",
+		"pink": "hsl(320, 40%, 68%)",
+		"magenta": "hsl(320, 70%, 60%)",
+		"brown": "hsl(26, 29%, 54%)",
+		"bg": "hsl(202, 32%, 15%)",
+		"bg--heading": "hsl(202, 40%, 28%)",
+		"fg": "hsl(202, 10%, 75%)",
+		"fg--soft": "hsl(202, 10%, 55%)",
+		"fg--bright": "hsl(202, 10%, 85%)",
+		"caret": "hsl(331, 64%, 52%)"
+	},
+	"globals": {
+		// Backdrop.
+		"background": "var(bg)",
+		"foreground": "var(fg)",
+		// Cursor.
+		"caret": "var(caret)",
+		// Line.
+		"line_highlight": "color(var(cyan--dark) alpha(0.2))",
+		// Selected text.
+		"selection": "var(magenta)",
+		"selection_foreground": "var(bg)",
+		"selection_border": "var(magenta)",
+		// Active find result.
+		"find_highlight_foreground": "var(bg)",
+		"find_highlight": "var(magenta)",
+		// Other find results.
+		"highlight": "var(magenta)"
+	},
+	"rules": [
+		{
+			"name": "FIF > foreground",
+			"scope": "text.find-in-files",
+			"foreground": "color(var(fg) alpha(0.7))"
+		},
+		{
+			"name": "FIF > variables",
+			"scope": "text.find-in-files variable",
+			"foreground": "var(purple)"
+		},
+		{
+			"name": "FIF > variable > no matches",
+			"scope": "variable.no_matches.find-in-files",
+			"foreground": "var(red)"
+		},
+		{
+			"name": "FIF > header > search query",
+			"scope": "string.query.find-in-files",
+			"foreground": "var(yellow)"
+		},
+		{
+			"name": "FIF > line numbers",
+			"scope": "text.find-in-files constant.numeric",
+			"foreground": "color(var(cyan--dark) alpha(0.5))"
+		},
+		{
+			"name": "FIF > line numbers on matched lines",
+			"scope":
+				"text.find-in-files constant.numeric.line-number.match, text.find-in-files punctuation.line-number.match",
+			"foreground": "var(cyan--dark)",
+			"background": "color(var(cyan--dark) alpha(0.1))"
+		},
+		{
+			"name": "FIF > filenames",
+			"scope": "text.find-in-files entity.name.filename",
+			"background": "var(bg--heading)",
+			"foreground": "var(fg--bright)",
+			"font_style": "italic"
+		},
+		{
+			"name": "FIF > matched line",
+			"scope": "text.find-in-files match",
+			"foreground": "var(fg)",
+			"background": "color(var(cyan--dark) alpha(0.1))"
+		}
+	]
+}

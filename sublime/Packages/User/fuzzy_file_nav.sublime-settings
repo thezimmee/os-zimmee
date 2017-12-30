@@ -30,16 +30,17 @@
 
 	// Bookmarked paths
 	"bookmarks": [
-		{ "name": "My Computer", "path": { "#multiconf#": [{ "os:windows": "" }]}},
 		{ "name": "Projects", "path": "~/Projects/" },
 		{ "name": "Home", "path": "~" },
 		{ "name": "OS Zimmee", "path": "~/Projects/os-zimmee/" },
-		{ "name": "Cheatsheets", "path": "~/Projects/os-zimmee/sublime/Packages/User/Cheatsheets/" },
+		{ "name": "Memories", "path": "~/Memories/" },
+		{ "name": "Cheatsheets", "path": "~/Projects/os-zimmee/cheatsheets/" },
 		{ "name": "Desktop", "path": "~/Desktop/" },
 		{ "name": "Downloads", "path": "~/Downloads/" },
-		{ "name": "Root", "path": { "#multiconf#": [{ "os:linux": "/" }, { "os:osx": "/" }]}},
 		{ "name": "Sublime", "path": "~/Projects/os-zimmee/sublime/Packages/User/" },
-		{ "name": "Snippets", "path": "~/Projects/os-zimmee/sublime/Packages/User/snips" },
+		{ "name": "Sublime Snippets", "path": "~/Projects/os-zimmee/sublime/Packages/User/snips" },
+		{ "name": "Sublime Project Files", "path": "~/Projects/os-zimmee/sublime/Packages/User/projects" },
+		{ "name": "OS Zimmee Sublime Themes", "path": "~/Projects/os-zimmee/sublime/Packages/User/themes" }
 	],
 
 	// Add your folders relative to the project file (if project file exists on disk)
