@@ -131,7 +131,56 @@
 	// Get color info (color needs to be selected).
 	{ "keys": ["super+shift+i"], "command": "color_helper", "args": { "mode": "info" } },
 	// Show color palettes.
-	{ "keys": ["super+shift+alt+c"], "command": "color_helper", "args": { "mode": "palette" } }
+	{ "keys": ["super+shift+alt+c"], "command": "color_helper", "args": { "mode": "palette" } },
+	// Theme tweaker.
+	{ "keys": ["super+k", "m"], "command": "toggle_theme_tweaker_mode" },
+	{ "keys": ["super+z"], "command": "theme_tweaker_undo", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["super+shift+z"], "command": "theme_tweaker_redo", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["super+delete"], "command": "theme_tweaker_clear", "context": [{ "key": "theme_tweaker" }] },
+	{
+		"keys": ["up"],
+		"command": "theme_tweaker_brightness",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "+" }
+	},
+	{
+		"keys": ["down"],
+		"command": "theme_tweaker_brightness",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "-" }
+	},
+	// Background only (use "fg" for foreground only)
+	// {"keys": ["up"], "command": "theme_tweaker_brightness", "context": [{"key": "theme_tweaker"}], "args": {"direction": "+", "context": "bg"}},
+	// {"keys": ["down"], "command": "theme_tweaker_brightness", "context": [{"key": "theme_tweaker"}], "args": {"direction": "-", "context": "bg"}},
+	{
+		"keys": ["shift+up"],
+		"command": "theme_tweaker_saturation",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "+" }
+	},
+	{
+		"keys": ["shift+down"],
+		"command": "theme_tweaker_saturation",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "-" }
+	},
+	{
+		"keys": ["shift+left"],
+		"command": "theme_tweaker_hue",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "-" }
+	},
+	{
+		"keys": ["shift+right"],
+		"command": "theme_tweaker_hue",
+		"context": [{ "key": "theme_tweaker" }],
+		"args": { "direction": "+" }
+	},
+	{ "keys": ["ctrl+1"], "command": "theme_tweaker_invert", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["ctrl+2"], "command": "theme_tweaker_colorize", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["ctrl+3"], "command": "theme_tweaker_sepia", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["ctrl+4"], "command": "theme_tweaker_grayscale", "context": [{ "key": "theme_tweaker" }] },
+	{ "keys": ["ctrl+5"], "command": "theme_tweaker_glow", "context": [{ "key": "theme_tweaker" }] }
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 ]

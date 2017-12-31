@@ -518,7 +518,7 @@
 		},
 		{
 			"name": "Diff > changed",
-			"scope": "markup.changed",
+			"scope": "markup.changed, meta.commit-info.files.changes",
 			"foreground": "var(fg-orange)"
 		},
 		{
