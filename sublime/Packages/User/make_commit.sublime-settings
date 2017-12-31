@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the make_commit syntax
+{
+	"draw_indent_guides": true,
+	"rulers": [80, 100, 120]
+}
