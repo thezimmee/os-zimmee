@@ -11,10 +11,7 @@
 	[
 		"A File Icon",
 		"AdvancedNewFile",
-		"Agila Theme",
-		"ayu",
 		"BetterFindBuffer",
-		"Boxy Theme",
 		"Codecs33",
 		"Color Highlighter",
 		"ColorHelper",
@@ -28,9 +25,7 @@
 		"FuzzyFileNav",
 		"GitGutter",
 		"GitSavvy",
-		"Gutter Themes for SL",
 		"Hex to HSL Color Converter",
-		"InactivePanes",
 		"Inc-Dec-Value",
 		"JsPrettier",
 		"MarkdownEditing",
@@ -44,7 +39,6 @@
 		"ScopeHunter",
 		"ShellCommand",
 		"SideBarEnhancements",
-		"Solarized Color Scheme",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
 		"SublimeLinter-contrib-eslint",
@@ -53,6 +47,7 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
 		"Sublimerge 3",
-		"Table Editor"
+		"Table Editor",
+		"ThemeTweaker"
 	]
 }
