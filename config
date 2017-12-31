@@ -33,9 +33,11 @@ CONFIG__cask_apps=(
 	## [[APPS]]
 	# amethyst
 	# 1password
+	airmail-beta
 	alfred
 	appcleaner
 	# blisk
+	beyond-compare
 	brave
 	# colorpicker
 	# cyberduck
@@ -49,6 +51,7 @@ CONFIG__cask_apps=(
 	caskroom/versions/google-chrome-canary
 	# google-drive
 	hammerspoon
+	hazeover
 	# hyper
 	iterm2
 	karabiner-elements
