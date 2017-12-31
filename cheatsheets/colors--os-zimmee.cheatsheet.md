@@ -42,9 +42,6 @@
 | fg         | hsl(202, 10%, 75%) | Dark theme.  |
 | fg         | hsl(202, 32%, 20%) | Light theme. |
 
-|    Name    |        HSL         | Notes |
-|------------|--------------------|-------|
-
 <a name="oceanic-next-colors"></a>
 ## Oceanic Next colors
 

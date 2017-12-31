@@ -59,9 +59,20 @@
 	// Word navigation / selection.
 	{ "keys": ["ctrl+left"], "command": "move", "args": { "by": "words", "forward": false } },
 	{ "keys": ["ctrl+right"], "command": "move", "args": { "by": "word_ends", "forward": true } },
-	{ "keys": ["alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
-	{ "keys": ["alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
+	{ "keys": ["super+ctrl+left"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
+	{ "keys": ["super+ctrl+right"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
+	// { "keys": ["alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
+	// { "keys": ["alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
+	{ "keys": ["alt+left"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
+	{ "keys": ["alt+right"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
 	// Expand selection.
+	{ "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": { "to": "line" } },
+	{ "keys": ["ctrl+shift+p"], "command": "expand_selection_to_paragraph" },
+	{ "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": { "to": "brackets" } },
+	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": { "to": "indentation" } },
+	{ "keys": ["ctrl+shift+,"], "command": "expand_selection", "args": { "to": "tag" } },
+	{ "keys": ["ctrl+shift+i"], "command": "expand_selection_to_quotes" },
+	// { "keys": ["ctrl+shift+b"], "command": "expand_selection_to_brackets" },
 	{ "keys": ["super+shift+space"], "command": "expand_region" },
 	{
 		"keys": ["super+ctrl+space"],
@@ -69,6 +80,8 @@
 		"args": { "undo": true },
 		"context": [{ "key": "expand_region_soft_undo" }]
 	},
+	// { "keys": ["ctrl+space"], "command": "expand_selection_to_delims" },
+	{ "keys": ["ctrl+delete"], "command": "delete_to_beg_next_contig_boundary" },
 	// Code scrolling.
 	{ "keys": ["alt+i"], "command": "scroll_lines", "args": { "amount": 1.0 } },
 	{ "keys": ["alt+k"], "command": "scroll_lines", "args": { "amount": -1.0 } },
@@ -120,6 +133,8 @@
 	// Navigate linter errors.
 	{ "keys": ["alt+down"], "command": "next_result" },
 	{ "keys": ["alt+up"], "command": "prev_result" },
+	// Show Sublime console.
+	{ "keys": ["ctrl+`"], "command": "show_panel", "args": { "panel": "console", "toggle": true } },
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 

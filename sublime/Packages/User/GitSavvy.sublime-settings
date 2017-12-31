@@ -42,7 +42,7 @@
 	// Change this to "stat" to display a diff stat for the current commit
 	// when writing a commit message.
 	// Change this to `false` to disable.
-	"show_commit_diff": "stat",
+	"show_commit_diff": "full",
 
 	// Change this to `true` to scroll to the first hunk automatically when
 	// you open the inline-diff view.
@@ -100,7 +100,7 @@
 	// For each command specified, always include the command line flags
 	// indicated in the global_flags hash.
 	"global_flags": {
-		"merge": ["--no-ff", "--no-commit"],
+		"merge": ["--no-ff", "--no-commit"]
 		// "merge": ["--squash", "--allow-unrelated-histories"],
 		// "pull": ["--rebase"],
 		// --no-columns is not supported in Git versions <1.7.11.  If Git is configured

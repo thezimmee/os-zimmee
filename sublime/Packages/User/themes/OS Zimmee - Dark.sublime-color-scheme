@@ -40,6 +40,7 @@
 		"fg-text": "hsl(202, 10%, 75%)",
 		"fg-bright": "hsl(202, 10%, 85%)",
 		"bg-editor": "hsl(202, 32%, 15%)",
+		"bg-table": "hsl(202, 32%, 13%)",
 		"bg-gutter": "hsl(202, 32%, 13%)",
 		"bg-alt": "hsl(202, 26%, 21%)",
 		"bg-keyboard": "hsl(202, 26%, 19%)"
@@ -425,6 +426,24 @@
 			"name": "Text > numbered bullets",
 			"scope": "markup.list.numbered.bullet",
 			"foreground": "var(fg-blue)"
+		},
+
+		// Tables:
+		{
+			"name": "Table > markup",
+			"scope": "punctuation.separator.table-cell, punctuation.section.table-header",
+			"foreground": "var(fg-cyan--dark)"
+		},
+		{
+			"name": "Table > header",
+			"scope": "meta.table.header",
+			"font_style": "bold",
+			"foreground": "var(fg-blue)"
+		},
+		{
+			"name": "Table > content",
+			"scope": "meta.table",
+			"foreground": "color(var(fg-text) alpha(0.75))"
 		},
 
 		// Code:

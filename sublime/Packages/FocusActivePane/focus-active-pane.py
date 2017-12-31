@@ -66,7 +66,6 @@ class FocusActivePaneListener(sublime_plugin.EventListener):
 	def on_activated(self, view):
 		# Do nothing if the view is not a file.
 		if view.file_name() == None and "git-savvy" not in view.scope_name(0) and "text.find-in-files" not in view.scope_name(0):
-			print("Skipping activation for:", view.file_name(), view.name())
 			return
 
 		# Load settings.
@@ -80,13 +79,10 @@ class FocusActivePaneListener(sublime_plugin.EventListener):
 		# Restore to the default theme.
 		if active_theme != focus_theme:
 			view_settings.set("color_scheme", configured_theme)
-			print('---')
-			print('activated', view.file_name(), view.name())
 
 	def on_deactivated(self, view):
 		# Do nothing if the view is not a file.
 		if view.file_name() == None and "git-savvy" not in view.scope_name(0) and "text.find-in-files" not in view.scope_name(0):
-			print("Skipping deactivation for:", view.file_name(), view.name())
 			return
 
 		# Load settings.
@@ -95,9 +91,6 @@ class FocusActivePaneListener(sublime_plugin.EventListener):
 		# Load theme paths.
 		active_theme = view_settings.get("color_scheme")
 		focus_theme = get_theme_name(active_theme)
-
-		print('active_theme', active_theme)
-		print('focus_theme', focus_theme)
 
 		# Apply the focus theme if it's not already applied.
 		if focus_theme != "" and focus_theme != active_theme:
@@ -111,6 +104,4 @@ class FocusActivePaneListener(sublime_plugin.EventListener):
 
 			# Set the focus theme.
 			view_settings.set("color_scheme", focus_theme)
-			print('---')
-			print('deactivated', view.file_name(), view.name())
 

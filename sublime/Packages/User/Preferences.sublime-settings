@@ -14,26 +14,15 @@
 	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
-	"folder_exclude_patterns":
-	[
-		".svn",
-		".git",
-		".hg",
-		"CVS",
-		"node_modules"
-	],
+	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "node_modules"],
 	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Color Highlighter",
-		"InactivePanes",
-		"Markdown",
-		"Vintage"
-	],
+	"ignored_packages": ["Color Highlighter", "InactivePanes", "Markdown", "Vintage"],
 	"inactive_panes_dim_color": "#000000",
 	"inactive_panes_dim_strength": 0.2,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"match_brackets_braces": true,
@@ -41,12 +30,7 @@
 	"match_brackets_square": true,
 	"match_tags": true,
 	"open_files_in_new_window": false,
-	"rulers":
-	[
-		80,
-		100,
-		120
-	],
+	"rulers": [80, 100, 120],
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"theme": "Adaptive.sublime-theme",
