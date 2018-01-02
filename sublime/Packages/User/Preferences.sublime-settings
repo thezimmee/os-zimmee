@@ -1,8 +1,8 @@
 {
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
-	"caret_extra_bottom": 0,
-	"caret_extra_top": 0,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"color_scheme": "Packages/User/themes/OS Zimmee - Dark.sublime-color-scheme",
@@ -14,11 +14,12 @@
 	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
+	"focus_active_view": true,
 	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "node_modules"],
 	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored_packages": ["Color Highlighter", "InactivePanes", "Markdown", "Vintage"],
+	"ignored_packages": ["Color Highlighter", "Markdown", "Vintage"],
 	"inactive_panes_dim_color": "#000000",
 	"inactive_panes_dim_strength": 0.2,
 	"line_padding_bottom": 1,
@@ -39,6 +40,6 @@
 	"theme_agila_compact_tab": true,
 	"theme_agila_modified_tab_marker_yellow": true,
 	"theme_agila_sidebar_mini": true,
-	"word_separators": "./\\()\"'-_:,.;<>~!@#$%^&*|+=[]{}`~?",
+	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": "auto"
 }

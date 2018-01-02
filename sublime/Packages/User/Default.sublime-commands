@@ -57,7 +57,33 @@
 	**/
 
 	{ "caption": "Go to next misspelling", "command": "next_misspelling" },
-	{ "caption": "Go to previous misspelling", "command": "prev_misspelling" }
+	{ "caption": "Go to previous misspelling", "command": "prev_misspelling" },
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
+
+	/**
+	 *  [[START]] THEME TWEAKER
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	{ "caption": "Theme: Save active theme", "command": "prompt_save_active_theme" },
+	{ "caption": "Theme: Create unfocused theme from current theme", "command": "create_unfocused_theme" },
+	{ "caption": "ThemeTweaker: grayscale", "command": "theme_tweaker_grayscale" },
+	{ "caption": "ThemeTweaker: glow", "command": "theme_tweaker_glow" },
+	{ "caption": "ThemeTweaker: sepia", "command": "theme_tweaker_sepia" },
+	{ "caption": "ThemeTweaker: colorize", "command": "theme_tweaker_colorize" },
+	{ "caption": "ThemeTweaker: invert", "command": "theme_tweaker_invert" },
+	{ "caption": "ThemeTweaker: hue+", "command": "theme_tweaker_hue", "args": { "direction": "+" } },
+	{ "caption": "ThemeTweaker: hue-", "command": "theme_tweaker_hue", "args": { "direction": "-" } },
+	{ "caption": "ThemeTweaker: saturation+", "command": "theme_tweaker_saturation", "args": { "direction": "+" } },
+	{ "caption": "ThemeTweaker: saturation-", "command": "theme_tweaker_saturation", "args": { "direction": "-" } },
+	{ "caption": "ThemeTweaker: contrast+", "command": "theme_tweaker_contrast", "args": { "direction": "+" } },
+	{ "caption": "ThemeTweaker: contrast-", "command": "theme_tweaker_contrast", "args": { "direction": "-" } },
+	{ "caption": "ThemeTweaker: brightness+", "command": "theme_tweaker_brightness", "args": { "direction": "+" } },
+	{ "caption": "ThemeTweaker: brightness-", "command": "theme_tweaker_brightness", "args": { "direction": "-" } },
+	{ "caption": "ThemeTweaker: clear all", "command": "theme_tweaker_clear" },
+	{ "caption": "ThemeTweaker: undo", "command": "theme_tweaker_undo" },
+	{ "caption": "ThemeTweaker: redo", "command": "theme_tweaker_redo" }
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 ]

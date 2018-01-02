@@ -1,0 +1,74 @@
+{
+	"globals":
+	{
+		"background": "#191F22FF",
+		"caret": "#AD4E7CFF",
+		"find_highlight": "#B8417BFF",
+		"find_highlight_foreground": "#191F22FF",
+		"foreground": "#B7B7B7FF",
+		"highlight": "#B8417BFF",
+		"line_highlight": "color(#ac8568 alpha(0.2))",
+		"selection": "#B8417BFF",
+		"selection_border": "#B8417BFF",
+		"selection_foreground": "#191F22FF"
+	},
+	"rules":
+	[
+		{
+			"foreground": "color(#b9c1c6 alpha(0.7))",
+			"name": "FIF > foreground",
+			"scope": "text.find-in-files"
+		},
+		{
+			"foreground": "#9D9FD2FF",
+			"name": "FIF > variables",
+			"scope": "text.find-in-files variable"
+		},
+		{
+			"foreground": "#BE6E6EFF",
+			"name": "FIF > variable > no matches",
+			"scope": "variable.no_matches.find-in-files"
+		},
+		{
+			"foreground": "#BEA87AFF",
+			"name": "FIF > header > search query",
+			"scope": "string.query.find-in-files"
+		},
+		{
+			"foreground": "color(#ac8568 alpha(0.5))",
+			"name": "FIF > line numbers",
+			"scope": "text.find-in-files constant.numeric"
+		},
+		{
+			"background": "color(#ac8568 alpha(0.1))",
+			"foreground": "#85827FFF",
+			"name": "FIF > line numbers on matched lines",
+			"scope": "text.find-in-files constant.numeric.line-number.match, text.find-in-files punctuation.line-number.match"
+		},
+		{
+			"background": "color(#1368a4 alpha(0.4))",
+			"font_style": "italic",
+			"foreground": "#B7B7B7FF",
+			"name": "FIF > soft",
+			"scope": "text.find-in-files entity.name.filename"
+		},
+		{
+			"background": "color(#ac8568 alpha(0.1))",
+			"foreground": "#B7B7B7FF",
+			"name": "FIF > matched line",
+			"scope": "text.find-in-files match"
+		}
+	],
+	"variables":
+	{
+		"bg__blue": "#1368a4",
+		"bg__editor": "#1a2a32",
+		"bg__magenta": "#d33682",
+		"fg__brown": "#ac8568",
+		"fg__magenta": "#df2a82",
+		"fg__purple": "#9397ec",
+		"fg__red": "#e05c5c",
+		"fg__text": "#b9c1c6",
+		"fg__yellow": "#deb768"
+	}
+}
