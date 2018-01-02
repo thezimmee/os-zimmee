@@ -7,7 +7,8 @@
 		"sublime-keymap",
 		"sublime-settings",
 		"sublime-commands",
-		"sublime-color-scheme"
+		"sublime-color-scheme",
+		"sublime-theme"
 	],
 	"auto_format_on_save_excludes": ["*/node_modules/*", "/*.md"],
 	"max_file_size_limit": 25000,

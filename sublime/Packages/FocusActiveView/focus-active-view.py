@@ -30,7 +30,7 @@ class FocusActiveViewListener(sublime_plugin.EventListener):
 		# Do nothing is view is already focused.
 		sublime_settings = sublime.load_settings("Preferences.sublime-settings")
 		view_settings = view.settings()
-		if view_settings.get("is_focused", False) == True or view.id() != sublime.active_window().active_view().id():
+		if view_settings.get("is_focused", False) == True:
 			return
 
 		# Set view as focused.
@@ -47,7 +47,7 @@ class FocusActiveViewListener(sublime_plugin.EventListener):
 		# Do nothing if view is already unfocused or still active.
 		view_settings = view.settings()
 		active_view = sublime.active_window().active_view()
-		if view_settings.get("is_focused", False) == False or active_view is None or view.id() == active_view.id():
+		if view_settings.get("is_focused", False) == False:
 			return
 
 		# If there is no unfocused theme set, set it.
@@ -75,7 +75,7 @@ class CreateUnfocusedThemeCommand(sublime_plugin.WindowCommand):
 		new_theme = get_unfocused_theme_path(active_view)
 		tweaker_settings = sublime_settings.get("unfocused_pane_tweaker")
 		if tweaker_settings is None:
-			tweaker_settings = "brightness(0.97);saturation(0.75);"
+			tweaker_settings = "brightness(0.97);saturation(0.85);"
 		sublime.run_command("theme_tweaker_custom", {"filters": tweaker_settings})
 
 		try:

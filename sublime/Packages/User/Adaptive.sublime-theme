@@ -1,17 +1,131 @@
 [
+	/**
+	 *  [[START]] QUICK PANEL
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	// Matching text highlight.
 	{
 		"class": "quick_panel_label",
-		// "fg": ["background", 255, 255, 255, 0.6],
 		"match_fg": ["background", 224, 148, 62, 1.0]
-		// "selected_fg": ["background", 255, 255, 255, 0.8],
-		// "selected_match_fg": [255, 255, 255]
 	},
 	{
 		"class": "quick_panel_label",
 		"parents": [{ "class": "window", "attributes": ["file_light"] }],
-		// "fg": ["background", 0, 0, 0, 0.6],
 		"match_fg": ["background", 224, 148, 62, 1.0]
-		// "selected_fg": ["background", 0, 0, 0, 0.8],
-		// "selected_match_fg": [0, 0, 0]
+	},
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
+
+	/**
+	 *  [[START]] TABS
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	// Tabset: row of tabs.
+	{
+		"class": "tabset_control",
+		"content_margin": 0,
+		"tab_height": 28,
+		"tab_overlap": 0,
+		"tab_width": 80,
+		"tab_min_width": 80
+	},
+	// Reset tabs.
+	{
+		"class": "tab_control",
+		"content_margin": [12, 0, 8, 0],
+		// "max_margin_trim": 12,
+
+		// "layer0.texture": "Theme - Default/common/tab_shadow.png",
+		"layer0.texture": "",
+		"layer0.inner_margin": 0,
+		"layer0.opacity": 0.2,
+
+		// "layer1.texture": "Theme - Default/common/tab.png",
+		"layer1.texture": "",
+		"layer1.inner_margin": 0,
+		"layer1.opacity": 1.0,
+
+		// "layer2.texture": "Theme - Default/common/tab_highlight.png",
+		"layer2.texture": "User/themes/assets/separator-top.png",
+		"layer2.inner_margin": [0, 0, 0, -20],
+		"layer2.opacity": 0.0,
+		"layer2.tint": [91, 169, 225],
+
+		// Right.
+		// "layer3.texture": "Theme - Default/common/light/tab_border.png",
+		"layer3.texture": "",
+		"layer3.inner_margin": 0,
+		"layer3.opacity": 0
+	},
+	// Selected tab.
+	{
+		"class": "tab_control",
+		"attributes": ["selected"],
+		"layer0.opacity": 1,
+		"layer0.texture": "",
+		"layer1.opacity": 1,
+		"layer2.opacity": 1,
+		"layer3.opacity": 0
+	},
+	// Dirty tab.
+	{
+		"class": "tab_control",
+		"attributes": ["dirty"],
+		"layer2.tint": [242, 151, 24]
+	},
+	{
+		"class": "tab_close_button",
+		"parents": [{ "class": "tab_control", "attributes": ["dirty"] }],
+		"layer0.tint": [242, 151, 24],
+		"layer0.opacity": 1,
+		"layer0.inner_margin": 0
+	},
+	// Tab label.
+	{
+		"class": "tab_label",
+		"font.size": 11,
+		"shadow_color": 0,
+		"shadow_offset": 0
+	},
+	{
+		"class": "tab_label",
+		"parents": [{ "class": "tab_control", "attributes": ["selected"] }],
+		"fg": [200, 200, 200],
+		"font.size": 11,
+		"shadow_color": 0,
+		"shadow_offset": 0
+	},
+	{
+		"class": "tab_label",
+		"parents": [{ "class": "tab_control", "attributes": ["dirty"] }],
+		"fg": [242, 151, 24, 0.5],
+		"font.italic": true
+	},
+	{
+		"class": "tab_label",
+		"parents": [{ "class": "tab_control", "attributes": ["dirty", "selected"] }],
+		"fg": [242, 151, 24, 0.9]
+	},
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
+
+	/**
+	 *  [[START]] SIDEBAR
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	{
+		"class": "label_control",
+		"shadow_color": 0,
+		"shadow_offset": 0
+	},
+	{
+		"class": "sidebar_heading",
+		"shadow_color": 0,
+		"shadow_offset": 0
 	}
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
 ]

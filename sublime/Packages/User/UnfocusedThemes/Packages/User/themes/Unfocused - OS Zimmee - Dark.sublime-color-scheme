@@ -1,27 +1,27 @@
 {
 	"globals":
 	{
-		"accent": "#BE9463FF",
+		"accent": "#CA9558FF",
 		"active_guide": "#3F3F3FFF",
-		"background": "#191F22FF",
+		"background": "#162125FF",
 		"brackets_contents_foreground": "#858585FF",
 		"brackets_contents_options": "underline",
 		"brackets_foreground": "#858585FF",
 		"brackets_options": "underline",
-		"caret": "#B8417BFF",
-		"find_highlight": "#9C7186FF",
-		"find_highlight_foreground": "#191F22FF",
+		"caret": "#C4357BFF",
+		"find_highlight": "#A86586FF",
+		"find_highlight_foreground": "#162125FF",
 		"foreground": "#B7B7B7FF",
 		"guide": "#3F3F3FFF",
-		"gutter": "#151A1EFF",
+		"gutter": "#131B20FF",
 		"gutter_foreground": "#515151FF",
-		"highlight": "#9C7186FF",
+		"highlight": "#A86586FF",
 		"line_highlight": "color(#4b91a0 alpha(0.2))",
 		"minimap_border": "color(#deb768 alpha(0.4))",
-		"misspelling": "#BE6E6EFF",
+		"misspelling": "#C86464FF",
 		"selection": "color(#4b91a0 alpha(0.3))",
 		"selection_border": "color(#4b91a0 alpha(0.4))",
-		"shadow": "#151A1EFF",
+		"shadow": "#131B20FF",
 		"shadow_width": "1",
 		"stack_guide": "#3F3F3FFF",
 		"tags_foreground": "#858585FF",
@@ -46,132 +46,132 @@
 		},
 		{
 			"font_style": "normal",
-			"foreground": "#BEA87AFF",
+			"foreground": "#C8AB70FF",
 			"name": "Variable",
 			"scope": "variable"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Keywords",
 			"scope": "keyword - (source.c keyword.operator | source.c++ keyword.operator | source.objc keyword.operator | source.objc++ keyword.operator)"
 		},
 		{
-			"foreground": "#C87C61FF",
+			"foreground": "#D37756FF",
 			"name": "Keyword > object",
 			"scope": "support.type.object"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Storage type",
 			"scope": "storage.type"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Entity name",
 			"scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)"
 		},
 		{
-			"foreground": "#C87C61FF",
+			"foreground": "#D37756FF",
 			"name": "Inherited class",
 			"scope": "entity.other.inherited-class"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Operators",
 			"scope": "keyword.operator"
 		},
 		{
-			"foreground": "#598476FF",
+			"foreground": "#4E8F79FF",
 			"name": "String",
 			"scope": "string"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Numbers",
 			"scope": "constant.numeric"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Built-in constant",
 			"scope": "constant.language"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "User-defined constant",
 			"scope": "constant.character, constant.other"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Color constant",
 			"scope": "constant.other.color"
 		},
 		{
-			"foreground": "#B697A6FF",
+			"foreground": "#BF8EA6FF",
 			"name": "Object key - level 1",
 			"scope": "meta meta.object-literal.key, meta meta.object-literal.key string, meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#BEA87AFF",
+			"foreground": "#C8AB70FF",
 			"name": "Object key - level 2",
 			"scope": "meta meta meta.object-literal.key, meta meta meta.object-literal.key string, meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Object key - level 3",
 			"scope": "meta meta meta meta.object-literal.key, meta meta meta meta.object-literal.key string, meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#B697A6FF",
+			"foreground": "#BF8EA6FF",
 			"name": "Object key - level 4",
 			"scope": "meta meta meta meta meta.object-literal.key, meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#BEA87AFF",
+			"foreground": "#C8AB70FF",
 			"name": "Object key - level 5",
 			"scope": "meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Object key - level 6",
 			"scope": "meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#B697A6FF",
+			"foreground": "#BF8EA6FF",
 			"name": "Object key - level 7",
 			"scope": "meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#BEA87AFF",
+			"foreground": "#C8AB70FF",
 			"name": "Object key - level 8",
 			"scope": "meta meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Object key - default",
 			"scope": "meta meta meta meta meta meta meta meta meta meta.object-literal.key, meta meta meta meta meta meta meta meta meta meta.object-literal.key string, meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta meta.structure.dictionary.key string"
 		},
 		{
-			"foreground": "#728B66FF",
+			"foreground": "#6E975AFF",
 			"name": "Property names",
 			"scope": "support.type.property-name"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Property values > constant",
 			"scope": "support.constant.property-value"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Function declaration",
 			"scope": "meta.function.declaration storage.type"
 		},
 		{
 			"font_style": "bold",
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "Function name",
 			"scope": "entity.name.function"
 		},
@@ -182,13 +182,13 @@
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Function call",
 			"scope": "variable.function"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#B697A6FF",
+			"foreground": "#BF8EA6FF",
 			"name": "Units",
 			"scope": "keyword.other.unit"
 		},
@@ -204,7 +204,7 @@
 		},
 		{
 			"font_style": "bold",
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Text > headings",
 			"scope": "markup.heading"
 		},
@@ -227,27 +227,27 @@
 			"scope": "markup.italic markup.bold | markup.bold markup.italic"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "Text > links",
 			"scope": "markup.underline.link, string.other.link"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Text > link title",
 			"scope": "string.other.link.title"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Text > link title",
 			"scope": "meta.link.reference.def constant.other.reference"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "Text > image",
 			"scope": "meta.image.reference string"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Text > image description",
 			"scope": "meta.image.reference constant.other"
 		},
@@ -257,7 +257,7 @@
 			"scope": "punctuation.definition.thematic-break"
 		},
 		{
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Text > blockquote",
 			"scope": "markup.quote"
 		},
@@ -268,23 +268,23 @@
 			"scope": "markup.quote punctuation.definition.blockquote"
 		},
 		{
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Text > bullets",
 			"scope": "markup.list.unnumbered.bullet, punctuation.definition.list_item"
 		},
 		{
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Text > numbered bullets",
 			"scope": "markup.list.numbered.bullet"
 		},
 		{
-			"foreground": "#60787DFF",
+			"foreground": "#557F88FF",
 			"name": "Table > markup",
 			"scope": "punctuation.separator.table-cell, punctuation.section.table-header"
 		},
 		{
 			"font_style": "bold",
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Table > header",
 			"scope": "meta.table.header"
 		},
@@ -299,42 +299,42 @@
 			"scope": "markup.raw"
 		},
 		{
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Tag > name",
 			"scope": "entity.name.tag"
 		},
 		{
-			"foreground": "#60787DFF",
+			"foreground": "#557F88FF",
 			"name": "Tag brackets",
 			"scope": "punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html"
 		},
 		{
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Tag > attribute name",
 			"scope": "entity.other.attribute-name"
 		},
 		{
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Tag > class names",
 			"scope": "meta.class-name, meta.selector entity.other.attribute-name.class, entity.other.attribute-name.class punctuation.definition.entity.css"
 		},
 		{
-			"foreground": "#C87C61FF",
+			"foreground": "#D37756FF",
 			"name": "IDs",
 			"scope": "meta.attribute-with-value.id string, meta.selector entity.other.attribute-name.id, entity.other.attribute-name.id punctuation.definition.entity.css"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"scope": "entity.name.filename"
 		},
 		{
-			"background": "#7F4A4AFF",
+			"background": "#894040FF",
 			"foreground": "#D2D2D2FF",
 			"name": "Invalid",
 			"scope": "invalid"
 		},
 		{
-			"background": "#6A6DA1FF",
+			"background": "#5E62ADFF",
 			"foreground": "#D2D2D2FF",
 			"name": "Invalid deprecated",
 			"scope": "invalid.deprecated"
@@ -344,27 +344,27 @@
 			"scope": "meta.diff, meta.diff.header"
 		},
 		{
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Diff > deleted",
 			"scope": "markup.deleted"
 		},
 		{
-			"foreground": "#608F74FF",
+			"foreground": "#549B73FF",
 			"name": "Diff > added",
 			"scope": "markup.inserted"
 		},
 		{
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Diff > changed",
 			"scope": "markup.changed, meta.commit-info.files.changes"
 		},
 		{
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Message > error",
 			"scope": "message.error"
 		},
 		{
-			"background": "#7F4A4AFF",
+			"background": "#894040FF",
 			"foreground": "#D2D2D2FF",
 			"name": "Linter > error",
 			"scope": "region.redish"
@@ -376,22 +376,22 @@
 			"scope": "region.yellowish"
 		},
 		{
-			"background": "#191F22FF",
+			"background": "#162125FF",
 			"name": "Summary header",
 			"scope": "meta.git-savvy.summary-header"
 		},
 		{
-			"background": "#2B2E30FF",
+			"background": "#272F34FF",
 			"name": "Status > file section",
 			"scope": "meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes"
 		},
 		{
-			"foreground": "#191F22FF",
+			"foreground": "#162125FF",
 			"name": "Status > help section punctuation",
 			"scope": "comment.git-savvy.key-bindings-menu punctuation.definition.git-savvy.section"
 		},
 		{
-			"background": "#205C87FF",
+			"background": "#185E8FFF",
 			"font_style": "bold",
 			"foreground": "#D2D2D2FF",
 			"name": "Section headers - default",
@@ -405,48 +405,48 @@
 			"scope": "git-savvy.diff meta.diff.range.unified"
 		},
 		{
-			"background": "#7F4A4AFF",
+			"background": "#894040FF",
 			"name": "Section headers - warning",
 			"scope": "keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation"
 		},
 		{
-			"background": "#266340FF",
+			"background": "#1F6A3FFF",
 			"name": "Section headers - success",
 			"scope": "keyword.other.git-savvy.section-header.staged"
 		},
 		{
-			"background": "#60787DFF",
-			"foreground": "#191F22FF",
+			"background": "#557F88FF",
+			"foreground": "#162125FF",
 			"name": "Section headers - soft",
 			"scope": "meta.git-savvy.key-bindings-header"
 		},
 		{
-			"foreground": "#60787DFF",
+			"foreground": "#557F88FF",
 			"name": "Section headers - soft",
 			"scope": "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "Git metadata",
 			"scope": "constant.other.git-savvy.summary-header.branch-name, constant.other.git-savvy.sha1, meta.commit-info.header.sha.git-savvy, support.type.git-savvy.rebase.commit_hash"
 		},
 		{
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "Git metadata > graph branch head",
 			"scope": "meta.graph.branch.git-savvy constant.other.git.branch.git-savvy"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Git metadata > branches details",
 			"scope": "comment.git-savvy.branches.active-branch.extra-info"
 		},
 		{
-			"foreground": "#60787DFF",
+			"foreground": "#557F88FF",
 			"name": "File metadata - dim",
 			"scope": "comment.git-savvy.summary-header.root.info, string.other.commit-info.header.key.git-savvy"
 		},
 		{
-			"foreground": "#A68888FF",
+			"foreground": "#B07E7EFF",
 			"name": "Status > removed files",
 			"scope": "meta.git-savvy.status.file.removed"
 		},
@@ -456,54 +456,54 @@
 			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.status.file"
 		},
 		{
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Status > unstaged files",
 			"scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.status.file"
 		},
 		{
-			"foreground": "#608F74FF",
+			"foreground": "#549B73FF",
 			"name": "Status > staged files",
 			"scope": "meta.git-savvy.status.section.staged meta.git-savvy.status.file"
 		},
 		{
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "Status > stashed files",
 			"scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff"
 		},
 		{
-			"background": "#26292BFF",
-			"foreground": "#73949AFF",
+			"background": "#222A2FFF",
+			"foreground": "#679CA6FF",
 			"name": "Status > keyboard shortcuts",
 			"scope": "constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke"
 		},
 		{
-			"foreground": "#26292BFF",
+			"foreground": "#222A2FFF",
 			"name": "Status > keyboard shortcut punctuation",
 			"scope": "punctuation.definition.git-savvy.key-bindings-key-stroke"
 		},
 		{
-			"foreground": "#608F74FF",
+			"foreground": "#549B73FF",
 			"name": "Graph > commit dot",
 			"scope": "git-savvy.graph keyword.graph.commit.git-savvy"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "Graph > commit hash",
 			"scope": "constant.numeric.graph.commit-hash.git-savvy"
 		},
 		{
-			"foreground": "#BE9463FF",
+			"foreground": "#CA9558FF",
 			"name": "Graph > keywords",
 			"scope": "meta.graph.message.git-savvy keyword.by-name.git-savvy"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#6D9DBFFF",
+			"foreground": "#639EC9FF",
 			"name": "Graph > metadata",
 			"scope": "meta.git-savvy.grph.info, meta.git-savvy.grph.info storage.type"
 		},
 		{
-			"foreground": "#73949AFF",
+			"foreground": "#679CA6FF",
 			"name": "Graph > author",
 			"scope": "entity.name.tag.author.git-savvy"
 		}
