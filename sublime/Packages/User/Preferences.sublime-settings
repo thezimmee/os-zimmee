@@ -5,6 +5,7 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
+	"close_windows_when_empty": true,
 	"color_scheme": "Packages/User/themes/OS Zimmee - Dark.sublime-color-scheme",
 	"detect_indentation": false,
 	"disable_formatted_linebreak": true,
@@ -30,6 +31,7 @@
 	[
 		"Color Highlighter",
 		"Markdown",
+		"Sublimerge 3",
 		"Vintage"
 	],
 	"inactive_panes_dim_color": "#000000",

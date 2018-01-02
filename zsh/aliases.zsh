@@ -19,10 +19,10 @@ alias p=cd ${HOME}/Projects
 alias reload='. $HOME/.zshrc'
 
 # Command to compare two directories with sublimerge.
-compare () {
-	subl --command 'sublimerge_compare_paths {"paths": ["$1", "$2"]}'
-}
-alias compare=compare
+# compare () {
+# 	subl --command 'sublimerge_compare_paths {"paths": ["$1", "$2"]}'
+# }
+# alias compare=compare
 
 # Change default browser.
 alias chrome='open -a "/Applications/Google Chrome.app" --args --make-default-browser'
