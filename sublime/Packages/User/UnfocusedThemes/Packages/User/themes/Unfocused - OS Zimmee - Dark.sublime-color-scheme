@@ -1,19 +1,19 @@
 {
 	"globals":
 	{
-		"accent": "#CA9558FF",
+		"accent": "#CB9259FF",
 		"active_guide": "#3F3F3FFF",
-		"background": "#162125FF",
+		"background": "#091F26FF",
 		"brackets_contents_foreground": "#858585FF",
 		"brackets_contents_options": "underline",
 		"brackets_foreground": "#858585FF",
 		"brackets_options": "underline",
 		"caret": "#C4357BFF",
 		"find_highlight": "#A86586FF",
-		"find_highlight_foreground": "#162125FF",
+		"find_highlight_foreground": "#091F26FF",
 		"foreground": "#B7B7B7FF",
 		"guide": "#3F3F3FFF",
-		"gutter": "#131B20FF",
+		"gutter": "#061B22FF",
 		"gutter_foreground": "#515151FF",
 		"highlight": "#A86586FF",
 		"line_highlight": "color(#4b91a0 alpha(0.2))",
@@ -21,7 +21,7 @@
 		"misspelling": "#C86464FF",
 		"selection": "color(#4b91a0 alpha(0.3))",
 		"selection_border": "color(#4b91a0 alpha(0.4))",
-		"shadow": "#131B20FF",
+		"shadow": "#061B22FF",
 		"shadow_width": "1",
 		"stack_guide": "#3F3F3FFF",
 		"tags_foreground": "#858585FF",
@@ -30,12 +30,12 @@
 	"rules":
 	[
 		{
-			"foreground": "color(#b9c1c6 alpha(0.6))",
+			"foreground": "color(#b9c3c6 alpha(0.6))",
 			"name": "Annotation punctuation",
 			"scope": "punctuation.definition"
 		},
 		{
-			"foreground": "color(#b9c1c6 alpha(0.8))",
+			"foreground": "color(#b9c3c6 alpha(0.8))",
 			"name": "Section punctuation",
 			"scope": "punctuation.section"
 		},
@@ -51,20 +51,48 @@
 			"scope": "variable"
 		},
 		{
+			"foreground": "#D37756FF",
+			"name": "Keywords",
+			"scope": "keyword"
+		},
+		{
 			"font_style": "italic",
 			"foreground": "#C86464FF",
-			"name": "Keywords",
-			"scope": "keyword - (source.c keyword.operator | source.c++ keyword.operator | source.objc keyword.operator | source.objc++ keyword.operator)"
+			"name": "Keywords > flow",
+			"scope": "keyword.control.flow"
 		},
 		{
 			"foreground": "#D37756FF",
-			"name": "Keyword > object",
+			"name": "Keywords > object",
 			"scope": "support.type.object"
+		},
+		{
+			"font_style": "normal",
+			"foreground": "#D37756FF",
+			"name": "Keywords > statements",
+			"scope": "meta.statement keyword.control.flow"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "#2A95ABFF",
+			"name": "Keywords > operators",
+			"scope": "keyword.operator"
+		},
+		{
+			"font_style": "normal",
+			"name": "Keywords > comparison",
+			"scope": "keyword.operator.comparison, keyword.operator.assignment, keyword.operator.logical, keyword.operator.ternary, keyword.operator.arithmetic, storage.type.function.arrow"
 		},
 		{
 			"foreground": "#918073FF",
 			"name": "Storage type",
 			"scope": "storage.type"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "#2A95ABFF",
+			"name": "Storage type",
+			"scope": "storage.type.function, storage.type.class"
 		},
 		{
 			"foreground": "#918073FF",
@@ -77,23 +105,18 @@
 			"scope": "entity.other.inherited-class"
 		},
 		{
-			"foreground": "#679CA6FF",
-			"name": "Operators",
-			"scope": "keyword.operator"
-		},
-		{
 			"foreground": "#4E8F79FF",
 			"name": "String",
 			"scope": "string"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Numbers",
 			"scope": "constant.numeric"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Built-in constant",
 			"scope": "constant.language"
 		},
@@ -103,9 +126,38 @@
 			"scope": "constant.character, constant.other"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Color constant",
 			"scope": "constant.other.color"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "#9699D9FF",
+			"name": "Classes",
+			"scope": "entity.name.class"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "#9699D9FF",
+			"name": "Function name",
+			"scope": "entity.name.function"
+		},
+		{
+			"font_style": "italic",
+			"name": "Function parameter",
+			"scope": "variable.parameter, meta.function-call.arguments"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "#CB9259FF",
+			"name": "Function call",
+			"scope": "variable.function"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "#BF8EA6FF",
+			"name": "Units",
+			"scope": "keyword.other.unit"
 		},
 		{
 			"foreground": "#BF8EA6FF",
@@ -159,46 +211,17 @@
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#CA9558FF",
+			"foreground": "#CB9259FF",
 			"name": "Property values > constant",
 			"scope": "support.constant.property-value"
 		},
 		{
-			"font_style": "italic",
-			"foreground": "#639EC9FF",
-			"name": "Function declaration",
-			"scope": "meta.function.declaration storage.type"
-		},
-		{
-			"font_style": "bold",
-			"foreground": "#9699D9FF",
-			"name": "Function name",
-			"scope": "entity.name.function"
-		},
-		{
-			"font_style": "italic",
-			"name": "Function parameter",
-			"scope": "variable.parameter - (source.c | source.c++ | source.objc | source.objc++)"
-		},
-		{
-			"font_style": "italic",
-			"foreground": "#CA9558FF",
-			"name": "Function call",
-			"scope": "variable.function"
-		},
-		{
-			"font_style": "italic",
-			"foreground": "#BF8EA6FF",
-			"name": "Units",
-			"scope": "keyword.other.unit"
-		},
-		{
-			"foreground": "color(#b9c1c6 alpha(0.9))",
+			"foreground": "color(#b9c3c6 alpha(0.9))",
 			"name": "Text",
 			"scope": "text"
 		},
 		{
-			"foreground": "color(#818f98 alpha(0.6))",
+			"foreground": "color(#819298 alpha(0.6))",
 			"name": "Text > faded punctuation",
 			"scope": "text & (punctuation.definition.raw | punctuation.definition.link | punctuation.definition.metadata | punctuation.definition.image | punctuation.separator.table-cell | punctuation.section.table-header | punctuation.definition.constant | punctuation.definition.heading)"
 		},
@@ -232,12 +255,12 @@
 			"scope": "markup.underline.link, string.other.link"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Text > link title",
 			"scope": "string.other.link.title"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Text > link title",
 			"scope": "meta.link.reference.def constant.other.reference"
 		},
@@ -257,23 +280,23 @@
 			"scope": "punctuation.definition.thematic-break"
 		},
 		{
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Text > blockquote",
 			"scope": "markup.quote"
 		},
 		{
-			"background": "color(#818f98 alpha(0.5))",
-			"foreground": "color(#818f98 alpha(0.5))",
+			"background": "color(#819298 alpha(0.5))",
+			"foreground": "color(#819298 alpha(0.5))",
 			"name": "Text > blockquote symbol",
 			"scope": "markup.quote punctuation.definition.blockquote"
 		},
 		{
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Text > bullets",
 			"scope": "markup.list.unnumbered.bullet, punctuation.definition.list_item"
 		},
 		{
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Text > numbered bullets",
 			"scope": "markup.list.numbered.bullet"
 		},
@@ -284,19 +307,24 @@
 		},
 		{
 			"font_style": "bold",
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Table > header",
 			"scope": "meta.table.header"
 		},
 		{
-			"foreground": "color(#b9c1c6 alpha(0.75))",
+			"foreground": "color(#b9c3c6 alpha(0.75))",
 			"name": "Table > content",
 			"scope": "meta.table"
 		},
 		{
-			"background": "color(#b9c1c6 alpha(0.096))",
+			"background": "color(#b9c3c6 alpha(0.096))",
 			"name": "Text > code",
-			"scope": "markup.raw"
+			"scope": "markup.raw.inline - (punctuation), markup.raw.block"
+		},
+		{
+			"foreground": "#9699D9FF",
+			"name": "Text > code block syntax name",
+			"scope": "variable.language.fenced"
 		},
 		{
 			"foreground": "#C86464FF",
@@ -309,12 +337,12 @@
 			"scope": "punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html"
 		},
 		{
-			"foreground": "#CA9558FF",
+			"foreground": "#CB9259FF",
 			"name": "Tag > attribute name",
 			"scope": "entity.other.attribute-name"
 		},
 		{
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Tag > class names",
 			"scope": "meta.class-name, meta.selector entity.other.attribute-name.class, entity.other.attribute-name.class punctuation.definition.entity.css"
 		},
@@ -329,13 +357,13 @@
 		},
 		{
 			"background": "#894040FF",
-			"foreground": "#D2D2D2FF",
+			"foreground": "#D1D1D1FF",
 			"name": "Invalid",
 			"scope": "invalid"
 		},
 		{
 			"background": "#5E62ADFF",
-			"foreground": "#D2D2D2FF",
+			"foreground": "#D1D1D1FF",
 			"name": "Invalid deprecated",
 			"scope": "invalid.deprecated"
 		},
@@ -354,7 +382,7 @@
 			"scope": "markup.inserted"
 		},
 		{
-			"foreground": "#CA9558FF",
+			"foreground": "#CB9259FF",
 			"name": "Diff > changed",
 			"scope": "markup.changed, meta.commit-info.files.changes"
 		},
@@ -365,35 +393,35 @@
 		},
 		{
 			"background": "#894040FF",
-			"foreground": "#D2D2D2FF",
+			"foreground": "#D1D1D1FF",
 			"name": "Linter > error",
 			"scope": "region.redish"
 		},
 		{
 			"background": "color(#976c17 alpha(1))",
-			"foreground": "#D2D2D2FF",
+			"foreground": "#D1D1D1FF",
 			"name": "Linter > warning",
 			"scope": "region.yellowish"
 		},
 		{
-			"background": "#162125FF",
+			"background": "#091F26FF",
 			"name": "Summary header",
 			"scope": "meta.git-savvy.summary-header"
 		},
 		{
-			"background": "#272F34FF",
+			"background": "#182B31FF",
 			"name": "Status > file section",
 			"scope": "meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes"
 		},
 		{
-			"foreground": "#162125FF",
+			"foreground": "#091F26FF",
 			"name": "Status > help section punctuation",
 			"scope": "comment.git-savvy.key-bindings-menu punctuation.definition.git-savvy.section"
 		},
 		{
 			"background": "#185E8FFF",
 			"font_style": "bold",
-			"foreground": "#D2D2D2FF",
+			"foreground": "#D1D1D1FF",
 			"name": "Section headers - default",
 			"scope": "keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation"
 		},
@@ -416,7 +444,7 @@
 		},
 		{
 			"background": "#557F88FF",
-			"foreground": "#162125FF",
+			"foreground": "#091F26FF",
 			"name": "Section headers - soft",
 			"scope": "meta.git-savvy.key-bindings-header"
 		},
@@ -436,7 +464,7 @@
 			"scope": "meta.graph.branch.git-savvy constant.other.git.branch.git-savvy"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Git metadata > branches details",
 			"scope": "comment.git-savvy.branches.active-branch.extra-info"
 		},
@@ -456,7 +484,7 @@
 			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.status.file"
 		},
 		{
-			"foreground": "#CA9558FF",
+			"foreground": "#CB9259FF",
 			"name": "Status > unstaged files",
 			"scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.status.file"
 		},
@@ -471,13 +499,13 @@
 			"scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff"
 		},
 		{
-			"background": "#222A2FFF",
-			"foreground": "#679CA6FF",
+			"background": "#182B31FF",
+			"foreground": "#2A95ABFF",
 			"name": "Status > keyboard shortcuts",
 			"scope": "constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke"
 		},
 		{
-			"foreground": "#222A2FFF",
+			"foreground": "#182B31FF",
 			"name": "Status > keyboard shortcut punctuation",
 			"scope": "punctuation.definition.git-savvy.key-bindings-key-stroke"
 		},
@@ -492,63 +520,62 @@
 			"scope": "constant.numeric.graph.commit-hash.git-savvy"
 		},
 		{
-			"foreground": "#CA9558FF",
+			"foreground": "#CB9259FF",
 			"name": "Graph > keywords",
 			"scope": "meta.graph.message.git-savvy keyword.by-name.git-savvy"
 		},
 		{
 			"font_style": "italic",
-			"foreground": "#639EC9FF",
+			"foreground": "#3180B9FF",
 			"name": "Graph > metadata",
 			"scope": "meta.git-savvy.grph.info, meta.git-savvy.grph.info storage.type"
 		},
 		{
-			"foreground": "#679CA6FF",
+			"foreground": "#2A95ABFF",
 			"name": "Graph > author",
 			"scope": "entity.name.tag.author.git-savvy"
 		}
 	],
 	"variables":
 	{
-		"bg__alt": "#283943",
+		"bg__alt": "#1a353d",
 		"bg__blue": "#1368a4",
 		"bg__blue_green": "#1d7c5c",
 		"bg__brown": "#70533e",
-		"bg__cyan": "#1991a9",
+		"bg__cyan": "#098faa",
 		"bg__cyan_blue": "#287e8f",
-		"bg__editor": "#1a2a32",
+		"bg__editor": "#0c2831",
 		"bg__green": "#1d7c46",
 		"bg__green_yellow": "#3e7920",
-		"bg__gutter": "#17242c",
-		"bg__keyboard": "#24343d",
+		"bg__gutter": "#0b252d",
 		"bg__magenta": "#d33682",
 		"bg__maroon": "#ac5d5d",
-		"bg__orange": "#af6b1d",
+		"bg__orange": "#af661d",
 		"bg__pink": "#c25b8d",
 		"bg__purple": "#5359c6",
 		"bg__red": "#9f3838",
 		"bg__red_orange": "#bb4216",
-		"bg__table": "#17242c",
+		"bg__table": "#0b252d",
 		"bg__yellow": "#976c17",
-		"fg__blue": "#5ba9e1",
+		"fg__blue": "#278bd3",
 		"fg__blue_green": "#44a786",
-		"fg__bright": "#d5dadd",
+		"fg__bright": "#d5dbdd",
 		"fg__brown": "#ac8568",
-		"fg__cyan": "#5db0c0",
+		"fg__cyan": "#22a8c3",
 		"fg__cyan_blue": "#4b91a0",
-		"fg__faded": "#818f98",
+		"fg__faded": "#819298",
 		"fg__green": "#4ab578",
 		"fg__green_yellow": "#6fb04f",
-		"fg__gutter": "#505c62",
-		"fg__indent_guides": "#40494f",
+		"fg__gutter": "#505e62",
+		"fg__indent_guides": "#404b4f",
 		"fg__magenta": "#df2a82",
 		"fg__maroon": "#c77575",
-		"fg__orange": "#e29e50",
+		"fg__orange": "#e29950",
 		"fg__pink": "#d388ac",
 		"fg__purple": "#9397ec",
 		"fg__red": "#e05c5c",
 		"fg__red_orange": "#ea774d",
-		"fg__text": "#b9c1c6",
+		"fg__text": "#b9c3c6",
 		"fg__yellow": "#deb768"
 	}
 }

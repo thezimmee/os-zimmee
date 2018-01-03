@@ -1,36 +1,36 @@
 {
 	"globals":
 	{
-		"background": "#191F22FF",
-		"caret": "#AD4E7CFF",
-		"find_highlight": "#B8417BFF",
-		"find_highlight_foreground": "#191F22FF",
+		"background": "#091F26FF",
+		"caret": "#B9427CFF",
+		"find_highlight": "#C4357BFF",
+		"find_highlight_foreground": "#091F26FF",
 		"foreground": "#B7B7B7FF",
-		"highlight": "#B8417BFF",
+		"highlight": "#C4357BFF",
 		"line_highlight": "color(#ac8568 alpha(0.2))",
-		"selection": "#B8417BFF",
-		"selection_border": "#B8417BFF",
-		"selection_foreground": "#191F22FF"
+		"selection": "#C4357BFF",
+		"selection_border": "#C4357BFF",
+		"selection_foreground": "#091F26FF"
 	},
 	"rules":
 	[
 		{
-			"foreground": "color(#b9c1c6 alpha(0.7))",
+			"foreground": "color(#b9c3c6 alpha(0.7))",
 			"name": "FIF > foreground",
 			"scope": "text.find-in-files"
 		},
 		{
-			"foreground": "#9D9FD2FF",
+			"foreground": "#9699D9FF",
 			"name": "FIF > variables",
 			"scope": "text.find-in-files variable"
 		},
 		{
-			"foreground": "#BE6E6EFF",
+			"foreground": "#C86464FF",
 			"name": "FIF > variable > no matches",
 			"scope": "variable.no_matches.find-in-files"
 		},
 		{
-			"foreground": "#BEA87AFF",
+			"foreground": "#C8AB70FF",
 			"name": "FIF > header > search query",
 			"scope": "string.query.find-in-files"
 		},
@@ -41,7 +41,7 @@
 		},
 		{
 			"background": "color(#ac8568 alpha(0.1))",
-			"foreground": "#85827FFF",
+			"foreground": "#918073FF",
 			"name": "FIF > line numbers on matched lines",
 			"scope": "text.find-in-files constant.numeric.line-number.match, text.find-in-files punctuation.line-number.match"
 		},
@@ -62,13 +62,13 @@
 	"variables":
 	{
 		"bg__blue": "#1368a4",
-		"bg__editor": "#1a2a32",
+		"bg__editor": "#0c2831",
 		"bg__magenta": "#d33682",
 		"fg__brown": "#ac8568",
 		"fg__magenta": "#df2a82",
 		"fg__purple": "#9397ec",
 		"fg__red": "#e05c5c",
-		"fg__text": "#b9c1c6",
+		"fg__text": "#b9c3c6",
 		"fg__yellow": "#deb768"
 	}
 }

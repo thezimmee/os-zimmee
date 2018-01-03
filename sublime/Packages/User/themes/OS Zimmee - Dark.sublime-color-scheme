@@ -8,10 +8,10 @@
 		"bg__pink": "hsl(331, 46%, 56%)",
 		"fg__purple": "hsl(237, 70%, 75%)",
 		"bg__purple": "hsl(237, 50%, 55%)",
-		"fg__blue": "hsl(205, 69%, 62%)",
+		"fg__blue": "hsl(205, 69%, 49%)",
 		"bg__blue": "hsl(205, 79%, 36%)",
-		"fg__cyan": "hsl(190, 44%, 56%)",
-		"bg__cyan": "hsl(190, 74%, 38%)",
+		"fg__cyan": "hsl(190, 70%, 45%)",
+		"bg__cyan": "hsl(190, 90%, 35%)",
 		"fg__cyan_blue": "hsl(190, 36%, 46%)",
 		"bg__cyan_blue": "hsl(190, 56%, 36%)",
 		"fg__blue_green": "hsl(160, 42%, 46%)",
@@ -22,8 +22,8 @@
 		"bg__green_yellow": "hsl(100, 58%, 30%)",
 		"fg__yellow": "hsl(40, 64%, 64%)",
 		"bg__yellow": "hsl(40, 74%, 34%)",
-		"fg__orange": "hsl(32, 72%, 60%)",
-		"bg__orange": "hsl(32, 72%, 40%)",
+		"fg__orange": "hsl(30, 72%, 60%)",
+		"bg__orange": "hsl(30, 72%, 40%)",
 		"fg__brown": "hsl(26, 29%, 54%)",
 		"bg__brown": "hsl(26, 29%, 34%)",
 		"fg__red_orange": "hsl(16, 79%, 61%)",
@@ -32,16 +32,15 @@
 		"bg__red": "hsl(0, 48%, 42%)",
 		"fg__maroon": "hsl(0, 42%, 62%)",
 		"bg__maroon": "hsl(0, 32%, 52%)",
-		"fg__indent_guides": "hsl(202, 10%, 28%)",
-		"fg__gutter": "hsl(202, 10%, 35%)",
-		"fg__faded": "hsl(202, 10%, 55%)",
-		"fg__text": "hsl(202, 10%, 75%)",
-		"fg__bright": "hsl(202, 10%, 85%)",
-		"bg__editor": "hsl(202, 32%, 15%)",
-		"bg__table": "hsl(202, 32%, 13%)",
-		"bg__gutter": "hsl(202, 32%, 13%)",
-		"bg__alt": "hsl(202, 26%, 21%)",
-		"bg__keyboard": "hsl(202, 26%, 19%)"
+		"fg__indent_guides": "hsl(194, 10%, 28%)",
+		"fg__gutter": "hsl(194, 10%, 35%)",
+		"fg__faded": "hsl(194, 10%, 55%)",
+		"fg__text": "hsl(194, 10%, 75%)",
+		"fg__bright": "hsl(194, 10%, 85%)",
+		"bg__editor": "hsl(194, 60%, 12%)",
+		"bg__table": "hsl(194, 60%, 11%)",
+		"bg__gutter": "hsl(194, 60%, 11%)",
+		"bg__alt": "hsl(194, 40%, 17%)"
 	},
 	"globals": {
 		// Backdrop.
@@ -142,15 +141,37 @@
 		// Keywords:
 		{
 			"name": "Keywords",
-			"scope":
-				"keyword - (source.c keyword.operator | source.c++ keyword.operator | source.objc keyword.operator | source.objc++ keyword.operator)",
+			"scope": "keyword",
+			"foreground": "var(fg__red_orange)"
+		},
+		{
+			"name": "Keywords > flow",
+			"scope": "keyword.control.flow",
 			"foreground": "var(fg__red)",
 			"font_style": "italic"
 		},
 		{
-			"name": "Keyword > object",
+			"name": "Keywords > object",
 			"scope": "support.type.object",
 			"foreground": "var(fg__red_orange)"
+		},
+		{
+			"name": "Keywords > statements",
+			"scope": "meta.statement keyword.control.flow",
+			"foreground": "var(fg__red_orange)",
+			"font_style": "normal"
+		},
+		{
+			"name": "Keywords > operators",
+			"scope": "keyword.operator",
+			"foreground": "var(fg__cyan)",
+			"font_style": "italic"
+		},
+		{
+			"name": "Keywords > comparison",
+			"scope":
+				"keyword.operator.comparison, keyword.operator.assignment, keyword.operator.logical, keyword.operator.ternary, keyword.operator.arithmetic, storage.type.function.arrow",
+			"font_style": "normal"
 		},
 		// {
 		// 	"name": "Storage",
@@ -163,6 +184,12 @@
 			"foreground": "var(fg__brown)"
 		},
 		{
+			"name": "Storage type",
+			"scope": "storage.type.function, storage.type.class",
+			"foreground": "var(fg__cyan)",
+			"font_style": "italic"
+		},
+		{
 			"name": "Entity name",
 			"scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
 			"foreground": "var(fg__brown)"
@@ -171,13 +198,6 @@
 			"name": "Inherited class",
 			"scope": "entity.other.inherited-class",
 			"foreground": "var(fg__red_orange)"
-		},
-
-		// Operators:
-		{
-			"name": "Operators",
-			"scope": "keyword.operator",
-			"foreground": "var(fg__cyan)"
 		},
 
 		// ----------
@@ -214,6 +234,41 @@
 			"scope": "constant.other.color",
 			"foreground": "var(fg__cyan)"
 			// "font_style": "italic"
+		},
+
+		// Classes:
+		{
+			"name": "Classes",
+			"scope": "entity.name.class",
+			"foreground": "var(fg__purple)",
+			"font_style": "bold"
+		},
+
+		// Functions:
+		{
+			"name": "Function name",
+			"scope": "entity.name.function",
+			"foreground": "var(fg__purple)",
+			"font_style": "bold"
+		},
+		{
+			"name": "Function parameter",
+			"scope": "variable.parameter, meta.function-call.arguments",
+			"font_style": "italic"
+		},
+		{
+			"name": "Function call",
+			"scope": "variable.function",
+			"foreground": "var(fg__orange)",
+			"font_style": "italic"
+		},
+
+		// Units:
+		{
+			"name": "Units",
+			"scope": "keyword.other.unit",
+			"foreground": "var(fg__pink)",
+			"font_style": "italic"
 		},
 
 		// Object keys:
@@ -282,39 +337,6 @@
 			"name": "Property values > constant",
 			"scope": "support.constant.property-value",
 			"foreground": "var(fg__orange)",
-			"font_style": "italic"
-		},
-
-		// Functions:
-		{
-			"name": "Function declaration",
-			"scope": "meta.function.declaration storage.type",
-			"foreground": "var(fg__blue)",
-			"font_style": "italic"
-		},
-		{
-			"name": "Function name",
-			"scope": "entity.name.function",
-			"foreground": "var(fg__purple)",
-			"font_style": "bold"
-		},
-		{
-			"name": "Function parameter",
-			"scope": "variable.parameter - (source.c | source.c++ | source.objc | source.objc++)",
-			"font_style": "italic"
-		},
-		{
-			"name": "Function call",
-			"scope": "variable.function",
-			"foreground": "var(fg__orange)",
-			"font_style": "italic"
-		},
-
-		// Units:
-		{
-			"name": "Units",
-			"scope": "keyword.other.unit",
-			"foreground": "var(fg__pink)",
 			"font_style": "italic"
 		},
 
@@ -447,8 +469,13 @@
 		// Code:
 		{
 			"name": "Text > code",
-			"scope": "markup.raw",
+			"scope": "markup.raw.inline - (punctuation), markup.raw.block",
 			"background": "color(var(fg__text) alpha(0.096))"
+		},
+		{
+			"name": "Text > code block syntax name",
+			"scope": "variable.language.fenced",
+			"foreground": "var(fg__purple)"
 		},
 
 		// -------------
@@ -675,13 +702,13 @@
 			"name": "Status > keyboard shortcuts",
 			"scope":
 				"constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke",
-			"background": "var(bg__keyboard)",
+			"background": "var(bg__alt)",
 			"foreground": "var(fg__cyan)"
 		},
 		{
 			"name": "Status > keyboard shortcut punctuation",
 			"scope": "punctuation.definition.git-savvy.key-bindings-key-stroke",
-			"foreground": "var(bg__keyboard)"
+			"foreground": "var(bg__alt)"
 		},
 
 		// Git graph:

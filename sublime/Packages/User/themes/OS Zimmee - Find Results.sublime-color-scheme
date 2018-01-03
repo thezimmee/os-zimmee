@@ -10,8 +10,8 @@
 		"bg__magenta": "hsl(331, 64%, 52%)",
 		"fg__magenta": "hsl(331, 74%, 52%)",
 		"bg__blue": "hsl(205, 79%, 36%)",
-		"bg__editor": "hsl(202, 32%, 15%)",
-		"fg__text": "hsl(202, 10%, 75%)"
+		"bg__editor": "hsl(194, 60%, 12%)",
+		"fg__text": "hsl(194, 10%, 75%)"
 	},
 	"globals": {
 		// Backdrop.

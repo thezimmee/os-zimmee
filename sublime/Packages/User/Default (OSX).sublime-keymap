@@ -14,7 +14,10 @@
 	// Toggle code folding buttons.
 	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" } },
 	// Toggle focus on active pane.
-	{ "keys": ["super+ctrl+;"], "command": "toggle_setting", "args": { "setting": "focus_active_pane" } },
+	{
+		"keys": ["super+ctrl+;"],
+		"command": "toggle_focus_active_view"
+	},
 	// Toggle how whitespace is drawn.
 	{
 		"keys": ["super+shift+."],
@@ -59,20 +62,61 @@
 	**/
 
 	// Word navigation / selection.
-	{ "keys": ["ctrl+left"], "command": "move", "args": { "by": "words", "forward": false } },
-	{ "keys": ["ctrl+right"], "command": "move", "args": { "by": "word_ends", "forward": true } },
+	// { "keys": ["ctrl+alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
+	// { "keys": ["ctrl+alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
+	// {
+	// 	"keys": ["ctrl+alt+shift+left"],
+	// 	"command": "move",
+	// 	"args": { "by": "subwords", "forward": false, "extend": true }
+	// },
+	// {
+	// 	"keys": ["ctrl+alt+shift+right"],
+	// 	"command": "move",
+	// 	"args": { "by": "subword_ends", "forward": true, "extend": true }
+	// },
+
+	// { "keys": ["ctrl+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
+	// { "keys": ["ctrl+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
+	// { "keys": ["ctrl+shift+left"], "command": "move", "args": { "by": "words", "forward": false, "extend": true } },
+	// {
+	// 	"keys": ["ctrl+shift+right"],
+	// 	"command": "move",
+	// 	"args": { "by": "words", "forward": true, "extend": true }
+	// },
+
+	{ "keys": ["alt+left"], "command": "move", "args": { "by": "words", "forward": false } },
+	{ "keys": ["alt+right"], "command": "move", "args": { "by": "word_ends", "forward": true } },
 	{ "keys": ["super+ctrl+left"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
 	{ "keys": ["super+ctrl+right"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
 	// { "keys": ["alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
 	// { "keys": ["alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
-	{ "keys": ["alt+left"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
-	{ "keys": ["alt+right"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
+	{ "keys": ["ctrl+left"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
+	{ "keys": ["ctrl+right"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
+	// VIM-like navigation.
+	{ "keys": ["ctrl+,"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
+	{ "keys": ["ctrl+."], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
+	{ "keys": ["alt+,"], "command": "move", "args": { "by": "words", "forward": false } },
+	{ "keys": ["alt+."], "command": "move", "args": { "by": "word_ends", "forward": true } },
+	{
+		"keys": ["ctrl+shift+,"],
+		"command": "move",
+		"args": { "by": "subwords", "forward": false, "extend": true }
+	},
+	{
+		"keys": ["ctrl+shift+."],
+		"command": "move",
+		"args": { "by": "subwords_end", "forward": true, "extend": true }
+	},
+	{ "keys": ["alt+shift+,"], "command": "move", "args": { "by": "words", "forward": false, "extend": true } },
+	{ "keys": ["alt+shift+."], "command": "move", "args": { "by": "word_ends", "forward": true, "extend": true } },
+	{ "keys": ["ctrl+alt+,"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
+	{ "keys": ["ctrl+alt+."], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
 	// Expand selection.
 	{ "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": { "to": "line" } },
 	{ "keys": ["ctrl+shift+p"], "command": "expand_selection_to_paragraph" },
 	{ "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": { "to": "brackets" } },
 	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": { "to": "indentation" } },
-	{ "keys": ["ctrl+shift+,"], "command": "expand_selection", "args": { "to": "tag" } },
+	{ "keys": ["ctrl+shift+g"], "command": "expand_selection", "args": { "to": "tag" } },
 	{ "keys": ["ctrl+shift+i"], "command": "expand_selection_to_quotes" },
 	// { "keys": ["ctrl+shift+b"], "command": "expand_selection_to_brackets" },
 	{ "keys": ["super+shift+space"], "command": "expand_region" },

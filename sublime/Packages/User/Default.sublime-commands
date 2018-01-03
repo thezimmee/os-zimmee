@@ -66,8 +66,11 @@
 	----------------------------------------------------------------------------------------------------
 	**/
 
-	{ "caption": "Theme: Save active theme", "command": "prompt_save_active_theme" },
-	{ "caption": "Theme: Create unfocused theme from current theme", "command": "create_unfocused_theme" },
+	{ "caption": "Theme: Save active color scheme", "command": "prompt_save_active_theme" },
+	{
+		"caption": "Theme: Create / update unfocused color scheme from current scheme",
+		"command": "create_unfocused_color_scheme"
+	},
 	{ "caption": "ThemeTweaker: grayscale", "command": "theme_tweaker_grayscale" },
 	{ "caption": "ThemeTweaker: glow", "command": "theme_tweaker_glow" },
 	{ "caption": "ThemeTweaker: sepia", "command": "theme_tweaker_sepia" },

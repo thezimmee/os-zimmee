@@ -4,42 +4,47 @@
 # bash update
 
 # load config
-if [[ -z $CONFIG__loaded ]]; then
-	local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
-	CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ../config && cd $CURRENT
-fi
+init () {
+	# Load config.
+	if [[ -z $CONFIG__loaded ]]; then
+		local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
+		CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ./config && cd $CURRENT
+	fi
 
-# Update homebrew.
-echo "Would you like to update homebrew and all its packages? (y/n) "
-read -r response
-if [[ $response =~ ^(yes|y)$ ]]; then
-	bash "${OSZ_ROOT}/homebrew/update"
-fi
+	# Update homebrew.
+	echo "Would you like to update homebrew and all its packages? (y/n) "
+	read -r response
+	if [[ $response =~ ^(yes|y)$ ]]; then
+		bash "${OSZ_ROOT}/homebrew/update"
+	fi
 
-# Update homebrew.
-echo "Would you like to run \`brew prune\`? (y/n) "
-read -r response
-if [[ $response =~ ^(yes|y)$ ]]; then
-	brew prune
-fi
+	# Update homebrew.
+	echo "Would you like to run \`brew prune\`? (y/n) "
+	read -r response
+	if [[ $response =~ ^(yes|y)$ ]]; then
+		brew prune
+	fi
 
-# Update npm packages.
-echo "Would you like to update npm global packages? (y/n) "
-read -r response
-if [[ $response =~ ^(yes|y)$ ]]; then
-	bash "${OSZ_ROOT}/node/update"
-fi
+	# Update npm packages.
+	echo "Would you like to update npm global packages? (y/n) "
+	read -r response
+	if [[ $response =~ ^(yes|y)$ ]]; then
+		bash "${OSZ_ROOT}/node/update"
+	fi
 
-# Update macOS software.
-echo "Would you like to update macOS Apps? (y/n) "
-read -r response
-if [[ $response =~ ^(yes|y)$ ]]; then
-	sudo softwareupdate --install --all
-fi
+	# Update macOS software.
+	echo "Would you like to update macOS Apps? (y/n) "
+	read -r response
+	if [[ $response =~ ^(yes|y)$ ]]; then
+		sudo softwareupdate --install --all
+	fi
 
-# Update prezto / zsh.
-echo "Would you like to update prezto (zsh)? (y/n) "
-read -r response
-if [[ $response =~ ^(yes|y)$ ]]; then
-	zprezto-update
-fi
+	# Update prezto / zsh.
+	echo "Would you like to update prezto (zsh)? (y/n) "
+	read -r response
+	if [[ $response =~ ^(yes|y)$ ]]; then
+		zprezto-update
+	fi
+}
+
+init
