@@ -4,10 +4,10 @@
 	"variables": {
 		"fg__magenta": "hsl(331, 74%, 52%)",
 		"bg__magenta": "hsl(331, 64%, 52%)",
-		"fg__pink": "hsl(331, 46%, 68%)",
-		"bg__pink": "hsl(331, 46%, 56%)",
-		"fg__purple": "hsl(237, 70%, 75%)",
-		"bg__purple": "hsl(237, 50%, 55%)",
+		"fg__pink": "hsl(331, 56%, 68%)",
+		"bg__pink": "hsl(331, 56%, 56%)",
+		"fg__purple": "hsl(237, 80%, 75%)",
+		"bg__purple": "hsl(237, 60%, 55%)",
 		"fg__blue": "hsl(205, 69%, 49%)",
 		"bg__blue": "hsl(205, 79%, 36%)",
 		"fg__cyan": "hsl(190, 70%, 45%)",
@@ -21,7 +21,7 @@
 		"fg__green_yellow": "hsl(100, 38%, 50%)",
 		"bg__green_yellow": "hsl(100, 58%, 30%)",
 		"fg__yellow": "hsl(40, 64%, 64%)",
-		"bg__yellow": "hsl(40, 74%, 34%)",
+		"bg__yellow": "hsl(40, 100%, 34%)",
 		"fg__orange": "hsl(30, 72%, 60%)",
 		"bg__orange": "hsl(30, 72%, 40%)",
 		"fg__brown": "hsl(26, 29%, 54%)",
@@ -30,8 +30,9 @@
 		"bg__red_orange": "hsl(16, 79%, 41%)",
 		"fg__red": "hsl(0, 68%, 62%)",
 		"bg__red": "hsl(0, 48%, 42%)",
+		"bg__red_bright": "hsl(0, 68%, 42%)",
 		"fg__maroon": "hsl(0, 42%, 62%)",
-		"bg__maroon": "hsl(0, 32%, 52%)",
+		"bg__maroon": "hsl(0, 70%, 52%)",
 		"fg__indent_guides": "hsl(194, 10%, 28%)",
 		"fg__gutter": "hsl(194, 10%, 35%)",
 		"fg__faded": "hsl(194, 10%, 55%)",
@@ -170,7 +171,7 @@
 		{
 			"name": "Keywords > comparison",
 			"scope":
-				"keyword.operator.comparison, keyword.operator.assignment, keyword.operator.logical, keyword.operator.ternary, keyword.operator.arithmetic, storage.type.function.arrow",
+				"keyword.operator.comparison, keyword.operator.assignment, keyword.operator.logical, keyword.operator.ternary, keyword.operator.arithmetic, storage.type.function.arrow, keyword.operator.bitwise, keyword.operator.relational",
 			"font_style": "normal"
 		},
 		// {
@@ -186,7 +187,7 @@
 		{
 			"name": "Storage type",
 			"scope": "storage.type.function, storage.type.class",
-			"foreground": "var(fg__cyan)",
+			"foreground": "var(fg__purple)",
 			"font_style": "italic"
 		},
 		{
@@ -240,7 +241,7 @@
 		{
 			"name": "Classes",
 			"scope": "entity.name.class",
-			"foreground": "var(fg__purple)",
+			"foreground": "var(fg__blue)",
 			"font_style": "bold"
 		},
 
@@ -248,13 +249,14 @@
 		{
 			"name": "Function name",
 			"scope": "entity.name.function",
-			"foreground": "var(fg__purple)",
+			"foreground": "var(fg__blue)",
 			"font_style": "bold"
 		},
 		{
 			"name": "Function parameter",
-			"scope": "variable.parameter, meta.function-call.arguments",
-			"font_style": "italic"
+			"scope": "variable.parameter",
+			"foreground": "var(fg__green_yellow)"
+			// "font_style": "italic"
 		},
 		{
 			"name": "Function call",
@@ -362,7 +364,7 @@
 		// Headings:
 		{
 			"name": "Text > headings",
-			"scope": "markup.heading",
+			"scope": "markup.heading, markup.heading entity.name.class",
 			"foreground": "var(fg__red)",
 			"font_style": "bold"
 		},
@@ -390,7 +392,7 @@
 		// Links:
 		{
 			"name": "Text > links",
-			"scope": "markup.underline.link, string.other.link",
+			"scope": "markup.underline.link, string.other.link, markup.underline.link comment",
 			"foreground": "var(fg__purple)"
 		},
 		{
@@ -469,8 +471,13 @@
 		// Code:
 		{
 			"name": "Text > code",
-			"scope": "markup.raw.inline - (punctuation), markup.raw.block",
-			"background": "color(var(fg__text) alpha(0.096))"
+			"scope": "markup.raw.inline - (punctuation)",
+			"background": "color(var(fg__text) alpha(0.08))"
+		},
+		{
+			"name": "Text > code block",
+			"scope": "markup.raw.block",
+			"background": "color(var(fg__text) alpha(0.04))"
 		},
 		{
 			"name": "Text > code block syntax name",
@@ -536,7 +543,7 @@
 			"name": "Invalid",
 			"scope": "invalid",
 			"foreground": "var(fg__bright)",
-			"background": "var(bg__red)"
+			"background": "var(bg__red_bright)"
 		},
 		{
 			"name": "Invalid deprecated",
@@ -548,7 +555,9 @@
 		// Text diffs:
 		{
 			"name": "Diff header",
-			"scope": "meta.diff, meta.diff.header"
+			"scope": "meta.diff, meta.diff.header, git-savvy.commit meta.diff.range.unified",
+			"background": "color(var(bg__blue) alpha(0.4))"
+			// "background": "var(bg__alt)"
 		},
 		{
 			"name": "Diff > deleted",
@@ -575,13 +584,13 @@
 		{
 			"name": "Linter > error",
 			"scope": "region.redish",
-			"background": "var(bg__red)",
+			"background": "color(var(bg__red_bright) alpha(0.8))",
 			"foreground": "var(fg__bright)"
 		},
 		{
 			"name": "Linter > warning",
 			"scope": "region.yellowish",
-			"background": "color(var(bg__yellow) alpha(1))",
+			"background": "color(var(bg__yellow) alpha(0.5))",
 			"foreground": "var(fg__bright)"
 		},
 
@@ -612,7 +621,7 @@
 		{
 			"name": "Section headers - default",
 			"scope":
-				"keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation",
+				"keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation, punctuation.definition.git-savvy.section-header",
 			"background": "var(bg__blue)",
 			"foreground": "var(fg__bright)",
 			"font_style": "bold"
@@ -627,7 +636,7 @@
 		{
 			"name": "Section headers - warning",
 			"scope":
-				"keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation",
+				"keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation, punctuation.definition.git-savvy.section-header.remote",
 			"background": "var(bg__red)"
 		},
 		{
@@ -679,7 +688,8 @@
 		{
 			"name": "Status > untracked files",
 			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.status.file",
-			"foreground": "var(fg__faded)"
+			"foreground": "var(fg__faded)",
+			"font_style": "italic"
 		},
 		{
 			"name": "Status > unstaged files",
