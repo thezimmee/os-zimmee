@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+### ------------------------------------------------------------------------------------------------
+##  $TM_FILENAME
+##  ${TM_FILENAME/./-/g}
+##  @author  ${1:Zimmee  <thezimmee@gmail.com>}${2:brikcss  <https://github.com/brikcss>}
+##  @description  ${3:[description]}
+### ------------------------------------------------------------------------------------------------
+
+
+]]></content>
+	<tabTrigger>file-title</tabTrigger>
+	<description>File/title comment.</description>
+	<scope>source.yaml,source.shell,source.ini.editorconfig</scope>
+</snippet>

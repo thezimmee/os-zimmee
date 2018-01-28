@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+module.exports = (brik, data, tim) => {
+	let ${1:pkg} = {${2:[${1} properties]}};
+
+	${0}
+
+	return ${1:pkg};
+};
+]]></content>
+	<tabTrigger>xjson</tabTrigger>
+	<description>XJS/XJSON export</description>
+	<scope>source.js</scope>
+</snippet>

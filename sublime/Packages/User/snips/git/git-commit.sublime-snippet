@@ -1,15 +1,14 @@
 <snippet>
 	<content><![CDATA[
-${1:<type> (feat|fix|docs|perf|test|refactor|style|build|revert)}(${2:<scope>}): ${3:<subject>}${4:
+${1:<feat|fix|docs|style|refactor|test|revert|build|perf|tools|chore>}(${2:<scope>}): ${3:<subject>}${4:
 
-${5:<body>}
+${5:[body]}
 
-${6:BREAKING CHANGES: }
+${6:BREAKING CHANGE: }
 
-${7:<footer:issues>}}
+${7:[footer:issues]}}
 ]]></content>
-	<tabTrigger>:msg</tabTrigger>
-	<!-- Note: This snippet is applied with a scope `git-savvy.make-commit`. [GitSavvy](https://github.com/divmain/GitSavvy) is a Sublime Text package that beautifully integrates git with Sublime (highly recommended!). If you do not use GitSavvy, simply [modify the `scope`](https://www.sublimetext.com/docs/3/scope_naming.html) for your needs. -->
+	<tabTrigger>type</tabTrigger>
+	<description>Commit type</description>
 	<scope>git-savvy.make-commit</scope>
-	<description>Write a commit message that follows `brikcss` git commit policy (https://github.com/brikcss).</description>
 </snippet>

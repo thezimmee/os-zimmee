@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+/* eslint-env mocha */
+const tim = require('../tim');
+
+describe('${1:[suite description]}', () => {
+	it('${2:[test description]}'${0: () => {}});
+});
+]]></content>
+	<tabTrigger>test--mocha</tabTrigger>
+	<description>New mocha test</description>
+	<scope>source.js</scope>
+</snippet>
