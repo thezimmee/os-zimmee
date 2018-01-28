@@ -3,36 +3,36 @@
     "result" : {
       "textSpacing" : 4,
       "subtext" : {
-        "size" : 11,
+        "size" : 12,
         "colorSelected" : "#EEE8D5FF",
         "font" : "System",
         "color" : "#657B83FF"
       },
       "shortcut" : {
-        "size" : 16,
+        "size" : 17,
         "colorSelected" : "#083542FF",
         "font" : "System",
         "color" : "#93A0A1FF"
       },
       "backgroundSelected" : "#268BD2FF",
       "text" : {
-        "size" : 20,
+        "size" : 22,
         "colorSelected" : "#EEE8D5FF",
         "font" : "Roboto Mono Light for Powerline",
         "color" : "#93A0A1FF"
       },
       "iconPaddingHorizontal" : 5,
-      "paddingVertical" : 4,
-      "iconSize" : 40
+      "paddingVertical" : 8,
+      "iconSize" : 31
     },
     "search" : {
-      "paddingVertical" : 2,
+      "paddingVertical" : 0,
       "background" : "#062B36FF",
       "spacing" : 10,
       "text" : {
-        "size" : 36,
+        "size" : 34,
         "colorSelected" : "#576266FF",
-        "font" : "System",
+        "font" : "Source Code Pro for Powerline",
         "color" : "#268BD2FF"
       },
       "backgroundSelected" : "#CACACAFF"
