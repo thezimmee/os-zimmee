@@ -1,7 +1,8 @@
 // SublimeLinter Settings - User
 {
+	// "debug": false,
 	"gutter_theme": "Default",
-	"lint_mode": "background",
+	// "lint_mode": "background",
 	"no_column_highlights_line": true,
 	"linters": {
 		"annotations": {

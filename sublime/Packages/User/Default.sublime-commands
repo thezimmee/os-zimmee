@@ -14,8 +14,16 @@
 	----------------------------------------------------------------------------------------------------
 	**/
 
-	// Open mergetool.
-	{ "caption": "git: mergetool", "command": "shell_command", "args": { "command": "git mergetool" } },
+	// git mergetool.
+	{
+		"caption": "git: mergetool",
+		"command": "send_code",
+		"args": { "command": "cd \"$file_path\" && git mergetool" }
+	},
+	// git difftool.
+	{ "caption": "git: difftool", "command": "send_code", "args": { "cmd": "cd \"$file_path\" && git difftool" } },
+	// Add open file to comparison.
+	{ "caption": "Diff: Add file to diff", "command": "send_code", "args": { "cmd": "compare \"$file\"" } },
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
@@ -44,9 +52,14 @@
 	**/
 
 	{
-		"caption": "NPM install",
+		"caption": "NPM install (apps)",
 		"command": "shell_command",
 		"args": { "command": "npm install ${args::Packages to install}", "panel": true }
+	},
+	{
+		"caption": "NPM install (all)",
+		"command": "shell_command",
+		"args": { "command": "npm install", "panel": true }
 	},
 
 	/* [[END]] -------------------------------------------------------------------------------------- */

@@ -1,6 +1,14 @@
 {
-	"always_show_minimap_viewport": true,
+	"WrapPlus.break_long_words": false,
+	"WrapPlus.break_on_hyphens": false,
+	"afn_use_keybinding": false,
+	"always_show_minimap_viewport": false,
 	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 50,
+	"auto_complete_selector": "meta.tag - punctuation.definition.tag.begin, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc, git-savvy.make-commit",
+	"auto_complete_triggers":
+	[
+	],
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
@@ -11,17 +19,33 @@
 	"disable_formatted_linebreak": true,
 	"disable_tab_abbreviations": true,
 	"drag_text": false,
+	"draw_indent_guides": true,
 	"draw_minimap_border": true,
-	"draw_white_space": "all",
+	"draw_white_space": "selection",
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
 	"focus_active_view": true,
-	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "node_modules"],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules"
+	],
 	"font_face": "Source Code Pro for Powerline",
 	"font_size": 14,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored_packages": ["Color Highlighter", "Markdown", "Sublimerge 3", "Vintage"],
+	"ignored_packages":
+	[
+		"AutoFileName",
+		"Color Highlighter",
+		"FuzzyFilePath",
+		"Markdown",
+		"Sublimerge 3",
+		"Vintage"
+	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"match_brackets": true,
@@ -30,8 +54,12 @@
 	"match_brackets_content": true,
 	"match_brackets_square": true,
 	"match_tags": true,
+	"move_to_limit_on_up_down": false,
 	"open_files_in_new_window": false,
-	"rulers": [80, 100, 120],
+	"rulers":
+	[
+		100
+	],
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"theme": "Adaptive.sublime-theme",
@@ -40,6 +68,7 @@
 	"theme_agila_compact_tab": true,
 	"theme_agila_modified_tab_marker_yellow": true,
 	"theme_agila_sidebar_mini": true,
+	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": true
 }

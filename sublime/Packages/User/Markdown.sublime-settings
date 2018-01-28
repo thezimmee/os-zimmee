@@ -4,14 +4,25 @@
 	"caret_extra_top": 2,
 	"caret_style": "phase",
 	"color_scheme": "Packages/User/themes/OS Zimmee - Dark.sublime-color-scheme",
-	"extensions": ["mdown", "txt", "md"],
+	"extensions":
+	[
+		"mdown",
+		"txt"
+	],
+	"gutter": false,
 	"highlight_line": true,
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"mde.auto_increment_ordered_list_number": false,
 	"mde.list_indent_auto_switch_bullet": false,
-	"mde.list_indent_bullets": ["-"],
-	"rulers": [80, 100, 120],
+	"mde.list_indent_bullets":
+	[
+		"-"
+	],
+	"rulers":
+	[
+		100
+	],
 	"spell_check": true,
 	"word_wrap": true,
 	"wrap_width": 80

@@ -10,8 +10,8 @@
 		"sublime-color-scheme",
 		"sublime-theme"
 	],
-	"auto_format_on_save_excludes": ["*/node_modules/*", "/*.md"],
-	"max_file_size_limit": 25000,
+	"auto_format_on_save_excludes": ["*/node_modules/*", "/*.md", "*.min.js"],
+	"max_file_size_limit": 50000,
 	"additional_cli_args": {
 		"--config-precedence": "file-override"
 	}

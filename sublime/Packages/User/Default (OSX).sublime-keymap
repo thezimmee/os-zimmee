@@ -11,6 +11,9 @@
 	// Toggle sidebar.
 	// { "keys": ["super+\\"], "command": "toggle_side_bar" },
 	{ "keys": ["super+\\"], "command": "focus_file_on_sidebar" },
+	{ "keys": ["super+;"], "command": "focus_file_on_sidebar" },
+	// Toggle minimap.
+	{ "keys": ["super+'"], "command": "toggle_minimap" },
 	// Toggle code folding buttons.
 	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" } },
 	// Toggle focus on active pane.
@@ -23,6 +26,12 @@
 		"keys": ["super+shift+."],
 		"command": "cycle_setting",
 		"args": { "setting": "draw_white_space", "options": ["all", "selection"] }
+	},
+	// Toggle indent guides.
+	{
+		"keys": ["super+alt+shift+."],
+		"command": "toggle_setting",
+		"args": { "setting": "draw_indent_guides" }
 	},
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
@@ -62,41 +71,15 @@
 	**/
 
 	// Word navigation / selection.
-	// { "keys": ["ctrl+alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
-	// { "keys": ["ctrl+alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
-	// {
-	// 	"keys": ["ctrl+alt+shift+left"],
-	// 	"command": "move",
-	// 	"args": { "by": "subwords", "forward": false, "extend": true }
-	// },
-	// {
-	// 	"keys": ["ctrl+alt+shift+right"],
-	// 	"command": "move",
-	// 	"args": { "by": "subword_ends", "forward": true, "extend": true }
-	// },
-
-	// { "keys": ["ctrl+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
-	// { "keys": ["ctrl+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
-	// { "keys": ["ctrl+shift+left"], "command": "move", "args": { "by": "words", "forward": false, "extend": true } },
-	// {
-	// 	"keys": ["ctrl+shift+right"],
-	// 	"command": "move",
-	// 	"args": { "by": "words", "forward": true, "extend": true }
-	// },
-
-	{ "keys": ["alt+left"], "command": "move", "args": { "by": "words", "forward": false } },
-	{ "keys": ["alt+right"], "command": "move", "args": { "by": "word_ends", "forward": true } },
 	{ "keys": ["super+ctrl+left"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
 	{ "keys": ["super+ctrl+right"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
-	// { "keys": ["alt+left"], "command": "move", "args": { "by": "subwords", "forward": false } },
-	// { "keys": ["alt+right"], "command": "move", "args": { "by": "subword_ends", "forward": true } },
-	{ "keys": ["ctrl+left"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
-	{ "keys": ["ctrl+right"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
 	// VIM-like navigation.
-	{ "keys": ["ctrl+,"], "command": "move_to_beg_of_subword_boundary", "args": { "forward": false } },
-	{ "keys": ["ctrl+."], "command": "move_to_beg_of_subword_boundary", "args": { "forward": true } },
+	{ "keys": ["ctrl+,"], "command": "move", "args": { "by": "subwords", "forward": false } },
+	{ "keys": ["ctrl+."], "command": "move", "args": { "by": "subword_ends", "forward": true } },
 	{ "keys": ["alt+,"], "command": "move", "args": { "by": "words", "forward": false } },
 	{ "keys": ["alt+."], "command": "move", "args": { "by": "word_ends", "forward": true } },
+	{ "keys": ["super+ctrl+,"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
+	{ "keys": ["super+ctrl+."], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
 	{
 		"keys": ["ctrl+shift+,"],
 		"command": "move",
@@ -105,7 +88,7 @@
 	{
 		"keys": ["ctrl+shift+."],
 		"command": "move",
-		"args": { "by": "subwords_end", "forward": true, "extend": true }
+		"args": { "by": "subwords", "forward": true, "extend": true }
 	},
 	{ "keys": ["alt+shift+,"], "command": "move", "args": { "by": "words", "forward": false, "extend": true } },
 	{ "keys": ["alt+shift+."], "command": "move", "args": { "by": "word_ends", "forward": true, "extend": true } },
@@ -142,6 +125,15 @@
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
 	/**
+	 *  [[START]] CODE MANIPULATION
+	----------------------------------------------------------------------------------------------------
+	**/
+
+	{ "keys": ["super+alt+/"], "command": "toggle_comment", "args": { "block": true } },
+
+	/* [[END]] -------------------------------------------------------------------------------------- */
+
+	/**
 	 *  [[START]] FILE BROWSING & MANIPULATION
 	----------------------------------------------------------------------------------------------------
 	**/
@@ -154,6 +146,50 @@
 	{ "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
 	{ "keys": ["super+h"], "command": "fuzzy_toggle_hidden", "context": [{ "key": "fuzzy_toggle_hidden" }] },
 	{ "keys": ["super+n"], "command": "fuzzy_make_file", "context": [{ "key": "fuzzy_make_file" }] },
+	// File path autocompletion.
+	{ "keys": ["super+alt+."], "command": "file_system_comp_trigger" },
+	// {
+	// 	"keys": ["."],
+	// 	"command": "run_multiple_commands",
+	// 	"context": [
+	// 		// { "key": "preceding_text", "operator": "regex_contains", "operand": "/.+?(?=')/" },
+	// 		{ "key": "selector", "operator": "equal", "operand": "source string.quoted" }
+	// 	],
+	// 	"args": {
+	// 		"commands": [
+	// 			{ "command": "insert_snippet", "args": { "contents": "." } },
+	// 			{ "command": "file_system_comp_trigger" }
+	// 		]
+	// 	}
+	// },
+	{
+		"keys": ["."],
+		"commands": "run_multiple_commands",
+		"context": [{ "key": "selector", "operator": "equal", "operand": "source string.quoted" }],
+		"args": {
+			"commands": [
+				{ "command": "insert_snippet", "args": { "contents": "." } },
+				// { "command": "hide_auto_complete", "wait": 500 }
+				{ "command": "file_system_comp_trigger" }
+			]
+		}
+	},
+	{
+		"keys": ["/"],
+		"command": "run_multiple_commands",
+		"context": [
+			{ "key": "preceding_text", "operator": "regex_contains", "operand": ".+?(?=(\"|')(.)?(.)?)" },
+			{ "key": "selector", "operator": "equal", "operand": "source string.quoted" }
+		],
+		"args": {
+			"commands": [
+				{ "command": "insert_snippet", "args": { "contents": "/" } },
+				{ "command": "file_system_comp_trigger" }
+			]
+		}
+	},
+	// Open last closed file.
+	{ "keys": ["super+shift+t"], "command": "reopen_last_file" },
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
