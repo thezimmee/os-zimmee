@@ -1,14 +1,12 @@
 <snippet>
 	<content><![CDATA[
-module.exports = (brik, data, tim) => {
-	let ${1:pkg} = {${2:[${1} properties]}};
-
-	${0}
+module.exports = (brik = {}, {file, tim}) => {
+	let ${1:pkg} = {${0}};
 
 	return ${1:pkg};
 };
 ]]></content>
 	<tabTrigger>xjson</tabTrigger>
-	<description>XJS/XJSON export</description>
+	<description>JS export template (XJS/XJSON)</description>
 	<scope>source.js</scope>
 </snippet>

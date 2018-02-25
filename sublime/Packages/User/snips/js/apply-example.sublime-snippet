@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:<function to invoke>}.apply(${2:<context (`this`)>}, [${0:, [arguments\]>}])
+]]></content>
+	<tabTrigger>apply</tabTrigger>
+	<description>Apply method example</description>
+	<scope>source.js</scope>
+</snippet>

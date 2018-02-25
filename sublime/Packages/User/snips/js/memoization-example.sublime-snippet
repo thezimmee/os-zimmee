@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+// Memoization is an optimization technique that speeds up function execution by storing results of expensive operations and returning the cached results when the same set of inputs occur again. JavaScript objects behave like associative arrays, making it easy to implement memoization in JavaScript. Source: https://www.infoworld.com/article/3196070/node-js/10-javascript-concepts-nodejs-programmers-must-master.html
+function memoizeFunction(fn) {
+	// Store results...
+	var cache = {};
+	return function() {
+		// Do something...
+		var key = arguments[0];
+		if (cache[key]) {
+			return cache[key];
+		} else {
+			var val = fn.apply(this, arguments);
+			cache[key] = val;
+			return val;
+		}
+	 };
+}
+
+// Call the memoize function.
+var fibonacci = memoizeFunction(function(n) {
+	return (n === 0 || n === 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);
+});
+]]></content>
+	<tabTrigger>memoize</tabTrigger>
+	<description>Memoize example</description>
+	<scope>source.js</scope>
+</snippet>

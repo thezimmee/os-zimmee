@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+after(${1:\['optional description'\], }() => {
+	${0}
+});
+]]></content>
+	<tabTrigger>after</tabTrigger>
+	<description>after all tests</description>
+	<scope>source.js</scope>
+</snippet>

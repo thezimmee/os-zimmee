@@ -1,0 +1,45 @@
+<snippet>
+	<content><![CDATA[
+// Method overloading allows multiple methods to have the same name but different arguments. The compiler or interpreter determines which function to call based on the number of arguments passed. Method overloading is not directly supported in JavaScript. But you can achieve something very much like it as shown below. Source: https://www.infoworld.com/article/3196070/node-js/10-javascript-concepts-nodejs-programmers-must-master.html
+
+// The overload method.
+function overloadMethod(object, name, fn) {
+	if (!object._overload) {
+		object._overload = {};
+	}
+
+	if (!object._overload[name]) {
+		object._overload[name] = {};
+	}
+
+	if (!object._overload[name][fn.length]) {
+		object._overload[name][fn.length] = fn;
+	}
+
+	object[name] = function() {
+		if (this._overload[name][arguments.length]) {
+			return this._overload[name][arguments.length].apply(this, arguments);
+		}
+	};
+}
+
+//
+function Students() {
+	overloadMethod(this, 'find', function() {
+		// Find a student by name
+	});
+
+	overloadMethod(this, 'find', function(first, last) {
+		// Find a student by first and last name
+	});
+}
+
+var students = new Students();
+students.find(); // Finds all
+students.find('Rahul'); // Finds students by name
+students.find('Rahul', 'Mhatre'); // Finds users by first and last name
+]]></content>
+	<tabTrigger>memoize</tabTrigger>
+	<description>Memoize example</description>
+	<scope>source.js</scope>
+</snippet>

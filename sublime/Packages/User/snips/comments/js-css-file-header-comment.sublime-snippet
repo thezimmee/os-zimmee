@@ -13,5 +13,5 @@
 	<tabTrigger>file-title</tabTrigger>
 	<description>File/title comment.</description>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.js,source.json.sublime,source.css,source.sass,source.less</scope>
+	<scope>source.js,source.json.sublime,source.css,source.scss,source.sass,source.less</scope>
 </snippet>

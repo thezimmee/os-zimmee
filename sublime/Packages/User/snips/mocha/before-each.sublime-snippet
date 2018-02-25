@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+beforeEach(${1:\['optional description'\], }() => {
+	${0}
+});
+]]></content>
+	<tabTrigger>beforeEach</tabTrigger>
+	<description>before each test</description>
+	<scope>source.js</scope>
+</snippet>
