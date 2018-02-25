@@ -4,10 +4,9 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"_gsdata_",
-				"src2"
+				"node_modules"
 			],
-			"path": "~/Projects/cs-office2/"
+			"path": "~/Projects/ds-ui-library--old"
 		}
 	]
 }

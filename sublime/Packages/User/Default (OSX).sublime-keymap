@@ -10,10 +10,10 @@
 	{ "keys": ["super+alt+y"], "command": "toggle_setting", "args": { "setting": "draw_centered" } },
 	// Toggle sidebar.
 	// { "keys": ["super+\\"], "command": "toggle_side_bar" },
-	{ "keys": ["super+\\"], "command": "focus_file_on_sidebar" },
+	// { "keys": ["super+\\"], "command": "focus_file_on_sidebar" },
 	{ "keys": ["super+;"], "command": "focus_file_on_sidebar" },
 	// Toggle minimap.
-	{ "keys": ["super+'"], "command": "toggle_minimap" },
+	{ "keys": ["super+\\"], "command": "toggle_minimap" },
 	// Toggle code folding buttons.
 	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" } },
 	// Toggle focus on active pane.
@@ -23,13 +23,13 @@
 	},
 	// Toggle how whitespace is drawn.
 	{
-		"keys": ["super+shift+."],
+		"keys": ["super+shift+;"],
 		"command": "cycle_setting",
 		"args": { "setting": "draw_white_space", "options": ["all", "selection"] }
 	},
 	// Toggle indent guides.
 	{
-		"keys": ["super+alt+shift+."],
+		"keys": ["super+alt+shift+;"],
 		"command": "toggle_setting",
 		"args": { "setting": "draw_indent_guides" }
 	},
@@ -121,6 +121,21 @@
 	{ "keys": ["super+alt+down"], "command": "inc_dec_value", "args": { "action": "dec_min" } },
 	{ "keys": ["super+shift+alt+up"], "command": "inc_dec_value", "args": { "action": "inc_max" } },
 	{ "keys": ["super+shift+alt+down"], "command": "inc_dec_value", "args": { "action": "dec_max" } },
+	// Restore default bindings to `super+enter`.
+	{
+		"keys": ["super+enter"],
+		"command": "run_macro_file",
+		"args": { "file": "res://Packages/Default/Add Line.sublime-macro" }
+	},
+	{
+		"keys": ["super+enter"],
+		"command": "gs_commit_view_do_commit",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_savvy.get_long_text_view", "operator": "equal", "operand": true },
+			{ "key": "setting.git_savvy.commit_on_close", "operator": "equal", "operand": false }
+		]
+	},
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
