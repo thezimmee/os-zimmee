@@ -3,15 +3,18 @@
 #
 # `bash sublime/setup`
 
+local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
+
 init () {
 	# Load config.
 	if [[ -z $CONFIG__loaded ]]; then
-		local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
 		CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ../config && cd $CURRENT
+		unset $CURRENT
 	fi
 
 	# Ask what to set up.
-	read -p "What do you want to set up for Sublime? (1) Dotfiles; (2) Everything; "
+	printf '%s ' 'What do you want to set up for Sublime? (1) Dotfiles; (2) Everything;'
+	read REPLY
 	if [[ $REPLY = 1 ]]; then
 		setup_dotfiles
 	else
@@ -27,7 +30,8 @@ setup_sublime () {
 	echo "Setting up Sublime..."
 	# Symlink sublime user preferences.
 	if [ -e "${CONFIG__packages_path}/Packages" ]; then
-		read -p "Sublime /Packages directory already exists... overwrite with symlink? [y(es)/n(o)] "
+		printf '%s ' 'Sublime /Packages directory already exists... overwrite with symlink? [y(es)/n(o)]'
+		read REPLY
 		if [[ $REPLY =~ ^(yes|y)$ ]]; then
 			rm -r "${CONFIG__packages_path}/Packages"
 		fi
@@ -36,13 +40,15 @@ setup_sublime () {
 	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
 
 	# Symlink all .link files to the home directory.
-	read -p "Symlink all sublime/*.link files and folders to the home directory? [y(es)/n(o)] "
+	printf '%s ' 'Symlink all sublime/*.link files and folders to the home directory? [y(es)/n(o)]'
+	read REPLY
 	if [[ $REPLY =~ ^(yes|y)$ ]]; then
 		setup_dotfiles
 	fi
 
 	# Set as default text editor.
-	read -p "Set Sublime as default text editor? [y(es)/n(o)] "
+	printf 'Set Sublime as default text editor? [y(es)/n(o)]'
+	read REPLY
 	if [[ $REPLY =~ ^(yes|y)$ ]]; then
 		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 	fi
