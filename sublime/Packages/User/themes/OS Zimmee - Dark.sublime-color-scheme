@@ -44,52 +44,33 @@
 		"bg__alt": "hsl(194, 40%, 17%)"
 	},
 	"globals": {
-		// Backdrop.
 		"background": "var(bg__editor)",
 		"foreground": "var(fg__text)",
-		// Cursor.
 		"caret": "var(fg__magenta)",
-		// Line.
 		"line_highlight": "color(var(fg__cyan_blue) alpha(0.2))",
-		// Selected text.
 		"selection": "color(var(fg__cyan_blue) alpha(0.3))",
 		"selection_border": "color(var(fg__cyan_blue) alpha(0.4))",
-		// Find results.
 		"find_highlight": "var(bg__pink)",
 		"find_highlight_foreground": "var(bg__editor)",
-		// Other find results.
 		"highlight": "var(bg__pink)",
-		// Misspelled words.
 		"misspelling": "var(fg__red)",
-		// Minimap.
 		"minimap_border": "color(var(fg__yellow) alpha(0.4))",
-		// Theme accent color.
 		"accent": "var(fg__orange)",
-		// Gutter.
 		"gutter": "var(bg__gutter)",
 		"gutter_foreground": "var(fg__gutter)",
-		// Indent guides.
 		"guide": "var(fg__indent_guides)",
 		"active_guide": "var(fg__indent_guides)",
 		"stack_guide": "var(fg__indent_guides)",
-		// Brackets.
 		"brackets_options": "underline",
 		"brackets_foreground": "var(fg__faded)",
 		"brackets_contents_options": "underline",
 		"brackets_contents_foreground": "var(fg__faded)",
-		// Tags.
 		"tags_options": "underline",
 		"tags_foreground": "var(fg__faded)",
-		// Drop shadows.
 		"shadow": "var(bg__gutter)",
 		"shadow_width": "1"
 	},
 	"rules": [
-		// -----------------------------------
-		// COMMENTS, WHITE SPACE & PUNCTUATION
-		//
-
-		// Punctuation:
 		{
 			"name": "Annotation punctuation",
 			"scope": "punctuation.definition",
@@ -101,18 +82,12 @@
 			"foreground": "color(var(fg__text) alpha(0.8))"
 		},
 
-		// Comments:
 		{
 			"name": "Comments",
 			"scope": "comment",
 			"foreground": "var(fg__faded)"
 		},
 
-		// --------------------
-		// KEYWORDS & VARIABLES
-		//
-
-		// Variables:
 		{
 			"name": "Variable",
 			"scope": "variable",
@@ -120,26 +95,6 @@
 			"font_style": "normal"
 		},
 
-		// Library:
-		// {
-		// 	"name": "Library function",
-		// 	"scope": "support.function, support.macro"
-		// },
-		// {
-		// 	"name": "Library constant",
-		// 	"scope": "support.constant"
-		// },
-		// {
-		// 	"name": "Library class/type",
-		// 	"scope": "support.type.object, support.class",
-		// 	"foreground": "var(fg__red_orange)"
-		// },
-		// {
-		// 	"name": "Library variable",
-		// 	"scope": "support.other.variable"
-		// },
-
-		// Keywords:
 		{
 			"name": "Keywords",
 			"scope": "keyword",
@@ -174,11 +129,6 @@
 				"keyword.operator.comparison, keyword.operator.assignment, keyword.operator.logical, keyword.operator.ternary, keyword.operator.arithmetic, storage.type.function.arrow, keyword.operator.bitwise, keyword.operator.relational",
 			"font_style": "normal"
 		},
-		// {
-		// 	"name": "Storage",
-		// 	"scope": "storage",
-		// 	"foreground": "var(fg__red)"
-		// },
 		{
 			"name": "Storage type",
 			"scope": "storage.type",
@@ -192,7 +142,8 @@
 		},
 		{
 			"name": "Entity name",
-			"scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
+			"scope":
+				"entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
 			"foreground": "var(fg__brown)"
 		},
 		{
@@ -201,18 +152,12 @@
 			"foreground": "var(fg__red_orange)"
 		},
 
-		// ----------
-		// DATA TYPES
-		//
-
-		// Strings:
 		{
 			"name": "String",
 			"scope": "string",
 			"foreground": "var(fg__blue_green)"
 		},
 
-		// Constants:
 		{
 			"name": "Numbers",
 			"scope": "constant.numeric",
@@ -228,16 +173,13 @@
 			"name": "User-defined constant",
 			"scope": "constant.character, constant.other",
 			"foreground": "var(fg__purple)"
-			// "font_style": "italic"
 		},
 		{
 			"name": "Color constant",
 			"scope": "constant.other.color",
 			"foreground": "var(fg__cyan)"
-			// "font_style": "italic"
 		},
 
-		// Classes:
 		{
 			"name": "Classes",
 			"scope": "entity.name.class",
@@ -245,7 +187,6 @@
 			"font_style": "bold"
 		},
 
-		// Functions:
 		{
 			"name": "Function name",
 			"scope": "entity.name.function",
@@ -256,7 +197,6 @@
 			"name": "Function parameter",
 			"scope": "variable.parameter",
 			"foreground": "var(fg__green_yellow)"
-			// "font_style": "italic"
 		},
 		{
 			"name": "Function call",
@@ -265,7 +205,6 @@
 			"font_style": "italic"
 		},
 
-		// Units:
 		{
 			"name": "Units",
 			"scope": "keyword.other.unit",
@@ -273,7 +212,6 @@
 			"font_style": "italic"
 		},
 
-		// Object keys:
 		{
 			"name": "Object key - level 1",
 			"scope":
@@ -329,7 +267,6 @@
 			"foreground": "var(fg__brown)"
 		},
 
-		// Object properties:
 		{
 			"name": "Property names",
 			"scope": "support.type.property-name",
@@ -342,18 +279,12 @@
 			"font_style": "italic"
 		},
 
-		// ----
-		// TEXT
-		//
-
-		// Text scope:
 		{
 			"name": "Text",
 			"scope": "text",
 			"foreground": "color(var(fg__text) alpha(0.9))"
 		},
 
-		// Punctuation:
 		{
 			"name": "Text > faded punctuation",
 			"scope":
@@ -361,7 +292,6 @@
 			"foreground": "color(var(fg__faded) alpha(0.6))"
 		},
 
-		// Headings:
 		{
 			"name": "Text > headings",
 			"scope": "markup.heading, markup.heading entity.name.class",
@@ -369,7 +299,6 @@
 			"font_style": "bold"
 		},
 
-		// Bold / italic:
 		{
 			"name": "Text > bold",
 			"scope": "markup.bold",
@@ -389,7 +318,6 @@
 			"font_style": "bold italic"
 		},
 
-		// Links:
 		{
 			"name": "Text > links",
 			"scope": "markup.underline.link, string.other.link, markup.underline.link comment",
@@ -406,7 +334,6 @@
 			"foreground": "var(fg__cyan)"
 		},
 
-		// Images:
 		{
 			"name": "Text > image",
 			"scope": "meta.image.reference string",
@@ -418,14 +345,12 @@
 			"foreground": "var(fg__brown)"
 		},
 
-		// Separators:
 		{
 			"name": "Text > hr",
 			"scope": "punctuation.definition.thematic-break",
 			"foreground": "var(fg__faded)"
 		},
 
-		// Blockquotes:
 		{
 			"name": "Text > blockquote",
 			"scope": "markup.quote",
@@ -438,7 +363,6 @@
 			"background": "color(var(fg__faded) alpha(0.5))"
 		},
 
-		// Lists:
 		{
 			"name": "Text > bullets",
 			"scope": "markup.list.unnumbered.bullet, punctuation.definition.list_item",
@@ -450,7 +374,6 @@
 			"foreground": "var(fg__blue)"
 		},
 
-		// Tables:
 		{
 			"name": "Table > markup",
 			"scope": "punctuation.separator.table-cell, punctuation.section.table-header",
@@ -468,7 +391,6 @@
 			"foreground": "color(var(fg__text) alpha(0.75))"
 		},
 
-		// Code:
 		{
 			"name": "Text > code",
 			"scope": "markup.raw.inline - (punctuation)",
@@ -485,11 +407,6 @@
 			"foreground": "var(fg__purple)"
 		},
 
-		// -------------
-		// TAGS & MARKUP
-		//
-
-		// Tags:
 		{
 			"name": "Tag > name",
 			"scope": "entity.name.tag",
@@ -501,14 +418,12 @@
 			"foreground": "var(fg__cyan_blue)"
 		},
 
-		// Attributes:
 		{
 			"name": "Tag > attribute name",
 			"scope": "entity.other.attribute-name",
 			"foreground": "var(fg__orange)"
 		},
 
-		// Classes:
 		{
 			"name": "Tag > class names",
 			"scope":
@@ -516,7 +431,6 @@
 			"foreground": "var(fg__blue)"
 		},
 
-		// IDs:
 		{
 			"name": "IDs",
 			"scope":
@@ -524,21 +438,11 @@
 			"foreground": "var(fg__red_orange)"
 		},
 
-		// --------
-		// METADATA
-		//
-
-		// Filenames:
 		{
 			"scope": "entity.name.filename",
 			"foreground": "var(fg__purple)"
 		},
 
-		// -----------
-		// TEXT STYLES
-		//
-
-		// Invalid text:
 		{
 			"name": "Invalid",
 			"scope": "invalid",
@@ -552,12 +456,10 @@
 			"background": "var(bg__purple)"
 		},
 
-		// Text diffs:
 		{
 			"name": "Diff header",
 			"scope": "meta.diff, meta.diff.header, git-savvy.commit meta.diff.range.unified",
 			"background": "color(var(bg__blue) alpha(0.4))"
-			// "background": "var(bg__alt)"
 		},
 		{
 			"name": "Diff > deleted",
@@ -580,7 +482,6 @@
 			"foreground": "var(fg__red)"
 		},
 
-		// Lint styles:
 		{
 			"name": "Linter > error",
 			"scope": "region.redish",
@@ -594,21 +495,16 @@
 			"foreground": "var(fg__bright)"
 		},
 
-		// --------
-		// GITSAVVY
-		//
-
-		// Page header:
 		{
 			"name": "Summary header",
 			"scope": "meta.git-savvy.summary-header",
 			"background": "var(bg__editor)"
 		},
 
-		// Sections:
 		{
 			"name": "Status > file section",
-			"scope": "meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes",
+			"scope":
+				"meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes",
 			"background": "var(bg__alt)"
 		},
 		{
@@ -617,7 +513,6 @@
 			"foreground": "var(bg__editor)"
 		},
 
-		// Section headers:
 		{
 			"name": "Section headers - default",
 			"scope":
@@ -656,7 +551,6 @@
 			"foreground": "var(fg__cyan_blue)"
 		},
 
-		// Metadata:
 		{
 			"name": "Git metadata",
 			"scope":
@@ -675,11 +569,11 @@
 		},
 		{
 			"name": "File metadata - dim",
-			"scope": "comment.git-savvy.summary-header.root.info, string.other.commit-info.header.key.git-savvy",
+			"scope":
+				"comment.git-savvy.summary-header.root.info, string.other.commit-info.header.key.git-savvy",
 			"foreground": "var(fg__cyan_blue)"
 		},
 
-		// File statuses:
 		{
 			"name": "Status > removed files",
 			"scope": "meta.git-savvy.status.file.removed",
@@ -703,11 +597,11 @@
 		},
 		{
 			"name": "Status > stashed files",
-			"scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+			"scope":
+				"meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
 			"foreground": "var(fg__brown)"
 		},
 
-		// Keyboard shortcuts:
 		{
 			"name": "Status > keyboard shortcuts",
 			"scope":
@@ -721,7 +615,6 @@
 			"foreground": "var(bg__alt)"
 		},
 
-		// Git graph:
 		{
 			"name": "Graph > commit dot",
 			"scope": "git-savvy.graph keyword.graph.commit.git-savvy",
