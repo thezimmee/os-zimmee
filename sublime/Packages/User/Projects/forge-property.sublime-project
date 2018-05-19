@@ -5,9 +5,10 @@
 			"folder_exclude_patterns":
 			[
 				"node_modules",
-				"build"
+				"app",
+				"backup*"
 			],
-			"path": "~/Projects/cs-office2/"
+			"path": "~/Projects/forge-property"
 		}
 	]
 }
