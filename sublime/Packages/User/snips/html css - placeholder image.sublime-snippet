@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+http://via.placeholder.com/${1:200x100.png/ffffff/000000?text=My+cool+text}
+]]></content>
+	<tabTrigger>placeholder-image</tabTrigger>
+	<description>Placeholder image</description>
+	<scope>text.html,source.css</scope>
+</snippet>

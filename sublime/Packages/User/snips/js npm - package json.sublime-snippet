@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+{
+	"name": "${1:@brikcss/}",
+	"version": "0.0.0-development",
+	"description": "${2:[description]}",
+	"author": "${3:BrikCSS <https://github.com/brikcss>}",
+	"contributors": [
+		"The Zimmee <thezimmee@gmail.com>"
+	],
+	"homepage": "https://github.com/${4:brikcss/dsui-library-site}",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/${4:brikcss/dsui-library-site}.git"
+	},
+	"bugs": {
+		"url": "https://github.com/${4:brikcss/dsui-library-site}/issues"
+	},
+	"main": "",
+	"module": "",
+	"browser": "",
+	"bin": {},
+	"files": {}
+}
+]]></content>
+	<tabTrigger>package.json</tabTrigger>
+	<description>New package.json file</description>
+	<scope>source.json.npm</scope>
+</snippet>

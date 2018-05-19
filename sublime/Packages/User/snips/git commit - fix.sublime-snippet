@@ -1,14 +1,14 @@
 <snippet>
 	<content><![CDATA[
-${1:<feat|fix|docs|style|refactor|test|revert|build|perf|tools|chore>}(${2:<scope>}): ${3:<subject>}${4:
+${1:<fix|patch>}(${2:<scope>}): ${3:<subject>}${4:
 
 ${5:[body]}
 
 ${6:BREAKING CHANGE: }
 
-${7:[footer:issues]}}
+${7:[footer:references]}}
 ]]></content>
-	<tabTrigger>type</tabTrigger>
+	<tabTrigger>fix</tabTrigger>
 	<description>Commit type</description>
 	<scope>git-savvy.make-commit</scope>
 </snippet>

@@ -1,8 +1,7 @@
 <snippet>
 	<content><![CDATA[
 /** ------------------------------------------------------------------------------------------------
- *  $TM_FILENAME
- *  ${TM_FILENAME/./-/g}
+ *  @filename  $TM_FILENAME
  *  @author  ${1:Zimmee  <thezimmee@gmail.com>}${2:brikcss  <https://github.com/brikcss>}
  *  @description  ${3:[description]}
  ** --------------------------------------------------------------------------------------------- */

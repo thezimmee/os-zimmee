@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+feature(${1:<scope>}): ${2:<subject>}${3:
+
+${4:[body]}
+
+${5:BREAKING CHANGE: }
+
+${6:[footer:references]}}
+]]></content>
+	<tabTrigger>feature</tabTrigger>
+	<description>Commit type</description>
+	<scope>git-savvy.make-commit</scope>
+</snippet>
