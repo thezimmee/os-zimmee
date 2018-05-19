@@ -51,14 +51,14 @@
 	"colors": {
 		// Colors used by the inline-diff view to display changes.
 		"inline_diff": {
-			"add_foreground": "#F9F9F4",
-			"add_background": "#37A832",
-			"add_foreground_bold": "#F9F9F4",
-			"add_background_bold": "#287020",
-			"remove_foreground": "#F9F9F4",
-			"remove_background": "#A83732",
-			"remove_foreground_bold": "#F9F9F4",
-			"remove_background_bold": "#702820"
+			"add_foreground": "hsl(60, 29%, 97%)",
+			"add_background": "hsla(146, 62%, 30%, 0.8)",
+			"add_foreground_bold": "hsl(60, 29%, 97%)",
+			"add_background_bold": "hsl(146, 62%, 36%)",
+			"remove_foreground": "hsl(60, 29%, 97%)",
+			"remove_background": "hsla(0, 48%, 42%, 0.8)",
+			"remove_foreground_bold": "hsl(60, 29%, 97%)",
+			"remove_background_bold": "hsl(0, 48%, 48%)"
 		}
 	},
 
@@ -78,6 +78,23 @@
 	// Use the Sublime configured syntax for COMMIT_EDITMSG rather than
 	// the custom bundled syntax that comes with GitSavvy.
 	"use_syntax_for_commit_editmsg": false,
+
+	/*
+        https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#Commit-Guidelines
+        Add a distinct style guide for the commit messages:
+
+        First line should be max 50 characters
+        Second line should be empty
+        Any subsequent lines should be max 80 characters
+
+        It will use 'invalid.deprecated.line-too-long.git-commit' scope by default.
+        The warning is will be outlined instead of fully marked
+    */
+	"pedantic_commit": true,
+	"pedantic_commit_ruler": true,
+	"pedantic_commit_first_line_length": 100,
+	"pedantic_commit_message_line_length": 100,
+	"pedantic_commit_warning_length": 20,
 
 	// Change this to `false` to suppress the input in the panel output.
 	"show_input_in_output": true,

@@ -33,14 +33,21 @@
 		{ "name": "Projects", "path": "~/Projects/" },
 		{ "name": "Home", "path": "~" },
 		{ "name": "OS Zimmee", "path": "~/Projects/os-zimmee/" },
-		{ "name": "Memories", "path": "~/Memories/" },
+		{ "name": "Bertha", "path": "/Volumes/Bertha" },
+		{ "name": "Memories", "path": "/Volumes/Bertha/Memories" },
 		{ "name": "Cheatsheets", "path": "~/Projects/os-zimmee/cheatsheets/" },
 		{ "name": "Desktop", "path": "~/Desktop/" },
 		{ "name": "Downloads", "path": "~/Downloads/" },
 		{ "name": "Sublime", "path": "~/Projects/os-zimmee/sublime/Packages/User/" },
 		{ "name": "Sublime Snippets", "path": "~/Projects/os-zimmee/sublime/Packages/User/snips" },
-		{ "name": "Sublime Project Files", "path": "~/Projects/os-zimmee/sublime/Packages/User/projects" },
-		{ "name": "OS Zimmee Sublime Themes", "path": "~/Projects/os-zimmee/sublime/Packages/User/themes" }
+		{
+			"name": "Sublime Project Files",
+			"path": "~/Projects/os-zimmee/sublime/Packages/User/projects"
+		},
+		{
+			"name": "OS Zimmee Sublime Themes",
+			"path": "~/Projects/os-zimmee/sublime/Packages/User/themes"
+		}
 	],
 
 	// Add your folders relative to the project file (if project file exists on disk)

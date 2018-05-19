@@ -3,7 +3,7 @@
 	"WrapPlus.break_on_hyphens": false,
 	"afn_use_keybinding": false,
 	"always_show_minimap_viewport": false,
-	"auto_complete_commit_on_tab": true,
+	"auto_complete_commit_on_tab": false,
 	"auto_complete_delay": 50,
 	"auto_complete_selector": "meta.tag - punctuation.definition.tag.begin, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc, git-savvy.make-commit",
 	"auto_complete_triggers":
@@ -15,6 +15,7 @@
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/User/themes/OS Zimmee - Dark.sublime-color-scheme",
+	"copy_with_empty_selection": false,
 	"detect_indentation": false,
 	"disable_formatted_linebreak": true,
 	"disable_tab_abbreviations": true,
@@ -30,8 +31,7 @@
 		".svn",
 		".git",
 		".hg",
-		"CVS",
-		"node_modules"
+		"CVS"
 	],
 	"font_face": "Source Code Pro for Powerline",
 	"font_size": 14,
@@ -41,9 +41,10 @@
 	[
 		"AutoFileName",
 		"Color Highlighter",
+		"EJS",
 		"FuzzyFilePath",
 		"Markdown",
-		"Sublimerge 3",
+		"SublimeLinter-html-tidy",
 		"Vintage"
 	],
 	"line_padding_bottom": 1,
@@ -62,6 +63,7 @@
 	],
 	"shift_tab_unindent": true,
 	"show_full_path": true,
+	"table_editor_custom_column_alignment": true,
 	"theme": "Adaptive.sublime-theme",
 	"theme_agila_active_tab_entry_gray": true,
 	"theme_agila_auto_complete_lightblue": true,

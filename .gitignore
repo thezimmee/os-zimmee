@@ -29,6 +29,7 @@ sublime/Packages/mdpopups/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
 sublime/Packages/pathtools/
+sublime/Packages/jsonschema/
 sublime/Packages/JsPrettier/
 sublime/Packages/Pretty JSON/
 sublime/Packages/pygments/
@@ -38,6 +39,7 @@ sublime/Packages/python-markdown/
 sublime/Packages/pyyaml/
 sublime/Packages/PyV8/
 sublime/Packages/LiveReload/
+sublime/Packages/rainbow_csv
 sublime/Packages/SendCode/
 sublime/Packages/SublimeCodeIntel/
 sublime/Packages/SublimeLinter-contrib-eslint/
@@ -57,6 +59,7 @@ sublime/Packages/zzz A File Icon zzz/
 sublime/Packages/User/Color Highlighter/icons/
 sublime/Packages/User/Color Highlighter/themes/
 sublime/Packages/User/Color Highlighter/icons/
+sublime/Packages/User/GitSavvy/*.hidden-color-scheme
 sublime/Packages/User/GitSavvy/*.hidden-tmTheme
 sublime/Packages/User/i_opener_history.sublime-settings
 sublime/Packages/User/oscrypto-ca-bundle.crt
@@ -66,7 +69,9 @@ sublime/Packages/User/Projects/library.json
 sublime/Packages/User/Projects/recent.json
 !sublime/Packages/User/Projects/*.sublime-project
 sublime/Packages/User/Sublimerge Macros.sublime-commands
+sublime/Packages/User/Sublimerge.sublime-color-scheme
 sublime/Packages/User/Sublimerge.tmTheme
+sublime/Packages/User/SublimergeSummaryPanel.sublime-color-scheme
 sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 sublime/Packages/User/ThemeTweaker
 

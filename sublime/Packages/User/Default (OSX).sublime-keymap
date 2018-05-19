@@ -33,6 +33,11 @@
 		"command": "toggle_setting",
 		"args": { "setting": "draw_indent_guides" }
 	},
+	// Toggle SublimeLinter highlights.
+	{
+		"keys": ["super+ctrl+l"],
+		"command": "sublime_linter_toggle_highlights"
+	},
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
