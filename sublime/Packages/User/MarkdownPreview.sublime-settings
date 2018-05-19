@@ -2,15 +2,15 @@
     Markdown Preview default settings
 */
 {
-    /*
+	/*
         Sets the default opener for HTML files
 
         default - Use the system default HTML viewer
         other - Set a full path to any executable. ex: /Applications/Google Chrome Canary.app or /Applications/Firefox.app
     */
-    "browser": "default",
+	"browser": "default",
 
-    /*
+	/*
         Sets the parser used for building markdown to HTML.
 
         NOTE: The parser setting is not for the preview commands now.
@@ -22,9 +22,9 @@
         markdown - Use the built-in python-markdown parser
         github - Use the github API to convert markdown, so you can use GitHub flavored Markdown, see https://help.github.com/articles/github-flavored-markdown/
     */
-    "parser": "default",
+	"parser": "default",
 
-    /*
+	/*
         By default, Markdown Preview builds the HTML in the source directory.
         It expects the file to exist on disk.  It pops up the build output panel etc.
 
@@ -39,24 +39,24 @@
 
         All the build options use the default parser defined above in "parser"
     */
-    "build_action": "build",
+	"build_action": "build",
 
-    /*
+	/*
         Enable or not mathjax support.
     */
-    "enable_mathjax": false,
+	"enable_mathjax": false,
 
-    /*
+	/*
         Enable uml support scripts: flowchart.js and sequence-diagram.js.
     */
-    "enable_uml": false,
+	"enable_uml": false,
 
-    /*
+	/*
         Enable highlighting. This enables codehilite extension if not already enabled.
     */
-    "enable_highlight": false,
+	"enable_highlight": false,
 
-    /*
+	/*
         Pygments support for syntax highlighting.  Controls whether codehilite extension
         will use Pygments.  If disabled, code blocks will be formatted for javascript
         highighters such as highlight.js.
@@ -67,9 +67,9 @@
                 "codehilite(use_pygments=False)" // <-Turn off pygments usage
             ]
     */
-    "enable_pygments": true,
+	"enable_pygments": true,
 
-    /*
+	/*
         Sets whether highlight JS will auto-guess raw block's syntax.
         Alternative is to to only highlight blocks where a language has
         been defined.
@@ -82,9 +82,9 @@
                 "codehilite(guess_lang=False)" // <-Turn off language guessing
             ]
     */
-    "guess_language": true,
+	"guess_language": true,
 
-    /*
+	/*
         List of enabled extensions of the selected markdown parser.
 
         You can get the full list of extensions at:
@@ -101,9 +101,9 @@
             github     | extension's values are not used.
 
     */
-    "enabled_extensions": "default",
+	"enabled_extensions": "default",
 
-    /*
+	/*
         Enabled parsers for the parser "select parser" command
         Available parsers: markdown, github
 
@@ -111,9 +111,9 @@
         via the quick panel for which one to use.  If there is only one, it
         will automatically run that parser.
     */
-    "enabled_parsers": ["markdown"],
+	"enabled_parsers": ["markdown"],
 
-    /*
+	/*
         Custom external markdown parsers.
 
         "markdown_binary_map" contains key values pairs.  The key
@@ -126,28 +126,28 @@
         on your system.
     */
 
-    "markdown_binary_map": {
-        "multimarkdown": ["/usr/local/bin/multimarkdown"]
-    },
+	"markdown_binary_map": {
+		"multimarkdown": ["/usr/local/bin/multimarkdown"]
+	},
 
-    /*
+	/*
         Default mode for the github Markdown parser : markdown (documents) or gfm (comments)
         see http://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document
     */
-    "github_mode": "markdown",
+	"github_mode": "markdown",
 
-    /*
+	/*
         Enables a post process to inject header ids to ensure hrefs to headers work
     */
-    "github_inject_header_ids": true,
+	"github_inject_header_ids": true,
 
-    /*
+	/*
         Uses an OAuth token when parsing markdown with GitHub API. To create one for Markdown Preview, see https://help.github.com/articles/creating-an-oauth-token-for-command-line-use.
         Warn: this secret *must not be shared* with anyone and at least you should create it with minimal scopes for security reasons.
     */
-    // "github_oauth_token": "secret",
+	// "github_oauth_token": "secret",
 
-    /*
+	/*
         Sets the default css file to embed in the HTML
 
         default - Use the builtin CSS or github CSS, depending on parser config (markdown.css or github.css)
@@ -155,17 +155,17 @@
 
         Should be an array, but will take a single string to support legacy convention.
     */
-    "css": ["default"],
+	"css": ["default"],
 
-    /*
+	/*
         Allow CSS overrides
 
         true - Any file with matching a .markdown_filetype extension with .css will be loaded as an override
         false - Matching files ignored
     */
-    "allow_css_overrides": true,
+	"allow_css_overrides": true,
 
-    /*
+	/*
         Specify a HTML template file to render your markdown within.
 
         Available place holders in HTML template:
@@ -177,30 +177,29 @@
 
         Refer to 'customized-template-sample.html' as a show case.
     */
-    // "html_template": "/ABS_PATH_TO_A_HTML_FILE",
-    // "skip_default_stylesheet": true,
+	// "html_template": "/ABS_PATH_TO_A_HTML_FILE",
+	// "skip_default_stylesheet": true,
 
-
-    /*
+	/*
         Sets the JavaScript files to embed in the HTML
 
         Set an array of URLs or filepaths to JavaScript files. Absolute filepaths will be loaded
         into the script tag; others will be set as the `src` attribute. The order of files in the
         array is the order in which they are embedded.
     */
-    // "js": ["http://example.com/script.js", "/path/to/script.js"],
+	// "js": ["http://example.com/script.js", "/path/to/script.js"],
 
-    /*
+	/*
         Enable or not whether parsed files will be auto-reloaded on save
     */
-    "enable_autoreload": true,
+	"enable_autoreload": true,
 
-    /*
+	/*
         Sets the supported filetypes for auto-reload on save
     */
-    "markdown_filetypes": [".md", ".markdown", ".mdown"],
+	"markdown_filetypes": [".md", ".markdown", ".mdown"],
 
-    /*
+	/*
         Sets a custom temporary folder for MarkdownPreview-generated HTML files. Useful if you're
         using LiveReload and don't want to use the OS default. The directory will be created if it
         doesn't exist. Relative paths are supported, and are checked against `os.path.isabs`, see
@@ -213,9 +212,9 @@
                     ../build             (Linux/OSX - relative path, in parent dir)
                     ..\\build            (Windows - relative path, in parent dir)
     */
-    // "path_tempfile": "/tmp/my_notes",
+	// "path_tempfile": "/tmp/my_notes",
 
-    /*
+	/*
         Sets HTML output to a simple form:
             - No head
             - No body tags
@@ -223,9 +222,9 @@
             - Just bare minimum HTML tags and attributes
             - extension modifications included
     */
-    "html_simple": false,
+	"html_simple": false,
 
-    /*
+	/*
         Sets how image paths are handled.
         Setting is a string value: (absolute | relative | base64 | none)
             absolute: converts relative local paths to absolute
@@ -234,9 +233,9 @@
             base64: coverts the local file to base64 and embeds it in the HTML
             none: does nothing
     */
-    "image_path_conversion": "absolute",
+	"image_path_conversion": "absolute",
 
-    /*
+	/*
         Sets how file paths are handled.
         Setting is a string value: (absolute | relative | none)
             absolute: converts relative local paths to absolute
@@ -244,9 +243,9 @@
                         HTML output
             none: does nothing
     */
-    "file_path_conversions": "absolute",
+	"file_path_conversions": "absolute",
 
-    /*
+	/*
         Sets how multimarkdown critic marks are handled.
         Setting is a string value: (accept | reject | none)
             accept: Accepts the proposed inserts and deletions (comments etc. are discarded)
@@ -255,16 +254,16 @@
 
         Critic marks only affects "github" and "markdown" (Python Markdown).
     */
-    "strip_critic_marks": "none",
+	"strip_critic_marks": "none",
 
-    /*
+	/*
         Strips the YAML front matter header and converts title to a heading
     */
-    "strip_yaml_front_matter": false,
+	"strip_yaml_front_matter": false,
 
-    /* do we show the panel when build with CMD+B */
-    "show_panel_on_build": true,
+	/* do we show the panel when build with CMD+B */
+	"show_panel_on_build": true,
 
-    /* do we include the CSS when outputting HTML into a new sublime view ? */
-    "embed_css_for_sublime_output": true
+	/* do we include the CSS when outputting HTML into a new sublime view ? */
+	"embed_css_for_sublime_output": true
 }
