@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+Object.prototype.toString.call(${1:element}).slice(8, -1).toLowerCase();${0}
+]]></content>
+	<tabTrigger>typeof</tabTrigger>
+	<description>True type check helper.</description>
+	<scope>source.js</scope>
+</snippet>

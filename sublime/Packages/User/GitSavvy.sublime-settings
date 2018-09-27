@@ -51,14 +51,14 @@
 	"colors": {
 		// Colors used by the inline-diff view to display changes.
 		"inline_diff": {
-			"add_foreground": "hsl(60, 29%, 97%)",
-			"add_background": "hsla(146, 62%, 30%, 0.8)",
-			"add_foreground_bold": "hsl(60, 29%, 97%)",
-			"add_background_bold": "hsl(146, 62%, 36%)",
-			"remove_foreground": "hsl(60, 29%, 97%)",
-			"remove_background": "hsla(0, 48%, 42%, 0.8)",
-			"remove_foreground_bold": "hsl(60, 29%, 97%)",
-			"remove_background_bold": "hsl(0, 48%, 48%)"
+			"add_foreground": "hsl(45, 4%, 98%)",
+			"add_background": "hsl(95, 38%, 37%)",
+			"add_foreground_bold": "hsl(45, 4%, 98%)",
+			"add_background_bold": "hsl(95, 38%, 37%)",
+			"remove_foreground": "hsl(45, 4%, 98%)",
+			"remove_background": "hsl(355, 55%, 45%)",
+			"remove_foreground_bold": "hsl(45, 4%, 98%)",
+			"remove_background_bold": "hsl(355, 55%, 45%)"
 		}
 	},
 

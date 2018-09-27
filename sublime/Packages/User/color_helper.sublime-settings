@@ -8,7 +8,7 @@
 	"show_index_status": false,
 
 	// Show popups automatically in configured files.
-	"auto_popup": true,
+	"auto_popup": false,
 
 	// Upper case hex when inserting
 	"upper_case_hex": false,
@@ -30,7 +30,7 @@
 
 	// Enables inline color previews found beside the identified color.
 	// Requires ST 3116+ and mdpopups 1.7.4
-	"inline_previews": true,
+	"inline_previews": false,
 
 	// Adjust the size of inline image previews by the offset given.
 	// Please use either a positive or negative number.

@@ -6,8 +6,6 @@
 
 	// Toggle word wrap.
 	{ "keys": ["super+."], "command": "toggle_setting", "args": { "setting": "word_wrap" } },
-	// Toggle centered.
-	{ "keys": ["super+alt+y"], "command": "toggle_setting", "args": { "setting": "draw_centered" } },
 	// Toggle sidebar.
 	// { "keys": ["super+\\"], "command": "toggle_side_bar" },
 	// { "keys": ["super+\\"], "command": "focus_file_on_sidebar" },
@@ -15,7 +13,11 @@
 	// Toggle minimap.
 	{ "keys": ["super+\\"], "command": "toggle_minimap" },
 	// Toggle code folding buttons.
-	{ "keys": ["super+ctrl+'"], "command": "toggle_setting", "args": { "setting": "fade_fold_buttons" } },
+	{
+		"keys": ["super+ctrl+'"],
+		"command": "toggle_setting",
+		"args": { "setting": "fade_fold_buttons" }
+	},
 	// Toggle focus on active pane.
 	{
 		"keys": ["super+ctrl+;"],
@@ -54,7 +56,11 @@
 	{ "keys": ["alt+u"], "command": "focus_neighboring_group", "args": { "forward": false } },
 	// Tab / pane manipulation.
 	{ "keys": ["ctrl+shift+o"], "command": "move_to_neighboring_group" },
-	{ "keys": ["ctrl+shift+u"], "command": "move_to_neighboring_group", "args": { "forward": false } },
+	{
+		"keys": ["ctrl+shift+u"],
+		"command": "move_to_neighboring_group",
+		"args": { "forward": false }
+	},
 	// Move tab inside of pane.
 	{ "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" } },
 	{ "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" } },
@@ -63,10 +69,26 @@
 	// Close pane.
 	{ "keys": ["ctrl+-"], "command": "close_pane" },
 	// Resize panes.
-	{ "keys": ["super+alt+shift+j"], "command": "resize_active_group", "args": { "direction": "left" } },
-	{ "keys": ["super+alt+shift+l"], "command": "resize_active_group", "args": { "direction": "right" } },
-	{ "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args": { "direction": "up" } },
-	{ "keys": ["super+alt+shift+k"], "command": "resize_active_group", "args": { "direction": "down" } },
+	{
+		"keys": ["super+alt+shift+j"],
+		"command": "resize_active_group",
+		"args": { "direction": "left" }
+	},
+	{
+		"keys": ["super+alt+shift+l"],
+		"command": "resize_active_group",
+		"args": { "direction": "right" }
+	},
+	{
+		"keys": ["super+alt+shift+i"],
+		"command": "resize_active_group",
+		"args": { "direction": "up" }
+	},
+	{
+		"keys": ["super+alt+shift+k"],
+		"command": "resize_active_group",
+		"args": { "direction": "down" }
+	},
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 
@@ -76,15 +98,31 @@
 	**/
 
 	// Word navigation / selection.
-	{ "keys": ["super+ctrl+left"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
-	{ "keys": ["super+ctrl+right"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
+	{
+		"keys": ["super+ctrl+left"],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": false }
+	},
+	{
+		"keys": ["super+ctrl+right"],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": true }
+	},
 	// VIM-like navigation.
 	{ "keys": ["ctrl+,"], "command": "move", "args": { "by": "subwords", "forward": false } },
 	{ "keys": ["ctrl+."], "command": "move", "args": { "by": "subword_ends", "forward": true } },
 	{ "keys": ["alt+,"], "command": "move", "args": { "by": "words", "forward": false } },
 	{ "keys": ["alt+."], "command": "move", "args": { "by": "word_ends", "forward": true } },
-	{ "keys": ["super+ctrl+,"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
-	{ "keys": ["super+ctrl+."], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
+	{
+		"keys": ["super+ctrl+,"],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": false }
+	},
+	{
+		"keys": ["super+ctrl+."],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": true }
+	},
 	{
 		"keys": ["ctrl+shift+,"],
 		"command": "move",
@@ -95,10 +133,26 @@
 		"command": "move",
 		"args": { "by": "subwords", "forward": true, "extend": true }
 	},
-	{ "keys": ["alt+shift+,"], "command": "move", "args": { "by": "words", "forward": false, "extend": true } },
-	{ "keys": ["alt+shift+."], "command": "move", "args": { "by": "word_ends", "forward": true, "extend": true } },
-	{ "keys": ["ctrl+alt+,"], "command": "move_to_beg_of_contig_boundary", "args": { "forward": false } },
-	{ "keys": ["ctrl+alt+."], "command": "move_to_beg_of_contig_boundary", "args": { "forward": true } },
+	{
+		"keys": ["alt+shift+,"],
+		"command": "move",
+		"args": { "by": "words", "forward": false, "extend": true }
+	},
+	{
+		"keys": ["alt+shift+."],
+		"command": "move",
+		"args": { "by": "word_ends", "forward": true, "extend": true }
+	},
+	{
+		"keys": ["ctrl+alt+,"],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": false }
+	},
+	{
+		"keys": ["ctrl+alt+."],
+		"command": "move_to_beg_of_contig_boundary",
+		"args": { "forward": true }
+	},
 	// Expand selection.
 	{ "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": { "to": "line" } },
 	{ "keys": ["ctrl+shift+p"], "command": "expand_selection_to_paragraph" },
@@ -120,12 +174,20 @@
 	{ "keys": ["alt+i"], "command": "scroll_lines", "args": { "amount": 1.0 } },
 	{ "keys": ["alt+k"], "command": "scroll_lines", "args": { "amount": -1.0 } },
 	// Find and replace.
-	{ "keys": ["super+h"], "command": "show_panel", "args": { "panel": "replace", "reverse": false } },
+	{
+		"keys": ["super+h"],
+		"command": "show_panel",
+		"args": { "panel": "replace", "reverse": false }
+	},
 	// Number increment / decrement.
 	{ "keys": ["super+alt+up"], "command": "inc_dec_value", "args": { "action": "inc_min" } },
 	{ "keys": ["super+alt+down"], "command": "inc_dec_value", "args": { "action": "dec_min" } },
 	{ "keys": ["super+shift+alt+up"], "command": "inc_dec_value", "args": { "action": "inc_max" } },
-	{ "keys": ["super+shift+alt+down"], "command": "inc_dec_value", "args": { "action": "dec_max" } },
+	{
+		"keys": ["super+shift+alt+down"],
+		"command": "inc_dec_value",
+		"args": { "action": "dec_max" }
+	},
 	// Restore default bindings to `super+enter`.
 	{
 		"keys": ["super+enter"],
@@ -164,8 +226,16 @@
 	// Open file navigation.
 	{ "keys": ["super+o"], "command": "fuzzy_start_from_file" },
 	{ "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
-	{ "keys": ["super+h"], "command": "fuzzy_toggle_hidden", "context": [{ "key": "fuzzy_toggle_hidden" }] },
-	{ "keys": ["super+n"], "command": "fuzzy_make_file", "context": [{ "key": "fuzzy_make_file" }] },
+	{
+		"keys": ["super+h"],
+		"command": "fuzzy_toggle_hidden",
+		"context": [{ "key": "fuzzy_toggle_hidden" }]
+	},
+	{
+		"keys": ["super+n"],
+		"command": "fuzzy_make_file",
+		"context": [{ "key": "fuzzy_make_file" }]
+	},
 	// File path autocompletion.
 	{ "keys": ["super+alt+."], "command": "file_system_comp_trigger" },
 	// {
@@ -198,7 +268,11 @@
 		"keys": ["/"],
 		"command": "run_multiple_commands",
 		"context": [
-			{ "key": "preceding_text", "operator": "regex_contains", "operand": ".+?(?=(\"|')(.)?(.)?)" },
+			{
+				"key": "preceding_text",
+				"operator": "regex_contains",
+				"operand": ".+?(?=(\"|')(.)?(.)?)"
+			},
 			{ "key": "selector", "operator": "equal", "operand": "source string.quoted" }
 		],
 		"args": {
@@ -235,6 +309,32 @@
 	// Navigate linter errors.
 	{ "keys": ["alt+down"], "command": "next_result" },
 	{ "keys": ["alt+up"], "command": "prev_result" },
+	// Restore Sublimerge commands.
+	{
+		"keys": ["alt+down"],
+		"command": "sublimerge_go_down",
+		"context": [
+			{
+				"key": "setting.is_sublimerge_view",
+				"operator": "equal",
+				"operand": true,
+				"match_all": true
+			}
+		]
+	},
+
+	{
+		"keys": ["alt+up"],
+		"command": "sublimerge_go_up",
+		"context": [
+			{
+				"key": "setting.is_sublimerge_view",
+				"operator": "equal",
+				"operand": true,
+				"match_all": true
+			}
+		]
+	},
 	// Show Sublime console.
 	{ "keys": ["ctrl+`"], "command": "show_panel", "args": { "panel": "console", "toggle": true } },
 
@@ -251,9 +351,21 @@
 	{ "keys": ["super+shift+alt+c"], "command": "color_helper", "args": { "mode": "palette" } },
 	// Theme tweaker.
 	{ "keys": ["super+k", "m"], "command": "toggle_theme_tweaker_mode" },
-	{ "keys": ["super+z"], "command": "theme_tweaker_undo", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+shift+z"], "command": "theme_tweaker_redo", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+delete"], "command": "theme_tweaker_clear", "context": [{ "key": "theme_tweaker" }] },
+	{
+		"keys": ["super+z"],
+		"command": "theme_tweaker_undo",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+shift+z"],
+		"command": "theme_tweaker_redo",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+delete"],
+		"command": "theme_tweaker_clear",
+		"context": [{ "key": "theme_tweaker" }]
+	},
 	{
 		"keys": ["i"],
 		"command": "theme_tweaker_brightness",
@@ -326,11 +438,31 @@
 		"context": [{ "key": "theme_tweaker" }],
 		"args": { "direction": "+", "context": "fg" }
 	},
-	{ "keys": ["super+i"], "command": "theme_tweaker_invert", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+c"], "command": "theme_tweaker_colorize", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+s"], "command": "theme_tweaker_sepia", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+g"], "command": "theme_tweaker_grayscale", "context": [{ "key": "theme_tweaker" }] },
-	{ "keys": ["super+l"], "command": "theme_tweaker_glow", "context": [{ "key": "theme_tweaker" }] }
+	{
+		"keys": ["super+i"],
+		"command": "theme_tweaker_invert",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+c"],
+		"command": "theme_tweaker_colorize",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+s"],
+		"command": "theme_tweaker_sepia",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+g"],
+		"command": "theme_tweaker_grayscale",
+		"context": [{ "key": "theme_tweaker" }]
+	},
+	{
+		"keys": ["super+l"],
+		"command": "theme_tweaker_glow",
+		"context": [{ "key": "theme_tweaker" }]
+	}
 
 	/* [[END]] -------------------------------------------------------------------------------------- */
 ]

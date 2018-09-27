@@ -4,6 +4,8 @@
 ## IDE.
 *.sublime-project
 *.sublime-workspace
+*.sublime-color-scheme.chback
+sublime/**/*.cache
 
 ## Unnecessary.
 *.crt
@@ -17,11 +19,11 @@ zsh/zprezto.link
 # Installed packages not in user folder.
 sublime/Packages/backrefs/
 sublime/Packages/BetterFindBuffer/
-sublime/Packages/Boxy Theme Addon - Widget Font Size/
+sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
 sublime/Packages/bs4/
 sublime/Packages/Codecs33/
 sublime/Packages/Default/
-sublime/Packages/HTML-CSS-JS Prettify/
+sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
@@ -31,7 +33,7 @@ sublime/Packages/package_events/
 sublime/Packages/pathtools/
 sublime/Packages/jsonschema/
 sublime/Packages/JsPrettier/
-sublime/Packages/Pretty JSON/
+sublime/Packages/Pretty\ JSON/
 sublime/Packages/pygments/
 sublime/Packages/pymdownx/
 sublime/Packages/python-jinja2/
@@ -45,30 +47,30 @@ sublime/Packages/SublimeCodeIntel/
 sublime/Packages/SublimeLinter-contrib-eslint/
 sublime/Packages/SublimeLinter-contrib-stylelint/
 sublime/Packages/SublimeLinter/
-sublime/Packages/Sublimerge 3/
-sublime/Packages/Sublimerge Pro/
+sublime/Packages/Sublimerge\ 3/
+sublime/Packages/Sublimerge\ Pro/
 sublime/Packages/SyntaxFold/
-sublime/Packages/Theme - Default/
+sublime/Packages/Theme\ -\ Default/
 sublime/Packages/Terminal/
 sublime/Packages/TypeScript/
 sublime/Packages/WakaTime/
 sublime/Packages/watchdog/
-sublime/Packages/zzz A File Icon zzz/
+sublime/Packages/zzz\ A\ File\ Icon\ zzz/
 
 # User files and folders.
-sublime/Packages/User/Color Highlighter/icons/
-sublime/Packages/User/Color Highlighter/themes/
-sublime/Packages/User/Color Highlighter/icons/
+sublime/Packages/User/Color\ Highlighter/icons/
+sublime/Packages/User/Color\ Highlighter/themes/
+sublime/Packages/User/Color\ Highlighter/icons/
 sublime/Packages/User/GitSavvy/*.hidden-color-scheme
 sublime/Packages/User/GitSavvy/*.hidden-tmTheme
 sublime/Packages/User/i_opener_history.sublime-settings
 sublime/Packages/User/oscrypto-ca-bundle.crt
-sublime/Packages/User/Package Control.*
-!sublime/Packages/User/Package Control.sublime-settings
+sublime/Packages/User/Package\ Control.*
+!sublime/Packages/User/Package\ Control.sublime-settings
 sublime/Packages/User/Projects/library.json
 sublime/Packages/User/Projects/recent.json
 !sublime/Packages/User/Projects/*.sublime-project
-sublime/Packages/User/Sublimerge Macros.sublime-commands
+sublime/Packages/User/Sublimerge\ Macros.sublime-commands
 sublime/Packages/User/Sublimerge.sublime-color-scheme
 sublime/Packages/User/Sublimerge.tmTheme
 sublime/Packages/User/SublimergeSummaryPanel.sublime-color-scheme

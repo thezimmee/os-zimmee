@@ -167,7 +167,7 @@
 	"go_to_next_after_merge": false,
 
 	//Starts diff view in swapped mode where new changes are displayed on the left-hand side panel.
-	"start_swapped": false,
+	"start_swapped": true,
 
 	// ########################################################################################################
 	// # BEGIN OF UNIMPLEMENTED FEATURES' SETTINGS. THEY WILL BE IMPLEMENTED IN FUTURE RELEASES               #
@@ -246,12 +246,12 @@
 	"snapshots_on_open": true,
 
 	//Whether to automatically create snapshot each time file is saved
-	"snapshots_on_save": true,
+	"snapshots_on_save": false,
 
 	//Whether to show Snapshots' commands in main Sublimerge's menu
 	"snapshots_in_menu": true,
 
-	"snapshots_date_format": "%d/%m/%Y %H:%M:%S",
+	"snapshots_date_format": "%m/%d/%Y %H:%M:%S",
 
 	//VERSION CONTROL SYSTEMS SUPPORT /////////////////////////////////////////////////////////////////
 
@@ -307,7 +307,8 @@
 	"git_log_date_parse_format": "%Y-%m-%d %H:%M:%S %z",
 
 	//Regular expression to parse the log output. The following groups are mandatory: `commit`, `date_raw`
-	"git_log_regexp": "^(?P<commit>.+)\t(?P<abbrev_commit>.+)\t(?P<author>.+)\t(?P<date_raw>.+)\t(?P<subject>.*)$",
+	"git_log_regexp":
+		"^(?P<commit>.+)\t(?P<abbrev_commit>.+)\t(?P<author>.+)\t(?P<date_raw>.+)\t(?P<subject>.*)$",
 
 	//Defines a template for commits' log. Variables are defined as matching groups' names.
 	//Each array item is a separate line. Other available variables:

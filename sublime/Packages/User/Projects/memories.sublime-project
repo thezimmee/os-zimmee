@@ -2,10 +2,13 @@
 	"folders":
 	[
 		{
-			"folder_exclude_patterns": [
-				"_gsdata_"
+			"file_exclude_patterns": [
+				"._*"
 			],
-			"path": "~/Memories"
+			"folder_exclude_patterns": [
+				".AppleDouble"
+			],
+			"path": "/Volumes/Bertha/Memories/"
 		}
 	]
 }

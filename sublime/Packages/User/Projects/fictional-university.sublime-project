@@ -4,10 +4,9 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"node_modules",
-				// "build"
+				"node_modules"
 			],
-			"path": "~/Projects/cs-office2/"
+			"path": "~/Projects/fictional-university"
 		}
 	]
 }
