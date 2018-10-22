@@ -1,0 +1,43 @@
+[
+    /**-------------------------------------------------------------------------
+     * Colors.
+     */
+
+    {
+        "caption": "Colors: Convert to HSL",
+        "command": "color_convert",
+        "args": { "value": "hsl", "isSelect": true }
+    },
+    {
+        "caption": "Colors: Convert to HSLA",
+        "command": "color_convert",
+        "args": { "value": "hsla", "isSelect": true }
+    },
+    {
+        "caption": "Colors: Convert to RGBA",
+        "command": "color_convert",
+        "args": { "value": "rgba", "isSelect": true }
+    },
+    {
+        "caption": "Colors: Convert to RGB",
+        "command": "color_convert",
+        "args": { "value": "rgb", "isSelect": true }
+    },
+    {
+        "caption": "Colors: Convert to HEX",
+        "command": "color_convert",
+        "args": { "value": "hex", "isSelect": true }
+    },
+
+    /**-------------------------------------------------------------------------
+     * Alfred integration.
+     */
+
+    {
+        "caption": "Alfred: Open Current Path",
+        "command": "send_code",
+        "args": {
+            "cmd": "osascript -e 'tell application \"Alfred 3\" to search \"$file_path\"';"
+        }
+    }
+]

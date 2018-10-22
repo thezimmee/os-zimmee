@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-const ${1:<Resulting variable>} = ${2:<function to bind args to>}.bind(${0:<args to bind to ${2:<function to bind args to>}>})
-]]></content>
-	<tabTrigger>bind</tabTrigger>
-	<description>Bind method example</description>
-	<scope>source.js</scope>
-</snippet>

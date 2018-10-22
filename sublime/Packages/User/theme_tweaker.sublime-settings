@@ -1,6 +1,0 @@
-{
-	// Hue step in degrees (range 0-360)
-    // Can be overridden in the
-    // ThemeTweakerHueCommand command's argument "step"
-    "hue_step": 1
-}

@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-/* stylelint-disable-next-line ${0} */
-]]></content>
-	<tabTrigger>stylelint-disable-next-line</tabTrigger>
-	<description>Stylelint: disable next line</description>
-	<scope>source.css</scope>
-</snippet>

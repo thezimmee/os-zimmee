@@ -1,0 +1,16 @@
+// Your settings for FileManager. See the default file to see the different options. 
+{
+	"log_in_status_bar": "user",
+	"aliases": {
+        "sublime": "$packages",
+        "sublimeu": "$packages/User/",
+        "desktop": "~/Desktop",
+        "docs": "~/Documents",
+        "downloads": "~/Downloads",
+        "projects": "~/Projects",
+        "os": "~/Projects/os-zimmee",
+        "cheatsheets": "~/Projects/cheatsheets",
+        "here": "$folder_path",
+    },
+    "create_keybinding_enabled": false
+}

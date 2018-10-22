@@ -1,0 +1,472 @@
+{
+    "name": "Solarz Dark",
+    "author": "Zimmee <thezimmee@gmail.com>",
+    "docs": "https://www.sublimetext.com/docs/3/scope_naming.html",
+    "variables": {
+        "red": "hsl(355, 75%, 65%)",
+        "red--sharp": "hsl(355, 80%, 55%)",
+        "amber": "hsl(15, 80%, 65%)",
+        "brown": "hsl(25, 30%, 62%)",
+        "orange": "hsl(30, 85%, 66%)",
+        "peach": "hsl(40, 67%, 69%)",
+        "tan": "hsl(45, 48%, 66%)",
+        "mustard": "hsl(50, 67%, 69%)",
+        "yellow": "hsl(60, 50%, 69%)",
+        "lime": "hsl(75, 60%, 69%)",
+        "green": "hsl(95, 40%, 62%)",
+        "olive": "hsl(125, 28%, 58%)",
+        "teal": "hsl(155, 44%, 54%)",
+        "cyan": "hsl(187, 65%, 55%)",
+        "blue": "hsl(207, 75%, 66%)",
+        "violet": "hsl(237, 80%, 75%)",
+        "purple": "hsl(267, 80%, 70%)",
+        "magenta": "hsl(287, 60%, 67%)",
+        "pink": "hsl(300, 75%, 67%)",
+        "salmon": "hsl(330, 80%, 67%)",
+
+        "white1": "hsl(207, 3%, 100%)",
+        "white2": "hsl(207, 3%, 86%)",
+        "white3": "hsl(207, 4%, 75%)",
+
+        "gray1": "hsl(207, 4%, 67%)",
+        "gray2": "hsl(207, 5%, 54%)",
+        "gray3": "hsl(207, 5%, 30%)",
+
+        "black3": "hsl(207, 6%, 20%)",
+        "black2": "hsl(207, 7%, 15%)",
+        "black1": "hsl(207, 7%, 4%)"
+    },
+    "globals": {
+        "//": "EDITOR",
+        "background": "var(black2)",
+        "foreground": "var(white3)",
+        "caret": "var(salmon)",
+        "line_highlight": "color(var(white1) alpha(0.1))",
+        "invisibles": "color(var(white1) alpha(0.35))",
+
+        "//": "ACCENTS",
+        "misspelling": "var(red--sharp)",
+        "fold_marker": "var(yellow)",
+        "minimap_border": "var(yellow)",
+        "accent": "var(orange)",
+
+        "//": "CSS",
+        "//popup_css": "",
+        "//phantom_css": "",
+
+        "//": "GUTTER",
+        "gutter": "color(var(black1) a(0.2))",
+        "gutter_foreground": "var(gray2)",
+
+        "//": "SELECTION",
+        "selection": "color(var(pink) alpha(0.3))",
+        "//selection_foreground": "",
+        "selection_border": "color(var(pink) alpha(0.35))",
+        "selection_border_width": "1",
+        "selection_corner_style": "square",
+        "selection_corner_radius": "0",
+        "inactive_selection": "color(var(pink) a(0.16))",
+        "//inactive_selection_foreground": "",
+
+        "//": "FIND",
+        "highlight": "var(pink)",
+        "find_highlight": "var(pink)",
+        "find_highlight_foreground": "var(black2)",
+
+        "//": "GUIDES",
+        "guide": "var(gray3)",
+        "active_guide": "color(var(yellow) a(0.15))",
+        "stack_guide": "color(var(yellow) a(0.15))",
+
+        "//": "BRACKETS",
+        "brackets_options": "underline",
+        "brackets_foreground": "color(var(white1) a(0.5))",
+        "brackets_contents_options": "underline",
+        "brackets_contents_foreground": "color(var(white1) a(0.5))",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "color(var(white3) alpha(0.65))",
+
+        "//": "TAGS",
+        "tags_options": "underline",
+        "tags_foreground": "color(var(white1) a(0.5))",
+
+        "//": "SHADOWS",
+        "shadow": "var(black1)",
+        "shadow_width": "1"
+    },
+    "rules": [
+        { "name": "Data structures", "scope": "entity.name", "foreground": "var(cyan)" },
+        {
+            "name": "Other entities, such as attribute names",
+            "scope": "entity.other",
+            "foreground": "var(blue)",
+            "font_style": "italic"
+        },
+        { "name": "HTML/XML tags", "scope": "entity.name.tag", "foreground": "var(red)" },
+        { "name": "Function name", "scope": "entity.name.function", "font_style": "bold" },
+
+        { "name": "Default variable", "scope": "variable" },
+        {
+            "name": "Language variable (this, super, etc.)",
+            "scope": "variable.language, keyword.control.flow",
+            "foreground": "var(red)"
+        },
+        { "name": "Variable", "scope": "variable.other", "foreground": "var(orange)" },
+        {
+            "name": "Variable parameter",
+            "scope": "variable.parameter",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Function variable",
+            "scope": "variable.function",
+            "font_style": "italic"
+        },
+
+        { "name": "Constant", "scope": "constant" },
+        { "name": "Numbers", "scope": "constant.numeric", "foreground": "var(pink)" },
+        {
+            "name": "Built-in constants",
+            "scope": "constant.language",
+            "foreground": "var(pink)",
+            "font_style": "italic"
+        },
+        { "name": "Characters", "scope": "constant.character", "foreground": "var(purple)" },
+        {
+            "name": "Other language-specific constants",
+            "scope": "constant.other",
+            "foreground": "var(purple)"
+        },
+        { "name": "Formatting placeholders", "scope": "constant.other.placeholders" },
+
+        {
+            "name": "Storage (const, function, etc.)",
+            "scope": "storage",
+            "foreground": "var(blue)"
+        },
+
+        {
+            "name": "Support (window, document, etc.)",
+            "scope": "support",
+            "foreground": "var(amber)"
+        },
+
+        { "name": "Keywords", "scope": "keyword" },
+        {
+            "name": "Control keywords (if, try, while, etc.)",
+            "scope": "keyword.control - keyword.control.flow",
+            "foreground": "var(brown)"
+        },
+        {
+            "name": "Operator keywords (and, or, etc.)",
+            "scope": "keyword.operator",
+            "foreground": "var(purple)"
+        },
+        { "name": "Other keywords", "scope": "keyword.other" },
+
+        { "name": "String", "scope": "string", "foreground": "var(tan)" },
+        { "name": "RegEx string", "scope": "string.regexp", "foreground": "var(red)" },
+
+        { "name": "Comments", "scope": "comment", "foreground": "var(gray2)" },
+
+        { "name": "Punctuation", "scope": "punctuation" },
+        {
+            "name": "Punctuation",
+            "scope":
+                "punctuation.definition - (string | variable), punctuation.separator, punctuation.terminator, punctuation.section",
+            "foreground": "var(gray2)"
+        },
+        { "name": "Keyword punctuation", "scope": "punctuation.*.keyword" },
+
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "background": "var(red--sharp)",
+            "foreground": "var(white1)",
+            "font_style": "italic"
+        },
+
+        {
+            "name": "HTML | inline style property name",
+            "scope": "text.html support.type.property-name.css",
+            "foreground": "var(orange)",
+            "font_style": "italic"
+        },
+
+        {
+            "name": "CSS | property name",
+            "scope": "support.type.property-name.css",
+            "foreground": "var(blue)",
+            "font_style": "italic"
+        },
+        {
+            "name": "CSS | HTML class",
+            "scope":
+                "entity.other.attribute-name.class.css, entity.other.attribute-name.class.css punctuation.definition.entity, meta.class-name.html",
+            "foreground": "var(green)",
+            "font_style": ""
+        },
+        {
+            "name": "CSS | ID",
+            "scope":
+                "entity.other.attribute-name.id.css, entity.other.attribute-name.id.css punctuation.definition.entity, meta.toc-list.id.html",
+            "foreground": "var(pink)",
+            "font_style": ""
+        },
+        {
+            "name": "CSS | pseudo class",
+            "scope": "entity.other.pseudo-class.css, entity.other.pseudo-element.css",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "CSS | unit",
+            "scope": "keyword.other.unit.css",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "CSS | !important",
+            "scope": "keyword.other.important.css",
+            "foreground": "var(red)",
+            "font_style": "bold"
+        },
+        {
+            "name": "CSS | color value",
+            "scope": "constant.other.color.(*).css",
+            "foreground": "var(salmon)"
+        },
+        {
+            "name": "CSS | function",
+            "scope": "support.function.(*).css",
+            "foreground": "var(cyan)",
+            "font_style": "italic"
+        },
+        {
+            "name": "CSS | keywords",
+            "scope":
+                "source.css keyword.control, source.css keyword.control punctuation.definition.keyword",
+            "foreground": "var(amber)"
+        },
+
+        {
+            "name": "JSON | keys",
+            "scope": "meta.structure.dictionary.key.json string",
+            "foreground": "var(blue)"
+        },
+        { "name": "JSON | values", "scope": "meta.structure.dictionary.value.json" },
+
+        {
+            "name": "Markup | headings",
+            "scope": "markup.heading, markup.heading entity.name.section",
+            "foreground": "var(red)",
+            "font_style": "bold italic"
+        },
+        {
+            "name": "Markup | heading punctuation",
+            "scope": "punctuation.definition.heading.markdown",
+            "foreground": "color(var(red) a(0.5))"
+        },
+        { "name": "Markup | unnumbered list", "scope": "markup.list.unnumbered" },
+        {
+            "name": "Markup | numbered list",
+            "scope":
+                "markup.list.numbered.bullet, markup.list.unnumbered.bullet punctuation.definition.list_item, punctuation.definition.list_item.markdown",
+            "foreground": "var(pink)"
+        },
+        {
+            "name": "Markup | bold",
+            "scope": "markup.bold",
+            "foreground": "var(white2)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markup | italic",
+            "scope": "markup.italic",
+            "foreground": "var(white2)",
+            "font_style": "italic"
+        },
+        { "name": "Markup | underline", "scope": "markup.underline", "font_style": "underline" },
+        { "name": "Markup | inserted", "scope": "markup.inserted", "font_style": "italic" },
+        {
+            "name": "Markup | strikethrough",
+            "scope": "markup.strikethrough",
+            "foreground": "var(gray1)"
+        },
+        { "name": "Markup | deleted", "scope": "markup.deleted" },
+        {
+            "name": "Markup | link description",
+            "scope":
+                "meta.link.inline.description.markdown, string.other.link.title.markdown, string.other.link.description.markdown, meta.link.reference.def.markdown constant.other.reference.link.markdown",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Markup | link",
+            "scope": "markup.underline.link, constant.other.reference.link.markdown",
+            "font_style": "underline",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Markup | quote",
+            "scope": "markup.quote",
+            "foreground": "var(violet)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup | quote punctuation",
+            "scope": "punctuation.definition.blockquote.markdown",
+            "foreground": "color(var(violet) a(0.5))",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup | inline code",
+            "scope": "markup.raw.inline, markup.raw.block, markup.raw.code-fence, meta.code-fence",
+            "background": "color(var(white1) a(0.05))"
+        },
+        {
+            "name": "Markup | code block language",
+            "scope": "markup.raw.block.fenced.markdown variable.language.fenced.markdown",
+            "foreground": "var(violet)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup | separator",
+            "scope": "meta.separator.markdown",
+            "foreground": "color(var(blue) a(0.7))",
+            "font_style": "italic"
+        },
+
+        {
+            "name": "GitSavvy Diff | header",
+            "scope": "meta.diff, meta.diff.header, git-savvy.commit meta.diff.range.unified",
+            "background": "color(var(blue) alpha(0.3))"
+        },
+        {
+            "name": "GitSavvy Diff | deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "GitSavvy Diff | added",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitSavvy Diff | changed",
+            "scope": "markup.changed, meta.commit-info.files.changes",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | section",
+            "scope":
+                "meta.git-savvy.status.section, meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes",
+            "background": "color(var(white1) a(0.05))"
+        },
+        {
+            "name": "GitSavvy Status | help section punctuation",
+            "scope": "comment.git-savvy.key-bindings-menu punctuation.definition.git-savvy.section",
+            "foreground": "var(black2)"
+        },
+        {
+            "name": "GitSavvy | section header",
+            "scope":
+                "keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation, punctuation.definition.git-savvy.section-header",
+            "background": "var(blue)",
+            "foreground": "var(white1)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "GitSavvy | section header text",
+            "scope":
+                "support.type.git-savvy.key-bindings-header-text, meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section, meta.git-savvy.key-bindings-header, keyword.other.git-savvy.section-header.tags.remote constant.other.git-savvy.tags.remote-name",
+            "foreground": "var(white1)",
+            "background": "var(gray3)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "GitSavvy | section header text punctuation",
+            "scope": "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section",
+            "foreground": "var(gray3)"
+        },
+        {
+            "name": "GitSavvy | section heading",
+            "scope": "keyword.other.git-savvy.section-header",
+            "background": "var(blue)",
+            "foreground": "var(white1)",
+            "font_style": "bold"
+        },
+        {
+            "name": "GitSavvy | section heading - red",
+            "scope":
+                "keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation, punctuation.definition.git-savvy.section-header.remote, keyword.other.git-savvy.section-header.tags.remote constant.other.git-savvy.tags.remote-name",
+            "background": "var(red)"
+        },
+        {
+            "name": "GitSavvy | section heading - green",
+            "scope": "keyword.other.git-savvy.section-header.staged",
+            "background": "var(green)"
+        },
+        {
+            "name": "GitSavvy | removed files",
+            "scope": "meta.git-savvy.status.file.removed",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "GitSavvy | untracked files",
+            "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.status.file",
+            "foreground": "color(var(white1) a(0.5))",
+            "font_style": "italic"
+        },
+        {
+            "name": "GitSavvy | unstaged files",
+            "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.status.file",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | staged files",
+            "scope": "meta.git-savvy.status.section.staged meta.git-savvy.status.file",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitSavvy | stashed files",
+            "scope":
+                "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+            "foreground": "var(brown)"
+        },
+        {
+            "name": "GitSavvy | Status > keyboard shortcuts",
+            "scope":
+                "constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke",
+            "background": "color(var(white3) a(0.1))",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "GitSavvy | Status > keyboard shortcut punctuation",
+            "scope": "punctuation.definition.git-savvy.key-bindings-key-stroke",
+            "foreground": "color(var(white3) a(0.1))"
+        },
+        {
+            "name": "GitSavvy | Graph > commit dot",
+            "scope": "git-savvy.graph keyword.graph.commit.git-savvy",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitSavvy | Graph > keywords",
+            "scope": "meta.graph.message.git-savvy keyword.by-name.git-savvy",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | paths",
+            "scope": "comment.git-savvy.summary-header.root.info",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "GitSavvy | branches",
+            "scope": "constant.other.git-savvy.summary-header.branch-name",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "GitSavvy | hashes",
+            "scope": "constant.other.git-savvy.sha1",
+            "foreground": "var(pink)"
+        }
+    ]
+}

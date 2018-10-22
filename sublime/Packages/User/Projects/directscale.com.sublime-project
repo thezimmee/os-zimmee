@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "~/Projects/directscale.com/live/app/public/wp-content/themes/twentyseventeen-child",
+		},
+		{
+			"path": "~/Projects/directscale.com/live/app/public/wp-content/plugins"
+		},
+		{
+			"path": "~/Projects/directscale.com/live/app/public/wp-content/uploads"
+		}
+	]
+}
