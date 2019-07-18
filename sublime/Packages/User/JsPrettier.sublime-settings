@@ -1,24 +1,22 @@
 {
-    "auto_format_on_save": true,
-    "auto_format_on_save_excludes": [
-        "*.js",
-        "*/node_modules/*",
-        "/*.md",
-        "*.min.js",
-        "*.min.css",
-        "*/package.json",
-        "*/package-lock.json",
-        "*.yaml",
-        "*.sublime-syntax",
-        "*syntax_test_.*"
-    ],
-    "custom_file_extensions": [
-        "xjson",
-        // "xjs",
-        "sublime-keymap",
-        "sublime-settings",
-        "sublime-commands",
-        "sublime-color-scheme",
-        "sublime-theme"
-    ]
+	"auto_format_on_save": false,
+	"auto_format_on_save_excludes":
+	[
+		"*.js",
+		"**/package.json",
+		"*/node_modules/*",
+		"*.min.js",
+		"*.min.css",
+		"*.sublime-syntax",
+		"*syntax_test_.*"
+	],
+	"custom_file_extensions":
+	[
+		"xjson",
+		"sublime-keymap",
+		"sublime-settings",
+		"sublime-commands",
+		"sublime-color-scheme",
+		"sublime-theme"
+	]
 }

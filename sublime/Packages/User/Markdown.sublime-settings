@@ -1,7 +1,7 @@
 {
-	"extensions":
-	[
-		"mdown",
-		"txt"
-	]
+  "extensions": [],
+  "caret_style": "phase",
+  "color_scheme":
+    "Packages/User/color-schemes/solarz-dark.sublime-color-scheme",
+  "mde.list_indent_auto_switch_bullet": false
 }

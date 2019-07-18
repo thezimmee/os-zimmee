@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.vero.snippettriggerchain</string>
+	<key>category</key>
+	<string>Snippets</string>
+	<key>connections</key>
+	<dict>
+		<key>54C9F0F7-2F44-49D2-B13C-00C5E92C72AE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35397AA2-5231-49B3-84DC-CDC137F5C2A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>63AFAD1C-7FD6-435B-8891-1FF8F9B34343</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>54C9F0F7-2F44-49D2-B13C-00C5E92C72AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>70958D03-BA8F-4BF9-ADC3-835A0998A054</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>63AFAD1C-7FD6-435B-8891-1FF8F9B34343</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>835583FE-F1F9-4588-A2C9-89CD4825B8DA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9FB95AAE-70AC-49F0-A68D-A476E96F20A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>9FB95AAE-70AC-49F0-A68D-A476E96F20A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70958D03-BA8F-4BF9-ADC3-835A0998A054</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C026DD15-F889-408D-B0D6-0AD264FC2EF5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>835583FE-F1F9-4588-A2C9-89CD4825B8DA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vero Pepperrell</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Chaining inputs for a Snippet Trigger</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>test</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>C026DD15-F889-408D-B0D6-0AD264FC2EF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"1","arg":"1"},{"title":"2","arg":"2"},{"title":"3","arg":"3"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>How many?</string>
+				<key>title</key>
+				<string>How many?</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>835583FE-F1F9-4588-A2C9-89CD4825B8DA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>var1</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>9FB95AAE-70AC-49F0-A68D-A476E96F20A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"apple","arg":"apple"},{"title":"orange","arg":"orange"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Which fruit?</string>
+				<key>title</key>
+				<string>Which fruit?</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>70958D03-BA8F-4BF9-ADC3-835A0998A054</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>First:
+{var:var1}
+
+Next:
+{var:var2}
+
+Third:
+{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>35397AA2-5231-49B3-84DC-CDC137F5C2A5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"blue","arg":"blue"},{"title":"green","arg":"green"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>What color?</string>
+				<key>title</key>
+				<string>What color?</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>54C9F0F7-2F44-49D2-B13C-00C5E92C72AE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>var2</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>63AFAD1C-7FD6-435B-8891-1FF8F9B34343</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow was created at Alfred HQ.
+
+Need help with workflows? Take a look at the documentation on our website, and pop by the forum (alfredforum.com) if you have any further questions :)
+
+Most of all, have fun!
+
+Cheers,
+Vero</string>
+	<key>uidata</key>
+	<dict>
+		<key>35397AA2-5231-49B3-84DC-CDC137F5C2A5</key>
+		<dict>
+			<key>note</key>
+			<string>And finally, include the variables and query in your output in whichever format you need them to paste where the original snippet was.</string>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
+		<key>54C9F0F7-2F44-49D2-B13C-00C5E92C72AE</key>
+		<dict>
+			<key>note</key>
+			<string>This is our last argument, so I didn't bother saving it as a variable. It'll go on to the next object as {query}</string>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>260</integer>
+		</dict>
+		<key>63AFAD1C-7FD6-435B-8891-1FF8F9B34343</key>
+		<dict>
+			<key>note</key>
+			<string>Save this latest query as var2</string>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>70958D03-BA8F-4BF9-ADC3-835A0998A054</key>
+		<dict>
+			<key>note</key>
+			<string>Create another list filter - or add a text field as per the tutorial if you need free text</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>835583FE-F1F9-4588-A2C9-89CD4825B8DA</key>
+		<dict>
+			<key>note</key>
+			<string>Create your first list of options. The Arg will be passed on as your query</string>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>9FB95AAE-70AC-49F0-A68D-A476E96F20A2</key>
+		<dict>
+			<key>note</key>
+			<string>Save the query as var1</string>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>C026DD15-F889-408D-B0D6-0AD264FC2EF5</key>
+		<dict>
+			<key>note</key>
+			<string>Set your snippet keyword here</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.alfredapp.com</string>
+</dict>
+</plist>

@@ -2,10 +2,7 @@
 	"folders":
 	[
 		{
-			"folder_exclude_patterns":
-			[
-			],
-			"path": "~/Projects/os-zimmee/"
-		}
+			"path": "/Volumes/Home/Projects/os-zimmee"
+		},
 	]
 }

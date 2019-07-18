@@ -1,0 +1,11 @@
+{
+  "preferences": {
+    "css.valueSeparator": ": ",
+    "css.propertyEnd": ";",
+    "css.autoInsertVendorPrefixes": false,
+    "scss.autoInsertVendorPrefixes": false,
+    "sass.autoInsertVendorPrefixes": false,
+    "less.autoInsertVendorPrefixes": false,
+    "stylus.autoInsertVendorPrefixes": false
+  }
+}

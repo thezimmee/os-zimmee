@@ -1,5 +1,5 @@
 {
-	"always_show_minimap_viewport": true,
+	"always_show_minimap_viewport": false,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
@@ -10,7 +10,7 @@
 	"drag_text": false,
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
-	"draw_white_space": "selection",
+	"draw_white_space": "none",
 	"fade_fold_buttons": false,
 	"find_selected_text": true,
 	"folder_exclude_patterns":
@@ -26,10 +26,15 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"DocBlockr",
 		"FileBrowser",
 		"Focus Active View",
+		"FuzzyFilePath",
+		"GitGutter",
 		"Markdown",
+		"Markdown Extended",
 		"SideBarEnhancements",
+		"TypeScript",
 		"Vintage"
 	],
 	"line_padding_bottom": 1,
@@ -42,13 +47,13 @@
 	"match_tags": true,
 	"rulers":
 	[
-		80
+		100
 	],
 	"shift_tab_unindent": true,
 	"show_full_path": true,
-	"tab_size": 4,
+	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
-	"word_wrap": false
+	"word_wrap": true
 }

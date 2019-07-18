@@ -1,0 +1,5 @@
+{
+  "shell-file-name": "zsh",
+  "comint-scroll-show-maximum-output": true,
+  "success_but_no_output_message": "Shell command succeeded."
+}

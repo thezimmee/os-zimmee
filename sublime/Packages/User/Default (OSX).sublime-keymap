@@ -4,7 +4,11 @@
      */
 
     // Toggle word wrap.
-    { "keys": ["super+."], "command": "toggle_setting", "args": { "setting": "word_wrap" } },
+    {
+        "keys": ["super+."],
+        "command": "toggle_setting",
+        "args": { "setting": "word_wrap" }
+    },
 
     // Toggle sidebar.
     { "keys": ["super+;"], "command": "focus_file_on_sidebar" },
@@ -29,7 +33,10 @@
     {
         "keys": ["super+shift+;"],
         "command": "cycle_setting",
-        "args": { "setting": "draw_white_space", "options": ["all", "selection"] }
+        "args": {
+            "setting": "draw_white_space",
+            "values": ["all", "none"]
+        }
     },
 
     // Toggle indent guides.
@@ -53,10 +60,35 @@
     },
 
     // Toggle comment.
-    { "keys": ["super+alt+/"], "command": "toggle_comment", "args": { "block": true } },
+    {
+        "keys": ["super+alt+/"],
+        "command": "toggle_comment",
+        "args": { "block": true }
+    },
 
     // Toggle overwrite cursor.
     { "keys": ["super+alt+i"], "command": "toggle_overwrite" },
+
+    // Toggle Markdown live preview.
+    {
+        "keys": ["super+ctrl+shift+p"],
+        "command": "markdown_preview_select",
+        "args": {
+            "target": "browser"
+        },
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "text.html.markdown",
+                "match_all": true
+            }
+        ]
+    },
+    {
+        "keys": ["super+ctrl+shift+l"],
+        "command": "toggle_live_reload_plugin"
+    },
 
     /**-------------------------------------------------------------------------
      * Tabs and Panes.
@@ -68,12 +100,20 @@
 
     // Navigate between panes.
     { "keys": ["alt+o"], "command": "focus_neighboring_group" },
-    { "keys": ["alt+u"], "command": "focus_neighboring_group", "args": { "forward": false } },
+    {
+        "keys": ["alt+u"],
+        "command": "focus_neighboring_group",
+        "args": { "forward": false }
+    },
 
     // Move tab inside of pane.
     { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" } },
     { "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" } },
-    { "keys": ["ctrl+k"], "command": "move_tab", "args": { "position": "999" } },
+    {
+        "keys": ["ctrl+k"],
+        "command": "move_tab",
+        "args": { "position": "999" }
+    },
     { "keys": ["ctrl+i"], "command": "move_tab", "args": { "position": "0" } },
 
     // Move tab to neighoring group.
@@ -113,16 +153,49 @@
      * Code navigation and selection.
      */
 
+    // Go to...
+    {
+        "keys": ["super+shift+r"],
+        "command": "goto_symbol_in_project"
+    },
+
     // Select by scope.
-    { "keys": ["super+shift+space"], "command": "expand_selection", "args": { "to": "scope" } },
-    { "keys": ["ctrl+shift+space"], "command": "expand_selection", "args": { "to": "scope" } },
+    {
+        "keys": ["super+shift+space"],
+        "command": "expand_selection",
+        "args": { "to": "scope" }
+    },
+    {
+        "keys": ["ctrl+shift+space"],
+        "command": "expand_selection",
+        "args": { "to": "scope" }
+    },
     { "keys": ["super+ctrl+space"], "command": "soft_undo" },
-    { "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": { "to": "line" } },
+    {
+        "keys": ["ctrl+shift+l"],
+        "command": "expand_selection",
+        "args": { "to": "line" }
+    },
     { "keys": ["ctrl+shift+p"], "command": "expand_selection_to_paragraph" },
-    { "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": { "to": "brackets" } },
-    { "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": { "to": "indentation" } },
-    { "keys": ["ctrl+shift+g"], "command": "expand_selection", "args": { "to": "tag" } },
-    { "keys": ["ctrl+delete"], "command": "delete_to_beg_next_contig_boundary" },
+    {
+        "keys": ["ctrl+shift+m"],
+        "command": "expand_selection",
+        "args": { "to": "brackets" }
+    },
+    {
+        "keys": ["ctrl+shift+j"],
+        "command": "expand_selection",
+        "args": { "to": "indentation" }
+    },
+    {
+        "keys": ["ctrl+shift+g"],
+        "command": "expand_selection",
+        "args": { "to": "tag" }
+    },
+    {
+        "keys": ["ctrl+delete"],
+        "command": "delete_to_beg_next_contig_boundary"
+    },
 
     // Word navigation / selection.
     // {
@@ -184,7 +257,21 @@
 
     // Scroll.
     { "keys": ["alt+i"], "command": "scroll_lines", "args": { "amount": 1.0 } },
-    { "keys": ["alt+k"], "command": "scroll_lines", "args": { "amount": -1.0 } },
+    {
+        "keys": ["alt+k"],
+        "command": "scroll_lines",
+        "args": { "amount": -1.0 }
+    },
+    {
+        "keys": ["alt+shift+i"],
+        "command": "move",
+        "args": { "by": "pages", "forward": false }
+    },
+    {
+        "keys": ["alt+shift+k"],
+        "command": "move",
+        "args": { "by": "pages", "forward": true }
+    },
 
     // // Find and replace.
     // {
@@ -198,7 +285,8 @@
      */
 
     // Create file.
-    { "keys": ["super+n"], "command": "fm_create" },
+    // { "keys": ["super+n"], "command": "fm_create" },
+    { "keys": ["super+n"], "command": "advanced_new_file_new"},
     { "keys": ["super+alt+n"], "command": "new_file" },
 
     // Open file from current directory.
@@ -237,10 +325,18 @@
      */
 
     // Get color info (color needs to be selected).
-    { "keys": ["super+shift+i"], "command": "color_helper", "args": { "mode": "info" } },
+    {
+        "keys": ["super+shift+i"],
+        "command": "color_helper",
+        "args": { "mode": "info" }
+    },
 
     // Show color palettes.
-    { "keys": ["super+shift+alt+c"], "command": "color_helper", "args": { "mode": "palette" } },
+    {
+        "keys": ["super+shift+alt+c"],
+        "command": "color_helper",
+        "args": { "mode": "palette" }
+    },
 
     /**-------------------------------------------------------------------------
      * Linting.
@@ -250,9 +346,40 @@
     { "keys": ["alt+down"], "command": "next_result" },
     { "keys": ["alt+up"], "command": "prev_result" },
 
+    // Format with Standard.
+    {
+        "keys": ["super+alt+l"],
+        "command": "standard_format",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.js",
+                "match_all": true
+            }
+        ]
+    },
+    {
+        "keys": ["super+alt+l"],
+        "command": "js_prettier",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "text.html,source.css",
+                "match_all": true
+            }
+        ]
+    },
+
     /**-------------------------------------------------------------------------
      * Custom Commands.
      */
+
+    {
+        "keys": ["super+alt+enter"],
+        "command": "shell_command"
+    },
 
     // @todo Disabled on 10/8/2018.
     // // Open command palette with text selected.
@@ -309,8 +436,7 @@
             {
                 "key": "selector",
                 "operator": "equal",
-                "operand":
-                    "comment, string.quoted.double.block.cython, string.quoted.single.block.cython, string.quoted.double.block.python, string.quoted.single.block.python, string.quoted.docstring.multi.python",
+                "operand": "comment, string.quoted.double.block.cython, string.quoted.single.block.cython, string.quoted.double.block.python, string.quoted.single.block.python, string.quoted.docstring.multi.python",
                 "match_all": true
             }
         ]
@@ -383,9 +509,21 @@
         "keys": ["super+enter"],
         "command": "gs_commit_view_do_commit",
         "context": [
-            { "key": "setting.command_mode", "operator": "equal", "operand": false },
-            { "key": "setting.git_savvy.get_long_text_view", "operator": "equal", "operand": true },
-            { "key": "setting.git_savvy.commit_on_close", "operator": "equal", "operand": false }
+            {
+                "key": "setting.command_mode",
+                "operator": "equal",
+                "operand": false
+            },
+            {
+                "key": "setting.git_savvy.get_long_text_view",
+                "operator": "equal",
+                "operand": true
+            },
+            {
+                "key": "setting.git_savvy.commit_on_close",
+                "operator": "equal",
+                "operand": false
+            }
         ]
     }
 ]

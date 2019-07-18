@@ -1,6 +1,15 @@
-// GitGutter Settings - User
 {
-    "show_line_annotation": "false",
-    "ignore_whitespace": "space",
-    "show_in_minimap": 2
+	"ignore_whitespace": "space",
+	"show_in_minimap": 2,
+	"show_line_annotation": "auto",
+	"show_status_bar_text": true,
+	"status_bar_text":
+	[
+		"{% if repo and branch %}",
+		"{{repo}}/{{branch}}",
+		"{% if added_files + deleted_files + modified_files > 0 %}*{% endif %}",
+		"{% if compare not in ('HEAD', branch, None) %} [{{compare}}]{% endif %}",
+		"{% if state %} ({{state}}){% endif %}",
+		"{% endif %}"
+	]
 }

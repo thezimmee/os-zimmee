@@ -1,6 +1,7 @@
 {
-    "parser": "default",
-    "build_action": "browser",
-    "github_inject_header_ids": true,
-    "gitlab_highlight_theme": "solarized-dark"
+  "parser": "default",
+  "enabled_parsers": ["markdown", "github"],
+  "build_action": "browser",
+  "github_inject_header_ids": true,
+  "gitlab_highlight_theme": "solarized-dark"
 }

@@ -23,5 +23,7 @@
         "merge": ["--no-ff", "--no-commit"]
     },
     "load_additional_codecs": true,
-    "tab_order": ["branch", "status", "rebase", "tags", "graph"]
+    "tab_order": ["status", "branch"],
+    "pedantic_commit_first_line_length": 100,
+    "pedantic_commit_message_line_length": 100
 }

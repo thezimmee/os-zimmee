@@ -4,12 +4,10 @@
 		{
 			"folder_exclude_patterns":
 			[
-				"_gsdata_",
 				"node_modules",
-				"build",
-				"src2"
+				"dist"
 			],
-			"path": "~/Projects/cs-admin2/"
+			"path": "~/Projects/brikcss/cli-builder"
 		}
 	]
 }

@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+			],
+			"path": "~/Projects/newulife/wordpress/app/public/wp-content"
+		}
+	]
+}

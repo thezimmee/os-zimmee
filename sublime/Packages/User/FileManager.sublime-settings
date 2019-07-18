@@ -1,7 +1,7 @@
-// Your settings for FileManager. See the default file to see the different options. 
+// Your settings for FileManager. See the default file to see the different options.
 {
-	"log_in_status_bar": "user",
-	"aliases": {
+    "log_in_status_bar": "user",
+    "aliases": {
         "sublime": "$packages",
         "sublimeu": "$packages/User/",
         "desktop": "~/Desktop",
@@ -9,8 +9,8 @@
         "downloads": "~/Downloads",
         "projects": "~/Projects",
         "os": "~/Projects/os-zimmee",
-        "cheatsheets": "~/Projects/cheatsheets",
-        "here": "$folder_path",
+        "cheatsheets": "~/Projects/os-zimmee/cheatsheets",
+        "here": "$folder_path"
     },
     "create_keybinding_enabled": false
 }

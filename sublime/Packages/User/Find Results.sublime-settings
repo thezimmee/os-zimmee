@@ -1,3 +1,5 @@
+// These settings override both User and Default settings for the Find Results syntax
 {
-    "color_scheme": "Monokai.sublime-color-scheme"
+  "color_scheme":
+    "Packages/User/color-schemes/solarz-dark--find-results.sublime-color-scheme"
 }

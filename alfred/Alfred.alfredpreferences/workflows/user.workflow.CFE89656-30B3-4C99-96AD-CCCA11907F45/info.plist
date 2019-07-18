@@ -73,24 +73,11 @@
 		</array>
 		<key>B0B027D6-3488-48A3-89F8-9AC523765E97</key>
 		<array/>
-		<key>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>25052730-B804-467E-A3A8-38DE51D2E3C2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>BE368788-3C23-47B3-9EE1-8AFAD8B75888</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</string>
+				<string>25052730-B804-467E-A3A8-38DE51D2E3C2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -288,19 +275,6 @@ Vero</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>.1</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -448,13 +422,6 @@ Need help with workflows? Pop by the forum (alfredforum.com) if you have any fur
 			<integer>220</integer>
 			<key>ypos</key>
 			<integer>30</integer>
-		</dict>
-		<key>B3C4D7CF-DE42-497F-9D26-7A84354FECA3</key>
-		<dict>
-			<key>xpos</key>
-			<integer>130</integer>
-			<key>ypos</key>
-			<integer>430</integer>
 		</dict>
 		<key>BD3BF041-3A57-445D-85C7-796BFD3F27B2</key>
 		<dict>

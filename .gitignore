@@ -17,6 +17,8 @@ zsh/zprezto.link
 ## --- START: SUBLIME
 
 # Installed packages not in user folder.
+sublime/Packages--BACKUP/
+sublime/Packages/Autoprefixer/
 sublime/Packages/backrefs/
 sublime/Packages/BetterFindBuffer/
 sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
@@ -25,17 +27,21 @@ sublime/Packages/Codecs33/
 sublime/Packages/Default/
 sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
+sublime/Packages/JavaScript Enhancements/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
-/sublime/Packages/Minify/
+sublime/Packages/Minify/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
 sublime/Packages/pathtools/
 sublime/Packages/jsonschema/
 sublime/Packages/JsPrettier/
 sublime/Packages/Pretty\ JSON/
+sublime/Packages/package_setting_context/
+sublime/Packages/ptyprocess/
 sublime/Packages/pygments/
 sublime/Packages/pymdownx/
+sublime/Packages/pyte/
 sublime/Packages/python-jinja2/
 sublime/Packages/python-markdown/
 sublime/Packages/pyyaml/
@@ -43,18 +49,24 @@ sublime/Packages/PyV8/
 sublime/Packages/LiveReload/
 sublime/Packages/rainbow_csv
 sublime/Packages/SendCode/
+sublime/Packages/SFTP/
+sublime/Packages/shellenv/
 sublime/Packages/SublimeCodeIntel/
 sublime/Packages/SublimeLinter-contrib-eslint/
 sublime/Packages/SublimeLinter-contrib-stylelint/
 sublime/Packages/SublimeLinter/
 sublime/Packages/Sublimerge\ 3/
 sublime/Packages/Sublimerge\ Pro/
+sublime/Packages/SVGO/
 sublime/Packages/SyntaxFold/
 sublime/Packages/Theme\ -\ Default/
 sublime/Packages/Terminal/
+sublime/Packages/Terminus/
+sublime/Packages/Toggle LiveReload Plugin
 sublime/Packages/TypeScript/
 sublime/Packages/WakaTime/
 sublime/Packages/watchdog/
+sublime/Packages/wcwidth/
 sublime/Packages/zzz\ A\ File\ Icon\ zzz/
 
 # User files and folders.
@@ -69,7 +81,9 @@ sublime/Packages/User/Package\ Control.*
 !sublime/Packages/User/Package\ Control.sublime-settings
 sublime/Packages/User/Projects/library.json
 sublime/Packages/User/Projects/recent.json
-!sublime/Packages/User/Projects/*.sublime-project
+sublime/Packages/User/Projects/**/node_modules
+sublime/Packages/User/Projects/**/package*.json
+!sublime/Packages/User/Projects/**/*.sublime-project
 sublime/Packages/User/Sublimerge\ Macros.sublime-commands
 sublime/Packages/User/Sublimerge.sublime-color-scheme
 sublime/Packages/User/Sublimerge.tmTheme
