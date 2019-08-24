@@ -6,14 +6,14 @@
             Colors used by the inline-diff view to display changes.
          */
         "inline_diff": {
-            "add_foreground": "#eff0f0",
-            "add_background": "#52862d",
-            "add_foreground_bold": "#eff0f0",
-            "add_background_bold": "#3f6722",
-            "remove_foreground": "#eff0f0",
-            "remove_background": "#b1434c",
-            "remove_foreground_bold": "#eff0f0",
-            "remove_background_bold": "#8d353d"
+            "add_foreground": "hsl(44, 1%, 96%)",
+            "add_background": "hsl(121, 40%, 30%)",
+            "add_foreground_bold": "hsl(44, 1%, 96%)",
+            "add_background_bold": "hsl(121, 50%, 40%)",
+            "remove_foreground": "hsl(44, 1%, 96%)",
+            "remove_background": "hsl(357, 50%, 40%)",
+            "remove_foreground_bold": "hsl(44, 1%, 96%)",
+            "remove_background_bold": "hsl(357, 60%, 50%)"
         }
     },
     "show_panel_for": ["push"],
@@ -22,7 +22,8 @@
     "global_flags": {
         "merge": ["--no-ff", "--no-commit"]
     },
-    "load_additional_codecs": true,
+    "inline_diff_ignore_eol_whitespaces": true,
+    // "load_additional_codecs": true,
     "tab_order": ["status", "branch"],
     "pedantic_commit_first_line_length": 100,
     "pedantic_commit_message_line_length": 100

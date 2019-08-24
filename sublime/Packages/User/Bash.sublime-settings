@@ -1,0 +1,9 @@
+{
+	"extensions":
+	[
+		"uninstall",
+		"update",
+		"install",
+		"config"
+	]
+}

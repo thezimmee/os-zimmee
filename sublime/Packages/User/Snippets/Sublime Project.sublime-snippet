@@ -1,0 +1,37 @@
+<snippet>
+	<content><![CDATA[
+{
+  "folders": [
+    {
+      "name": "${1}",
+      "path": "${2:~/Projects/}",
+      "folder_exclude_patterns": [
+        ${0:"dist",
+        "node_modules"}
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>project</tabTrigger>
+	<description>Sublime project</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.json</scope>
+</snippet>

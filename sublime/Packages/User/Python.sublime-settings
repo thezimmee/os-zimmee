@@ -1,0 +1,22 @@
+// These settings override both User and Default settings for the Python syntax
+{
+	"wrap_as_you_type_sections": [
+		{
+			"selector": "comment.block - punctuation.definition.comment",
+			"wrap_width": 72
+		},
+		{
+			"combining_selector":
+			"source - (comment | constant | entity | invalid | keyword | punctuation | storage | string | variable)",
+			"line_start": "#",
+			"selector": "comment.line",
+			"wrap_width": 79
+		}
+	],
+	"wrap_as_you_type_paragraphs": [
+		{
+			"first_line_regex": "^(\"\"?|''?)$",
+			"single_line": true
+		}
+	]
+}

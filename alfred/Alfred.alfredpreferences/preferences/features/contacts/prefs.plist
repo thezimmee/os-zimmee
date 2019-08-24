@@ -4,5 +4,7 @@
 <dict>
 	<key>showJobTitle</key>
 	<true/>
+	<key>urlHandler</key>
+	<string>https://contacts.google.com/search/{uid}</string>
 </dict>
 </plist>

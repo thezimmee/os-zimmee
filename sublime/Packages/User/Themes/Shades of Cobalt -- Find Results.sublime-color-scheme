@@ -1,0 +1,140 @@
+{
+  "name": "Shades of Cobalt - Find Results",
+  "author": "Tyson Zimmerman (thezimmee@gmail.com)",
+  "variables": {
+    // 
+    // Base colors.
+    // 
+
+    // Neutrals.
+    "black00": "hsl(0, 0%, 0%)",
+    "white00": "hsl(0, 0%, 100%)",
+    // "dark00": "hsl(206, 26%, 19%)",
+    "dark00": "hsl(208, 20%, 18%)",
+    "gray00": "hsl(208, 0%, 50%)",
+    // "light00": "hsl(206, 93%, 89%)",
+    "light00": "hsl(208, 21%, 89%)",
+    "brown00": "hsl(52, 15%, 50%)",
+    // Sweet spot: red, pink, orange, yellow, green.
+    "pink00": "hsl(314, 100%, 75%)",
+    "red00": "hsl(0, 100%, 65%)",
+    "cherry00": "hsl(10, 100%, 43%)",
+    "orange00": "hsl(37, 100%, 50%)",
+    "yellow00": "hsl(47, 100%, 50%)",
+    "green00": "hsl(121, 71%, 63%)",
+    "lime00": "hsl(106, 71%, 63%)",
+    // Use sparingly: blue, purple.
+    "cyan00": "hsl(181, 100%, 58%)",
+    "blue00": "hsl(208, 70%, 50%)",
+    "purple00": "hsl(252, 100%, 77%)",
+
+    // 
+    // Computed colors.
+    //
+
+    // Neutrals.
+    "dark-01": "color(var(dark00) l(- 5%))",
+    "dark01": "color(var(dark00) l(+ 8%))",
+
+    // Sweet spot: red, pink, orange, yellow. green.
+    "magenta00": "color(var(pink00) blend(var(red00) 50%))",
+    "red-01": "color(var(red00) s(- 20%) l(- 7%))",
+    "cherry01": "color(var(cherry00) l(+ 10%))",
+    "cherry02": "color(var(cherry00) s(- 12%) l(+ 20%))",
+    "mahogany00": "color(var(orange00) blend(var(red00) 50%))",
+    "orange-01": "color(var(orange00) l(- 5%))",
+    "orange01": "color(var(orange00) l(+ 10%))",
+    "yellow01": "color(var(yellow00) l(+ 10%))",
+    "green01": "color(var(green00) s(+ 30%) l(+ 15%))",
+    "lime-01": "color(var(lime00) l(- 15%))",
+    "lime01": "color(var(lime00) s(100%) l(+ 14%))",
+
+    // Use sparingly: blue, purple.
+    "cyan01": "color(var(cyan00) l(+ 12%))",
+    "blue01": "color(var(blue00) s(+ 20%) l(+ 12%))",
+    "blue02": "color(var(blue00) s(+ 20%) l(+ 20%))"
+  },
+  "globals":
+  {
+    "//": "GLOBAL",
+    "foreground": "var(light00)",
+    "background": "var(dark00)",
+    "invisibles": "color(var(gray00) alpha(0.7))",
+    "caret": "var(yellow00)",
+    // "block_caret": "color(var(magenta) s(80%))",
+    "line_highlight": "var(dark01)",
+
+    "//": "ACCENTS",
+    "misspelling": "var(cherry00)",
+    "fold_marker": "var(yellow00)",
+    "minimap_border": "color(var(yellow00) a(0.7))",
+    "accent": "var(yellow00)",
+
+    "//": "GUTTER",
+    // "gutter": "",
+    "gutter_foreground": "var(gray00)",
+
+    "//": "DIFFS",
+    "line_diff_width": "4",
+    "line_diff_added": "var(green00)",
+    "line_diff_modified": "var(orange00)",
+    "line_diff_deleted": "var(cherry00)",
+
+    "//": "SELECTIONS",
+    "selection": "var(yellow00)",
+    "selection_foreground": "var(dark00)",
+    // "selection_border": "var(yellow00)",
+    // "selection_border_width": "1",
+    "inactive_selection": "var(dark01)",
+    // "inactive_selection_foreground": "",
+    "selection_corner_style": "square",
+    "selection_corner_radius": "0",
+
+    "//": "FIND",
+    "highlight": "var(yellow00)",
+    "find_highlight": "var(yellow00)",
+    "find_highlight_foreground": "var(dark00)",
+
+    "//": "GUIDES",
+    "guide": "var(bluegray-01)",
+    "active_guide": "var(yellow00)",
+    "stack_guide": "var(bluegray00)",
+
+    "//": "BRACKETS",
+    "brackets_options": "stippled_underline",
+    "brackets_foreground": "var(yellow00)",
+    "brackets_contents_options": "stippled_underline",
+    "brackets_contents_foreground": "var(yellow00)",
+    "bracket_contents_foreground": "var(dark00)",
+    "bracket_contents_options": "stippled_underline",
+
+    "//": "TAGS",
+    "tags_options": "stippled_underline",
+    "tags_foreground": "var(yellow00)",
+
+    "//": "SHADOWS",
+    "shadow": "var(dark-01)",
+    "shadow_width": "3",
+
+    "//": "CSS",
+    // "//phantom_css": "",
+    "popup_css": " html { background-color: var(--background); color: var(--foreground); } a { color: #80FFBB; line-height: 20px; } "
+},
+"rules":
+[
+    //
+    // Find Results.
+    // 
+    { "name": "Find Results | text", "scope": "text.find-in-files", "foreground": "color(var(light00) a(0.7))" },
+    { "name": "Find Results | matching text", "scope": "match.find-in-files, header.find-in-files, footer.find-in-files", "foreground": "var(white00)" },
+    { "name": "Find Results | numbers", "scope": "variable.total_files_count.find-in-files, variable.matched_files_count.find-in-files, variable.matched_count.find-in-files", "foreground": "var(pink00)", "font_style": "bold" },
+    { "name": "Find Results | query", "scope": "string.query.find-in-files", "foreground": "var(lime01)", "font_style": "bold" },
+    { "name": "Find Results | no matches", "scope": "variable.no_matches.find-in-files", "foreground": "var(red00)", "font_style": "bold" },
+    { "name": "Find Results | line number", "scope": "constant.numeric.line-number.find-in-files", "foreground": "var(gray00)" },
+    { "name": "Find Results | matching line", "scope": "match.find-in-files", "background": "var(dark01)" },
+    { "name": "Find Results | matching line number", "scope": "constant.numeric.line-number.match.find-in-files", "background": "var(dark01)", "foreground": "var(blue01)", "font_style": "bold" },
+    { "name": "Find Results | matching line punctuation", "scope": "punctuation.line-number.match.find-in-files", "foreground": "var(dark01)", "background": "var(dark01)" },
+    { "name": "Find Results | filename", "scope": "entity.name.filename.find-in-files", "foreground": "var(light00)", "background": "color(var(purple00) a(0.4))", "font_style": "bold italic" },
+    { "name": "Find Results | header/footer", "scope": "header.find-in-files, footer.find-in-files", "font_style": "italic" }
+  ]
+}

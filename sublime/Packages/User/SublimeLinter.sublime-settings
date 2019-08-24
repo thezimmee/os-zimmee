@@ -1,0 +1,6 @@
+// SublimeLinter Settings - User
+{
+	"show_panel_on_save": "view",
+  "statusbar.counters_template": "(w:{}|e:{})",
+	"statusbar.messages_template": "{type}|{code}"
+}

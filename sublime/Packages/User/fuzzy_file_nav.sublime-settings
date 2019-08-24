@@ -1,4 +1,5 @@
 {
+    "use_sub_notify": false,
     "keep_panel_open_after_action": false,
     "bookmarks": [
         { "name": "Projects", "path": "~/Projects/" },

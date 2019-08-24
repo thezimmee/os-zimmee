@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "Sublime Icons",
+      "path": "~/Projects/os-zimmee/sublime/Plugins/Icons",
+      "folder_exclude_patterns": [
+        "node_modules"
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
+}

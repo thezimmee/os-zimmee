@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Symbols - Function reference</string>
+  <key>scope</key>
+  <string>source.js variable.function</string>
+  <key>settings</key>
+  <dict>
+    <key>showInIndexedSymbolList</key>
+    <string>1</string>
+    <key>showInSymbolList</key>
+    <string>1</string>
+    <key>symbolTransformation</key>
+    <!-- <string>s/\s+/</string> -->
+    <string>s/^/fn: /</string>
+  </dict>
+</dict>
+</plist>

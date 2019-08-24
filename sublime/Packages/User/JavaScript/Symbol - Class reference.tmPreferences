@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Symbol - Class reference</string>
+  <key>scope</key>
+  <string>source.js meta.function-call.constructor variable.type</string>
+  <key>settings</key>
+  <dict>
+    <key>showInIndexedSymbolList</key>
+    <string>1</string>
+    <key>showInSymbolList</key>
+    <string>1</string>
+    <key>symbolTransformation</key>
+    <!-- <string>s/\s+/</string> -->
+    <string>s/^/class: /</string>
+  </dict>
+</dict>
+</plist>

@@ -1,0 +1,414 @@
+{
+    "name": "Shades of Dark",
+    "author": "Tyson Zimmerman (thezimmee@gmail.com)",
+    "docs": "https://www.sublimetext.com/docs/3/scope_naming.html",
+    "variables": {
+        // Neutrals.
+        "dark02": "hsl(190, 20%, 7%)",
+        "dark01": "hsl(190, 18%, 12%)",
+        "dark": "hsl(190, 16%, 16%)",
+        "dark1": "hsl(190, 4%, 25%)",
+        "dark2": "hsl(190, 2%, 33%)",
+        "gray02": "hsl(44, 9%, 38%)",
+        "gray01": "hsl(44, 9%, 45%)",
+        "gray": "hsl(44, 9%, 52%)",
+        "gray1": "hsl(44, 9%, 58%)",
+        "gray2": "hsl(44, 9%, 66%)",
+        "light02": "hsl(44, 1%, 70%)",
+        "light01": "hsl(44, 1%, 78%)",
+        "light": "hsl(44, 1%, 86%)",
+        "light1": "hsl(44, 1%, 90%)",
+        "light2": "hsl(44, 1%, 96%)",
+        "brown02": "hsl(44, 20%, 20%)",
+        "brown01": "hsl(44, 30%, 35%)",
+        "brown": "hsl(44, 50%, 45%)",
+        "brown1": "hsl(44, 65%, 60%)",
+        "brown2": "hsl(44, 80%, 75%)",
+        // Colors.
+        "salmon": "hsl(0, 65%, 65%)",
+        "red": "hsl(0, 80%, 60%)",
+        "error": "color(var(red) s(90%))",
+        "brick": "color(var(red) blend(var(orange) 50%))",
+        "orange": "hsl(29, 80%, 66%)",
+        "orangeyellow": "color(var(orange) blend(var(yellow) 50%))",
+        "yellow": "hsl(59, 80%, 60%)",
+        "mustard": "color(var(yellow) blend(var(green) 50%))",
+        "green": "hsl(89, 47%, 60%)",
+        "sea": "color(var(green) blend(var(blue) 75%))",
+        "cyan": "hsl(184, 60%, 60%)",
+        "blue": "hsl(204, 80%, 65%)",
+        "purple": "hsl(264, 70%, 75%)",
+        "pink": "hsl(329, 85%, 75%)",
+        "magenta": "color(var(red) blend(var(pink) 50%))",
+    },
+    "globals": {
+        "//": "GLOBAL",
+        "foreground": "var(light)",
+        "background": "var(dark)",
+        "invisibles": "var(dark1)",
+        "caret": "color(var(magenta) s(90%))",
+        "block_caret": "color(var(magenta) s(80%))",
+        "line_highlight": "color(var(dark2) a(0.5))",
+
+        "//": "ACCENTS",
+        "misspelling": "var(error)",
+        // "fold_marker": "",
+        // "minimap_border": "",
+        "accent": "var(brick)",
+
+        "//": "GUTTER",
+        // "gutter": "",
+        "gutter_foreground": "var(gray01)",
+
+        "//": "DIFF",
+        "line_diff_width": "4",
+        "line_diff_added": "color(var(green) a(0.8))",
+        "line_diff_modified": "var(orange)",
+        "line_diff_deleted": "var(error)",
+
+        "//": "SELECTION",
+        "selection": "color(var(dark2) blend(var(magenta) 90%) a(0.5))",
+        // "selection_foreground": "var(dark)",
+        "selection_border": "color(var(magenta) a(0.3))",
+        "selection_border_width": "1",
+        "inactive_selection": "color(var(dark1) a(0.6))",
+        // "inactive_selection_foreground": "",
+        "selection_corner_style": "square",
+        "selection_corner_radius": "0",
+
+        "//": "FIND",
+        "highlight": "var(pink)",
+        "find_highlight": "var(pink)",
+        "find_highlight_foreground": "var(dark)",
+
+        "//": "GUIDES",
+        "guide": "var(dark1)",
+        "active_guide": "color(var(pink) a(0.5))",
+        "stack_guide": "var(dark1)",
+
+        "//": "BRACKETS",
+        "brackets_options": "underline",
+        "brackets_foreground": "var(pink)",
+        "brackets_contents_options": "underline",
+        "brackets_contents_foreground": "var(pink)",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "var(pink)",
+
+        "//": "TAGS",
+        "tags_options": "stippled_underline",
+        "tags_foreground": "var(purple)",
+
+        "//": "SHADOWS",
+        "shadow": "var(dark02)",
+        "shadow_width": "2",
+
+        "//": "CSS",
+        "//popup_css": "",
+        "//phantom_css": ""
+    },
+    "rules": [
+        //
+        // General programming.
+        // 
+
+        { "name": "Comments and punctuation", "scope": "comment, punctuation.definition, punctuation.section, punctuation.separator, punctuation.terminator", "foreground": "var(gray)" },
+        { "name": "Strings", "scope": "string", "foreground": "var(brown2)" },
+        { "name": "Numbers, special characters, and other language constants", "scope": "constant.numeric, constant.character, string.regexp, constant.language", "foreground": "var(pink)" },
+        { "name": "Booleans and other language constants", "scope": "constant.language", "font_style": "italic" },
+        { "name": "Keys", "scope": "entity.name.tag.yaml, meta.mapping.key string.quoted.double.json - punctuation.definition.string, support.type.property-name, entity.other.attribute-name", "foreground": "var(orange)", "font_style": "italic" },
+        { "name": "Types", "scope": "storage", "foreground": "var(blue)" },
+        { "name": "Operators and units", "scope": "storage.type.function.arrow, keyword.operator.assignment, keyword.operator.arithmetic, keyword.operator.bitwise, keyword.operator.comparison, keyword.operator.logical, keyword.operator.relational, keyword.operator.ternary, keyword.other.unit", "foreground": "var(purple)", "font_style": "normal" },
+        { "name": "Support/library keywords and variables", "scope": "keyword, support, variable.parameter", "foreground": "var(brick)", "font_style": "italic" },
+        { "name": "Unimportant support/library keywords and variables", "scope": "keyword.control.conditional", "foreground": "color(var(brown) blend(var(orange) 50%))", "font_style": "italic" },
+        { "name": "Special support/library keywords and variables", "scope": "keyword.control.flow, keyword.operator.word.new, keyword.other.important", "foreground": "color(var(salmon) blend(var(red) 35%))", "font_style": "bold italic" },
+        { "name": "Function calls", "scope": "variable.function, support.function, support.macro", "foreground": "var(sea)", "font_style": "italic" },
+
+        { "name": "User variable names", "scope": "variable", "foreground": "var(orange)" },
+        { "name": "User variable definitions", "scope": "meta.class entity.name.class, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite", "foreground": "color(var(orange) blend(var(brick) 50%))", "font_style": "bold" },
+        {"name": "Function definitions", "scope": "meta.function.declaration entity.name.function - variable.other.readwrite", "foreground": "var(green)", "font_style": "bold" },
+
+        //
+        // HTML.
+        // 
+
+        { "name": "Doctype", "scope": "keyword.declaration.doctype", "foreground": "var(blue)", "font_style": "italic" },
+        { "name": "Tags", "scope": "entity.name.tag", "foreground": "var(salmon)" },
+        { "name": "Style attribute", "scope": "entity.other.attribute-name.style", "foreground": "var(pink)", "font_style": "bold italic" },
+        { "name": "Class attribute", "scope": "entity.other.attribute-name.class, entity.other.attribute-name.class punctuation.definition.entity", "foreground": "var(green)" },
+        { "name": "Class attribute value", "scope": "meta.attribute-with-value.class meta.class-name", "foreground": "var(green)", "font_style": "bold" },
+        { "name": "ID attribute", "scope": "entity.other.attribute-name.id, entity.other.attribute-name.id punctuation.definition.entity", "foreground": "var(pink)" },
+        { "name": "ID attribute value", "scope": "meta.attribute-with-value.id meta.toc-list.id", "foreground": "var(pink)", "font_style": "bold" },
+
+        //
+        // Markdown.
+        // 
+
+        { "name": "Headings", "scope": "markup.heading", "foreground": "var(salmon)", "font_style": "bold" },
+        { "name": "Markdown punctuation", "scope": "markup.heading punctuation.definition.heading", "foreground": "color(var(salmon) a(0.5))",  "font_style": "normal" },
+        // { "name": "Markup heading 1", "scope": "markup.heading.1, markup.heading.1 entity.name.section", "foreground": "var(brick)" },
+        // { "name": "Markup heading 2", "scope": "markup.heading.2, markup.heading.2 entity.name.section", "foreground": "color(var(red) blend(var(brick) 50%))" },
+        { "name": "Block quote", "scope": "markup.quote", "foreground": "var(cyan)" },
+        { "name": "Block quote punctuation", "scope": "markup.quote punctuation.definition.blockquote", "foreground": "color(var(cyan) a(0.5))" },
+        { "name": "Markup numbered list", "scope": "markup.list.numbered.bullet, markup.list.numbered punctuation.definition.list_item", "foreground": "var(pink)" },
+        { "name": "Markup bulleted list", "scope": "markup.list.unnumbered.bullet, markup.list.unnumbered punctuation.definition.list_item", "foreground": "var(cyan)" },
+        { "name": "Markup link label", "scope": "string.other.link.title", "foreground": "var(blue)" },
+        { "name": "Markup link", "scope": "markup.underline.link", "foreground": "var(purple)" },
+        { "name": "Markdown bold", "scope": "markup.bold", "font_style": "bold" },
+        { "name": "Markdown italic", "scope": "markup.italic", "font_style": "italic" },
+        { "name": "Markdown bold & italic", "scope": "markup.italic markup.bold | markup.bold markup.italic", "font_style": "bold italic" },
+        { "name": "Markdown code", "scope": "markup.raw, meta.code-fence.definition.begin, meta.code-fence.definition.end", "background": "color(var(dark2) alpha(0.2))" },  { "name": "Markdown inserted", "scope": "markup.inserted", "foreground": "var(green)" },
+        { "name": "Markdown deleted", "scope": "markup.deleted", "foreground": "var(error)" },
+
+        //
+        // CSS.
+        // 
+
+        { "name": "Property value", "scope": "meta.property-value, meta.property-value support.constant", "foreground": "var(brown2)" },
+        { "name": "Class and ID selectors", "scope": "meta.selector entity.other.attribute-name.class, meta.selector entity.other.attribute-name.id", "font_style": "bold" },
+        { "name": "Pseudo elements", "scope": "meta.selector entity.other.pseudo-element", "foreground": "var(salmon)", "font_style": "italic" },
+        { "name": "Pseudo classes", "scope": "meta.selector entity.other.pseudo-class", "foreground": "var(blue)", "font_style": "italic" },
+        { "name": "CSS functions", "scope": "meta.property-value support.function", "foreground": "var(cyan)", "font_style": "italic" },
+        { "name": "CSS at rule", "scope": "meta.at-rule keyword.control.at-rule, meta.at-rule punctuation.definition.keyword", "foreground": "var(brick)", "font_style": "normal" },
+
+        // 
+        // JSON/YAML.
+        // 
+
+        { "name": "JSON/YAML Key", "scope": "entity.name.tag.yaml, meta.mapping.key string.quoted.double.json", "foreground": "var(salmon)", "font_style": "italic" },
+
+        //
+        // Invalid.
+        // 
+
+        { "name": "Illegal", "scope": "invalid.illegal", "background": "var(error)", "foreground": "var(light2)" },
+        { "name": "Deprecated", "scope": "invalid.deprecated", "background": "var(orange)", "foreground": "var(light2)" },
+
+        //
+        // Diffs.
+        // 
+
+        { "name": "diff.header", "scope": "meta.diff, meta.diff.header", "foreground": "var(blue)" },
+        { "name": "diff.deleted", "scope": "markup.deleted", "foreground": "var(red)" },
+        { "name": "diff.inserted", "scope": "markup.inserted", "foreground": "var(green)" },
+        { "name": "diff.changed", "scope": "markup.changed", "foreground": "var(orange)" },
+        { "scope": "diff.deleted", "background": "hsla(357, 45%, 60%, 0.15)", "foreground_adjust": "l(+ 5%)" },
+        { "scope": "diff.deleted.char", "background": "hsla(357, 60%, 60%, 0.30)", "foreground_adjust": "l(+ 10%)" },
+        { "scope": "diff.inserted", "background": "hsla(180, 45%, 60%, 0.15)", "foreground_adjust": "l(+ 5%)" },
+        { "scope": "diff.inserted.char", "background": "hsla(180, 60%, 60%, 0.30)", "foreground_adjust": "l(+ 10%)" },
+
+        //
+        // GitSavvy.
+        // 
+
+        {
+            "name": "GitSavvy Diff | header",
+            "scope":
+                "meta.diff, meta.diff.header, git-savvy.commit meta.diff.range.unified",
+            "background": "color(var(blue) alpha(0.3))"
+        },
+        {
+            "name": "GitSavvy Diff | deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(salmon)"
+        },
+        {
+            "name": "GitSavvy Diff | added",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitSavvy Diff | changed",
+            "scope": "markup.changed, meta.commit-info.files.changes",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | section",
+            "scope":
+                "meta.git-savvy.status.section, meta.git-savvy.section, meta.git-savvy.status.section, meta.git-savvy.status.stashes",
+            "background": "color(var(light) a(0.05))"
+        },
+        {
+            "name": "GitSavvy Status | help section punctuation",
+            "scope":
+                "comment.git-savvy.key-bindings-menu punctuation.definition.git-savvy.section",
+            "foreground": "var(dark)"
+        },
+        {
+            "name": "GitSavvy | section header",
+            "scope":
+                "keyword.other.git-savvy.section-header, keyword.other.git-savvy.stashes-header, keyword.other.git-savvy.section-header punctuation, punctuation.definition.git-savvy.section-header",
+            "background": "var(blue)",
+            "foreground": "var(light2)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "GitSavvy | section header text",
+            "scope":
+                "support.type.git-savvy.key-bindings-header-text, meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section, meta.git-savvy.key-bindings-header, keyword.other.git-savvy.section-header.tags.remote constant.other.git-savvy.tags.remote-name",
+            "foreground": "var(light2)",
+            "background": "var(gray)",
+            "font_style": "bold"
+        },
+        {
+            "scope": "GitSavvy | section header text punctuation",
+            "scope":
+                "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section",
+            "foreground": "var(gray)"
+        },
+        {
+            "name": "GitSavvy | section heading",
+            "scope": "keyword.other.git-savvy.section-header",
+            "background": "var(blue)",
+            "foreground": "var(light2)",
+            "font_style": "bold"
+        },
+        {
+            "name": "GitSavvy | section heading - red",
+            "scope":
+                "keyword.other.git-savvy.section-header.unstaged, keyword.other.git-savvy.section-header.merge-conflicts, keyword.other.git-savvy.section-header.branch.remote, keyword.other.git-savvy.section-header.branch.remote punctuation, keyword.other.git-savvy.section-header.tags.remote, keyword.other.git-savvy.section-header.tags.remote punctuation, punctuation.definition.git-savvy.section-header.remote, keyword.other.git-savvy.section-header.tags.remote constant.other.git-savvy.tags.remote-name",
+            "background": "color(var(red) a(0.6))"
+        },
+        {
+            "name": "GitSavvy | section heading - green",
+            "scope": "keyword.other.git-savvy.section-header.staged",
+            "background": "color(var(green) a(0.8))"
+        },
+        {
+            "name": "GitSavvy | removed files",
+            "scope": "meta.git-savvy.status.file.removed",
+            "foreground": "var(salmon)"
+        },
+        {
+            "name": "GitSavvy | untracked files",
+            "scope":
+                "meta.git-savvy.status.section.untracked meta.git-savvy.status.file",
+            "foreground": "color(var(light) a(0.5))",
+            "font_style": "italic"
+        },
+        {
+            "name": "GitSavvy | unstaged files",
+            "scope":
+                "meta.git-savvy.status.section.unstaged meta.git-savvy.status.file",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | staged files",
+            "scope":
+                "meta.git-savvy.status.section.staged meta.git-savvy.status.file",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitSavvy | stashed files",
+            "scope":
+                "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+            "foreground": "var(brown)"
+        },
+        {
+            "name": "GitSavvy | Status > keyboard shortcuts",
+            "scope":
+                "constant.character.git-savvy-key-binding-key, punctuation.definition.git-savvy.key-bindings-key-stroke",
+            "background": "color(var(light) a(0.1))",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "GitSavvy | Status > keyboard shortcut punctuation",
+            "scope": "punctuation.definition.git-savvy.key-bindings-key-stroke",
+            "foreground": "color(var(light) a(0.1))"
+        },
+        {
+            "name": "GitSavvy | Graph > commit dot",
+            "scope": "git-savvy.graph keyword.graph.commit.git-savvy",
+            "foreground": "color(var(green) blend(var(gray) 75%))"
+        },
+        {
+            "name": "GitSavvy | Graph > keywords",
+            "scope": "meta.graph.message.git-savvy keyword.by-name.git-savvy",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitSavvy | paths",
+            "scope": "comment.git-savvy.summary-header.root.info",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "GitSavvy | branches",
+            "scope": "constant.other.git-savvy.summary-header.branch-name",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "GitSavvy | hashes",
+            "scope": "constant.other.git-savvy.sha1",
+            "foreground": "var(pink)"
+        },
+
+        //
+        // Find Results.
+        // 
+
+        {
+            "name": "Find Results | total files count",
+            "scope": "variable.total_files_count.find-in-files",
+            "foreground": "var(green)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Find Results | query",
+            "scope": "string.query.find-in-files",
+            "foreground": "var(green)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Find Results | matched count",
+            "scope": "variable.matched_count.find-in-files",
+            "foreground": "var(green)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Find Results | matched files count",
+            "scope": "variable.matched_files_count.find-in-files",
+            "foreground": "var(green)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Find Results | no matches",
+            "scope": "variable.no_matches.find-in-files",
+            "foreground": "var(red)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Find Results | line number",
+            "scope": "constant.numeric.line-number.find-in-files",
+            "foreground": "var(gray)"
+        },
+        {
+            "name": "Find Results | matching line",
+            "scope": "match.find-in-files",
+            "background": "color(var(light) a(0.1))"
+        },
+        {
+            "name": "Find Results | matching line number",
+            "scope": "constant.numeric.line-number.match.find-in-files",
+            "foreground": "var(blue)",
+            "font_style": "bold",
+            "background": "color(var(light) a(0.1))"
+        },
+        {
+            "name": "Find Results | matching line",
+            "scope": "punctuation.line-number.match.find-in-files",
+            "foreground": "color(var(light) a(0.1))",
+            "background": "color(var(light) a(0.1))"
+        },
+        {
+            "name": "Find Results | filename",
+            "scope": "entity.name.filename.find-in-files",
+            "foreground": "var(light)",
+            "background": "color(var(blue) blend(var(gray02) 50%))",
+            "font_style": "bold italic"
+        },
+        {
+            "name": "Find Results | footer",
+            "scope": "footer.find-in-files",
+            "font_style": "italic"
+        }
+    ]
+}

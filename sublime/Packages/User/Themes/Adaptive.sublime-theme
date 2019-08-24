@@ -1,0 +1,52 @@
+{
+  "variables": {
+    "gray": "hsl(205, 5%, 83%)"
+  },
+  "rules": [
+    //
+    // START: Remove tab scroll buttons and tabs dropdown button.
+    //
+
+    {
+      "class": "tabset_control",
+      "tab_overlap": 24
+    },
+
+    // END.
+
+    //
+    // START: Remove tab scroll buttons and tabs dropdown button.
+    //
+    {
+      "class": "scroll_tabs_left_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.6,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    },
+    {
+      "class": "scroll_tabs_right_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.6,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    },
+    {
+      "class": "show_tabs_dropdown_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.7,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    }
+    // END.
+  ]
+}

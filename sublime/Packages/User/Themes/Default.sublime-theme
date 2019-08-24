@@ -1,0 +1,109 @@
+{
+  "variables": {
+    "gray": "hsl(205, 5%, 83%)"
+  },
+  "rules": [
+    //
+    // START: Darken sidebar and similar background colors.
+    //
+
+    // Backgrounds.
+    {
+      "class": "sidebar_container",
+      "layer0.tint": "var(gray)"
+    },
+    {
+      "class": "overlay_control",
+      "layer0.tint": "var(gray)",
+      "content_margin": 4
+    },
+    {
+      "class": "quick_panel",
+      "row_padding": 6,
+      "layer0.tint": "var(gray)"
+    },
+    {
+      "class": "panel_control",
+      "parents": [{ "class": "switch_project_window" }],
+      "layer0.tint": "var(gray)"
+    },
+    {
+      "class": "dialog",
+      "layer0.tint": "var(gray)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "scroll_bar_control",
+      "parents": [{ "class": "switch_project_window" }],
+      "layer0.tint": "var(gray)"
+    },
+
+    // Highlights.
+    {
+      "class": "tree_row",
+      "attributes": ["selected"],
+      "layer0.tint": "color(var(gray) l(- 10%))"
+    },
+    {
+      "class": "mini_quick_panel_row",
+      "layer0.tint": "color(var(gray) l(- 10%))"
+    },
+    {
+      "class": "quick_panel_row",
+      "layer0.tint": "color(var(gray) l(- 10%))"
+    },
+    {
+      "class": "panel_control",
+      "layer0.tint": "color(var(gray) l(- 10%))",
+      "content_margin": 2
+    },
+
+    // END.
+
+    //
+    // START: Remove tab scroll buttons and tabs dropdown button.
+    //
+
+    {
+      "class": "tabset_control",
+      "tab_overlap": 24
+    },
+
+    // END.
+
+    //
+    // START: Remove tab scroll buttons and tabs dropdown button.
+    //
+    {
+      "class": "scroll_tabs_left_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.6,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    },
+    {
+      "class": "scroll_tabs_right_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.6,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    },
+    {
+      "class": "show_tabs_dropdown_button",
+      "layer0.texture": "",
+      "layer0.opacity": {
+        "target": 0.7,
+        "speed": 4.0,
+        "interpolation": "smoothstep"
+      },
+      "content_margin": 0
+    }
+    // END.
+  ]
+}

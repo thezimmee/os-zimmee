@@ -1,529 +1,316 @@
 [
-    /**-------------------------------------------------------------------------
-     * TOGGLES.
-     */
+  /**-----------------------------------------------------------------------------------------------
+   * Toggles (ctrl+).
+   */
 
-    // Toggle word wrap.
-    {
-        "keys": ["super+."],
-        "command": "toggle_setting",
-        "args": { "setting": "word_wrap" }
-    },
+  // Toggle sidebar.
+  { "keys": ["ctrl+;"], "command": "toggle_side_bar" },
+  // Toggle minimap.
+  { "keys": ["ctrl+\\"], "command": "toggle_minimap" },
+  // Toggle indent guides.
+  {
+    "keys": ["ctrl+/"],
+    "command": "toggle_setting",
+    "args": { "setting": "draw_indent_guides" }
+  },
+  // Toggle draw centered.
+  {
+    "keys": ["ctrl+i"],
+    "command": "toggle_setting",
+    "args": { "setting": "draw_centered" }
+  },
+  // Toggle SublimeLinter highlights.
+  { "keys": ["super+ctrl+l"], "command": "sublime_linter_toggle_highlights" },
+  // Toggle word wrap.
+  {
+    "keys": ["ctrl+."],
+    "command": "toggle_setting",
+    "args": { "setting": "word_wrap" }
+  },
+  // Toggle (enable/disable) `wrap as you type` plugin.
+  { "keys": ["ctrl+shift+."], "command": "toggle_wrap_as_you_type" },
+  // Toggle how whitespace is drawn.
+  {
+    "keys": ["ctrl+,"],
+    "command": "cycle_setting",
+    "args": { "setting": "draw_white_space", "values": ["all", "none"] }
+  },
+  // Toggle comment.
+  {
+    "keys": ["super+alt+/"],
+    "command": "toggle_comment",
+    "args": { "block": true }
+  },
+  // Toggle MaxPane.
+  { "keys": ["super+shift+enter"], "command": "max_pane" },
 
-    // Toggle sidebar.
-    { "keys": ["super+;"], "command": "focus_file_on_sidebar" },
+  /**-----------------------------------------------------------------------------------------------
+   * File Navigation and Selection.
+   */
 
-    // Toggle minimap.
-    { "keys": ["super+\\"], "command": "toggle_minimap" },
+  // Open file from current directory.
+  { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
+  // Open favorite bookmarked paths.
+  { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
+  // Default Sublime open dialog.
+  // { "keys": ["super+alt+o"], "command": "prompt_open" },
+  // Open file path in Alfred.
+  // {
+  //   "keys": ["super+alt+o"],
+  //   "command": "send_code",
+  //   "args": {
+  //     "cmd": "osascript -e 'tell application \"Alfred 3\" to search \"$file_path\"';"
+  //   }
+  // },
+  // Open last closed file.
+  // { "keys": ["super+shift+t"], "command": "reopen_last_file" },
 
-    // Toggle code folding buttons.
-    {
-        "keys": ["super+ctrl+'"],
-        "command": "toggle_setting",
-        "args": { "setting": "fade_fold_buttons" }
-    },
+  /**-----------------------------------------------------------------------------------------------
+   * Code Navigation and Selection.
+   */
 
-    // Toggle focus on active pane.
-    {
-        "keys": ["super+ctrl+;"],
-        "command": "toggle_focus_active_view"
-    },
+  // Move cursor.
+  // 
+  // NOTE: Move commands with the arg `"by": "stops"` can have any of the
+  // following args (each which require a boolean value): "word_begin",
+  // "word_end", "punct_begin", "punct_end", "sub_word_begin", "sub_word_end",
+  // "line_begin", "line_end", "empty_line".
 
-    // Toggle how whitespace is drawn.
-    {
-        "keys": ["super+shift+;"],
-        "command": "cycle_setting",
-        "args": {
-            "setting": "draw_white_space",
-            "values": ["all", "none"]
-        }
-    },
+  // Default `move` commands (for reference only).
+  // { "keys": ["alt+left"], "command": "move", "args": { "by": "words", "forward": false} },
+  // { "keys": ["alt+right"], "command": "move", "args": { "by": "wordends", "forward": true} },
+  // { "keys": ["alt+shift+left"], "command": "move", "args": { "by": "words", "forward": false, "extend": true} },
+  // { "keys": ["alt+shift+right"], "command": "move", "args": { "by": "wordends", "forward": true, "extend": true} },
+  // { "keys": ["ctrl+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+  // { "keys": ["ctrl+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+  // { "keys": ["ctrl+shift+left"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
+  // { "keys": ["ctrl+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
 
-    // Toggle indent guides.
-    {
-        "keys": ["super+alt+shift+;"],
-        "command": "toggle_setting",
-        "args": { "setting": "draw_indent_guides" }
-    },
+  // Move/select by word.
+  { "keys": ["alt+left"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "forward": false } },
+  { "keys": ["alt+right"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "forward": true } },
+  { "keys": ["alt+shift+left"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "forward": false, "extend": true } },
+  { "keys": ["alt+shift+right"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "forward": true, "extend": true } },
 
-    // Toggle draw centered.
-    {
-        "keys": ["super+alt+shift+/"],
-        "command": "toggle_setting",
-        "args": { "setting": "draw_centered" }
-    },
+  // Move/select by subwords.
+  { "keys": ["ctrl+left"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "sub_word_begin": true, "sub_word_end": true, "punct_begin": true, "punct_end": true, "forward": false } },
+  { "keys": ["ctrl+right"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "sub_word_begin": true, "sub_word_end": true, "punct_begin": true, "punct_end": true, "forward": true } },
+  { "keys": ["ctrl+shift+left"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "sub_word_begin": true, "sub_word_end": true, "punct_begin": true, "punct_end": true, "forward": false, "extend": true } },
+  { "keys": ["ctrl+shift+right"], "command": "move", "args": { "by": "stops", "word_begin": true, "word_end": true, "sub_word_begin": true, "sub_word_end": true, "punct_begin": true, "punct_end": true, "forward": true, "extend": true } },
 
-    // Toggle SublimeLinter highlights.
-    {
-        "keys": ["super+ctrl+l"],
-        "command": "sublime_linter_toggle_highlights"
-    },
+  // Move/select by paragraphs (empty lines).
+  { "keys": ["ctrl+["], "command": "move", "args": { "by": "stops", "empty_line": true, "forward": false } },
+  { "keys": ["ctrl+]"], "command": "move", "args": { "by": "stops", "empty_line": true, "forward": true } },
+  { "keys": ["ctrl+shift+["], "command": "move", "args": { "by": "stops", "empty_line": true, "forward": false, "extend": true } },
+  { "keys": ["ctrl+shift+]"], "command": "move", "args": { "by": "stops", "empty_line": true, "forward": true, "extend": true } },
 
-    // Toggle comment.
-    {
-        "keys": ["super+alt+/"],
-        "command": "toggle_comment",
-        "args": { "block": true }
-    },
+  // Go to definition/reference.
+  // { "keys": ["super+r"], "command": "goto_reference" },
+  // { "keys": ["super+shift+r"], "command": "goto_definition" },
+  // { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
 
-    // Toggle overwrite cursor.
-    { "keys": ["super+alt+i"], "command": "toggle_overwrite" },
+  // Expand/contract selection with ExpandRegion package.
+  {
+    "keys": ["super+alt+space"],
+    "command": "expand_selection",
+    "args": { "to": "scope" }
+  },
+  { "keys": ["super+shift+space"], "command": "expand_region" },
+  {
+    "keys": ["super+ctrl+space"],
+    "command": "expand_region",
+    "args": { "undo": true },
+    "context": [{ "key": "expand_region_soft_undo" }]
+  },
 
-    // Toggle Markdown live preview.
-    {
-        "keys": ["super+ctrl+shift+p"],
-        "command": "markdown_preview_select",
-        "args": {
-            "target": "browser"
-        },
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "text.html.markdown",
-                "match_all": true
-            }
-        ]
-    },
-    {
-        "keys": ["super+ctrl+shift+l"],
-        "command": "toggle_live_reload_plugin"
-    },
+  // Jump to previous/next edit/selection point.
+  { "keys": ["super+alt+j"], "command": "jump_back" },
+  { "keys": ["super+alt+shift+j"], "command": "jump_forward" },
 
-    /**-------------------------------------------------------------------------
-     * Tabs and Panes.
-     */
+  /**-----------------------------------------------------------------------------------------------
+   * Code editing.
+   */
 
-    // Navigate between tabs.
-    { "keys": ["alt+l"], "command": "next_view" },
-    { "keys": ["alt+j"], "command": "prev_view" },
+  { "keys": ["alt+z"], "command": "soft_undo" },
+  { "keys": ["alt+shift+z"], "command": "soft_redo" },
 
-    // Navigate between panes.
-    { "keys": ["alt+o"], "command": "focus_neighboring_group" },
-    {
-        "keys": ["alt+u"],
-        "command": "focus_neighboring_group",
-        "args": { "forward": false }
-    },
+  // AutoFileName plugin.
+  { "keys": ["alt+enter"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
 
-    // Move tab inside of pane.
-    { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" } },
-    { "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" } },
-    {
-        "keys": ["ctrl+k"],
-        "command": "move_tab",
-        "args": { "position": "999" }
-    },
-    { "keys": ["ctrl+i"], "command": "move_tab", "args": { "position": "0" } },
+  /**-----------------------------------------------------------------------------------------------
+   * UI Navigation.
+   */
 
-    // Move tab to neighoring group.
-    { "keys": ["ctrl+shift+o"], "command": "move_to_neighboring_group" },
-    {
-        "keys": ["ctrl+shift+u"],
-        "command": "move_to_neighboring_group",
-        "args": { "forward": false }
-    },
+  // Navigate between tabs.
+  { "keys": ["alt+l"], "command": "next_view" },
+  { "keys": ["alt+j"], "command": "prev_view" },
+  // Move tab inside of pane.
+  { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" } },
+  { "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" } },
+  {
+    "keys": ["ctrl+shift+l"],
+    "command": "move_tab",
+    "args": { "position": "999" }
+  },
+  {
+    "keys": ["ctrl+shift+j"],
+    "command": "move_tab",
+    "args": { "position": "0" }
+  },
 
-    // Close pane.
-    { "keys": ["ctrl+-"], "command": "close_pane" },
+  // Navigate between groups.
+  { "keys": ["alt+o"], "command": "focus_neighboring_group" },
+  {
+    "keys": ["alt+u"],
+    "command": "focus_neighboring_group",
+    "args": { "forward": false }
+  },
+  // Move tab to neighoring group.
+  { "keys": ["ctrl+o"], "command": "move_to_neighboring_group" },
+  {
+    "keys": ["ctrl+u"],
+    "command": "move_to_neighboring_group",
+    "args": { "forward": false }
+  },
+  // Create group.
+  { "keys": ["ctrl+="], "command": "new_pane", "args": { "move": false } },
+  { "keys": ["ctrl+shift+="], "command": "new_pane" },
+  // Close group.
+  { "keys": ["ctrl+-"], "command": "close_pane" },
 
-    // Resize panes.
-    {
-        "keys": ["super+alt+shift+j"],
-        "command": "resize_active_group",
-        "args": { "direction": "left" }
-    },
-    {
-        "keys": ["super+alt+shift+l"],
-        "command": "resize_active_group",
-        "args": { "direction": "right" }
-    },
-    {
-        "keys": ["super+alt+shift+i"],
-        "command": "resize_active_group",
-        "args": { "direction": "up" }
-    },
-    {
-        "keys": ["super+alt+shift+k"],
-        "command": "resize_active_group",
-        "args": { "direction": "down" }
-    },
+  // Resize panes.
+  // { "keys": ["super+alt+shift+j"], "command": "resize_active_group", "args": { "direction": "left" }},
+  // { "keys": ["super+alt+shift+l"], "command": "resize_active_group", "args": { "direction": "right" }},
+  // { "keys": ["super+alt+shift+i"], "command": "resize_active_group", "args": { "direction": "up" }},
+  // { "keys": ["super+alt+shift+k"], "command": "resize_active_group", "args": { "direction": "down" }},
 
-    /**-------------------------------------------------------------------------
-     * Code navigation and selection.
-     */
+  /**-----------------------------------------------------------------------------------------------
+   * Projects.
+   */
 
-    // Go to...
-    {
-        "keys": ["super+shift+r"],
-        "command": "goto_symbol_in_project"
-    },
+  {
+    "keys": ["super+ctrl+p"],
+    "command": "project_manager",
+    "args": { "action": "switch" }
+  },
+  // { "keys": ["super+ctrl+n"], "command": "project_manager", "args": {"action": "new"}},
 
-    // Select by scope.
-    {
-        "keys": ["super+shift+space"],
-        "command": "expand_selection",
-        "args": { "to": "scope" }
-    },
-    {
-        "keys": ["ctrl+shift+space"],
-        "command": "expand_selection",
-        "args": { "to": "scope" }
-    },
-    { "keys": ["super+ctrl+space"], "command": "soft_undo" },
-    {
-        "keys": ["ctrl+shift+l"],
-        "command": "expand_selection",
-        "args": { "to": "line" }
-    },
-    { "keys": ["ctrl+shift+p"], "command": "expand_selection_to_paragraph" },
-    {
-        "keys": ["ctrl+shift+m"],
-        "command": "expand_selection",
-        "args": { "to": "brackets" }
-    },
-    {
-        "keys": ["ctrl+shift+j"],
-        "command": "expand_selection",
-        "args": { "to": "indentation" }
-    },
-    {
-        "keys": ["ctrl+shift+g"],
-        "command": "expand_selection",
-        "args": { "to": "tag" }
-    },
-    {
-        "keys": ["ctrl+delete"],
-        "command": "delete_to_beg_next_contig_boundary"
-    },
+  /**-----------------------------------------------------------------------------------------------
+   * Colors.
+   */
 
-    // Word navigation / selection.
-    // {
-    //     "keys": ["super+ctrl+left"],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": false }
-    // },
-    // {
-    //     "keys": ["super+ctrl+right"],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": true }
-    // },
+  // Get color info (color needs to be selected).
+  {
+    "keys": ["super+shift+i"],
+    "command": "color_helper",
+    "args": { "mode": "info" }
+  },
+  // Show color palettes.
+  {
+    "keys": ["super+shift+o"],
+    "command": "color_helper",
+    "args": { "mode": "palette" }
+  },
 
-    // VIM-like navigation.
-    // { "keys": ["ctrl+,"], "command": "move", "args": { "by": "subwords", "forward": false } },
-    // { "keys": ["ctrl+."], "command": "move", "args": { "by": "subword_ends", "forward": true } },
-    // { "keys": ["alt+,"], "command": "move", "args": { "by": "words", "forward": false } },
-    // { "keys": ["alt+."], "command": "move", "args": { "by": "word_ends", "forward": true } },
-    // {
-    //     "keys": ["super+ctrl+,"],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": false }
-    // },
-    // {
-    //     "keys": ["super+ctrl+."],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": true }
-    // },
-    // {
-    //     "keys": ["ctrl+shift+,"],
-    //     "command": "move",
-    //     "args": { "by": "subwords", "forward": false, "extend": true }
-    // },
-    // {
-    //     "keys": ["ctrl+shift+."],
-    //     "command": "move",
-    //     "args": { "by": "subwords", "forward": true, "extend": true }
-    // },
-    // {
-    //     "keys": ["alt+shift+,"],
-    //     "command": "move",
-    //     "args": { "by": "words", "forward": false, "extend": true }
-    // },
-    // {
-    //     "keys": ["alt+shift+."],
-    //     "command": "move",
-    //     "args": { "by": "word_ends", "forward": true, "extend": true }
-    // },
-    // {
-    //     "keys": ["ctrl+alt+,"],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": false }
-    // },
-    // {
-    //     "keys": ["ctrl+alt+."],
-    //     "command": "move_to_beg_of_contig_boundary",
-    //     "args": { "forward": true }
-    // },
+  /**-----------------------------------------------------------------------------------------------
+   * Code linting.
+   */
 
-    // Scroll.
-    { "keys": ["alt+i"], "command": "scroll_lines", "args": { "amount": 1.0 } },
-    {
-        "keys": ["alt+k"],
-        "command": "scroll_lines",
-        "args": { "amount": -1.0 }
-    },
-    {
-        "keys": ["alt+shift+i"],
-        "command": "move",
-        "args": { "by": "pages", "forward": false }
-    },
-    {
-        "keys": ["alt+shift+k"],
-        "command": "move",
-        "args": { "by": "pages", "forward": true }
-    },
+  // Navigate linter errors.
+  { "keys": ["alt+down"], "command": "next_result" },
+  { "keys": ["alt+up"], "command": "prev_result" },
+  // Format with Standard.
+  {
+    "keys": ["super+alt+l"],
+    "command": "standard_format",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "source.js,markup.raw",
+        "match_all": true
+      }
+    ]
+  },
+  {
+    "keys": ["super+alt+l"],
+    "command": "js_prettier",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.html - (markup.raw),source.css",
+        "match_all": true
+      }
+    ]
+  },
 
-    // // Find and replace.
-    // {
-    //     "keys": ["super+h"],
-    //     "command": "show_panel",
-    //     "args": { "panel": "replace", "reverse": false }
-    // },
+  /**-----------------------------------------------------------------------------------------------
+   * Tasks and Command Line.
+   */
 
-    /**-------------------------------------------------------------------------
-     * File/Folder Browsing and Manipulation.
-     */
+  // Run command/task.
+  // { "keys": ["super+alt+enter"], "command": "shell_command" },
 
-    // Create file.
-    // { "keys": ["super+n"], "command": "fm_create" },
-    { "keys": ["super+n"], "command": "advanced_new_file_new"},
-    { "keys": ["super+alt+n"], "command": "new_file" },
+  /**-----------------------------------------------------------------------------------------------
+   * Working with Markdown.
+   */
 
-    // Open file from current directory.
-    { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
+  // Toggle Markdown live preview.
+  {
+    "keys": ["super+ctrl+shift+p"],
+    "command": "markdown_preview_select",
+    "args": { "target": "browser" },
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.html.markdown",
+        "match_all": true
+      }
+    ]
+  },
+  // Toggle LiveReload plugin.
+  { "keys": ["super+ctrl+shift+l"], "command": "toggle_live_reload_plugin" },
 
-    // Open favorite bookmarked paths.
-    { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
+  /**-----------------------------------------------------------------------------------------------
+   * Git.
+   */
 
-    // Default Sublime open dialog.
-    { "keys": ["super+alt+o"], "command": "prompt_open" },
-    // {
-    //     "keys": ["super+o"],
-    //     "command": "fm_create",
-    //     "args": {
-    //         "paths": ["./"],
-    //         // "initial_text": "."
-    //         "start_with_browser": true,
-    //         "no_browser_action": true
-    //     }
-    // },
+  // Git panes.
+  { "keys": ["super+alt+t"], "command": "gs_show_status" },
+  { "keys": ["super+alt+b"], "command": "gs_show_branch" },
+  { "keys": ["super+alt+g"], "command": "gs_log_graph" },
 
-    // Open file path in Alfred.
-    {
-        "keys": ["super+shift+o"],
-        "command": "send_code",
-        "args": {
-            "cmd": "osascript -e 'tell application \"Alfred 3\" to search \"$file_path\"';"
-        }
-    },
+  // Restore Sublimerge commands.
+  // { "keys": ["alt+down"], "command": "sublimerge_go_down", "context": [{ "key": "setting.is_sublimerge_view", "operator": "equal", "operand": true, "match_all": true }]},
+  // { "keys": ["alt+up"], "command": "sublimerge_go_up", "context": [{ "key": "setting.is_sublimerge_view", "operator": "equal", "operand": true, "match_all": true }]},
 
-    // Open last closed file.
-    { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+  /**-----------------------------------------------------------------------------------------------
+   * ThemeTweaker plugin.
+   */
 
-    /**-------------------------------------------------------------------------
-     * Colors.
-     */
+  // {"keys": ["up"], "command": "theme_tweaker_brightness", "context": [{"key": "theme_tweaker"}], "args": {"direction": "+"}},
+  // {"keys": ["down"], "command": "theme_tweaker_brightness", "context": [{"key": "theme_tweaker"}], "args": {"direction": "-"}},
+  // {"keys": ["left"], "command": "theme_tweaker_contrast", "context": [{"key": "theme_tweaker"}], "args": {"direction": "-"}},
+  // {"keys": ["right"], "command": "theme_tweaker_contrast", "context": [{"key": "theme_tweaker"}], "args": {"direction": "+"}},
+  // {"keys": ["shift+up"], "command": "theme_tweaker_saturation", "context": [{"key": "theme_tweaker"}], "args": {"direction": "+"}},
+  // {"keys": ["shift+down"], "command": "theme_tweaker_saturation", "context": [{"key": "theme_tweaker"}], "args": {"direction": "-"}},
+  // {"keys": ["shift+left"], "command": "theme_tweaker_hue", "context": [{"key": "theme_tweaker"}], "args": {"direction": "-"}},
+  // {"keys": ["shift+right"], "command": "theme_tweaker_hue", "context": [{"key": "theme_tweaker"}], "args": {"direction": "+"}},
+  // {"keys": ["ctrl+1"], "command": "theme_tweaker_invert", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+2"], "command": "theme_tweaker_colorize", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+3"], "command": "theme_tweaker_sepia", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+4"], "command": "theme_tweaker_grayscale", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+5"], "command": "theme_tweaker_glow", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+z"], "command": "theme_tweaker_undo", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["ctrl+shift+z"], "command": "theme_tweaker_redo", "context": [{"key": "theme_tweaker"}]},
+  // {"keys": ["escape"], "command": "theme_tweaker_clear", "context": [{"key": "theme_tweaker"}]}
 
-    // Get color info (color needs to be selected).
-    {
-        "keys": ["super+shift+i"],
-        "command": "color_helper",
-        "args": { "mode": "info" }
-    },
+  /**-----------------------------------------------------------------------------------------------
+   * Terminus plugin.
+   */
 
-    // Show color palettes.
-    {
-        "keys": ["super+shift+alt+c"],
-        "command": "color_helper",
-        "args": { "mode": "palette" }
-    },
-
-    /**-------------------------------------------------------------------------
-     * Linting.
-     */
-
-    // Navigate linter errors.
-    { "keys": ["alt+down"], "command": "next_result" },
-    { "keys": ["alt+up"], "command": "prev_result" },
-
-    // Format with Standard.
-    {
-        "keys": ["super+alt+l"],
-        "command": "standard_format",
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "source.js",
-                "match_all": true
-            }
-        ]
-    },
-    {
-        "keys": ["super+alt+l"],
-        "command": "js_prettier",
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "text.html,source.css",
-                "match_all": true
-            }
-        ]
-    },
-
-    /**-------------------------------------------------------------------------
-     * Custom Commands.
-     */
-
-    {
-        "keys": ["super+alt+enter"],
-        "command": "shell_command"
-    },
-
-    // @todo Disabled on 10/8/2018.
-    // // Open command palette with text selected.
-    // { "keys": ["super+shift+p"], "command": "open_command_palette" },
-
-    // @todo Disabled on 10/8/2018.
-    // // Show Sublime console.
-    // { "keys": ["ctrl+`"], "command": "show_panel", "args": { "panel": "console", "toggle": true } },
-
-    /**-------------------------------------------------------------------------
-     * Git and File Diffing and Merging.
-     */
-
-    // Git panes.
-    { "keys": ["super+alt+t"], "command": "gs_show_status" },
-    { "keys": ["super+alt+b"], "command": "gs_show_branch" },
-    { "keys": ["super+alt+g"], "command": "gs_log_graph" },
-
-    // Restore Sublimerge commands.
-    {
-        "keys": ["alt+down"],
-        "command": "sublimerge_go_down",
-        "context": [
-            {
-                "key": "setting.is_sublimerge_view",
-                "operator": "equal",
-                "operand": true,
-                "match_all": true
-            }
-        ]
-    },
-    {
-        "keys": ["alt+up"],
-        "command": "sublimerge_go_up",
-        "context": [
-            {
-                "key": "setting.is_sublimerge_view",
-                "operator": "equal",
-                "operand": true,
-                "match_all": true
-            }
-        ]
-    },
-
-    /**-------------------------------------------------------------------------
-     * Comments.
-     */
-
-    {
-        "keys": ["shift+alt+q"],
-        "command": "doxy_update_comments",
-        "args": { "reparse": true, "new_style": "roll_2" },
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "comment, string.quoted.double.block.cython, string.quoted.single.block.cython, string.quoted.double.block.python, string.quoted.single.block.python, string.quoted.docstring.multi.python",
-                "match_all": true
-            }
-        ]
-    },
-
-    /**-------------------------------------------------------------------------
-     * Emmet HTML/CSS utilities.
-     */
-
-    // Interactive expansion.
-    { "keys": ["super+ctrl+enter"], "command": "expand_as_you_type" },
-    // Emmet balance.
-    {
-        "keys": ["ctrl+k"],
-        "command": "run_emmet_action",
-        "args": { "action": "balance_inward" }
-    },
-
-    // Number increment / decrement.
-    {
-        "keys": ["super+alt+up"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "increment_number_by_1"
-        }
-    },
-    {
-        "keys": ["super+alt+down"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "decrement_number_by_1"
-        }
-    },
-    {
-        "keys": ["super+alt+ctrl+up"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "increment_number_by_01"
-        }
-    },
-    {
-        "keys": ["super+alt+ctrl+down"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "decrement_number_by_01"
-        }
-    },
-    {
-        "keys": ["super+alt+shift+up"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "increment_number_by_10"
-        }
-    },
-    {
-        "keys": ["super+alt+shift+down"],
-        "command": "run_emmet_action",
-        "args": {
-            "action": "decrement_number_by_10"
-        }
-    },
-
-    // Restore default bindings to `super+enter`.
-    {
-        "keys": ["super+enter"],
-        "command": "run_macro_file",
-        "args": { "file": "res://Packages/Default/Add Line.sublime-macro" }
-    },
-    {
-        "keys": ["super+enter"],
-        "command": "gs_commit_view_do_commit",
-        "context": [
-            {
-                "key": "setting.command_mode",
-                "operator": "equal",
-                "operand": false
-            },
-            {
-                "key": "setting.git_savvy.get_long_text_view",
-                "operator": "equal",
-                "operand": true
-            },
-            {
-                "key": "setting.git_savvy.commit_on_close",
-                "operator": "equal",
-                "operand": false
-            }
-        ]
-    }
+  { "keys": ["super+ctrl+enter"], "command": "toggle_terminus_panel" },
+  { "keys": ["super+alt+enter"], "command": "terminus_open" },
 ]

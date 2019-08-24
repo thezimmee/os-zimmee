@@ -18,6 +18,7 @@ zsh/zprezto.link
 
 # Installed packages not in user folder.
 sublime/Packages--BACKUP/
+sublime/Packages--OLD-BACKUP/
 sublime/Packages/Autoprefixer/
 sublime/Packages/backrefs/
 sublime/Packages/BetterFindBuffer/
@@ -25,11 +26,13 @@ sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
 sublime/Packages/bs4/
 sublime/Packages/Codecs33/
 sublime/Packages/Default/
+sublime/Packages/Hex to HSL Color Converter/
 sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
 sublime/Packages/JavaScript Enhancements/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
+sublime/Packages/MarkdownEditing
 sublime/Packages/Minify/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
@@ -38,6 +41,7 @@ sublime/Packages/jsonschema/
 sublime/Packages/JsPrettier/
 sublime/Packages/Pretty\ JSON/
 sublime/Packages/package_setting_context/
+sublime/Packages/ProjectMaker/
 sublime/Packages/ptyprocess/
 sublime/Packages/pygments/
 sublime/Packages/pymdownx/
@@ -89,6 +93,7 @@ sublime/Packages/User/Sublimerge.sublime-color-scheme
 sublime/Packages/User/Sublimerge.tmTheme
 sublime/Packages/User/SublimergeSummaryPanel.sublime-color-scheme
 sublime/Packages/User/SublimergeSummaryPanel.tmTheme
+sublime/Packages/User/Terminus.sublime-color-scheme
 sublime/Packages/User/ThemeTweaker
 
 ## --- END: SUBLIME

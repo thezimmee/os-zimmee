@@ -1,16 +1,40 @@
-// Your settings for FileManager. See the default file to see the different options.
+// Your settings for FileManager. See the default file to see the different options. 
 {
-    "log_in_status_bar": "user",
-    "aliases": {
-        "sublime": "$packages",
-        "sublimeu": "$packages/User/",
-        "desktop": "~/Desktop",
-        "docs": "~/Documents",
-        "downloads": "~/Downloads",
-        "projects": "~/Projects",
-        "os": "~/Projects/os-zimmee",
-        "cheatsheets": "~/Projects/os-zimmee/cheatsheets",
-        "here": "$folder_path"
+  "log_in_status_bar": "user",
+  "show_create_command": true,
+  "show_copy_command": true,
+  "show_delete_command": true,
+  "show_duplicate_command": true,
+  "show_edit_to_the_left_command": true,
+  "show_edit_to_the_right_command": true,
+  "show_find_in_files_command": true,
+  "show_move_command": true,
+  "show_open_in_explorer_command": true,
+  "show_open_in_browser_command": true,
+  "show_open_terminal_command": true,
+  "show_rename_command": true,
+  "show_create_from_selection_command": true,
+  "aliases": {
+    "sublime": "$packages",
+    "sublimeu": "$packages/User/",
+    "desktop": "~/Desktop",
+    "docs": "~/Documents",
+    "downloads": "~/Downloads",
+    "projects": "~/Projects",
+    "os": "~/Projects/os-zimmee",
+    "cheatsheets": "~/Projects/os-zimmee/cheatsheets",
+    "here": "$folder_path"
+  },
+  "terminals": [
+    {
+      "name": "CMD",
+      "cmd": ["cmd"],
+      "platform": "windows"
     },
-    "create_keybinding_enabled": false
+    {
+      "name": "iTerm",
+      "cmd": ["open", "-a", "iTerm"],
+      "platform": "osx"
+    }
+  ],
 }

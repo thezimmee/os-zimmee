@@ -1,122 +1,16 @@
 [
-    /**-------------------------------------------------------------------------
-     * Toggles.
-     */
+  /**-----------------------------------------------------------------------------------------------
+   * Toggles (ctrl+).
+   */
 
-    // Toggle JsPrettier auto format on save.
-    {
-        "caption": "JsPrettier: Toggle Auto Format On Save",
-        "command": "cycle_setting",
-        "args": {
-            "setting": "auto_format_on_save",
-            "values": [true, false],
-            "file": "JsPrettier.sublime-settings",
-            "persist": true
-        }
-    },
+  { "caption": "Toggle LiveReload", "command": "toggle_live_reload_plugin" },
 
-    // Toggle GitGutter show line annotation (git blame) info.
-    {
-        "caption": "GitGutter: Toggle line annotation (git blame)",
-        "command": "cycle_setting",
-        "args": {
-            "file": "GitGutter.sublime-settings",
-            "setting": "show_line_annotation",
-            "values": ["false", "auto"],
-            "persist": true
-        }
-    },
+  /**-----------------------------------------------------------------------------------------------
+   * Code navigation.
+   */
 
-    /**-------------------------------------------------------------------------
-     * Colors.
-     */
-
-    {
-        "caption": "Colors: Convert to HSL",
-        "command": "color_convert",
-        "args": { "value": "hsl", "isSelect": true }
-    },
-    {
-        "caption": "Colors: Convert to HSLA",
-        "command": "color_convert",
-        "args": { "value": "hsla", "isSelect": true }
-    },
-    {
-        "caption": "Colors: Convert to RGBA",
-        "command": "color_convert",
-        "args": { "value": "rgba", "isSelect": true }
-    },
-    {
-        "caption": "Colors: Convert to RGB",
-        "command": "color_convert",
-        "args": { "value": "rgb", "isSelect": true }
-    },
-    {
-        "caption": "Colors: Convert to HEX",
-        "command": "color_convert",
-        "args": { "value": "hex", "isSelect": true }
-    },
-
-    /**-------------------------------------------------------------------------
-     * Alfred integration.
-     */
-
-    {
-        "caption": "Alfred: Open Current Path",
-        "command": "send_code",
-        "args": {
-            "cmd":
-                "osascript -e 'tell application \"Alfred 3\" to search \"$file_path\"';"
-        }
-    },
-
-    /**-------------------------------------------------------------------------
-     * Node / NPM.
-     */
-
-    {
-        "caption": "Node: Run current script",
-        "command": "send_code",
-        "args": {
-            "cmd":
-                "osascript -e 'tell application \"iTerm2\" to activate'; node $file"
-        }
-    },
-    {
-        "caption": "NPM check updates (ncu)",
-        "command": "send_code",
-        "args": {
-            "cmd":
-                "osascript -e 'tell application \"iTerm2\" to activate'; cd \"$file_path\"; ncu"
-        }
-    },
-    {
-        "caption": "NPM install as dev dependency(ies)",
-        "command": "shell_command",
-        "args": {
-            "command": "npm i -D ${args::Packages to install}",
-            "panel": true
-        }
-    },
-    {
-        "caption": "NPM install as production dependency(ies)",
-        "command": "shell_command",
-        "args": {
-            "command": "npm i -P ${args::Packages to install}",
-            "panel": true
-        }
-    },
-    {
-        "caption": "NPM uninstall / remove package(s)",
-        "command": "shell_command",
-        "args": {
-            "command": "npm un -S ${args::Packages to remove}",
-            "panel": true
-        }
-    },
-    {
-        "caption": "NPM install (run)",
-        "command": "shell_command",
-        "args": { "command": "npm i", "panel": true }
-    }
+  { "caption": "Go to: Symbol", "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+  { "caption": "Go to: Symbol in Project", "command": "goto_symbol_in_project" },
+  { "caption": "Go to: Definition", "command": "goto_definition" },
+  { "caption": "Go to: Reference", "command": "goto_reference" }
 ]

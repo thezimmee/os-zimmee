@@ -1,7 +1,0 @@
-{
-  "scope": "git-savvy.make-commit",
-  "completions":
-  [
-    { "trigger" : "feat|fix|docs|style|refactor|test|revert|build|perf|tools|chore", "description": "Commit types", "contents": "${1:<feat|fix|docs|style|refactor|test|revert|build|perf|tools|chore>}(${2:<scope>}): ${3:<subject>}${4:\n\n${5:[body]}\n\n${6:BREAKING CHANGE: }\n\n${7:[footer:issues]}}"},
-  ]
-}

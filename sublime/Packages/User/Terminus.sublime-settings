@@ -1,0 +1,106 @@
+{
+	"256color": true,
+	"shell_configs":
+	[
+		{
+			"cmd":
+			[
+				"bash",
+				"-i",
+				"-l"
+			],
+			"default": false,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "Bash",
+			"platforms":
+			[
+				"linux",
+				"osx"
+			]
+		},
+		{
+			"cmd":
+			[
+				"zsh",
+				"-i",
+				"-l"
+			],
+			"default": true,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "Zsh",
+			"platforms":
+			[
+				"linux",
+				"osx"
+			]
+		},
+		{
+			"cmd": "cmd.exe",
+			"default": false,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "Command Prompt",
+			"platforms":
+			[
+				"windows"
+			]
+		},
+		{
+			"cmd": "powershell.exe",
+			"default": false,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "Power Shell",
+			"platforms":
+			[
+				"windows"
+			]
+		},
+		{
+			"cmd": "wsl.exe",
+			"default": false,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "WSL Login Shell",
+			"platforms":
+			[
+				"windows"
+			]
+		}
+	],
+	"theme": "user",
+	"unix_term": "xterm-256color",
+	"user_theme_colors":
+	{
+		"background": "hsl(210, 3%, 14%)",
+		"black": "hsl(0, 0%, 0%)",
+		"blue": "hsl(204, 82%, 51%)",
+		"brown": "hsl(51, 88%, 56%)",
+		"cyan": "hsl(204, 82%, 51%)",
+		"foreground": "hsl(0, 0%, 73%)",
+		"green": "hsl(110, 47%, 55%)",
+		"light_black": "hsl(0, 0%, 0%)",
+		"light_blue": "hsl(214, 64%, 52%)",
+		"light_brown": "hsl(51, 84%, 62%)",
+		"light_cyan": "hsl(207, 74%, 56%)",
+		"light_green": "hsl(109, 36%, 57%)",
+		"light_magenta": "hsl(263, 34%, 61%)",
+		"light_red": "hsl(5, 70%, 59%)",
+		"light_white": "hsl(0, 0%, 73%)",
+		"magenta": "hsl(263, 47%, 60%)",
+		"red": "hsl(7, 82%, 51%)",
+		"white": "hsl(0, 0%, 73%)"
+	}
+}

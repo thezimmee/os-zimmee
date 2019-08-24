@@ -1,0 +1,16 @@
+// These settings override both User and Default settings for the CSS syntax
+{
+	"wrap_as_you_type_enter_extends_section": true,
+	"wrap_as_you_type_sections": [
+		{
+			"line_start": " * ",
+			"selector": "comment.block - punctuation.definition.comment"
+		}
+	],
+	"wrap_as_you_type_paragraphs": [
+		{
+			"first_line_regex": "^-",
+			"indent_group": 0
+		}
+	]
+}

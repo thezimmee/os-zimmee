@@ -6,14 +6,14 @@
 
 To create a new command (in a `*.sublime-commands` file) which selects all text and copies it to the clipboard:
 
-```
+```json
 {
     "caption": "Select and Copy All",
     "command": "command_chain",
     "args": {
         "commands": [
             {"command": "select_all"},
-            {"command": "copy"},
+            {"command": "copy"}
         ]
     }
 }
@@ -21,14 +21,14 @@ To create a new command (in a `*.sublime-commands` file) which selects all text 
 
 To do the same with a keyboard shortcut:
 
-```
+```json
 {
     "keys": ["super+ctrl+c"],
     "command": "command_chain",
     "args": {
         "commands": [
             {"command": "select_all"},
-            {"command": "copy"},
+            {"command": "copy"}
         ]
     }
 }

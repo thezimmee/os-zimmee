@@ -1,0 +1,63 @@
+<snippet>
+  <content><![CDATA[
+/* globals HTMLElement */
+import { html, render } from '//unpkg.com/lighterhtml?module'
+
+class ${1:Name} extends ${2:HTMLElement} {
+  // Attributes to observe and use with `attributeChangedCallback()`.
+  static get observedAttributes() {
+    return [${3:attrs}]
+  }
+
+  constructor() {
+    // Always call super first in the constructor.
+    super()
+    // Optional: Create shadow DOM.
+    this.root = this.attachShadow({ mode: 'open' })
+    // Bind render arguments once so we can call render whenever and retain 
+    // optimal performance with lighterhtml.
+    this.render = render.bind(this, this.root, this.render)
+    // Initial render.
+    this.render()${0}
+  }
+
+  connectedCallback() {
+    console.log('Element added to the page.')
+  }
+
+  disconnectedCallback() {
+    console.log('Element removed from page.')
+  }
+
+  adoptedCallback() {
+    console.log('Element moved to a new page.')
+  }
+
+  attributeChangedCallback(name, oldValue, value) {
+    console.log(`\$\{name} attribute changed from \$\{oldValue} to \$\{value}.`)
+  }
+
+  render() {
+    return html`<p>Hello world, I am a ${1:Name} component!</p>`
+  }
+
+  handleEvent(event) {
+    console.log(`The \$\{event.type} event was triggered.`)
+    // this[`on\$\{event.type}`](event)
+    // 
+    // Now you can add methods like this:
+    //
+    // onclick(event) {
+    //   console.log('Do something on click...')
+    // }
+  }
+}
+
+export { ${1:Name} }
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>class</tabTrigger>
+  <description>Web Component</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>

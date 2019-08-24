@@ -1,11 +1,16 @@
 // Settings in here override those in "ColorHelper/color_helper.sublime-settings",
 
 {
-    "show_index_status": false,
+    "show_index_status": true,
     "auto_popup": false,
     "use_webcolor_names": false,
     "inline_preview_position": "right",
     "graphic_size": "large",
+    "enable_color_picker": true,
+    "use_hex_color_picker": false,
+    "enable_current_file_palette": true,
+    // "click_color_box_to_pick": "color_picker",
+    "use_webcolor_names": false,
     "color_scanning": [
         {
             "syntax_files": [],
@@ -117,8 +122,9 @@
             "syntax_files": [],
             "syntax_filter": "whitelist",
             "base_scopes": ["source.json"],
-            "scan_scopes": ["string.quoted.double - meta.structure.dictionary.key"],
-            "allowed_colors": ["css3"],
+            "scan_scopes": ["string.quoted.double - meta.mapping.key"],
+            "allowed_colors": ["hsl", "hsla", "hex"],
+            // "allowed_colors": ["css3"],
             "extensions": [],
             "use_hex_argb": false,
             "compress_hex_output": true

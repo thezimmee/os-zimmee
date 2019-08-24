@@ -1,0 +1,437 @@
+{
+    "name": "One Dark",
+    "author": "IceTimux (http://icetimux.com)",
+    "variables":
+    {
+        "blue": "hsl(220, 100%, 66%)",
+        "blue2": "hsl(207, 82%, 66%)",
+        "blue3": "hsl(216, 15%, 35%)",
+        "blue4": "hsl(219, 14%, 71%)",
+        "blue5": "hsl(221, 13%, 28%)",
+        "blue6": "hsl(220, 13%, 18%)",
+        "blue7": "hsl(220, 13%, 18%)",
+        "cyan": "hsl(187, 47%, 55%)",
+        "green": "hsl(95, 38%, 62%)",
+        "grey": "hsl(219, 10%, 40%)",
+        "grey2": "hsl(55, 5%, 43%)",
+        "grey3": "hsl(0, 0%, 32%)",
+        "grey4": "hsl(0, 0%, 34%)",
+        "grey5": "hsl(0, 0%, 18%)",
+        "orange": "hsl(39, 67%, 69%)",
+        "orange2": "hsl(29, 54%, 61%)",
+        "orange3": "hsl(21, 93%, 66%)",
+        "orange4": "hsl(19, 59%, 57%)",
+        "purple": "hsl(286, 60%, 67%)",
+        "purple2": "hsl(252, 94%, 74%)",
+        "red": "hsl(359, 83%, 71%)",
+        "red2": "hsl(355, 65%, 65%)",
+        "red3": "hsl(5, 48%, 51%)",
+        "red4": "hsl(338, 95%, 56%)",
+        "white": "hsl(0, 0%, 100%)",
+        "yellow": "hsl(80, 76%, 53%)"
+    },
+    "globals":
+    {
+        "foreground": "var(blue4)",
+        "background": "var(blue6)",
+        "caret": "var(blue)",
+        "invisibles": "var(grey2)",
+        "line_highlight": "color(var(blue3) alpha(0.19))",
+        "selection": "var(blue5)"
+    },
+    "rules":
+    [
+        {
+            "name": "Text",
+            "scope": "variable.parameter.function",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "Comments",
+            "scope": "comment, punctuation.definition.comment",
+            "foreground": "var(grey)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Delimiters",
+            "scope": "none",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "Operators",
+            "scope": "keyword.operator",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "Keywords",
+            "scope": "keyword",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Variables",
+            "scope": "variable",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Functions",
+            "scope": "entity.name.function, meta.require, support.function.any-method",
+            "foreground": "var(blue2)"
+        },
+        {
+            "name": "Classes",
+            "scope": "support.class, entity.name.class, entity.name.type.class",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Classes",
+            "scope": "meta.class",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "Methods",
+            "scope": "keyword.other.special-method",
+            "foreground": "var(blue2)"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Support",
+            "scope": "support.function",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Strings, Inherited Class",
+            "scope": "string, constant.other.symbol, entity.other.inherited-class",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Integers",
+            "scope": "constant.numeric",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Floats",
+            "scope": "none",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Boolean",
+            "scope": "none",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Constants",
+            "scope": "constant",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Tags",
+            "scope": "entity.name.tag",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Attributes",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Attribute IDs",
+            "scope": "entity.other.attribute-name.id, punctuation.definition.entity",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Selector",
+            "scope": "meta.selector",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Values",
+            "scope": "none",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Headings",
+            "scope": "markup.heading punctuation.definition.heading, entity.name.section",
+            "foreground": "var(blue2)"
+        },
+        {
+            "name": "Units",
+            "scope": "keyword.other.unit",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Bold",
+            "scope": "markup.bold, punctuation.definition.bold",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Italic",
+            "scope": "markup.italic, punctuation.definition.italic",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Code",
+            "scope": "markup.raw.inline",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Link Text",
+            "scope": "string.other.link, punctuation.definition.string.end.markdown",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Link Url",
+            "scope": "meta.link",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Lists",
+            "scope": "markup.list",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Quotes",
+            "scope": "markup.quote",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "Separator",
+            "scope": "meta.separator",
+            "foreground": "var(blue4)",
+            "background": "var(grey3)"
+        },
+        {
+            "name": "Inserted",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Changed",
+            "scope": "markup.changed",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Colors",
+            "scope": "constant.other.color",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Regular Expressions",
+            "scope": "string.regexp",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Escape Characters",
+            "scope": "constant.character.escape",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Embedded",
+            "scope": "punctuation.section.embedded, variable.interpolation",
+            "foreground": "var(red3)"
+        },
+        {
+            "name": "Illegal",
+            "scope": "invalid.illegal",
+            "foreground": "var(white)",
+            "background": "var(red)"
+        },
+        {
+            "name": "Broken",
+            "scope": "invalid.broken",
+            "foreground": "var(grey5)",
+            "background": "var(orange3)"
+        },
+        {
+            "name": "Deprecated",
+            "scope": "invalid.deprecated",
+            "foreground": "var(blue7)",
+            "background": "var(orange4)"
+        },
+        {
+            "name": "Unimplemented",
+            "scope": "invalid.unimplemented",
+            "foreground": "var(blue7)",
+            "background": "var(grey2)"
+        },
+        {
+            "name": "Json key",
+            "scope": "source.json                           meta.structure.dictionary.json                              string.quoted.double.json",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Json value",
+            "scope": "source.json                       meta.structure.dictionary.json                           meta.structure.dictionary.value.json                       string.quoted.double.json",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "json sub key",
+            "scope": "source.json                           meta.structure.dictionary.json                          meta.structure.dictionary.value.json                        meta.structure.dictionary.json                      string.quoted.double.json",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Json sub value",
+            "scope": "source.json                       meta.structure.dictionary.json                        meta.structure.dictionary.value.json                       meta.structure.dictionary.json                          meta.structure.dictionary.value.json                            string.quoted.double.json",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "laravel blade tag",
+            "scope": "text.html.laravel-blade                        source.php.embedded.line.html                     entity.name.tag.laravel-blade",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "laravel blade @",
+            "scope": "text.html.laravel-blade                         source.php.embedded.line.html                    support.constant.laravel-blade",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "python function parameter",
+            "scope": "source.python meta.function.python meta.function.parameters.python variable.parameter.function.python",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "python meta function",
+            "scope": "source.python support.type.python",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "python logical keyword",
+            "scope": "source.python keyword.operator.logical.python",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "python class ( begin",
+            "scope": "source.python meta.class.python punctuation.definition.inheritance.begin.python",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "python class ) end",
+            "scope": "source.python meta.class.python punctuation.definition.inheritance.end.python",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "python function call parameter name",
+            "scope": "source.python meta.function-call.arguments.python variable.parameter.function-call.python",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "php fcuntion constants",
+            "scope": "text.html.basic                   source.php.embedded.block.html                             support.constant.std.php",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "php namespace name",
+            "scope": "text.html.basic                              source.php.embedded.block.html                               meta.namespace.php                              entity.name.type.namespace.php",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "javascript meta constant",
+            "scope": "source.js                              meta.function.js                       support.constant.js",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "php namespace in top",
+            "scope": "text.html.basic`                               source.php.embedded.block.html                        constant.other.php",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "php namespace name in top",
+            "scope": "text.html.basic                              source.php.embedded.block.html                               support.other.namespace.php",
+            "foreground": "var(orange2)"
+        },
+        {
+            "name": "latex label names",
+            "scope": "text.tex.latex                               meta.function.environment.math.latex                               string.other.math.block.environment.latex                               meta.definition.label.latex                               variable.parameter.definition.label.latex",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "latex italic emph",
+            "scope": "text.tex.latex                           meta.function.emph.latex                              markup.italic.emph.latex",
+            "foreground": "var(purple)",
+            "font_style": "italic"
+        },
+        {
+            "name": "subl_new js vars",
+            "scope": "source.js                          variable.other.readwrite.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl js $",
+            "scope": "source.js                         meta.function-call.with-arguments.js                        variable.function.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl js call method",
+            "scope": "source.js                            meta.group.braces.round                           meta.group.braces.curly                             meta.function-call.method.without-arguments.js                    variable.function.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl e js",
+            "scope": "source.js                            meta.group.braces.round                            meta.group.braces.curly                            variable.other.object.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl js key",
+            "scope": "source.js                             meta.group.braces.round                           meta.group.braces.curly                            constant.other.object.key.js                            string.unquoted.label.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl obejct key",
+            "scope": "source.js                       meta.group.braces.round                            meta.group.braces.curly                           constant.other.object.key.js                         punctuation.separator.key-value.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl js method with args",
+            "scope": "source.js                            meta.group.braces.round                           meta.group.braces.curly                           meta.function-call.method.with-arguments.js                 variable.function.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl js variable function",
+            "scope": "source.js                            meta.function-call.method.with-arguments.js                        variable.function.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "new_subl variabel function method",
+            "scope": "source.js                       meta.function-call.method.without-arguments.js                       variable.function.js",
+            "foreground": "var(blue4)"
+        },
+        {
+            "name": "Modules",
+            "scope": "keyword.operator.module.js, keyword.operator.new.js",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "GitGutter deleted",
+            "scope": "markup.deleted.git_gutter",
+            "foreground": "var(red4)"
+        },
+        {
+            "name": "GitGutter inserted",
+            "scope": "markup.inserted.git_gutter",
+            "foreground": "var(yellow)"
+        },
+        {
+            "name": "GitGutter changed",
+            "scope": "markup.changed.git_gutter",
+            "foreground": "var(purple2)"
+        },
+        {
+            "name": "GitGutter ignored",
+            "scope": "markup.ignored.git_gutter",
+            "foreground": "var(grey4)"
+        },
+        {
+            "name": "GitGutter untracked",
+            "scope": "markup.untracked.git_gutter",
+            "foreground": "var(grey4)"
+        }
+    ]
+}
