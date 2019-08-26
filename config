@@ -16,12 +16,14 @@ CONFIG__brew_taps=(
 # homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
 	bash
+	curl
 	fasd
 	git
 	# homebrew/binary/kwm
-	imagemagick
+	# imagemagick
 	lua
 	mas
+	node
 	nvm
 	tidy-html5
 	wget
@@ -36,19 +38,21 @@ CONFIG__cask_apps=(
 	airmail-beta
 	alfred
 	appcleaner
+	araxis-merge
 	# blisk
 	beyond-compare
-	brave
+	brave-browser
+	calibre
 	# colorpicker
 	# cyberduck
 	# filezilla
 	firefox
-	firefoxdeveloperedition
-	# flux
+	# firefoxdeveloperedition
+	flux
 	forklift
 	goodsync
 	google-chrome
-	caskroom/versions/google-chrome-canary
+	# caskroom/versions/google-chrome-canary
 	# google-drive
 	hammerspoon
 	hazeover
@@ -58,21 +62,26 @@ CONFIG__cask_apps=(
 	# karabiner
 	# kindle
 	lastpass
+	libreoffice
 	# little-snitch
 	musescore
-	opera
+	# opera
 	parallels
 	# plex-media-server
 	# private-internet-access
 	# seil
 	slack
-	caskroom/versions/sublime-text-dev
-	# teamviewer
+	spotify
+	sublime-text
+	# caskroom/versions/sublime-text-dev
+	teamviewer
 	# torbrowser
 	time-out
-	caskroom/drivers/ubiquiti-unifi-controller
-	vivaldi
-	witch
+	ubiquiti-unifi-controller
+	# vivaldi
+	visual-studio-code
+	vlc
+	# witch
 	## [[QUICKLOOK PLUGINS]]
 	betterzipql
 	qlcolorcode
@@ -90,6 +99,7 @@ CONFIG__cask_apps=(
 	font-dejavu-sans-mono-for-powerline
 	font-droid-sans-mono-for-powerline
 	font-fira-mono-for-powerline
+	font-hasklig
 	font-inconsolata
 	font-inconsolata-for-powerline
 	font-menlo-for-powerline
