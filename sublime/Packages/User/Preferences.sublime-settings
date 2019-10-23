@@ -14,6 +14,8 @@
 		"scss"
 	],
 	"always_show_minimap_viewport": true,
+	"auto_complete_commit_on_tab": false,
+	"auto_complete_with_fields": true,
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
@@ -34,11 +36,17 @@
 		"CVS"
 	],
 	"font_face": "Hasklig",
-	"font_size": 15,
+	"font_size": 17,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"ignore_vcs_packages":
+	[
+		"FileIcon",
+		"MarkdownEditing"
+	],
 	"ignored_packages":
 	[
+		"CSS3",
 		"Meetio",
 		"TypeScript",
 		"Vintage"

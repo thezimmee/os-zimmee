@@ -177,8 +177,8 @@
     { "name": "Function", "scope": "meta.property-value support.function", "foreground": "var(cyan00)", "font_style": "italic" },
     { "name": "Unit", "scope": "constant.numeric keyword.other.unit", "foreground": "var(purple00)" },
     { "name": "Important", "scope": "meta.property-value keyword.other.important", "foreground": "var(cherry01)", "font_style": "bold italic" },
-    { "name": "Pseudo class", "scope": "entity.other.pseudo-class", "foreground": "var(cyan00)", "font_style": "italic" },
-    { "name": "Pseudo element", "scope": "entity.other.pseudo-element", "foreground": "var(red00)", "font_style": "italic" },
+    { "name": "Pseudo class", "scope": "entity.other.pseudo-class, entity.other.attribute-name.pseudo-class", "foreground": "var(cyan00)", "font_style": "italic" },
+    { "name": "Pseudo element", "scope": "entity.other.pseudo-element, entity.other.attribute-name.pseudo-element", "foreground": "var(red00)", "font_style": "italic" },
     { "name": "At rules", "scope": "keyword.control.at-rule, keyword.control.at-rule punctuation.definition.keyword", "foreground": "var(mahogany00)", "font_style": "bold" },
     { "name": "At rules", "scope": "meta.at-rule support.constant, meta.at-rule keyword.operator", "foreground": "var(orange00)", "font_style": "bold" },
 

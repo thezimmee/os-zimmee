@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"binary_file_patterns":
+			[
+			],
+			"file_exclude_patterns":
+			[
+			],
+			"folder_exclude_patterns":
+			[
+				"build",
+				"node_modules",
+				"vendor",
+				"backup"
+			],
+			"follow_symlinks": true,
+			"name": "TheLodgeAtTraverse.com",
+			"path": "~/Projects/thelodgeattraverse"
+		}
+	],
+	"syntax_override": {}
+}

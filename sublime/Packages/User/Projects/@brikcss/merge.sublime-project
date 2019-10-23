@@ -1,13 +1,12 @@
-<snippet>
-	<content><![CDATA[
 {
   "folders": [
     {
-      "name": "${1}",
-      "path": "${2:~/Projects/}",
+      "name": "merge - brikcss",
+      "path": "~/Projects/brikcss/merge",
       "folder_exclude_patterns": [
-        ${0:"dist",
-        "node_modules"}
+        "dist",
+        "coverage",
+        "node_modules"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],
@@ -29,10 +28,3 @@
   //   }
   // ]
 }
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>project</tabTrigger>
-	<description>Sublime project</description>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.json</scope>
-</snippet>

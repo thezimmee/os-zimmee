@@ -6,8 +6,8 @@
 
 # Load config.
 if [[ -z $CONFIG__loaded ]]; then
-	local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
-	CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ../config && cd $CURRENT
+	SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
+	CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
 fi
 
 ## Set up SSH key.

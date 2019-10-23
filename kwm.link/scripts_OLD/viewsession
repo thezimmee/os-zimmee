@@ -1,3 +1,0 @@
-kwmc=/Users/Applications/kwm/bin/kwmc
-file=/Users/thezimmee/.kwm/sessions/$($kwmc query space active name)
-cat $file

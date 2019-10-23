@@ -1,5 +1,0 @@
-// toggle kwm borders
-
-kwmc=/usr/local/Cellar/kwm/3.0.1/bin/kwmc
-
-[[ $($kwmc query border focused) = true ]] && $kwmc config border focused off || $kwmc config border focused on

@@ -1,13 +1,11 @@
-<snippet>
-	<content><![CDATA[
 {
   "folders": [
     {
-      "name": "${1}",
-      "path": "${2:~/Projects/}",
+      "name": "DirectScale.com static",
+      "path": "~/Projects/directscale/directscale.com/static/",
       "folder_exclude_patterns": [
-        ${0:"dist",
-        "node_modules"}
+        "build",
+        "node_modules"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],
@@ -18,10 +16,12 @@
       "follow_symlinks": true
     }
   ],
+  "syntax_override": {
+    "\\.html$": ["EJS 2", "EJS"]
+  },
   // "settings": {
   //   "setting": "value"
   // },
-  // "syntax_override": {},
   // "build_systems": [
   //   {
   //     "name": "List",
@@ -29,10 +29,3 @@
   //   }
   // ]
 }
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>project</tabTrigger>
-	<description>Sublime project</description>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.json</scope>
-</snippet>

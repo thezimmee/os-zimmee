@@ -5,8 +5,8 @@
 
 ## Load config.
 if [[ -z $CONFIG__loaded ]]; then
-	local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
-	CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ../config && cd $CURRENT
+	SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
+	CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
 fi
 
 ## Set up zsh as default shell.
@@ -31,6 +31,7 @@ fi
 ## Set up prezto config files.
 for rcfile in $(find ${OSZ_ROOT}/zsh/zprezto.link/runcoms/* -name '*' -not -name 'README.md' -not -name 'zshrc' -not -name 'zpreztorc'); do
 	dest="$HOME/.$(basename "${rcfile}")"
+	echo "Setting up $rcfile..."
 	if [[ $REFRESH = true ]]; then
 		ln -sf "$rcfile" "$dest"
 	else
@@ -41,6 +42,7 @@ done
 ## Symlink other *.link files.
 for dotfile in $(find ${OSZ_ROOT}/zsh/ -name '*.link*'); do
 	dest="$HOME/.$(basename "${dotfile%.link*}")"
+	echo "Setting up $dotfile..."
 	if [[ $REFRESH = true ]]; then
 		ln -sf "$dotfile" "$dest"
 	else

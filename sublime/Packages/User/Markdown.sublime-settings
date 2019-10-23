@@ -17,34 +17,17 @@
 	// Layout
 	"draw_centered": true,
 	"word_wrap": true,
-	"wrap_width": 80,
+	"wrap_width": 75,
 	"rulers": [],
 
 	// Line
-	"line_numbers": true,
+	"line_numbers": false,
 	"line_padding_top": 2,
 	"line_padding_bottom": 2,
 
 	// Caret
 	"caret_extra_width": 3,
 	// These will work only in ST Build 3057 and later.
-
-	// 
-	// WrapAsYouType settings.
-	// 
-
-	"wrap_as_you_type_enter_extends_section": true,
-	"wrap_as_you_type_sections": [
-	  {
-	    "line_start": "",
-	    "selector": "text.html - (meta.code-fence | markup.raw | meta.tag)"
-	  }
-	],
-	"wrap_as_you_type_paragraphs": [
-    { "first_line_regex": "^-" },
-    { "first_line_regex": "^>" },
-    { "first_line_regex": "^[0-9]\\." },
-  ],
 
 	// 
 	// MarkdownEditing settings.

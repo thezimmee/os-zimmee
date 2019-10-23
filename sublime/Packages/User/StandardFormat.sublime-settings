@@ -1,3 +1,9 @@
 {
-	"format_on_save": false
+  "format_on_save": false,
+  "extensions": ["js", "html", "vue", "markdown"],
+  "selectors": {
+    "html": "source.js.embedded.html",
+    "vue": "source.js.embedded.html",
+    "markdown": "source.js",
+  }
 }
