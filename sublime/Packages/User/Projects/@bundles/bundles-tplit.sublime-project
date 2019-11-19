@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "bundles-tplit - @bundles",
+      "path": "~/Projects/bundles/bundles-tplit",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules"
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "syntax_override": {},
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
+}
