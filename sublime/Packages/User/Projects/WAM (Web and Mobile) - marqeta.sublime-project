@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"dist",
+				"node_modules"
+			],
+			"name": "WAM",
+			"path": "/Users/tzimmerman/Projects/marqeta/wam"
+		},
+		{
+			"path": "/Users/tzimmerman/Downloads/WindowScreenLeftAndRight.spoon"
+		}
+	]
+}

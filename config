@@ -10,8 +10,7 @@ OSZ_ROOT=~/Projects/os-zimmee
 
 # homebrew taps / repos to install with `brew tap <tap>`
 CONFIG__brew_taps=(
-	caskroom/cask
-	caskroom/fonts
+	homebrew/cask-fonts
 )
 # homebrew apps to install with `brew install <app>`
 CONFIG__brew_apps=(
@@ -33,29 +32,29 @@ CONFIG__brew_apps=(
 # homebrew cask apps to install with `brew cask install <app>`
 CONFIG__cask_apps=(
 	## [[APPS]]
-	# amethyst
 	# 1password
-	airmail-beta
+	# airmail-beta
 	alfred
-	appcleaner
+	# appcleaner
 	araxis-merge
-	# blisk
-	beyond-compare
+	# beyond-compare
 	brave-browser
 	calibre
 	# colorpicker
 	# cyberduck
+	# docker
 	# filezilla
 	firefox
 	# firefoxdeveloperedition
 	flux
-	forklift
-	goodsync
-	google-chrome
+	# fork
+	# forklift
+	# goodsync
+	# google-chrome
 	# caskroom/versions/google-chrome-canary
 	# google-drive
 	hammerspoon
-	hazeover
+	# hazeover
 	# hyper
 	iterm2
 	karabiner-elements
@@ -64,26 +63,31 @@ CONFIG__cask_apps=(
 	lastpass
 	libreoffice
 	# little-snitch
-	musescore
+	# musescore
+	notion
 	# opera
 	parallels
 	# plex-media-server
+	postbox
 	# private-internet-access
+	pulse-sms
 	# seil
-	slack
+	# setapp
+	# slack
+	# sequel-pro
 	spotify
 	sublime-text
 	# caskroom/versions/sublime-text-dev
 	teamviewer
 	# torbrowser
 	time-out
-	ubiquiti-unifi-controller
+	# ubiquiti-unifi-controller
 	# vivaldi
-	visual-studio-code
-	vlc
+	# visual-studio-code
+	# vlc
 	# witch
 	## [[QUICKLOOK PLUGINS]]
-	betterzipql
+	# betterzipql
 	qlcolorcode
 	qlimagesize
 	qlmarkdown
@@ -94,7 +98,7 @@ CONFIG__cask_apps=(
 	the-unarchiver
 	webpquicklook
 	## [[FONTS]]
-	font-bebas-neue
+	# font-bebas-neue
 	font-consolas-for-powerline
 	font-dejavu-sans-mono-for-powerline
 	font-droid-sans-mono-for-powerline

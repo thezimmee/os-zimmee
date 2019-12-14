@@ -3,11 +3,5 @@
 #
 # bash karabiner-elements/setup
 
-# Load config.
-if [[ -z $CONFIG__loaded ]]; then
-  SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-  CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
-fi
-
 # Symlink karabiner-elements.
-mkdir -p ~/.config && ln -s "${OSZ_ROOT}/karabiner-elements/karabiner.link" ~/.config/karabiner
+mkdir -p ~/.config && ln -sf "${OSZ_ROOT}/karabiner-elements/karabiner.link" ~/.config/karabiner

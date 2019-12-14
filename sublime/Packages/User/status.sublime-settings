@@ -1,0 +1,4 @@
+// Override settings for status syntax-specific.
+{
+  "margin": 0,
+}

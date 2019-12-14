@@ -1,19 +1,26 @@
 {
-	"color_helper_palettes":
-	[
-		{
-			"colors":
-			[
-				"#d39ae5"
-			],
-			"name": "Testing"
-		}
-	],
-	"folders":
-	[
-		{
-			"name": "OS Zimmee",
-			"path": "/Volumes/Home/Projects/os-zimmee"
-		}
-	]
+  "folders": [
+    {
+      "name": "OS Zimmee",
+      "path": "~/Projects/os-zimmee",
+      "folder_exclude_patterns": [],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "syntax_override": {},
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
 }

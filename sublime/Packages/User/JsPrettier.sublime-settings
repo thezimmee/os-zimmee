@@ -18,5 +18,6 @@
 		"sublime-commands",
 		"sublime-color-scheme",
 		"sublime-theme"
-	]
+	],
+	"node_path": "~/.nvm/versions/node/v13.2.0/bin/node"
 }

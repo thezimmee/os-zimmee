@@ -2,12 +2,6 @@
 # Set up for firefox.
 # . firefox/setup
 
-# Load config.
-if [[ -z $CONFIG__loaded ]]; then
-  SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-  CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
-fi
-
 # Intro
 echo 'Setting up Firefox...'
 

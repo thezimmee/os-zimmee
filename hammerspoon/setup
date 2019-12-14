@@ -10,4 +10,4 @@ if [[ -z $CONFIG__loaded ]]; then
 fi
 
 # symlink hammerspoon
-ln -s "${OSZ_ROOT}/hammerspoon/hammerspoon.link" ~/.hammerspoon
+ln -sf "${OSZ_ROOT}/hammerspoon/hammerspoon.link" ~/.hammerspoon

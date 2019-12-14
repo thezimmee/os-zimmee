@@ -1,7 +1,9 @@
 {
 	"bootstrapped": true,
-	"in_process_packages":
+	"ignore_vcs_packages":
 	[
+		"MarkdownEditing",
+		"FileIcons"
 	],
 	"installed_packages":
 	[
@@ -25,10 +27,10 @@
 		"MarkdownPreview",
 		"MarkdownTOC",
 		"MaxPane",
-		"Meetio",
 		"Minify",
 		"MoveTab",
 		"NoDialogs",
+		"Open Search in a New Tab",
 		"Package Control",
 		"PackageResourceViewer",
 		"Project Specific Syntax Settings",

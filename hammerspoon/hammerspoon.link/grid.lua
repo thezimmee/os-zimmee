@@ -90,7 +90,7 @@ local function addBindings(  )
 	-- 	hs.window.focusedWindow():focusWindowSouth()
 	-- end)
 	-- center window
-	hotkeys['hyper_;'] = hs.hotkey.bind(config.hyper, ';', function()
+	hotkeys['hyper_;'] = hs.hotkey.bind(config.hyper, '.', function()
 		hs.window.focusedWindow():centerOnScreen()
 	end)
 
