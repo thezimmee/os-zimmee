@@ -52,7 +52,7 @@
     // Use sparingly: blue, purple.
     "cyan01": "color(var(cyan00) l(+ 12%))",
     "blue01": "color(var(blue00) s(+ 20%) l(+ 12%))",
-    "blue02": "color(var(blue00) s(+ 20%) l(+ 20%))"
+    "blue01": "color(var(blue00) l(+ 12%))"
   },
   "globals":
   {
@@ -254,11 +254,11 @@
     { "name": "GitSavvy | remotes", "scope": "comment.git-savvy.branches.branch.extra-info", "foreground": "var(blue01)", "font_style": "italic" },
     { "name": "GitSavvy | active branch remote", "scope": "string.other.git-savvy.branches.active-branch.sha1, string.other.git-savvy.branches.active-branch.name, comment.git-savvy.branches.active-branch", "font_style": "bold" },
     { "name": "GitSavvy | active branch remote", "scope": "comment.git-savvy.branches.active-branch.extra-info", "foreground": "var(green01)", "font_style": "italic" },
-    { "name": "GitSavvy | keyboard shortcut", "scope": "constant.character.git-savvy-key-binding-key", "background": "var(blue02)", "foreground": "var(dark00)", "font_style": "bold" },
-    { "name": "GitSavvy | keyboard shortcut punctuation", "scope": "punctuation.definition.git-savvy.key-bindings-key-stroke", "background": "var(blue02)", "foreground": "var(blue02)" },
+    { "name": "GitSavvy | keyboard shortcut", "scope": "constant.character.git-savvy-key-binding-key", "background": "var(blue01)", "foreground": "var(dark00)", "font_style": "bold" },
+    { "name": "GitSavvy | keyboard shortcut punctuation", "scope": "punctuation.definition.git-savvy.key-bindings-key-stroke", "background": "var(blue01)", "foreground": "var(blue01)" },
 
     // GitSavvy headings.
-    { "name": "GitSavvy | DEFAULT heading", "scope": "meta.git-savvy.section.header, meta.git-savvy.key-bindings-header, meta.git-savvy.key-bindings-header punctuation, keyword.other.git-savvy.section-header.branch.local", "background": "var(blue00)", "foreground": "var(white00)", "font_style": "bold" },
+    { "name": "GitSavvy | DEFAULT heading", "scope": "meta.git-savvy.section.header, meta.git-savvy.key-bindings-header, meta.git-savvy.key-bindings-header punctuation, keyword.other.git-savvy.section-header.branch.local", "background": "color(var(brown00) a(0.8))", "foreground": "var(white00)", "font_style": "bold" },
     { "name": "GitSavvy | ORANGE heading", "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header", "background": "color(var(orange01) a(0.6))" },
     { "name": "GitSavvy | GREEN heading", "scope": "meta.git-savvy.status.section.staged meta.git-savvy.section.header", "background": "color(var(green00) a(0.5))" },
     { "name": "GitSavvy | untracked filenames", "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename", "foreground": "color(var(light00) a(0.5))", "font_style": "italic" },
