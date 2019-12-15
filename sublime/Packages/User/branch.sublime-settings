@@ -1,0 +1,4 @@
+// Override settings for branch syntax-specific.
+{
+  "margin": 0,
+}

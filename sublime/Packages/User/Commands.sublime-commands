@@ -4,6 +4,7 @@
    */
 
   { "caption": "Toggle LiveReload", "command": "toggle_live_reload_plugin" },
+  { "caption": "Toggle Markdown URLs", "command": "markdown_toggle_urls" },
 
   /**-----------------------------------------------------------------------------------------------
    * Code navigation.

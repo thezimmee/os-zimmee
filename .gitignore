@@ -17,8 +17,6 @@ zsh/zprezto.link
 ## --- START: SUBLIME
 
 # Installed packages not in user folder.
-sublime/Packages--BACKUP/
-sublime/Packages--OLD-BACKUP/
 sublime/Packages/Autoprefixer/
 sublime/Packages/backrefs/
 sublime/Packages/BetterFindBuffer/
@@ -26,14 +24,14 @@ sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
 sublime/Packages/bs4/
 sublime/Packages/Codecs33/
 sublime/Packages/Default/
-sublime/Packages/FileIcons
+# sublime/Packages/FileIcons
 sublime/Packages/Hex to HSL Color Converter/
 sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
 sublime/Packages/JavaScript Enhancements/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
-sublime/Packages/MarkdownEditing
+# sublime/Packages/MarkdownEditing
 sublime/Packages/Minify/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
