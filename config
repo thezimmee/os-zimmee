@@ -44,6 +44,7 @@ CONFIG__cask_apps=(
 	# cyberduck
 	# docker
 	# filezilla
+	figma
 	firefox
 	# firefoxdeveloperedition
 	flux
