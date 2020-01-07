@@ -5,6 +5,9 @@
 		"MarkdownEditing",
 		"FileIcons"
 	],
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AutoFileName",

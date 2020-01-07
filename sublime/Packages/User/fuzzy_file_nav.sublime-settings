@@ -7,7 +7,7 @@
         { "name": "OS Zimmee", "path": "~/Projects/os-zimmee/" },
         { "name": "Bertha", "path": "/Volumes/Bertha" },
         { "name": "Memories", "path": "/Volumes/Bertha/Memories" },
-        { "name": "Cheatsheets", "path": "~/Projects/os-zimmee/cheatsheets/" },
+        { "name": "Docs", "path": "~/Projects/os-zimmee/docs/" },
         { "name": "Web Development", "path": "~/Projects/os-zimmee/cheatsheets/webdev/" },
         { "name": "Job Search", "path": "~/Projects/job search/" },
         { "name": "Desktop", "path": "~/Desktop/" },
