@@ -151,7 +151,7 @@
 
     // User defined functions and variables.
     // { "name": "Variable", "scope": "variable", "foreground": "var(orange01)" },
-    { "name": "Function and variable definitions", "scope": "meta.function.declaration entity.name.function - variable.other.readwrite, meta.class entity.name.class, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite, entity.other.inherited-class", "foreground": "var(orange01)", "font_style": "bold" },
+    { "name": "Function and variable definitions", "scope": "meta.function.declaration entity.name.function - variable.other.readwrite, meta.class entity.name.class, support.class.js, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite, entity.other.inherited-class", "foreground": "var(orange01)", "font_style": "bold" },
     { "name": "Function calls", "scope": "variable.function, support.function, support.macro", "foreground": "var(cyan01)", "font_style": "italic" },
     { "name": "Extended class", "scope": "entity.other.inherited-class", "foreground": "var(orange00)", "font_style": "bold italic" },
 
