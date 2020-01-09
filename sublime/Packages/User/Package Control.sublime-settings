@@ -11,6 +11,7 @@
 	"installed_packages":
 	[
 		"AutoFileName",
+		"Babel",
 		"BetterFindBuffer",
 		"ColorHelper",
 		"CSS3",
@@ -41,7 +42,6 @@
 		"ProjectManager",
 		"Sass",
 		"ShellCommand",
-		"Simple JSX",
 		"StandardFormat",
 		"SublimeCodeIntel",
 		"SublimeLinter",
@@ -50,6 +50,7 @@
 		"SublimeLinter-json",
 		"SublimeLinter-php",
 		"SublimeLinter-stylelint",
+		"Sublimerge 3",
 		"Terminus",
 		"TypeScript",
 		"WrapAsYouType"

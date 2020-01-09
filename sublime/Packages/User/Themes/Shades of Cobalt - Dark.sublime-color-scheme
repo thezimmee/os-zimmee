@@ -128,7 +128,7 @@
 
     // Comments and punctuation.
     { "name": "Comment", "scope": "comment", "foreground": "var(brown00)" },
-    { "name": "Punctuation", "scope": "punctuation - (punctuation.definition.comment | punctuation.definition.string)", "foreground": "color(var(light00) a(0.6))" },
+    { "name": "Punctuation", "scope": "punctuation - (punctuation.definition.comment | punctuation.definition.string), keyword.operator.accessor, meta.group.braces.curly.js meta.brace.curly, meta.group.braces.curly.js meta.brace.round", "foreground": "color(var(light00) a(0.6))" },
 
     // Strings.
     { "name": "String", "scope": "string -string.unquoted.old-plist -string.unquoted.heredoc, string.unquoted.heredoc string", "foreground": "var(lime01)" },
@@ -206,11 +206,11 @@
     // JSON/YAML.
     //
     { "name": "JSON/YAML Key", "scope": "entity.name.tag.yaml, meta.mapping.key string.quoted.double.json", "foreground": "var(orange01)", "font_style": "italic" },
-    { "name": "JSON Key - nested level 2", "scope": "meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(cherry02)" },
+    { "name": "JSON Key - nested level 2", "scope": "meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(red00)" },
     { "name": "JSON Key - nested level 3", "scope": "meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(orange01)" },
-    { "name": "JSON Key - nested level 4", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(cherry02)" },
+    { "name": "JSON Key - nested level 4", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(red00)" },
     { "name": "JSON Key - nested level 5", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(orange01)" },
-    { "name": "JSON Key - nested level 6", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(cherry02)" },
+    { "name": "JSON Key - nested level 6", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(red00)" },
     { "name": "JSON Key - nested level 7+", "scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json", "foreground": "var(orange01)" },
 
     //

@@ -20,7 +20,7 @@
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/User/Themes/Shades of Cobalt - Dark.sublime-color-scheme",
+	"color_scheme": "Packages/User/Themes/Shades of Cobalt - Dark Lower Contrast.sublime-color-scheme",
 	"drag_text": false,
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
