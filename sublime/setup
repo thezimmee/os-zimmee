@@ -24,16 +24,29 @@ install_package_control () {
 
 setup_sublime () {
 	echo "Setting up Sublime..."
+
 	# Symlink sublime user preferences.
 	rm -rf "${CONFIG__packages_path}/Packages"
 	ln -sf "$OSZ_PATH/sublime/Packages" "${CONFIG__packages_path}/Packages"
 
 	# Set as default text editor.
-	printf 'Set Sublime as default text editor? [y(es)/n(o)]'
-	read REPLY
-	if [[ $REPLY =~ ^(yes|y)$ ]]; then
-		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-	fi
+	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+	# Clone forked plugins.
+	git clone git@github.com:thezimmee/MarkdownEditing.git ${OSZ_PATH}/sublime/Plugins/MarkdownEditing
+	git clone git@github.com:thezimmee/FileIcons.git ${OSZ_PATH}/sublime/Plugins/FileIcons
+
+	# Install (symlink) local plugins to Sublime.
+	ln -sf "$OSZ_PATH/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_PATH/sublime/Plugins/Disable Word Completion" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_PATH/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_PATH/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_PATH/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+
+	# Create subl CLI executable.
+	mkdir $HOME/bin
+	ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
+	export EDITOR='subl -w'
 }
 
 setup_dotfiles () {
