@@ -29,6 +29,7 @@ sublime/Packages/Hex to HSL Color Converter/
 sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
 sublime/Packages/JavaScript Enhancements/
+sublime/Packages/LiveReload/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
 # sublime/Packages/MarkdownEditing
@@ -49,11 +50,12 @@ sublime/Packages/python-jinja2/
 sublime/Packages/python-markdown/
 sublime/Packages/pyyaml/
 sublime/Packages/PyV8/
-sublime/Packages/LiveReload/
-sublime/Packages/rainbow_csv
+sublime/Packages/rainbow_csv/
+sublime/Packages/ruamel-yaml/
 sublime/Packages/SendCode/
 sublime/Packages/SFTP/
 sublime/Packages/shellenv/
+sublime/Packages/sublime_lib/
 sublime/Packages/SublimeCodeIntel/
 sublime/Packages/SublimeLinter-contrib-eslint/
 sublime/Packages/SublimeLinter-contrib-stylelint/
@@ -70,6 +72,7 @@ sublime/Packages/TypeScript/
 sublime/Packages/WakaTime/
 sublime/Packages/watchdog/
 sublime/Packages/wcwidth/
+sublime/Packages/yaml_macros_engine/
 sublime/Packages/zzz\ A\ File\ Icon\ zzz/
 
 # User files and folders.

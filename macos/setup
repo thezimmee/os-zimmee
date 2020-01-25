@@ -177,17 +177,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 fi
 
-echo ""
-echo "Add ability to toggle between Light and Dark mode in Yosemite using ctrl+opt+cmd+t? (y/n)"
-# http://www.reddit.com/r/apple/comments/2jr6s2/1010_i_found_a_way_to_dynamically_switch_between/
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
-fi
-
-echo ""
-echo "Disable Photos.app from starting everytime a device is plugged in"
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+# echo ""
+# echo "Disable Photos.app from starting everytime a device is plugged in"
+# defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 
 ###############################################################################

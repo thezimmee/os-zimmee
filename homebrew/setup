@@ -1,12 +1,118 @@
 #!/usr/bin/env bash
-# installs and configures OS Zimmee
+# install and configure homebrew
 #
 # bash homebrew/setup
 
-# load config
-if [[ -z $CONFIG__loaded ]]; then
-	SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-	CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
+# homebrew taps / repos to install with `brew tap <tap>`
+if [ -z $CONFIG__brew_taps ]; then
+	CONFIG__brew_taps=(
+		homebrew/cask-fonts
+	)
+fi
+# homebrew apps to install with `brew install <app>`
+if [ -z $CONFIG__brew_apps ]; then
+	CONFIG__brew_apps=(
+		bash
+		curl
+		fasd
+		git
+		# imagemagick
+		lua
+		mas
+		node
+		nvm
+		# tidy-html5
+		wget
+		zsh
+		zsh-completions
+	)
+fi
+# homebrew cask apps to install with `brew cask install <app>`
+if [ -z $CONFIG__cask_apps ]; then
+	CONFIG__cask_apps=(
+		## [[APPS]]
+		# 1password
+		# airmail-beta
+		alfred
+		# appcleaner
+		araxis-merge
+		# beyond-compare
+		brave-browser
+		calibre
+		# colorpicker
+		# cyberduck
+		# docker
+		# filezilla
+		figma
+		firefox
+		# firefoxdeveloperedition
+		flux
+		# fork
+		# forklift
+		# goodsync
+		# google-chrome
+		# caskroom/versions/google-chrome-canary
+		# google-drive
+		hammerspoon
+		# hazeover
+		# hyper
+		iterm2
+		karabiner-elements
+		# karabiner
+		# kindle
+		lastpass
+		libreoffice
+		# little-snitch
+		# musescore
+		notion
+		# opera
+		parallels
+		# plex-media-server
+		# postbox
+		# private-internet-access
+		pulse-sms
+		# seil
+		setapp
+		# slack
+		# sequel-pro
+		spotify
+		sublime-text
+		# caskroom/versions/sublime-text-dev
+		teamviewer
+		# torbrowser
+		# time-out
+		# ubiquiti-unifi-controller
+		# vivaldi
+		# visual-studio-code
+		# vlc
+		# witch
+		## [[QUICKLOOK PLUGINS]]
+		# betterzipql
+		qlcolorcode
+		qlimagesize
+		qlmarkdown
+		qlprettypatch
+		qlstephen
+		quicklook-csv
+		quicklook-json
+		the-unarchiver
+		webpquicklook
+		## [[FONTS]]
+		# font-bebas-neue
+		font-consolas-for-powerline
+		font-dejavu-sans-mono-for-powerline
+		font-droid-sans-mono-for-powerline
+		font-fira-mono-for-powerline
+		font-hasklig
+		font-inconsolata
+		font-inconsolata-for-powerline
+		font-menlo-for-powerline
+		font-meslo-for-powerline
+		font-open-sans
+		font-roboto-mono-for-powerline
+		font-source-code-pro-for-powerline
+		font-ubuntu-mono-derivative-powerline
+	)
 fi
 
 install_homebrew () {
@@ -23,25 +129,18 @@ install_homebrew () {
 
 	echo "Installing brew taps..."
 	brew tap "${CONFIG__brew_taps[@]}"
-	# for tap in "${CONFIG__brew_taps[@]}"; do
-	# 	brew tap "${tap}"
-	# done
 }
 
 install_homebrew_apps () {
 	# install apps
 	echo "Installing homebrew apps..."
-	# for app in "${CONFIG__brew_apps[@]}"; do
-	# 	brew install "${app}"
-	# done
-	# for app in "${CONFIG__cask_apps[@]}"; do
-	# 	brew cask install "${app}"
-	# done
 	brew install "${CONFIG__brew_apps[@]}"
-	brew cask install "${CONFIG__cask_apps[@]}"
-	echo "Finished app installs."
+	for app in "${CONFIG__cask_apps[@]}"; do
+		brew cask install "${app}"
+	done
 }
 
 # install homebrew & apps
 install_homebrew || echo "Something went wrong with installing Homebrew... exiting."
 install_homebrew_apps || echo "Something went wrong with installing Homebrew apps... exiting."
+echo "Finished installing homebrew."

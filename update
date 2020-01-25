@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
-# updates OS Zimmee
-#
-# bash update
 
 # load config
 init () {
-	# Load config.
-	if [[ -z $CONFIG__loaded ]]; then
-		local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
-		CURRENT=${PWD} && cd -P "$(dirname $script_path)" && . ./config && cd $CURRENT
+	if [ -z $OSZ_PATH ]; then
+		read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
 	fi
 
 	# Update homebrew.
 	echo "Would you like to update homebrew and all its packages? (y/n) "
 	read -r response
 	if [[ $response =~ ^(yes|y)$ ]]; then
-		bash "${OSZ_ROOT}/homebrew/update"
+		bash "${OSZ_PATH}/homebrew/update"
 	fi
 
 	# Update homebrew.
@@ -29,7 +24,7 @@ init () {
 	echo "Would you like to update npm global packages? (y/n) "
 	read -r response
 	if [[ $response =~ ^(yes|y)$ ]]; then
-		bash "${OSZ_ROOT}/node/update"
+		bash "${OSZ_PATH}/node/update"
 	fi
 
 	# Update macOS software.

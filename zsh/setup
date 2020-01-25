@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-# set up ZSH
-#
-# bash zsh/setup
 
-## Load config.
-if [[ -z $CONFIG__loaded ]]; then
-	SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-	CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
+if [ -z $OSZ_PATH ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
 fi
 
 ## Set up zsh as default shell.
@@ -20,16 +15,16 @@ REFRESH=false
 read -p "Remove all current zsh and prezto configuration and start fresh ('no' will link any missing zsh/prezto config files)? "
 if [[ $REPLY =~ ^(yes|y)$ ]]; then
 	REFRESH=true
-	rm -rf ${OSZ_ROOT}/zsh/zprezto.link || echo "Couldn't remove ${OSZ_ROOT}/zsh/zprezto.link."
+	rm -rf ${OSZ_PATH}/zsh/zprezto.link || echo "Couldn't remove ${OSZ_PATH}/zsh/zprezto.link."
 fi
 
 ## Add prezto submodule.
 if [[ $REFRESH = true ]]; then
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_ROOT}/zsh/zprezto.link" && cd ${OSZ_ROOT}/zsh/zprezto.link && git pull && git submodule update --init --recursive || echo "Error cloning prezto."
+	git clone --recursive https://github.com/sorin-ionescu/prezto.git "${OSZ_PATH}/zsh/zprezto.link" && cd ${OSZ_PATH}/zsh/zprezto.link && git pull && git submodule update --init --recursive || echo "Error cloning prezto."
 fi
 
 ## Set up prezto config files.
-for rcfile in $(find ${OSZ_ROOT}/zsh/zprezto.link/runcoms/* -name '*' -not -name 'README.md' -not -name 'zshrc' -not -name 'zpreztorc'); do
+for rcfile in $(find ${OSZ_PATH}/zsh/zprezto.link/runcoms/* -name '*' -not -name 'README.md' -not -name 'zshrc' -not -name 'zpreztorc'); do
 	dest="$HOME/.$(basename "${rcfile}")"
 	echo "Setting up $rcfile..."
 	if [[ $REFRESH = true ]]; then
@@ -40,7 +35,7 @@ for rcfile in $(find ${OSZ_ROOT}/zsh/zprezto.link/runcoms/* -name '*' -not -name
 done
 
 ## Symlink other *.link files.
-for dotfile in $(find ${OSZ_ROOT}/zsh/ -name '*.link*'); do
+for dotfile in $(find ${OSZ_PATH}/zsh/ -name '*.link*'); do
 	dest="$HOME/.$(basename "${dotfile%.link*}")"
 	echo "Setting up $dotfile..."
 	if [[ $REFRESH = true ]]; then

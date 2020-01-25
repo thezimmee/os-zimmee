@@ -1,0 +1,12 @@
+[user]
+	name = Tyson Zimmerman
+	email = thezimmee@gmail.com
+
+[credential]
+	helper = cache
+
+[credential "https://github.com"]
+	username = thezimmee
+
+[credential "https://bitbucket.org"]
+	username = thezimmee

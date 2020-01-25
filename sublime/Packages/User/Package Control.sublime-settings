@@ -5,6 +5,9 @@
 		"MarkdownEditing",
 		"FileIcons"
 	],
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AutoFileName",
@@ -21,6 +24,7 @@
 		"GitSavvy",
 		"Hex to HSL Color Converter",
 		"HyperClick",
+		"JSCustom",
 		"JsPrettier",
 		"LiveReload",
 		"Markdown Table Formatter",

@@ -1,58 +1,15 @@
 #!/bin/bash
-# install sublime
-#
-# `bash sublime/setup`
 
-local script_path=${BASH_SOURCE[0]:-${(%):-%N}}
+CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
+
+if [ -z $OSZ_PATH ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" OSZ_PATH
+fi
 
 init () {
-	# Load config.
-	if [[ -z $CONFIG__loaded ]]; then
-		SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-		CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
-	fi
-
-	# Ask what to set up.
-	printf '%s ' 'What do you want to set up for Sublime? (1) Dotfiles; (2) Everything;'
-	read REPLY
-	if [[ $REPLY = 1 ]]; then
-		setup_dotfiles
-	else
-		setup_sublime
-	fi
-}
-
-install_package_control () {
-	curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$CONFIG__package_control_file"
-}
-
-setup_sublime () {
-	echo "Setting up Sublime..."
-	# Symlink sublime user preferences.
-	if [ -e "${CONFIG__packages_path}/Packages" ]; then
-		printf '%s ' 'Sublime /Packages directory already exists... overwrite with symlink? [y(es)/n(o)]'
-		read REPLY
-		if [[ $REPLY =~ ^(yes|y)$ ]]; then
-			rm -r "${CONFIG__packages_path}/Packages"
-		fi
-	fi
-	mkdir -p "${CONFIG__packages_path}"
-	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
-
-	# Symlink all .link files to the home directory.
-	printf '%s ' 'Symlink all sublime/*.link files and folders to the home directory? [y(es)/n(o)]'
-	read REPLY
-	if [[ $REPLY =~ ^(yes|y)$ ]]; then
-		setup_dotfiles
-	fi
-
-	# Set as default text editor.
-	printf 'Set Sublime as default text editor? [y(es)/n(o)]'
-	read REPLY
-	if [[ $REPLY =~ ^(yes|y)$ ]]; then
-		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
-	fi
-
+	setup_dotfiles
+	setup_sublime
 	# Done.
 	echo "Sublime setup complete!"
 	echo "Sublime should automatically install packages after you install package control from the command palette. If the packages do not automatically install, do the following:"
@@ -61,14 +18,31 @@ setup_sublime () {
 	echo "  3) Type \`advanced install\` in the command prompt and paste the comma-delimited list of packages."
 }
 
+install_package_control () {
+	curl http://sublime.wbond.net/Package%20Control.sublime-package -o "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+}
+
+setup_sublime () {
+	echo "Setting up Sublime..."
+	# Symlink sublime user preferences.
+	rm -rf "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_PATH/sublime/Packages" "${CONFIG__packages_path}/Packages"
+
+	# Set as default text editor.
+	printf 'Set Sublime as default text editor? [y(es)/n(o)]'
+	read REPLY
+	if [[ $REPLY =~ ^(yes|y)$ ]]; then
+		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+	fi
+}
+
 setup_dotfiles () {
-	for dotfile in $(find ${OSZ_ROOT}/sublime -name '*.link'); do
+	for dotfile in $(find ${OSZ_PATH}/sublime -name '*.link'); do
 		dest="$HOME/.$(basename "${dotfile%.*}")"
 		if [[ $(readlink "$dest") != "$dotfile" ]]; then
 			ln -sf "$dotfile" "$dest"
 		fi
 	done
-	echo "Sublime dotfiles setup complete."
 }
 
 init

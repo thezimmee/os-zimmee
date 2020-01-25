@@ -54,3 +54,5 @@
 
 [difftool "araxis"]
 	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
+[credential]
+	helper = cache

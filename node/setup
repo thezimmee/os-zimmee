@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-# installs node packages
-#
-# bash node/setup
 
-# load config
-if [[ -z $CONFIG__loaded ]]; then
-  SCRIPTROOT="$( cd "$(dirname "$0")" ; pwd -P )"
-  CURRENT=${PWD} && cd -P $SCRIPTROOT && . ../config && cd $CURRENT
+CONFIG__npm_globals=(
+	"eslint"
+	"prettier"
+	"stylelint"
+)
+
+if [ -z $OSZ_PATH ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
 fi
 
 # Create Node Version Manager (NVM) directory.
