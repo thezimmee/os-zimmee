@@ -9,9 +9,9 @@
 			],
 			"name": "WAM",
 			"path": "/Users/tzimmerman/Projects/marqeta/wam"
-		},
-		{
-			"path": "/Users/tzimmerman/Downloads/WindowScreenLeftAndRight.spoon"
 		}
-	]
+	],
+	"syntax_override": {
+    "\\.js$": ["Babel", "JavaScript (Babel)"]
+  }
 }

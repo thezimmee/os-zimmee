@@ -18,11 +18,11 @@
     "sublime": "$packages",
     "sublimeu": "$packages/User/",
     "desktop": "~/Desktop",
-    "docs": "~/Documents",
+    "documents": "~/Documents",
     "downloads": "~/Downloads",
     "projects": "~/Projects",
     "os": "~/Projects/os-zimmee",
-    "cheatsheets": "~/Projects/os-zimmee/cheatsheets",
+    "docs": "~/Projects/os-zimmee/docs",
     "here": "$folder_path"
   },
   "terminals": [

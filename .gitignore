@@ -18,6 +18,7 @@ zsh/zprezto.link
 
 # Installed packages not in user folder.
 sublime/Packages/Autoprefixer/
+sublime/Packages/Babel/
 sublime/Packages/backrefs/
 sublime/Packages/BetterFindBuffer/
 sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
