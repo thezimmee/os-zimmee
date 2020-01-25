@@ -38,7 +38,8 @@ if [ -z $CONFIG__cask_apps ]; then
 		araxis-merge
 		# beyond-compare
 		brave-browser
-		calibre
+		banktivity
+		# calibre
 		# colorpicker
 		# cyberduck
 		# docker
