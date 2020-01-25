@@ -131,11 +131,11 @@
     { "name": "Punctuation", "scope": "punctuation - (punctuation.definition.comment | punctuation.definition.string), keyword.operator.accessor, meta.group.braces.curly.js meta.brace.curly, meta.group.braces.curly.js meta.brace.round", "foreground": "color(var(light00) a(0.6))" },
 
     // Strings.
-    { "name": "String", "scope": "string -string.unquoted.old-plist -string.unquoted.heredoc, string.unquoted.heredoc string", "foreground": "var(lime01)" },
+    { "name": "String", "scope": "string -string.unquoted.old-plist -string.unquoted.heredoc - (constant.other.object.key.js string.unquoted.label.js), string.unquoted.heredoc string", "foreground": "var(lime01)" },
     { "name": "String punctuation", "scope": "string punctuation", "foreground": "color(var(lime01) a(0.7))" },
 
     // Constants.
-    { "name": "Constant", "scope": "constant", "foreground": "var(mahogany00)", "font_style": "bold" },
+    { "name": "Constant", "scope": "constant - (string.unquoted.label.js)", "foreground": "var(mahogany00)", "font_style": "bold" },
     { "name": "False boolean", "scope": "constant.language.boolean.false", "foreground": "var(red00)", "font_style": "bold italic" },
     { "name": "True boolean", "scope": "constant.language.boolean.true", "foreground": "var(lime-01)", "font_style": "bold italic" },
     { "name": "Numbers and special characters", "scope": "constant.numeric, constant.character, string.regexp, constant.language", "foreground": "var(pink00)", "font_style": "normal" },
@@ -151,7 +151,7 @@
 
     // User defined functions and variables.
     // { "name": "Variable", "scope": "variable", "foreground": "var(orange01)" },
-    { "name": "Function and variable definitions", "scope": "meta.function.declaration entity.name.function - variable.other.readwrite, meta.class entity.name.class, support.class.js, variable.other.class, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite, entity.other.inherited-class", "foreground": "var(orange01)", "font_style": "bold" },
+    { "name": "Function and variable definitions", "scope": "meta.function.declaration entity.name.function - variable.other.readwrite, meta.class-method.js entity.name.function, meta.function.js entity.name.function, meta.class entity.name.class, support.class.js, variable.other.class, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite, entity.other.inherited-class", "foreground": "var(orange01)", "font_style": "bold" },
     { "name": "Function calls", "scope": "variable.function, support.function, support.macro", "foreground": "var(cyan01)", "font_style": "italic" },
     { "name": "Extended class", "scope": "entity.other.inherited-class", "foreground": "var(orange00)", "font_style": "bold italic" },
 

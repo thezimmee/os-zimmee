@@ -12,6 +12,6 @@
 		}
 	],
 	"syntax_override": {
-    "\\.js$": ["Simple JSX", "JSX"]
+    "\\.js$": ["Babel", "JavaScript (Babel)"]
   }
 }
