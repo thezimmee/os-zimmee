@@ -68,6 +68,7 @@ if [ -z $CONFIG__cask_apps ]; then
 		notion
 		# opera
 		parallels
+		pdf-expert
 		# plex-media-server
 		# postbox
 		# private-internet-access
