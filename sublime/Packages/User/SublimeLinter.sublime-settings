@@ -1,5 +1,12 @@
 // SublimeLinter Settings - User
 {
+  "paths": {
+      "linux": [],
+      "osx": [
+        "~/.nvm/current/bin"
+      ],
+      "windows": []
+  },
   "statusbar.counters_template": "(w:{}|e:{})",
 	"statusbar.messages_template": "{type}|{code}"
 }

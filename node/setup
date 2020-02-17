@@ -2,7 +2,9 @@
 
 CONFIG__npm_globals=(
 	"eslint"
+  "pnpm"
 	"prettier"
+  "standardjs"
 	"stylelint"
 )
 

@@ -1,9 +1,29 @@
 {
-  "format_on_save": false,
-  "extensions": ["js", "html", "vue", "markdown"],
-  "selectors": {
-    "html": "source.js.embedded.html",
-    "vue": "source.js.embedded.html",
-    "markdown": "source.js",
-  }
+	"PATH":
+	[
+		"$HOME/.nvm/current/bin/standard"
+	],
+	"extensions":
+	[
+		"js",
+		"html",
+		"vue",
+		"markdown"
+	],
+	"format_on_save": false,
+	"get_path_command":
+	[
+		"/usr/bin/env",
+		"zsh",
+		"-l",
+		"-i",
+		"-c",
+		"echo $PATH"
+	],
+	"selectors":
+	{
+		"html": "source.js.embedded.html",
+		"markdown": "source.js",
+		"vue": "source.js.embedded.html"
+	}
 }
