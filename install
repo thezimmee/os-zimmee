@@ -3,7 +3,7 @@
 
 
 OSZ_REPO=https://github.com/thezimmee/os-zimmee
-OSZ_PATH=${OSZ_PATH:-~/Projects/os-zimmee}
+OSZ_ROOT=${OSZ_ROOT:-~/Projects/os-zimmee}
 ERROR_MSG=""
 
 
@@ -16,8 +16,8 @@ setup () {
 	echo "[i] This wizard will help you set up OS Zimmee apps."
 
 	# OS Zimmee path.
-	read -e -p "[??] Where should OS Zimmee be installed to? " -i "$OSZ_PATH" OSZ_PATH
-	read -p "[?] Installing to ${OSZ_PATH}. Is this correct? (Y/n) " CONTINUE
+	read -e -p "[??] Where should OS Zimmee be installed to? " -i "$OSZ_ROOT" OSZ_ROOT
+	read -p "[?] Installing to ${OSZ_ROOT}. Is this correct? (Y/n) " CONTINUE
 	CONTINUE=${CONTINUE:-y}
 	if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
 		echo '[!!] Run installer again to start from the beginning.'
@@ -28,7 +28,7 @@ setup () {
 	clone_repo || ERROR_MSG="[!!] Something went wrong with cloning OS Zimmee." && exit 1
 
 	# Install homebrew and apps.
-	. ${OSZ_PATH}/homebrew/setup || ERROR_MSG+="[!!] Homebrew setup failed. :(\n"
+	. ${OSZ_ROOT}/homebrew/setup || ERROR_MSG+="[!!] Homebrew setup failed. :(\n"
 
 	# Install other apps.
 	run_setups
@@ -39,28 +39,28 @@ setup () {
 
 clone_repo () {
 	CONTINUE=y
-	if [ -d ${OSZ_PATH} ]; then
-		read -p "[?] Path to ${OSZ_PATH} already exists. Overwrite and re-clone? (Y/n) " CONTINUE
+	if [ -d ${OSZ_ROOT} ]; then
+		read -p "[?] Path to ${OSZ_ROOT} already exists. Overwrite and re-clone? (Y/n) " CONTINUE
 		if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
-			rm -rf $OSZ_PATH
+			rm -rf $OSZ_ROOT
 			CONTINUE=n
 		fi
 	fi
 	if [[ $CONTINUE == y ]]; then
-		echo "Cloning ${OSZ_REPO} to ${OSZ_PATH}..."
-		git clone --recursive "$OSZ_REPO" "$OSZ_PATH"
+		echo "Cloning ${OSZ_REPO} to ${OSZ_ROOT}..."
+		git clone --recursive "$OSZ_REPO" "$OSZ_ROOT"
 	fi
 }
 
 run_setups () {
 	# Set up other apps.
 	echo "Running OS Zimmee setups..."
-	for dir in ${OSZ_PATH}/*; do
+	for dir in ${OSZ_ROOT}/*; do
 		if [[ -d "$dir" && ${dir} != homebrew && -f "$dir/setup" ]]; then
 			read -p "[?] Do you want to set up ${dir}? (Y/n) " CONTINUE
 			CONTINUE=${CONTINUE:-y}
 			if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
-				. ${OSZ_PATH}/${dir}/setup || ERROR_MSG+="[!!] ${dir} setup failed. :(\n"
+				. ${OSZ_ROOT}/${dir}/setup || ERROR_MSG+="[!!] ${dir} setup failed. :(\n"
 			fi
 		fi
 	done

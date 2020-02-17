@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -z $OSZ_PATH ]; then
-	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
+if [ -z $OSZ_ROOT ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
 fi
 
 # Symlink hammerspoon.
-ln -sf "${OSZ_PATH}/hammerspoon/hammerspoon.link" ~/.hammerspoon
+ln -sf "${OSZ_ROOT}/hammerspoon/hammerspoon.link" ~/.hammerspoon

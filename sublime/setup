@@ -3,8 +3,8 @@
 CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
 
-if [ -z $OSZ_PATH ]; then
-	read -e -p "[??] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" OSZ_PATH
+if [ -z $OSZ_ROOT ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" OSZ_ROOT
 fi
 
 init () {
@@ -27,21 +27,21 @@ setup_sublime () {
 
 	# Symlink sublime user preferences.
 	rm -rf "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_PATH/sublime/Packages" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
 
 	# Set as default text editor.
 	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 	# Clone forked plugins.
-	git clone git@github.com:thezimmee/MarkdownEditing.git ${OSZ_PATH}/sublime/Plugins/MarkdownEditing
-	git clone git@github.com:thezimmee/FileIcons.git ${OSZ_PATH}/sublime/Plugins/FileIcons
+	git clone git@github.com:thezimmee/MarkdownEditing.git ${OSZ_ROOT}/sublime/Plugins/MarkdownEditing
+	git clone git@github.com:thezimmee/FileIcons.git ${OSZ_ROOT}/sublime/Plugins/FileIcons
 
 	# Install (symlink) local plugins to Sublime.
-	ln -sf "$OSZ_PATH/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_PATH/sublime/Plugins/Disable Word Completion" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_PATH/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_PATH/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_PATH/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completion" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
 
 	# Create subl CLI executable.
 	mkdir $HOME/bin
@@ -50,7 +50,7 @@ setup_sublime () {
 }
 
 setup_dotfiles () {
-	for dotfile in $(find ${OSZ_PATH}/sublime -name '*.link'); do
+	for dotfile in $(find ${OSZ_ROOT}/sublime -name '*.link'); do
 		dest="$HOME/.$(basename "${dotfile%.*}")"
 		if [[ $(readlink "$dest") != "$dotfile" ]]; then
 			ln -sf "$dotfile" "$dest"

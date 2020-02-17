@@ -6,10 +6,6 @@ CONFIG__npm_globals=(
 	"stylelint"
 )
 
-if [ -z $OSZ_PATH ]; then
-	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
-fi
-
 # Create Node Version Manager (NVM) directory.
 mkdir ~/.nvm
 nvm install node

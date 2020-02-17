@@ -2,29 +2,22 @@
 
 # load config
 init () {
-	if [ -z $OSZ_PATH ]; then
-		read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_PATH
+	if [ -z $OSZ_ROOT ]; then
+		read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
 	fi
 
 	# Update homebrew.
 	echo "Would you like to update homebrew and all its packages? (y/n) "
 	read -r response
 	if [[ $response =~ ^(yes|y)$ ]]; then
-		bash "${OSZ_PATH}/homebrew/update"
-	fi
-
-	# Update homebrew.
-	echo "Would you like to run \`brew prune\`? (y/n) "
-	read -r response
-	if [[ $response =~ ^(yes|y)$ ]]; then
-		brew prune
+		bash "${OSZ_ROOT}/homebrew/update"
 	fi
 
 	# Update npm packages.
 	echo "Would you like to update npm global packages? (y/n) "
 	read -r response
 	if [[ $response =~ ^(yes|y)$ ]]; then
-		bash "${OSZ_PATH}/node/update"
+		bash "${OSZ_ROOT}/node/update"
 	fi
 
 	# Update macOS software.

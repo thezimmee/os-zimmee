@@ -8,7 +8,6 @@
 update () {
 	bash "${OSZ_ROOT}/update"
 }
-alias update=update
 
 # Project folder alias so we can `c [tab]` to it.
 setopt AUTO_CD # auto cd by typing the path.
