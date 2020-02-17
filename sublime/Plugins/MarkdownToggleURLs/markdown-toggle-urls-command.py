@@ -22,4 +22,4 @@ class MarkdownLinkFolder(sublime_plugin.ViewEventListener):
     def on_load(self):
         self.view.run_command("markdown_toggle_urls")
 
-    on_post_save = on_load
+    # on_post_save = on_load
