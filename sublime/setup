@@ -38,7 +38,7 @@ setup_sublime () {
 
 	# Install (symlink) local plugins to Sublime.
 	ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completion" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completions" "$HOME/Library/Application Support/Sublime Text 3/Packages"
 	ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
 	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
 	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
