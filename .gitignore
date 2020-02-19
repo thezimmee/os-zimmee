@@ -118,3 +118,11 @@ firefox/profiles/*/*
 
 ## --- END: FIREFOX
 ##
+
+##
+## --- START: KARABINER
+
+karabiner-elements/karabiner.link/automatic_backups/
+
+## --- END: KARABINER
+##
