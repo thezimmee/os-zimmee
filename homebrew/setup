@@ -23,6 +23,7 @@ if [ -z $CONFIG__brew_apps ]; then
 		nvm
 		# tidy-html5
 		wget
+		yarn
 		zsh
 		zsh-completions
 	)
