@@ -24,22 +24,25 @@ sublime/Packages/BetterFindBuffer/
 sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
 sublime/Packages/bs4/
 sublime/Packages/Codecs33/
+sublime/Packages/Cycle Setting
 sublime/Packages/Default/
-# sublime/Packages/FileIcons
+sublime/Packages/Disable Word Completions
+sublime/Packages/FileIcons
 sublime/Packages/Hex to HSL Color Converter/
 sublime/Packages/HTML-CSS-JS\ Prettify/
 sublime/Packages/JavaScript/
 sublime/Packages/JavaScript Enhancements/
+sublime/Packages/jsonschema/
+sublime/Packages/JsPrettier/
 sublime/Packages/LiveReload/
 sublime/Packages/markupsafe/
 sublime/Packages/mdpopups/
-# sublime/Packages/MarkdownEditing
+sublime/Packages/MarkdownEditing
+sublime/Packages/MarkdownToggleURLs
 sublime/Packages/Minify/
 sublime/Packages/numpy/
 sublime/Packages/package_events/
 sublime/Packages/pathtools/
-sublime/Packages/jsonschema/
-sublime/Packages/JsPrettier/
 sublime/Packages/Pretty\ JSON/
 sublime/Packages/package_setting_context/
 sublime/Packages/ProjectMaker/
