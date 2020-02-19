@@ -1,8 +1,65 @@
 {
   "variables": {
-    "gray": "hsl(205, 5%, 83%)"
+    "base01": "color(var(--background) s(- 5%) l(+ 5%))",
+    "base-01": "color(var(--background) s(- 5%) l(- 5%))"
   },
   "rules": [
+    //
+    // START: Default background color.
+    // 
+
+    // Defaults.
+    {
+      "class": "title_bar",
+      "bg": "var(base01)"
+    },
+    {
+      "class": "sidebar_container",
+      "layer0.tint": "var(base01)",
+    },
+    {
+      "class": "tabset_control",
+      "layer0.tint": "var(base01)",
+    },
+    {
+      "class": "overlay_control",
+      // "layer0.tint": "var(base01)",
+      "content_margin": 6
+    },
+    // {
+    //   "class": "quick_panel",
+    //   "layer0.tint": "var(base-01)",
+    // },
+    {
+      "class": "mini_quick_panel_row",
+      "attributes": ["selected"],
+      "layer0.tint": "color(var(base01) a(0.65))",
+      "layer0.opacity": 1
+    },
+    {
+      "class": "tab_control",
+      "attributes": ["selected"],
+      "layer3.opacity": 0,
+    },
+    {
+      "class": "tab_control",
+      "attributes": ["!selected"],
+      "tint_modifier": [0, 0, 0, 0.4],
+    },
+    {
+      "class": "tab_label",
+      "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+      "fg": "hsla(0, 0%, 100%, 0.8)",
+    },
+    {
+      "class": "tab_label",
+      "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+      "fg": "hsla(0, 0%, 100%, 1)",
+      "font.italic": true
+    },
+
+    // END.
+
     //
     // START: Remove tab scroll buttons and tabs dropdown button.
     //
