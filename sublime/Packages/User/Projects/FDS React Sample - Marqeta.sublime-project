@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "FDS React Sample",
+      "path": "~/Projects/marqeta/fds/fds-react",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules"
+      ],
+      "follow_symlinks": true
+    }
+  ],
+  "syntax_override": {
+  	"\\.js$": ["Babel", "JavaScript (Babel)"]
+  }
+}
