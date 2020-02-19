@@ -32,9 +32,9 @@ setup_sublime () {
 	# Set as default text editor.
 	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
-	# Clone forked plugins.
-	git clone git@github.com:thezimmee/MarkdownEditing.git ${OSZ_ROOT}/sublime/Plugins/MarkdownEditing
-	git clone git@github.com:thezimmee/FileIcons.git ${OSZ_ROOT}/sublime/Plugins/FileIcons
+	# Fetch git sumodules.
+	git submodule init
+	git submodule update
 
 	# Install (symlink) local plugins to Sublime.
 	ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"

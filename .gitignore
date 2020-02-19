@@ -102,10 +102,6 @@ sublime/Packages/User/SublimergeSummaryPanel.tmTheme
 sublime/Packages/User/Terminus.sublime-color-scheme
 sublime/Packages/User/ThemeTweaker
 
-# Local plugins.
-sublime/Plugins/FileIcons/
-sublime/Plugins/MarkdownEditing/
-
 ## --- END: SUBLIME
 ##
 
