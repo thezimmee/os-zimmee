@@ -19,5 +19,6 @@
 		"sublime-color-scheme",
 		"sublime-theme"
 	],
-	"node_path": "~/.nvm/versions/node/v13.2.0/bin/node"
+	"node_path": "~/.nvm/current/bin/node",
+	"prettier_cli_path": "~/.nvm/current/bin/prettier"
 }
