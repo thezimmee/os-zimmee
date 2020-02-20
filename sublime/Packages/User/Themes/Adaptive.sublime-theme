@@ -37,6 +37,11 @@
       "layer0.opacity": 1
     },
     {
+      "class": "tabset_control",
+      "layer1.tint": "var(base01)",
+      "layer1.opacity": 1,
+    },
+    {
       "class": "tab_control",
       "attributes": ["selected"],
       "layer3.opacity": 0,
@@ -44,7 +49,7 @@
     {
       "class": "tab_control",
       "attributes": ["!selected"],
-      "tint_modifier": [0, 0, 0, 0.4],
+      "tint_modifier": [0, 0, 0, 0.3],
     },
     {
       "class": "tab_label",
