@@ -29,6 +29,9 @@ setup_sublime () {
 	rm -rf "${CONFIG__packages_path}/Packages"
 	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
 
+	# Symlink .huskyrc.
+	ln -sf "$OSZ_ROOT/sublime/.huskyrc" ~
+
 	# Set as default text editor.
 	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
