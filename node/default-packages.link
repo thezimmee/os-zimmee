@@ -1,0 +1,5 @@
+# Default packages to be installed with each newly installed node version.
+# This symlinks to $NVM_DIR/default-packages.
+standard
+prettier
+ncu
