@@ -1,8 +1,4 @@
 {
-	"PATH":
-	[
-		"$HOME/.nvm/current/bin/standard"
-	],
 	"extensions":
 	[
 		"js",
