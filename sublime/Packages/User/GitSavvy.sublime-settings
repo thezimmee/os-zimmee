@@ -16,6 +16,7 @@
     //         "remove_background_bold": "hsl(357, 60%, 50%)"
     //     }
     // },
+    "live_panel_output": true,
     "show_panel_for": ["push"],
     "git_status_in_status_bar": false,
     "default_tag_message": "v{tag_name}",

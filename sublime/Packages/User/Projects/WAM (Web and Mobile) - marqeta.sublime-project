@@ -12,6 +12,6 @@
 		}
 	],
 	"syntax_override": {
-    "\\.js$": ["Babel", "JavaScript (Babel)"]
+    "\\.js$": ["User", "JS Custom", "Syntaxes", "React"]
   }
 }
