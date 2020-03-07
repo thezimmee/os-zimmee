@@ -24,6 +24,7 @@
         "merge": ["--no-ff", "--no-commit"]
     },
     "inline_diff_ignore_eol_whitespaces": true,
+    "inline_diff_auto_scroll": true,
     // "load_additional_codecs": true,
     "tab_order": ["status", "branch"],
     "pedantic_commit_first_line_length": 100,
