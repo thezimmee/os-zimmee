@@ -128,6 +128,7 @@
 
     // Comments and punctuation.
     { "name": "Comment", "scope": "comment", "foreground": "var(brown00)" },
+    { "name": "Comment", "scope": "comment.block.documentation", "foreground": "color(var(brown00) l(+ 10%))" },
     { "name": "Punctuation", "scope": "punctuation - (punctuation.definition.comment | punctuation.definition.string), keyword.operator.accessor, meta.group.braces.curly.js meta.brace.curly, meta.group.braces.curly.js meta.brace.round", "foreground": "color(var(light00) a(0.6))" },
 
     // Strings.
