@@ -4,7 +4,8 @@
 		"js",
 		"html",
 		"vue",
-		"markdown"
+		"markdown",
+		"svelte"
 	],
 	"format_on_save": false,
 	"get_path_command":
@@ -20,6 +21,7 @@
 	{
 		"html": "source.js.embedded.html",
 		"markdown": "source.js",
-		"vue": "source.js.embedded.html"
+		"vue": "source.js.embedded.html",
+		"svelte": "source.js.embedded.html"
 	}
 }
