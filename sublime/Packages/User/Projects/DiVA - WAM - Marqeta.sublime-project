@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"build",
+				"public",
+				"amc-tests",
+				"coverage",
+				"cypress",
+				"__mocks__",
+				"dx_tests",
+				"node_modules"
+			],
+			"name": "DiVA",
+			"path": "/Users/tzimmerman/Projects/marqeta/wam/apps/diva"
+		}
+	],
+	"syntax_override": {
+    "\\.js$": ["User", "JS Custom", "Syntaxes", "React"]
+  }
+}
