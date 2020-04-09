@@ -4,7 +4,7 @@
   "folders": [
     {
       "name": "${1}",
-      "path": "${2:~/Projects/}",
+      "path": "~/Projects/${2}",
       "folder_exclude_patterns": [
         ${0:"dist",
         "node_modules"}

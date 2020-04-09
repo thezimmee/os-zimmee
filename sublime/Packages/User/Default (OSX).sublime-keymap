@@ -227,7 +227,7 @@
       {
         "key": "selector",
         "operator": "equal",
-        "operand": "source.js,markup.raw",
+        "operand": "source.js,markup.raw,source.js.embedded.html",
         "match_all": true
       }
     ]
@@ -239,7 +239,7 @@
       {
         "key": "selector",
         "operator": "equal",
-        "operand": "text.html - (markup.raw),source.css",
+        "operand": "text.html - (markup.raw,source.js.embedded.html),source.css",
         "match_all": true
       }
     ]

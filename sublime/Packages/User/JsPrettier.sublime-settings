@@ -1,4 +1,5 @@
 {
+	"allow_inline_formatting": true,
 	"auto_format_on_save": false,
 	"auto_format_on_save_excludes":
 	[
