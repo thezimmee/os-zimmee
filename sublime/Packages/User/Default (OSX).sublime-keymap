@@ -291,6 +291,14 @@
       { "key": "setting.git_savvy.branch_view", "operator": "equal", "operand": true }
     ]
   },
+  {
+    "keys": ["L"],
+    "command": "gs_pull",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+    ]
+  },
 
   // Restore Sublimerge commands.
   // { "keys": ["alt+down"], "command": "sublimerge_go_down", "context": [{ "key": "setting.is_sublimerge_view", "operator": "equal", "operand": true, "match_all": true }]},
