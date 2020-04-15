@@ -274,13 +274,23 @@
   { "keys": ["super+ctrl+shift+l"], "command": "toggle_live_reload_plugin" },
 
   /**-----------------------------------------------------------------------------------------------
-   * Git.
+   * Git and GitSavvy plugin.
    */
 
   // Git panes.
   { "keys": ["super+alt+t"], "command": "gs_show_status" },
   { "keys": ["super+alt+b"], "command": "gs_show_branch" },
   { "keys": ["super+alt+g"], "command": "gs_log_graph" },
+
+  // Status pane.
+  {
+    "keys": ["L"],
+    "command": "gs_pull",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.branch_view", "operator": "equal", "operand": true }
+    ]
+  },
 
   // Restore Sublimerge commands.
   // { "keys": ["alt+down"], "command": "sublimerge_go_down", "context": [{ "key": "setting.is_sublimerge_view", "operator": "equal", "operand": true, "match_all": true }]},
