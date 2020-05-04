@@ -52,6 +52,14 @@
   { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
   // Open favorite bookmarked paths.
   { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
+  // Create new file from current directory with FileManager.
+  { "keys": ["alt+n"], "command": "fm_create", "args": {
+    "paths": ["${file_path}"],
+    "initial_text": "",
+    // "start_with_browser": true,
+    // "no_browser_action": true,
+  }},
+
   // Default Sublime open dialog.
   // { "keys": ["super+alt+o"], "command": "prompt_open" },
   // Open file path in Alfred.

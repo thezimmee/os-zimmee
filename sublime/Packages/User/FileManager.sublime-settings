@@ -1,5 +1,6 @@
 // Your settings for FileManager. See the default file to see the different options. 
 {
+  "create_keybinding_enabled": false,
   "log_in_status_bar": "user",
   "show_create_command": true,
   "show_copy_command": true,
