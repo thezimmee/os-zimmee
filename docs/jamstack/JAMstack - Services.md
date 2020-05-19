@@ -7,12 +7,17 @@
 
 ## Authentication as a Service
 
+-   [Fusion Auth](https://fusionauth.io/)
 -   [Amazon Cognito](https://aws.amazon.com/cognito/)
 -   [Okta](https://www.okta.com/products/adaptive-multi-factor-authentication/#Features)
 -   [Auth0](https://auth0.com)
 -   [Firebase](https://firebase.google.com)
 -   [Amplify](https://aws-amplify.github.io/docs/js/authentication)
 -   [Netlify Identity](https://www.netlify.com/docs/identity/)
+
+## Search as a service
+
+-   [Adding search to a jamstack site](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/)
 
 ## CMS as a Service
 
@@ -27,6 +32,7 @@
 
 ## Instant Deployment
 
+-   [Vercel (Now)](https://vercel.com/)
 -   [Netlify](https://www.netlify.com)
 -   [Sanity](https://www.sanity.io/)
 

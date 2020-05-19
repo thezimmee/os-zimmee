@@ -9,6 +9,14 @@
 			],
 			"name": "WAM",
 			"path": "/Users/tzimmerman/Projects/marqeta/wam"
+		}, {
+			"folder_exclude_patterns":
+			[
+				"dist",
+				"node_modules"
+			],
+			"name": "Wiki",
+			"path": "/Users/tzimmerman/Projects/marqeta/wam-wiki"
 		}
 	],
 	"syntax_override": {
