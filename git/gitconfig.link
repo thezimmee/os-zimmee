@@ -30,6 +30,7 @@
 [help]
 	# autocorrect = 1
 
+# Set Sublimerge as diff/merge tool.
 # [merge]
 # 	tool = sublimerge
 # 
@@ -43,6 +44,7 @@
 # [difftool "sublimerge"]
 # 	cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
+# Set Araxis Merge as diff/merge tool.
 [merge]
 	tool = araxis
 
@@ -54,5 +56,20 @@
 
 [difftool "araxis"]
 	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
+
 [credential]
 	helper = cache
+[mergetool]
+	keepBackup = false
+
+# Set DeltaWalker as diff/merge tool.
+# [merge]
+# 	tool = deltawalker
+# [diff]
+# 	tool = deltawalker
+# [difftool]
+# 	prompt = false
+# [difftool  "deltawalker"]
+# 	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-diff' "$LOCAL" "$REMOTE"
+# [mergetool  "deltawalker"]
+# 	cmd = '/Applications/DeltaWalker.app/Contents/Resources/git-merge' "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
