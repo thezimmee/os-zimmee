@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>abbreviation</key>
+	<string>wampr</string>
+	<key>formatted</key>
+	<integer>0</integer>
+	<key>text</key>
+	<data>
+	cnRmZAAAAAADAAAAAgAAAAcAAABUWFQucnRmAQAAAC6aAQAAKwAAAAEAAACSAQAAe1xy
+	dGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxNjcxXGNvY29hc3VicnRmNjAwCntc
+	Zm9udHRibFxmMFxmbmlsXGZjaGFyc2V0MCBIZWx2ZXRpY2FOZXVlO30Ke1xjb2xvcnRi
+	bDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7XHJlZDBcZ3JlZW4wXGJsdWUwO30Ke1wq
+	XGV4cGFuZGVkY29sb3J0Ymw7O1xjc3NyZ2JcYzBcYzBcYzBcY25hbWUgdGV4dENvbG9y
+	O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0
+	eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
+	cmFsXHBhcnRpZ2h0ZW5mYWN0b3IwCgpcZjBcZnMyNiBcY2YyIGh0dHBzOi8vZ2l0aHVi
+	Lm1hcnFldGEuY29tL21hcnFldGEvd2FtL3B1bGxzL3R6aW1tZXJtYW59AQAAACMAAAAB
+	AAAABwAAAFRYVC5ydGYQAAAA/k8bX7YBAAAAAAAAAAAAAA==
+	</data>
+	<key>title</key>
+	<string>My GitHub pull requests</string>
+	<key>uuid</key>
+	<string>CAE7C403-5773-4C49-9032-EA38C7282CE6</string>
+</dict>
+</plist>

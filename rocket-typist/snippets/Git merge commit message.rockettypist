@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>abbreviation</key>
+	<string>gitmerge</string>
+	<key>formatted</key>
+	<integer>0</integer>
+	<key>text</key>
+	<data>
+	cnRmZAAAAAADAAAAAgAAAAcAAABUWFQucnRmAQAAAC7oAQAAKwAAAAEAAADgAQAAe1xy
+	dGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxNjcxXGNvY29hc3VicnRmNjAwCntc
+	Zm9udHRibFxmMFxmbmlsXGZjaGFyc2V0MCBIZWx2ZXRpY2FOZXVlO30Ke1xjb2xvcnRi
+	bDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7XHJlZDBcZ3JlZW4wXGJsdWUwO30Ke1wq
+	XGV4cGFuZGVkY29sb3J0Ymw7O1xjc3NyZ2JcYzBcYzBcYzBcY25hbWUgdGV4dENvbG9y
+	O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0
+	eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
+	cmFsXHBhcnRpZ2h0ZW5mYWN0b3IwCgpcZjBcZnMyNiBcY2YyIE1lcmdlIGJyYW5jaCAn
+	JXRleHRmaWVsZDpuYW1lPUJyYW5jaCB0byBtZXJnZTpkZWZhdWx0PWRldmVsb3A6dGV4
+	dGZpZWxkJScgaW50byAldGV4dGZpZWxkOm5hbWU9RGVzdGluYXRpb24gYnJhbmNoOmRl
+	ZmF1bHQ9OnRleHRmaWVsZCV9AQAAACMAAAABAAAABwAAAFRYVC5ydGYQAAAA16EyX7YB
+	AAAAAAAAAAAAAA==
+	</data>
+	<key>title</key>
+	<string>Git merge commit message</string>
+	<key>uuid</key>
+	<string>E9221734-945E-4EE9-A773-34565CB097D7</string>
+</dict>
+</plist>
