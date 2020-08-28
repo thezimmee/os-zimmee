@@ -4,7 +4,7 @@
 
 -- [[ START ]] Setup.
 local config = require 'config'
-local grid = require 'grid'
+-- local grid = require 'grid'
 -- [[ END ]]
 
 -- [[ START ]] Load spoons.
@@ -16,7 +16,7 @@ spoon.WindowScreenLeftAndRight:bindHotkeys({
 
 hs.loadSpoon('Emojis')
 spoon.Emojis:bindHotkeys({
-  toggle = { config.hyper_cmd, ";" }
+  toggle = { config.hyper_cmd, "'" }
 })
 
 -- hs.loadSpoon('WindowGrid')
@@ -27,8 +27,8 @@ spoon.Emojis:bindHotkeys({
 -- [[ END ]]
 
 -- [[ START ]] Window grid.
-grid.destroy()
-grid.init()
+-- grid.destroy()
+-- grid.init()
 -- [[ END ]]
 
 -- [[ START ]] Launcher.
