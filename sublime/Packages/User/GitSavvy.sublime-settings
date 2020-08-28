@@ -17,11 +17,12 @@
     //     }
     // },
     "live_panel_output": true,
-    "show_panel_for": ["push"],
+    "show_panel_for": ["push", "commit"],
     "git_status_in_status_bar": false,
     "default_tag_message": "v{tag_name}",
     "global_flags": {
-        "merge": ["--no-ff", "--no-commit"]
+        // "merge": ["--no-ff", "--no-commit"]
+        "merge": ["--no-ff"]
     },
     "inline_diff_ignore_eol_whitespaces": true,
     "inline_diff_auto_scroll": true,

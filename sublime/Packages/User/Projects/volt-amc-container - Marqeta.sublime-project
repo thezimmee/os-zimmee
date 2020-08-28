@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "volt-amc-container",
+      "path": "~/Projects/marqeta/fds-stage/wam/packages/volt-amc-container",
+      "folder_exclude_patterns": [
+        "dist",
+        "coverage",
+        "node_modules"
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  "syntax_override": {
+    "\\.js$":
+    [
+      "User",
+      "JS Custom",
+      "Syntaxes",
+      "React"
+    ]
+  }
+}

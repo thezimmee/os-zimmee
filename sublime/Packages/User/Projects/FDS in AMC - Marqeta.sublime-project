@@ -1,0 +1,44 @@
+{
+	"folders":
+	[
+		{
+			"binary_file_patterns":
+			[
+			],
+			"file_exclude_patterns":
+			[
+			],
+			"folder_include_patterns": [
+				"apps",
+				"apps/amc",
+				"apps/graphql",
+			],
+			"folder_exclude_patterns":
+			[
+				"apps/amc/fds",
+				"apps/amc/stub-local",
+				"apps/amc/root/__mocks__",
+				"apps/amc/root/amc-tests",
+				"apps/amc/root/coverage",
+				"apps/amc/root/cypress",
+				"apps/amc/root/dx_tests",
+				"apps/amc/root/public",
+				"node_modules"
+			],
+			"follow_symlinks": true,
+			"name": "FDS in AMC",
+			"path": "~/Projects/marqeta/fds-stage/wam/"
+			// "path": "~/Projects/marqeta/wam--temp"
+		}
+	],
+	"syntax_override":
+	{
+		"\\.js$":
+		[
+			"User",
+			"JS Custom",
+			"Syntaxes",
+			"React"
+		]
+	}
+}

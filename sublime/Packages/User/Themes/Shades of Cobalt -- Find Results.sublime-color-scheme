@@ -9,10 +9,8 @@
     // Neutrals.
     "black00": "hsl(0, 0%, 0%)",
     "white00": "hsl(0, 0%, 100%)",
-    // "dark00": "hsl(206, 26%, 19%)",
-    "dark00": "hsl(208, 20%, 18%)",
+    "dark00": "hsl(194, 30%, 15%)",
     "gray00": "hsl(208, 0%, 50%)",
-    // "light00": "hsl(206, 93%, 89%)",
     "light00": "hsl(208, 21%, 89%)",
     "brown00": "hsl(52, 15%, 50%)",
     // Sweet spot: red, pink, orange, yellow, green.

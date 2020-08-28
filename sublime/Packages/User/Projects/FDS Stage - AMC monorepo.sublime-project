@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "name": "AMC - FDS Stage",
+      "path": "~/Projects/marqeta/fds-stage/wam/",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules",
+        "wam",
+        ".parcel-cache",
+        ".cache",
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  "syntax_override": {
+    "\\.js$": ["User", "JS Custom", "Syntaxes", "React"]
+  },
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
+}

@@ -9,8 +9,7 @@
     // Neutrals.
     "black00": "hsl(0, 0%, 0%)",
     "white00": "hsl(0, 0%, 100%)",
-    // "dark00": "hsl(206, 26%, 19%)",
-    "dark00": "hsl(208, 20%, 18%)",
+    "dark00": "hsl(194, 30%, 15%)",
     "gray00": "hsl(208, 0%, 50%)",
     // "light00": "hsl(206, 93%, 89%)",
     "light00": "hsl(208, 21%, 89%)",
@@ -261,7 +260,7 @@
     // GitSavvy headings.
     { "name": "GitSavvy | DEFAULT heading", "scope": "meta.git-savvy.section.header, meta.git-savvy.key-bindings-header, meta.git-savvy.key-bindings-header punctuation, keyword.other.git-savvy.section-header.branch.local", "background": "color(var(brown00) a(0.8))", "foreground": "var(white00)", "font_style": "bold" },
     { "name": "GitSavvy | DEFAULT heading punctuation", "scope": "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section", "background": "color(var(brown00) a(0.8))", "foreground": "color(var(brown00) a(0.8))" },
-    { "name": "GitSavvy | ORANGE heading", "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header", "background": "color(var(orange01) a(0.6))" },
+    { "name": "GitSavvy | ORANGE heading", "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header, meta.git-savvy.status.section.merge-conflicts meta.git-savvy.section.header", "background": "color(var(orange01) a(0.6))" },
     { "name": "GitSavvy | GREEN heading", "scope": "meta.git-savvy.status.section.staged meta.git-savvy.section.header", "background": "color(var(green00) a(0.5))" },
     { "name": "GitSavvy | untracked filenames", "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename", "foreground": "color(var(light00) a(0.5))", "font_style": "italic" },
 
@@ -270,6 +269,7 @@
     { "name": "GitSavvy | untracked files", "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename", "foreground": "color(var(light00) a(0.5))", "font_style": "italic" },
     { "name": "GitSavvy | unstaged files", "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.entity.filename", "foreground": "var(orange01)" },
     { "name": "GitSavvy | staged files", "scope": "meta.git-savvy.status.section.staged meta.git-savvy.entity.filename", "foreground": "var(green01)" },
+    { "name": "GitSavvy | merge conflicts", "scope": "meta.git-savvy.status.section.merge-conflicts meta.git-savvy.entity.filename", "foreground": "var(orange01)" },
     { "name": "GitSavvy | stashed files", "scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff", "foreground": "var(brown00)" },
     { "name": "GitSavvy | current branch/remote punctuation", "scope": "punctuation.definition.git-savvy.branch", "background": "var(dark01)", "foreground": "var(dark01)" },
     { "name": "GitSavvy | hashes", "scope": "meta.git-savvy.branches.branch.sha1", "foreground": "color(var(light00) a(0.7))" },

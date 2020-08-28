@@ -1,0 +1,30 @@
+{
+	"folders":
+	[
+		{
+			"binary_file_patterns":
+			[
+			],
+			"file_exclude_patterns":
+			[
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules"
+			],
+			"follow_symlinks": true,
+			"name": "AMC GraphQL",
+			"path": "~/Projects/marqeta/fds-stage/wam/apps/graphql"
+		}
+	],
+	"syntax_override":
+	{
+		"\\.js$":
+		[
+			"User",
+			"JS Custom",
+			"Syntaxes",
+			"React"
+		]
+	}
+}

@@ -4,6 +4,7 @@
 		"uninstall",
 		"update",
 		"install",
-		"config"
+		"config",
+		".env"
 	]
 }

@@ -1,11 +1,109 @@
 %YAML 1.2
 ---
 name: JS Custom - Default
+scope: source.js.default
+variables:
+  bin_digit: '[01_]'
+  oct_digit: '[0-7_]'
+  dec_digit: '[0-9_]'
+  hex_digit: '[\h_]'
+  dec_integer: (?:0|[1-9]{{dec_digit}}*)
+  dec_exponent: (?:[Ee](?:[-+]|(?![-+])){{dec_digit}}*)
+
+  identifier_escape: (?:\\u(?:\h{4}|\{\h+\}))
+  identifier_start: (?:[_$\p{L}\p{Nl}]|{{identifier_escape}})
+  identifier_part: (?:[_$\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]|{{identifier_escape}})
+  identifier_break: (?!{{identifier_part}})
+
+  identifier: (?:{{identifier_start}}{{identifier_part}}*{{identifier_break}})
+  constant_identifier: (?:[[:upper:]]{{identifier_part}}*{{identifier_break}})
+  dollar_only_identifier: (?:\${{identifier_break}})
+  dollar_identifier: (?:(\$){{identifier_part}}*{{identifier_break}})
+
+  block_comment_contents: (?:(?:[^*]|\*(?!/))*)
+  block_comment: (?:/\*{{block_comment_contents}}\*/)
+  nothing: (?x:(?:\s+|{{block_comment}})*)
+  line_ending_ahead: (?={{nothing}}(?:/\*{{block_comment_contents}})?$)
+
+  # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar
+  reserved_word: |-
+    (?x:
+      break|case|catch|class|const|continue|debugger|default|delete|do|else|
+      export|extends|finally|for|function|if|import|in|instanceof|new|return|
+      super|switch|this|throw|try|typeof|var|void|while|with|yield|
+      enum|
+      null|true|false
+    ){{identifier_break}}
+
+  non_reserved_identifier: (?:(?!{{reserved_word}}){{identifier}})
+
+  either_func_lookahead: (?:{{func_lookahead}}|{{arrow_func_lookahead}})
+  binding_pattern_lookahead: (?:{{identifier}}|\[|\{)
+  left_expression_end_lookahead: (?!\s*[.\[\(])
+
+  property_name: >-
+    (?x:
+      {{identifier}}
+      | '(?:[^\\']|\\.)*'
+      | "(?:[^\\"]|\\.)*"
+      | \[ .* \]
+    )
+
+  class_element_name: |-
+    (?x:
+      \*?
+      {{property_name}}
+      | \#{{identifier}}
+    )
+
+  func_lookahead: |-
+    (?x:
+      \s*
+      (?:async{{identifier_break}}{{nothing}})?
+      function{{identifier_break}}
+    )
+
+  arrow_func_lookahead: |-
+    (?x:
+      \s*
+      (?:async\s*)?
+      (?:
+        {{identifier}}
+        | \( ( [^()] | \( [^()]* \) )* \)
+      )
+      \s*
+      =>
+    )
+
+  method_lookahead: |-
+    (?x:(?=
+      (?: get|set|async ){{identifier_break}}(?!\s*:)
+      | \*
+      | {{property_name}} \s* \(
+    ))
+
+  line_continuation_lookahead: >-
+    (?x:(?=
+      \s*
+      (?! \+\+ | -- )
+      (?=
+        != |
+        [-+*/%><=&|^\[(;,.:?] |
+        (?:in|instanceof){{identifier_break}}
+      )
+    ))
+
+  dot_accessor: |-
+    (?x: # Match . and .?, but not .?( or .?[
+      \.
+      (?! \? [\[(] )
+      \??
+    )
+
 first_line_match: ^#!\s*/.*\b(node|js)\b
 file_extensions:
   - js
   - htc
-scope: source.js.default
 contexts:
   main:
     - include: comments-top-level
@@ -2270,101 +2368,3 @@ contexts:
           pop: true
         - include: object-property
     - include: else-pop
-variables:
-  bin_digit: '[01_]'
-  oct_digit: '[0-7_]'
-  dec_digit: '[0-9_]'
-  hex_digit: '[\h_]'
-  dec_integer: (?:0|[1-9]{{dec_digit}}*)
-  dec_exponent: (?:[Ee](?:[-+]|(?![-+])){{dec_digit}}*)
-
-  identifier_escape: (?:\\u(?:\h{4}|\{\h+\}))
-  identifier_start: (?:[_$\p{L}\p{Nl}]|{{identifier_escape}})
-  identifier_part: (?:[_$\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]|{{identifier_escape}})
-  identifier_break: (?!{{identifier_part}})
-
-  identifier: (?:{{identifier_start}}{{identifier_part}}*{{identifier_break}})
-  constant_identifier: (?:[[:upper:]]{{identifier_part}}*{{identifier_break}})
-  dollar_only_identifier: (?:\${{identifier_break}})
-  dollar_identifier: (?:(\$){{identifier_part}}*{{identifier_break}})
-
-  block_comment_contents: (?:(?:[^*]|\*(?!/))*)
-  block_comment: (?:/\*{{block_comment_contents}}\*/)
-  nothing: (?x:(?:\s+|{{block_comment}})*)
-  line_ending_ahead: (?={{nothing}}(?:/\*{{block_comment_contents}})?$)
-
-  # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar
-  reserved_word: |-
-    (?x:
-      break|case|catch|class|const|continue|debugger|default|delete|do|else|
-      export|extends|finally|for|function|if|import|in|instanceof|new|return|
-      super|switch|this|throw|try|typeof|var|void|while|with|yield|
-      enum|
-      null|true|false
-    ){{identifier_break}}
-
-  non_reserved_identifier: (?:(?!{{reserved_word}}){{identifier}})
-
-  either_func_lookahead: (?:{{func_lookahead}}|{{arrow_func_lookahead}})
-  binding_pattern_lookahead: (?:{{identifier}}|\[|\{)
-  left_expression_end_lookahead: (?!\s*[.\[\(])
-
-  property_name: >-
-    (?x:
-      {{identifier}}
-      | '(?:[^\\']|\\.)*'
-      | "(?:[^\\"]|\\.)*"
-      | \[ .* \]
-    )
-
-  class_element_name: |-
-    (?x:
-      \*?
-      {{property_name}}
-      | \#{{identifier}}
-    )
-
-  func_lookahead: |-
-    (?x:
-      \s*
-      (?:async{{identifier_break}}{{nothing}})?
-      function{{identifier_break}}
-    )
-
-  arrow_func_lookahead: |-
-    (?x:
-      \s*
-      (?:async\s*)?
-      (?:
-        {{identifier}}
-        | \( ( [^()] | \( [^()]* \) )* \)
-      )
-      \s*
-      =>
-    )
-
-  method_lookahead: |-
-    (?x:(?=
-      (?: get|set|async ){{identifier_break}}(?!\s*:)
-      | \*
-      | {{property_name}} \s* \(
-    ))
-
-  line_continuation_lookahead: >-
-    (?x:(?=
-      \s*
-      (?! \+\+ | -- )
-      (?=
-        != |
-        [-+*/%><=&|^\[(;,.:?] |
-        (?:in|instanceof){{identifier_break}}
-      )
-    ))
-
-  dot_accessor: |-
-    (?x: # Match . and .?, but not .?( or .?[
-      \.
-      (?! \? [\[(] )
-      \??
-    )
-

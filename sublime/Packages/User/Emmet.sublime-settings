@@ -1,11 +1,14 @@
 {
-  "preferences": {
-    "css.valueSeparator": ": ",
-    "css.propertyEnd": ";",
-    "css.autoInsertVendorPrefixes": false,
-    "scss.autoInsertVendorPrefixes": false,
-    "sass.autoInsertVendorPrefixes": false,
-    "less.autoInsertVendorPrefixes": false,
-    "stylus.autoInsertVendorPrefixes": false
-  }
+	"preferences":
+	{
+		"css.autoInsertVendorPrefixes": false,
+		"css.propertyEnd": ";",
+		"css.valueSeparator": ": ",
+		"less.autoInsertVendorPrefixes": false,
+		"sass.autoInsertVendorPrefixes": false,
+		"scss.autoInsertVendorPrefixes": false,
+		"stylus.autoInsertVendorPrefixes": false
+	},
+	"telemetry": false,
+	"uid": "1a0fceb2-a447-442a-a767-17e403c4fa2e"
 }
