@@ -1,0 +1,81 @@
+%YAML 1.2
+---
+name: JavaScript+
+file_extensions:
+  - js
+  - mjs
+  - jsx
+first_line_match: ^#!\s*/.*\b(node|js)\b
+scope: source.js.plus
+
+contexts:
+  main:
+    - match: ''
+      push: Packages/JavaScript/JavaScript.sublime-syntax
+      with_prototype:
+        - include: frontmatter
+        - include: ejs
+
+  frontmatter:
+    - match: '^(---)(json)\n$'
+      captures:
+        1: punctuation.frontMatter.begin.json
+        2: constant.other.language-name.frontMatter.json
+      push: frontmatter-json
+    - match: '^(---)(js|javascript)\n$'
+      captures:
+        1: punctuation.frontMatter.begin.js
+        2: constant.other.language-name.frontMatter.js
+      push: frontmatter-js
+    - match: '^(---)(.*?)\n$'
+      captures:
+        1: punctuation.frontMatter.begin.yaml
+        2: constant.other.language-name.frontMatter.yaml
+      push: frontmatter-yaml
+
+  frontmatter-json:
+    - meta_content_scope: source.json
+    - match: '^---\s'
+      scope: punctuation.frontMatter.end.json
+      pop: true
+    - include: Packages/JavaScript/JSON.sublime-syntax
+
+  frontmatter-js:
+    - meta_content_scope: source.json
+    - match: '^---\s'
+      scope: punctuation.frontMatter.end.json
+      pop: true
+    - include: Packages/JavaScript/JavaScript.sublime-syntax
+
+  frontmatter-yaml:
+    - meta_content_scope: source.yaml
+    - match: '^---\s'
+      scope: punctuation.frontMatter.end.yaml
+      pop: true
+    - include: Packages/YAML/YAML.sublime-syntax
+
+  ejs:
+    - match: '<%#'
+      scope: punctuation.definition.comment.begin.ejs
+      push: ejs-comment
+    - match: '<%(?!%)[=_-]?'
+      scope: punctuation.definition.js.begin.ejs
+      push: ejs-js
+
+  ejs-comment:
+    - meta_scope: comment.block.ejs
+    - match: '%>'
+      scope: punctuation.definition.comment.end.ejs
+      pop: true
+
+  ejs-js:
+    - meta_scope: meta.ejs
+    - match: '[_-]?%>'
+      scope: punctuation.definition.js.end.ejs
+      pop: true
+    - match: ''
+      push: Packages/JavaScript/JavaScript.sublime-syntax
+      with_prototype:
+        - match: '(?=[_-]?%>)'
+          scope: punctuation.definition.js.end.ejs
+          pop: true
