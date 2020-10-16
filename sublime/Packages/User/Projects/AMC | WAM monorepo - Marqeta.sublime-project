@@ -1,12 +1,15 @@
 {
   "folders": [
     {
-      "name": "tysonzimmerman.com",
-      "path": "~/Projects/tysonzimmerman",
+      "name": "AMC monorepo",
+      "path": "~/Projects/marqeta/wam/",
       "folder_exclude_patterns": [
+        "coverage",
         "dist",
         "node_modules",
-        ".css-stats"
+        ".parcel-cache",
+        ".cache",
+        ".webpack"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],
@@ -17,11 +20,12 @@
       "follow_symlinks": true
     }
   ],
-  "settings": {
-    "spell_check": true,
-    "dictionary": "Packages/Language - English/en_US.dic"
+  "syntax_override": {
+    "\\.js$": ["User", "JS Custom", "Syntaxes", "React"]
   },
-  // "syntax_override": {},
+  // "settings": {
+  //   "setting": "value"
+  // },
   // "build_systems": [
   //   {
   //     "name": "List",

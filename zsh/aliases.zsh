@@ -17,6 +17,13 @@ alias p=cd ${HOME}/Projects
 # reload zsh
 alias reload='. $HOME/.zshrc'
 
+### Hygen ###
+alias gen="hygen"
+
+### MARQETA ###
+alias amc="cd ~/Projects/marqeta/wam && echo '[i] Using mock data...' && USE_MOCKS=true npm run amcql"
+alias amcprod="cd ~/Projects/marqeta/wam && echo '[!!] Using live data' && npm run amcql"
+
 # Command to compare two directories with sublimerge.
 # compare () {
 # 	subl --command 'sublimerge_compare_paths {"paths": ["$1", "$2"]}'

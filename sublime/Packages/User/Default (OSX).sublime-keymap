@@ -54,11 +54,12 @@
   { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
   // Create new file from current directory with FileManager.
   { "keys": ["alt+n"], "command": "fm_create", "args": {
-    "paths": ["${file_path}"],
+    "paths": ["${file_path:$folder}"],
     "initial_text": "",
     // "start_with_browser": true,
     // "no_browser_action": true,
   }},
+  { "keys": ["super+shift+alt+s"], "command": "save_all" },
 
   // Default Sublime open dialog.
   // { "keys": ["super+alt+o"], "command": "prompt_open" },
@@ -255,10 +256,12 @@
 
   /**-----------------------------------------------------------------------------------------------
    * Tasks and Command Line.
-   */
-
-  // Run command/task.
-  // { "keys": ["super+alt+enter"], "command": "shell_command" },
+   */  
+  
+  // Terminus plugin.
+  // { "keys": ["super+ctrl+enter"], "command":
+  // "toggle_terminus_panel" }, { "keys": ["super+alt+enter"], "command":
+  // "terminus_open" },
 
   /**-----------------------------------------------------------------------------------------------
    * Working with Markdown.
@@ -307,6 +310,15 @@
       { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
     ]
   },
+  {
+    "keys": ["C"],
+    "command": "send_code",
+    "args": { "cmd": "git commit && osascript -e 'tell application \"iTerm\" to activate'" },
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+    ]
+  },
 
   // Restore Sublimerge commands.
   // { "keys": ["alt+down"], "command": "sublimerge_go_down", "context": [{ "key": "setting.is_sublimerge_view", "operator": "equal", "operand": true, "match_all": true }]},
@@ -332,11 +344,4 @@
   // {"keys": ["ctrl+z"], "command": "theme_tweaker_undo", "context": [{"key": "theme_tweaker"}]},
   // {"keys": ["ctrl+shift+z"], "command": "theme_tweaker_redo", "context": [{"key": "theme_tweaker"}]},
   // {"keys": ["escape"], "command": "theme_tweaker_clear", "context": [{"key": "theme_tweaker"}]}
-
-  /**-----------------------------------------------------------------------------------------------
-   * Terminus plugin.
-   */
-
-  { "keys": ["super+ctrl+enter"], "command": "toggle_terminus_panel" },
-  { "keys": ["super+alt+enter"], "command": "terminus_open" },
 ]

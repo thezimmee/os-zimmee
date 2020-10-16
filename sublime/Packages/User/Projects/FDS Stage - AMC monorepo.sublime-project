@@ -4,11 +4,12 @@
       "name": "AMC - FDS Stage",
       "path": "~/Projects/marqeta/fds-stage/wam/",
       "folder_exclude_patterns": [
+        "coverage",
         "dist",
         "node_modules",
-        "wam",
         ".parcel-cache",
         ".cache",
+        ".webpack"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],

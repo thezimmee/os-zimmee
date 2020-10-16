@@ -1,12 +1,11 @@
 {
   "folders": [
     {
-      "name": "tysonzimmerman.com",
-      "path": "~/Projects/tysonzimmerman",
+      "name": "Bundles",
+      "path": "~/Projects/brikcss/bundles",
       "folder_exclude_patterns": [
         "dist",
-        "node_modules",
-        ".css-stats"
+        "node_modules"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],
@@ -17,10 +16,9 @@
       "follow_symlinks": true
     }
   ],
-  "settings": {
-    "spell_check": true,
-    "dictionary": "Packages/Language - English/en_US.dic"
-  },
+  // "settings": {
+  //   "setting": "value"
+  // },
   // "syntax_override": {},
   // "build_systems": [
   //   {

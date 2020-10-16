@@ -1,0 +1,27 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				".sandbox",
+				"coverage",
+				"dist",
+				"node_modules"
+			],
+			"follow_symlinks": true,
+			"name": "volt-amc-container",
+			"path": "~/Projects/marqeta/wam/packages/volt-amc-container"
+		},
+	],
+	"syntax_override":
+	{
+		"\\.js$":
+		[
+			"User",
+			"JS Custom",
+			"Syntaxes",
+			"React"
+		]
+	}
+}
