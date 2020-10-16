@@ -1,28 +1,26 @@
 {
   "folders": [
     {
-      "name": "core - @bundles",
-      "path": "~/Projects/bundles/core",
+      "name": "tysonzimmerman.com",
+      "path": "~/Projects/tysonzimmerman.com",
       "folder_exclude_patterns": [
         "dist",
         "node_modules",
-        "bin",
-        "cjs",
-        "esm",
-        "coverage"
+        ".css-stats"
       ],
       // "folder_include_patterns": [],
       // "file_include_patterns": [],
-      "file_exclude_patterns": ["package-lock.json"],
+      // "file_exclude_patterns": [],
       // "index_include_patterns": [],
       // "index_exclude_patterns": [],
       // "binary_file_patterns": [],
       "follow_symlinks": true
     }
   ],
-  // "settings": {
-  //   "setting": "value"
-  // },
+  "settings": {
+    "spell_check": true,
+    "dictionary": "Packages/Language - English/en_US.dic"
+  },
   // "syntax_override": {},
   // "build_systems": [
   //   {

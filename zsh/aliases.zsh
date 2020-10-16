@@ -17,12 +17,6 @@ alias p=cd ${HOME}/Projects
 # reload zsh
 alias reload='. $HOME/.zshrc'
 
-### Yarn. ###
-alias y="yarn"
-alias y2="yarn set version berry"
-alias yw="yarn workspace"
-alias ywl="yarn workspaces list"
-
 # Command to compare two directories with sublimerge.
 # compare () {
 # 	subl --command 'sublimerge_compare_paths {"paths": ["$1", "$2"]}'

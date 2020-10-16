@@ -1,5 +1,10 @@
 {
 	"adaptive_dividers": true,
+	"added_words":
+	[
+		"Lillee",
+		"internet"
+	],
 	"afn_blacklist_scopes":
 	[
 		"string.regexp.js"
@@ -44,6 +49,10 @@
 		"CSS3",
 		"TypeScript",
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"Lillee's"
 	],
 	"indent_guide_options":
 	[
