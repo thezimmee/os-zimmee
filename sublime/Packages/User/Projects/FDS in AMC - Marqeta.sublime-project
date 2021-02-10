@@ -1,44 +1,53 @@
 {
-	"folders":
-	[
-		{
-			"binary_file_patterns":
-			[
-			],
-			"file_exclude_patterns":
-			[
-			],
-			"folder_include_patterns": [
-				"apps",
-				"apps/amc",
-				"apps/graphql",
-			],
-			"folder_exclude_patterns":
-			[
-				"apps/amc/fds",
-				"apps/amc/stub-local",
-				"apps/amc/root/__mocks__",
-				"apps/amc/root/amc-tests",
-				"apps/amc/root/coverage",
-				"apps/amc/root/cypress",
-				"apps/amc/root/dx_tests",
-				"apps/amc/root/public",
-				"node_modules"
-			],
-			"follow_symlinks": true,
-			"name": "FDS in AMC",
-			"path": "~/Projects/marqeta/fds-stage/wam/"
-			// "path": "~/Projects/marqeta/wam--temp"
-		}
-	],
-	"syntax_override":
-	{
-		"\\.js$":
-		[
-			"User",
-			"JS Custom",
-			"Syntaxes",
-			"React"
-		]
-	}
+  "folders": [
+    {
+      "name": "FDS",
+      "path": "~/Projects/marqeta/wam/apps/amc/fds",
+      "folder_exclude_patterns": [
+        "coverage",
+        "dist",
+        "node_modules",
+        ".parcel-cache",
+        ".cache",
+        ".webpack"
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }, {
+      "name": "graphql",
+      "path": "~/Projects/marqeta/wam/apps/graphql",
+      "folder_exclude_patterns": [
+        "coverage",
+        "dist",
+        "node_modules",
+        ".parcel-cache",
+        ".cache",
+        ".webpack"
+      ],
+      // "folder_include_patterns": [],
+      // "file_include_patterns": [],
+      // "file_exclude_patterns": [],
+      // "index_include_patterns": [],
+      // "index_exclude_patterns": [],
+      // "binary_file_patterns": [],
+      "follow_symlinks": true
+    }
+  ],
+  "syntax_override": {
+    "\\.js$": ["User", "JS Custom", "Syntaxes", "React"]
+  },
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "build_systems": [
+  //   {
+  //     "name": "List",
+  //     "shell_cmd": "ls -l"
+  //   }
+  // ]
 }
