@@ -1,10 +1,10 @@
 {
   "folders": [
     {
-      "name": "Parcel SSR",
-      "path": "~/Projects/parcel-ssr",
+      "name": "volt",
+      "path": "~/Projects/marqeta/volt-design-system/packages/voltron",
       "folder_exclude_patterns": [
-        // "dist",
+        "dist",
         "node_modules"
       ],
       // "folder_include_patterns": [],
@@ -22,6 +22,7 @@
   // "settings": {
   //   "setting": "value"
   // },
+  // "syntax_override": {},
   // "build_systems": [
   //   {
   //     "name": "List",

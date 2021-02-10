@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "FDS Rollup Sample",
-      "path": "~/Projects/marqeta/fds/fds-rollup-sample",
+      "name": "Bundles benchmarks",
+      "path": "~/Projects/brikcss/bundles/packages/bundles-benchmarks",
       "folder_exclude_patterns": [
         "dist",
         "node_modules"
@@ -16,19 +16,10 @@
       "follow_symlinks": true
     }
   ],
-  "syntax_override": {
-  	"\\.js$": [
-  		"Babel",
-  		"JavaScript (Babel)"
-  	],
-    "\\.mjs$": [
-      "Babel",
-      "JavaScript (Babel)"
-    ]
-  },
   // "settings": {
   //   "setting": "value"
   // },
+  // "syntax_override": {},
   // "build_systems": [
   //   {
   //     "name": "List",
