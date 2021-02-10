@@ -11,20 +11,20 @@
     "white00": "hsl(0, 0%, 100%)",
     "dark00": "hsl(194, 30%, 15%)",
     "gray00": "hsl(208, 0%, 50%)",
-    "light00": "hsl(208, 21%, 89%)",
+    "light00": "hsl(208, 21%, 85%)",
     "brown00": "hsl(52, 15%, 50%)",
     // Sweet spot: red, pink, orange, yellow, green.
-    "pink00": "hsl(314, 100%, 75%)",
-    "red00": "hsl(0, 100%, 65%)",
-    "cherry00": "hsl(10, 100%, 43%)",
-    "orange00": "hsl(37, 100%, 50%)",
-    "yellow00": "hsl(47, 100%, 50%)",
+    "pink00": "hsl(314, 60%, 75%)",
+    "red00": "hsl(0, 60%, 65%)",
+    "cherry00": "hsl(10, 70%, 43%)",
+    "orange00": "hsl(37, 70%, 50%)",
+    "yellow00": "hsl(47, 70%, 50%)",
     "green00": "hsl(121, 71%, 63%)",
-    "lime00": "hsl(106, 71%, 63%)",
+    "lime00": "hsl(111, 46%, 60%)",
     // Use sparingly: blue, purple.
-    "cyan00": "hsl(181, 100%, 58%)",
-    "blue00": "hsl(208, 70%, 50%)",
-    "purple00": "hsl(252, 100%, 77%)",
+    "cyan00": "hsl(183, 60%, 60%)",
+    "blue00": "hsl(208, 60%, 50%)",
+    "purple00": "hsl(252, 70%, 77%)",
 
     // 
     // Computed colors.
