@@ -2,7 +2,7 @@
   "folders": [
     {
       "name": "AMC monorepo",
-      "path": "~/Projects/marqeta/wam/",
+      "path": "~/Projects/marqeta/wam-test/",
       "folder_exclude_patterns": [
         "coverage",
         "dist",
