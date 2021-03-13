@@ -9,7 +9,8 @@
     // Neutrals.
     "black00": "hsl(0, 0%, 0%)",
     "white00": "hsl(0, 0%, 100%)",
-    "dark00": "hsl(194, 30%, 15%)",
+    // "dark00": "hsl(194, 100%, 8%)", // solarized background
+    "dark00": "hsl(194, 40%, 10%)",
     "gray00": "hsl(208, 0%, 50%)",
     "light00": "hsl(208, 21%, 85%)",
     "brown00": "hsl(52, 15%, 50%)",
@@ -60,7 +61,7 @@
     "invisibles": "color(var(gray00) alpha(0.7))",
     "caret": "var(yellow00)",
     // "block_caret": "color(var(magenta) s(80%))",
-    "line_highlight": "var(dark01)",
+    "line_highlight": "color(var(dark01) blend(var(purple00) 60%) a(0.25) s(- 10%))",
 
     // ACCENTS,
     "misspelling": "var(cherry00)",
@@ -247,7 +248,7 @@
     // General.
     { "name": "GitSavvy | base", "scope": "git-savvy", "foreground": "var(light00)" },
     { "name": "GitSavvy | comment", "scope": "comment.git-savvy", "foreground": "color(var(light00) a(0.8))" },
-    { "name": "GitSavvy | punctuation to hide", "scope": "punctuation.definition.git-savvy.section - (meta.git-savvy.key-bindings-header)", "foreground": "var(dark00)" },
+    { "name": "GitSavvy | punctuation to hide", "scope": "punctuation.definition.git-savvy.section - (meta.git-savvy.key-bindings-header)", "foreground": "color(var(dark00) alpha(0.0))" },
     { "name": "GitSavvy | file paths", "scope": "comment.git-savvy.summary-header.root.info", "foreground": "var(purple00)" },
     { "name": "GitSavvy | current branch/remote", "scope": "constant.other.git-savvy.summary-header.branch-name", "background": "var(dark01)", "foreground": "var(red00)", "font_style": "bold" },
     { "name": "GitSavvy | remotes", "scope": "comment.git-savvy.branches.branch.extra-info", "foreground": "var(blue01)", "font_style": "italic" },

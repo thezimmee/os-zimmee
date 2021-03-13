@@ -9,7 +9,8 @@
     // Neutrals.
     "black00": "hsl(0, 0%, 0%)",
     "white00": "hsl(0, 0%, 100%)",
-    "dark00": "hsl(194, 30%, 15%)",
+    // "dark00": "hsl(194, 100%, 8%)", // solarized background
+    "dark00": "hsl(194, 40%, 10%)",
     "gray00": "hsl(208, 0%, 50%)",
     "light00": "hsl(208, 21%, 85%)",
     "brown00": "hsl(52, 15%, 50%)",
@@ -60,7 +61,7 @@
     "invisibles": "color(var(gray00) alpha(0.7))",
     "caret": "var(yellow00)",
     // "block_caret": "color(var(magenta) s(80%))",
-    "line_highlight": "var(dark01)",
+    "line_highlight": "color(var(dark01) blend(var(purple00) 60%) a(0.25) s(- 10%))",
 
     // ACCENTS,
     "misspelling": "var(cherry00)",

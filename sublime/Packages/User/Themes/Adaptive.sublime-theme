@@ -1,7 +1,7 @@
 {
   "variables": {
-    "base01": "color(var(--background) s(- 5%) l(+ 5%))",
-    "base-01": "color(var(--background) s(- 5%) l(- 5%))"
+    "base01": "color(var(--background) s(- 15%) l(+ 5%))",
+    "base-01": "color(var(--background) s(- 15%) l(- 5%))"
   },
   "rules": [
     //

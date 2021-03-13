@@ -9,24 +9,23 @@
     // Neutrals.
     "black00": "hsl(0, 0%, 0%)",
     "white00": "hsl(0, 0%, 100%)",
-    // "dark00": "hsl(206, 26%, 19%)",
-    "dark00": "hsl(208, 20%, 18%)",
+    // "dark00": "hsl(194, 100%, 8%)", // solarized background
+    "dark00": "hsl(194, 40%, 10%)",
     "gray00": "hsl(208, 0%, 50%)",
-    // "light00": "hsl(206, 93%, 89%)",
-    "light00": "hsl(208, 21%, 89%)",
+    "light00": "hsl(208, 21%, 85%)",
     "brown00": "hsl(52, 15%, 50%)",
     // Sweet spot: red, pink, orange, yellow, green.
-    "pink00": "hsl(314, 70%, 60%)",
-    "red00": "hsl(0, 100%, 30%)",
-    "cherry00": "hsl(10, 80%, 23%)",
-    "orange00": "hsl(37, 100%, 25%)",
-    "yellow00": "hsl(47, 100%, 50%)",
-    "green00": "hsl(121, 71%, 20%)",
-    "lime00": "hsl(106, 71%, 16%)",
+    "pink00": "hsl(314, 60%, 75%)",
+    "red00": "hsl(0, 60%, 65%)",
+    "cherry00": "hsl(10, 70%, 43%)",
+    "orange00": "hsl(37, 70%, 50%)",
+    "yellow00": "hsl(47, 70%, 50%)",
+    "green00": "hsl(121, 71%, 63%)",
+    "lime00": "hsl(111, 46%, 60%)",
     // Use sparingly: blue, purple.
-    "cyan00": "hsl(181, 100%, 30%)",
-    "blue00": "hsl(208, 70%, 50%)",
-    "purple00": "hsl(252, 100%, 65%)",
+    "cyan00": "hsl(183, 60%, 60%)",
+    "blue00": "hsl(208, 60%, 50%)",
+    "purple00": "hsl(252, 70%, 77%)",
 
     // 
     // Computed colors.
@@ -64,7 +63,7 @@
     "invisibles": "color(var(gray00) alpha(0.7))",
     "caret": "var(yellow00)",
     // "block_caret": "color(var(magenta) s(80%))",
-    "line_highlight": "var(light-02)",
+    "line_highlight": "color(var(dark01) blend(var(purple00) 60%) a(0.25) s(- 10%))",
 
     // ACCENTS,
     "misspelling": "var(cherry00)",
