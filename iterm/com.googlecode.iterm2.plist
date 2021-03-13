@@ -2099,8 +2099,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromClearingHistory</key>
-	<true/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -2111,12 +2109,26 @@
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
+	<key>Snippets</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>MQD bootstrap</string>
+			<key>value</key>
+			<string>npm run sb</string>
+		</dict>
+	</array>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
 	<integer>0</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Snippets</string>
+	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
