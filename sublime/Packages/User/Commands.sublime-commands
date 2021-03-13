@@ -14,4 +14,10 @@
   { "caption": "Go to: Symbol in Project", "command": "goto_symbol_in_project" },
   { "caption": "Go to: Definition", "command": "goto_definition" },
   { "caption": "Go to: Reference", "command": "goto_reference" }
+
+  /**-----------------------------------------------------------------------------------------------
+   * Build systems.
+   */
+
+  // { "caption": "Run NPM script", "command": "show_overlay", "args": {"overlay": "command_palette", "text": "NPM script: "} },
 ]

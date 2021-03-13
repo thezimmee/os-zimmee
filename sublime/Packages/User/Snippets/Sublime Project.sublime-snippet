@@ -24,8 +24,15 @@
   // "syntax_override": {},
   // "build_systems": [
   //   {
-  //     "name": "List",
-  //     "shell_cmd": "ls -l"
+  //     "name": "",
+  //     "target": "terminus_open",
+  //     "cancel": "terminus_cancel_build",
+  //     "cmd": [],
+  //     "shell_cmd": "",
+  //     "working_dir": "$project_path",
+  //     "title": "",
+  //     "tag": "",
+  //     "auto_close": false
   //   }
   // ]
 }

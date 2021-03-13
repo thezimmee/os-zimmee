@@ -123,7 +123,7 @@
             "syntax_filter": "whitelist",
             "base_scopes": ["source.json"],
             "scan_scopes": ["string.quoted.double - meta.mapping.key"],
-            "allowed_colors": ["hsl", "hsla", "hex"],
+            "allowed_colors": ["hsl", "hsla", "hex", "rgb"],
             // "allowed_colors": ["css3"],
             "extensions": [],
             "use_hex_argb": false,

@@ -1,26 +1,13 @@
 {
+	"scrollback_history_size": 100000,
 	"256color": true,
+	"default_config": {
+    "linux": null,    // login shell
+    "osx": "Zsh",      // login shell
+    "windows": "Command Prompt"
+	},
 	"shell_configs":
 	[
-		{
-			"cmd":
-			[
-				"bash",
-				"-i",
-				"-l"
-			],
-			"default": false,
-			"enable": true,
-			"env":
-			{
-			},
-			"name": "Bash",
-			"platforms":
-			[
-				"linux",
-				"osx"
-			]
-		},
 		{
 			"cmd":
 			[
@@ -34,6 +21,25 @@
 			{
 			},
 			"name": "Zsh",
+			"platforms":
+			[
+				"linux",
+				"osx"
+			]
+		},
+		{
+			"cmd":
+			[
+				"bash",
+				"-i",
+				"-l"
+			],
+			"default": false,
+			"enable": true,
+			"env":
+			{
+			},
+			"name": "Bash",
 			"platforms":
 			[
 				"linux",

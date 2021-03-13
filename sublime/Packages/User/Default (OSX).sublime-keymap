@@ -147,8 +147,11 @@
   { "keys": ["alt+enter"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
 
   /**-----------------------------------------------------------------------------------------------
-   * UI Navigation.
+   * UI Navigation and pane manipulation.
    */
+
+  // Layouts and panes.
+  { "keys": ["super+k", "super+l"], "command": "restore_layout" },
 
   // Navigate between tabs.
   { "keys": ["alt+l"], "command": "next_view" },
@@ -258,10 +261,37 @@
    * Tasks and Command Line.
    */  
   
+  // 
+  { "keys": ["super+k", "super+n"],
+    "command": "show_overlay",
+    "args": {
+      "overlay": "command_palette",
+      "text": "NPM: "
+    }
+  },
   // Terminus plugin.
-  // { "keys": ["super+ctrl+enter"], "command":
-  // "toggle_terminus_panel" }, { "keys": ["super+alt+enter"], "command":
-  // "terminus_open" },
+  {
+    "keys": ["super+ctrl+enter"],
+    "command": "toggle_terminus_panel"
+  },
+  {
+    "keys": ["super+alt+enter"],
+    "command": "terminus_open",
+    "args": {
+      "title": "zsh"
+    }
+  },
+  {
+    "keys": ["ctrl+w"],
+    "command": "terminus_close",
+    "context": [{ "key": "terminus_view"}]
+  },
+  {
+    "keys": ["super+k"],
+    "command": "terminus_keypress",
+    "args": { "key": "l", "ctrl": true },
+    "context": [{ "key": "terminus_view" }]
+  },
 
   /**-----------------------------------------------------------------------------------------------
    * Working with Markdown.
@@ -311,9 +341,32 @@
     ]
   },
   {
-    "keys": ["C"],
-    "command": "send_code",
-    "args": { "cmd": "git commit && osascript -e 'tell application \"iTerm\" to activate'" },
+    "keys": ["c"],
+    "command": "terminus_open",
+    "args": {
+      "cwd": "${file_path:${folder}}",
+      "shell_cmd": "git commit",
+      "panel_name": "git",
+      "tag": "git"
+    },
+    // "command": "send_code",
+    // "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && osascript -e 'tell application \"Sublime Text\" to activate' && cd $folder && git commit || osascript -e 'tell application \"Sublime Text\" to activate'" },
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+    ]
+  },
+  {
+    "keys": ["m"],
+    "command": "terminus_open",
+    "args": {
+      "cwd": "${file_path:${folder}}",
+      "shell_cmd": "git commit --amend",
+      "panel_name": "git",
+      "tag": "git"
+    },
+    // "command": "send_code",
+    // "args": { "cmd": "osascript -e 'tell application \"iTerm\" to activate' && osascript -e 'tell application \"Sublime Text\" to activate' && cd $folder && git commit --amend || osascript -e 'tell application \"Sublime Text\" to activate'" },
     "context": [
       { "key": "setting.command_mode", "operator": "equal", "operand": false },
       { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
