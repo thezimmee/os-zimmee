@@ -1,20 +1,23 @@
-## macOS.
+# [[[ MacOS
 .DS_Store
+# ]]]
 
-## IDE.
+# [[[ ZSH
+zsh/locals.zsh
+zsh/zprezto.link
+# ]]]
+
+# [[[ Miscellaneous
+*.crt
+# ]]]
+
+# [[[ SUBLIME
+
+# Sublime built ins.
 *.sublime-project
 *.sublime-workspace
 *.sublime-color-scheme.chback
 sublime/**/*.cache
-
-## Unnecessary.
-*.crt
-
-## Ignore prezto since it will be maintained from https://github.com/sorin-ionescu/prezto.
-zsh/zprezto.link
-
-##
-## --- START: SUBLIME
 
 # Installed packages not in user folder.
 sublime/Packages/Autoprefixer/
@@ -103,23 +106,13 @@ sublime/Packages/User/Terminus.sublime-color-scheme
 sublime/Packages/User/Terminus/Terminus.hidden-color-scheme
 sublime/Packages/User/ThemeTweaker
 
-## --- END: SUBLIME
-##
+# ]]]
 
-
-##
-## --- START: FIREFOX
-
+# [[[ FIREFOX
 firefox/profiles/*/*
 !firefox/profiles/*/chrome
+# ]]]
 
-## --- END: FIREFOX
-##
-
-##
-## --- START: KARABINER
-
+# [[[ KARABINER
 karabiner-elements/karabiner.link/automatic_backups/
-
-## --- END: KARABINER
-##
+# ]]]
