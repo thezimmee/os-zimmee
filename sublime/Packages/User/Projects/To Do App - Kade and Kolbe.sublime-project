@@ -2,7 +2,7 @@
   "folders": [
     {
       "name": "To Do",
-      "path": "~/Projects/kade-kolbe/ToDoApp/",
+      "path": "~/Projects/kade-kolbe/",
       "folder_exclude_patterns": [
         "dist",
         "node_modules"
