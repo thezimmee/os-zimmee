@@ -5,7 +5,7 @@ if [ -z $OSZ_ROOT ]; then
 fi
 
 # Install karabiner-elements.
-brew list --casks karabiner-elements || brew install karabiner-elements
+brew install karabiner-elements
 
 # Symlink karabiner-elements.
 mkdir -p ~/.config && ln -sf "${OSZ_ROOT}/karabiner-elements/karabiner.link" ~/.config/karabiner

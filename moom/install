@@ -4,7 +4,7 @@
 source ../scripts/oszroot.sh
 
 # Install moom.
-brew list --casks moom || brew install moom
+brew install moom
 
 # Install node v12.19.0 and create marqeta alias for it.
 defaults import com.manytricks.Moom "$OSZ_ROOT/moom/Moom.plist"

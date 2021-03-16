@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-brew list --cask brave-browser || brew install brave-browser
+brew install brave-browser
 
 # Others to potentially install:
 # brew install firefox firefoxdeveloperedition google-chrome homebrew/cask-versions/google-chrome-canary

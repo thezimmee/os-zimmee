@@ -6,8 +6,5 @@ source ./config.sh
 # Install taps.
 brew tap homebrew/cask-fonts
 
-# Install each font.
-for FONT in ${CONFIG__BREW_FONTS[@]}; do
-  echo 'Installing $FONT...'
-  brew list --casks $FONT || brew install $FONT
-done
+# Install fonts.
+brew install "$CONFIG__BREW_FONTS[@]"

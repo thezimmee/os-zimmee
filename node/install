@@ -4,7 +4,7 @@
 source ../scripts/oszroot.sh
 
 # Install Node Version Manager (NVM).
-brew list --casks nvm || brew install nvm
+brew install nvm
 
 # Install Node versions.
 # mkdir ~/.nvm

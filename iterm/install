@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install iTerm.
-brew list --casks iterm2 || brew install iterm2
+brew install iterm2
 
 # Integrate with ZSH.
 curl -L https://iterm2.com/shell_integration/zsh \

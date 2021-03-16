@@ -6,19 +6,14 @@ CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
 source ../scripts/oszroot.sh
 
 install () {
-	install_sublime
+	brew install sublime-text
 	install_package_control
 	setup_sublime
-	# Done.
 	echo "Sublime setup complete!"
 }
 
 install_package_control () {
 	curl https://packagecontrol.io/Package%20Control.sublime-package -o "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
-}
-
-install_sublime () {
-	brew list --casks sublime-text || brew install sublime-text
 }
 
 setup_sublime () {
