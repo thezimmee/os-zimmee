@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Remove hammerspoon.
+rm -rf ~/.hammerspoon

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Install Merge.
+
+brew list --cask araxis-merge || brew install araxis-merge

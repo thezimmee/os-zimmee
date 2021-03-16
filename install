@@ -6,14 +6,10 @@ OSZ_REPO=https://github.com/thezimmee/os-zimmee
 OSZ_ROOT=${OSZ_ROOT:-~/Projects/os-zimmee}
 ERROR_MSG=""
 
-
-setup () {
-	INSTALL_APPS=y
-	CONFIRM_MSG=""
-
+install () {
 	# Intro.
 	echo '--- OS ZIMMEE INSTALL WIZARD ---'
-	echo "[i] This wizard will help you set up OS Zimmee apps."
+	echo "[i] This wizard helps install OS Zimmee apps."
 
 	# OS Zimmee path.
 	read -e -p "[??] Where should OS Zimmee be installed to? " -i "$OSZ_ROOT" OSZ_ROOT
@@ -24,20 +20,20 @@ setup () {
 		exit 1
 	fi
 
-	# Clone OS Zimmee repo.
-	clone_repo || ERROR_MSG="[!!] Something went wrong with cloning OS Zimmee." && exit 1
+	# If $OSZ_ROOT doesn't exist locally, clone it.
+	setup_repo || ERROR_MSG="[!!] Something went wrong with setting up OS Zimmee repo." && exit 1
 
-	# Install homebrew and apps.
-	. ${OSZ_ROOT}/homebrew/setup || ERROR_MSG+="[!!] Homebrew setup failed. :(\n"
+	# Install homebrew.
+	source ${OSZ_ROOT}/homebrew/install || ERROR_MSG+="[!!] Homebrew install failed. :(\n"
 
-	# Install other apps.
-	run_setups
+	# Install node.
+	source ${OSZ_ROOT}/node/install || ERROR_MSG+="[!!] Node install failed. :(\n"
 
-	# Run post install report.
+	install_apps
 	install_report
 }
 
-clone_repo () {
+setup_repo () {
 	CONTINUE=y
 	if [ -d ${OSZ_ROOT} ]; then
 		read -p "[?] Path to ${OSZ_ROOT} already exists. Overwrite and re-clone? (Y/n) " CONTINUE
@@ -52,34 +48,35 @@ clone_repo () {
 	fi
 }
 
-run_setups () {
-	# Set up other apps.
-	echo "Running OS Zimmee setups..."
+# Install apps.
+install_apps () {
+	echo "Installing OS Zimmee apps..."
 	for dir in ${OSZ_ROOT}/*; do
-		if [[ -d "$dir" && ${dir} != homebrew && -f "$dir/setup" ]]; then
-			read -p "[?] Do you want to set up ${dir}? (Y/n) " CONTINUE
+		if [[ -d "$dir" && ${dir} != homebrew && ${dir} != node && -f "$dir/install" ]]; then
+			read -p "[?] Do you want to install ${dir}? (Y/n) " CONTINUE
 			CONTINUE=${CONTINUE:-y}
 			if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
-				. ${OSZ_ROOT}/${dir}/setup || ERROR_MSG+="[!!] ${dir} setup failed. :(\n"
+				source ${OSZ_ROOT}/${dir}/install || ERROR_MSG+="[!!] ${dir} install failed. :(\n"
 			fi
 		fi
 	done
 }
 
+# Run post install report.
 install_report () {
 	# wrap up
 	if [[ "$ERROR_MSG" != "" ]]; then
 		echo "[!!] Uh oh, there was a problem..."
 		echo -e "${ERROR_MSG}"
 		echo "---"
-		echo "Either try again or manually set up the missing pieces listed above."
+		echo "Either try again or manually install missing pieces listed."
 	else
 		echo -e "[ok] Woot woot! OS Zimmee setup is complete!"
-		echo -e "[ok] To set up individual apps, simply run \`<os-zimmee path>/<app directory>/setup\`."
+		echo -e "[ok] To install individual apps, run \`$OSZ_ROOT/<app directory>/install\`."
 		echo -e "[ok] Enjoy!!! :)"
 	fi
 	echo ''
 }
 
 # install & update
-setup
+install

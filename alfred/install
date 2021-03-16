@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Install alfred
+
+brew list --cask alfred || brew install alfred

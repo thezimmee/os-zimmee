@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# User input.
+source ../scripts/oszroot.sh
+
+# Uninstall Node Version Manager (NVM).
+brew list --casks nvm && brew uninstall nvm
+
+# Uninstall Node versions.
+rm -rf "$NVM_DIR"
+rm -rf ~/.nvm/default-packages
+rm -rf ~/.nvm

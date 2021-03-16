@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -z $OSZ_ROOT ]; then
-	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
-fi
-
-# Symlink karabiner-elements.
-mkdir -p ~/.config && ln -sf "${OSZ_ROOT}/karabiner-elements/karabiner.link" ~/.config/karabiner

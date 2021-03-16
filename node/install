@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# User input.
+source ../scripts/oszroot.sh
+
+# Install Node Version Manager (NVM).
+brew list --casks nvm || brew install nvm
+
+# Install Node versions.
+# mkdir ~/.nvm
+ln -sf "$OSZ_ROOT/node/default-packages" ~/.nvm/default-packages
+nvm install stable
+nvm install node
+
+# Set default node to stable.
+nvm alias default stable

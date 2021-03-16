@@ -1,5 +1,19 @@
 # Moom
 
+## Install
+
+```bash
+bash $OSZ_ROOT/moom/install
+```
+
+## Export
+
+This saves/exports current Moom preferences.
+
+```bash
+bash $OSZ_ROOT/moom/export
+```
+
 ## How to sync
 
 See ["Can I sync Moom's settings across Macs?"](https://manytricks.com/osticket/kb/faq.php?id=53).

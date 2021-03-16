@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# uninstall git and ssh
+
+uninstall () {
+	# Set up gitconfig.
+	echo "Uninstalling git configurations..."
+
+	rm -rf ~/.gitconfig-local
+	rm -rf ~/.gitignore
+	rm -rf ~/.gitconfig
+
+	# Create new SSH key.
+	if [[ -e $HOME/.ssh/id_rsa ]]; then
+		read -p "Remove your existing SSH key? (y/N) "
+		if [[ $REPLY =~ ^(yes|y)$ ]]; then
+			rm -rf ~/.ssh
+			echo "Removed!"
+		fi
+	fi
+
+	## WRAP IT UP.
+	echo "[ok] git uninstall complete."
+}
+
+uninstall

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Uninstall iTerm.
+brew list --casks iterm2 && brew uninstall iterm2
+
+# Remove ZSH integration.
+rm -rf ~/.iterm2_shell_integration.zsh

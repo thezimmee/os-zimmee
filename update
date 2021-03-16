@@ -27,11 +27,17 @@ init () {
 		sudo softwareupdate --install --all
 	fi
 
-	# Update prezto / zsh.
-	echo "Would you like to update prezto (zsh)? (y/n) "
+	# Update other apps.
+	echo "Would you like to update other OS Zimmee apps? (y/n) "
 	read -r response
 	if [[ $response =~ ^(yes|y)$ ]]; then
-		zprezto-update
+		for dir in ${OSZ_ROOT}/*; do
+			if [[ -d "$dir" && ${dir} != homebrew && ${dir} != node && -f "$dir/update" ]]; then
+				echo "Updating ${dir}..."
+				source ${OSZ_ROOT}/${dir}/update || ERROR_MSG+="[!!] ${dir} update failed. :(\n"
+				echo 'Done!'
+			fi
+		done
 	fi
 }
 

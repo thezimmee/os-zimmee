@@ -20,14 +20,67 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=(
-#   "pmcqee"
-#   "aussiegeek"
-# )
-ZSH_THEME_RANDOM_IGNORED=(
-  "nanotech"
-  "apple"
+ZSH_THEME_RANDOM_CANDIDATES=(
+  # KEEPERS:
+  "intheloop"
+  "juanghurtado"
+  "steeef"
+
+  # Jury is still out:
+  "amuse"
+  "aussiegeek"
+  "avit"
+  "bira"
+  "blinks"
+  "bureau"
+  "candy"
+  "crcandy"
+  "darkblood"
+  "dogenpunk"
+  "dst"
+  "dstufft"
+  "duellj"
+  "fino-time"
+  "fino"
+  "fox"
+  "frisk"
+  "frontcube"
+  "funky"
+  "gnzh"
+  "itchy"
+  "jispwoso"
+  "jonathan"
+  "josh"
+  "jtriley"
+  "junkfood"
+  "kardan"
+  "kphoen"
+  "linuxonly"
+  "mortalscumbag"
+  "murilasso"
+  "peepcode"
+  "pmcqee"
+  "re5et"
+  "refined"
+  "rgm"
+  "rixius"
+  "rkj-repos"
+  "simonoff"
+  "smt"
+  "Soliah"
+  "sporty_256"
+  "strug"
+  "suvash"
+  "takashiyoshida"
+  "tjkirch"
+  "xiong-chiamiov"
+  "xiong-chiamiov-plus"
+  "ys"
 )
+# ZSH_THEME_RANDOM_IGNORED=(
+#   "nanotech"
+#   "apple"
+# )
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -55,8 +108,28 @@ source "$ZSH/oh-my-zsh.sh"
 
 # [[[ User configuration
 
+# Default ZSH environment.
 export OSZ_ROOT="$HOME/Projects/os-zimmee"
 source "$OSZ_ROOT/zsh/globals.zsh"
 source "$OSZ_ROOT/zsh/aliases.zsh"
+
+# Initialize env for os zimmee apps.
+source "$OSZ_ROOT/araxis-merge/init.zsh"
+source "$OSZ_ROOT/git/init.zsh"
+source "$OSZ_ROOT/iterm/init.zsh"
+source "$OSZ_ROOT/node/init.zsh"
+
+# Source zsh files from other apps.
+# for file in $(find -H "$OSZ_ROOT" -maxdepth 2 -name '*.zsh' -not -path '*/zsh/*')
+# do
+#   echo "FILE: $file"
+#   # source $file
+# done
+
+# Enable completions.
+autoload -Uz compinit && compinit
+
+# Hook into direnv.
+eval "$(direnv hook zsh)"
 
 # ]]]

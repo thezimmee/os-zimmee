@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Uninstall Merge.
+
+brew list --cask araxis-merge && brew uninstall araxis-merge

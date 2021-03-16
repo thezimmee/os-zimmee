@@ -1,0 +1,53 @@
+#!/bin/bash
+
+CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
+
+source ../scripts/oszroot.sh
+
+install () {
+	install_sublime
+	install_package_control
+	setup_sublime
+	# Done.
+	echo "Sublime setup complete!"
+}
+
+install_package_control () {
+	curl https://packagecontrol.io/Package%20Control.sublime-package -o "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+}
+
+install_sublime () {
+	brew list --casks sublime-text || brew install sublime-text
+}
+
+setup_sublime () {
+	echo "Setting up Sublime..."
+
+	# Symlink sublime user preferences to OS Zimmee.
+	rm -rf "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
+
+	# Set as default text editor.
+	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+	# Fetch git sumodules.
+	OLD_PWD=$PWD
+	cd $OSZ_ROOT
+	git submodule init
+	git submodule update
+	cd $OLD_PWD
+
+	# Install (symlink) local plugins to Sublime.
+	ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completions" "$HOME/Library/Application Support/Sublime Text 3/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+
+	# Create subl CLI executable.
+	mkdir $HOME/bin
+	ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
+}
+
+install

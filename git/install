@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# Set up git and ssh
+
+# Get $OSZ_ROOT.
+if [ -z $OSZ_ROOT ]; then
+	read -e -p "[??] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
+	OSZ_ROOT=$reply
+fi
+
+## Set up SSH key.
+setup_ssh () {
+	GIT_EXISTS=false
+	[ -x "$(command -v git)" ] && GIT_EXISTS=true
+
+	if [ $GIT_EXISTS = true ]; then
+		GIT_EMAIL=$(git config user.email)
+	else
+		read -p "[??] What is your git email address (for the SSH key)? " GIT_EMAIL
+	fi
+	ssh-keygen -t rsa -b 4096 -C "${GIT_EMAIL}"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
+	pbcopy < ~/.ssh/id_rsa.pub
+	read -n 1 -s -r -p "[!!] Your SSH key has been copied to the clipboard; paste it into your GitHub account (https://github.com/account/ssh). Then hit any key to continue... "
+}
+
+install () {
+	# Set up gitconfig.
+	echo "Setting up .gitconfig..."
+
+	# Install git from homebrew.
+	brew install git
+
+	# Set up git configurations.
+	GITCONFIG_LOCAL=~/.gitconfig-local
+	CONTINUE=y
+	if [ -f $GITCONFIG_LOCAL ]; then
+		read -p "$GITCONFIG_LOCAL already exists. Overwrite it? (y/N) " CONTINUE
+		CONTINUE=${CONTINUE:-n}
+		if [[ $CONTINUE =~ ^(yes|y)$ ]]; then
+			mv -f $GITCONFIG_LOCAL "${GITCONFIG_LOCAL}-backup"
+			echo "[i] Existing $GITCONFIG_LOCAL moved to ${GITCONFIG_LOCAL}-backup"
+		fi
+	fi
+	if [[ $CONTINUE =~ ^(yes|y)$ ]]; then
+		cp -rf $OSZ_ROOT/git/.gitconfig-local-default $GITCONFIG_LOCAL	
+	fi
+
+	ln -sf ${OSZ_ROOT}/git/.gitignore ~/.gitignore
+	ln -sf ${OSZ_ROOT}/git/.gitconfig ~/.gitconfig
+
+	# Set up SSH key.
+	echo "Creating SSH key... "
+	if [[ -e $HOME/.ssh/id_rsa ]]; then
+		read -p "An SSH key already exists. Overwrite it with a new one? (y/N) "
+		if [[ $REPLY =~ ^(yes|y)$ ]]; then
+			rm -rf ~/.ssh
+			echo 'SSH key removed.'
+			setup_ssh
+		fi
+	else
+		setup_ssh
+	fi
+
+	## WRAP IT UP.
+	echo "[ok] git setup complete."
+}
+
+install

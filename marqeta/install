@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Install node v12.19.0 and create marqeta alias for it.
+nvm install 12.19.0
+nvm alias mq 12.19.0

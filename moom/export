@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Gather user input.
+source ../scripts/oszroot.sh
+
+# Install node v12.19.0 and create marqeta alias for it.
+defaults export com.manytricks.Moom "$OSZ_ROOT/moom/Moom.plist"Moom.plist

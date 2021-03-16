@@ -1,8 +1,0 @@
-{
-	"html": {
-		"abbreviations": {
-			"one": "<div class=\"one\"></div>",
-			"example": "<div class='mytest'>"
-		}
-	}
-}

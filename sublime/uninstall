@@ -1,0 +1,33 @@
+#!/bin/bash
+
+CONFIG__SUBLIME_PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+CONFIG__PACKAGES_PATH="$HOME/Library/Application Support/Sublime Text 3"
+
+source ../scripts/oszroot.sh
+
+uninstall () {
+	uninstall_sublime
+	uninstall_package_control
+	remove_sublime
+	echo "Sublime uninstall complete!"
+}
+
+uninstall_package_control () {
+	rm -rf "$CONFIG__PACKAGES_PATH/Installed Packages/Package Control.sublime-package"
+}
+
+uninstall_sublime () {
+	brew list --casks sublime-text && brew uninstall sublime-text
+}
+
+remove_sublime () {
+	echo "Removing Sublime configurations..."
+
+	# Symlink sublime user preferences to OS Zimmee.
+	rm -rf "${CONFIG__PACKAGES_PATH}/Packages"
+
+	# Create subl CLI executable.
+	rm -rf $HOME/bin/subl
+}
+
+uninstall

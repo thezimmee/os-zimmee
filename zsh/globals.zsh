@@ -10,18 +10,14 @@
 # Add paths to CDPATH for `cd` auto completion.
 export CDPATH=.:~:~/Projects:~/Projects/marqeta/wam/apps:~/Projects/marqeta/wam/packages:~/Projects/marqeta
 
-# Prevent `command not found: compdef` error on iTerm startup.
-# autoload -Uz compinit
-# compinit
-
 # Source autojump.
 # [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # ]]]
 
 # [[[ Default editor.
-export EDITOR='subl'
-export VISUAL='subl'
+export EDITOR='subl -w'
+export VISUAL='subl -w'
 # ]]]
 
 # [[[ Homebrew

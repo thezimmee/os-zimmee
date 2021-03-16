@@ -1,6 +1,3 @@
-[submodule "zsh/zprezto.link"]
-	path = zsh/zprezto.link
-	url = git@github.com:sorin-ionescu/prezto.git
 [submodule "sublime/Plugins/MarkdownEditing"]
 	path = sublime/Plugins/MarkdownEditing
 	url = git@github.com:thezimmee/MarkdownEditing.git

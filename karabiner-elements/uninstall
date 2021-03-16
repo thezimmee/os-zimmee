@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Uninstall karabiner-elements.
+brew list --casks karabiner-elements && brew uninstall karabiner-elements
+
+# Remove config.
+rm -rf ~/.config/karabiner

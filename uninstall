@@ -1,21 +1,55 @@
 #!/usr/bin/env bash
-#
-# uninstall homebrew and other apps (see http://digitizor.com/install-homebrew-osx-el-capitan/)
 
-## uninstall node (http://stackoverflow.com/questions/9283472/command-to-remove-all-npm-modules-globally)
-echo -e "[ .. ] Removing NPM packages..."
-npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
+#!/usr/bin/env bash
+# Installs and configure OS Zimmee.
 
-## uninstall homebrew
-echo -e "[ .. ] Removing Homebrew..."
-brew cleanup
-# remove homebrew directories
-# rm -rf /usr/local/Cellar
-# rm -rf /usr/local/.git
-# run homebrew uninstall sript
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 
-## wrap up
-echo -e "[ OK ] Done! Uninstall complete."
-# echo -e "[ .. ] Note: To fix permission issues with Homebrew, see http://digitizor.com/fix-homebrew-permissions-osx-el-capitan/"
-echo ''
+OSZ_REPO=https://github.com/thezimmee/os-zimmee
+OSZ_ROOT=${OSZ_ROOT:-~/Projects/os-zimmee}
+ERROR_MSG=""
+
+uninstall () {
+  # OS Zimmee path.
+  read -e -p "[??] Where is OS Zimmee installed? " -i "$OSZ_ROOT" OSZ_ROOT
+
+  # Uninstall homebrew.
+  echo 'Uninstalling homebrew...'
+  source ${OSZ_ROOT}/homebrew/uninstall || ERROR_MSG+="[!!] Homebrew uninstall failed. :(\n"
+
+  # Uninstall node.
+  echo 'Uninstalling node...'
+  source ${OSZ_ROOT}/node/uninstall || ERROR_MSG+="[!!] Node uninstall failed. :(\n"
+
+  uninstall_apps
+  uninstall_report
+}
+
+# Uninstall apps.
+uninstall_apps () {
+  echo "Uninstalling OS Zimmee apps..."
+  for dir in ${OSZ_ROOT}/*; do
+    if [[ -d "$dir" && ${dir} != homebrew && ${dir} != node && -f "$dir/uninstall" ]]; then
+      read -p "[?] Do you want to uninstall ${dir}? (Y/n) " CONTINUE
+      CONTINUE=${CONTINUE:-y}
+      if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        echo "Uninstalling ${dir}"
+        source ${OSZ_ROOT}/${dir}/uninstall || ERROR_MSG+="[!!] ${dir} uninstall failed. :(\n"
+      fi
+    fi
+  done
+}
+
+# Run post install report.
+uninstall_report () {
+  # wrap up
+  if [[ "$ERROR_MSG" != "" ]]; then
+    echo "[!!] Uh oh, there was a problem..."
+    echo -e "${ERROR_MSG}"
+  else
+    echo -e "[ok] OS Zimmee uninstall complete!"
+  fi
+  echo ''
+}
+
+# Uninstall
+uninstall
