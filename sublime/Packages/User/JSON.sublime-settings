@@ -1,16 +1,28 @@
-// These settings override both User and Default settings for the JSON syntax
 {
-  "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
-  "wrap_as_you_type_enter_extends_section": true,
-  "wrap_as_you_type_sections": [
-    {
-      "combining_selector": "source - (comment | constant | entity | invalid | keyword | punctuation | storage | string | variable)",
-      "line_start": "//",
-      "selector": "comment.line"
-    }
-  ],
-  "wrap_as_you_type_paragraphs": [
-    { "first_line_regex": "^-" },
-    { "first_line_regex": "^.*:$" },
-  ]
+	"extensions":
+	[
+		".babelrc",
+		".htmlhintrc",
+		".jsbeautifyrc",
+		".stylelintrc"
+	],
+	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
+	"wrap_as_you_type_enter_extends_section": true,
+	"wrap_as_you_type_paragraphs":
+	[
+		{
+			"first_line_regex": "^-"
+		},
+		{
+			"first_line_regex": "^.*:$"
+		}
+	],
+	"wrap_as_you_type_sections":
+	[
+		{
+			"combining_selector": "source - (comment | constant | entity | invalid | keyword | punctuation | storage | string | variable)",
+			"line_start": "//",
+			"selector": "comment.line"
+		}
+	]
 }

@@ -5,6 +5,8 @@
 		"update",
 		"install",
 		"config",
-		".env"
+		".env",
+		".envrc",
+		"default-packages"
 	]
 }
