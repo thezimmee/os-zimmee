@@ -26,12 +26,13 @@ setup_ssh () {
 
 install () {
 	# Set up gitconfig.
-	echo "Setting up .gitconfig..."
+	echo "Installing git..."
 
 	# Install git from homebrew.
 	brew install git
 
 	# Set up git configurations.
+	echo "Setting up git configs..."
 	GITCONFIG_LOCAL=~/.gitconfig-local
 	CONTINUE=y
 	if [ -f $GITCONFIG_LOCAL ]; then
@@ -63,7 +64,7 @@ install () {
 	fi
 
 	## WRAP IT UP.
-	echo "[ok] git setup complete."
+	echo "[ok] git install complete."
 }
 
 install

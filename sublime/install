@@ -3,7 +3,10 @@
 CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
 
-source ../scripts/oszroot.sh
+# Get $OSZ_ROOT.
+if [ -z $OSZ_ROOT ]; then
+  read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+fi
 
 install () {
 	brew install sublime-text
@@ -13,7 +16,11 @@ install () {
 }
 
 install_package_control () {
-	curl https://packagecontrol.io/Package%20Control.sublime-package -o "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+	if [ ! -f "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package" ]; then
+		curl https://packagecontrol.io/Package%20Control.sublime-package -o "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+	else
+		echo 'Package control already installed.'
+	fi
 }
 
 setup_sublime () {

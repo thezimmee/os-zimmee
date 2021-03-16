@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-# Gather user input.
-source ../scripts/oszroot.sh
+# Get $OSZ_ROOT.
+if [ -z $OSZ_ROOT ]; then
+  read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+fi
 
 # Install moom.
 brew install moom
 
-# Install node v12.19.0 and create marqeta alias for it.
+# Import moom preferences.
 defaults import com.manytricks.Moom "$OSZ_ROOT/moom/Moom.plist"

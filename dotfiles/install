@@ -19,10 +19,11 @@ source $OSZ_ROOT/dotfiles/config.sh
 # Symlink dotfiles.
 for DOTFILE in ${CONFIG__DOTFILES[@]}; do
 	dest="$HOME/$DOTFILE"
+  source="$OSZ_ROOT/dotfiles/$DOTFILE"
 	if [[ $OVERWRITE_EXISTING = true ]]; then
-		ln -sf "$DOTFILE" "$dest"
+		ln -sf "$source" "$dest"
 	else
-		ln -s "$DOTFILE" "$dest" || echo "Skipped $DOTFILE."
+		ln -s "$source" "$dest" || echo "Skipped $DOTFILE."
 	fi
 	echo "Set up $DOTFILE!"
 done

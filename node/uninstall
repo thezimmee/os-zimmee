@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# User input.
-source ../scripts/oszroot.sh
+# Get $OSZ_ROOT.
+if [ -z $OSZ_ROOT ]; then
+  read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+fi
 
 # Uninstall Node Version Manager (NVM).
 brew list --casks nvm && brew uninstall nvm
