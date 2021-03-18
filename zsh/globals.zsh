@@ -13,6 +13,9 @@ export CDPATH=.:~:~/Projects:~/Projects/marqeta/wam/apps:~/Projects/marqeta/wam/
 # Source autojump.
 # [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# Uncomment the following line to change how often to autoupdate (in days) zsh plugins that are git repos.
+# export UPDATE_ZSH_DAYS=13
+
 # ]]]
 
 # [[[ Default editor.

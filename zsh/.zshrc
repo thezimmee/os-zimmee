@@ -100,7 +100,15 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  fasd
+  git
+  direnv
+  # zsh-completions
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  autoupdate
+)
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -127,9 +135,6 @@ source "$OSZ_ROOT/node/init.zsh"
 # done
 
 # Enable completions.
-autoload -Uz compinit && compinit
-
-# Hook into direnv.
-eval "$(direnv hook zsh)"
+autoload -U compinit && compinit
 
 # ]]]

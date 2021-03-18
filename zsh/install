@@ -3,6 +3,7 @@
 install_zsh=false
 install_ohmyzsh=false
 ohmyzsh_defaults_filename=.zshrc-oh-my-zsh-defaults
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 
 # [[[ Gather user input
 
@@ -35,7 +36,7 @@ fi
 
 # Install zsh and its homebrew dependencies.
 if [ $install_zsh = true ]; then
-	brew install zsh zsh-completions direnv
+	brew install zsh direnv
 fi
 
 # Install oh-my-zsh.
@@ -45,6 +46,34 @@ if [ $install_ohmyzsh = true ]; then
 	curl -s https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | source /dev/stdin
 	# Replace .zshrc and save oh-my-zsh's .zshrc as .zshrc-oh-my-zsh.
 	mv -f "$HOME/.zshrc" "$OSZ_ROOT/zsh/$ohmyzsh_defaults_filename"
+fi
+
+# ]]]
+
+# [[[ Install zsh plugins NOT from homebrew.
+
+# Auto update plugins that are git repos.
+# @repo https://github.com/TamCore/autoupdate-oh-my-zsh-plugins
+if [ ! -d $ZSH_CUSTOM/plugins/autoupdate ]; then
+	git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/plugins/autoupdate
+fi
+
+# Install zsh autosuggestions.
+# @repo https://github.com/zsh-users/zsh-autosuggestions
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
+
+# Install zsh completions.
+# @repo https://github.com/zsh-users/zsh-completions
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-completions ]; then
+  git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
+fi
+
+# Install zsh syntax highlighting.
+# @repo https://github.com/zsh-users/zsh-syntax-highlighting
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 # ]]]
