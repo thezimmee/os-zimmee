@@ -146,6 +146,9 @@
   // AutoFileName plugin.
   { "keys": ["alt+enter"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
 
+  // Emmet.
+  { "keys": ["super+shift+."], "command": "emmet_enter_abbreviation" },
+
   /**-----------------------------------------------------------------------------------------------
    * UI Navigation and pane manipulation.
    */

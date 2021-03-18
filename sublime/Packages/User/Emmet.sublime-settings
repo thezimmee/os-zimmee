@@ -1,4 +1,7 @@
 {
+	"auto_id_class": true,
+	"tag_preview": true,
+	"toggle_comment": true,
 	"preferences":
 	{
 		"css.autoInsertVendorPrefixes": false,
