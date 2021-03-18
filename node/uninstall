@@ -6,7 +6,7 @@ if [ -z $OSZ_ROOT ]; then
 fi
 
 # Uninstall Node Version Manager (NVM).
-brew list --casks nvm && brew uninstall nvm
+brew list nvm && brew uninstall nvm
 
 # Uninstall Node versions.
 rm -rf "$NVM_DIR"

@@ -9,8 +9,9 @@ fi
 brew install nvm
 
 # Install Node versions.
-# mkdir ~/.nvm
+mkdir ~/.nvm
 ln -sf "$OSZ_ROOT/node/default-packages" ~/.nvm/default-packages
+source $OSZ_ROOT/node/init.zsh
 nvm install stable
 nvm install node
 
