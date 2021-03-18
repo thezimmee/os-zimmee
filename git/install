@@ -17,9 +17,17 @@ setup_ssh () {
 	else
 		read -p "[??] What is your git email address (for the SSH key)? " GIT_EMAIL
 	fi
+	# Generate SSH.
 	ssh-keygen -t rsa -b 4096 -C "${GIT_EMAIL}"
+
+	# Symlink ssh config.
+	ln -s $OSZ_ROOT/git/ssh-config ~/.ssh/config
+
+	# Start up SSH agent.
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_rsa
+
+	# Copy SSH to clipboard.
 	pbcopy < ~/.ssh/id_rsa.pub
 	read -n 1 -s -r -p "[!!] Your SSH key has been copied to the clipboard; paste it into your GitHub account (https://github.com/account/ssh). Then hit any key to continue... "
 }
