@@ -11,3 +11,17 @@ alias update="source ${OSZ_ROOT}/update"
 alias reload="source ~/.zshrc"
 
 # ]]]
+
+# [[[ Marqeta
+
+function fds {
+  ENV="${1:-qa}"
+  echo "Running FDS API $ENV..."
+  cd ~/Projects/marqeta/horizon/experimental/fds
+  echo "Copying $ENV properties file, you may be asked to enter your password since sudo permissions are required..."
+  sudo cp /etc/dbsecrets/properties-"$ENV" /etc/dbsecrets/properties
+  sudo cp /etc/dbconfig/properties-"$ENV" /etc/dbconfig/properties
+  mvn clean install -DskipTests=true && java -Dapplication.env="$ENV" -jar fds-api/fds-api-v1/fds-api-v1-impl/target/fds-api-v1-impl-PINNED.jar
+}
+
+# ]]]

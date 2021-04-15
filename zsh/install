@@ -78,9 +78,11 @@ fi
 
 # ]]]
 
-# [[[ Symlink .zshrc.
+# [[[ Symlink .zshrc files.
 rm -rf "$HOME/.zshrc"
 ln -s "$OSZ_ROOT/zsh/.zshrc" "$HOME/.zshrc"
+# rm -rf "$HOME/.direnvrc"
+# ln -s "$OSZ_ROOT/zsh/.direnvrc" "$HOME/.direnvrc"
 # ]]]
 
 # [[[ Set up zsh as default shell.
