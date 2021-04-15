@@ -1,12 +1,10 @@
 <snippet>
   <content><![CDATA[
-it('${1:description}', () => {
-  ${0}
-})
+it.todo('${1:description}'${0})
 ]]></content>
-  <description>Jest test</description>
+  <description>Jest todo</description>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>it</tabTrigger>
+  <tabTrigger>it.todo</tabTrigger>
   <!-- Optional: Set a scope to limit where the snippet will trigger -->
   <scope>source.js</scope>
 </snippet>
