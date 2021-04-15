@@ -86,11 +86,11 @@
 # 	cmd = smerge \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 
 # Set Sublime Text as diff/merge tool.
-# [merge]
-# 	tool = sublime
-# [mergetool "sublime"]
-# 	cmd = subl -w $MERGED
-# 	trustExitCode = true
+[merge]
+	tool = sublime
+[mergetool "sublime"]
+	cmd = subl -w $MERGED
+	trustExitCode = true
 
 # Set Beyond Compare as diff/merge tool.
 # [diff]
