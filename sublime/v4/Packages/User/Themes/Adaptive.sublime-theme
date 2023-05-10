@@ -1,0 +1,130 @@
+{
+  "variables":
+  {
+    "font_face": "system",
+    "font_size_sm": 11,
+    "font_size": 12,
+    "font_size_lg": 13,
+    "font_size_title": 24,
+
+    "dark_bg": "color(var(--background) blend(white 85%))",
+    "medium_dark_bg": "color(var(--background) blend(black 60%))",
+    "medium_bg": "color(var(--background) blend(black 80%))",
+    "light_bg": "color(var(--background) blend(black 90%))",
+
+    "vcs_modified": "color(var(--bluish) min-contrast(var(--background) 2.5))",
+    "vcs_missing": "color(var(--redish) min-contrast(var(--background) 2.5))",
+    "vcs_staged": "color(var(--bluish) min-contrast(var(--background) 2.5))",
+    "vcs_added": "color(var(--greenish) min-contrast(var(--background) 2.5))",
+    "vcs_deleted": "color(var(--redish) min-contrast(var(--background) 2.5))",
+    "vcs_unmerged": "color(var(--orangish) min-contrast(var(--background) 2.5))",
+
+    "adaptive_dividers": "hsl(0, 0%, 38%)",
+
+    "icon_tint": "white",
+    "icon_light_tint": "color(black a(0.7))",
+
+    "tool_tip_bg": "white",
+    "tool_tip_fg": "hsl(0, 0%, 25%)",
+
+    "tabset_button_opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+    "tabset_new_tab_button_opacity": { "target": 0.3, "speed": 4.0, "interpolation": "smoothstep" },
+    "tabset_button_hover_opacity": { "target": 0.8, "speed": 4.0, "interpolation": "smoothstep" },
+
+    "tabset_dark_tint_mod": "color(white a(0.15))",
+    "tabset_dark_bg": "var(dark_bg)",
+    "tabset_medium_dark_tint_mod": "var(medium_dark_bg)",
+    "tabset_medium_dark_bg": "var(medium_dark_bg)",
+    "tabset_medium_tint_mod": "color(black a(0.2))",
+    "tabset_medium_bg": "var(medium_bg)",
+    "tabset_light_tint_mod": "color(black a(0.1))",
+    "tabset_light_bg": "var(light_bg)",
+
+    "file_tab_angled_unselected_dark_tint": "color(white a(0.08))",
+    "file_tab_angled_unselected_medium_dark_tint": "color(black a(0.2))",
+    "file_tab_angled_unselected_medium_tint": "color(black a(0.15))",
+    "file_tab_angled_unselected_light_tint": "color(black a(0.06))",
+
+    "file_tab_selected_dark_tint": "color(var(tabset_dark_tint_mod) a(- 70%))",
+    "file_tab_selected_medium_dark_tint": "color(var(tabset_medium_dark_tint_mod) a(- 70%))",
+    "file_tab_selected_medium_tint": "color(var(tabset_medium_tint_mod) a(- 70%))",
+    "file_tab_selected_light_tint": "color(var(tabset_light_tint_mod) a(- 70%))",
+
+    "file_tab_angled_unselected_label_color": "hsl(0, 0%, 60%)",
+    "file_tab_angled_unselected_label_shadow": "color(black a(0.25))",
+    "file_tab_angled_unselected_medium_label_color": "hsl(0, 0%, 75%)",
+    "file_tab_angled_unselected_medium_label_shadow": "color(black a(0.12))",
+    "file_tab_angled_unselected_light_label_color": "hsl(0, 0%, 44%)",
+    "file_tab_angled_unselected_light_label_shadow": "color(white a(0.25))",
+
+    "file_tab_unselected_label_color": "white",
+    "file_tab_unselected_light_label_color": "hsl(0, 0%, 20%)",
+    "file_tab_selected_label_color": "white",
+    "file_tab_selected_light_label_color": "hsl(0, 0%, 20%)",
+
+    "file_tab_close_opacity": { "target": 0.3, "speed": 4.0, "interpolation": "smoothstep" },
+    "file_tab_close_hover_opacity": { "target": 0.6, "speed": 4.0, "interpolation": "smoothstep" },
+    "file_tab_close_selected_opacity": { "target": 0.5, "speed": 4.0, "interpolation": "smoothstep" },
+    "file_tab_close_selected_hover_opacity": { "target": 0.8, "speed": 4.0, "interpolation": "smoothstep" },
+
+    "sheet_dark_modifier": "blend(var(tabset_dark_bg) 70%)",
+    "sheet_medium_dark_modifier": "blend(var(tabset_medium_dark_bg) 70%)",
+    "sheet_medium_modifier": "blend(var(tabset_medium_bg) 70%)",
+    "sheet_light_modifier": "blend(var(tabset_light_bg) 70%)",
+
+    "text_widget_dark_modifier": "l(- 5%) s(* 50%)",
+    "text_widget_light_modifier": "l(- 5%) s(* 50%)",
+
+    "viewport_always_visible_color": "hsla(0, 0%, 50%, 0.18)",
+    "viewport_hide_show_color": "hsla(0, 0%, 50%, 0.25)",
+
+    "auto_complete_bg_dark_tint": "color(white a(0.05))",
+    "auto_complete_bg_light_tint": "color(black a(0.05))",
+
+    "auto_complete_selected_row_dark_tint": "color(white a(0.2))",
+    "auto_complete_selected_row_light_tint": "color(black a(0.15))",
+
+    "auto_complete_text_dark_tint": "color(white a(0.18))",
+    "auto_complete_text_light_tint": "color(black a(0.18))",
+
+    "auto_complete_detail_pane_dark_tint": "color(black a(0.1))",
+    "auto_complete_detail_pane_light_tint": "color(white a(0.1))",
+
+    "auto_complete_detail_panel_mono_dark_bg": "color(white a(0.12))",
+    "auto_complete_detail_panel_mono_light_bg": "color(black a(0.08))",
+
+    "kind_function_color": "var(--redish)",
+    "kind_keyword_color": "var(--pinkish)",
+    "kind_markup_color": "var(--orangish)",
+    "kind_namespace_color": "var(--bluish)",
+    "kind_navigation_color": "var(--yellowish)",
+    "kind_snippet_color": "var(--greenish)",
+    "kind_type_color": "var(--purplish)",
+    "kind_variable_color": "var(--cyanish)",
+
+    "kind_name_label_border_color": "color(var(--accent) a(0.8))",
+
+    "icon_opacity": { "target": 0.7, "speed": 5.0, "interpolation": "smoothstep" },
+    "icon_hover_opacity": { "target": 1.0, "speed": 5.0, "interpolation": "smoothstep" },
+  },
+  "rules":
+  [
+    // FileIcons.
+    {
+      "class": "icon_file_type",
+      "layer0.tint": [255, 255, 255],
+      "layer0.opacity": 0.75,
+      "content_margin": [8, 8]
+    },
+    {
+      "class": "icon_file_type",
+      "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+      "layer0.opacity": 0.5
+    },
+    {
+      "class": "icon_file_type",
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "layer0.opacity": 1.0
+    }
+  ]
+}

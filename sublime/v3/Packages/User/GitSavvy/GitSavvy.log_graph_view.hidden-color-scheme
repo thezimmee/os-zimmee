@@ -1,0 +1,657 @@
+{
+	"author": "Tyson Zimmerman (thezimmee@gmail.com)",
+	"globals":
+	{
+		"accent": "var(orange00)",
+		"active_guide": "color(var(yellow00) a(0.5))",
+		"background": "var(dark00)",
+		"bracket_contents_foreground": "var(dark00)",
+		"bracket_contents_options": "stippled_underline",
+		"brackets_contents_foreground": "var(yellow00)",
+		"brackets_contents_options": "stippled_underline",
+		"brackets_foreground": "var(yellow00)",
+		"brackets_options": "stippled_underline",
+		"caret": "var(yellow00)",
+		"find_highlight": "var(yellow00)",
+		"find_highlight_foreground": "var(dark00)",
+		"fold_marker": "var(yellow00)",
+		"foreground": "var(light00)",
+		"guide": "color(var(brown00) a(0.4))",
+		"gutter_foreground": "var(gray00)",
+		"highlight": "var(yellow00)",
+		"inactive_selection": "var(dark01)",
+		"invisibles": "color(var(gray00) alpha(0.7))",
+		"line_diff_added": "var(green00)",
+		"line_diff_deleted": "var(cherry00)",
+		"line_diff_modified": "var(orange00)",
+		"line_diff_width": "4",
+		"line_highlight": "var(dark01)",
+		"minimap_border": "color(var(yellow00) a(0.6))",
+		"misspelling": "var(cherry00)",
+		"popup_css": " html { background-color: var(--background); color: var(--foreground); } a { color: #80FFBB; line-height: 20px; } ",
+		"selection": "color(var(dark01) blend(var(yellow00) 90%) a(0.7))",
+		"selection_border": "color(var(yellow00) a(0.5))",
+		"selection_border_width": "1",
+		"selection_corner_radius": "0",
+		"selection_corner_style": "square",
+		"shadow": "var(dark-01)",
+		"shadow_width": "3",
+		"stack_guide": "color(var(brown00) a(0.6))",
+		"tags_foreground": "var(yellow00)",
+		"tags_options": "stippled_underline"
+	},
+	"name": "Shades of Cobalt - Dark Lower Contrast",
+	"rules":
+	[
+		{
+			"background": "#199",
+			"foreground": "#1991",
+			"name": "GitSavvy Highlighted Matching Commit",
+			"scope": "git_savvy.graph.matching_commit"
+		},
+		{
+			"background": "#99991109",
+			"foreground": "#19d",
+			"name": "GitSavvy Highlighted Path Char Above",
+			"scope": "git_savvy.graph.path_char.above"
+		},
+		{
+			"background": "#99991109",
+			"foreground": "#f91d",
+			"name": "GitSavvy Highlighted Commit Dot Above",
+			"scope": "git_savvy.graph.dot.above"
+		},
+		{
+			"background": "#99991109",
+			"foreground": "#991",
+			"name": "GitSavvy Highlighted Path Char",
+			"scope": "git_savvy.graph.path_char"
+		},
+		{
+			"background": "#991",
+			"foreground": "#9911",
+			"name": "GitSavvy Highlighted Commit Dot",
+			"scope": "git_savvy.graph.dot"
+		},
+		{
+			"foreground": "var(brown00)",
+			"name": "Comment",
+			"scope": "comment"
+		},
+		{
+			"foreground": "color(var(brown00) l(+ 10%))",
+			"name": "Comment",
+			"scope": "comment.block.documentation"
+		},
+		{
+			"foreground": "color(var(light00) a(0.6))",
+			"name": "Punctuation",
+			"scope": "punctuation - (punctuation.definition.comment | punctuation.definition.string), keyword.operator.accessor, meta.group.braces.curly.js meta.brace.curly, meta.group.braces.curly.js meta.brace.round"
+		},
+		{
+			"foreground": "var(lime01)",
+			"name": "String",
+			"scope": "string -string.unquoted.old-plist -string.unquoted.heredoc - (constant.other.object.key.js string.unquoted.label.js), string.unquoted.heredoc string"
+		},
+		{
+			"foreground": "color(var(lime01) a(0.7))",
+			"name": "String punctuation",
+			"scope": "string punctuation"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(mahogany00)",
+			"name": "Constant",
+			"scope": "constant - (string.unquoted.label.js)"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(red00)",
+			"name": "False boolean",
+			"scope": "constant.language.boolean.false"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(lime-01)",
+			"name": "True boolean",
+			"scope": "constant.language.boolean.true"
+		},
+		{
+			"font_style": "normal",
+			"foreground": "var(pink00)",
+			"name": "Numbers and special characters",
+			"scope": "constant.numeric, constant.character, string.regexp, constant.language"
+		},
+		{
+			"foreground": "var(mahogany00)",
+			"name": "Keyword",
+			"scope": "keyword - (git-savvy), variable.language, support - (meta.property-value, support.class - support.class.builtin, git-savvy)"
+		},
+		{
+			"foreground": "var(magenta00)",
+			"name": "Operators",
+			"scope": "keyword.operator - (keyword.operator.module.js)"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(mahogany00)",
+			"name": "Important keywords",
+			"scope": "variable.language.this, keyword.control.flow, keyword.operator.word.new"
+		},
+		{
+			"foreground": "var(orange-01)",
+			"name": "Unimportant keywords",
+			"scope": "keyword.control.conditional"
+		},
+		{
+			"foreground": "var(blue01)",
+			"name": "Storage",
+			"scope": "storage"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(orange01)",
+			"name": "Function and variable definitions",
+			"scope": "meta.function.declaration entity.name.function - variable.other.readwrite, meta.class-method.js entity.name.function, meta.function.js entity.name.function, meta.class entity.name.class, support.class.js, variable.other.class, meta.binding.name variable.other.readwrite, meta.import variable.other.readwrite, entity.other.inherited-class"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(cyan01)",
+			"name": "Function calls",
+			"scope": "variable.function, support.function, support.macro"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(orange00)",
+			"name": "Extended class",
+			"scope": "entity.other.inherited-class"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "Doctype",
+			"scope": "keyword.declaration.doctype"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "Tag names",
+			"scope": "entity.name.tag"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(orange01)",
+			"name": "Attribute names",
+			"scope": "entity.other.attribute-name - meta.selector, constant.language.doctype"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(orange00)",
+			"name": "Special attribute names",
+			"scope": "(entity.other.attribute-name.class | entity.other.attribute-name.id | entity.other.attribute-name.style) - meta.selector"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(pink00)",
+			"name": "Class attribute value",
+			"scope": "meta.attribute-with-value.class meta.class-name"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(purple00)",
+			"name": "ID attribute value",
+			"scope": "meta.attribute-with-value.id meta.toc-list.id"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(pink00)",
+			"name": "Class selector",
+			"scope": "meta.selector entity.other.attribute-name, meta.selector entity.other.attribute-name punctuation.definition.entity"
+		},
+		{
+			"foreground": "var(purple00)",
+			"name": "ID Selector",
+			"scope": "meta.selector entity.other.attribute-name.id, meta.selector entity.other.attribute-name.id punctuation.definition.entity"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(red00)",
+			"name": "Tag selector",
+			"scope": "meta.selector entity.name.tag"
+		},
+		{
+			"foreground": "var(pink00)",
+			"name": "Selector combinators",
+			"scope": "meta.selector punctuation.separator.combinator, meta.selector keyword.operator.ampersand"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(orange01)",
+			"name": "Property name",
+			"scope": "support.type.property-name.css, meta.at-rule support.type.property-name.media"
+		},
+		{
+			"foreground": "var(green01)",
+			"name": "Property value",
+			"scope": "meta.property-value"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(cyan00)",
+			"name": "Function",
+			"scope": "meta.property-value support.function"
+		},
+		{
+			"foreground": "var(purple00)",
+			"name": "Unit",
+			"scope": "constant.numeric keyword.other.unit"
+		},
+		{
+			"font_style": "bold italic",
+			"foreground": "var(cherry01)",
+			"name": "Important",
+			"scope": "meta.property-value keyword.other.important"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(cyan00)",
+			"name": "Pseudo class",
+			"scope": "entity.other.pseudo-class, entity.other.attribute-name.pseudo-class"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(red00)",
+			"name": "Pseudo element",
+			"scope": "entity.other.pseudo-element, entity.other.attribute-name.pseudo-element"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(mahogany00)",
+			"name": "At rules",
+			"scope": "keyword.control.at-rule, keyword.control.at-rule punctuation.definition.keyword"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(orange00)",
+			"name": "At rules",
+			"scope": "meta.at-rule support.constant, meta.at-rule keyword.operator"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(orange01)",
+			"name": "Headings",
+			"scope": "markup.heading"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "color(var(orange01) a(0.5))",
+			"name": "Heading punctuation",
+			"scope": "markup.heading punctuation"
+		},
+		{
+			"background": "color(var(dark01) a(0.7))",
+			"name": "Code",
+			"scope": "markup.raw, meta.code-fence"
+		},
+		{
+			"foreground": "color(var(light00) a(0.7))",
+			"name": "Code punctuation",
+			"scope": "meta.code-fence punctuation.definition.raw"
+		},
+		{
+			"foreground": "var(pink00)",
+			"name": "Code language",
+			"scope": "meta.code-fence constant.other.language-name"
+		},
+		{
+			"foreground": "var(cyan01)",
+			"name": "Block Quote",
+			"scope": "markup.quote"
+		},
+		{
+			"foreground": "color(var(cyan01) a(0.7))",
+			"name": "Block Quote punctuation",
+			"scope": "markup.quote punctuation.definition.blockquote"
+		},
+		{
+			"foreground": "var(pink00)",
+			"name": "Numbered list",
+			"scope": "markup.list.numbered.bullet, markup.list.numbered punctuation.definition.list_item"
+		},
+		{
+			"foreground": "var(pink00)",
+			"name": "Bulleted list",
+			"scope": "markup.list.unnumbered.bullet, markup.list.unnumbered punctuation.definition.list_item"
+		},
+		{
+			"font_style": "bold",
+			"name": "Markdown bold",
+			"scope": "markup.bold"
+		},
+		{
+			"font_style": "italic",
+			"name": "Markdown italic",
+			"scope": "markup.italic"
+		},
+		{
+			"font_style": "bold italic",
+			"name": "Markdown bold & italic",
+			"scope": "markup.italic markup.bold | markup.bold markup.italic"
+		},
+		{
+			"foreground": "var(blue01)",
+			"name": "Markup link label",
+			"scope": "meta.link.inline.description, meta.link.inline punctuation.definition.link, string.other.link.title, meta.link punctuation.definition.string, constant.other.reference.link.markdown"
+		},
+		{
+			"foreground": "color(var(blue01) a(0.7))",
+			"name": "Markup link label punctuation",
+			"scope": "meta.link punctuation.definition.link, meta.link punctuation.definition.constant"
+		},
+		{
+			"foreground": "var(purple00)",
+			"name": "Markup link",
+			"scope": "markup.underline.link"
+		},
+		{
+			"foreground": "color(var(purple00) a(0.7))",
+			"name": "Markup link punctuation",
+			"scope": "meta.link punctuation.definition"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(orange01)",
+			"name": "JSON/YAML Key",
+			"scope": "entity.name.tag.yaml, meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "JSON Key - nested level 2",
+			"scope": "meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(orange01)",
+			"name": "JSON Key - nested level 3",
+			"scope": "meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "JSON Key - nested level 4",
+			"scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(orange01)",
+			"name": "JSON Key - nested level 5",
+			"scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "JSON Key - nested level 6",
+			"scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"foreground": "var(orange01)",
+			"name": "JSON Key - nested level 7+",
+			"scope": "meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.value meta.mapping.key string.quoted.double.json"
+		},
+		{
+			"background": "var(cherry00)",
+			"foreground": "var(white00)",
+			"name": "Illegal",
+			"scope": "invalid.illegal"
+		},
+		{
+			"background": "var(orange01)",
+			"foreground": "var(white00)",
+			"name": "Deprecated",
+			"scope": "invalid.deprecated"
+		},
+		{
+			"background": "color(var(dark-01) a(0.7))",
+			"foreground": "var(white00)",
+			"name": "Diff | header",
+			"scope": "meta.diff, meta.diff.header"
+		},
+		{
+			"background": "color(var(red00) a(0.5))",
+			"foreground": "var(white00)",
+			"name": "Diff | deleted",
+			"scope": "markup.deleted"
+		},
+		{
+			"background": "color(var(green00) a(0.5))",
+			"foreground": "var(white00)",
+			"name": "Diff | inserted",
+			"scope": "markup.inserted"
+		},
+		{
+			"background": "var(yellow00)",
+			"foreground": "var(white00)",
+			"name": "Diff | changed",
+			"scope": "markup.changed"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(green00)",
+			"name": "Diff | inserted punctuation",
+			"scope": "punctuation.definition.to-file.diff, punctuation.definition.inserted.diff"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(red-01)",
+			"name": "Diff | deleted punctuation",
+			"scope": "punctuation.definition.from-file.diff, punctuation.definition.deleted.diff"
+		},
+		{
+			"foreground": "var(purple00)",
+			"name": "Diff | file path",
+			"scope": "meta.filename.diff, punctuation.definition.range.diff"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(purple00)",
+			"name": "Diff | file path meta",
+			"scope": "meta.commit-info.files.changes"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "Diff | file path (from)",
+			"scope": "string.unquoted.from-file.diff, meta.diff.header.from-file meta.filename.diff"
+		},
+		{
+			"foreground": "var(lime00)",
+			"name": "Diff | file path (to)",
+			"scope": "string.unquoted.to-file.diff, meta.diff.header.to-file meta.filename.diff"
+		},
+		{
+			"foreground": "var(pink00)",
+			"name": "Diff | line numbers",
+			"scope": "meta.range.unified.line-numbers.diff"
+		},
+		{
+			"foreground": "color(var(light00) a(0.8))",
+			"name": "GitSavvy | view",
+			"scope": "git-savvy.diff_view"
+		},
+		{
+			"background": "color(var(dark00) a(0))",
+			"font_style": "italic",
+			"foreground": "var(green01)",
+			"name": "GitSavvy | insertion text",
+			"scope": "markup.inserted.git-savvy.add-block.content"
+		},
+		{
+			"background": "color(var(dark00) a(0))",
+			"font_style": "italic",
+			"foreground": "var(red00)",
+			"name": "GitSavvy | deletion text",
+			"scope": "markup.deleted.git-savvy.delete-block.content"
+		},
+		{
+			"foreground": "var(light00)",
+			"name": "GitSavvy | base",
+			"scope": "git-savvy"
+		},
+		{
+			"foreground": "color(var(light00) a(0.8))",
+			"name": "GitSavvy | comment",
+			"scope": "comment.git-savvy"
+		},
+		{
+			"foreground": "var(dark00)",
+			"name": "GitSavvy | punctuation to hide",
+			"scope": "punctuation.definition.git-savvy.section - (meta.git-savvy.key-bindings-header)"
+		},
+		{
+			"foreground": "var(purple00)",
+			"name": "GitSavvy | file paths",
+			"scope": "comment.git-savvy.summary-header.root.info"
+		},
+		{
+			"background": "var(dark01)",
+			"font_style": "bold",
+			"foreground": "var(red00)",
+			"name": "GitSavvy | current branch/remote",
+			"scope": "constant.other.git-savvy.summary-header.branch-name"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(blue01)",
+			"name": "GitSavvy | remotes",
+			"scope": "comment.git-savvy.branches.branch.extra-info"
+		},
+		{
+			"font_style": "bold",
+			"name": "GitSavvy | active branch remote",
+			"scope": "string.other.git-savvy.branches.active-branch.sha1, string.other.git-savvy.branches.active-branch.name, comment.git-savvy.branches.active-branch"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "var(green01)",
+			"name": "GitSavvy | active branch remote",
+			"scope": "comment.git-savvy.branches.active-branch.extra-info"
+		},
+		{
+			"background": "var(blue01)",
+			"font_style": "bold",
+			"foreground": "var(dark00)",
+			"name": "GitSavvy | keyboard shortcut",
+			"scope": "constant.character.git-savvy-key-binding-key"
+		},
+		{
+			"background": "var(blue01)",
+			"foreground": "var(blue01)",
+			"name": "GitSavvy | keyboard shortcut punctuation",
+			"scope": "punctuation.definition.git-savvy.key-bindings-key-stroke"
+		},
+		{
+			"background": "color(var(brown00) a(0.8))",
+			"font_style": "bold",
+			"foreground": "var(white00)",
+			"name": "GitSavvy | DEFAULT heading",
+			"scope": "meta.git-savvy.section.header, meta.git-savvy.key-bindings-header, meta.git-savvy.key-bindings-header punctuation, keyword.other.git-savvy.section-header.branch.local"
+		},
+		{
+			"background": "color(var(brown00) a(0.8))",
+			"foreground": "color(var(brown00) a(0.8))",
+			"name": "GitSavvy | DEFAULT heading punctuation",
+			"scope": "meta.git-savvy.key-bindings-header punctuation.definition.git-savvy.section"
+		},
+		{
+			"background": "color(var(orange01) a(0.6))",
+			"name": "GitSavvy | ORANGE heading",
+			"scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header, meta.git-savvy.status.section.merge-conflicts meta.git-savvy.section.header"
+		},
+		{
+			"background": "color(var(green00) a(0.5))",
+			"name": "GitSavvy | GREEN heading",
+			"scope": "meta.git-savvy.status.section.staged meta.git-savvy.section.header"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "color(var(light00) a(0.5))",
+			"name": "GitSavvy | untracked filenames",
+			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename"
+		},
+		{
+			"foreground": "var(red00)",
+			"name": "GitSavvy | removed files",
+			"scope": "meta.git-savvy.entity.filename.removed, meta.git-savvy.status.punctuation.removed"
+		},
+		{
+			"font_style": "italic",
+			"foreground": "color(var(light00) a(0.5))",
+			"name": "GitSavvy | untracked files",
+			"scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename"
+		},
+		{
+			"foreground": "var(orange01)",
+			"name": "GitSavvy | unstaged files",
+			"scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.entity.filename"
+		},
+		{
+			"foreground": "var(green01)",
+			"name": "GitSavvy | staged files",
+			"scope": "meta.git-savvy.status.section.staged meta.git-savvy.entity.filename"
+		},
+		{
+			"foreground": "var(orange01)",
+			"name": "GitSavvy | merge conflicts",
+			"scope": "meta.git-savvy.status.section.merge-conflicts meta.git-savvy.entity.filename"
+		},
+		{
+			"foreground": "var(brown00)",
+			"name": "GitSavvy | stashed files",
+			"scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff"
+		},
+		{
+			"background": "var(dark01)",
+			"foreground": "var(dark01)",
+			"name": "GitSavvy | current branch/remote punctuation",
+			"scope": "punctuation.definition.git-savvy.branch"
+		},
+		{
+			"foreground": "color(var(light00) a(0.7))",
+			"name": "GitSavvy | hashes",
+			"scope": "meta.git-savvy.branches.branch.sha1"
+		},
+		{
+			"font_style": "bold",
+			"foreground": "var(red00)",
+			"name": "GitSavvy | current hash",
+			"scope": "comment.git-savvy.summary-header.head-summary constant.other.git-savvy.sha1"
+		}
+	],
+	"variables":
+	{
+		"black00": "hsl(0, 0%, 0%)",
+		"blue00": "hsl(208, 60%, 50%)",
+		"blue01": "color(var(blue00) l(+ 12%))",
+		"brown00": "hsl(52, 15%, 50%)",
+		"cherry00": "hsl(10, 70%, 43%)",
+		"cherry01": "color(var(cherry00) l(+ 10%))",
+		"cherry02": "color(var(cherry00) s(- 12%) l(+ 20%))",
+		"cyan00": "hsl(183, 60%, 60%)",
+		"cyan01": "color(var(cyan00) l(+ 12%))",
+		"dark-01": "color(var(dark00) l(- 5%))",
+		"dark00": "hsl(194, 30%, 15%)",
+		"dark01": "color(var(dark00) l(+ 8%))",
+		"gray00": "hsl(208, 0%, 50%)",
+		"green00": "hsl(121, 71%, 63%)",
+		"green01": "color(var(green00) s(+ 30%) l(+ 15%))",
+		"light00": "hsl(208, 21%, 85%)",
+		"lime-01": "color(var(lime00) l(- 15%))",
+		"lime00": "hsl(111, 46%, 60%)",
+		"lime01": "color(var(lime00) s(+ 20%) l(+ 12%))",
+		"magenta00": "color(var(pink00) blend(var(red00) 50%))",
+		"mahogany00": "color(var(orange00) blend(var(red00) 50%))",
+		"orange-01": "color(var(orange00) l(- 5%))",
+		"orange00": "hsl(37, 70%, 50%)",
+		"orange01": "color(var(orange00) l(+ 10%))",
+		"pink00": "hsl(314, 60%, 75%)",
+		"purple00": "hsl(252, 70%, 77%)",
+		"red-01": "color(var(red00) s(- 20%) l(- 7%))",
+		"red00": "hsl(0, 60%, 65%)",
+		"white00": "hsl(0, 0%, 100%)",
+		"yellow00": "hsl(47, 70%, 50%)",
+		"yellow01": "color(var(yellow00) l(+ 10%))"
+	}
+}

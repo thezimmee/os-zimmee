@@ -1,0 +1,4 @@
+{
+  "enabled_parsers": ["markdown"],
+  "html_template": "/Volumes/Home/Projects/os-zimmee/sublime/Packages/User/markdown-template.html",
+}

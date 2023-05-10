@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+{
+  ${1:includes}: '${2:rule value}',
+  category: '${3:category}',
+  payee: '${4:payee}'
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Bank rule</tabTrigger>
+  <description>Bank Butler rule</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

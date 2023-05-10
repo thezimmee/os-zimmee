@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+describe('${1:description}', () => {
+  it('${2:test description}', () => {
+    ${0:expect(true).toBe(false)}
+  })
+})
+]]></content>
+  <description>Jest describe</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>describe</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>

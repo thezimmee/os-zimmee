@@ -1,0 +1,112 @@
+{
+  
+  "default_config": {
+    "linux": null,
+    "osx": "Zsh",
+    "windows": "Command Prompt"
+  },
+  "shell_configs":
+  [
+    {
+      "cmd":
+      [
+        "bash",
+        "-i",
+        "-l"
+      ],
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "Bash",
+      "platforms":
+      [
+        "linux",
+        "osx"
+      ]
+    },
+    {
+      "cmd":
+      [
+        "zsh",
+        "-i",
+        "-l"
+      ],
+      "enable": true,
+      "env":
+      {
+      },
+      "name": "Zsh",
+      "platforms":
+      [
+        "linux",
+        "osx"
+      ]
+    },
+    {
+      "cmd": "cmd.exe",
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "Command Prompt",
+      "platforms":
+      [
+        "windows"
+      ]
+    },
+    {
+      "cmd": "pwsh.exe",
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "PowerShell Core",
+      "platforms":
+      [
+        "windows"
+      ]
+    },
+    {
+      "cmd": "powershell.exe",
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "PowerShell",
+      "platforms":
+      [
+        "windows"
+      ]
+    },
+    {
+      "cmd":
+      [
+        "cmd.exe",
+        "/k",
+        "%CMDER_ROOT%\\vendor\\init.bat"
+      ],
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "Cmder",
+      "platforms":
+      [
+        "windows"
+      ]
+    },
+    {
+      "cmd": "wsl.exe",
+      "enable": false,
+      "env":
+      {
+      },
+      "name": "WSL Login Shell",
+      "platforms":
+      [
+        "windows"
+      ]
+    }
+  ]
+}

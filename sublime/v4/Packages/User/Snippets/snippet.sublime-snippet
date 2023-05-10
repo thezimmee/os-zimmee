@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+<snippet>
+  <content><![CDATA[
+${0}
+]\]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>html</tabTrigger>
+  <description>HTML boilerplate</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>text</scope>
+</snippet>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>snippet</tabTrigger>
+  <description>Sublime snippet</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope></scope>
+</snippet>

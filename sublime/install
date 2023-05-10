@@ -1,7 +1,8 @@
 #!/bin/bash
 
 CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
+CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text"
+SUBLIME_VERSION=4
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
@@ -24,32 +25,47 @@ install_package_control () {
 }
 
 setup_sublime () {
-	echo "Setting up Sublime..."
+	read -e -p "[??] Which version of Sublime Text are you installing? " -i $SUBLIME_VERSION SUBLIME_VERSION
+	if [ $SUBLIME_VERSION = 3 ]; then
+		CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text 3"
+	else
+		SUBLIME_VERSION=4
+		CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text"
+	fi
+
+	echo "Setting up Sublime v${SUBLIME_VERSION}..."
 
 	# Symlink sublime user preferences to OS Zimmee.
 	rm -rf "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Packages" "${CONFIG__packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/v${SUBLIME_VERSION}/Packages" "${CONFIG__packages_path}/Packages"
 
-	# Set as default text editor.
-	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+	if [ $SUBLIME_VERSION = 3 ]; then
+		# Set as default text editor.
+		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
-	# Fetch git sumodules.
-	OLD_PWD=$PWD
-	cd $OSZ_ROOT
-	git submodule init
-	git submodule update
-	cd $OLD_PWD
+		# Fetch git sumodules.
+		# OLD_PWD=$PWD
+		# cd $OSZ_ROOT
+		# git submodule init
+		# git submodule update
+		# cd $OLD_PWD
 
-	# Install (symlink) local plugins to Sublime.
-	ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completions" "$HOME/Library/Application Support/Sublime Text 3/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+		# Install (symlink) local plugins to Sublime.
+		# ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
+		# ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completions" "$HOME/Library/Application Support/Sublime Text 3/Packages"
+		# ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
+		# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
+		# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+	else
+		# Set as default text editor.
+		defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}'
+	fi
 
 	# Create subl CLI executable.
-	mkdir $HOME/bin
-	ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
+	if [ ! -d $HOME/bin ]; then
+		mkdir $HOME/bin
+	fi
+	ln -s $CONFIG__sublime_path $HOME/bin/subl
 }
 
 install

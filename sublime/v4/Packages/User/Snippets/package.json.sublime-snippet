@@ -1,0 +1,65 @@
+<snippet>
+	<content><![CDATA[
+{
+  "name": "${1:Package name}",
+  "version": "0.0.1",
+  "description": "${2:Description}",
+  "keywords": [],
+  "license": "MIT",
+  "author": {
+    "name": "${3:Tyson Zimmerman}",
+    "email": "${4:thezimmee@gmail.com}",
+    "url": "${5:https://tysonzimmerman.com}"
+  },
+  ${6:"contributors": [],}
+  "funding": [{
+    "type": "",
+    "url": ""  
+  }],
+  "type": "module",
+  "files": [${7:""}],
+  "main": "${8:index.js}",
+  "browser": "${9:index.js}",
+  "bin": {
+    ${10:"${1}": "./cli.js"}
+  },
+  "man": [${11:man}],
+  "directories": {
+    ${12:"bin": "./bin",
+    "man": "./man"}
+  },
+  "scripts": {
+    ${13:"test": "echo \"Error: no test specified\" && exit 1"}
+  },
+  "homepage": "${14:Home page}",
+  "repository": {
+    "type": "git",
+    "url": "${15:${14}}"${16:,
+    "directory": ""}
+  },
+  "bugs": {
+    "url": "${17:${15}/issues}",
+    "email": "${18:${4}}"
+  },
+  "dependencies": {${20}},
+  "devDependencies": {${21}},
+  "peerDependencies": {${22}},
+  "peerDependenciesMeta": {${23}},
+  "bundledDependencies": [${24}],
+  "optionalDependencies": {${25}},
+  "private": ${29:true},
+  "config": {${19}},
+  "publishConfig": {${30}},
+  "workspaces": [${31}],
+  "engines": {${26}},
+  "os": [${27}],
+  "cpu": [${28}]
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>package.json</tabTrigger>
+  <description>NPM package.json</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope></scope>
+</snippet>

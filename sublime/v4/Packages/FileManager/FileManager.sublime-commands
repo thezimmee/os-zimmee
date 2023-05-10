@@ -1,0 +1,92 @@
+[
+    {
+        "caption": "File Manager: New File",
+        "command": "fm_create"
+    },
+    {
+        "caption": "File Manager: Move",
+        "command": "fm_move"
+    },
+    // {
+    //     "caption": "File Manager: Duplicate",
+    //     "command": "fm_duplicate"
+    // },
+    {
+        "caption": "File Manager: Delete",
+        "command": "fm_delete"
+    },
+    // {
+    //     "caption": "File Manager: Open In Explorer",
+    //     "command": "fm_open_in_explorer"
+    // },
+    // {
+    //     "caption": "File Manager: Open In Browser",
+    //     "command": "fm_open_in_browser"
+    // },
+    {
+        "caption": "File Manager: Open Terminal",
+        "command": "fm_open_terminal"
+    },
+    {
+        "caption": "File Manager: Find In Files",
+        "command": "fm_find_in_files"
+    },
+    // {
+    //     "caption": "File Manager: Copy Name",
+    //     "command": "fm_copy",
+    //     "args": {
+    //         "which": "name"
+    //     }
+    // },
+    // {
+    //     "caption": "File Manager: Copy Absolute Path",
+    //     "command": "fm_copy",
+    //     "args": {
+    //         "which": "absolute path"
+    //     }
+    // },
+    // {
+    //     "caption": "File Manager: Copy Relative Path",
+    //     "command": "fm_copy",
+    //     "args": {
+    //         "which": "relative path"
+    //     }
+    // },
+    // {
+    //     "caption": "File Manager: Copy Path From Root",
+    //     "command": "fm_copy",
+    //     "args": {
+    //         "which": "path from root"
+    //     }
+    // },
+    {
+        "caption": "File Manager: Create Template",
+        "command": "fm_create",
+        "args": {
+            "paths": ["${packages}/User/.FileManager/"],
+            "initial_text": "template."
+        }
+    },
+    {
+        "caption": "File Manager: List Templates",
+        "command": "fm_create",
+        "args": {
+            "paths": ["${packages}/User/.FileManager/"],
+            "initial_text": "",
+            "start_with_browser": true,
+            "no_browser_action": true
+        }
+    },
+    {
+        "caption": "Preferences: File Manager Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/FileManager/FileManager.sublime-settings",
+            "default": "// Your settings for FileManager. See the default file to see the different options. \n{\n\t$0\n}\n"
+        }
+    },
+    {
+        "caption": "File Manager: Create File From Selection",
+        "command": "fm_create_file_from_selection"
+    }
+]

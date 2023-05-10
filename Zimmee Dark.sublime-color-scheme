@@ -1,0 +1,555 @@
+{
+  "name": "Zimmee Dark",
+  "author": "Tyson Zimmerman (thezimmee@gmail.com)",
+  "variables": {
+    //
+    // Reds (rd-).
+    //
+
+    "maroon":               "hsl(0, 70%, 25%)",
+    "cherry":               "hsl(0, 68%, 42%)",
+    "crimson":              "hsl(348, 83%, 47%)",
+    "red":                  "hsl(0, 53%, 58%)",
+    "red":                  "hsl(357, 79%, 65%)",
+    "rosy":                 "hsl(0, 25%, 65%)",
+    "coral":                "hsl(0, 79%, 72%)",
+    "salmon":               "hsl(15, 72%, 74%)",
+
+    //
+    // Browns (br-).
+    //
+
+    "burlywood":            "hsl(34, 57%, 70%)",
+    "tan":                  "hsl(34, 44%, 69%)",
+    "bisque":             "hsl(38, 100%, 85%)",
+    "wheat":                "hsl(39, 77%, 83%)",
+    "blanchedalmond":       "hsl(36, 100%, 90%)",
+    "eggshell":             "hsl(46.2, 46.4%, 89%)",
+    "bone":                 "hsl(39.2, 31.7%, 83.9%)",
+
+    "pale-brown":           "hsl(30, 28.8%, 46.3%)",
+    "bistre":               "hsl(42.6, 17.4%, 42.7%)",
+    "pastel-brown":         "hsl(27.5, 22.4%, 42%)",
+    "umber":                "hsl(32.9, 31.3%, 38.8%)",
+    "shadow":               "hsl(37.3, 19.5%, 45.3%)",
+    "tan":                  "hsl(45, 28.3%, 44.3%)",
+    "grullo":               "hsl(34.3, 16.9%, 59.4%)",
+
+    "brown":                "hsl(52, 15%, 50%)",
+    "mustard":              "hsl(47, 55%, 50%)",
+
+    //
+    // Oranges (or-).
+    //
+
+    "sienna":               "hsl(19, 56%, 40%)",
+    "saddlebrown":          "hsl(25, 76%, 31%)",
+    "sandybrown":           "hsl(28, 87%, 67%)",
+    "peru":                 "hsl(30, 59%, 53%)",
+    "peru":                 "hsl(29.6, 58.7%, 52.5%)",
+    "orange":               "hsl(39, 100%, 50%)",
+    "papayawhip":           "hsl(37, 100%, 92%)",
+    "peachpuff":            "hsl(28, 100%, 86%)",
+    "coral":                "hsl(16, 100%, 66%)",
+    "darkorange":           "hsl(33, 100%, 50%)",
+    "orangered":            "hsl(16, 100%, 50%)",
+    "tomato":               "hsl(16, 70%, 50%)",
+    "orange-red":           "hsl(16, 100%, 50%)",
+    "tomato":               "hsl(9, 100%, 64%)",
+    "tomato":               "hsl(9, 100%, 64%)",
+    "coral":                "hsl(16, 100%, 66%)",
+    "chocolate":            "hsl(25, 75%, 47%)",
+
+    "red-orange":           "hsl(13, 93%, 66%)",
+    "orange":               "hsl(26, 93%, 66%)",
+
+    //
+    // Yellows (yl-).
+    //
+
+    "gold":                 "hsl(51, 100%, 50%)",
+    "lightgoldenrodyellow": "hsl(60, 80%, 90%)",
+    "palegoldenrod":        "hsl(55, 67%, 80%)",
+    "goldenrod":            "hsl(43, 74%, 49%)",
+    "darkgoldenrod":        "hsl(43, 89%, 38%)",
+    "yellow":               "hsl(60, 100%, 50%)",
+    "lightyellow":          "hsl(60, 100%, 94%)",
+    "cornsilk":             "hsl(48, 100%, 93%)",
+    "lemonchiffon":         "hsl(54, 100%, 90%)",
+    "khaki":                "hsl(54, 77%, 75%)",
+
+    "gold":                 "hsl(50.6, 100%, 50%)",
+    "khaki":                "hsl(54, 76.9%, 74.5%)",
+    "yellow":               "hsl(60, 100%, 50%)",
+    "mcdonalds":            "hsl(44, 100%, 59%)",
+    "madrid":               "hsl(44, 99%, 53%)",
+
+    "yellow":               "hsl(40, 94%, 68%)",
+
+    //
+    // Greens (gr-).
+    //
+
+    "lime":                 "hsl(120, 100%, 50%)",
+    "greenyellow":          "hsl(84, 100%, 59%)",
+    "chartreuse":           "hsl(90, 100%, 50%)",
+    "limegreen":            "hsl(120, 61%, 50%)",
+    "lawngreen":            "hsl(90, 100%, 49%)",
+    "olive":                "hsl(60, 100%, 25%)",
+    "darkkhaki":            "hsl(56, 38%, 58%)",
+    "yellowgreen":          "hsl(80, 61%, 50%)",
+    "olivedrab":            "hsl(80, 60%, 35%)",
+    "darkolivegreen":       "hsl(82, 39%, 30%)",
+    "green":                "hsl(120, 100%, 25%)",
+    "palegreen":            "hsl(120, 93%, 79%)",
+    "lightgreen":           "hsl(120, 73%, 75%)",
+    "darkseagreen":         "hsl(120, 25%, 65%)",
+    "greenyellow":          "hsl(84, 100%, 59%)",
+    "lime":                 "hsl(120, 100%, 50%)",
+    "springgreen":          "hsl(150, 100%, 50%)",
+    "chartreuse":           "hsl(90, 100%, 50%)",
+    "limegreen":            "hsl(120, 61%, 50%)",
+    "mediumspringgreen":    "hsl(157, 100%, 49%)",
+    "lawngreen":            "hsl(90, 100%, 49%)",
+    "mediumseagreen":       "hsl(147, 50%, 47%)",
+    "seagreen":             "hsl(146, 50%, 36%)",
+    "forestgreen":          "hsl(120, 61%, 34%)",
+    "darkgreen":            "hsl(120, 100%, 20%)",
+    "teal":                 "hsl(180, 100%, 25%)",
+    "aquamarine":           "hsl(160, 100%, 75%)",
+    "mediumaquamarine":     "hsl(160, 51%, 60%)",
+    "turquoise":            "hsl(174, 72%, 56%)",
+    "mediumturquoise":      "hsl(178, 60%, 55%)",
+    "cadetblue":            "hsl(182, 25%, 50%)",
+    "lightseagreen":        "hsl(177, 70%, 41%)",
+
+    "cambridge":            "hsl(140, 19%, 70%)",
+    "chartreuse":           "hsl(90, 100%, 50%)",
+    "dark-cyan":            "hsl(180, 100%, 27%)",
+    "dark-green":           "hsl(120, 100%, 20%)",
+    "dark-olive":           "hsl(82, 39%, 30%)",
+    "dark-sea":             "hsl(115, 27%, 64%)",
+    "forest":               "hsl(120, 61%, 34%)",
+    "green":                "hsl(120, 100%, 25%)",
+    "green-yellow":         "hsl(84, 100%, 59%)",
+    "lawn":                 "hsl(90, 100%, 49%)",
+    "light-green":          "hsl(120, 73%, 75%)",
+    "light-sea":            "hsl(177, 70%, 41%)",
+    "lime":                 "hsl(120, 100%, 50%)",
+    "lime-green":           "hsl(120, 61%, 50%)",
+    "md-marine":            "hsl(160, 51%, 60%)",
+    "md-sea":               "hsl(147, 50%, 47%)",
+    "md-spring":            "hsl(157, 100%, 49%)",
+    "olive":                "hsl(60, 100%, 25%)",
+    "olive-drab":           "hsl(80, 60%, 35%)",
+    "pale-green":           "hsl(120, 93%, 79%)",
+    "sea":                  "hsl(146, 50%, 36%)",
+    "teal":                 "hsl(180, 100%, 25%)",
+    "yellow-green":         "hsl(80, 61%, 50%)",
+
+    "lime":                 "hsl(130, 50%, 54%)",
+    "lime":                 "hsl(121, 50%, 65%)",
+    "green":                "hsl(111, 40%, 60%)",
+    "ocean":                "hsl(114, 31%, 68%)",
+
+    //
+    // Blues (bu-).
+    //
+
+    "cyan":                 "hsl(180, 100%, 50%)",
+    "lightcyan":            "hsl(180, 100%, 94%)",
+    "paleturquoise":        "hsl(180, 65%, 81%)",
+    "powderblue":           "hsl(187, 52%, 80%)",
+    "darkturquoise":        "hsl(181, 100%, 41%)",
+    "darkcyan":             "hsl(180, 100%, 27%)",
+    "blue":                 "hsl(240, 100%, 50%)",
+    "lightblue":            "hsl(195, 53%, 79%)",
+    "lightsteelblue":       "hsl(214, 41%, 78%)",
+    "lightskyblue":         "hsl(203, 92%, 75%)",
+    "skyblue":              "hsl(197, 71%, 73%)",
+    "cornflowerblue":       "hsl(219, 79%, 66%)",
+    "royalblue":            "hsl(225, 73%, 57%)",
+    "dodgerblue":           "hsl(210, 100%, 56%)",
+    "deepskyblue":          "hsl(195, 100%, 50%)",
+    "steelblue":            "hsl(207, 44%, 49%)",
+    "mediumblue":           "hsl(240, 100%, 40%)",
+    "darkblue":             "hsl(240, 100%, 27%)",
+    "midnightblue":         "hsl(240, 64%, 27%)",
+    "navy":                 "hsl(240, 100%, 25%)",
+    "mediumblue":           "hsl(240, 100%, 40%)",
+    "darkslateblue":        "hsl(248, 39%, 39%)",
+    "darkblue":             "hsl(240, 100%, 27%)",
+    "midnightblue":         "hsl(240, 64%, 27%)",
+
+    "aero":                 "hsl(206, 70%, 70%)",
+    "air-force":            "hsl(220, 100%, 28%)",
+    "alice":                "hsl(208, 100%, 97%)",
+    "aqua":                 "hsl(180, 100%, 50%)",
+    "marine":               "hsl(160, 100%, 75%)",
+    "argentinan":           "hsl(207, 79%, 68%)",
+    "navy":                 "hsl(212, 100%, 19%) hsl(220, 61%, 19%) hsl(219, 78%, 18%) hsl(210, 100%, 13%)",
+    "azure":                "hsl(210, 100%, 50%)",
+    "baby-blue":            "hsl(199, 77%, 74%)",
+    "bayern":               "hsl(210, 79%, 55%)",
+    "yonder":               "hsl(217, 35%, 48%)",
+    "blue-gray":            "hsl(210, 50%, 60%)",
+    "boeing":               "hsl(219, 100%, 33%)",
+    "capri":                "hsl(195, 100%, 50%)",
+    "carolina":             "hsl(204, 61%, 56%)",
+    "celeste":              "hsl(180, 100%, 85%)",
+    "cadet":                "hsl(182, 25%, 50%)",
+    "cornflower":           "hsl(219, 79%, 66%)",
+    "cyan":                 "hsl(180, 100%, 50%)",
+    "dark-turquoise":       "hsl(181, 100%, 41%)",
+    "deep-sky":             "hsl(195, 100%, 50%)",
+    "light-blue":           "hsl(195, 53%, 79%)",
+    "light-cyan":           "hsl(180, 100%, 94%)",
+    "light-sky":            "hsl(203, 92%, 75%)",
+    "light-steel":          "hsl(214, 41%, 78%)",
+    "pale-turquioise":      "hsl(180, 65%, 81%)",
+    "powder":               "hsl(187, 52%, 80%)",
+    "royal":                "hsl(225, 73%, 57%)",
+    "sky":                  "hsl(197, 71%, 73%)",
+    "steel":                "hsl(207, 44%, 49%)",
+    "turquoise":            "hsl(174, 72%, 56%)",
+    "facebook":             "hsl(214, 89%, 52%)",
+    "twitter":              "hsl(203, 89%, 53%)",
+    "tiffany":              "hsl(174, 53%, 68%)",
+
+    "maya":                 "hsl(205, 94%, 72%)",
+    "sky":                  "hsl(195, 85%, 65%)",
+    "sky":                  "hsl(195, 100%, 50%)",
+    "baby-blue":            "hsl(199, 77.4%, 73.9%)",
+    "midnight":             "hsl(210, 100%, 20%)",
+    "steel":                "hsl(207, 44%, 49%)",
+    "turquoise":            "hsl(174, 72%, 56%)",
+    "cyan":                 "hsl(180, 100%, 50%)",
+
+    "blue":                 "hsl(210, 50%, 60%)",
+    "cyan":                 "hsl(183, 60%, 60%)",
+    "turquoise":            "hsl(180, 36%, 54%)",
+    "aqua":                 "hsl(160, 100%, 75%)",
+
+    //
+    // Purples (pr-).
+    //
+
+    "indigo":               "hsl(275, 100%, 25%)",
+    "lavender":             "hsl(240, 67%, 94%)",
+    "plum":                 "hsl(300, 47%, 75%)",
+    "purple":               "hsl(300, 100%, 25%)",
+    "thistle":              "hsl(300, 24%, 80%)",
+    "violet":               "hsl(300, 76%, 72%)",
+    "hallmark":             "hsl(267, 38%, 28%)",
+    "roku":                 "hsl(274, 53%, 37%)",
+    "yahoo":                "hsl(282, 84%, 34%)",
+
+    "purple":               "hsl(300, 100%, 25%)",
+    "lavender":             "hsl(240, 67%, 94%)",
+    "thistle":              "hsl(300, 24%, 80%)",
+    "plum":                 "hsl(300, 47%, 75%)",
+    "mediumslateblue":      "hsl(249, 80%, 67%)",
+    "mediumpurple":         "hsl(260, 60%, 65%)",
+    "slateblue":            "hsl(248, 53%, 58%)",
+    "mediumorchid":         "hsl(288, 59%, 58%)",
+    "blueviolet":           "hsl(271, 76%, 53%)",
+    "darkorchid":           "hsl(280, 61%, 50%)",
+    "darkviolet":           "hsl(282, 100%, 41%)",
+    "darkslateblue":        "hsl(248, 39%, 39%)",
+    "indigo":               "hsl(275, 100%, 25%)",
+
+    "purple":               "hsl(247, 60%, 77%)",
+    "violet":               "hsl(230, 50%, 65%)",
+
+    //
+    // Pinks (pk-).
+    //
+
+    "md-violet":            "hsl(322, 81%, 43%)",
+    "fuchsia":              "hsl(300, 100%, 50%)",
+    "hot-pink":             "hsl(330, 100%, 71%)",
+    "lyft":                 "hsl(315, 100%, 50%)",
+    "palermo":              "hsl(350, 58%, 84%)",
+    "pink":                 "hsl(350, 100%, 88%)",
+    "victoria":             "hsl(336, 93%, 68%)",
+
+    "magenta":              "hsl(300, 100%, 50%)",
+    "violet":               "hsl(300, 76%, 72%)",
+    "orchid":               "hsl(302, 59%, 65%)",
+    "mediumvioletred":      "hsl(322, 81%, 43%)",
+    "darkmagenta":          "hsl(300, 100%, 27%)",
+    "pink":                 "hsl(350, 100%, 88%)",
+    "mistyrose":            "hsl(6, 100%, 94%)",
+    "lightpink":            "hsl(351, 100%, 86%)",
+    "hotpink":              "hsl(330, 100%, 71%)",
+    "palevioletred":        "hsl(340, 60%, 65%)",
+    "deeppink":             "hsl(328, 100%, 54%)",
+
+    "pink":                 "hsl(314, 50%, 75%)",
+
+    //
+    // Greys (gr-).
+    //
+
+    "grey":                 "hsl(0, 0%, 50%)",
+    "gainsboro":            "hsl(0, 0%, 86%)",
+    "lightgrey":            "hsl(0, 0%, 83%)",
+    "silver":               "hsl(0, 0%, 75%)",
+    "darkgrey":             "hsl(0, 0%, 66%)",
+    "lightslategrey":       "hsl(210, 14%, 53%)",
+    "slategrey":            "hsl(210, 13%, 50%)",
+    "dimgrey":              "hsl(0, 0%, 41%)",
+    "silver":               "hsl(0, 0%, 75%)",
+    "ghostwhite":           "hsl(240, 100%, 99%)",
+    "whitesmoke":           "hsl(0, 0%, 96%)",
+    "gainsboro":            "hsl(0, 0%, 86%)",
+    "lightgrey":            "hsl(0, 0%, 83%)",
+    "darkgrey":             "hsl(0, 0%, 66%)",
+    "grey":                 "hsl(0, 0%, 50%)",
+
+    //
+    // Blacks (bk-).
+    //
+
+    "black":                "hsl(0, 0%, 0%)",
+    "darkslategrey":        "hsl(180, 25%, 25%)",
+
+    //
+    // Whites (wh-).
+    //
+
+    "white":                "hsl(0, 0%, 100%)",
+    "ghostwhite":           "hsl(240, 100%, 99%)",
+    "snow":                 "hsl(0, 100%, 99%)",
+    "mintcream":            "hsl(150, 100%, 98%)",
+    "aliceblue":            "hsl(208, 100%, 97%)",
+    "honeydew":             "hsl(120, 100%, 97%)",
+    "azure":                "hsl(180, 100%, 97%)",
+    "lavenderblush":        "hsl(340, 100%, 97%)",
+    "seashell":             "hsl(25, 100%, 97%)",
+    "floralwhite":          "hsl(40, 100%, 97%)",
+    "ivory":                "hsl(60, 100%, 97%)",
+    "whitesmoke":           "hsl(0, 0%, 96%)",
+    "oldlace":              "hsl(39, 85%, 95%)",
+    "linen":                "hsl(30, 67%, 94%)",
+    "beige":                "hsl(60, 56%, 91%)",
+    "antiquewhite":         "hsl(34, 78%, 91%)",
+
+    "black":                "hsl(0, 0%, 0%)",
+    "black01":              "hsl(200, 40%, 10%)",
+    "gray-01":              "hsl(210, 13%, 45%)",
+    "gray":                 "hsl(221, 12%, 69%)",
+    "gray01":               "hsl(219, 28%, 88%)",
+    "white-01":             "hsl(0, 0%, 97%)",
+    "white":                "hsl(0, 0%, 100%)"
+  },
+  "globals": {
+    "background": "var(dark01)",
+    "shadow_width": "3"
+  },
+  "globals": {
+    // GLOBAL,
+    "foreground": "var(light00)",
+    "background": "var(dark00)",
+    "invisibles": "color(var(gray00) alpha(0.7))",
+    "caret": "var(yellow00)",
+    // "block_caret": "color(var(magenta) s(80%))",
+    "line_highlight": "color(var(dark01) blend(var(purple00) 60%) a(0.25) s(- 10%))",
+
+    // ACCENTS,
+    "misspelling": "var(cherry00)",
+    "fold_marker": "var(yellow00)",
+    "minimap_border": "color(var(yellow00) a(0.6))",
+    "accent": "var(orange00)",
+
+    // GUTTER,
+    // "gutter": "",
+    "gutter_foreground": "var(gray00)",
+
+    // DIFFS,
+    "line_diff_width": "4",
+    "line_diff_added": "var(green00)",
+    "line_diff_modified": "var(orange00)",
+    "line_diff_deleted": "var(cherry00)",
+
+    // SELECTIONS,
+    "selection": "color(var(dark01) blend(var(yellow00) 90%) a(0.7))",
+    // "selection_foreground": "",
+    "selection_border": "color(var(yellow00) a(0.5))",
+    "selection_border_width": "1",
+    "inactive_selection": "var(dark01)",
+    // "inactive_selection_foreground": "",
+    "selection_corner_style": "square",
+    "selection_corner_radius": "0",
+
+    // FIND,
+    "highlight": "var(yellow00)",
+    "find_highlight": "var(yellow00)",
+    "find_highlight_foreground": "var(dark00)",
+
+    // GUIDES,
+    "guide": "color(var(brown00) a(0.4))",
+    "active_guide": "color(var(yellow00) a(0.5))",
+    "stack_guide": "color(var(brown00) a(0.6))",
+
+    // BRACKETS,
+    "brackets_options": "stippled_underline",
+    "brackets_foreground": "var(yellow00)",
+    "brackets_contents_options": "stippled_underline",
+    "brackets_contents_foreground": "var(yellow00)",
+    "bracket_contents_foreground": "var(dark00)",
+    "bracket_contents_options": "stippled_underline",
+
+    // TAGS,
+    "tags_options": "stippled_underline",
+    "tags_foreground": "var(yellow00)",
+
+    // SHADOWS,
+    "shadow": "var(dark-01)",
+    "shadow_width": "3",
+
+    // CSS,
+    // "//phantom_css": "",
+    "popup_css": " html { background-color: var(--background); color: var(--foreground); } a { color: #80FFBB; line-height: 20px; } "
+  },
+  "rules": [
+    /** --------------------------------------------------------------------
+     *  Overrides
+     */
+
+    // Important built in keywords.
+    {
+      "name": "Important built in keywords",
+      "scope": "keyword.control.flow, keyword.control.import-export, storage.modifier.extends, variable.language",
+      "foreground": "var(mahogany00)"
+    },
+    {
+      "name": "True",
+      "scope": "constant.language.boolean.true",
+      "foreground": "var(green00)"
+    },
+    {
+      "name": "True or False",
+      "scope": "constant.language.boolean.true, constant.language.boolean.false"
+    },
+    {
+      "name": "Array|Object keywords",
+      "scope": "variable.other.class.js",
+      "foreground": "var(blue01)"
+    },
+
+    // Find results.
+    {
+      "name": "Find | text match",
+      "scope": "match.find-in-files",
+      // "background": "var(green00)",
+      "foreground": "color(var(light00) alpha(0.9))"
+    },
+
+    // Diffs.
+    {
+      "name": "Diff | default",
+      "scope": "source.diff, git-savvy.diff_view",
+      "foreground": "color(var(light00) alpha(0.9))"
+    },
+    {
+      "name": "Diff | deleted",
+      "scope": "diff.deleted, markup.deleted.diff",
+      "background": "color(var(red00) alpha(0.7))",
+      "foreground": "color(var(white00) alpha(0.9))"
+    },
+    {
+      "name": "Diff | deleted characters",
+      "scope": "diff.deleted.char, punctuation.definition.deleted.diff",
+      "foreground": "color(var(red00) alpha(0.7))"
+    },
+    {
+      "name": "Diff | inserted",
+      "scope": "diff.inserted, markup.inserted.diff",
+      "background": "color(var(green00) alpha(0.5))",
+      "foreground": "var(white00)"
+    },
+    {
+      "name": "Diff | inserted characters",
+      "scope": "diff.inserted.char, punctuation.definition.inserted.diff",
+      "foreground": "color(var(green00) alpha(0.5))"
+    },
+
+    /** --------------------------------------------------------------------
+     *  Markdown
+     */
+
+    {
+      "name": "Markdown | link title",
+      "scope": "string.other.link.title.markdown",
+      "foreground": "var(purple00)"
+    },
+
+    /** --------------------------------------------------------------------
+     *  GitSavvy
+     */
+
+    // Active branch.
+    {
+      "name": "GitSavvy | active branch",
+      "scope": "string.other.git-savvy.branches.active-branch.sha1, string.other.git-savvy.branches.active-branch.name gitsavvy.gotosymbol",
+      "font_style": "bold"
+    },
+
+    // Dashboard headings.
+    {
+      "name": "GitSavvy | DEFAULT heading text",
+      "scope": "git-savvy meta.git-savvy.status.section.branch keyword.other.git-savvy.section-header.branch, git-savvy meta.git-savvy.section.header keyword.other.git-savvy.section.header, punctuation.definition.git-savvy.section-header",
+      "foreground": "var(white00)",
+      "font_style": "bold"
+    },
+    {
+      "name": "GitSavvy | DEFAULT heading background",
+      "scope": "meta.git-savvy.section.header, keyword.other.git-savvy.section-header.branch",
+      "background": "color(var(gray00) a(0.8))"
+    },
+    {
+      "name": "GitSavvy | ORANGE heading background",
+      "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header, meta.git-savvy.status.section.merge-conflicts meta.git-savvy.section.header",
+      "background": "color(var(orange01) a(0.6))"
+    },
+    {
+      "name": "GitSavvy | GREEN heading background",
+      "scope": "meta.git-savvy.status.section.staged meta.git-savvy.section.header",
+      "background": "color(var(green00) a(0.5))"
+    },
+
+    // File names.
+    {
+      "name": "GitSavvy | removed files",
+      "scope": "meta.git-savvy.entity.filename.removed, meta.git-savvy.status.punctuation.removed",
+      "foreground": "var(red00)"
+    },
+    {
+      "name": "GitSavvy | untracked files",
+      "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename",
+      "foreground": "color(var(light00) a(0.5))",
+      "font_style": "italic"
+    },
+    {
+      "name": "GitSavvy | unstaged files",
+      "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.entity.filename",
+      "foreground": "var(orange01)"
+    },
+    {
+      "name": "GitSavvy | staged files",
+      "scope": "meta.git-savvy.status.section.staged meta.git-savvy.entity.filename",
+      "foreground": "var(green01)"
+    },
+    {
+      "name": "GitSavvy | merge conflicts",
+      "scope": "meta.git-savvy.status.section.merge-conflicts meta.git-savvy.entity.filename",
+      "foreground": "var(orange01)"
+    },
+    {
+      "name": "GitSavvy | stashed files",
+      "scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+      "foreground": "var(brown00)"
+    }
+  ]
+}

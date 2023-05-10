@@ -1,0 +1,252 @@
+[
+  /** --------------------------------------------------------------------------
+   *  TOGGLES (ctrl+)
+   */
+
+  // Toggle sidebar.
+  { "keys": ["ctrl+;"], "command": "toggle_side_bar" },
+  // Toggle minimap.
+  { "keys": ["ctrl+\\"], "command": "toggle_minimap" },
+  // Toggle indent guides.
+  { "keys": ["ctrl+/"], "command": "toggle_setting", "args": { "setting": "draw_indent_guides" } },
+  // Toggle draw centered.
+  {
+    "keys": ["ctrl+i"],
+    "command": "toggle_setting",
+    "args": { "setting": "draw_centered" }
+  },
+  // Toggle SublimeLinter highlights.
+  { "keys": ["ctrl+super+l"], "command": "sublime_linter_toggle_highlights" },
+  // Toggle word wrap.
+  {
+    "keys": ["ctrl+."],
+    "command": "toggle_setting",
+    "args": { "setting": "word_wrap" }
+  },
+  // Toggle how whitespace is drawn.
+  {
+    "keys": ["ctrl+,"],
+    "command": "cycle_setting",
+    "args": { "setting": "draw_white_space", "values": ["all", "none"] }
+  },
+  // // Toggle comment.
+  // {
+  //   "keys": ["super+alt+/"],
+  //   "command": "toggle_comment",
+  //   "args": { "block": true }
+  // },
+  // Toggle MaxPane.
+  { "keys": ["ctrl+alt+enter"], "command": "max_pane" },
+
+  /** --------------------------------------------------------------------------
+   *  UI NAVIGATION
+   */
+
+  // Navigate between tabs.
+  { "keys": ["alt+l"], "command": "next_view" },
+  { "keys": ["alt+j"], "command": "prev_view" },
+  // Move tab inside of pane.
+  { "keys": ["ctrl+j"], "command": "move_tab", "args": { "position": "-1" } },
+  { "keys": ["ctrl+l"], "command": "move_tab", "args": { "position": "+1" } },
+  {
+    "keys": ["ctrl+shift+l"],
+    "command": "move_tab",
+    "args": { "position": "999" }
+  },
+  {
+    "keys": ["ctrl+shift+j"],
+    "command": "move_tab",
+    "args": { "position": "0" }
+  },
+
+  // Navigate between groups.
+  { "keys": ["alt+o"], "command": "focus_neighboring_group" },
+  {
+    "keys": ["alt+u"],
+    "command": "focus_neighboring_group",
+    "args": { "forward": false }
+  },
+  // Move tab to neighoring group.
+  { "keys": ["ctrl+o"], "command": "move_to_neighboring_group" },
+  {
+    "keys": ["ctrl+u"],
+    "command": "move_to_neighboring_group",
+    "args": { "forward": false }
+  },
+
+  /** --------------------------------------------------------------------------
+   *  CODE & FILE NAVIGATION AND SELECTION
+   */
+
+  // Create new file from current directory with FileManager.
+  { "keys": ["alt+n"], "command": "fm_create", "args": {
+    "paths": ["${file_path:$folder}"],
+    "initial_text": "",
+    // "start_with_browser": true,
+    // "no_browser_action": true,
+  }},
+
+  // Open file from current directory.
+  { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
+  // Open favorite bookmarked paths.
+  { "keys": ["super+ctrl+o"], "command": "fuzzy_bookmarks_load" },
+  // Open file under cursor.
+  {
+    "keys": ["alt+o"],
+    "command": "hyper_click_jump",
+    "context": [
+        { "key": "hyper_click_jump_line", "operand": true }
+    ]
+  },
+  // Jump cursor forward in history.
+  { "keys": ["ctrl+="], "command": "jump_forward" },
+
+  /** --------------------------------------------------------------------------
+   *  CODE EDITING
+   */
+
+  // AutoFileName plugin.
+  { "keys": ["alt+enter"], "command": "afn_show_filenames", "context": [{ "key": "afn_use_keybinding", "operator": "equal", "operand": true }]},
+
+  // Format with Standard.
+  {
+    "keys": ["super+alt+l"],
+    "command": "standard_format",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "source.js,markup.raw,source.js.embedded.html",
+        "match_all": true
+      }
+    ]
+  },
+  // Format with Prettier.
+  {
+    "keys": ["super+alt+l"],
+    "command": "js_prettier",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.html - (markup.raw,source.js.embedded.html),source.css",
+        "match_all": true
+      }
+    ]
+  },
+  // Paste and indent.
+  { "keys": ["super+alt+v"], "command": "paste_and_indent" },
+
+  /** --------------------------------------------------------------------------
+   *  MARKDOWN EDITING
+   */
+
+  { "keys": ["super+alt+k"], "command": "reference_new_inline_link", "context":
+    [
+      { "key": "setting.mde.keymap_disable.reference_new_inline_link", "operator": "not_equal", "operand": true },
+      { "key": "selector", "operator": "equal", "operand": "text.html.markdown", "match_all": true }
+    ]
+  },
+
+  /** --------------------------------------------------------------------------
+   *  GIT
+   */
+
+  // Git panes.
+  { "keys": ["super+alt+t"], "command": "gs_show_status" },
+  { "keys": ["super+alt+b"], "command": "gs_show_branch" },
+  { "keys": ["super+alt+g"], "command": "gs_log_graph" },
+
+  // Status pane.
+  {
+    "keys": ["L"],
+    "command": "gs_pull",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.branch_view", "operator": "equal", "operand": true }
+    ]
+  },
+  {
+    "keys": ["L"],
+    "command": "gs_pull",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+    ]
+  },
+  // {
+  //   "keys": ["c"],
+  //   "command": "terminus_open",
+  //   "args": {
+  //     "cwd": "${file_path:${folder}}",
+  //     "shell_cmd": "git commit",
+  //     // "config_name": "Zsh",
+  //     "panel_name": "git",
+  //     "cancellable": false,
+  //     "tag": "git",
+  //     "auto_close": false
+  //   },
+  //   "context": [
+  //     { "key": "setting.command_mode", "operator": "equal", "operand": false },
+  //     { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+  //   ]
+  // },
+  // {
+  //   "keys": ["c"],
+  //   "command": "gs_commit",
+  //   "context": [
+  //     { "key": "setting.command_mode", "operator": "equal", "operand": false },
+  //     { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+  //   ]
+  // },
+  // {
+  //   "keys": ["c"],
+  //   "command": "gs_commit",
+  //   "context": [
+  //     { "key": "setting.command_mode", "operator": "equal", "operand": false },
+  //     { "key": "setting.git_savvy.inline_diff_view", "operator": "equal", "operand": true }
+  //   ]
+  // },
+  // {
+  //   "keys": ["m"],
+  //   "command": "terminus_open",
+  //   "args": {
+  //     "cwd": "${file_path:${folder}}",
+  //     "shell_cmd": "git commit --amend",
+  //     "panel_name": "git",
+  //     "tag": "git"
+  //   },
+  //   "context": [
+  //     { "key": "setting.command_mode", "operator": "equal", "operand": false },
+  //     { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+  //   ]
+  // },
+
+  /** --------------------------------------------------------------------------
+   *  BUILDS, TASKS, AND COMMAND LINE
+   */
+
+  // Terminus plugin.
+  {
+    "keys": ["ctrl+enter"],
+    "command": "toggle_terminus_panel"
+  },
+  {
+    "keys": ["ctrl+shift+enter"],
+    "command": "terminus_open",
+    "args": {
+      "title": "zsh"
+    }
+  },
+  {
+    "keys": ["ctrl+w"],
+    "command": "terminus_close",
+    "context": [{ "key": "terminus_view"}]
+  },
+  {
+    "keys": ["super+k"],
+    "command": "terminus_keypress",
+    "args": { "key": "l", "ctrl": true },
+    "context": [{ "key": "terminus_view" }]
+  }
+]

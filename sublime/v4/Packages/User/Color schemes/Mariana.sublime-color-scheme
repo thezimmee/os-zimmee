@@ -1,0 +1,200 @@
+{
+    "name": "Mariana",
+    "author": "Tyson Zimmerman",
+    "variables": {
+        // 
+        // Base colors.
+        // 
+
+        // Neutrals.
+        "black00": "hsl(0, 0%, 0%)",
+        "white00": "hsl(0, 0%, 100%)",
+        // "dark00": "hsl(194, 100%, 8%)", // solarized background
+        "dark00": "hsl(200, 40%, 10%)",
+        "gray00": "hsl(208, 0%, 50%)",
+        "light00": "hsl(208, 21%, 85%)",
+        "brown00": "hsl(52, 15%, 50%)",
+        // Sweet spot: red, pink, orange, yellow, green.
+        "pink00": "hsl(314, 60%, 75%)",
+        "red00": "hsl(0, 60%, 65%)",
+        "cherry00": "hsl(10, 70%, 43%)",
+        "orange00": "hsl(37, 70%, 50%)",
+        "yellow00": "hsl(47, 70%, 50%)",
+        "green00": "hsl(121, 71%, 63%)",
+        "lime00": "hsl(111, 46%, 60%)",
+        // Use sparingly: blue, purple.
+        "cyan00": "hsl(183, 60%, 60%)",
+        "blue00": "hsl(208, 60%, 50%)",
+        "purple00": "hsl(252, 70%, 77%)",
+
+        // 
+        // Computed colors.
+        //
+
+        // Neutrals.
+        "dark-01": "color(var(dark00) l(- 5%))",
+        "dark01": "color(var(dark00) l(+ 5%))",
+
+        // Sweet spot: red, pink, orange, yellow. green.
+        "magenta00": "color(var(pink00) blend(var(red00) 50%))",
+        "red-01": "color(var(red00) s(- 20%) l(- 7%))",
+        "cherry01": "color(var(cherry00) l(+ 10%))",
+        "cherry02": "color(var(cherry00) s(- 12%) l(+ 20%))",
+        "mahogany00": "color(var(orange00) blend(var(red00) 50%) s(+ 5%))",
+        "orange-01": "color(var(orange00) l(- 5%))",
+        "orange01": "color(var(orange00) l(+ 10%))",
+        "yellow01": "color(var(yellow00) l(+ 10%))",
+        "green01": "color(var(green00) s(+ 30%) l(+ 15%))",
+        "lime-01": "color(var(lime00) l(- 15%))",
+        "lime01": "color(var(lime00) s(+ 20%) l(+ 12%))",
+
+        // Use sparingly: blue, purple.
+        "cyan01": "color(var(cyan00) l(+ 12%))",
+        "blue01": "color(var(blue00) s(+ 20%) l(+ 12%))",
+        "blue01": "color(var(blue00) l(+ 12%))"
+      },
+    "globals": {
+        "background": "var(dark01)",
+        "shadow_width": "3",
+    },
+    "rules": [
+        /** --------------------------------------------------------------------
+         *  Overrides
+         */
+
+        // Important built in keywords.
+        {
+            "name": "Important built in keywords",
+            "scope": "keyword.control.flow, keyword.control.import-export, storage.modifier.extends, variable.language",
+            "foreground": "var(mahogany00)"
+        },
+        {
+            "name": "True",
+            "scope": "constant.language.boolean.true",
+            "foreground": "var(green00)"
+        },
+        {
+            "name": "True or False",
+            "scope": "constant.language.boolean.true, constant.language.boolean.false"
+        },
+        {
+            "name": "Array|Object keywords",
+            "scope": "variable.other.class.js",
+            "foreground": "var(blue01)"
+        },
+
+        // Find results.
+        {
+            "name": "Find | text match",
+            "scope": "match.find-in-files",
+            // "background": "var(green00)",
+            "foreground": "color(var(light00) alpha(0.9))"
+        },
+
+        // Diffs.
+        {
+            "name": "Diff | default",
+            "scope": "source.diff, git-savvy.diff_view",
+            "foreground": "color(var(light00) alpha(0.9))"
+        },
+        {
+            "name": "Diff | deleted",
+            "scope": "diff.deleted, markup.deleted.diff",
+            "background": "color(var(red00) alpha(0.7))",
+            "foreground": "color(var(white00) alpha(0.9))"
+        },
+        {
+            "name": "Diff | deleted characters",
+            "scope": "diff.deleted.char, punctuation.definition.deleted.diff",
+            "foreground": "color(var(red00) alpha(0.7))"
+        },
+        {
+            "name": "Diff | inserted",
+            "scope": "diff.inserted, markup.inserted.diff",
+            "background": "color(var(green00) alpha(0.5))",
+            "foreground": "var(white00)"
+        },
+        {
+            "name": "Diff | inserted characters",
+            "scope": "diff.inserted.char, punctuation.definition.inserted.diff",
+            "foreground": "color(var(green00) alpha(0.5))"
+        },
+
+        /** --------------------------------------------------------------------
+         *  Markdown
+         */
+
+        {
+            "name": "Markdown | link title",
+            "scope": "string.other.link.title.markdown",
+            "foreground": "var(purple00)"
+        },
+
+        /** --------------------------------------------------------------------
+         *  GitSavvy
+         */
+
+        // Active branch.
+        {
+            "name": "GitSavvy | active branch",
+            "scope": "string.other.git-savvy.branches.active-branch.sha1, string.other.git-savvy.branches.active-branch.name gitsavvy.gotosymbol",
+            "font_style": "bold"
+        },
+
+        // Dashboard headings.
+        {
+            "name": "GitSavvy | DEFAULT heading text",
+            "scope": "git-savvy meta.git-savvy.status.section.branch keyword.other.git-savvy.section-header.branch, git-savvy meta.git-savvy.section.header keyword.other.git-savvy.section.header, punctuation.definition.git-savvy.section-header",
+            "foreground": "var(white00)",
+            "font_style": "bold"
+        },
+        {
+            "name": "GitSavvy | DEFAULT heading background",
+            "scope": "meta.git-savvy.section.header, keyword.other.git-savvy.section-header.branch",
+            "background": "color(var(gray00) a(0.8))"
+        },
+        {
+            "name": "GitSavvy | ORANGE heading background",
+            "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.section.header, meta.git-savvy.status.section.merge-conflicts meta.git-savvy.section.header",
+            "background": "color(var(orange01) a(0.6))"
+        },
+        {
+            "name": "GitSavvy | GREEN heading background",
+            "scope": "meta.git-savvy.status.section.staged meta.git-savvy.section.header",
+            "background": "color(var(green00) a(0.5))"
+        },
+
+        // File names.
+        {
+            "name": "GitSavvy | removed files",
+            "scope": "meta.git-savvy.entity.filename.removed, meta.git-savvy.status.punctuation.removed",
+            "foreground": "var(red00)"
+        },
+        {
+            "name": "GitSavvy | untracked files",
+            "scope": "meta.git-savvy.status.section.untracked meta.git-savvy.entity.filename",
+            "foreground": "color(var(light00) a(0.5))",
+            "font_style": "italic"
+        },
+        {
+            "name": "GitSavvy | unstaged files",
+            "scope": "meta.git-savvy.status.section.unstaged meta.git-savvy.entity.filename",
+            "foreground": "var(orange01)"
+        },
+        {
+            "name": "GitSavvy | staged files",
+            "scope": "meta.git-savvy.status.section.staged meta.git-savvy.entity.filename",
+            "foreground": "var(green01)"
+        },
+        {
+            "name": "GitSavvy | merge conflicts",
+            "scope": "meta.git-savvy.status.section.merge-conflicts meta.git-savvy.entity.filename",
+            "foreground": "var(orange01)"
+        },
+        {
+            "name": "GitSavvy | stashed files",
+            "scope": "meta.git-savvy.status.saved_stash, meta.commit-info.diffstat.line meta.filename.diff",
+            "foreground": "var(brown00)"
+        }
+    ]
+}

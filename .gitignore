@@ -13,7 +13,6 @@ zsh/locals.zsh
 # [[[ SUBLIME
 
 # Sublime built ins.
-*.sublime-project
 *.sublime-workspace
 *.sublime-color-scheme.chback
 sublime/**/*.cache

@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      "name": "Old Forge",
+      "path": "~/Projects/marqeta/wam/packages/voltron",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules",
+        "voltron"
+      ],
+    },
+    {
+      "name": "Old Volt",
+      "path": "~/Projects/marqeta/wam/packages",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules",
+        "voltron"
+      ],
+    },
+    {
+      "name": "WAM",
+      "path": "~/Projects/marqeta/wam",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules",
+        "apps",
+        "packages"
+      ],
+    },
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  "syntax_override": {
+    "\\.js$": ["Babel", "JavaScript (Babel)"]
+  },
+  // "build_systems": [
+  //   {
+  //     "name": "",
+  //     "target": "terminus_open",
+  //     "cancel": "terminus_cancel_build",
+  //     "cmd": [],
+  //     "shell_cmd": "",
+  //     "working_dir": "",
+  //     "title": "",
+  //     "tag": "",
+  //     "auto_close": false
+  //   }
+  // ]
+}

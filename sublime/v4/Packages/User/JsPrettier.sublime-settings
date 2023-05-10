@@ -1,0 +1,27 @@
+// Settings in here override those in "/JsPrettier/JsPrettier.sublime-settings",
+
+{
+  "allow_inline_formatting": true,
+  "auto_format_on_save": false,
+  "auto_format_on_save_excludes":
+  [
+    "*.js",
+    "**/package.json",
+    "*/node_modules/*",
+    "*.min.js",
+    "*.min.css",
+    "*.sublime-syntax",
+    "*syntax_test_.*"
+  ],
+  "custom_file_extensions":
+  [
+    "xjson",
+    "sublime-keymap",
+    "sublime-settings",
+    "sublime-commands",
+    "sublime-color-scheme",
+    "sublime-theme"
+  ],
+  "node_path": "~/.nvm/current/bin/node",
+  "prettier_cli_path": "~/.nvm/current/bin/prettier"
+}

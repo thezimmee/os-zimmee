@@ -1,0 +1,11 @@
+[
+  // NPM.
+  {
+    "caption": "NPM init",
+    "command": "terminus_open",
+    "args": {
+      "cwd": "${file_path:${folder}}",
+      "shell_cmd": "npm init --yes",
+    }
+  }
+]

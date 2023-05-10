@@ -1,0 +1,28 @@
+// Settings in here override those in "GitSavvy/GitSavvy.sublime-settings",
+
+{
+  "git_status_in_status_bar": false,
+  "default_tag_message": "{tag_name}",
+  "inline_diff_ignore_eol_whitespaces": true,
+  "show_panel_for": ["push", "commit"],
+  "tab_order": ["status", "branch"],
+  "show_diffstat": false,
+  "graph_show_more_commit_info": false,
+  "log_follow_rename": true,
+  "blame_follow_rename": true,
+  "sort_by_recent_in_branch_dashboard": false,
+
+  "pedantic_commit": true,
+  "pedantic_commit_ruler": true,
+  "pedantic_commit_first_line_length": 80,
+  "pedantic_commit_message_line_length": 80,
+  "pedantic_commit_warning_length": 20,
+  "env":
+  {
+    "husky": "~/Projects/marqeta/wam/.husky/_/husky.sh"
+  },
+  "api_tokens":
+  {
+    "github.marqeta.com": "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"
+  },
+}

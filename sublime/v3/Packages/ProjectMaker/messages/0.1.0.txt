@@ -1,0 +1,1 @@
+`STProjectMaker` was renamed to just `ProjectMaker`.

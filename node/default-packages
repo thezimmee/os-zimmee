@@ -1,6 +1,5 @@
 # Default global packages to be installed with node version installed by NVM.
 # This should symlink to $NVM_DIR/default-packages.
-browser-sync
-ncu
 prettier
 standard
+eslint

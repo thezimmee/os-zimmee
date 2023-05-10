@@ -1,0 +1,30 @@
+{
+  "folders": [
+    {
+      "name": "OS Zimmee",
+      "path": "~/Projects/os-zimmee",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules"
+      ],
+      "follow_symlinks": true
+    }
+  ],
+  // "settings": {
+  //   "setting": "value"
+  // },
+  // "syntax_override": {},
+  // "build_systems": [
+  //   {
+  //     "name": "",
+  //     "target": "terminus_open",
+  //     "cancel": "terminus_cancel_build",
+  //     "cmd": [],
+  //     "shell_cmd": "",
+  //     "working_dir": "",
+  //     "title": "",
+  //     "tag": "",
+  //     "auto_close": false
+  //   }
+  // ]
+}

@@ -1,0 +1,8 @@
+// Settings in here override those in "${packages}/DocBlockr 2021 (DoxyDoxygen powered)/Doxy.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+  "min_spaces_between_columns": [ 2 ],
+  "preferred_tabs_sizes": [ 0 ],
+  "preferred_line_length": 80,
+  "indentation_max": 9,
+}

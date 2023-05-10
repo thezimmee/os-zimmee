@@ -12,3 +12,4 @@ brew list nvm && brew uninstall nvm
 rm -rf "$NVM_DIR"
 rm -rf ~/.nvm/default-packages
 rm -rf ~/.nvm
+rm -rf ~/.npm

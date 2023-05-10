@@ -1,0 +1,179 @@
+{
+	// 
+	// THEME:
+	// 
+
+	"theme": "auto",
+	"light_theme": "Default.sublime-theme",
+	"dark_theme": "Default Dark.sublime-theme",
+
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"light_color_scheme": "Breakers.sublime-color-scheme",
+	"dark_color_scheme": "Mariana.sublime-color-scheme",
+
+	"themed_title_bar": true,
+	"file_tab_style": "rounded",
+	"native_tabs": "system",
+	"adaptive_dividers": false,
+
+	"font_face": "Hasklig",
+	"font_size": 21,
+
+	"block_caret": false,
+	"caret_extra_top": 4,
+	"caret_extra_bottom": 4,
+	"caret_extra_width": 2,
+	"caret_style": "phase",
+
+	"draw_white_space": ["selection"],
+	"indent_guide_options": [
+		"draw_normal",
+		"draw_active_single"
+	],
+	"draw_indent_guides": true,
+	"draw_minimap_border": true,
+
+	"fade_fold_buttons": false,
+	"fold_buttons": true,
+
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"margin": 4,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+
+	"rulers":
+	[
+		60,
+		80,
+		100
+	],
+
+	"auto_hide_menu": false,
+	"auto_hide_tabs": false,
+	"auto_hide_status_bar": false,
+	"reveal_tabs_with_timeout": false,
+	"hide_pointer_while_typing": true,
+
+	"hide_tab_scrolling_buttons": true,
+	"hide_new_tab_button": true,
+	"show_sidebar_button": false,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_indentation": true,
+	"show_syntax": true,
+
+	// 
+	// TOGGLES:
+	// 
+
+	"always_show_minimap_viewport": false,
+	"bold_folder_labels": true,
+	"drag_text": false,
+	"draw_shadows": true,
+	"find_selected_text": true,
+	"inactive_sheet_dimming": true,
+	"show_definitions": true,
+	"show_full_path": true,
+	"show_project_first": true,
+	"show_rel_path": true,
+	"translate_tabs_to_spaces": true,
+
+	// 
+	// BEHAVIORS:
+	// 
+
+	"added_words": [
+		"Lillee",
+		"internet"
+	],
+	"close_windows_when_empty": true,
+	"ensure_newline_at_eof_on_save": false,
+	"tab_size": 2,
+	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
+
+	"match_brackets": true,
+	"match_brackets_angle": true,
+	"match_brackets_braces": true,
+	"match_brackets_content": true,
+	"match_brackets_square": true,
+	"match_tags": true,
+	"match_selection": true,
+
+	"auto_indent": true,
+	"smart_indent": true,
+	"indent_to_bracket": false,
+	"indent_subsequent_lines": true,
+	"word_wrap": true,
+	"wrap_width_style": "min",
+
+	"auto_complete": true,
+	"auto_complete_include_snippets": true,
+	"auto_complete_include_snippets_when_typing": true,
+	"ignored_snippets": [],
+	"auto_complete_commit_on_tab": false,
+	"auto_complete_with_fields": false,
+	"auto_complete_cycle": false,
+	"auto_complete_size_limit": 4194304,
+	"auto_complete_delay": 50,
+	"auto_complete_use_history": true,
+	"auto_complete_use_index": true,
+	"auto_complete_preserve_order": "some",
+	"auto_complete_trailing_symbols": false,
+	"auto_complete_trailing_spaces": false,
+	// "auto_complete_selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+	// "auto_complete_triggers":
+	// [
+	// 	{"selector": "text.html, text.xml", "characters": "<",},
+	// 	{"selector": "punctuation.accessor", "rhs_empty": true,},
+	// ],
+	"tab_completion": false,
+	"shift_tab_unindent": false,
+
+	"scroll_speed": 1.0,
+
+	"shell_environment": true,
+	"always_prompt_for_file_reload": false,
+
+	// 
+	// PLUGINS:
+	// 
+
+	// 
+	// FROM SUBLIME v3
+	// 
+
+	// "afn_blacklist_scopes":
+	// [
+	// 	"string.regexp.js"
+	// ],
+	// "afn_use_keybinding": true,
+	// "afn_valid_scopes":
+	// [
+	// 	"string",
+	// 	"css",
+	// 	"sass",
+	// 	"less",
+	// 	"scss"
+	// ],
+	// "color_scheme": "Packages/User/Themes/Shades of Cobalt - Dark Lower Contrast.sublime-color-scheme",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"ignored_packages": [
+		"MarkdownEditing",
+		"SublimeLinter-contrib-standard",
+		"SublimeLinter-php",
+		"Vintage",
+	],
+	"ignored_words": ["Lillee's"],
+	"index_exclude_patterns":
+	[
+		"node_modules"
+	],
+	// "theme": "Adaptive.sublime-theme",
+}

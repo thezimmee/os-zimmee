@@ -57,6 +57,17 @@
 # [difftool "araxis"]
 # 	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
 
+# Set Kaleidoscope as diff/merge tool.
+# [diff]
+#     tool = Kaleidoscope
+# [difftool "Kaleidoscope"]
+#   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+# [merge]
+#     tool = Kaleidoscope
+# [mergetool "Kaleidoscope"]
+#   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+#   trustExitCode = true
+
 # [credential]
 # 	helper = cache
 # [mergetool]
@@ -86,11 +97,11 @@
 # 	cmd = smerge \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 
 # Set Sublime Text as diff/merge tool.
-[merge]
-	tool = sublime
-[mergetool "sublime"]
-	cmd = subl -w $MERGED
-	trustExitCode = true
+# [merge]
+# 	tool = sublime
+# [mergetool "sublime"]
+# 	cmd = subl -w $MERGED
+# 	trustExitCode = true
 
 # Set Beyond Compare as diff/merge tool.
 # [diff]

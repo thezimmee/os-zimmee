@@ -17,3 +17,10 @@ export NVM_SYMLINK_CURRENT=true
 # alias nr='npm run'
 # alias tags='npm dist-tag ls'
 # alias utag='npm dist-tag add'
+
+function nmfind {
+  find . -name 'node_modules' -type d -prune
+}
+function nmkill {
+  find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+}

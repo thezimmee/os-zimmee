@@ -1,0 +1,5 @@
+// Your settings for FileManager. See the default file to see the different options. 
+{
+  "log_in_status_bar": "user",
+  "create_keybinding_enabled": false
+}
