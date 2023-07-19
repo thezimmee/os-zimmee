@@ -16,8 +16,9 @@
 	"native_tabs": "system",
 	"adaptive_dividers": false,
 
-	"font_face": "Hasklig",
-	"font_size": 21,
+	// "font_face": "Hasklig",
+	"font_face": "IntelOne Mono",
+	"font_size": 18,
 
 	"block_caret": false,
 	"caret_extra_top": 4,
