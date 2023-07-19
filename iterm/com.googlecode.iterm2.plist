@@ -446,6 +446,28 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x44-0x120000-0x2</key>
+		<dict>
+			<key>Action</key>
+			<integer>29</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string>F73EEA24-ADF3-4790-92AE-FF3D0CC54FC4</string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
+		<key>0x64-0x100000-0x2</key>
+		<dict>
+			<key>Action</key>
+			<integer>28</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string>F73EEA24-ADF3-4790-92AE-FF3D0CC54FC4</string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
 		<key>0x6a-0x80000-0x26</key>
 		<dict>
 			<key>Action</key>
@@ -2289,14 +2311,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>Snippets</key>
-	<array>
-		<dict>
-			<key>title</key>
-			<string>MQD bootstrap</string>
-			<key>value</key>
-			<string>npm run sb</string>
-		</dict>
-	</array>
+	<array/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
