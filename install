@@ -38,6 +38,13 @@ setup_repo () {
 		fi
 	fi
 	if [[ $CONTINUE == y ]]; then
+		# Install git if it doesn't exist.
+		if [[ -x "$(command -v git)" ]]; then
+			echo "[!] Git not found. Installing homebrew and git..."
+			curl -s https://raw.githubusercontent.com/thezimmee/os-zimmee/master/homebrew/install | bash
+			brew install git
+		fi
+		# Clone the repo...
 		echo "Cloning ${OSZ_REPO} to ${OSZ_ROOT}..."
 		git clone --recursive "$OSZ_REPO" "$OSZ_ROOT"
 	fi
