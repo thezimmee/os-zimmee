@@ -1,31 +1,27 @@
 #!/usr/bin/env bash
 
-# homebrew taps / repos to install with `brew tap <tap>`
-export CONFIG__BREW_TAPS=(
-	jondot/tap
+export BREW_APPS_PRIMARY=(
+	appcleaner
+	bitwarden
 )
 
-# homebrew apps to install with `brew install <app>`
-export CONFIG__BREW_APPS=(
-	## [[APPS]]
+export BREW_APPS_OPTIONAL=(
 	# 1password
 	# airmail-beta
-	# appcleaner
-	bash
+	# bash
 	# beyond-compare
-	banktivity
-	bitwarden
+	# banktivity
 	# calibre
 	# colorpicker
 	# cyberduck
-	curl
+	# curl
 	# docker
 	# docker-compose
 	# drone-cli
 	# filezilla
-	figma
-	fasd
-	flux
+	# figma
+	# fasd
+	# flux
 	# fork
 	# forklift
 	# goodsync
@@ -33,7 +29,7 @@ export CONFIG__BREW_APPS=(
 	# hammerspoon
 	# hazeover
 	# hugo
-	hygen
+	# hygen
 	# hyper
 	# imagemagick
 	# karabiner
@@ -44,23 +40,23 @@ export CONFIG__BREW_APPS=(
 	# libreoffice
 	# little-snitch
 	# lua
-	mas
+	# mas
 	# musescore
-	notion
+	# notion
 	# opera
-	parallels
-	pdf-expert
+	# parallels
+	# pdf-expert
 	# plex-media-server
 	# postbox
 	# private-internet-access
-	pulse-sms
+	# pulse-sms
 	# seil
-	setapp
+	# setapp
 	# slack
 	# sequel-pro
-	spotify
+	# spotify
 	# caskroom/versions/sublime-text-dev
-	teamviewer
+	# teamviewer
 	# tidy-html5
 	# torbrowser
 	# time-out
@@ -68,19 +64,7 @@ export CONFIG__BREW_APPS=(
 	# vivaldi
 	# visual-studio-code
 	# vlc
-	wget
+	# wget
 	# witch
 	# yarn
-
-	## [[QUICKLOOK PLUGINS]]
-	# betterzipql
-	qlcolorcode
-	qlimagesize
-	qlmarkdown
-	qlprettypatch
-	qlstephen
-	quicklook-csv
-	quicklook-json
-	the-unarchiver
-	webpquicklook
 )

@@ -8,6 +8,5 @@ brew untap homebrew/cask-fonts
 
 # Uninstall each font.
 for FONT in ${CONFIG__BREW_FONTS[@]}; do
-  echo 'Removing $FONT...'
   brew list --casks $FONT && brew uninstall $FONT
 done

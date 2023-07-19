@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+source ./config.sh
+
+echo "[i] Installing primary homebrew apps..."
+for app in ${BREW_APPS_PRIMARY[@]}; do
+  brew install ${app}
+done
+
+echo "[i] Installing optional homebrew apps..."
+for app in ${BREW_APPS_OPTIONAL[@]}; do
+  read -p "[?] Do you want to install ${app}? (Y/n) " CONTINUE
+  CONTINUE=${CONTINUE:-y}
+  if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    brew install ${app}
+  fi
+done

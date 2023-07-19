@@ -1,6 +1,6 @@
 # OS Zimmee
 
-OS Zimmee is my reusable setup for my MacOS machine. It is everything I need to get up and running fast on a new machine, and keeps my machine fresh and up to date.
+OS Zimmee is my reusable setup for MacOS machines. It has everything I need to get up and running quickly on a new machine, and keeps my machine up to date.
 
 <!-- MarkdownTOC -->
 

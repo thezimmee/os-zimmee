@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Uninstall moom.
+brew list --cask moom && brew uninstall moom

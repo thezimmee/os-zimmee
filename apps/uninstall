@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source ./config.sh
+
+echo "[i] Removing homebrew apps..."
+
+for app in ${BREW_APPS_PRIMARY[@]}; do
+  brew list --cask ${app} && brew uninstall ${app}
+done
+
+for app in ${BREW_APPS_OPTIONAL[@]}; do
+  brew list --cask ${app} && brew uninstall ${app}
+done
+
+echo "[i] Homebrew apps were removed."

@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
 
-# Source configuration.
-source ./config.sh
-
-# Install homebrew if not already installed.
+# Uninstall homebrew.
 uninstall_homebrew () {
 	echo "Uninstalling homebrew..."
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh | bash /dev/stdin
 }
 
-# Install homebrew taps and apps.
-uninstall_homebrew_apps () {
-	echo "Uninstalling brew taps..."
-	brew untap "${CONFIG__BREW_TAPS[@]}"
-
-	echo "Uninstalling homebrew apps..."
-	brew uninstall "${CONFIG__BREW_APPS[@]}"
-}
-
-# install homebrew & apps
-uninstall_homebrew_apps || echo "[!!] Something went wrong with uninstalling Homebrew apps... exiting."
-uninstall_homebrew || echo "[!!] Something went wrong with uninstalling Homebrew... exiting."
-echo "Done!"
+# Uninstall homebrew & apps
+uninstall_homebrew_apps || echo "[!] Something went wrong with uninstalling Homebrew apps... exiting."
+echo "[i] Done uninstalling homebrew!"

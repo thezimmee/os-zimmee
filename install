@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs and configure OS Zimmee.
+# Installs and configures OS Zimmee.
 
 
 OSZ_REPO=https://github.com/thezimmee/os-zimmee
@@ -9,26 +9,21 @@ ERROR_MSG=""
 install () {
 	# Intro.
 	echo '--- OS ZIMMEE INSTALL WIZARD ---'
-	echo "[i] This wizard helps install OS Zimmee apps."
+	echo "[i] This wizard installs OS Zimmee."
 
 	# OS Zimmee path.
-	read -e -p "[??] Where should OS Zimmee be installed to? " -i "$OSZ_ROOT" OSZ_ROOT
+	read -e -p "[?] Where should OS Zimmee be installed? " -i "$OSZ_ROOT" OSZ_ROOT
 	read -p "[?] Installing to ${OSZ_ROOT}. Is this correct? (Y/n) " CONTINUE
 	CONTINUE=${CONTINUE:-y}
 	if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
-		echo '[!!] Run installer again to start from the beginning.'
+		echo '[!] Please run installer again to start over.'
 		exit 1
 	fi
 
 	# If $OSZ_ROOT doesn't exist locally, clone it.
-	setup_repo || ERROR_MSG="[!!] Something went wrong with setting up OS Zimmee repo." && exit 1
+	setup_repo || ERROR_MSG="[!] Uh oh... something went wrong cloning the OS Zimmee repo." && exit 1
 
-	# Install homebrew.
-	source ${OSZ_ROOT}/homebrew/install || ERROR_MSG+="[!!] Homebrew install failed. :(\n"
-
-	# Install node.
-	source ${OSZ_ROOT}/node/install || ERROR_MSG+="[!!] Node install failed. :(\n"
-
+	# Install apps.
 	install_apps
 	install_report
 }
@@ -36,7 +31,7 @@ install () {
 setup_repo () {
 	CONTINUE=y
 	if [ -d ${OSZ_ROOT} ]; then
-		read -p "[?] Path to ${OSZ_ROOT} already exists. Overwrite and re-clone? (Y/n) " CONTINUE
+		read -p "[?] Path to ${OSZ_ROOT} already exists. Overwrite it? (Y/n) " CONTINUE
 		if [[ $CONTINUE =~ ^([nN][oO]|[nN])$ ]]; then
 			rm -rf $OSZ_ROOT
 			CONTINUE=n
@@ -50,13 +45,22 @@ setup_repo () {
 
 # Install apps.
 install_apps () {
-	echo "Installing OS Zimmee apps..."
+	apps=(homebrew node)
+	echo "[i] Installing prerequisites..."
+	for app in ${apps[@]}; do
+		if [[ ! -d "${OSZ_ROOT}/${app}" || ! -f "${OSZ_ROOT}/${app}/install" ]]; then
+			echo "[i] Skipping ${app}. It is either not a directory or does not contain an install script."
+		fi
+		source ${OSZ_ROOT}/${app}/install || ERROR_MSG+="[!] ${app} install failed. :(\n"
+	done
+
+	echo "[i] Installing apps..."
 	for dir in ${OSZ_ROOT}/*; do
 		if [[ -d "$dir" && ${dir} != homebrew && ${dir} != node && -f "$dir/install" ]]; then
 			read -p "[?] Do you want to install ${dir}? (Y/n) " CONTINUE
 			CONTINUE=${CONTINUE:-y}
 			if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
-				source ${OSZ_ROOT}/${dir}/install || ERROR_MSG+="[!!] ${dir} install failed. :(\n"
+				source ${OSZ_ROOT}/${dir}/install || ERROR_MSG+="[!] ${dir} install failed. :(\n"
 			fi
 		fi
 	done
@@ -66,14 +70,15 @@ install_apps () {
 install_report () {
 	# wrap up
 	if [[ "$ERROR_MSG" != "" ]]; then
-		echo "[!!] Uh oh, there was a problem..."
+		echo "[!] Uh oh, there was a problem..."
 		echo -e "${ERROR_MSG}"
 		echo "---"
 		echo "Either try again or manually install missing pieces listed."
 	else
-		echo -e "[ok] Woot woot! OS Zimmee setup is complete!"
-		echo -e "[ok] To install individual apps, run \`$OSZ_ROOT/<app directory>/install\`."
-		echo -e "[ok] Enjoy!!! :)"
+		echo -e "[SUCCESS]------------------------------"
+		echo -e "Woot woot! OS Zimmee setup is complete!"
+		echo -e "To install apps, run \`$OSZ_ROOT/<app directory>/install\`."
+		echo -e "Enjoy!!! :)"
 	fi
 	echo ''
 }

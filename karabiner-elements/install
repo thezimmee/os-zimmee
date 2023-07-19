@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z $OSZ_ROOT ]; then
-	read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+	read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
 fi
 
 # Install karabiner-elements.

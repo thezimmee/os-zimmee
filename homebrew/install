@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Source configuration.
-source ./config.sh
-
 # Install homebrew if not already installed.
 install_homebrew () {
 	if [[ $(command -v brew) ]]; then
@@ -13,17 +10,6 @@ install_homebrew () {
 	fi
 }
 
-# Install homebrew taps and apps.
-install_homebrew_apps () {
-	echo "Installing brew taps..."
-	brew tap "${CONFIG__BREW_TAPS[@]}"
-
-	echo "Installing homebrew apps..."
-	brew install "${CONFIG__BREW_APPS[@]}"
-}
-
 # install homebrew & apps
-install_homebrew || echo "[!!] Something went wrong with installing Homebrew... exiting."
-install_homebrew_apps || echo "[!!] Something went wrong with installing Homebrew apps... exiting."
-source ./update || echo "[!!] Something went wrong with updating Homebrew... exiting."
-echo "Done!"
+install_homebrew || echo "[!] Something went wrong with installing Homebrew... exiting."
+echo "[i] Done installing Homebrew!"

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 CONFIG__SUBLIME_PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-CONFIG__PACKAGES_PATH="$HOME/Library/Application Support/Sublime Text 3"
+CONFIG__PACKAGES_PATH="$HOME/Library/Application Support/Sublime Text"
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[??] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+  read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
 fi
 
 uninstall () {

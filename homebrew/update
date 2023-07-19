@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # installs and configures OS Zimmee
-#
-# . homebrew/setup
 
 # update homebrew
 echo "Updating homebrew..."

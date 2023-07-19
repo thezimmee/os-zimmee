@@ -10,7 +10,7 @@ ERROR_MSG=""
 
 uninstall () {
   # OS Zimmee path.
-  read -e -p "[??] Where is OS Zimmee installed? " -i "$OSZ_ROOT" OSZ_ROOT
+  read -e -p "[?] Where is OS Zimmee installed? " -i "$OSZ_ROOT" OSZ_ROOT
 
   # Uninstall homebrew.
   echo 'Uninstalling homebrew...'
