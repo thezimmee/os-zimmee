@@ -4,9 +4,3 @@ Host *
 Match exec "/usr/local/bin/sft resolve -q  %h"
     ProxyCommand "/usr/local/bin/sft" proxycommand  %h
     UserKnownHostsFile "/Users/tzimmerman/Library/Application Support/ScaleFT/proxycommand_known_hosts"
-
-# To use ScaleFT proxycommand, add this configuration block to your $HOME/.ssh/config
-Match exec "/usr/local/bin/sft resolve -q  %h"
-    ProxyCommand "/usr/local/bin/sft" proxycommand  %h
-    UserKnownHostsFile "/Users/tzimmerman/Library/Application Support/ScaleFT/proxycommand_known_hosts"
-
