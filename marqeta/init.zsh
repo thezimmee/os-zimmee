@@ -14,8 +14,9 @@ function zionValidate {
     --data "{ \"application_token\": \"${APP_TOKEN}\", \"access_token\": \"${ACCESS_TOKEN}\" }"
 }
 
-function nile {
+function getNileToken {
   NILE_FQDN="nile.aws.marqeta.io"
+  # NILE_FQDN=nile-api-qa-internal.mq01-qa.marqeta.io
   NILE_CLIENT_ID="<client-id-here>"
   NILE_CLIENT_SECRET="<client-secret-here>"
 
