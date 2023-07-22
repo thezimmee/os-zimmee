@@ -5,10 +5,10 @@ OS Zimmee is my reusable setup for MacOS machines. It has everything I need to g
 ## Install
 
 ```bash
-curl -s https://raw.githubusercontent.com/thezimmee/os-zimmee/master/install | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/thezimmee/os-zimmee/master/install)"
 ```
 
-or
+The above script installs git, clones, the repo, and installs everything else. If you've already cloned the repo,  you can run it locally:
 
 ```bash
 bash ./<path to OSZ>/install
