@@ -7,7 +7,7 @@
 
 
 # Set continue to false by default
-CONTINUE=false
+continue=false
 
 echo ""
 echo "###############################################"
@@ -25,10 +25,10 @@ echo "Have you read through the script you're about to run and "
 echo "understood that it will make changes to your computer? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	CONTINUE=true
+	continue=true
 fi
 
-if ! $CONTINUE; then
+if ! $continue; then
 	# Check if we're continuing and output a message if not
 	echo "Please go read the script, it only takes a few minutes"
 	exit
@@ -48,11 +48,11 @@ echo "Would you like to set your computer name (as done via System Preferences >
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 	echo "What would you like it to be?"
-	read COMPUTER_NAME
-	sudo scutil --set ComputerName $COMPUTER_NAME
-	sudo scutil --set HostName $COMPUTER_NAME
-	sudo scutil --set LocalHostName $COMPUTER_NAME
-	sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+	read computer_name
+	sudo scutil --set ComputerName $computer_name
+	sudo scutil --set HostName $computer_name
+	sudo scutil --set LocalHostName $computer_name
+	sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $computer_name
 fi
 
 echo ""

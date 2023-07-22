@@ -3,32 +3,35 @@
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-	read -e -p "[?] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
-	OSZ_ROOT=$reply
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 ## Set up SSH key.
 setup_ssh () {
-	GIT_EXISTS=false
-	[ -x "$(command -v git)" ] && GIT_EXISTS=true
+	git_exists=false
+	[ -x "$(command -v git)" ] && git_exists=true
 
-	if [ $GIT_EXISTS = true ]; then
-		GIT_EMAIL=$(git config user.email)
+	if [ $git_exists = true ]; then
+		git_email=$(git config user.email)
 	else
-		read -p "[?] What is your git email address (for the SSH key)? " GIT_EMAIL
+		read -p "[?] What email address would you like to use for the ssh key? " git_email
 	fi
 	# Generate SSH.
-	ssh-keygen -t rsa -b 4096 -C "${GIT_EMAIL}"
+	# LEGACY WAY: ssh-keygen -t rsa -b 4096 -C "${git_email}"
+	ssh-keygen -t ed25519 -C "${git_email}"
 
 	# Symlink ssh config.
-	ln -s $OSZ_ROOT/git/ssh-config ~/.ssh/config
+	ln -s $OSZ_ROOT/git/ssh-config $HOME/.ssh/config
 
 	# Start up SSH agent.
 	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/id_rsa
+	# LEGACY WAY: ssh-add $HOME/.ssh/id_rsa
+	ssh-add $HOME/.ssh/id_ed25519
 
 	# Copy SSH to clipboard.
-	pbcopy < ~/.ssh/id_rsa.pub
+	# LEGACY WAY: pbcopy < $HOME/.ssh/id_rsa.pub
+	pbcopy < $HOME/.ssh/id_ed25519.pub
 	read -n 1 -s -r -p "[!!] Your SSH key has been copied to the clipboard; paste it into your GitHub account (https://github.com/account/ssh). Then hit any key to continue... "
 }
 
@@ -41,29 +44,30 @@ install () {
 
 	# Set up git configurations.
 	echo "Setting up git configs..."
-	GITCONFIG_LOCAL=~/.gitconfig-local
-	CONTINUE=y
-	if [ -f $GITCONFIG_LOCAL ]; then
-		read -p "$GITCONFIG_LOCAL already exists. Overwrite it? (y/N) " CONTINUE
-		CONTINUE=${CONTINUE:-n}
-		if [[ $CONTINUE =~ ^(yes|y)$ ]]; then
-			mv -f $GITCONFIG_LOCAL "${GITCONFIG_LOCAL}-backup"
-			echo "[i] Existing $GITCONFIG_LOCAL moved to ${GITCONFIG_LOCAL}-backup"
+	gitconfig_local=$HOME/.gitconfig-local
+	continue=y
+	if [ -f $gitconfig_local ]; then
+		read -p "$gitconfig_local already exists. Overwrite it? (y/N) " continue
+		continue=${continue:-n}
+		if [[ $continue =~ ^(yes|y)$ ]]; then
+			mv -f $gitconfig_local "${gitconfig_local}-backup"
+			echo "[i] Existing $gitconfig_local moved to ${gitconfig_local}-backup"
 		fi
 	fi
-	if [[ $CONTINUE =~ ^(yes|y)$ ]]; then
-		cp -rf $OSZ_ROOT/git/.gitconfig-local-default $GITCONFIG_LOCAL	
+	if [[ $continue =~ ^(yes|y)$ ]]; then
+		cp -rf $OSZ_ROOT/git/.gitconfig-local-default $gitconfig_local	
 	fi
 
-	ln -sf ${OSZ_ROOT}/git/.gitignore ~/.gitignore
-	ln -sf ${OSZ_ROOT}/git/.gitconfig ~/.gitconfig
+	ln -sf ${OSZ_ROOT}/git/.gitignore $HOME/.gitignore
+	ln -sf ${OSZ_ROOT}/git/.gitconfig $HOME/.gitconfig
 
 	# Set up SSH key.
 	echo "Creating SSH key... "
-	if [[ -e $HOME/.ssh ]]; then
+	if [[ -e $HOME/.ssh/id_ed25519 ]]; then
 		read -p "An SSH key may already exist. Create a new one (and potentially overwrite the old)? (y/N) "
 		if [[ $REPLY =~ ^(yes|y)$ ]]; then
-			rm -rf ~/.ssh
+			# LEGACY WAY: rm -rf $HOME/.ssh/id_rsa
+			rm -rf $HOME/.ssh/id_ed25519
 			echo 'SSH key removed.'
 			setup_ssh
 		fi

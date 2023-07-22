@@ -1,52 +1,53 @@
 #!/bin/bash
 
-CONFIG__sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text"
+sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+packages_path="$HOME/Library/Application Support/Sublime Text"
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 install () {
+	echo "[i] Setting up Sublime Text..."
 	brew install sublime-text
+	create_subl
 	install_package_control
 	setup_sublime
 	echo "[i] Sublime install complete!"
 }
 
+create_subl () {
+	# Create subl CLI executable.
+	if [ ! -d $HOME/bin ]; then
+		mkdir $HOME/bin
+	fi
+	ln -s $sublime_path $HOME/bin/subl
+}
+
 install_package_control () {
-	if [ ! -f "$CONFIG__packages_path/Installed Packages/Package Control.sublime-package" ]; then
-		curl https://packagecontrol.io/Package%20Control.sublime-package -o "$CONFIG__packages_path/Installed Packages/Package Control.sublime-package"
+	if [ ! -f "$packages_path/Installed Packages/Package Control.sublime-package" ]; then
+		subl --command "install_package_control"
 	else
 		echo 'Package control already installed.'
 	fi
 }
 
 setup_sublime () {
-	CONFIG__packages_path="$HOME/Library/Application Support/Sublime Text"
-
-	echo "Setting up Sublime Text..."
-
 	# Symlink sublime user preferences to OS Zimmee.
-	rm -rf "${CONFIG__packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/v${SUBLIME_VERSION}/Packages" "${CONFIG__packages_path}/Packages"
+	rm -rf "${packages_path}/Packages"
+	ln -sf "$OSZ_ROOT/sublime/v4/Packages" "${packages_path}/Packages"
 
 	# Install (symlink) local plugins to Sublime.
-	# ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${CONFIG__packages_path}/Packages"
+	# ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${packages_path}/Packages"
 	# ln -sf "$OSZ_ROOT/sublime/Plugins/Disable Word Completions" "$HOME/Library/Application Support/Sublime Text 3/Packages"
-	# ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${CONFIG__packages_path}/Packages"
-	# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${CONFIG__packages_path}/Packages"
-	# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${CONFIG__packages_path}/Packages"
+	# ln -sf "$OSZ_ROOT/sublime/Plugins/FileIcons" "${packages_path}/Packages"
+	# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownEditing" "${packages_path}/Packages"
+	# ln -sf "$OSZ_ROOT/sublime/Plugins/MarkdownToggleURLs" "${packages_path}/Packages"
 
 	# Set as default text editor.
 	defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}'
-
-	# Create subl CLI executable.
-	if [ ! -d $HOME/bin ]; then
-		mkdir $HOME/bin
-	fi
-	ln -s $CONFIG__sublime_path $HOME/bin/subl
 }
 
 install

@@ -1,11 +1,12 @@
 #!/bin/bash
 
-CONFIG__SUBLIME_PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-CONFIG__PACKAGES_PATH="$HOME/Library/Application Support/Sublime Text"
+sublime_path="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+packages_path="$HOME/Library/Application Support/Sublime Text"
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 uninstall () {
@@ -16,7 +17,7 @@ uninstall () {
 }
 
 uninstall_package_control () {
-	rm -rf "$CONFIG__PACKAGES_PATH/Installed Packages/Package Control.sublime-package"
+	rm -rf "$packages_path/Installed Packages/Package Control.sublime-package"
 }
 
 uninstall_sublime () {
@@ -26,10 +27,10 @@ uninstall_sublime () {
 remove_sublime () {
 	echo "Removing Sublime configurations..."
 
-	# Symlink sublime user preferences to OS Zimmee.
-	rm -rf "${CONFIG__PACKAGES_PATH}/Packages"
+	# Remove sublime user preferences to OS Zimmee.
+	rm -rf "${packages_path}/Packages"
 
-	# Create subl CLI executable.
+	# Remove subl CLI executable.
 	rm -rf $HOME/bin/subl
 }
 

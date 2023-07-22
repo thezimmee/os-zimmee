@@ -6,19 +6,20 @@
 
 OSZ_REPO=https://github.com/thezimmee/os-zimmee
 OSZ_ROOT=${OSZ_ROOT:-~/Projects/os-zimmee}
-ERROR_MSG=""
+error_msg=""
 
 uninstall () {
   # OS Zimmee path.
-  read -e -p "[?] Where is OS Zimmee installed? " -i "$OSZ_ROOT" OSZ_ROOT
+  read -p "[?] Where is OS Zimmee installed? " reply
+  OSZ_ROOT=${reply:-$OSZ_ROOT}
 
   # Uninstall homebrew.
   echo 'Uninstalling homebrew...'
-  source ${OSZ_ROOT}/homebrew/uninstall || ERROR_MSG+="[!!] Homebrew uninstall failed. :(\n"
+  source ${OSZ_ROOT}/homebrew/uninstall || error_msg+="[!!] Homebrew uninstall failed. :(\n"
 
   # Uninstall node.
   echo 'Uninstalling node...'
-  source ${OSZ_ROOT}/node/uninstall || ERROR_MSG+="[!!] Node uninstall failed. :(\n"
+  source ${OSZ_ROOT}/node/uninstall || error_msg+="[!!] Node uninstall failed. :(\n"
 
   uninstall_apps
   uninstall_report
@@ -29,11 +30,11 @@ uninstall_apps () {
   echo "Uninstalling OS Zimmee apps..."
   for dir in ${OSZ_ROOT}/*; do
     if [[ -d "$dir" && ${dir} != homebrew && ${dir} != node && -f "$dir/uninstall" ]]; then
-      read -p "[?] Do you want to uninstall ${dir}? (Y/n) " CONTINUE
-      CONTINUE=${CONTINUE:-y}
-      if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+      read -p "[?] Do you want to uninstall ${dir}? (Y/n) " continue
+      continue=${continue:-y}
+      if [[ $continue =~ ^([yY][eE][sS]|[yY])$ ]]; then
         echo "Uninstalling ${dir}"
-        source ${OSZ_ROOT}/${dir}/uninstall || ERROR_MSG+="[!!] ${dir} uninstall failed. :(\n"
+        source ${OSZ_ROOT}/${dir}/uninstall || error_msg+="[!!] ${dir} uninstall failed. :(\n"
       fi
     fi
   done
@@ -42,9 +43,9 @@ uninstall_apps () {
 # Run post install report.
 uninstall_report () {
   # wrap up
-  if [[ "$ERROR_MSG" != "" ]]; then
+  if [[ "$error_msg" != "" ]]; then
     echo "[!!] Uh oh, there was a problem..."
-    echo -e "${ERROR_MSG}"
+    echo -e "${error_msg}"
   else
     echo -e "[ok] OS Zimmee uninstall complete!"
   fi

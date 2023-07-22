@@ -9,9 +9,9 @@ done
 
 echo "[i] Installing optional homebrew apps..."
 for app in ${BREW_APPS_OPTIONAL[@]}; do
-  read -p "[?] Do you want to install ${app}? (Y/n) " CONTINUE
-  CONTINUE=${CONTINUE:-y}
-  if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  read -p "[?] Do you want to install ${app}? (Y/n) " continue
+  continue=${continue:-y}
+  if [[ $continue =~ ^([yY][eE][sS]|[yY])$ ]]; then
     brew install ${app}
   fi
 done

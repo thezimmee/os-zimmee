@@ -3,7 +3,8 @@
 # load config
 init () {
 	if [ -z $OSZ_ROOT ]; then
-		read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+		read -p "[?] Where is OS Zimmee installed? " reply
+		OSZ_ROOT=${reply:-~/Projects/os-zimmee}
 	fi
 
 	# Update homebrew.

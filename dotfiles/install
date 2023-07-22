@@ -2,28 +2,27 @@
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
-  OSZ_ROOT=$reply
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 # Ask whether to overwrite existing files.
-OVERWRITE_EXISTING=false
-read -p "Should existing dotfiles be overwritten? (y/N) " OVERWRITE_EXISTING
-if [[ $REPLY =~ ^(yes|y)$ ]]; then
-  OVERWRITE_EXISTING=true
+overwrite_existing=false
+read -p "Should existing dotfiles be overwritten? (y/N) " reply
+if [[ $reply =~ ^(yes|y)$ ]]; then
+  overwrite_existing=true
 fi
 
-# Get config.
-source $OSZ_ROOT/dotfiles/config.sh
-
 # Symlink dotfiles.
-for DOTFILE in ${CONFIG__DOTFILES[@]}; do
-	dest="$HOME/$DOTFILE"
-  source="$OSZ_ROOT/dotfiles/$DOTFILE"
-	if [[ $OVERWRITE_EXISTING = true ]]; then
-		ln -sf "$source" "$dest"
-	else
-		ln -s "$source" "$dest" || echo "Skipped $DOTFILE."
+for dotfile in $HOME/Projects/os-zimmee/dotfiles/.[^.]*; do
+	if [[ -f $dotfile ]]; then
+		dest="$HOME/$dotfile"
+		source="$OSZ_ROOT/dotfiles/$dotfile"
+		if [[ $overwrite_existing = true ]]; then
+			ln -sf "$source" "$dest"
+		else
+			ln -s "$source" "$dest" || echo "Skipped $dotfile."
+		fi
+		echo "Set up $dotfile!"
 	fi
-	echo "Set up $DOTFILE!"
 done

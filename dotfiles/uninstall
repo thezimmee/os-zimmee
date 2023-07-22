@@ -2,17 +2,16 @@
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
-  OSZ_ROOT=$reply
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
-# Get config.
-source $OSZ_ROOT/dotfiles/config.sh
-
-# Symlink dotfiles.
-for DOTFILE in ${CONFIG__DOTFILES[@]}; do
-	dest="$HOME/$DOTFILE"
-	rm -rf "$DOTFILE" "$dest"
+# Remove dotfiles.
+for dotfile in $HOME/Projects/os-zimmee/dotfiles/.[^.]*; do
+	if [[ -f $dotfile ]]; then
+		dest="$HOME/$dotfile"
+		rm -rf "$dotfile" "$dest"
+	fi
 done
 
 echo 'Removed all dotfiles!'

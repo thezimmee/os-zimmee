@@ -16,7 +16,7 @@ This script does the following:
 2. If needed, add your SSH key to GitHub:
 
 	```bash
-	pbcopy < ~/.ssh/id_rsa.pub
+	pbcopy < ~/.ssh/id_ed25519.pub
 	```
 
 	Then paste into your [GitHub account](https://github.com/account/ssh).

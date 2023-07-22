@@ -9,12 +9,12 @@ uninstall () {
 	rm -rf ~/.gitignore
 	rm -rf ~/.gitconfig
 
-	# Create new SSH key.
-	if [[ -e $HOME/.ssh/id_rsa ]]; then
-		read -p "Remove your existing SSH key? (y/N) "
-		if [[ $REPLY =~ ^(yes|y)$ ]]; then
+	# Remove SSH key.
+	if [[ -e $HOME/.ssh/id_ed25519 ]]; then
+		read -p "Remove your existing SSH key? (y/N) " reply
+		if [[ $reply =~ ^(yes|y)$ ]]; then
 			rm -rf ~/.ssh
-			echo "Removed!"
+			echo "Removed SSH key!"
 		fi
 	fi
 

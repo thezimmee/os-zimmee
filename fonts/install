@@ -2,7 +2,8 @@
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 # Get config.
@@ -13,3 +14,5 @@ brew tap homebrew/cask-fonts
 
 # Install fonts.
 brew install "${CONFIG__BREW_FONTS[@]}"
+
+echo "Installed fonts!"

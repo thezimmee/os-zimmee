@@ -2,7 +2,8 @@
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-  read -e -p "[?] Where is OS Zimmee installed? " -i "~/Projects/os-zimmee" OSZ_ROOT
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 # Uninstall Node Version Manager (NVM).
@@ -13,3 +14,5 @@ rm -rf "$NVM_DIR"
 rm -rf ~/.nvm/default-packages
 rm -rf ~/.nvm
 rm -rf ~/.npm
+
+echo "Uninstalled node!"

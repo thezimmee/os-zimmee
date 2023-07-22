@@ -18,8 +18,8 @@ quicklook_plugins=(
 
 # Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-	read -e -p "[?] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
-	OSZ_ROOT=$reply
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 # Install quicklook plugins.
@@ -28,8 +28,8 @@ brew install "${quicklook_plugins[@]}"
 echo "[i] Done installing quicklook plugins for MacOS."
 
 # Install system settings.
-read -p "[?] Do you want to configure MacOS system settings? (Y/n) " CONTINUE
-CONTINUE=${CONTINUE:-y}
-if [[ $CONTINUE =~ ^([yY][eE][sS]|[yY])$ ]]; then
-	source ${OSZ_ROOT}/${macos}/install-system || ERROR_MSG+="[!] Not all MacOS system settings were configured. :(\n"
+read -p "[?] Do you want to configure MacOS system settings? (Y/n) " continue
+continue=${continue:-y}
+if [[ $continue =~ ^([yY][eE][sS]|[yY])$ ]]; then
+	source ${OSZ_ROOT}/${macos}/install-system || error_msg+="[!] Not all MacOS system settings were configured. :(\n"
 fi

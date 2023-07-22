@@ -7,9 +7,10 @@ ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 
 # [[[ Gather user input
 
+# Get $OSZ_ROOT.
 if [ -z $OSZ_ROOT ]; then
-	read -e -p "[?] Where is OS Zimmee installed? " -i "$HOME/Projects/os-zimmee" reply
-	OSZ_ROOT=$reply
+	read -p "[?] Where is OS Zimmee installed? " reply
+	OSZ_ROOT=${reply:-$HOME/Projects/os-zimmee}
 fi
 
 if [ ! $(which zsh)  ]; then
