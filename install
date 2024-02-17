@@ -3,7 +3,7 @@
 
 
 OSZ_REPO=git@github.com:thezimmee/os-zimmee.git
-OSZ_ROOT=${OSZ_ROOT:-~/Projects/os-zimmee}
+OSZ_ROOT=${OSZ_ROOT:-$HOME/Projects/os-zimmee}
 error_msg=""
 
 install () {
@@ -12,7 +12,7 @@ install () {
 	echo "[i] This wizard installs OS Zimmee."
 
 	# OS Zimmee path.
-	read -p "[?] Where should OS Zimmee be installed? " reply
+	read -p "[?] Where should OS Zimmee be installed (default: $HOME/Projects/os-zimmee)? " reply
 	OSZ_ROOT=${reply:-$OSZ_ROOT}
 	read -p "[?] Installing to ${OSZ_ROOT}. Is this correct? (Y/n) " continue
 	continue=${continue:-y}
@@ -22,7 +22,7 @@ install () {
 	fi
 
 	# If $OSZ_ROOT doesn't exist locally, clone it.
-	setup_repo || error_msg="[!] Uh oh... something went wrong cloning the OS Zimmee repo." && exit 1
+	setup_repo || error_msg="[!] Uh oh... something went wrong cloning the OS Zimmee repo."
 
 	# Install apps.
 	install_apps
@@ -30,9 +30,10 @@ install () {
 }
 
 setup_repo () {
+	echo "[i] Setting up os-zimmee repo."
 	continue=y
 	if [ -d ${OSZ_ROOT} ]; then
-		read -p "[?] Path to ${OSZ_ROOT} already exists. Overwrite it? (Y/n) " overwrite
+		read -p "[?] Path ${OSZ_ROOT} already exists. Overwrite it? (Y/n) " overwrite
 		overwrite=${overwrite:-y}
 	fi
 	if [[ $overwrite == y ]]; then
@@ -55,6 +56,7 @@ setup_repo () {
 
 # Install apps.
 install_apps () {
+	echo "[i] Installing remaining apps."
 	apps=(homebrew node)
 	echo "[i] Installing prerequisites..."
 	for app in ${apps[@]}; do
@@ -81,14 +83,14 @@ install_report () {
 	# wrap up
 	if [[ "$error_msg" != "" ]]; then
 		echo "[!] Uh oh, there was a problem..."
-		echo -e "${error_msg}"
+		echo "${error_msg}"
 		echo "---"
 		echo "Either try again or manually install missing pieces listed."
 	else
-		echo -e "[SUCCESS]------------------------------"
-		echo -e "Woot woot! OS Zimmee setup is complete!"
-		echo -e "To install apps, run \`$OSZ_ROOT/<app directory>/install\`."
-		echo -e "Enjoy!!! :)"
+		echo "[SUCCESS]------------------------------"
+		echo "Woot woot! OS Zimmee setup is complete!"
+		echo "To install apps, run \`$OSZ_ROOT/<app directory>/install\`."
+		echo "Enjoy!!! :)"
 	fi
 	echo ''
 }
