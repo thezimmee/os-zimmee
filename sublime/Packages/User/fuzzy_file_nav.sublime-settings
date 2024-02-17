@@ -1,0 +1,29 @@
+{
+    "use_sub_notify": false,
+    "keep_panel_open_after_action": false,
+    "bookmarks": [
+        { "name": "Home", "path": "~" },
+        { "name": "Projects", "path": "~/Projects/" },
+        { "name": "MQ Projects", "path": "~/MQ/" },
+        { "name": "OS Zimmee", "path": "~/Projects/os-zimmee/" },
+        { "name": "Desktop", "path": "~/Desktop/" },
+        { "name": "Documents", "path": "~/Documents/" },
+        { "name": "Downloads", "path": "~/Downloads/" },
+        { "name": "Sublime", "path": "~/Projects/os-zimmee/sublime" },
+        // { "name": "Bertha", "path": "/Volumes/Bertha" },
+        // { "name": "Memories", "path": "/Volumes/Bertha/Memories" },
+        // { "name": "Docs", "path": "~/Projects/os-zimmee/docs/" },
+        // { "name": "Web Development", "path": "~/Projects/os-zimmee/cheatsheets/webdev/" },
+        // { "name": "Sublime v4", "path": "~/Projects/os-zimmee/sublime/v4/Packages/User/" },
+        // { "name": "Sublime v3", "path": "~/Projects/os-zimmee/sublime/v3/Packages/User/" },
+        // { "name": "Sublime Snippets", "path": "~/Projects/os-zimmee/sublime/v4/Packages/User/snips" },
+        // {
+        //     "name": "Sublime Project Files",
+        //     "path": "~/Projects/os-zimmee/sublime/v4/Packages/User/projects"
+        // },
+        // {
+        //     "name": "Sublime Themes",
+        //     "path": "~/Projects/os-zimmee/sublime/v4/Packages/User/Themes"
+        // }
+    ]
+}

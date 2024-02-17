@@ -36,8 +36,8 @@ install_package_control () {
 
 setup_sublime () {
 	# Symlink sublime user preferences to OS Zimmee.
-	rm -rf "${packages_path}/Packages"
-	ln -sf "$OSZ_ROOT/sublime/v4/Packages" "${packages_path}/Packages"
+	rm -rf "$HOME/Library/Application Support/Sublime Text/Packages"
+	ln -sf "${OSZ_ROOT:-$HOME/Projects/os-zimmee}/sublime/v4/Packages" "$HOME/Library/Application Support/Sublime Text/Packages"
 
 	# Install (symlink) local plugins to Sublime.
 	# ln -sf "$OSZ_ROOT/sublime/Plugins/Cycle Setting" "${packages_path}/Packages"
