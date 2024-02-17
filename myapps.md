@@ -1,80 +1,63 @@
 # My Workflows
 
-## Battled tested tools
+## Vital apps
 
-### App + OS management
+Install these first.
 
-- [Homebrew](https://brew.sh/)
-- [Node](https://nodejs.org/en) + [volta](https://volta.sh/)
 - [git](https://git-scm.com/)
-- [AlDente](https://apphousekitchen.com/)
-
-### Text editor
-
+- [Homebrew](https://brew.sh/)
+- [Node](https://nodejs.org/en)
 - [Sublime Text](https://www.sublimetext.com/)
-
-### Diff + merge tools
-
-- [Sublime Merge](https://www.sublimemerge.com/)
-- [Kaleidoscope](https://kaleidoscope.app/)
-
-### Terminal
-
+- [volta](https://volta.sh/)
 - [Warp](https://www.warp.dev/)
 
-### Browser
+## Productivity
 
-- [Brave](https://brave.com/)
-
-### Time management
-
-- [iOS Calendar](https://support.apple.com/guide/calendar/welcome/mac) with [iOS Notifications](https://support.apple.com/guide/mac-help/get-notifications-mchl2fb1258f/mac)
-- [TimeOut](https://apps.apple.com/us/app/time-out-break-reminders/id402592703?mt=12)
-
-### Projects + tasks
-
+- [BusyCal](https://www.busymac.com/busycal/)
 - [Notion](https://www.notion.so/)
 - [Obsidian](https://obsidian.md/)
+- [TimeOut](https://apps.apple.com/us/app/time-out-break-reminders/id402592703?mt=12)
 
-### Keyboard productivity
+## Development
 
-- [Raycast](https://www.raycast.com/)
-- [Karabiner Elements](https://karabiner-elements.pqrs.org/)
+- [Brave](https://brave.com/): Browser.
+- [Kaleidoscope](https://kaleidoscope.app/): Diff and merge tool.
+- [Sublime Merge](https://www.sublimemerge.com/): Diff and merge tool.
 
-### MacOS Optimization
+## Automation
 
-- Quicklook tools (qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen quicklook-csv quicklook-json qlvideo the-unarchiver webpquicklook)
-- [Moom](https://manytricks.com/moom/)
-- [Bartender](https://www.macbartender.com)
-- [Display Buddy](https://displaybuddy.app)
-
-### Automation
-
+- [Raycast](https://www.raycast.com/): Search and automation.
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/): Keyboard automation.
 - [Bitwarden](https://bitwarden.com/): Password manager.
 - [DirEnv](https://direnv.net/): Directory specific automations.
 
-### File management
+## MacOS Optimization
+
+- [AlDente](https://apphousekitchen.com/): Battery optimization.
+- Quicklook tools (qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen quicklook-csv quicklook-json qlvideo the-unarchiver webpquicklook)
+- [Moom](https://manytricks.com/moom/): Window management.
+- [Bartender](https://www.macbartender.com): Status bar management.
+- [Display Buddy](https://displaybuddy.app): Display controls.
+
+## File management
 
 - [Forklift](https://binarynights.com): Finder replacement.
 - [Commander One](https://mac.eltima.com/file-manager.html): Connections to file sharing services such as OneDrive, Backblaze, etc.
-- [Mountain Duck](https://mountainduck.io/)
+- [Mountain Duck](https://mountainduck.io/): Cloud file management.
+- [PDF Expert](https://pdfexpert.com/): PDF files.
+- [Foxit Reader](https://www.foxit.com/pdf-reader/): PDF files.
 
-### PDF tools
+## Images + Design
 
-- [PDF Expert](https://pdfexpert.com/)
-- [Foxit Reader](https://www.foxit.com/pdf-reader/)
+- [Affinity Designer](https://affinity.serif.com/en-us/designer/): Heavy duty design.
+- [Affinity Photo](https://affinity.serif.com/en-us/photo/): Heavy duty photo editing.
+- [Affinity Publisher](https://affinity.serif.com/en-us/publisher/): Heavy duty page creation.
+- [Cleanshot](https://cleanshot.com/): Screenshots.
+- [ImageOptim](https://imageoptim.com/): Image optimization.
+- [Live Home 3D](https://www.livehome3d.com/mac/live-home-3d): 3D Home/Floor Plan design.
+- [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac): Office tools.
 
-### Images + Design
-
-- [Affinity Designer](https://affinity.serif.com/en-us/designer/)
-- [Affinity Photo](https://affinity.serif.com/en-us/photo/)
-- [Affinity Publisher](https://affinity.serif.com/en-us/publisher/)
-- [Cleanshot](https://cleanshot.com/)
-- [ImageOptim](https://imageoptim.com/)
-- [Live Home 3D](https://www.livehome3d.com/mac/live-home-3d)
-- [Microsoft Office](https://www.microsoft.com/en-us/microsoft-365/mac/microsoft-365-for-mac)
-
-### Video + Multimedia
+## Video + Multimedia
 
 - [Iina](https://iina.io/): Video player.
 - [Audacity](https://www.audacityteam.org/): Simple audio editor.
@@ -82,39 +65,26 @@
 - [4k Video Downloader](https://www.4kdownload.com/products/videodownloader-41): Video downloader.
 - [VLC](https://www.videolan.org/vlc/): Video streamer.
 
-### Fonts
+## Fonts
 
 All fonts in the `/fonts` folder.
 
-### Finances
+## Finances
 
-- 
+- Banktivity
 
 ## Tools to try out
 
-### Terminal
-
-- [Fig](https://fig.io)
-
-### Time management
-
-- [Fantastical](https://flexibits.com)
-- [Cron](https://cron.com)
-
-### MacOS optimization
-
-- [Magnet](https://magnet.crowdcafe.com)
-- [TinkerTool](http://www.bresink.com/osx/0TinkerTool/screenshots.html)
-- [OmniDiskSweeper](https://www.omnigroup.com/more)
-- [Unarchiver](https://theunarchiver.com)
-- [Transmit](https://panic.com/transmit/)
-- [Displays](https://www.jibapps.com/apps/displays/)
-
-### Automation
-
-- [Hazel](https://www.noodlesoft.com)
-
-### Video + Multimedia
-
-- [Audio Hijack](https://rogueamoeba.com/audiohijack/)
-- [TextSniper](https://apps.apple.com/us/app/textsniper-ocr-simplified/id1528890965?mt=12&uo=4)
+- [Fig](https://fig.io): Terminal
+- [Fantastical](https://flexibits.com): Time management
+- Things: Time management
+- [Cron](https://cron.com): Calendar
+- [Magnet](https://magnet.crowdcafe.com): MacOS optimization
+- [TinkerTool](http://www.bresink.com/osx/0TinkerTool/screenshots.html): MacOS optimization
+- [OmniDiskSweeper](https://www.omnigroup.com/more): MacOS optimization
+- [Unarchiver](https://theunarchiver.com): MacOS optimization
+- [Transmit](https://panic.com/transmit/): MacOS optimization
+- [Displays](https://www.jibapps.com/apps/displays/): MacOS optimization
+- [Hazel](https://www.noodlesoft.com): Automation
+- [Audio Hijack](https://rogueamoeba.com/audiohijack/): Video & multimedia
+- [TextSniper](https://apps.apple.com/us/app/textsniper-ocr-simplified/id1528890965?mt=12&uo=4): Video & multimedia
