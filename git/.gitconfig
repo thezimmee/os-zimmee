@@ -2,6 +2,9 @@
 [include]
 	path = ~/.gitconfig-local
 
+[includeIf "gitdir:~/Projects/mq/"]
+	path = ~/.gitconfig-mq
+
 [color]
 	# diff = auto
 	# status = auto
@@ -118,3 +121,17 @@
 # [mergetool "bcomp"]
 #   trustExitCode = true
 #   cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false

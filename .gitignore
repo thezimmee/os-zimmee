@@ -1,117 +1,53 @@
-# [[[ MacOS
+#[[ MacOS
 .DS_Store
-# ]]]
+#]]
 
-# [[[ ZSH
+#[[ ZSH
 zsh/locals.zsh
-# ]]]
+#]]
 
-# [[[ Miscellaneous
+#[[ Miscellaneous
 *.crt
-# ]]]
+#]]
 
-# [[[ SUBLIME
+#[[ SUBLIME
 
 # Sublime built ins.
 *.sublime-workspace
 *.sublime-color-scheme.chback
 sublime/**/*.cache
 
-# Installed packages not in user folder.
-sublime/Packages/Autoprefixer/
-sublime/Packages/Babel/
-sublime/Packages/backrefs/
-sublime/Packages/BetterFindBuffer/
-sublime/Packages/Boxy\ Theme\ Addon\ -\ Widget\ Font\ Size/
-sublime/Packages/bs4/
-sublime/Packages/Codecs33/
-sublime/Packages/coloraide/
-sublime/Packages/Cycle Setting
-sublime/Packages/Default/
-sublime/Packages/Disable Word Completions
-sublime/Packages/FileIcons
-sublime/Packages/Hex to HSL Color Converter/
-sublime/Packages/HTML-CSS-JS\ Prettify/
-sublime/Packages/JavaScript/
-sublime/Packages/JavaScript Enhancements/
-sublime/Packages/jsonschema/
-sublime/Packages/JsPrettier/
-sublime/Packages/LiveReload/
-sublime/Packages/markupsafe/
-sublime/Packages/mdpopups/
-sublime/Packages/MarkdownEditing
-sublime/Packages/MarkdownToggleURLs
-sublime/Packages/Minify/
-sublime/Packages/numpy/
-sublime/Packages/package_events/
-sublime/Packages/pathtools/
-sublime/Packages/Pretty\ JSON/
-sublime/Packages/package_setting_context/
-sublime/Packages/ProjectMaker/
-sublime/Packages/ptyprocess/
-sublime/Packages/pygments/
-sublime/Packages/pymdownx/
-sublime/Packages/pyte/
-sublime/Packages/python-jinja2/
-sublime/Packages/python-markdown/
-sublime/Packages/pyyaml/
-sublime/Packages/PyV8/
-sublime/Packages/rainbow_csv/
-sublime/Packages/ruamel-yaml/
-sublime/Packages/SendCode/
-sublime/Packages/SFTP/
-sublime/Packages/shellenv/
-sublime/Packages/sublime_lib/
-sublime/Packages/SublimeCodeIntel/
-sublime/Packages/SublimeLinter-contrib-eslint/
-sublime/Packages/SublimeLinter-contrib-stylelint/
-sublime/Packages/SublimeLinter/
-sublime/Packages/Sublimerge\ 3/
-sublime/Packages/Sublimerge\ Pro/
-sublime/Packages/SVGO/
-sublime/Packages/SyntaxFold/
-sublime/Packages/Theme\ -\ Default/
-sublime/Packages/Terminal/
-sublime/Packages/Terminus/
-sublime/Packages/Toggle LiveReload Plugin
-sublime/Packages/TypeScript/
-sublime/Packages/WakaTime/
-sublime/Packages/watchdog/
-sublime/Packages/wcwidth/
-sublime/Packages/yaml_macros_engine/
-sublime/Packages/zzz\ A\ File\ Icon\ zzz/
+# Ignore Packages by default...
+sublime/Packages/*
+# /sublime/Packages/BetterFindBuffer/messages/1.0.0.txt
+# /sublime/Packages/User/Preferences.sublime-settings
+# /sublime/Packages/User/Default (OSX).sublime-keymap
+# /sublime/Packages/User/Package Control.user-ca-bundle
+# /sublime/Packages/Default/Find Results.hidden-tmLanguage
+# /sublime/Packages/User/GitSavvy.sublime-settings
+# /sublime/Packages/User/Theme/.gitconfig-local-default
+# /sublime/Packages/User/Package Control.sublime-settings
+# /sublime/Packages/User/Side Bar.sublime-settings
+# /sublime/Packages/User/Theme/Mariana.sublime-color-scheme
+# /sublime/Packages/BetterFindBuffer/shortcuts.html
+# /sublime/Packages/User/GitSavvy/GitSavvy.log_graph_view.color_scheme.hidden-color-scheme
+# /sublime/Packages/User/Emmet.sublime-settings
+# /sublime/Packages/BetterFindBuffer/messages/install.txt
+# /sublime/Packages/BetterFindBuffer/messages.json
+# /sublime/Packages/BetterFindBuffer/package-metadata.json
 
-# User files and folders.
-sublime/Packages/User/Color\ Highlighter/icons/
-sublime/Packages/User/Color\ Highlighter/themes/
-sublime/Packages/User/Color\ Highlighter/icons/
-sublime/Packages/User/GitSavvy/*.hidden-color-scheme
-sublime/Packages/User/GitSavvy/*.hidden-tmTheme
-sublime/Packages/User/i_opener_history.sublime-settings
-sublime/Packages/User/oscrypto-ca-bundle.crt
-sublime/Packages/User/Package\ Control.*
+# Do not ignore user specific configuration...
+!sublime/Packages/User
 !sublime/Packages/User/Package\ Control.sublime-settings
-sublime/Packages/User/Projects/library.json
-sublime/Packages/User/Projects/recent.json
-sublime/Packages/User/Projects/**/node_modules
-sublime/Packages/User/Projects/**/package*.json
 !sublime/Packages/User/Projects/**/*.sublime-project
-sublime/Packages/User/Sublimerge\ Macros.sublime-commands
-sublime/Packages/User/Sublimerge.sublime-color-scheme
-sublime/Packages/User/Sublimerge.tmTheme
-sublime/Packages/User/SublimergeSummaryPanel.sublime-color-scheme
-sublime/Packages/User/SublimergeSummaryPanel.tmTheme
-sublime/Packages/User/Terminus.sublime-color-scheme
-sublime/Packages/User/Terminus/Terminus.hidden-color-scheme
-sublime/Packages/User/ThemeTweaker
 
-# ]]]
+#]]
 
-# [[[ FIREFOX
+#[[ FIREFOX
 firefox/profiles/*/*
 !firefox/profiles/*/chrome
-# ]]]
+#]]
 
-# [[[ KARABINER
+#[[ KARABINER
 karabiner-elements/karabiner.link/automatic_backups/
-# ]]]
+#]]
