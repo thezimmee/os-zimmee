@@ -1,0 +1,70 @@
+{
+  "settingsVersion": "1.67.7",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": "jktgce/soix<>"
+    },
+    {
+      "pattern": "https?://duckduckgo.com/*",
+      "passKeys": "jk/"
+    },
+    {
+      "pattern": "https?://checkvist.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://calendar.google.com/*",
+      "passKeys": "jktgce/s"
+    },
+    {
+      "pattern": "https?://drive.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://docs.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://github.com/*",
+      "passKeys": "/"
+    },
+    {
+      "pattern": "https?://www.notion.so/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.youtube.com/*",
+      "passKeys": "jkl"
+    },
+    {
+      "pattern": "https?://www.delta.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://stateofjs.typeform.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.udemy.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\n\nunmap j\nunmap k\nunmap i\nunmap e\nunmap <c-e>\nunmap <c-y>\nunmap d\nunmap u\nunmap gg\nunmap G\nunmap J\nunmap gT\nunmap gt\nunmap h\nunmap l\nunmap s\nunmap f\nunmap v\nunmap V\nunmap F\nunmap x\nunmap X\nunmap <a-m>\nunmap <a-p>\nunmap b\nunmap B\nunmap H\nunmap L\nunmap p\nunmap T\nunmap zH\nunmap zL\nunmap r\nunmap yf\nunmap <a-f>\nunmap gf\nunmap gF\nunmap m\nunmap ^\nunmap `\nunmap <<\nunmap >>\nunmap E\nunmap I\nunmap D\nunmap K\nunmap <c-i>\nunmap <c-d>\nunmap <c-k>\nunmap <a-Ã‚Â¨>\nunmap <a-ÃƒÂ¸>\nunmap <c-j>\nunmap <c-l>\nunmap P\nunmap ,\nunmap .\nunmap yv\nunmap gV\nunmap x\nunmap c\n\nmap k scrollDown\nmap i scrollUp\nmap d scrollDown\nmap e scrollUp\nmap E scrollPageUp\nmap I scrollPageUp\nmap D scrollPageDown\nmap K scrollPageDown\nmap <c-i> scrollToTop\nmap <c-e> scrollToTop\nmap <c-d> scrollToBottom\nmap <c-k> scrollToBottom\nmap <a-Ã‚Â¨> scrollLeft\nmap <a-ÃƒÂ¸> scrollRight\n\nmap j previousTab\nmap s previousTab\nmap f nextTab\nmap l nextTab\n\nmap <c-j> moveTabLeft\nmap <c-l> moveTabRight\n\nmap <#> removeTab\n\nmap v LinkHints.activateMode\nmap V LinkHints.activateModeToOpenInNewTab\n\nmap P togglePinTab\n\nmap , goBack\nmap . goForward\nmap x goBack\nmap c goForward\n\nmap gt Vomnibar.activateTabSelection\n\nmap yv LinkHints.activateModeToCopyLinkUrl\nmap gV LinkHints.activateModeWithQueue\n\nmap <c-'> visitPreviousTab",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,Ã¢â‚¬Âº,Ã¢â€ â€™,Ã‚Â»,Ã¢â€°Â«,>>",
+  "previousPatterns": "prev,previous,back,older,<,Ã¢â‚¬Â¹,Ã¢â€ Â,Ã‚Â«,Ã¢â€°Âª,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 120,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "d: https://duckduckgo.com/?q=%s\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.duckduckgo.com/?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground-color: #FFC542;\nborder: 1px solid #E3BE23;\npadding-left: 3px;\npadding-right: 3px;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
