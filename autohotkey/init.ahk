@@ -14,5 +14,5 @@
 SendMode "Input"           ; fast, reliable key delivery
 SetWorkingDir A_ScriptDir  ; consistent base dir
 
-#Include "%A_ScriptDir%/macos.ahk"
-#Include "%A_ScriptDir%/keyboard-mouse.ahk"
+#Include macos.ahk
+#Include keyboard-mouse.ahk
