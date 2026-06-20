@@ -1,0 +1,4 @@
+# AutoHotkey is Windows-only; keep these files CRLF consistently across
+# machines so a cross-platform checkout doesn't show phantom line-ending diffs.
+*.ahk  text eol=crlf
+*.md   text eol=crlf
