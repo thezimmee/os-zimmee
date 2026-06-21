@@ -3,36 +3,35 @@
 ; ============================================================================
 ;  macOS-style keys on Windows  —  "Option 1": Left-Alt-as-Command
 ; ----------------------------------------------------------------------------
-;  * LAlt (the key under your left thumb) becomes Command, i.e. Control. ONE
-;    remap covers every Ctrl shortcut at once — Cmd+C/V/X/Z/S/N/T/W/F/A/P,
-;    Cmd+Shift+Z, Cmd+Shift+T, etc. Windows never sees a bare Alt, so there are
-;    no stray-Alt menu flashes.
-;  * Corner LCtrl stays a real Ctrl -> Mac "Control" + native word-nav
-;    (Ctrl+Left/Right, Ctrl+Backspace).
-;  * RAlt is left untouched         -> your real Alt (Alt+F4, menus, AltGr).
-;  * "Carve-outs" (LAlt & <key>) handle the shortcuts that AREN'T just
-;    "Cmd = Ctrl": the app switcher and line/document navigation. A custom
-;    combination intercepts the physical thumb+key BEFORE the remap turns the
-;    thumb into Ctrl — the only way to tell thumb+key from corner-Ctrl+key.
+;  Gotchas baked into this design (all verified the hard way):
 ;
-;  Because the remap holds LCtrl down (DownR), each carve-out explicitly lifts
-;  it ({LCtrl up}) when it needs non-Ctrl output (Home/End/Alt+Tab), and leaves
-;  it held when it WANTS Ctrl (Cmd+Up = Ctrl+Home). {Blind} preserves the
-;  physically-held Shift so the same line handles selection.
+;  1. A key can't be BOTH a remap (LAlt::LControl) AND a custom-combo prefix
+;     (LAlt & key) — the first "LAlt & x" kills the remap. So carve-outs use a
+;     #HotIf context, which does NOT make LAlt a prefix.
+;  2. The remap holds LCtrl DOWN while the thumb is held, so carve-out keys
+;     arrive as Ctrl+<key>; a plain hotkey won't match. => wildcard (*) prefix.
+;  3. A carve-out that lifts the held Ctrl ({LCtrl up}) must RESTORE it (if the
+;     thumb is still down) or the next Cmd+C in the same hold becomes plain "c".
+;     RestoreCmd() does that.
+;
+;  {Blind} preserves a physically-held Shift, so one line also covers selection.
+;  Corner LCtrl stays a real Ctrl (Mac "Control" + native word-nav). RAlt is
+;  untouched (real Alt). App launch/switch/window mgmt are Raycast's job.
 ; ============================================================================
 
-; ---- Command key -----------------------------------------------------------
+; ---- Command key: covers every standard Ctrl shortcut at once --------------
 LAlt::LControl
 
-; ---- App switcher (Cmd+Tab) ------------------------------------------------
-; Hold thumb -> Windows switcher opens; tap Tab -> advance (Shift = reverse);
-; release thumb -> commit. Self-managed (drops the remap's Ctrl, holds a real
-; Alt) so it doesn't depend on the AltTab built-in coexisting with the remap.
-LAlt & Tab::
+; ---- Carve-outs: active ONLY while the left thumb is physically held -------
+#HotIf GetKeyState("LAlt", "P")
+
+; App switcher (Cmd+Tab): hold thumb -> switcher opens; tap Tab to advance
+; (Shift = reverse); release thumb -> commit.
+*Tab::
 {
     Send "{Blind}{LCtrl up}{Alt down}{Tab}"      ; open switcher, advance once
     KeyWait "Tab"
-    while GetKeyState("LAlt", "P") {             ; while thumb still held
+    while GetKeyState("LAlt", "P") {              ; while thumb still held
         if GetKeyState("Tab", "P") {
             Send GetKeyState("Shift", "P") ? "{Blind}+{Tab}" : "{Blind}{Tab}"
             KeyWait "Tab"
@@ -40,24 +39,39 @@ LAlt & Tab::
         Sleep 15
     }
     Send "{Alt up}"                              ; thumb released -> commit
+    RestoreCmd()
 }
 
-; ---- Text navigation -------------------------------------------------------
-; Cmd+Left/Right = line start/end (Home/End) — lift the remap's Ctrl.
-LAlt & Left:: Send "{Blind}{LCtrl up}{Home}"
-LAlt & Right::Send "{Blind}{LCtrl up}{End}"
+; Text navigation
+*Left::                                          ; Cmd+Left  = line start
+{
+    Send "{Blind}{LCtrl up}{Home}"
+    RestoreCmd()
+}
+*Right::                                         ; Cmd+Right = line end
+{
+    Send "{Blind}{LCtrl up}{End}"
+    RestoreCmd()
+}
+*Up::   Send "{Blind}{Home}"                     ; Cmd+Up   = doc start (Ctrl held -> Ctrl+Home)
+*Down:: Send "{Blind}{End}"                      ; Cmd+Down = doc end
+*Backspace::                                     ; Cmd+Backspace = delete to line start
+{
+    Send "{Blind}{LCtrl up}+{Home}{BS}"
+    RestoreCmd()
+}
 
-; Cmd+Up/Down = document start/end (Ctrl+Home / Ctrl+End) — KEEP the held Ctrl.
-LAlt & Up::  Send "{Blind}{Home}"
-LAlt & Down::Send "{Blind}{End}"
+; Quit (Cmd+Q) = close active window. Comment out if it bites.
+*q::Send "{Blind}{LCtrl up}!{F4}"
 
-; Cmd+Backspace = delete to beginning of line.
-LAlt & Backspace::Send "{Blind}{LCtrl up}+{Home}{Delete}"
+#HotIf
+
+; Re-press the Command (Ctrl) the remap was holding, so Cmd+<letter> keeps
+; working within the same thumb-hold after a carve-out lifted it.
+RestoreCmd() {
+    if GetKeyState("LAlt", "P")
+        Send "{Blind}{LCtrl down}"   ; Blind: re-press Ctrl WITHOUT disturbing a held Shift
+}
 
 ; (Mac Option+Arrow word-nav and Option+Backspace word-delete are the native
 ;  Ctrl+Arrow / Ctrl+Backspace on the corner Ctrl key — no mapping needed.)
-
-; ---- Quit (Cmd+Q) ----------------------------------------------------------
-; macOS-style quit. Aggressive (closes the active window); comment out if it
-; bites. Lifts the remap's Ctrl so the OS sees a clean Alt+F4.
-LAlt & q::Send "{Blind}{LCtrl up}!{F4}"

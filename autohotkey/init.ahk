@@ -16,3 +16,4 @@ SetWorkingDir A_ScriptDir  ; consistent base dir
 
 #Include macos.ahk
 #Include keyboard-mouse.ahk
+#Include apps.ahk
