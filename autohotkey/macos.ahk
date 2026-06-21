@@ -22,6 +22,10 @@
 ; ---- Command key: covers every standard Ctrl shortcut at once --------------
 LAlt::LControl
 
+; ---- Option key: the Win-position key becomes Alt, mirroring a Mac's Option.
+;      (Synthetic Win from the Hyper key / CapsLock launcher is unaffected.)
+LWin::LAlt
+
 ; ---- Carve-outs: active ONLY while the left thumb is physically held -------
 #HotIf GetKeyState("LAlt", "P")
 
@@ -42,18 +46,28 @@ LAlt::LControl
     RestoreCmd()
 }
 
-; Text navigation
-*Left::                                          ; Cmd+Left  = line start
+; Text navigation. In File Explorer the horizontal/up keys instead navigate
+; Back / Forward / Parent (see ExplorerNav below).
+*Left::                                          ; Cmd+Left = line start (Explorer: Back)
 {
+    if ExplorerNav("Left")
+        return
     Send "{Blind}{LCtrl up}{Home}"
     RestoreCmd()
 }
-*Right::                                         ; Cmd+Right = line end
+*Right::                                         ; Cmd+Right = line end (Explorer: Forward)
 {
+    if ExplorerNav("Right")
+        return
     Send "{Blind}{LCtrl up}{End}"
     RestoreCmd()
 }
-*Up::   Send "{Blind}{Home}"                     ; Cmd+Up   = doc start (Ctrl held -> Ctrl+Home)
+*Up::                                            ; Cmd+Up = doc top (Explorer: parent folder)
+{
+    if ExplorerNav("Up")
+        return
+    Send "{Blind}{Home}"
+}
 *Down:: Send "{Blind}{End}"                      ; Cmd+Down = doc end
 *Backspace::                                     ; Cmd+Backspace = delete to line start
 {
@@ -71,6 +85,16 @@ LAlt::LControl
 RestoreCmd() {
     if GetKeyState("LAlt", "P")
         Send "{Blind}{LCtrl down}"   ; Blind: re-press Ctrl WITHOUT disturbing a held Shift
+}
+
+; In File Explorer, Cmd+Left/Right/Up = Back / Forward / Parent (Alt+Left/Right/Up).
+; Clean send (no Blind, no RestoreCmd): a Ctrl re-press right after the nav reads
+; as Ctrl+navigation and opens a new window. Returns true if it handled the key.
+ExplorerNav(navKey) {
+    if !WinActive("ahk_exe explorer.exe")
+        return false
+    Send "{LCtrl up}!{" navKey "}"
+    return true
 }
 
 ; (Mac Option+Arrow word-nav and Option+Backspace word-delete are the native

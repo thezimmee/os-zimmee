@@ -12,3 +12,8 @@
 ^l::Send "{Blind}{LCtrl up}!d"      ; Ctrl+L -> Alt+D (focus address bar)
 ^o::Send "{Blind}{LCtrl up}!d"      ; Ctrl+O -> Alt+D (focus address bar)
 #HotIf
+
+; Note: Explorer's Cmd+Left/Right/Up = Back/Forward/Parent is handled inside the
+; global carve-outs in macos.ahk (via ExplorerNav), not here — a competing #HotIf
+; variant loses to the earlier-created global one (AHK uses the first-created
+; matching variant).
