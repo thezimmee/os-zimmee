@@ -27,14 +27,9 @@ for hyperChar in [";", "'", ",", ".", "/", "[", "]", "-", "=", "Space", "Enter"]
 ; Lone CapsLock tap -> Win+Space (fires on release, only if no combo was used).
 Hotkey("CapsLock", (*) => Send("#{Space}"))
 
-; Keep Win+R/I/X on the PHYSICAL Win key (which is Option/Alt now): while it is
-; held, r/i/x send the native Win shortcut instead of Alt+<key>. Wildcard (*)
-; fires through the remap's held Alt, which we drop before the synthetic #-send.
-#HotIf GetKeyState("LWin", "P")
-*r::Send "{Blind}{LAlt up}#r"   ; Win+R  (Run)
-*i::Send "{Blind}{LAlt up}#i"   ; Win+I  (Settings)
-*x::Send "{Blind}{LAlt up}#x"   ; Win+X  (power-user menu)
-#HotIf
+; (Win+R/I/X intentionally dropped: the physical Win key is Option/Alt, and gating
+; plain letter keys on its physical state is unsafe — a missed key-up leaves them
+; firing on bare r/i/x. Reach Run/Settings via the launcher instead.)
 
 ; Brace-wrap the key so named keys ({Space}/{Enter}) and punctuation all send right.
 HyperSend(ch, *) {
