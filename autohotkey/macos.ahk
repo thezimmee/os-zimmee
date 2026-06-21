@@ -26,6 +26,23 @@ LAlt::LControl
 ;      (Synthetic Win from the Hyper key / CapsLock launcher is unaffected.)
 LWin::LAlt
 
+; ---- Real Ctrl + real Alt from the two physical keys ------------------------
+; The left-Alt key is Command (Ctrl). But while the REAL (corner) Ctrl is also
+; physically held, left-Alt reverts to a real Alt, so corner-Ctrl + left-Alt =
+; Ctrl+Alt (e.g. for Raycast hotkeys that need both). Works because the global
+; LAlt::LControl above has no #HotIf (lowest priority), so this variant outranks it.
+#HotIf GetKeyState("LCtrl", "P")
+LAlt::LAlt
+#HotIf
+; …and the reverse press order (left-Alt held first, then corner Ctrl): the
+; corner Ctrl keeps its native Ctrl (~) and adds a real Alt, so the pair reads as
+; Ctrl+Alt either way. (Edge: releasing left-Alt before the corner Ctrl can leave
+; Alt briefly held until the Ctrl is released.)
+#HotIf GetKeyState("LAlt", "P")
+~LCtrl::Send "{Blind}{LAlt Down}"
+~LCtrl Up::Send "{Blind}{LAlt Up}"
+#HotIf
+
 ; ---- Carve-outs: active ONLY while the left thumb is physically held -------
 #HotIf GetKeyState("LAlt", "P")
 
