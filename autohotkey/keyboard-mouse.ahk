@@ -33,5 +33,7 @@ Hotkey("CapsLock", (*) => Send("#{Space}"))
 
 ; Brace-wrap the key so named keys ({Space}/{Enter}) and punctuation all send right.
 HyperSend(ch, *) {
-    Send("{LWin Down}{LAlt Down}{" ch "}{LAlt Up}{LWin Up}")
+    ; {Blind} keeps any extra physically-held modifier (Shift/Ctrl), so
+    ; Hyper+Shift+<key> reaches the app as Win+Alt+Shift+<key>.
+    Send("{Blind}{LWin Down}{LAlt Down}{" ch "}{LAlt Up}{LWin Up}")
 }
