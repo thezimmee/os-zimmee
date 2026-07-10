@@ -1,0 +1,54 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+  "show_code_actions": "annotation",
+  "lsp_format_on_save": false,
+  "lsp_code_actions_on_save": {
+    "source.fixAll": false,
+    "source.organizeImports": false,
+  },
+  "show_diagnostics_panel_on_save": 0,
+  "show_diagnostics_count_in_view_status": true,
+  "clients": {
+    "diagnostic-ls": {
+      "enabled": true,
+      "command": [
+        "diagnostic-languageserver",
+        "--stdio"
+      ],
+      "selector": "source.shell.bash",
+      "initializationOptions": {
+        "linters": {
+          "shellcheck": {
+            "command": "shellcheck",
+            "args": [
+              "--format=json",
+              "-"
+            ],
+            "debounce": 100,
+            "formatLines": 1,
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "sourceName": "shellcheck",
+            "parseJson": {
+              "line": "line",
+              "column": "column",
+              "endLine": "endLine",
+              "endColumn": "endColumn",
+              "security": "level",
+              "message": "\\${message} [\\${code}]",
+            },
+            "securities": {
+              "error": "error",
+              "warning": "warning",
+              "note": "info",
+            },
+          }
+        },
+        "formatters": {},
+        "filetypes": {
+          "shellscript": "shellcheck",
+        }
+      }
+    }
+  }
+}

@@ -346,6 +346,14 @@
 			"scope": "message.error"
 		},
 		{
+			"foreground": "var(orange2)",
+			"scope": "message.warning"
+		},
+		{
+			"foreground": "var(blue)",
+			"scope": "message.info"
+		},
+		{
 			"background": "hsla(357, 45%, 60%, 0.15)",
 			"foreground_adjust": "l(+ 5%)",
 			"scope": "diff.deleted"

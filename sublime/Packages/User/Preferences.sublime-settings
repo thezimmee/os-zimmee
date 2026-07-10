@@ -35,6 +35,7 @@
 	// ],
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
+	"always_show_minimap_viewport": true,
 
 	// "fade_fold_buttons": false,
 	// "fold_buttons": true,
@@ -69,7 +70,7 @@
 	// TOGGLES:
 	// 
 
-	"always_show_minimap_viewport": false,
+	/*"always_show_minimap_viewport": false,*/
 	"bold_folder_labels": true,
 	"drag_text": false,
 	// "draw_shadows": true,
@@ -89,7 +90,7 @@
 	// 	"Lillee",
 	// 	"internet"
 	// ],
-	"close_windows_when_empty": true,
+	"close_windows_when_empty": false,
 	// "ensure_newline_at_eof_on_save": false,
 	"tab_size": 2,
 	// "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
@@ -106,7 +107,7 @@
 	// "smart_indent": true,
 	// "indent_to_bracket": false,
 	// "indent_subsequent_lines": true,
-	// "word_wrap": true,
+	"word_wrap": true,
 	// "wrap_width_style": "min",
 
 	// "auto_complete": true,
@@ -134,7 +135,7 @@
 
 	// "scroll_speed": 1.0,
 
-	// "shell_environment": true,
+	"shell_environment": true,
 	// "always_prompt_for_file_reload": false,
 
 	// 

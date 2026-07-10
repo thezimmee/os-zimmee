@@ -2,6 +2,7 @@
 
 {
   "git_status_in_status_bar": false,
+  "group_by_distance_to_head_in_branch_dashboard": false,
   "default_tag_message": "{tag_name}",
   "inline_diff_ignore_eol_whitespaces": true,
   "show_panel_for": ["push", "commit"],
@@ -10,8 +11,6 @@
   "graph_show_more_commit_info": false,
   "log_follow_rename": true,
   "blame_follow_rename": true,
-  "sort_by_recent_in_branch_dashboard": false,
-
   "pedantic_commit": true,
   "pedantic_commit_ruler": true,
   "pedantic_commit_first_line_length": 80,

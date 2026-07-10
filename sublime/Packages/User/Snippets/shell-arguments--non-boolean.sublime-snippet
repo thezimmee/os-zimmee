@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+${1:-b|--my-flag-with-argument}*)
+  if [[ "\$1" == *"="* ]]; then
+    ${2:MY_FLAG_ARG}="\${1#*=}"
+    shift 1
+  elif [ -n "\$2" ] && [ \${2:0:1} != "-" ]; then
+    ${2:MY_FLAG_ARG}=\$2
+    shift 2
+  else
+    echo "Error: Argument value missing for \$1." >&2
+    exit 1
+  fi
+  ;;
+]]></content>
+  <description>Parsing a non-boolean shell argument.</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <!-- <tabTrigger>hello</tabTrigger> -->
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.shell</scope>
+</snippet>

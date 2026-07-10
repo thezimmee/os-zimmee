@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+${1:-a|--my-boolean-flag})
+  ${2:MY_FLAG=0}
+  shift
+  ;;
+]]></content>
+  <description>Parsing a boolean shell argument.</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <!-- <tabTrigger>hello</tabTrigger> -->
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.shell</scope>
+</snippet>

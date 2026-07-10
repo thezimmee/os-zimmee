@@ -75,6 +75,9 @@ All fonts in the `/fonts` folder.
 
 ## Tools to try out
 
+- [Maccy](https://maccy.app/): Clipboard manager
+- [Superkey](https://superkey.app/): Keyboard shortcuts everywhere
+- [Rectangle](https://rectangleapp.com/): Window manager
 - [Fig](https://fig.io): Terminal
 - [Fantastical](https://flexibits.com): Time management
 - Things: Time management
