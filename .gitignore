@@ -51,3 +51,4 @@ firefox/profiles/*/*
 #[[ KARABINER
 karabiner-elements/karabiner.link/automatic_backups/
 #]]
+.obsidian/
