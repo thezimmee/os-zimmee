@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-brew list --cask rocket-typist && brew uninstall rocket-typist
