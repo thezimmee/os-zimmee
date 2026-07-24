@@ -33,9 +33,7 @@ export BREW_APPS_OPTIONAL=(
 	# hyper
 	# imagemagick
 	# karabiner
-	# keyboard-maestro
 	# kindle
-	# kitty
 	# lastpass
 	# libreoffice
 	# little-snitch
