@@ -15,6 +15,7 @@ SendMode "Input"           ; fast, reliable key delivery
 SetWorkingDir A_ScriptDir  ; consistent base dir
 SetCapsLockState "AlwaysOff"   ; CapsLock is repurposed as Hyper (see keyboard-mouse.ahk)
 
-; #Include macos.ahk
+#Include hyper.ahk
 #Include keyboard-mouse.ahk
-#Include apps.ahk
+; #Include macos.ahk
+; #Include apps.ahk
