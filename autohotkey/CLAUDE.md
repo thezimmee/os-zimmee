@@ -59,7 +59,7 @@ editing, mouse buttons on keys, and per-app key overrides.
 
 - `init.ahk` — directives + `#Include`s.
 - `macos.ahk` — the Command swap, app switcher, and text nav/editing carve-outs.
-- `keyboard-mouse.ahk` — mouse buttons on keys; CapsLock = Hyper (Win+Alt) prefix.
+- `mouse.ahk` — mouse buttons on keys.
 - `apps.ahk` — per-application `#HotIf WinActive` overrides.
 
 `#Include` order matters: global remaps before any `#HotIf` context, and every context reset.

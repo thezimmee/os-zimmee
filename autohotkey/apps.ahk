@@ -10,7 +10,7 @@
 ; Ctrl down, so lift it first — otherwise the OS sees Ctrl+Alt+D.
 #HotIf WinActive("ahk_exe brave.exe")
 ^l::Send "{Blind}{LCtrl up}!d"      ; Ctrl+L -> Alt+D (focus address bar)
-^o::Send "{Blind}{LCtrl up}!d"      ; Ctrl+O -> Alt+D (focus address bar)
+; ^o::Send "{Blind}{LCtrl up}!d"      ; Ctrl+O -> Alt+D (focus address bar)
 #HotIf
 
 ; Note: Explorer's Cmd+Left/Right/Up = Back/Forward/Parent is handled inside the
