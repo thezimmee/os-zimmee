@@ -122,6 +122,33 @@ apply_kde_touchpad () {
 	log "applied ${applied} touchpad settings"
 }
 
+# Is a shortcut already claimed? Prints every owner, empty if free.
+#
+# Two traps this avoids, both of which silently produce wrong answers:
+#   - awk's ~ treats the pattern as a REGEX, so "Meta+Shift+L" reads "+" as a
+#     quantifier and matches almost nothing.
+#   - substring matching reports "Meta+Ctrl+Esc" as an owner of "Meta+Ctrl+E".
+#   - KConfig writes the multi-shortcut separator as a LITERAL two-character
+#     "\t" in the file, not a real tab, so splitting on an actual tab silently
+#     fails to explode "Ctrl+Alt+L\tScreensaver" and reports it free.
+# Compare each exploded token for exact equality.
+kde_shortcut_owner () {
+	local want="$1" rc="$HOME/.config/kglobalshortcutsrc"
+	awk -F= -v want="$want" '
+		/^\[/ { sec=$0; next }
+		NF < 2 { next }
+		{
+			key=$1
+			rest=substr($0, index($0,"=")+1)
+			split(rest, fields, ",")
+			active=fields[1]
+			if (active == "" || active == "none") next
+			n=split(active, toks, /\\t/)
+			for (i=1; i<=n; i++) if (toks[i] == want) print sec "  " key
+		}
+	' "$rc"
+}
+
 # Read back what actually landed in the live config.
 verify_kde_shortcuts () {
 	local rc="$HOME/.config/kglobalshortcutsrc"
@@ -147,7 +174,15 @@ uninstall_kde () {
 	warn "  ~/.config/kglobalshortcutsrc"
 }
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" && "${1:-}" == "--verify" ]]; then
-	source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/lib.sh"
-	verify_kde_shortcuts
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	case "${1:-}" in
+		--verify)
+			source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/lib.sh"
+			verify_kde_shortcuts ;;
+		--owner)
+			shift
+			[[ -z ${1:-} ]] && { echo "usage: kde.sh --owner 'Meta+Ctrl+B'" >&2; exit 1; }
+			out="$(kde_shortcut_owner "$1")"
+			if [[ -z $out ]]; then echo "FREE: $1"; else echo "TAKEN: $1"; echo "$out"; fi ;;
+	esac
 fi
