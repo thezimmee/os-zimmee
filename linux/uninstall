@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# OS Zimmee -- Linux uninstaller. Same dispatch as linux/install.
+#
+#   bash linux/uninstall             uninstall every module
+#   bash linux/uninstall keyd        uninstall only the named modules
+set -uo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OSZ_ACTION=uninstall exec bash "$HERE/install" "$@"

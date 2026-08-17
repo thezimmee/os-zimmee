@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# OS Zimmee -- Linux updater. Same dispatch as linux/install.
+#
+# Refreshes apt-managed packages, then runs each module's update step (for the
+# things apt does not own, e.g. the Krohnkite kwinscript).
+set -uo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/lib.sh"
+
+require_linux || exit 1
+require_sudo || exit 1
+
+step "apt: update and upgrade"
+sudo apt-get update -qq && sudo apt-get upgrade -y
+
+OSZ_ACTION=update exec bash "$HERE/install" "$@"

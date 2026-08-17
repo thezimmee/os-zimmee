@@ -1,0 +1,6 @@
+// OS Zimmee -- VS Code keybindings, shared across every OS.
+//
+// Intentionally empty for now. VS Code supports per-OS bindings inside a single
+// file (`"key"` applies everywhere, `"mac"` overrides it on macOS), so this can
+// stay shared even once it fills up -- no per-OS fork needed.
+[]

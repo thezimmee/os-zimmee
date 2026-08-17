@@ -1,0 +1,10 @@
+# OS Zimmee -- VS Code extensions, one marketplace ID per line.
+# Installed by linux/modules/vscode.sh via `code --install-extension`.
+# Regenerate from a configured machine with: bash linux/modules/vscode.sh --export
+#
+# This starting set mirrors the linters and formatters this repo already carries
+# dotfiles for (.eslintrc.js, .prettierrc.js, .stylelintrc, .editorconfig).
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+editorconfig.editorconfig
+stylelint.vscode-stylelint

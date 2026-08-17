@@ -1,0 +1,23 @@
+// OS Zimmee -- VS Code settings, shared across every OS.
+//
+// This file is deliberately small. It is a seed, not a port of anything: there
+// was no existing VS Code config anywhere in this repo when the Linux track was
+// built (Sublime Text was the historical editor), so nothing was assumed.
+//
+// Keep it cross-platform. VS Code resolves platform-scoped keys natively --
+// `.linux` / `.osx` / `.windows` suffixes -- so per-OS differences belong here
+// rather than in a forked copy under linux/ or macos/.
+{
+	"editor.formatOnSave": true,
+	"editor.renderWhitespace": "boundary",
+	"editor.rulers": [100],
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"telemetry.telemetryLevel": "off",
+	"window.titleBarStyle": "custom",
+	"workbench.startupEditor": "none",
+
+	// Per-OS values live side by side; VS Code picks the right one.
+	"terminal.integrated.defaultProfile.linux": "bash",
+	"terminal.integrated.defaultProfile.osx": "zsh"
+}

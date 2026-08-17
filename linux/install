@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# OS Zimmee -- Linux (Kubuntu/KDE) installer.
+#
+#   bash linux/install               install every module in config.sh order
+#   bash linux/install keyd brave    install only the named modules
+#   bash linux/install --list        show available modules
+#
+# Every module is idempotent: re-running is the supported way to apply changes.
+set -uo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/lib.sh"
+source "$HERE/config.sh"
+
+ACTION="${OSZ_ACTION:-install}"
+
+usage () {
+	sed -n '2,8p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'
+}
+
+list_modules () {
+	echo "Available modules:"
+	printf '  %s\n' "${OSZ_MODULES[@]}"
+}
+
+main () {
+	local requested=("$@") failed=() name fn
+
+	case "${requested[0]:-}" in
+		-h|--help) usage; return 0 ;;
+		--list)    list_modules; return 0 ;;
+	esac
+
+	require_linux || return 1
+
+	# Guard against typos silently doing nothing.
+	if [[ ${#requested[@]} -eq 0 ]]; then
+		requested=("${OSZ_MODULES[@]}")
+	else
+		for name in "${requested[@]}"; do
+			if [[ ! -f "$HERE/modules/${name}.sh" ]]; then
+				err "unknown module: ${name}"
+				list_modules
+				return 1
+			fi
+		done
+	fi
+
+	echo "--- OS ZIMMEE :: LINUX ${ACTION^^} ---"
+	log "repo:    $OSZ_ROOT"
+	log "modules: ${requested[*]}"
+
+	# One password prompt at the start beats six scattered through the run --
+	# but only ask at all if a selected module actually needs root.
+	local needs_sudo=0 m
+	for name in "${requested[@]}"; do
+		for m in "${OSZ_MODULES_NEEDING_SUDO[@]}"; do
+			[[ $name == "$m" ]] && needs_sudo=1 && break 2
+		done
+	done
+	if [[ $needs_sudo -eq 1 ]]; then
+		require_sudo || return 1
+	else
+		skip "no selected module needs root; skipping sudo prompt"
+	fi
+
+	for name in "${requested[@]}"; do
+		source "$HERE/modules/${name}.sh"
+		fn="${ACTION}_${name}"
+		if ! declare -F "$fn" >/dev/null; then
+			skip "${name}: no ${ACTION} step defined"
+			continue
+		fi
+		step "${name}: ${ACTION}"
+		if "$fn"; then
+			ok "${name} ${ACTION} complete"
+		else
+			err "${name} ${ACTION} FAILED"
+			failed+=("$name")
+		fi
+	done
+
+	echo
+	if [[ ${#failed[@]} -gt 0 ]]; then
+		err "failed: ${failed[*]}"
+		err "fix the cause and re-run: bash linux/${ACTION} ${failed[*]}"
+		return 1
+	fi
+	ok "All modules ${ACTION}ed."
+	[[ $ACTION == install ]] && echo "Next: see $OSZ_LINUX/README.md for the manual post-install steps."
+	return 0
+}
+
+main "$@"
