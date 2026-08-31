@@ -5,8 +5,17 @@
 # The original esjeon/krohnkite stalled at v0.8.1 and does not run on KWin 6.
 # The release carries an unversioned krohnkite.kwinscript asset that always
 # tracks the newest build, so there is no version to bump here.
-
-KROHNKITE_URL="https://github.com/${KROHNKITE_REPO:-anametologin/krohnkite}/releases/latest/download/${KROHNKITE_ASSET:-krohnkite.kwinscript}"
+#
+# Source moved from GitHub to Codeberg on 2025-12-11 -- the maintainer archived
+# github.com/anametologin/krohnkite (read-only, no further releases there) and
+# continues at codeberg.org/anametologin/Krohnkite (note the capital K; the
+# GitHub repo name was lowercase). Codeberg runs Forgejo, not GitHub's release
+# software, so the "always the newest release" URL has a different shape:
+# Forgejo's alias is /releases/download/latest/<asset>, not GitHub's
+# /releases/latest/download/<asset>. Verified live: it resolves to the newest
+# STABLE release (0.9.9.2), skipping a newer 0.9.9.3_beta prerelease -- the
+# same non-prerelease semantics the old GitHub URL had.
+KROHNKITE_URL="https://codeberg.org/${KROHNKITE_REPO:-anametologin/Krohnkite}/releases/download/latest/${KROHNKITE_ASSET:-krohnkite.kwinscript}"
 KROHNKITE_SETTINGS="$OSZ_LINUX/config/krohnkite/kwinrc.conf"
 
 _krohnkite_installed () {
@@ -50,10 +59,6 @@ install_krohnkite () {
 	ok "enabled krohnkite in kwinrc"
 
 	apply_krohnkite_settings
-
-	if have qdbus6; then
-		qdbus6 org.kde.KWin /KWin reconfigure 2>/dev/null && ok "kwin reconfigured"
-	fi
 }
 
 apply_krohnkite_settings () {
@@ -71,6 +76,21 @@ apply_krohnkite_settings () {
 	done < "$KROHNKITE_SETTINGS"
 
 	log "applied ${applied} krohnkite settings"
+	_krohnkite_reload
+}
+
+# Krohnkite reads its settings ONCE, when the script loads. `kwin reconfigure`
+# alone does not re-read them -- gaps written to [Script-krohnkite] keep the old
+# values and the change looks like it silently failed. Toggling the plugin off
+# and on forces a genuine reload.
+_krohnkite_reload () {
+	have qdbus6 || { warn "qdbus6 missing; log out and back in to apply"; return 0; }
+	kwriteconfig6 --file kwinrc --group Plugins --key krohnkiteEnabled false
+	qdbus6 org.kde.KWin /KWin reconfigure >/dev/null 2>&1
+	sleep 1
+	kwriteconfig6 --file kwinrc --group Plugins --key krohnkiteEnabled true
+	qdbus6 org.kde.KWin /KWin reconfigure >/dev/null 2>&1
+	ok "krohnkite reloaded (settings re-read)"
 }
 
 update_krohnkite () {
@@ -78,7 +98,6 @@ update_krohnkite () {
 	_krohnkite_installed || { skip "krohnkite not installed"; return 0; }
 	_krohnkite_deploy upgrade || return 1
 	apply_krohnkite_settings
-	have qdbus6 && qdbus6 org.kde.KWin /KWin reconfigure 2>/dev/null
 	ok "krohnkite updated"
 }
 

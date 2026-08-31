@@ -52,3 +52,7 @@ firefox/profiles/*/*
 karabiner-elements/karabiner.link/automatic_backups/
 #]]
 .obsidian/
+
+# Generated at install time by linux/modules/shortcuts.sh from
+# linux/config/kde/apps.conf. Committing it would just let the two drift.
+linux/kwin-scripts/

@@ -13,6 +13,7 @@ export OSZ_MODULES=(
 	warp
 	krohnkite
 	kde
+	shortcuts
 )
 
 # Modules that touch system state and therefore need sudo. Anything not listed
